@@ -43181,154 +43181,6 @@
       <x>555</x>
       <y>591</y>
       <val>-9.6787579345703125e+02</val></rng2></dst></TestRemap_Remap--Remap---1920x1080--32FC1--32FC2--INTER_LANCZOS4->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--640x480--2->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>10.</min>
-    <max>246.</max>
-    <last>
-      <x>319</x>
-      <y>239</y>
-      <val>124.</val></last>
-    <rng1>
-      <x>112</x>
-      <y>95</y>
-      <val>112.</val></rng1>
-    <rng2>
-      <x>113</x>
-      <y>158</y>
-      <val>168.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--640x480--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--960x540--2->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>7.</min>
-    <max>249.</max>
-    <last>
-      <x>479</x>
-      <y>269</y>
-      <val>170.</val></last>
-    <rng1>
-      <x>202</x>
-      <y>42</y>
-      <val>70.</val></rng1>
-    <rng2>
-      <x>342</x>
-      <y>260</y>
-      <val>147.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--960x540--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1280x720--2->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>248.</max>
-    <last>
-      <x>639</x>
-      <y>359</y>
-      <val>134.</val></last>
-    <rng1>
-      <x>128</x>
-      <y>9</y>
-      <val>124.</val></rng1>
-    <rng2>
-      <x>582</x>
-      <y>59</y>
-      <val>106.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1280x720--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1920x1080--2->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>252.</max>
-    <last>
-      <x>959</x>
-      <y>539</y>
-      <val>120.</val></last>
-    <rng1>
-      <x>953</x>
-      <y>231</y>
-      <val>117.</val></rng1>
-    <rng2>
-      <x>471</x>
-      <y>24</y>
-      <val>151.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1920x1080--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--640x480--2->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>5.</min>
-    <max>248.</max>
-    <last>
-      <x>319</x>
-      <y>239</y>
-      <val>55.</val></last>
-    <rng1>
-      <x>15</x>
-      <y>142</y>
-      <val>146.</val></rng1>
-    <rng2>
-      <x>269</x>
-      <y>147</y>
-      <cn>3</cn>
-      <val>130.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--640x480--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--960x540--2->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>6.</min>
-    <max>252.</max>
-    <last>
-      <x>479</x>
-      <y>269</y>
-      <val>117.</val></last>
-    <rng1>
-      <x>269</x>
-      <y>241</y>
-      <val>172.</val></rng1>
-    <rng2>
-      <x>234</x>
-      <y>8</y>
-      <cn>3</cn>
-      <val>96.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--960x540--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1280x720--2->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>4.</min>
-    <max>252.</max>
-    <last>
-      <x>639</x>
-      <y>359</y>
-      <val>178.</val></last>
-    <rng1>
-      <x>196</x>
-      <y>172</y>
-      <cn>3</cn>
-      <val>184.</val></rng1>
-    <rng2>
-      <x>66</x>
-      <y>228</y>
-      <cn>1</cn>
-      <val>178.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1280x720--2->
-<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1920x1080--2->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>3.</min>
-    <max>253.</max>
-    <last>
-      <x>959</x>
-      <y>539</y>
-      <val>131.</val></last>
-    <rng1>
-      <x>449</x>
-      <y>135</y>
-      <val>135.</val></rng1>
-    <rng2>
-      <x>16</x>
-      <y>388</y>
-      <val>106.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1920x1080--2->
 <MatInfo_Size_Scale_Area_ResizeArea--ResizeArea---8UC1--640x480--2-4->
   <dst>
     <kind>65536</kind>
@@ -49771,6 +49623,79 @@
       <cn>2</cn>
       <val>132.</val></rng2></dst></EdgeAwareDemosaicingTest_demosaicingEA--demosaicingEA---130x60--COLOR_BayerGR2BGR_EA->
  <!-- resumed -->
+
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--640x480--2->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>10.</min>
+    <max>246.</max>
+    <last>
+      <x>319</x>
+      <y>239</y>
+      <val>124.</val></last>
+    <rng1>
+      <x>127</x>
+      <y>190</y>
+      <val>127.</val></rng1>
+    <rng2>
+      <x>96</x>
+      <y>213</y>
+      <val>196.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--640x480--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--960x540--2->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>7.</min>
+    <max>249.</max>
+    <last>
+      <x>479</x>
+      <y>269</y>
+      <val>170.</val></last>
+    <rng1>
+      <x>134</x>
+      <y>210</y>
+      <val>96.</val></rng1>
+    <rng2>
+      <x>389</x>
+      <y>9</y>
+      <val>126.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--960x540--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1280x720--2->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>248.</max>
+    <last>
+      <x>639</x>
+      <y>359</y>
+      <val>135.</val></last>
+    <rng1>
+      <x>252</x>
+      <y>265</y>
+      <val>85.</val></rng1>
+    <rng2>
+      <x>147</x>
+      <y>154</y>
+      <val>157.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1280x720--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1920x1080--2->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>7.</min>
+    <max>252.</max>
+    <last>
+      <x>959</x>
+      <y>539</y>
+      <val>120.</val></last>
+    <rng1>
+      <x>359</x>
+      <y>342</y>
+      <val>177.</val></rng1>
+    <rng2>
+      <x>355</x>
+      <y>399</y>
+      <val>141.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC1--1920x1080--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--640x480--2->
   <dst>
     <kind>65536</kind>
@@ -49782,15 +49707,14 @@
       <y>239</y>
       <val>218.</val></last>
     <rng1>
-      <x>5</x>
-      <y>172</y>
-      <cn>2</cn>
-      <val>173.</val></rng1>
+      <x>273</x>
+      <y>1</y>
+      <cn>1</cn>
+      <val>96.</val></rng1>
     <rng2>
-      <x>2</x>
-      <y>70</y>
-      <cn>2</cn>
-      <val>154.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--640x480--2->
+      <x>136</x>
+      <y>225</y>
+      <val>107.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--640x480--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--960x540--2->
   <dst>
     <kind>65536</kind>
@@ -49802,14 +49726,14 @@
       <y>269</y>
       <val>116.</val></last>
     <rng1>
-      <x>164</x>
-      <y>128</y>
-      <val>96.</val></rng1>
+      <x>189</x>
+      <y>70</y>
+      <cn>2</cn>
+      <val>157.</val></rng1>
     <rng2>
-      <x>371</x>
-      <y>168</y>
-      <cn>1</cn>
-      <val>122.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--960x540--2->
+      <x>45</x>
+      <y>193</y>
+      <val>59.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--960x540--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1280x720--2->
   <dst>
     <kind>65536</kind>
@@ -49821,15 +49745,15 @@
       <y>359</y>
       <val>108.</val></last>
     <rng1>
-      <x>474</x>
-      <y>46</y>
+      <x>466</x>
+      <y>303</y>
       <cn>1</cn>
-      <val>116.</val></rng1>
+      <val>171.</val></rng1>
     <rng2>
-      <x>224</x>
-      <y>82</y>
-      <cn>1</cn>
-      <val>99.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1280x720--2->
+      <x>217</x>
+      <y>288</y>
+      <cn>2</cn>
+      <val>108.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1280x720--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1920x1080--2->
   <dst>
     <kind>65536</kind>
@@ -49841,14 +49765,93 @@
       <y>539</y>
       <val>55.</val></last>
     <rng1>
-      <x>509</x>
-      <y>452</y>
-      <cn>2</cn>
-      <val>143.</val></rng1>
+      <x>32</x>
+      <y>157</y>
+      <val>106.</val></rng1>
     <rng2>
-      <x>72</x>
-      <y>173</y>
-      <val>177.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1920x1080--2->
+      <x>488</x>
+      <y>439</y>
+      <cn>2</cn>
+      <val>126.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC3--1920x1080--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--640x480--2->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>5.</min>
+    <max>249.</max>
+    <last>
+      <x>319</x>
+      <y>239</y>
+      <val>55.</val></last>
+    <rng1>
+      <x>261</x>
+      <y>45</y>
+      <cn>1</cn>
+      <val>112.</val></rng1>
+    <rng2>
+      <x>315</x>
+      <y>44</y>
+      <cn>2</cn>
+      <val>210.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--640x480--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--960x540--2->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>6.</min>
+    <max>252.</max>
+    <last>
+      <x>479</x>
+      <y>269</y>
+      <val>117.</val></last>
+    <rng1>
+      <x>174</x>
+      <y>143</y>
+      <val>165.</val></rng1>
+    <rng2>
+      <x>90</x>
+      <y>183</y>
+      <cn>2</cn>
+      <val>143.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--960x540--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1280x720--2->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>4.</min>
+    <max>252.</max>
+    <last>
+      <x>639</x>
+      <y>359</y>
+      <val>179.</val></last>
+    <rng1>
+      <x>218</x>
+      <y>333</y>
+      <cn>3</cn>
+      <val>105.</val></rng1>
+    <rng2>
+      <x>167</x>
+      <y>247</y>
+      <cn>1</cn>
+      <val>158.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1280x720--2->
+<MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1920x1080--2->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>2.</min>
+    <max>253.</max>
+    <last>
+      <x>959</x>
+      <y>539</y>
+      <val>131.</val></last>
+    <rng1>
+      <x>905</x>
+      <y>250</y>
+      <cn>3</cn>
+      <val>151.</val></rng1>
+    <rng2>
+      <x>720</x>
+      <y>314</y>
+      <cn>3</cn>
+      <val>139.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---8UC4--1920x1080--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--640x480--2->
   <dst>
     <kind>65536</kind>
@@ -49860,13 +49863,13 @@
       <y>239</y>
       <val>24538.</val></last>
     <rng1>
-      <x>289</x>
-      <y>145</y>
-      <val>28118.</val></rng1>
+      <x>107</x>
+      <y>154</y>
+      <val>36462.</val></rng1>
     <rng2>
-      <x>285</x>
-      <y>98</y>
-      <val>22800.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--640x480--2->
+      <x>247</x>
+      <y>153</y>
+      <val>20580.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--640x480--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--960x540--2->
   <dst>
     <kind>65536</kind>
@@ -49878,13 +49881,13 @@
       <y>269</y>
       <val>31110.</val></last>
     <rng1>
-      <x>420</x>
-      <y>43</y>
-      <val>38549.</val></rng1>
+      <x>306</x>
+      <y>78</y>
+      <val>43664.</val></rng1>
     <rng2>
-      <x>270</x>
-      <y>69</y>
-      <val>30600.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--960x540--2->
+      <x>450</x>
+      <y>194</y>
+      <val>43921.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--960x540--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1280x720--2->
   <dst>
     <kind>65536</kind>
@@ -49896,13 +49899,13 @@
       <y>359</y>
       <val>45364.</val></last>
     <rng1>
-      <x>432</x>
-      <y>322</y>
-      <val>18829.</val></rng1>
+      <x>306</x>
+      <y>234</y>
+      <val>36451.</val></rng1>
     <rng2>
-      <x>327</x>
-      <y>81</y>
-      <val>36360.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1280x720--2->
+      <x>274</x>
+      <y>355</y>
+      <val>24554.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1280x720--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1920x1080--2->
   <dst>
     <kind>65536</kind>
@@ -49914,88 +49917,91 @@
       <y>539</y>
       <val>45737.</val></last>
     <rng1>
-      <x>596</x>
-      <y>398</y>
-      <val>46910.</val></rng1>
+      <x>770</x>
+      <y>465</y>
+      <val>44197.</val></rng1>
     <rng2>
-      <x>768</x>
-      <y>333</y>
-      <val>18746.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1920x1080--2->
+      <x>163</x>
+      <y>404</y>
+      <val>28747.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC1--1920x1080--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--640x480--2->
   <dst>
     <kind>65536</kind>
     <type>18</type>
-    <min>86.</min>
-    <max>62141.</max>
+    <min>1135.</min>
+    <max>64451.</max>
     <last>
       <x>319</x>
       <y>239</y>
       <val>43695.</val></last>
     <rng1>
-      <x>55</x>
-      <y>61</y>
-      <cn>1</cn>
-      <val>23311.</val></rng1>
+      <x>300</x>
+      <y>160</y>
+      <cn>2</cn>
+      <val>46337.</val></rng1>
     <rng2>
-      <x>156</x>
-      <y>78</y>
-      <val>22937.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--640x480--2->
+      <x>120</x>
+      <y>0</y>
+      <cn>2</cn>
+      <val>24534.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--640x480--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--960x540--2->
   <dst>
     <kind>65536</kind>
     <type>18</type>
-    <min>7.</min>
-    <max>59748.</max>
+    <min>1432.</min>
+    <max>64067.</max>
     <last>
       <x>479</x>
       <y>269</y>
       <val>12229.</val></last>
     <rng1>
-      <x>248</x>
-      <y>86</y>
-      <cn>2</cn>
-      <val>17351.</val></rng1>
+      <x>432</x>
+      <y>33</y>
+      <cn>1</cn>
+      <val>26933.</val></rng1>
     <rng2>
-      <x>179</x>
-      <y>29</y>
-      <val>27551.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--960x540--2->
+      <x>126</x>
+      <y>82</y>
+      <cn>2</cn>
+      <val>40618.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--960x540--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1280x720--2->
   <dst>
     <kind>65536</kind>
     <type>18</type>
-    <min>46.</min>
-    <max>58483.</max>
+    <min>985.</min>
+    <max>64876.</max>
     <last>
       <x>639</x>
       <y>359</y>
       <val>35390.</val></last>
     <rng1>
-      <x>281</x>
-      <y>10</y>
-      <cn>1</cn>
-      <val>13590.</val></rng1>
+      <x>421</x>
+      <y>143</y>
+      <val>19126.</val></rng1>
     <rng2>
-      <x>498</x>
-      <y>321</y>
-      <val>18108.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1280x720--2->
+      <x>571</x>
+      <y>79</y>
+      <val>23901.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1280x720--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1920x1080--2->
   <dst>
     <kind>65536</kind>
     <type>18</type>
-    <min>20.</min>
-    <max>59651.</max>
+    <min>976.</min>
+    <max>64949.</max>
     <last>
       <x>959</x>
       <y>539</y>
       <val>30759.</val></last>
     <rng1>
-      <x>435</x>
-      <y>438</y>
-      <val>14469.</val></rng1>
+      <x>109</x>
+      <y>102</y>
+      <cn>2</cn>
+      <val>28255.</val></rng1>
     <rng2>
-      <x>688</x>
-      <y>346</y>
-      <val>12186.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1920x1080--2->
+      <x>945</x>
+      <y>49</y>
+      <cn>1</cn>
+      <val>39196.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC3--1920x1080--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--640x480--2->
   <dst>
     <kind>65536</kind>
@@ -50007,13 +50013,15 @@
       <y>239</y>
       <val>22934.</val></last>
     <rng1>
-      <x>242</x>
-      <y>183</y>
-      <val>41357.</val></rng1>
+      <x>291</x>
+      <y>219</y>
+      <cn>2</cn>
+      <val>38616.</val></rng1>
     <rng2>
-      <x>36</x>
-      <y>179</y>
-      <val>37860.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--640x480--2->
+      <x>4</x>
+      <y>216</y>
+      <cn>2</cn>
+      <val>22131.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--640x480--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--960x540--2->
   <dst>
     <kind>65536</kind>
@@ -50025,14 +50033,14 @@
       <y>269</y>
       <val>32717.</val></last>
     <rng1>
-      <x>107</x>
-      <y>220</y>
+      <x>313</x>
+      <y>188</y>
       <cn>2</cn>
-      <val>30464.</val></rng1>
+      <val>27910.</val></rng1>
     <rng2>
-      <x>308</x>
-      <y>57</y>
-      <val>34232.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--960x540--2->
+      <x>56</x>
+      <y>186</y>
+      <val>37670.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--960x540--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1280x720--2->
   <dst>
     <kind>65536</kind>
@@ -50044,15 +50052,14 @@
       <y>359</y>
       <val>51381.</val></last>
     <rng1>
-      <x>141</x>
-      <y>35</y>
-      <cn>1</cn>
-      <val>34656.</val></rng1>
+      <x>36</x>
+      <y>305</y>
+      <val>40669.</val></rng1>
     <rng2>
-      <x>392</x>
-      <y>193</y>
+      <x>16</x>
+      <y>3</y>
       <cn>2</cn>
-      <val>45171.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1280x720--2->
+      <val>41090.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1280x720--2->
 <MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1920x1080--2->
   <dst>
     <kind>65536</kind>
@@ -50064,13 +50071,12 @@
       <y>539</y>
       <val>31781.</val></last>
     <rng1>
-      <x>410</x>
-      <y>192</y>
+      <x>19</x>
+      <y>514</y>
       <cn>1</cn>
-      <val>24916.</val></rng1>
+      <val>33696.</val></rng1>
     <rng2>
-      <x>458</x>
-      <y>245</y>
-      <cn>1</cn>
-      <val>25794.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1920x1080--2->
+      <x>496</x>
+      <y>89</y>
+      <val>44790.</val></rng2></dst></MatInfo_Size_Scale_ResizeAreaFast--ResizeAreaFast---16UC4--1920x1080--2->
 </opencv_storage>
