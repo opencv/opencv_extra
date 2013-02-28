@@ -120100,4 +120100,62 @@
       <y>262</y>
       <cn>3</cn>
       <val>-2109625032.</val></rng2></gpu_dst></GPU_Sz_Depth_Cn_Core_BitwiseXorScalar--Core_BitwiseXorScalar---1920x1080--CV_32S--BGRA->
+ <!-- resumed -->
+
+<GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1280x720>
+  <gpu_points>
+    <kind>65536</kind>
+    <type>10</type>
+    <min>0.</min>
+    <max>1279.</max>
+    <last>
+      <x>460975</x>
+      <y>0</y>
+      <val>719.</val></last>
+    <rng1>
+      <x>39030</x>
+      <y>0</y>
+      <val>1208.</val></rng1>
+    <rng2>
+      <x>100995</x>
+      <y>0</y>
+      <cn>1</cn>
+      <val>157.</val></rng2></gpu_points></GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1280x720>
+<GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1280x1024>
+  <gpu_points>
+    <kind>65536</kind>
+    <type>10</type>
+    <min>0.</min>
+    <max>1279.</max>
+    <last>
+      <x>655225</x>
+      <y>0</y>
+      <val>1023.</val></last>
+    <rng1>
+      <x>640172</x>
+      <y>0</y>
+      <val>555.</val></rng1>
+    <rng2>
+      <x>339355</x>
+      <y>0</y>
+      <val>87.</val></rng2></gpu_points></GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1280x1024>
+<GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1920x1080>
+  <gpu_points>
+    <kind>65536</kind>
+    <type>10</type>
+    <min>0.</min>
+    <max>1919.</max>
+    <last>
+      <x>1036557</x>
+      <y>0</y>
+      <val>1079.</val></last>
+    <rng1>
+      <x>166622</x>
+      <y>0</y>
+      <val>889.</val></rng1>
+    <rng2>
+      <x>359180</x>
+      <y>0</y>
+      <cn>1</cn>
+      <val>373.</val></rng2></gpu_points></GPU_Sz_ImgProc_BuildNonZeroPointList--ImgProc_BuildNonZeroPointList--1920x1080>
 </opencv_storage>
