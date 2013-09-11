@@ -861,4 +861,24 @@
       <dt>"4i"</dt>
       <data>
         155 170 101 101</data></val></faces></ImageName_MinSize_CascadeClassifierLBPFrontalFace--CascadeClassifierLBPFrontalFace----cv-shared-1_itseez-0002524-png---90->
+ <!-- resumed -->
+<detect_SCascade--SCascade----cv-cascadeandhog-cascades-inria_caltech-17-01-2013-xml----cv-cascadeandhog-images-image_00000000_0-png-->
+  <rects>
+    <kind>196608</kind>
+    <type>28</type>
+    <min>41.</min>
+    <max>460.</max>
+    <last>
+      <x>718</x>
+      <y>0</y>
+      <val>103.</val></last>
+    <rng1>
+      <x>573</x>
+      <y>0</y>
+      <val>284.</val></rng1>
+    <rng2>
+      <x>208</x>
+      <y>0</y>
+      <cn>2</cn>
+      <val>79.</val></rng2></rects></detect_SCascade--SCascade----cv-cascadeandhog-cascades-inria_caltech-17-01-2013-xml----cv-cascadeandhog-images-image_00000000_0-png-->
 </opencv_storage>
