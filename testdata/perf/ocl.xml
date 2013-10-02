@@ -5098,60 +5098,6 @@
       <cols>1</cols>
       <dt>f</dt>
       <data></data></val></matches1-distance></BruteForceMatcherFixture_radiusMatch--radiusMatch--128x2000>
-<blendLinearFixture_blendLinear--blendLinear--1000x1000>
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>254.</max>
-    <last>
-      <x>999</x>
-      <y>999</y>
-      <val>235.</val></last>
-    <rng1>
-      <x>71</x>
-      <y>990</y>
-      <val>28.</val></rng1>
-    <rng2>
-      <x>286</x>
-      <y>235</y>
-      <val>149.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--1000x1000>
-<blendLinearFixture_blendLinear--blendLinear--2000x2000>
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>254.</max>
-    <last>
-      <x>1999</x>
-      <y>1999</y>
-      <val>91.</val></last>
-    <rng1>
-      <x>1460</x>
-      <y>1586</y>
-      <val>218.</val></rng1>
-    <rng2>
-      <x>643</x>
-      <y>60</y>
-      <val>91.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--2000x2000>
-<blendLinearFixture_blendLinear--blendLinear--4000x4000>
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>254.</max>
-    <last>
-      <x>3999</x>
-      <y>3999</y>
-      <val>69.</val></last>
-    <rng1>
-      <x>3887</x>
-      <y>2497</y>
-      <val>83.</val></rng1>
-    <rng2>
-      <x>466</x>
-      <y>864</y>
-      <val>137.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--4000x4000>
 <LUTFixture_LUT--LUT---1000x1000--8UC1->
   <dst>
     <kind>65536</kind>
@@ -7589,4 +7535,58 @@
       <y>989</y>
       <cn>1</cn>
       <val>20.</val></rng2></background></Video_MOG2GetBackgroundImage_MOG2--MOG2----gpu-video-1920x1080-avi---3->
+<blendLinearFixture_blendLinear--blendLinear--1000x1000>
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>999</x>
+      <y>999</y>
+      <val>236.</val></last>
+    <rng1>
+      <x>653</x>
+      <y>778</y>
+      <val>124.</val></rng1>
+    <rng2>
+      <x>677</x>
+      <y>758</y>
+      <val>90.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--1000x1000>
+<blendLinearFixture_blendLinear--blendLinear--2000x2000>
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1999</x>
+      <y>1999</y>
+      <val>91.</val></last>
+    <rng1>
+      <x>17</x>
+      <y>31</y>
+      <val>182.</val></rng1>
+    <rng2>
+      <x>1774</x>
+      <y>304</y>
+      <val>46.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--2000x2000>
+<blendLinearFixture_blendLinear--blendLinear--4000x4000>
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>3999</x>
+      <y>3999</y>
+      <val>69.</val></last>
+    <rng1>
+      <x>1326</x>
+      <y>3899</y>
+      <val>46.</val></rng1>
+    <rng2>
+      <x>2197</x>
+      <y>1898</y>
+      <val>140.</val></rng2></dst></blendLinearFixture_blendLinear--blendLinear--4000x4000>
 </opencv_storage>
