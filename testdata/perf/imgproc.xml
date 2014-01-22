@@ -71588,7 +71588,7 @@
       <val>0.</val></rng2></edges></OCL_CannyFixture_Canny--Canny---5--true->
  <!-- resumed -->
 
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71599,14 +71599,14 @@
       <y>116</y>
       <val>1659488.</val></last>
     <rng1>
-      <x>29</x>
-      <y>105</y>
-      <val>1597870.</val></rng1>
+      <x>78</x>
+      <y>33</y>
+      <val>1632396.</val></rng1>
     <rng2>
-      <x>64</x>
-      <y>11</y>
-      <val>1230144.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_SQDIFF_NORMED->
+      <x>74</x>
+      <y>48</y>
+      <val>1779813.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71617,14 +71617,14 @@
       <y>116</y>
       <val>5.1700031757354736e-001</val></last>
     <rng1>
-      <x>41</x>
-      <y>33</y>
-      <val>5.4394996166229248e-001</val></rng1>
+      <x>89</x>
+      <y>0</y>
+      <val>4.2694225907325745e-001</val></rng1>
     <rng2>
-      <x>27</x>
-      <y>84</y>
-      <val>4.8011153936386108e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCORR->
+      <x>8</x>
+      <y>5</y>
+      <val>4.8698240518569946e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71635,14 +71635,14 @@
       <y>116</y>
       <val>2380450.</val></last>
     <rng1>
-      <x>45</x>
-      <y>4</y>
-      <val>2472887.</val></rng1>
+      <x>57</x>
+      <y>13</y>
+      <val>2178244.</val></rng1>
     <rng2>
-      <x>64</x>
-      <y>28</y>
-      <val>2226088.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCORR_NORMED->
+      <x>77</x>
+      <y>10</y>
+      <val>2259023.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71653,14 +71653,14 @@
       <y>116</y>
       <val>7.4159377813339233e-001</val></last>
     <rng1>
-      <x>105</x>
-      <y>71</y>
-      <val>7.3340082168579102e-001</val></rng1>
+      <x>93</x>
+      <y>32</y>
+      <val>7.7786004543304443e-001</val></rng1>
     <rng2>
-      <x>99</x>
-      <y>79</y>
-      <val>7.3630023002624512e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCOEFF->
+      <x>47</x>
+      <y>114</y>
+      <val>7.2294640541076660e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71671,14 +71671,14 @@
       <y>116</y>
       <val>-2.3419250000000000e+004</val></last>
     <rng1>
-      <x>72</x>
-      <y>78</y>
-      <val>35664.</val></rng1>
+      <x>2</x>
+      <y>100</y>
+      <val>-51175.</val></rng1>
     <rng2>
-      <x>24</x>
-      <y>84</y>
-      <val>26931.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCOEFF_NORMED->
+      <x>86</x>
+      <y>90</y>
+      <val>6.9823500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71689,14 +71689,14 @@
       <y>116</y>
       <val>-2.9126521199941635e-002</val></last>
     <rng1>
-      <x>9</x>
-      <y>103</y>
-      <val>2.4887779727578163e-002</val></rng1>
+      <x>88</x>
+      <y>61</y>
+      <val>-1.5753824263811111e-002</val></rng1>
     <rng2>
-      <x>28</x>
-      <y>91</y>
-      <val>-1.8512623012065887e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_SQDIFF->
+      <x>71</x>
+      <y>111</y>
+      <val>-6.7038536071777344e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71707,14 +71707,14 @@
       <y>119</y>
       <val>2974435.</val></last>
     <rng1>
-      <x>10</x>
-      <y>84</y>
-      <val>2555314.</val></rng1>
+      <x>60</x>
+      <y>96</y>
+      <val>2666441.</val></rng1>
     <rng2>
-      <x>53</x>
-      <y>87</y>
-      <val>2594034.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_SQDIFF_NORMED->
+      <x>51</x>
+      <y>7</y>
+      <val>2897383.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71725,14 +71725,14 @@
       <y>119</y>
       <val>5.2686101198196411e-001</val></last>
     <rng1>
-      <x>91</x>
-      <y>6</y>
-      <val>5.0728899240493774e-001</val></rng1>
+      <x>1</x>
+      <y>14</y>
+      <val>5.5586624145507813e-001</val></rng1>
     <rng2>
-      <x>63</x>
-      <y>103</y>
-      <val>5.9434640407562256e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCORR->
+      <x>91</x>
+      <y>59</y>
+      <val>5.5997318029403687e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71743,14 +71743,14 @@
       <y>119</y>
       <val>4162561.</val></last>
     <rng1>
-      <x>21</x>
-      <y>116</y>
-      <val>4042355.</val></rng1>
+      <x>8</x>
+      <y>37</y>
+      <val>3.8427077500000000e+006</val></rng1>
     <rng2>
-      <x>83</x>
-      <y>2</y>
-      <val>3.9037432500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCORR_NORMED->
+      <x>45</x>
+      <y>47</y>
+      <val>3.8307427500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71761,14 +71761,14 @@
       <y>119</y>
       <val>7.3731696605682373e-001</val></last>
     <rng1>
-      <x>18</x>
-      <y>118</y>
-      <val>7.4098354578018188e-001</val></rng1>
+      <x>21</x>
+      <y>14</y>
+      <val>7.4240958690643311e-001</val></rng1>
     <rng2>
-      <x>2</x>
-      <y>12</y>
-      <val>7.5404572486877441e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCOEFF->
+      <x>13</x>
+      <y>66</y>
+      <val>7.3986613750457764e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71779,14 +71779,14 @@
       <y>119</y>
       <val>-59444.</val></last>
     <rng1>
-      <x>51</x>
-      <y>73</y>
-      <val>-3.9125750000000000e+004</val></rng1>
+      <x>18</x>
+      <y>70</y>
+      <val>-4.2065250000000000e+004</val></rng1>
     <rng2>
-      <x>30</x>
-      <y>79</y>
-      <val>4.5297500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCOEFF_NORMED->
+      <x>75</x>
+      <y>5</y>
+      <val>91937.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71797,14 +71797,14 @@
       <y>119</y>
       <val>-4.1842114180326462e-002</val></last>
     <rng1>
-      <x>64</x>
-      <y>36</y>
-      <val>5.0042573362588882e-002</val></rng1>
+      <x>98</x>
+      <y>119</y>
+      <val>5.9276513755321503e-002</val></rng1>
     <rng2>
-      <x>34</x>
-      <y>106</y>
-      <val>2.4433284997940063e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_SQDIFF->
+      <x>86</x>
+      <y>118</y>
+      <val>1.0448842495679855e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71815,14 +71815,14 @@
       <y>98</y>
       <val>2.4145165000000000e+006</val></last>
     <rng1>
-      <x>98</x>
-      <y>11</y>
-      <val>2.8416375000000000e+006</val></rng1>
+      <x>65</x>
+      <y>53</y>
+      <val>2.4510945000000000e+006</val></rng1>
     <rng2>
-      <x>34</x>
-      <y>9</y>
-      <val>2459271.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_SQDIFF_NORMED->
+      <x>35</x>
+      <y>65</y>
+      <val>2.4966865000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71833,14 +71833,14 @@
       <y>98</y>
       <val>4.7184592485427856e-001</val></last>
     <rng1>
-      <x>83</x>
-      <y>4</y>
-      <val>5.3801327943801880e-001</val></rng1>
+      <x>77</x>
+      <y>77</y>
+      <val>5.0270128250122070e-001</val></rng1>
     <rng2>
-      <x>110</x>
-      <y>76</y>
-      <val>5.3058606386184692e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCORR->
+      <x>81</x>
+      <y>32</y>
+      <val>4.2730534076690674e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71851,14 +71851,14 @@
       <y>98</y>
       <val>3.9100857500000000e+006</val></last>
     <rng1>
-      <x>1</x>
-      <y>11</y>
-      <val>3.7969212500000000e+006</val></rng1>
+      <x>36</x>
+      <y>46</y>
+      <val>4119619.</val></rng1>
     <rng2>
-      <x>53</x>
-      <y>54</y>
-      <val>3.8769282500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCORR_NORMED->
+      <x>62</x>
+      <y>48</y>
+      <val>3.6796197500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71869,14 +71869,14 @@
       <y>98</y>
       <val>7.6411104202270508e-001</val></last>
     <rng1>
-      <x>40</x>
-      <y>72</y>
-      <val>7.4596309661865234e-001</val></rng1>
+      <x>9</x>
+      <y>33</y>
+      <val>7.2288829088211060e-001</val></rng1>
     <rng2>
-      <x>117</x>
-      <y>58</y>
-      <val>7.4475181102752686e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCOEFF->
+      <x>34</x>
+      <y>32</y>
+      <val>7.3787665367126465e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71887,14 +71887,14 @@
       <y>98</y>
       <val>9.9106750000000000e+004</val></last>
     <rng1>
-      <x>88</x>
-      <y>77</y>
-      <val>-9.9018750000000000e+004</val></rng1>
-    <rng2>
-      <x>10</x>
+      <x>25</x>
       <y>33</y>
-      <val>17872.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCOEFF_NORMED->
+      <val>43562.</val></rng1>
+    <rng2>
+      <x>118</x>
+      <y>41</y>
+      <val>9.7309500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71905,14 +71905,14 @@
       <y>98</y>
       <val>7.5881712138652802e-002</val></last>
     <rng1>
-      <x>104</x>
-      <y>45</y>
-      <val>-3.5551574081182480e-002</val></rng1>
+      <x>28</x>
+      <y>97</y>
+      <val>-5.1358868367969990e-003</val></rng1>
     <rng2>
-      <x>15</x>
-      <y>18</y>
-      <val>-8.1932313740253448e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_SQDIFF->
+      <x>19</x>
+      <y>61</y>
+      <val>3.7438119761645794e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71924,13 +71924,13 @@
       <val>2773474.</val></last>
     <rng1>
       <x>35</x>
-      <y>31</y>
-      <val>2981047.</val></rng1>
+      <y>27</y>
+      <val>2769481.</val></rng1>
     <rng2>
-      <x>94</x>
-      <y>45</y>
-      <val>2600306.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_SQDIFF_NORMED->
+      <x>70</x>
+      <y>104</y>
+      <val>2654099.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71941,14 +71941,14 @@
       <y>112</y>
       <val>4.9484586715698242e-001</val></last>
     <rng1>
-      <x>8</x>
-      <y>51</y>
-      <val>5.3603011369705200e-001</val></rng1>
+      <x>63</x>
+      <y>46</y>
+      <val>5.2220004796981812e-001</val></rng1>
     <rng2>
-      <x>27</x>
-      <y>8</y>
-      <val>5.3432136774063110e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCORR->
+      <x>8</x>
+      <y>82</y>
+      <val>4.9471023678779602e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71959,14 +71959,14 @@
       <y>112</y>
       <val>4218595.</val></last>
     <rng1>
-      <x>44</x>
-      <y>70</y>
-      <val>4344005.</val></rng1>
+      <x>57</x>
+      <y>8</y>
+      <val>3657965.</val></rng1>
     <rng2>
-      <x>70</x>
-      <y>77</y>
-      <val>3916691.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCORR_NORMED->
+      <x>53</x>
+      <y>98</y>
+      <val>4201896.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71977,14 +71977,14 @@
       <y>112</y>
       <val>7.5269579887390137e-001</val></last>
     <rng1>
-      <x>6</x>
-      <y>14</y>
-      <val>7.1157008409500122e-001</val></rng1>
+      <x>78</x>
+      <y>94</y>
+      <val>7.3204243183135986e-001</val></rng1>
     <rng2>
-      <x>109</x>
-      <y>33</y>
-      <val>7.3733574151992798e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCOEFF->
+      <x>12</x>
+      <y>97</y>
+      <val>7.2622597217559814e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -71995,14 +71995,14 @@
       <y>112</y>
       <val>4.9646750000000000e+004</val></last>
     <rng1>
-      <x>44</x>
-      <y>60</y>
-      <val>1.1151375000000000e+005</val></rng1>
+      <x>58</x>
+      <y>34</y>
+      <val>9.1296250000000000e+004</val></rng1>
     <rng2>
-      <x>13</x>
-      <y>58</y>
-      <val>-90528.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCOEFF_NORMED->
+      <x>37</x>
+      <y>97</y>
+      <val>8.2409750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72013,14 +72013,14 @@
       <y>112</y>
       <val>3.4611213952302933e-002</val></last>
     <rng1>
-      <x>50</x>
-      <y>29</y>
-      <val>-1.5633290633559227e-002</val></rng1>
+      <x>19</x>
+      <y>26</y>
+      <val>-7.9256936442106962e-004</val></rng1>
     <rng2>
-      <x>30</x>
-      <y>108</y>
-      <val>3.0069503933191299e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---128x128--16x16--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_SQDIFF->
+      <x>3</x>
+      <y>33</y>
+      <val>7.2806235402822495e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---128x128--16x16--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72031,14 +72031,14 @@
       <y>228</y>
       <val>1656771.</val></last>
     <rng1>
-      <x>154</x>
-      <y>34</y>
-      <val>1841959.</val></rng1>
+      <x>223</x>
+      <y>87</y>
+      <val>1794705.</val></rng1>
     <rng2>
-      <x>5</x>
-      <y>138</y>
-      <val>1511996.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_SQDIFF_NORMED->
+      <x>116</x>
+      <y>139</y>
+      <val>1630288.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72049,14 +72049,14 @@
       <y>228</y>
       <val>5.4587823152542114e-001</val></last>
     <rng1>
-      <x>169</x>
-      <y>73</y>
-      <val>4.5270085334777832e-001</val></rng1>
+      <x>91</x>
+      <y>163</y>
+      <val>5.8307516574859619e-001</val></rng1>
     <rng2>
-      <x>118</x>
-      <y>20</y>
-      <val>5.0994271039962769e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCORR->
+      <x>161</x>
+      <y>123</y>
+      <val>5.2818852663040161e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72067,14 +72067,14 @@
       <y>228</y>
       <val>2216269.</val></last>
     <rng1>
-      <x>132</x>
-      <y>226</y>
-      <val>2139420.</val></rng1>
+      <x>204</x>
+      <y>120</y>
+      <val>2204844.</val></rng1>
     <rng2>
-      <x>134</x>
-      <y>72</y>
-      <val>2552296.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCORR_NORMED->
+      <x>251</x>
+      <y>17</y>
+      <val>2371010.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72085,14 +72085,14 @@
       <y>228</y>
       <val>7.3018771409988403e-001</val></last>
     <rng1>
-      <x>253</x>
-      <y>17</y>
-      <val>7.4486148357391357e-001</val></rng1>
+      <x>9</x>
+      <y>217</y>
+      <val>7.4798047542572021e-001</val></rng1>
     <rng2>
-      <x>138</x>
-      <y>67</y>
-      <val>7.6392042636871338e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCOEFF->
+      <x>152</x>
+      <y>38</y>
+      <val>7.5791096687316895e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72103,14 +72103,14 @@
       <y>228</y>
       <val>-4.6762500000000000e+004</val></last>
     <rng1>
-      <x>206</x>
-      <y>29</y>
-      <val>-7.6718500000000000e+004</val></rng1>
+      <x>220</x>
+      <y>74</y>
+      <val>42183.</val></rng1>
     <rng2>
-      <x>147</x>
-      <y>180</y>
-      <val>-1.1162500000000000e+003</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCOEFF_NORMED->
+      <x>222</x>
+      <y>204</y>
+      <val>-1.9879500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72121,14 +72121,14 @@
       <y>228</y>
       <val>-6.0650546103715897e-002</val></last>
     <rng1>
-      <x>40</x>
-      <y>164</y>
-      <val>-9.4109671190381050e-003</val></rng1>
+      <x>195</x>
+      <y>110</y>
+      <val>1.3044488430023193e-001</val></rng1>
     <rng2>
-      <x>168</x>
-      <y>6</y>
-      <val>-9.2663325369358063e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_SQDIFF->
+      <x>243</x>
+      <y>114</y>
+      <val>1.0019478946924210e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72139,14 +72139,14 @@
       <y>231</y>
       <val>2560339.</val></last>
     <rng1>
-      <x>255</x>
-      <y>46</y>
-      <val>2738453.</val></rng1>
+      <x>232</x>
+      <y>92</y>
+      <val>2.8532875000000000e+006</val></rng1>
     <rng2>
-      <x>49</x>
-      <y>79</y>
-      <val>2622960.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_SQDIFF_NORMED->
+      <x>155</x>
+      <y>60</y>
+      <val>2856115.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72157,14 +72157,14 @@
       <y>231</y>
       <val>4.6203234791755676e-001</val></last>
     <rng1>
-      <x>232</x>
-      <y>19</y>
-      <val>4.9927511811256409e-001</val></rng1>
+      <x>180</x>
+      <y>117</y>
+      <val>4.9746793508529663e-001</val></rng1>
     <rng2>
-      <x>20</x>
-      <y>220</y>
-      <val>5.4915452003479004e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCORR->
+      <x>72</x>
+      <y>83</y>
+      <val>4.5222529768943787e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72175,14 +72175,14 @@
       <y>231</y>
       <val>4.2644825000000000e+006</val></last>
     <rng1>
-      <x>223</x>
-      <y>211</y>
-      <val>4184821.</val></rng1>
+      <x>225</x>
+      <y>176</y>
+      <val>4.1902472500000000e+006</val></rng1>
     <rng2>
-      <x>230</x>
-      <y>103</y>
-      <val>4427337.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCORR_NORMED->
+      <x>116</x>
+      <y>4</y>
+      <val>4.0464272500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72193,14 +72193,14 @@
       <y>231</y>
       <val>7.6951783895492554e-001</val></last>
     <rng1>
-      <x>236</x>
-      <y>152</y>
-      <val>7.6107937097549438e-001</val></rng1>
+      <x>30</x>
+      <y>198</y>
+      <val>7.6400434970855713e-001</val></rng1>
     <rng2>
-      <x>218</x>
-      <y>221</y>
-      <val>7.3623961210250854e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCOEFF->
+      <x>111</x>
+      <y>34</y>
+      <val>7.5047898292541504e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72211,14 +72211,14 @@
       <y>231</y>
       <val>1.2657025000000000e+005</val></last>
     <rng1>
-      <x>14</x>
-      <y>128</y>
-      <val>-1.0507375000000000e+005</val></rng1>
+      <x>242</x>
+      <y>96</y>
+      <val>96592.</val></rng1>
     <rng2>
-      <x>99</x>
-      <y>87</y>
-      <val>1.3335500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCOEFF_NORMED->
+      <x>192</x>
+      <y>135</y>
+      <val>-29137.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72229,14 +72229,14 @@
       <y>231</y>
       <val>9.0159952640533447e-002</val></last>
     <rng1>
-      <x>177</x>
-      <y>13</y>
-      <val>3.8326764479279518e-003</val></rng1>
+      <x>102</x>
+      <y>81</y>
+      <val>7.2016343474388123e-002</val></rng1>
     <rng2>
-      <x>201</x>
-      <y>2</y>
-      <val>1.0613366961479187e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_SQDIFF->
+      <x>153</x>
+      <y>202</y>
+      <val>5.3593449294567108e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72247,14 +72247,14 @@
       <y>210</y>
       <val>2499835.</val></last>
     <rng1>
-      <x>152</x>
-      <y>181</y>
-      <val>2484583.</val></rng1>
+      <x>50</x>
+      <y>13</y>
+      <val>2562376.</val></rng1>
     <rng2>
-      <x>285</x>
-      <y>131</y>
-      <val>2.6019705000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_SQDIFF_NORMED->
+      <x>54</x>
+      <y>106</y>
+      <val>2590831.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72265,14 +72265,14 @@
       <y>210</y>
       <val>4.7292807698249817e-001</val></last>
     <rng1>
-      <x>33</x>
-      <y>30</y>
-      <val>5.2472108602523804e-001</val></rng1>
+      <x>213</x>
+      <y>194</y>
+      <val>4.9728563427925110e-001</val></rng1>
     <rng2>
-      <x>90</x>
-      <y>102</y>
-      <val>5.1693648099899292e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCORR->
+      <x>10</x>
+      <y>138</y>
+      <val>4.5155251026153564e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72283,14 +72283,14 @@
       <y>210</y>
       <val>4.0380965000000000e+006</val></last>
     <rng1>
-      <x>169</x>
-      <y>200</y>
-      <val>4.2434585000000000e+006</val></rng1>
+      <x>162</x>
+      <y>119</y>
+      <val>3.4519857500000000e+006</val></rng1>
     <rng2>
-      <x>272</x>
-      <y>191</y>
-      <val>4274768.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCORR_NORMED->
+      <x>286</x>
+      <y>113</y>
+      <val>4.0362652500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72301,14 +72301,14 @@
       <y>210</y>
       <val>7.6393628120422363e-001</val></last>
     <rng1>
-      <x>229</x>
-      <y>12</y>
-      <val>7.4641734361648560e-001</val></rng1>
+      <x>306</x>
+      <y>163</y>
+      <val>7.7332204580307007e-001</val></rng1>
     <rng2>
-      <x>95</x>
-      <y>187</y>
-      <val>7.3402088880538940e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCOEFF->
+      <x>74</x>
+      <y>178</y>
+      <val>7.6626479625701904e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72319,14 +72319,14 @@
       <y>210</y>
       <val>5.6524500000000000e+004</val></last>
     <rng1>
-      <x>68</x>
-      <y>123</y>
-      <val>24445.</val></rng1>
+      <x>256</x>
+      <y>29</y>
+      <val>5.9278750000000000e+004</val></rng1>
     <rng2>
-      <x>6</x>
-      <y>170</y>
-      <val>-5.4874250000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCOEFF_NORMED->
+      <x>197</x>
+      <y>19</y>
+      <val>6.7716750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72337,14 +72337,14 @@
       <y>210</y>
       <val>4.3337106704711914e-002</val></last>
     <rng1>
-      <x>30</x>
-      <y>97</y>
-      <val>5.1530588418245316e-002</val></rng1>
+      <x>168</x>
+      <y>178</y>
+      <val>-1.6159553080797195e-002</val></rng1>
     <rng2>
-      <x>123</x>
-      <y>20</y>
-      <val>-2.9219325631856918e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_SQDIFF->
+      <x>236</x>
+      <y>52</y>
+      <val>8.6872152984142303e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72355,14 +72355,14 @@
       <y>224</y>
       <val>2789388.</val></last>
     <rng1>
-      <x>173</x>
-      <y>38</y>
-      <val>2918878.</val></rng1>
+      <x>144</x>
+      <y>219</y>
+      <val>3058722.</val></rng1>
     <rng2>
-      <x>214</x>
-      <y>165</y>
-      <val>2733898.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_SQDIFF_NORMED->
+      <x>63</x>
+      <y>188</y>
+      <val>2758501.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72373,14 +72373,14 @@
       <y>224</y>
       <val>4.9799728393554688e-001</val></last>
     <rng1>
-      <x>144</x>
-      <y>86</y>
-      <val>5.3169155120849609e-001</val></rng1>
+      <x>286</x>
+      <y>95</y>
+      <val>5.6129288673400879e-001</val></rng1>
     <rng2>
-      <x>52</x>
-      <y>52</y>
-      <val>4.3230277299880981e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCORR->
+      <x>41</x>
+      <y>109</y>
+      <val>5.2581530809402466e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72391,14 +72391,14 @@
       <y>224</y>
       <val>4212818.</val></last>
     <rng1>
-      <x>230</x>
-      <y>174</y>
-      <val>4697419.</val></rng1>
+      <x>247</x>
+      <y>112</y>
+      <val>4312840.</val></rng1>
     <rng2>
-      <x>182</x>
-      <y>62</y>
-      <val>4184616.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCORR_NORMED->
+      <x>51</x>
+      <y>181</y>
+      <val>4462132.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72409,14 +72409,14 @@
       <y>224</y>
       <val>7.5212681293487549e-001</val></last>
     <rng1>
-      <x>209</x>
-      <y>29</y>
-      <val>7.5271034240722656e-001</val></rng1>
+      <x>157</x>
+      <y>43</y>
+      <val>7.4562007188796997e-001</val></rng1>
     <rng2>
-      <x>67</x>
-      <y>169</y>
-      <val>7.0833557844161987e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCOEFF->
+      <x>124</x>
+      <y>69</y>
+      <val>7.6674419641494751e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72427,14 +72427,14 @@
       <y>224</y>
       <val>2.5159250000000000e+004</val></last>
     <rng1>
-      <x>121</x>
-      <y>69</y>
-      <val>-85693.</val></rng1>
+      <x>224</x>
+      <y>149</y>
+      <val>1.2309775000000000e+005</val></rng1>
     <rng2>
-      <x>300</x>
-      <y>65</y>
-      <val>-65339.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCOEFF_NORMED->
+      <x>39</x>
+      <y>21</y>
+      <val>117338.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72445,14 +72445,14 @@
       <y>224</y>
       <val>1.7799027264118195e-002</val></last>
     <rng1>
-      <x>84</x>
-      <y>99</y>
-      <val>1.0759060084819794e-001</val></rng1>
+      <x>150</x>
+      <y>44</y>
+      <val>-1.7321225255727768e-002</val></rng1>
     <rng2>
-      <x>174</x>
-      <y>102</y>
-      <val>2.8851695358753204e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---320x240--16x16--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_SQDIFF->
+      <x>13</x>
+      <y>213</y>
+      <val>5.7650511153042316e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---320x240--16x16--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72463,14 +72463,14 @@
       <y>468</y>
       <val>1699471.</val></last>
     <rng1>
-      <x>93</x>
-      <y>168</y>
-      <val>1500142.</val></rng1>
+      <x>623</x>
+      <y>169</y>
+      <val>1548799.</val></rng1>
     <rng2>
-      <x>431</x>
-      <y>155</y>
-      <val>1571436.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_SQDIFF_NORMED->
+      <x>565</x>
+      <y>37</y>
+      <val>1465223.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72481,14 +72481,14 @@
       <y>468</y>
       <val>5.6150060892105103e-001</val></last>
     <rng1>
-      <x>339</x>
-      <y>293</y>
-      <val>6.1643809080123901e-001</val></rng1>
+      <x>278</x>
+      <y>119</y>
+      <val>5.3843837976455688e-001</val></rng1>
     <rng2>
-      <x>387</x>
-      <y>125</y>
-      <val>4.7594773769378662e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCORR->
+      <x>594</x>
+      <y>120</y>
+      <val>5.6009334325790405e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72499,14 +72499,14 @@
       <y>468</y>
       <val>2177531.</val></last>
     <rng1>
-      <x>8</x>
-      <y>202</y>
-      <val>2384268.</val></rng1>
+      <x>296</x>
+      <y>257</y>
+      <val>2369875.</val></rng1>
     <rng2>
-      <x>234</x>
-      <y>112</y>
-      <val>2246954.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCORR_NORMED->
+      <x>537</x>
+      <y>447</y>
+      <val>2401698.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72517,14 +72517,14 @@
       <y>468</y>
       <val>7.1961718797683716e-001</val></last>
     <rng1>
-      <x>616</x>
-      <y>176</y>
-      <val>7.3222827911376953e-001</val></rng1>
+      <x>176</x>
+      <y>59</y>
+      <val>7.7472460269927979e-001</val></rng1>
     <rng2>
-      <x>575</x>
-      <y>367</y>
-      <val>7.4415451288223267e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCOEFF->
+      <x>447</x>
+      <y>301</y>
+      <val>7.4857574701309204e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72535,14 +72535,14 @@
       <y>468</y>
       <val>-7.7164750000000000e+004</val></last>
     <rng1>
-      <x>349</x>
-      <y>164</y>
-      <val>39481.</val></rng1>
+      <x>353</x>
+      <y>222</y>
+      <val>-5.0995250000000000e+004</val></rng1>
     <rng2>
-      <x>496</x>
-      <y>134</y>
-      <val>1.3688250000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCOEFF_NORMED->
+      <x>548</x>
+      <y>284</y>
+      <val>-6.1885750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72553,14 +72553,14 @@
       <y>468</y>
       <val>-1.0088229924440384e-001</val></last>
     <rng1>
-      <x>512</x>
-      <y>332</y>
-      <val>6.4438381232321262e-003</val></rng1>
+      <x>564</x>
+      <y>92</y>
+      <val>2.7275688480585814e-003</val></rng1>
     <rng2>
-      <x>163</x>
-      <y>141</y>
-      <val>6.8455025553703308e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_SQDIFF->
+      <x>199</x>
+      <y>274</y>
+      <val>-7.3684796690940857e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72571,14 +72571,14 @@
       <y>471</y>
       <val>2.6978065000000000e+006</val></last>
     <rng1>
-      <x>357</x>
-      <y>408</y>
-      <val>3.2044705000000000e+006</val></rng1>
+      <x>558</x>
+      <y>319</y>
+      <val>2525546.</val></rng1>
     <rng2>
-      <x>69</x>
-      <y>157</y>
-      <val>2588528.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_SQDIFF_NORMED->
+      <x>71</x>
+      <y>423</y>
+      <val>2951758.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72589,14 +72589,14 @@
       <y>471</y>
       <val>5.0262588262557983e-001</val></last>
     <rng1>
-      <x>535</x>
-      <y>230</y>
-      <val>5.5768018960952759e-001</val></rng1>
+      <x>523</x>
+      <y>451</y>
+      <val>5.1942539215087891e-001</val></rng1>
     <rng2>
-      <x>117</x>
-      <y>19</y>
-      <val>4.7079429030418396e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCORR->
+      <x>588</x>
+      <y>300</y>
+      <val>5.4147511720657349e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72607,14 +72607,14 @@
       <y>471</y>
       <val>4.0275607500000000e+006</val></last>
     <rng1>
-      <x>488</x>
-      <y>301</y>
-      <val>4332681.</val></rng1>
+      <x>7</x>
+      <y>302</y>
+      <val>3.7720077500000000e+006</val></rng1>
     <rng2>
-      <x>297</x>
-      <y>292</y>
-      <val>3.8296042500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCORR_NORMED->
+      <x>171</x>
+      <y>404</y>
+      <val>4.0101457500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72625,14 +72625,14 @@
       <y>471</y>
       <val>7.5034534931182861e-001</val></last>
     <rng1>
-      <x>395</x>
-      <y>156</y>
-      <val>7.0647954940795898e-001</val></rng1>
+      <x>558</x>
+      <y>420</y>
+      <val>7.5791442394256592e-001</val></rng1>
     <rng2>
-      <x>109</x>
-      <y>355</y>
-      <val>7.6505392789840698e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCOEFF->
+      <x>261</x>
+      <y>373</y>
+      <val>7.4757516384124756e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72643,14 +72643,14 @@
       <y>471</y>
       <val>1.9801250000000000e+004</val></last>
     <rng1>
-      <x>269</x>
-      <y>363</y>
-      <val>-1.7327975000000000e+005</val></rng1>
+      <x>362</x>
+      <y>383</y>
+      <val>-2.1287750000000000e+004</val></rng1>
     <rng2>
-      <x>296</x>
-      <y>381</y>
-      <val>130184.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCOEFF_NORMED->
+      <x>204</x>
+      <y>159</y>
+      <val>-80278.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72661,14 +72661,14 @@
       <y>471</y>
       <val>1.4281321316957474e-002</val></last>
     <rng1>
-      <x>196</x>
-      <y>430</y>
-      <val>-2.8525400906801224e-002</val></rng1>
+      <x>593</x>
+      <y>176</y>
+      <val>-1.8225803505629301e-003</val></rng1>
     <rng2>
-      <x>78</x>
-      <y>335</y>
-      <val>4.1361652314662933e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_SQDIFF->
+      <x>84</x>
+      <y>347</y>
+      <val>-2.5502247735857964e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72679,14 +72679,14 @@
       <y>450</y>
       <val>2725545.</val></last>
     <rng1>
-      <x>459</x>
-      <y>441</y>
-      <val>2849761.</val></rng1>
+      <x>540</x>
+      <y>407</y>
+      <val>2627737.</val></rng1>
     <rng2>
-      <x>351</x>
-      <y>68</y>
-      <val>2953013.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_SQDIFF_NORMED->
+      <x>369</x>
+      <y>293</y>
+      <val>2640866.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72697,14 +72697,14 @@
       <y>450</y>
       <val>5.3352063894271851e-001</val></last>
     <rng1>
-      <x>456</x>
-      <y>420</y>
-      <val>5.3019714355468750e-001</val></rng1>
+      <x>584</x>
+      <y>436</y>
+      <val>5.0296980142593384e-001</val></rng1>
     <rng2>
-      <x>560</x>
-      <y>174</y>
-      <val>4.3635565042495728e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCORR->
+      <x>603</x>
+      <y>2</y>
+      <val>4.6151497960090637e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72715,14 +72715,14 @@
       <y>450</y>
       <val>3756163.</val></last>
     <rng1>
-      <x>462</x>
-      <y>83</y>
-      <val>3.9355185000000000e+006</val></rng1>
+      <x>615</x>
+      <y>253</y>
+      <val>4258766.</val></rng1>
     <rng2>
-      <x>166</x>
-      <y>337</y>
-      <val>3.9219702500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCORR_NORMED->
+      <x>157</x>
+      <y>279</y>
+      <val>3.7932887500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72733,14 +72733,14 @@
       <y>450</y>
       <val>7.3528736829757690e-001</val></last>
     <rng1>
-      <x>379</x>
-      <y>407</y>
-      <val>7.3322570323944092e-001</val></rng1>
+      <x>233</x>
+      <y>152</y>
+      <val>7.3861986398696899e-001</val></rng1>
     <rng2>
-      <x>78</x>
-      <y>130</y>
-      <val>7.4323058128356934e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCOEFF->
+      <x>541</x>
+      <y>437</y>
+      <val>7.3508554697036743e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72751,14 +72751,14 @@
       <y>450</y>
       <val>-51744.</val></last>
     <rng1>
-      <x>155</x>
-      <y>184</y>
-      <val>-5.6986500000000000e+004</val></rng1>
+      <x>299</x>
+      <y>158</y>
+      <val>1.2356750000000000e+005</val></rng1>
     <rng2>
-      <x>565</x>
-      <y>369</y>
-      <val>-40531.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCOEFF_NORMED->
+      <x>545</x>
+      <y>315</y>
+      <val>4.5383250000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72769,14 +72769,14 @@
       <y>450</y>
       <val>-3.9915397763252258e-002</val></last>
     <rng1>
-      <x>433</x>
-      <y>210</y>
-      <val>-3.1414113938808441e-002</val></rng1>
+      <x>133</x>
+      <y>43</y>
+      <val>4.2882412672042847e-002</val></rng1>
     <rng2>
-      <x>357</x>
-      <y>383</y>
-      <val>-2.1395282819867134e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_SQDIFF->
+      <x>103</x>
+      <y>30</y>
+      <val>4.7853134572505951e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72787,14 +72787,14 @@
       <y>464</y>
       <val>2775179.</val></last>
     <rng1>
-      <x>487</x>
-      <y>234</y>
-      <val>2843555.</val></rng1>
+      <x>142</x>
+      <y>146</y>
+      <val>3050824.</val></rng1>
     <rng2>
-      <x>199</x>
-      <y>36</y>
-      <val>2703508.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_SQDIFF_NORMED->
+      <x>361</x>
+      <y>343</y>
+      <val>2533098.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72805,14 +72805,14 @@
       <y>464</y>
       <val>5.1247113943099976e-001</val></last>
     <rng1>
-      <x>388</x>
-      <y>66</y>
-      <val>5.1639330387115479e-001</val></rng1>
+      <x>435</x>
+      <y>202</y>
+      <val>4.6010422706604004e-001</val></rng1>
     <rng2>
-      <x>234</x>
-      <y>333</y>
-      <val>4.8256638646125793e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCORR->
+      <x>37</x>
+      <y>368</y>
+      <val>5.6785202026367188e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72823,14 +72823,14 @@
       <y>464</y>
       <val>4038034.</val></last>
     <rng1>
-      <x>161</x>
-      <y>178</y>
-      <val>4104919.</val></rng1>
+      <x>228</x>
+      <y>385</y>
+      <val>4298287.</val></rng1>
     <rng2>
-      <x>317</x>
-      <y>39</y>
-      <val>4203952.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCORR_NORMED->
+      <x>152</x>
+      <y>157</y>
+      <val>4273115.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72841,14 +72841,14 @@
       <y>464</y>
       <val>7.4579036235809326e-001</val></last>
     <rng1>
-      <x>235</x>
-      <y>446</y>
-      <val>7.4115180969238281e-001</val></rng1>
+      <x>582</x>
+      <y>173</y>
+      <val>7.4727737903594971e-001</val></rng1>
     <rng2>
-      <x>621</x>
-      <y>300</y>
-      <val>7.3715347051620483e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCOEFF->
+      <x>445</x>
+      <y>30</y>
+      <val>7.5428342819213867e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72859,14 +72859,14 @@
       <y>464</y>
       <val>3.5954500000000000e+004</val></last>
     <rng1>
-      <x>313</x>
-      <y>435</y>
-      <val>-16039.</val></rng1>
+      <x>501</x>
+      <y>225</y>
+      <val>9.9381500000000000e+004</val></rng1>
     <rng2>
-      <x>54</x>
-      <y>269</y>
-      <val>191273.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCOEFF_NORMED->
+      <x>56</x>
+      <y>39</y>
+      <val>3.6645000000000000e+003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72877,14 +72877,14 @@
       <y>464</y>
       <val>2.5604525581002235e-002</val></last>
     <rng1>
-      <x>124</x>
-      <y>457</y>
-      <val>-4.9913931638002396e-002</val></rng1>
+      <x>170</x>
+      <y>347</y>
+      <val>-4.7203402966260910e-002</val></rng1>
     <rng2>
-      <x>11</x>
-      <y>223</y>
-      <val>-3.6732284352183342e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---640x480--16x16--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_SQDIFF->
+      <x>88</x>
+      <y>340</y>
+      <val>5.8088447898626328e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---640x480--16x16--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72895,14 +72895,14 @@
       <y>588</y>
       <val>1441038.</val></last>
     <rng1>
-      <x>734</x>
-      <y>302</y>
-      <val>1361185.</val></rng1>
+      <x>35</x>
+      <y>354</y>
+      <val>1698351.</val></rng1>
     <rng2>
-      <x>289</x>
-      <y>227</y>
-      <val>1633804.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_SQDIFF_NORMED->
+      <x>70</x>
+      <y>255</y>
+      <val>1724915.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72913,14 +72913,14 @@
       <y>588</y>
       <val>4.8488834500312805e-001</val></last>
     <rng1>
-      <x>766</x>
-      <y>265</y>
-      <val>5.2181482315063477e-001</val></rng1>
+      <x>49</x>
+      <y>346</y>
+      <val>5.4082030057907104e-001</val></rng1>
     <rng2>
-      <x>236</x>
-      <y>33</y>
-      <val>4.9561956524848938e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCORR->
+      <x>443</x>
+      <y>278</y>
+      <val>5.3432840108871460e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72931,14 +72931,14 @@
       <y>588</y>
       <val>2261850.</val></last>
     <rng1>
-      <x>701</x>
-      <y>437</y>
-      <val>1978577.</val></rng1>
+      <x>702</x>
+      <y>574</y>
+      <val>2361016.</val></rng1>
     <rng2>
-      <x>446</x>
-      <y>106</y>
-      <val>2275494.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCORR_NORMED->
+      <x>295</x>
+      <y>549</y>
+      <val>2254511.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72949,14 +72949,14 @@
       <y>588</y>
       <val>7.6024556159973145e-001</val></last>
     <rng1>
-      <x>261</x>
-      <y>471</y>
-      <val>7.4479937553405762e-001</val></rng1>
+      <x>319</x>
+      <y>128</y>
+      <val>6.7971628904342651e-001</val></rng1>
     <rng2>
-      <x>531</x>
-      <y>71</y>
-      <val>7.2489923238754272e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCOEFF->
+      <x>210</x>
+      <y>271</y>
+      <val>7.5882405042648315e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72967,14 +72967,14 @@
       <y>588</y>
       <val>7.8975250000000000e+004</val></last>
     <rng1>
-      <x>461</x>
-      <y>532</y>
-      <val>-3.3342500000000000e+003</val></rng1>
+      <x>384</x>
+      <y>384</y>
+      <val>3.7927500000000000e+004</val></rng1>
     <rng2>
-      <x>527</x>
-      <y>548</y>
-      <val>1.4307775000000000e+005</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCOEFF_NORMED->
+      <x>433</x>
+      <y>359</y>
+      <val>12452.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -72985,14 +72985,14 @@
       <y>588</y>
       <val>9.9664613604545593e-002</val></last>
     <rng1>
-      <x>496</x>
-      <y>220</y>
-      <val>1.3849838636815548e-002</val></rng1>
+      <x>684</x>
+      <y>118</y>
+      <val>2.2181689739227295e-002</val></rng1>
     <rng2>
-      <x>19</x>
-      <y>373</y>
-      <val>-3.0535465106368065e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_SQDIFF->
+      <x>399</x>
+      <y>309</y>
+      <val>-7.5040371157228947e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73003,14 +73003,14 @@
       <y>591</y>
       <val>2768128.</val></last>
     <rng1>
-      <x>692</x>
-      <y>99</y>
-      <val>3078051.</val></rng1>
+      <x>760</x>
+      <y>52</y>
+      <val>2695845.</val></rng1>
     <rng2>
-      <x>740</x>
-      <y>127</y>
-      <val>2787164.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_SQDIFF_NORMED->
+      <x>484</x>
+      <y>409</y>
+      <val>2928349.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73021,14 +73021,14 @@
       <y>591</y>
       <val>5.2862381935119629e-001</val></last>
     <rng1>
-      <x>122</x>
-      <y>564</y>
-      <val>4.7454708814620972e-001</val></rng1>
+      <x>344</x>
+      <y>565</y>
+      <val>5.2747005224227905e-001</val></rng1>
     <rng2>
-      <x>53</x>
-      <y>247</y>
-      <val>5.3389543294906616e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCORR->
+      <x>254</x>
+      <y>188</y>
+      <val>5.0460433959960938e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73039,14 +73039,14 @@
       <y>591</y>
       <val>3870213.</val></last>
     <rng1>
-      <x>678</x>
-      <y>59</y>
-      <val>4366914.</val></rng1>
+      <x>222</x>
+      <y>312</y>
+      <val>4194325.</val></rng1>
     <rng2>
-      <x>267</x>
+      <x>125</x>
       <y>421</y>
-      <val>4226116.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCORR_NORMED->
+      <val>4.3196535000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73057,14 +73057,14 @@
       <y>591</y>
       <val>7.3876625299453735e-001</val></last>
     <rng1>
-      <x>504</x>
-      <y>121</y>
-      <val>7.2421211004257202e-001</val></rng1>
+      <x>429</x>
+      <y>413</y>
+      <val>7.3496150970458984e-001</val></rng1>
     <rng2>
-      <x>149</x>
-      <y>1</y>
-      <val>7.1540796756744385e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCOEFF->
+      <x>278</x>
+      <y>294</y>
+      <val>7.6245594024658203e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73075,14 +73075,14 @@
       <y>591</y>
       <val>2.2560250000000000e+004</val></last>
     <rng1>
-      <x>128</x>
-      <y>442</y>
-      <val>89630.</val></rng1>
+      <x>183</x>
+      <y>489</y>
+      <val>-8.8350000000000000e+002</val></rng1>
     <rng2>
-      <x>103</x>
-      <y>446</y>
-      <val>31888.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCOEFF_NORMED->
+      <x>420</x>
+      <y>377</y>
+      <val>7.9811250000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73093,14 +73093,14 @@
       <y>591</y>
       <val>1.5957349911332130e-002</val></last>
     <rng1>
-      <x>537</x>
-      <y>327</y>
-      <val>2.1479407325387001e-002</val></rng1>
+      <x>160</x>
+      <y>379</y>
+      <val>-1.0011521726846695e-001</val></rng1>
     <rng2>
-      <x>218</x>
-      <y>503</y>
-      <val>-4.5351196080446243e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_SQDIFF->
+      <x>255</x>
+      <y>231</y>
+      <val>2.5758152827620506e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73111,14 +73111,14 @@
       <y>570</y>
       <val>2504135.</val></last>
     <rng1>
-      <x>381</x>
-      <y>140</y>
-      <val>2.9860935000000000e+006</val></rng1>
+      <x>349</x>
+      <y>135</y>
+      <val>2710534.</val></rng1>
     <rng2>
-      <x>241</x>
-      <y>366</y>
-      <val>2.7708085000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_SQDIFF_NORMED->
+      <x>363</x>
+      <y>268</y>
+      <val>2.8085355000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73129,14 +73129,14 @@
       <y>570</y>
       <val>4.8120972514152527e-001</val></last>
     <rng1>
-      <x>181</x>
-      <y>382</y>
-      <val>5.6645298004150391e-001</val></rng1>
+      <x>449</x>
+      <y>77</y>
+      <val>5.1717394590377808e-001</val></rng1>
     <rng2>
-      <x>728</x>
-      <y>547</y>
-      <val>4.6941488981246948e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCORR->
+      <x>354</x>
+      <y>347</y>
+      <val>5.6451272964477539e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73147,14 +73147,14 @@
       <y>570</y>
       <val>3957567.</val></last>
     <rng1>
-      <x>94</x>
-      <y>50</y>
-      <val>4316731.</val></rng1>
+      <x>104</x>
+      <y>0</y>
+      <val>3.9189757500000000e+006</val></rng1>
     <rng2>
-      <x>11</x>
-      <y>215</y>
-      <val>4.2089485000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCORR_NORMED->
+      <x>325</x>
+      <y>563</y>
+      <val>3.5067767500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73165,14 +73165,14 @@
       <y>570</y>
       <val>7.6044225692749023e-001</val></last>
     <rng1>
-      <x>276</x>
-      <y>511</y>
-      <val>7.0230609178543091e-001</val></rng1>
+      <x>311</x>
+      <y>262</y>
+      <val>7.3521924018859863e-001</val></rng1>
     <rng2>
-      <x>241</x>
-      <y>387</y>
-      <val>7.0834630727767944e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCOEFF->
+      <x>729</x>
+      <y>370</y>
+      <val>7.4269825220108032e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73183,14 +73183,14 @@
       <y>570</y>
       <val>85805.</val></last>
     <rng1>
-      <x>736</x>
-      <y>198</y>
-      <val>-3.9472500000000000e+003</val></rng1>
+      <x>646</x>
+      <y>227</y>
+      <val>-4.2219500000000000e+004</val></rng1>
     <rng2>
-      <x>472</x>
-      <y>317</y>
-      <val>1.1221450000000000e+005</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCOEFF_NORMED->
+      <x>433</x>
+      <y>496</y>
+      <val>7.2545250000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73201,14 +73201,14 @@
       <y>570</y>
       <val>6.4758278429508209e-002</val></last>
     <rng1>
-      <x>416</x>
-      <y>78</y>
-      <val>1.1638954281806946e-001</val></rng1>
+      <x>639</x>
+      <y>372</y>
+      <val>1.1995226144790649e-001</val></rng1>
     <rng2>
-      <x>448</x>
-      <y>499</y>
-      <val>4.0444809943437576e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_SQDIFF->
+      <x>258</x>
+      <y>202</y>
+      <val>1.4333475381135941e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73219,14 +73219,14 @@
       <y>584</y>
       <val>2730718.</val></last>
     <rng1>
-      <x>685</x>
-      <y>70</y>
-      <val>2872605.</val></rng1>
+      <x>206</x>
+      <y>39</y>
+      <val>3107779.</val></rng1>
     <rng2>
-      <x>445</x>
-      <y>504</y>
-      <val>2886325.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_SQDIFF_NORMED->
+      <x>597</x>
+      <y>168</y>
+      <val>3167517.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73237,14 +73237,14 @@
       <y>584</y>
       <val>5.1943701505661011e-001</val></last>
     <rng1>
-      <x>623</x>
-      <y>296</y>
-      <val>4.8928794264793396e-001</val></rng1>
+      <x>325</x>
+      <y>24</y>
+      <val>5.0723868608474731e-001</val></rng1>
     <rng2>
-      <x>165</x>
-      <y>209</y>
-      <val>4.9287787079811096e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCORR->
+      <x>267</x>
+      <y>340</y>
+      <val>5.3250604867935181e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73255,14 +73255,14 @@
       <y>584</y>
       <val>3911465.</val></last>
     <rng1>
-      <x>196</x>
-      <y>288</y>
-      <val>4134463.</val></rng1>
+      <x>660</x>
+      <y>393</y>
+      <val>4120759.</val></rng1>
     <rng2>
-      <x>76</x>
-      <y>132</y>
-      <val>4317908.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCORR_NORMED->
+      <x>750</x>
+      <y>529</y>
+      <val>4074683.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73273,14 +73273,14 @@
       <y>584</y>
       <val>7.4411660432815552e-001</val></last>
     <rng1>
-      <x>342</x>
-      <y>23</y>
-      <val>7.4082237482070923e-001</val></rng1>
+      <x>8</x>
+      <y>90</y>
+      <val>7.6101541519165039e-001</val></rng1>
     <rng2>
-      <x>719</x>
-      <y>154</y>
-      <val>7.6415044069290161e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCOEFF->
+      <x>307</x>
+      <y>228</y>
+      <val>7.0399105548858643e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73291,14 +73291,14 @@
       <y>584</y>
       <val>7.2170500000000000e+004</val></last>
     <rng1>
-      <x>739</x>
-      <y>218</y>
-      <val>-1.3933325000000000e+005</val></rng1>
+      <x>252</x>
+      <y>460</y>
+      <val>1.3946500000000000e+004</val></rng1>
     <rng2>
-      <x>514</x>
-      <y>445</y>
-      <val>-152448.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCOEFF_NORMED->
+      <x>283</x>
+      <y>197</y>
+      <val>6.6947500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73309,14 +73309,14 @@
       <y>584</y>
       <val>5.0582900643348694e-002</val></last>
     <rng1>
-      <x>401</x>
-      <y>393</y>
-      <val>2.0042465999722481e-002</val></rng1>
+      <x>434</x>
+      <y>340</y>
+      <val>1.0526743531227112e-001</val></rng1>
     <rng2>
-      <x>368</x>
-      <y>262</y>
-      <val>5.8734297752380371e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---800x600--16x16--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_SQDIFF->
+      <x>102</x>
+      <y>219</y>
+      <val>1.0438519716262817e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---800x600--16x16--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73327,14 +73327,14 @@
       <y>756</y>
       <val>1584402.</val></last>
     <rng1>
-      <x>381</x>
-      <y>713</y>
-      <val>1314439.</val></rng1>
+      <x>445</x>
+      <y>566</y>
+      <val>1616289.</val></rng1>
     <rng2>
-      <x>108</x>
-      <y>412</y>
-      <val>1541970.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_SQDIFF_NORMED->
+      <x>581</x>
+      <y>225</y>
+      <val>1602199.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73345,14 +73345,14 @@
       <y>756</y>
       <val>5.1572865247726440e-001</val></last>
     <rng1>
-      <x>401</x>
-      <y>401</y>
-      <val>4.7824802994728088e-001</val></rng1>
+      <x>801</x>
+      <y>694</y>
+      <val>4.7507584095001221e-001</val></rng1>
     <rng2>
-      <x>66</x>
-      <y>453</y>
-      <val>4.7223275899887085e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCORR->
+      <x>448</x>
+      <y>597</y>
+      <val>6.0919177532196045e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73363,14 +73363,14 @@
       <y>756</y>
       <val>2281039.</val></last>
     <rng1>
-      <x>2</x>
-      <y>401</y>
-      <val>1962363.</val></rng1>
+      <x>128</x>
+      <y>221</y>
+      <val>2406204.</val></rng1>
     <rng2>
-      <x>578</x>
-      <y>243</y>
-      <val>2230349.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCORR_NORMED->
+      <x>908</x>
+      <y>625</y>
+      <val>2097726.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73381,14 +73381,14 @@
       <y>756</y>
       <val>7.4213576316833496e-001</val></last>
     <rng1>
-      <x>853</x>
-      <y>93</y>
-      <val>7.3568975925445557e-001</val></rng1>
+      <x>134</x>
+      <y>615</y>
+      <val>7.4193072319030762e-001</val></rng1>
     <rng2>
-      <x>184</x>
-      <y>593</y>
-      <val>7.4285042285919189e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCOEFF->
+      <x>681</x>
+      <y>246</y>
+      <val>7.5023221969604492e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73399,14 +73399,14 @@
       <y>756</y>
       <val>-2.9613250000000000e+004</val></last>
     <rng1>
-      <x>776</x>
-      <y>306</y>
-      <val>5.5173750000000000e+004</val></rng1>
+      <x>351</x>
+      <y>61</y>
+      <val>5.1851500000000000e+004</val></rng1>
     <rng2>
-      <x>878</x>
-      <y>408</y>
-      <val>4.7457500000000000e+003</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCOEFF_NORMED->
+      <x>398</x>
+      <y>257</y>
+      <val>-104524.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73417,14 +73417,14 @@
       <y>756</y>
       <val>-3.9331987500190735e-002</val></last>
     <rng1>
-      <x>876</x>
-      <y>698</y>
-      <val>-6.2715843319892883e-002</val></rng1>
+      <x>375</x>
+      <y>151</y>
+      <val>3.7288501858711243e-002</val></rng1>
     <rng2>
-      <x>750</x>
-      <y>682</y>
-      <val>1.1593668907880783e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_SQDIFF->
+      <x>600</x>
+      <y>733</y>
+      <val>-2.7815252542495728e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73435,14 +73435,14 @@
       <y>759</y>
       <val>2180970.</val></last>
     <rng1>
-      <x>155</x>
-      <y>681</y>
-      <val>2.6573105000000000e+006</val></rng1>
+      <x>598</x>
+      <y>545</y>
+      <val>2.5976735000000000e+006</val></rng1>
     <rng2>
-      <x>21</x>
-      <y>759</y>
-      <val>2.7475595000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_SQDIFF_NORMED->
+      <x>759</x>
+      <y>71</y>
+      <val>2.5863745000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73453,14 +73453,14 @@
       <y>759</y>
       <val>4.0661826729774475e-001</val></last>
     <rng1>
-      <x>236</x>
-      <y>354</y>
-      <val>5.1534968614578247e-001</val></rng1>
+      <x>368</x>
+      <y>512</y>
+      <val>5.7095557451248169e-001</val></rng1>
     <rng2>
-      <x>293</x>
-      <y>90</y>
-      <val>5.2566009759902954e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCORR->
+      <x>434</x>
+      <y>288</y>
+      <val>5.0859940052032471e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73471,14 +73471,14 @@
       <y>759</y>
       <val>4274382.</val></last>
     <rng1>
-      <x>478</x>
-      <y>414</y>
-      <val>3.7626097500000000e+006</val></rng1>
+      <x>811</x>
+      <y>434</y>
+      <val>3.9057862500000000e+006</val></rng1>
     <rng2>
-      <x>834</x>
-      <y>431</y>
-      <val>3.9970527500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCORR_NORMED->
+      <x>222</x>
+      <y>564</y>
+      <val>3916256.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73489,14 +73489,14 @@
       <y>759</y>
       <val>7.9685455560684204e-001</val></last>
     <rng1>
-      <x>900</x>
-      <y>265</y>
-      <val>7.3037344217300415e-001</val></rng1>
+      <x>559</x>
+      <y>396</y>
+      <val>7.6841562986373901e-001</val></rng1>
     <rng2>
-      <x>138</x>
-      <y>3</y>
-      <val>7.3032683134078979e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCOEFF->
+      <x>310</x>
+      <y>37</y>
+      <val>7.6262891292572021e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73507,14 +73507,14 @@
       <y>759</y>
       <val>2.7763150000000000e+005</val></last>
     <rng1>
-      <x>351</x>
-      <y>495</y>
-      <val>5.0041500000000000e+004</val></rng1>
+      <x>295</x>
+      <y>476</y>
+      <val>-1.7289500000000000e+004</val></rng1>
     <rng2>
-      <x>948</x>
-      <y>526</y>
-      <val>8.2942500000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCOEFF_NORMED->
+      <x>635</x>
+      <y>44</y>
+      <val>-5733.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73525,14 +73525,14 @@
       <y>759</y>
       <val>2.0341622829437256e-001</val></last>
     <rng1>
-      <x>56</x>
-      <y>469</y>
-      <val>-1.6703056171536446e-003</val></rng1>
+      <x>13</x>
+      <y>100</y>
+      <val>3.8192320615053177e-002</val></rng1>
     <rng2>
-      <x>183</x>
-      <y>321</y>
-      <val>6.7252904176712036e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_SQDIFF->
+      <x>482</x>
+      <y>442</y>
+      <val>6.1302851885557175e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73543,14 +73543,14 @@
       <y>738</y>
       <val>2418734.</val></last>
     <rng1>
-      <x>3</x>
-      <y>272</y>
-      <val>2.7476085000000000e+006</val></rng1>
+      <x>963</x>
+      <y>48</y>
+      <val>2780104.</val></rng1>
     <rng2>
-      <x>664</x>
-      <y>615</y>
-      <val>2.9910775000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_SQDIFF_NORMED->
+      <x>392</x>
+      <y>92</y>
+      <val>2.9624835000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73561,14 +73561,14 @@
       <y>738</y>
       <val>4.7990277409553528e-001</val></last>
     <rng1>
-      <x>105</x>
-      <y>736</y>
-      <val>6.0079574584960938e-001</val></rng1>
+      <x>936</x>
+      <y>535</y>
+      <val>4.8220962285995483e-001</val></rng1>
     <rng2>
-      <x>312</x>
-      <y>179</y>
-      <val>4.7725662589073181e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCORR->
+      <x>65</x>
+      <y>174</y>
+      <val>4.9529683589935303e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73579,14 +73579,14 @@
       <y>738</y>
       <val>3.8332855000000000e+006</val></last>
     <rng1>
-      <x>306</x>
-      <y>511</y>
-      <val>3704537.</val></rng1>
+      <x>717</x>
+      <y>57</y>
+      <val>3.7708622500000000e+006</val></rng1>
     <rng2>
-      <x>942</x>
-      <y>511</y>
-      <val>3.7696637500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCORR_NORMED->
+      <x>240</x>
+      <y>635</y>
+      <val>3.8425907500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73597,14 +73597,14 @@
       <y>738</y>
       <val>7.6013535261154175e-001</val></last>
     <rng1>
-      <x>56</x>
-      <y>320</y>
-      <val>6.8687319755554199e-001</val></rng1>
+      <x>613</x>
+      <y>733</y>
+      <val>7.2836679220199585e-001</val></rng1>
     <rng2>
-      <x>786</x>
-      <y>258</y>
-      <val>7.4945384263992310e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCOEFF->
+      <x>4</x>
+      <y>109</y>
+      <val>7.2949755191802979e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73615,14 +73615,14 @@
       <y>738</y>
       <val>1.2630425000000000e+005</val></last>
     <rng1>
-      <x>23</x>
-      <y>211</y>
-      <val>-3.2087500000000000e+003</val></rng1>
+      <x>229</x>
+      <y>406</y>
+      <val>-9.9135000000000000e+003</val></rng1>
     <rng2>
-      <x>846</x>
-      <y>348</y>
-      <val>102480.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCOEFF_NORMED->
+      <x>118</x>
+      <y>550</y>
+      <val>-112210.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73633,14 +73633,14 @@
       <y>738</y>
       <val>9.3020208179950714e-002</val></last>
     <rng1>
-      <x>867</x>
-      <y>421</y>
-      <val>-2.6919091120362282e-002</val></rng1>
+      <x>987</x>
+      <y>304</y>
+      <val>-3.0665207654237747e-002</val></rng1>
     <rng2>
-      <x>845</x>
-      <y>276</y>
-      <val>9.2503823339939117e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_SQDIFF->
+      <x>348</x>
+      <y>396</y>
+      <val>-1.0318188369274139e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73651,14 +73651,14 @@
       <y>752</y>
       <val>3070940.</val></last>
     <rng1>
-      <x>663</x>
-      <y>647</y>
-      <val>3015252.</val></rng1>
+      <x>496</x>
+      <y>142</y>
+      <val>3097215.</val></rng1>
     <rng2>
-      <x>476</x>
-      <y>647</y>
-      <val>2771939.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_SQDIFF_NORMED->
+      <x>678</x>
+      <y>265</y>
+      <val>3168828.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73669,14 +73669,14 @@
       <y>752</y>
       <val>5.5063724517822266e-001</val></last>
     <rng1>
-      <x>88</x>
-      <y>476</y>
-      <val>4.9200460314750671e-001</val></rng1>
+      <x>1005</x>
+      <y>640</y>
+      <val>4.7430944442749023e-001</val></rng1>
     <rng2>
-      <x>85</x>
-      <y>101</y>
-      <val>5.4044830799102783e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCORR->
+      <x>757</x>
+      <y>282</y>
+      <val>4.9661371111869812e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73687,14 +73687,14 @@
       <y>752</y>
       <val>4048886.</val></last>
     <rng1>
-      <x>785</x>
-      <y>59</y>
-      <val>4057055.</val></rng1>
+      <x>1002</x>
+      <y>496</y>
+      <val>4076409.</val></rng1>
     <rng2>
-      <x>84</x>
-      <y>223</y>
-      <val>4102022.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCORR_NORMED->
+      <x>707</x>
+      <y>248</y>
+      <val>4346294.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73705,14 +73705,14 @@
       <y>752</y>
       <val>7.2556120157241821e-001</val></last>
     <rng1>
-      <x>646</x>
-      <y>466</y>
-      <val>7.3640203475952148e-001</val></rng1>
+      <x>258</x>
+      <y>688</y>
+      <val>7.7070534229278564e-001</val></rng1>
     <rng2>
-      <x>1002</x>
-      <y>281</y>
-      <val>7.3746657371520996e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCOEFF->
+      <x>632</x>
+      <y>656</y>
+      <val>7.5662934780120850e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73723,14 +73723,14 @@
       <y>752</y>
       <val>-147004.</val></last>
     <rng1>
-      <x>545</x>
-      <y>468</y>
-      <val>-138473.</val></rng1>
+      <x>833</x>
+      <y>122</y>
+      <val>-7.0360750000000000e+004</val></rng1>
     <rng2>
-      <x>95</x>
-      <y>420</y>
-      <val>1.7074125000000000e+005</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCOEFF_NORMED->
+      <x>789</x>
+      <y>678</y>
+      <val>1.6350000000000000e+002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73741,14 +73741,14 @@
       <y>752</y>
       <val>-1.0724585503339767e-001</val></last>
     <rng1>
-      <x>602</x>
-      <y>170</y>
-      <val>1.2699979543685913e-001</val></rng1>
+      <x>14</x>
+      <y>566</y>
+      <val>3.6456652451306581e-003</val></rng1>
     <rng2>
-      <x>482</x>
-      <y>343</y>
-      <val>-3.9437707513570786e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1024x768--16x16--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_SQDIFF->
+      <x>394</x>
+      <y>294</y>
+      <val>3.5025954246520996e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1024x768--16x16--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73759,14 +73759,14 @@
       <y>1012</y>
       <val>1657870.</val></last>
     <rng1>
-      <x>359</x>
-      <y>421</y>
-      <val>1483550.</val></rng1>
+      <x>1218</x>
+      <y>34</y>
+      <val>1375815.</val></rng1>
     <rng2>
-      <x>893</x>
-      <y>505</y>
-      <val>1876453.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_SQDIFF_NORMED->
+      <x>985</x>
+      <y>511</y>
+      <val>1600825.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73777,14 +73777,14 @@
       <y>1012</y>
       <val>5.0163173675537109e-001</val></last>
     <rng1>
-      <x>1186</x>
-      <y>745</y>
-      <val>5.4111260175704956e-001</val></rng1>
+      <x>742</x>
+      <y>522</y>
+      <val>5.5519437789916992e-001</val></rng1>
     <rng2>
-      <x>81</x>
-      <y>328</y>
-      <val>4.8565918207168579e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCORR->
+      <x>261</x>
+      <y>696</y>
+      <val>5.5307346582412720e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73795,14 +73795,14 @@
       <y>1012</y>
       <val>2478492.</val></last>
     <rng1>
-      <x>24</x>
-      <y>146</y>
-      <val>2247835.</val></rng1>
+      <x>454</x>
+      <y>943</y>
+      <val>2096719.</val></rng1>
     <rng2>
-      <x>163</x>
-      <y>475</y>
-      <val>2257238.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCORR_NORMED->
+      <x>720</x>
+      <y>595</y>
+      <val>2309109.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73813,14 +73813,14 @@
       <y>1012</y>
       <val>7.4970126152038574e-001</val></last>
     <rng1>
-      <x>1242</x>
-      <y>186</y>
-      <val>7.3057168722152710e-001</val></rng1>
+      <x>776</x>
+      <y>145</y>
+      <val>7.8090548515319824e-001</val></rng1>
     <rng2>
-      <x>896</x>
-      <y>278</y>
-      <val>7.7561247348785400e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCOEFF->
+      <x>883</x>
+      <y>769</y>
+      <val>7.5045001506805420e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73831,14 +73831,14 @@
       <y>1012</y>
       <val>-78061.</val></last>
     <rng1>
-      <x>60</x>
-      <y>429</y>
-      <val>1.1815025000000000e+005</val></rng1>
+      <x>1248</x>
+      <y>564</y>
+      <val>-4.4619250000000000e+004</val></rng1>
     <rng2>
-      <x>1065</x>
-      <y>947</y>
-      <val>-29622.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCOEFF_NORMED->
+      <x>612</x>
+      <y>536</y>
+      <val>-8.0803750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73849,14 +73849,14 @@
       <y>1012</y>
       <val>-1.0217688232660294e-001</val></last>
     <rng1>
-      <x>367</x>
-      <y>755</y>
-      <val>2.3583251982927322e-002</val></rng1>
+      <x>1264</x>
+      <y>666</y>
+      <val>8.6219049990177155e-002</val></rng1>
     <rng2>
-      <x>69</x>
-      <y>991</y>
-      <val>8.8091352954506874e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--12x12--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_SQDIFF->
+      <x>1262</x>
+      <y>31</y>
+      <val>-4.7502361238002777e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--12x12--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73867,14 +73867,14 @@
       <y>1015</y>
       <val>2802415.</val></last>
     <rng1>
-      <x>1052</x>
-      <y>324</y>
-      <val>2905560.</val></rng1>
-    <rng2>
-      <x>730</x>
+      <x>959</x>
       <y>471</y>
-      <val>2415766.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_SQDIFF_NORMED->
+      <val>2486991.</val></rng1>
+    <rng2>
+      <x>436</x>
+      <y>366</y>
+      <val>2628916.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73885,14 +73885,14 @@
       <y>1015</y>
       <val>4.7820317745208740e-001</val></last>
     <rng1>
-      <x>416</x>
-      <y>255</y>
-      <val>4.1490018367767334e-001</val></rng1>
+      <x>895</x>
+      <y>999</y>
+      <val>4.5757558941841125e-001</val></rng1>
     <rng2>
-      <x>75</x>
-      <y>1000</y>
-      <val>5.1993489265441895e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCORR->
+      <x>17</x>
+      <y>167</y>
+      <val>4.6475204825401306e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73903,14 +73903,14 @@
       <y>1015</y>
       <val>4457336.</val></last>
     <rng1>
-      <x>342</x>
-      <y>794</y>
-      <val>4291478.</val></rng1>
+      <x>11</x>
+      <y>847</y>
+      <val>4.2580355000000000e+006</val></rng1>
     <rng2>
-      <x>417</x>
-      <y>918</y>
-      <val>4.2426285000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCORR_NORMED->
+      <x>130</x>
+      <y>897</y>
+      <val>4.0181395000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73921,14 +73921,14 @@
       <y>1015</y>
       <val>7.6096791028976440e-001</val></last>
     <rng1>
-      <x>486</x>
-      <y>748</y>
-      <val>7.7811634540557861e-001</val></rng1>
+      <x>47</x>
+      <y>678</y>
+      <val>7.8033792972564697e-001</val></rng1>
     <rng2>
-      <x>857</x>
-      <y>264</y>
-      <val>7.6118278503417969e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCOEFF->
+      <x>339</x>
+      <y>725</y>
+      <val>7.6867812871932983e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73939,14 +73939,14 @@
       <y>1015</y>
       <val>-84375.</val></last>
     <rng1>
-      <x>940</x>
-      <y>949</y>
-      <val>-41311.</val></rng1>
+      <x>1172</x>
+      <y>716</y>
+      <val>17738.</val></rng1>
     <rng2>
-      <x>592</x>
-      <y>925</y>
-      <val>-152735.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCOEFF_NORMED->
+      <x>793</x>
+      <y>587</y>
+      <val>1.7636750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73957,14 +73957,14 @@
       <y>1015</y>
       <val>-6.2945187091827393e-002</val></last>
     <rng1>
-      <x>1175</x>
-      <y>838</y>
-      <val>1.0216762870550156e-001</val></rng1>
+      <x>928</x>
+      <y>361</y>
+      <val>-1.7210697755217552e-002</val></rng1>
     <rng2>
-      <x>67</x>
-      <y>3</y>
-      <val>-1.5842285938560963e-003</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--28x9--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_SQDIFF->
+      <x>535</x>
+      <y>689</y>
+      <val>1.3179673254489899e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--28x9--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73975,14 +73975,14 @@
       <y>994</y>
       <val>2.7889495000000000e+006</val></last>
     <rng1>
-      <x>142</x>
-      <y>225</y>
-      <val>2642374.</val></rng1>
+      <x>1270</x>
+      <y>100</y>
+      <val>2690172.</val></rng1>
     <rng2>
-      <x>45</x>
-      <y>217</y>
-      <val>2.2765195000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_SQDIFF_NORMED->
+      <x>418</x>
+      <y>3</y>
+      <val>2.3627515000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -73993,14 +73993,14 @@
       <y>994</y>
       <val>5.1879376173019409e-001</val></last>
     <rng1>
-      <x>1160</x>
-      <y>774</y>
-      <val>4.8119673132896423e-001</val></rng1>
+      <x>457</x>
+      <y>680</y>
+      <val>4.5770308375358582e-001</val></rng1>
     <rng2>
-      <x>405</x>
-      <y>776</y>
-      <val>5.1305288076400757e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCORR->
+      <x>265</x>
+      <y>236</y>
+      <val>4.6828103065490723e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74011,14 +74011,14 @@
       <y>994</y>
       <val>3.9813127500000000e+006</val></last>
     <rng1>
-      <x>735</x>
-      <y>281</y>
-      <val>3973365.</val></rng1>
+      <x>592</x>
+      <y>324</y>
+      <val>3.8726372500000000e+006</val></rng1>
     <rng2>
-      <x>722</x>
-      <y>116</y>
-      <val>4.1126987500000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCORR_NORMED->
+      <x>402</x>
+      <y>847</y>
+      <val>4.0473025000000000e+006</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74029,14 +74029,14 @@
       <y>994</y>
       <val>7.4079722166061401e-001</val></last>
     <rng1>
-      <x>240</x>
-      <y>928</y>
-      <val>7.3407077789306641e-001</val></rng1>
+      <x>1030</x>
+      <y>106</y>
+      <val>7.5922548770904541e-001</val></rng1>
     <rng2>
-      <x>1046</x>
-      <y>650</y>
-      <val>7.8224360942840576e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCOEFF->
+      <x>621</x>
+      <y>715</y>
+      <val>7.7260816097259521e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74047,14 +74047,14 @@
       <y>994</y>
       <val>-2.0095625000000000e+005</val></last>
     <rng1>
-      <x>91</x>
-      <y>566</y>
-      <val>1.1077675000000000e+005</val></rng1>
+      <x>282</x>
+      <y>456</y>
+      <val>4.0507500000000000e+004</val></rng1>
     <rng2>
-      <x>440</x>
-      <y>852</y>
-      <val>9.5936750000000000e+004</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCOEFF_NORMED->
+      <x>596</x>
+      <y>599</y>
+      <val>-2.8067500000000000e+003</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74065,14 +74065,14 @@
       <y>994</y>
       <val>-1.7022599279880524e-001</val></last>
     <rng1>
-      <x>1190</x>
-      <y>159</y>
-      <val>3.9717171341180801e-002</val></rng1>
+      <x>857</x>
+      <y>447</y>
+      <val>-5.7843774557113647e-002</val></rng1>
     <rng2>
-      <x>994</x>
-      <y>238</y>
-      <val>8.2104094326496124e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--8x30--TM_CCOEFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_SQDIFF->
+      <x>324</x>
+      <y>900</y>
+      <val>8.2186825573444366e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--8x30--TM_CCOEFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_SQDIFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74083,14 +74083,14 @@
       <y>1008</y>
       <val>2393971.</val></last>
     <rng1>
-      <x>607</x>
-      <y>172</y>
-      <val>3092356.</val></rng1>
+      <x>155</x>
+      <y>778</y>
+      <val>2554712.</val></rng1>
     <rng2>
-      <x>933</x>
-      <y>113</y>
-      <val>2639349.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_SQDIFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_SQDIFF_NORMED->
+      <x>423</x>
+      <y>630</y>
+      <val>2651176.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_SQDIFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_SQDIFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74101,14 +74101,14 @@
       <y>1008</y>
       <val>4.3061465024948120e-001</val></last>
     <rng1>
-      <x>586</x>
-      <y>767</y>
-      <val>4.7427585721015930e-001</val></rng1>
+      <x>453</x>
+      <y>398</y>
+      <val>4.4062229990959167e-001</val></rng1>
     <rng2>
-      <x>119</x>
-      <y>332</y>
-      <val>5.2491247653961182e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_SQDIFF_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCORR->
+      <x>138</x>
+      <y>965</y>
+      <val>4.2874482274055481e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_SQDIFF_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCORR->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74119,14 +74119,14 @@
       <y>1008</y>
       <val>4374452.</val></last>
     <rng1>
-      <x>967</x>
-      <y>800</y>
-      <val>4282104.</val></rng1>
+      <x>759</x>
+      <y>18</y>
+      <val>4230712.</val></rng1>
     <rng2>
-      <x>1006</x>
-      <y>433</y>
-      <val>4487763.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCORR->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCORR_NORMED->
+      <x>302</x>
+      <y>545</y>
+      <val>4347260.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCORR->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCORR_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74137,14 +74137,14 @@
       <y>1008</y>
       <val>7.8583896160125732e-001</val></last>
     <rng1>
-      <x>985</x>
-      <y>315</y>
-      <val>7.6168572902679443e-001</val></rng1>
+      <x>505</x>
+      <y>914</y>
+      <val>7.4098825454711914e-001</val></rng1>
     <rng2>
-      <x>336</x>
-      <y>533</y>
-      <val>7.7315264940261841e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCORR_NORMED->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCOEFF->
+      <x>877</x>
+      <y>584</y>
+      <val>7.5540804862976074e-001</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCORR_NORMED->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCOEFF->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74155,14 +74155,14 @@
       <y>1008</y>
       <val>1.0276050000000000e+005</val></last>
     <rng1>
-      <x>1131</x>
-      <y>564</y>
-      <val>1.2594750000000000e+005</val></rng1>
+      <x>1058</x>
+      <y>261</y>
+      <val>98801.</val></rng1>
     <rng2>
-      <x>17</x>
-      <y>498</y>
-      <val>-100429.</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCOEFF->
-<OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCOEFF_NORMED->
+      <x>1048</x>
+      <y>455</y>
+      <val>-62611.</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCOEFF->
+<OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCOEFF_NORMED->
   <result>
     <kind>720896</kind>
     <type>5</type>
@@ -74173,11 +74173,11 @@
       <y>1008</y>
       <val>7.9088300466537476e-002</val></last>
     <rng1>
-      <x>897</x>
-      <y>272</y>
-      <val>2.9557403177022934e-002</val></rng1>
+      <x>502</x>
+      <y>117</y>
+      <val>2.0486984401941299e-002</val></rng1>
     <rng2>
-      <x>805</x>
-      <y>471</y>
-      <val>2.6014132425189018e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_matchTemplate--matchTemplate---1280x1024--16x16--TM_CCOEFF_NORMED->
+      <x>84</x>
+      <y>45</y>
+      <val>7.1147158741950989e-002</val></rng2></result></OCL_ImgSize_TmplSize_Method_MatchTemplate--MatchTemplate---1280x1024--16x16--TM_CCOEFF_NORMED->
 </opencv_storage>
