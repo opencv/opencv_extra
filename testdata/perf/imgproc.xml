@@ -71810,4 +71810,42 @@
       <x>1881</x>
       <y>1740</y>
       <val>1.5663641691207886e-01</val></rng2></dst></OCL_PreCornerDetectFixture_PreCornerDetect--PreCornerDetect---3840x2160--32FC1->
+ <!-- resumed -->
+
+<OCL_AdaptiveBilateralFixture_adaptiveBilateral--adaptiveBilateral---640x480--8UC1->
+  <dst>
+    <kind>720896</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>248.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>146.</val></last>
+    <rng1>
+      <x>591</x>
+      <y>183</y>
+      <val>162.</val></rng1>
+    <rng2>
+      <x>508</x>
+      <y>51</y>
+      <val>226.</val></rng2></dst></OCL_AdaptiveBilateralFixture_adaptiveBilateral--adaptiveBilateral---640x480--8UC1->
+<OCL_AdaptiveBilateralFixture_adaptiveBilateral--adaptiveBilateral---1280x720--8UC1->
+  <dst>
+    <kind>720896</kind>
+    <type>0</type>
+    <min>5.</min>
+    <max>253.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>186.</val></last>
+    <rng1>
+      <x>209</x>
+      <y>52</y>
+      <val>168.</val></rng1>
+    <rng2>
+      <x>1013</x>
+      <y>548</y>
+      <val>200.</val></rng2></dst></OCL_AdaptiveBilateralFixture_adaptiveBilateral--adaptiveBilateral---1280x720--8UC1->
 </opencv_storage>
