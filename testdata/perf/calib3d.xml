@@ -384,4 +384,77 @@
       <data>
         1.6323631145448424e+01 -1.4986142900449511e+02
         4.0261972870888013e+02</data></val></tvec></PointsNum_SolvePnPRansac--SolvePnPRansac--91>
+ <!-- resumed -->
+<OCL_StereoBMFixture_StereoBM--StereoBM---32--11->
+  <disp>
+    <kind>655360</kind>
+    <type>3</type>
+    <min>-16.</min>
+    <max>496.</max>
+    <last>
+      <x>639</x>
+      <y>552</y>
+      <val>-16.</val></last>
+    <rng1>
+      <x>607</x>
+      <y>509</y>
+      <val>-16.</val></rng1>
+    <rng2>
+      <x>87</x>
+      <y>179</y>
+      <val>442.</val></rng2></disp></OCL_StereoBMFixture_StereoBM--StereoBM---32--11->
+<OCL_StereoBMFixture_StereoBM--StereoBM---32--21->
+  <disp>
+    <kind>655360</kind>
+    <type>3</type>
+    <min>-16.</min>
+    <max>496.</max>
+    <last>
+      <x>639</x>
+      <y>552</y>
+      <val>-16.</val></last>
+    <rng1>
+      <x>542</x>
+      <y>61</y>
+      <val>378.</val></rng1>
+    <rng2>
+      <x>486</x>
+      <y>120</y>
+      <val>-16.</val></rng2></disp></OCL_StereoBMFixture_StereoBM--StereoBM---32--21->
+<OCL_StereoBMFixture_StereoBM--StereoBM---64--11->
+  <disp>
+    <kind>655360</kind>
+    <type>3</type>
+    <min>-16.</min>
+    <max>1008.</max>
+    <last>
+      <x>639</x>
+      <y>552</y>
+      <val>-16.</val></last>
+    <rng1>
+      <x>334</x>
+      <y>275</y>
+      <val>525.</val></rng1>
+    <rng2>
+      <x>373</x>
+      <y>464</y>
+      <val>846.</val></rng2></disp></OCL_StereoBMFixture_StereoBM--StereoBM---64--11->
+<OCL_StereoBMFixture_StereoBM--StereoBM---64--21->
+  <disp>
+    <kind>655360</kind>
+    <type>3</type>
+    <min>-16.</min>
+    <max>1008.</max>
+    <last>
+      <x>639</x>
+      <y>552</y>
+      <val>-16.</val></last>
+    <rng1>
+      <x>432</x>
+      <y>45</y>
+      <val>383.</val></rng1>
+    <rng2>
+      <x>451</x>
+      <y>484</y>
+      <val>900.</val></rng2></disp></OCL_StereoBMFixture_StereoBM--StereoBM---64--21->
 </opencv_storage>
