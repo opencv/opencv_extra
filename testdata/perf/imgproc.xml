@@ -81260,4 +81260,76 @@
       <x>2000</x>
       <y>2132</y>
       <val>5.7502681016921997e-01</val></rng2></dst></OCL_RemapFixture_Remap--Remap---3840x2160--32FC3--INTER_LINEAR->
+<OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--640x480>
+  <dst>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>544</x>
+      <y>153</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>418</x>
+      <y>237</y>
+      <val>255.</val></rng2></dst></OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--640x480>
+<OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--1280x720>
+  <dst>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>304</x>
+      <y>116</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>1198</x>
+      <y>508</y>
+      <val>255.</val></rng2></dst></OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--1280x720>
+<OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--1920x1080>
+  <dst>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>358</x>
+      <y>98</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>1559</x>
+      <y>822</y>
+      <val>255.</val></rng2></dst></OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--1920x1080>
+<OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--3840x2160>
+  <dst>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>2159</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>572</x>
+      <y>575</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>2681</x>
+      <y>1925</y>
+      <val>255.</val></rng2></dst></OCL_CalcBackProjFixture_CalcBackProj--CalcBackProj--3840x2160>
 </opencv_storage>
