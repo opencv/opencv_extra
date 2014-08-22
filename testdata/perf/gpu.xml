@@ -113024,45 +113024,6 @@
       <y>616</y>
       <cn>2</cn>
       <val>102.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>253.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>10.</val></last>
-    <rng1>
-      <x>613</x>
-      <y>616</y>
-      <cn>2</cn>
-      <val>83.</val></rng1>
-    <rng2>
-      <x>1234</x>
-      <y>617</y>
-      <cn>2</cn>
-      <val>173.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>5.</min>
-    <max>254.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>27.</val></last>
-    <rng1>
-      <x>367</x>
-      <y>410</y>
-      <val>114.</val></rng1>
-    <rng2>
-      <x>234</x>
-      <y>462</y>
-      <cn>2</cn>
-      <val>113.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -113102,45 +113063,6 @@
       <y>510</y>
       <cn>1</cn>
       <val>1.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>264</x>
-      <y>664</y>
-      <val>37.</val></rng1>
-    <rng2>
-      <x>807</x>
-      <y>178</y>
-      <cn>2</cn>
-      <val>219.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>217</x>
-      <y>520</y>
-      <cn>2</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>40</x>
-      <y>542</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2LRGB->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--BGRA2RGBA->
   <gpu_dst>
     <kind>65536</kind>
@@ -113434,45 +113356,6 @@
       <y>592</y>
       <cn>2</cn>
       <val>2.7130390167236328e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3403315734863281e+02</min>
-    <max>1.7453633117675781e+02</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>3.3856788635253906e+01</val></last>
-    <rng1>
-      <x>7</x>
-      <y>558</y>
-      <val>4.0200687408447266e+01</val></rng1>
-    <rng2>
-      <x>1174</x>
-      <y>553</y>
-      <cn>2</cn>
-      <val>-2.7189862728118896e+00</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3384332275390625e+02</min>
-    <max>1.7146958923339844e+02</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>1.4118975639343262e+01</val></last>
-    <rng1>
-      <x>1224</x>
-      <y>227</y>
-      <cn>1</cn>
-      <val>-1.4051782608032227e+01</val></rng1>
-    <rng2>
-      <x>1066</x>
-      <y>89</y>
-      <cn>1</cn>
-      <val>3.3375141143798828e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -113512,46 +113395,6 @@
       <y>632</y>
       <cn>1</cn>
       <val>8.9331890922039747e-04</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.8908107280731201e-01</min>
-    <max>1.5760062500000000e+04</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>2.2238602861762047e-02</val></last>
-    <rng1>
-      <x>1098</x>
-      <y>400</y>
-      <cn>1</cn>
-      <val>1.8088728189468384e-02</val></rng1>
-    <rng2>
-      <x>779</x>
-      <y>145</y>
-      <cn>2</cn>
-      <val>3.2471686601638794e-02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.2077604532241821e+00</min>
-    <max>4.2020082473754883e+00</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>1.7219319706782699e-03</val></last>
-    <rng1>
-      <x>374</x>
-      <y>36</y>
-      <cn>1</cn>
-      <val>2.8703003190457821e-03</val></rng1>
-    <rng2>
-      <x>313</x>
-      <y>578</y>
-      <cn>1</cn>
-      <val>1.1406354606151581e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2LRGB->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--BGRA2RGBA->
   <gpu_dst>
     <kind>65536</kind>
@@ -113841,45 +113684,6 @@
       <x>511</x>
       <y>652</y>
       <val>191.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>254.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>133.</val></last>
-    <rng1>
-      <x>1007</x>
-      <y>247</y>
-      <cn>1</cn>
-      <val>140.</val></rng1>
-    <rng2>
-      <x>992</x>
-      <y>664</y>
-      <cn>2</cn>
-      <val>185.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>5.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>136.</val></last>
-    <rng1>
-      <x>1242</x>
-      <y>603</y>
-      <cn>1</cn>
-      <val>188.</val></rng1>
-    <rng2>
-      <x>31</x>
-      <y>50</y>
-      <val>192.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -113919,44 +113723,6 @@
       <y>624</y>
       <cn>1</cn>
       <val>102.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>102.</val></last>
-    <rng1>
-      <x>705</x>
-      <y>574</y>
-      <cn>2</cn>
-      <val>241.</val></rng1>
-    <rng2>
-      <x>59</x>
-      <y>260</y>
-      <cn>2</cn>
-      <val>175.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>34.</val></last>
-    <rng1>
-      <x>411</x>
-      <y>610</y>
-      <val>14.</val></rng1>
-    <rng2>
-      <x>717</x>
-      <y>899</y>
-      <val>0.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2LRGB->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--BGRA2RGBA->
   <gpu_dst>
     <kind>65536</kind>
@@ -114245,46 +114011,6 @@
       <y>312</y>
       <cn>2</cn>
       <val>3.6743759155273438e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3403315734863281e+02</min>
-    <max>1.7453633117675781e+02</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>-2.9017297744750977e+01</val></last>
-    <rng1>
-      <x>619</x>
-      <y>531</y>
-      <cn>2</cn>
-      <val>-8.1487052917480469e+01</val></rng1>
-    <rng2>
-      <x>1252</x>
-      <y>94</y>
-      <cn>2</cn>
-      <val>-1.1039053344726562e+02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3384332275390625e+02</min>
-    <max>1.7146958923339844e+02</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>-1.9320648193359375e+01</val></last>
-    <rng1>
-      <x>442</x>
-      <y>999</y>
-      <cn>1</cn>
-      <val>-5.6114921569824219e+01</val></rng1>
-    <rng2>
-      <x>1224</x>
-      <y>284</y>
-      <cn>1</cn>
-      <val>-2.6112511157989502e+00</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -114324,45 +114050,6 @@
       <y>578</y>
       <cn>1</cn>
       <val>2.8746435418725014e-04</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.8908107280731201e-01</min>
-    <max>1.5760062500000000e+04</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>3.0417582020163536e-02</val></last>
-    <rng1>
-      <x>236</x>
-      <y>857</y>
-      <cn>1</cn>
-      <val>2.6961673051118851e-02</val></rng1>
-    <rng2>
-      <x>290</x>
-      <y>965</y>
-      <cn>1</cn>
-      <val>1.5158848837018013e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.2077604532241821e+00</min>
-    <max>4.2020082473754883e+00</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>2.3519969545304775e-03</val></last>
-    <rng1>
-      <x>636</x>
-      <y>473</y>
-      <val>7.8397803008556366e-03</val></rng1>
-    <rng2>
-      <x>1005</x>
-      <y>876</y>
-      <cn>2</cn>
-      <val>-3.6523109301924706e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2LRGB->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--BGRA2RGBA->
   <gpu_dst>
     <kind>65536</kind>
@@ -114653,46 +114340,6 @@
       <y>314</y>
       <cn>1</cn>
       <val>122.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>254.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>46.</val></last>
-    <rng1>
-      <x>986</x>
-      <y>303</y>
-      <cn>2</cn>
-      <val>226.</val></rng1>
-    <rng2>
-      <x>367</x>
-      <y>87</y>
-      <cn>2</cn>
-      <val>141.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>25.</val></last>
-    <rng1>
-      <x>1895</x>
-      <y>683</y>
-      <cn>2</cn>
-      <val>179.</val></rng1>
-    <rng2>
-      <x>724</x>
-      <y>505</y>
-      <cn>1</cn>
-      <val>84.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -114733,43 +114380,6 @@
       <y>18</y>
       <cn>1</cn>
       <val>29.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1824</x>
-      <y>844</y>
-      <val>98.</val></rng1>
-    <rng2>
-      <x>398</x>
-      <y>878</y>
-      <val>255.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1788</x>
-      <y>716</y>
-      <val>90.</val></rng1>
-    <rng2>
-      <x>1001</x>
-      <y>58</y>
-      <cn>2</cn>
-      <val>255.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2LRGB->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--BGRA2RGBA->
   <gpu_dst>
     <kind>65536</kind>
@@ -115059,45 +114669,6 @@
       <x>1311</x>
       <y>146</y>
       <val>9.0486267089843750e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--LBGR2Lab->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--BGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3403315734863281e+02</min>
-    <max>1.7453633117675781e+02</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>1.1035210609436035e+01</val></last>
-    <rng1>
-      <x>796</x>
-      <y>200</y>
-      <cn>1</cn>
-      <val>-6.5685226440429688e+01</val></rng1>
-    <rng2>
-      <x>1813</x>
-      <y>638</y>
-      <val>4.5298957824707031e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--BGR2Luv->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--LBGR2Luv->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.3385774230957031e+02</min>
-    <max>1.7338429260253906e+02</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>6.0543746948242188e+00</val></last>
-    <rng1>
-      <x>1823</x>
-      <y>743</y>
-      <cn>2</cn>
-      <val>-4.5003170013427734e+01</val></rng1>
-    <rng2>
-      <x>75</x>
-      <y>338</y>
-      <cn>2</cn>
-      <val>-8.2830915451049805e+00</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--LBGR2Luv->
 <Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Lab2BGR->
   <gpu_dst>
     <kind>65536</kind>
@@ -115137,45 +114708,6 @@
       <x>1609</x>
       <y>395</y>
       <val>5.3290411597117782e-04</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Lab2LBGR->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2RGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.8908108770847321e-01</min>
-    <max>1.5760062500000000e+04</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>-6.1220265924930573e-03</val></last>
-    <rng1>
-      <x>134</x>
-      <y>855</y>
-      <cn>2</cn>
-      <val>9.8555190488696098e-03</val></rng1>
-    <rng2>
-      <x>1709</x>
-      <y>636</y>
-      <val>5.1819685846567154e-02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2RGB->
-<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2LRGB->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>21</type>
-    <min>-1.2077604532241821e+00</min>
-    <max>4.2020082473754883e+00</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>-4.7360267490148544e-04</val></last>
-    <rng1>
-      <x>1904</x>
-      <y>399</y>
-      <cn>1</cn>
-      <val>2.3091058246791363e-03</val></rng1>
-    <rng2>
-      <x>895</x>
-      <y>658</y>
-      <cn>1</cn>
-      <val>2.1239933557808399e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2LRGB->
  <!-- resumed -->
 
 <Sz_Depth_Cn_Inter_Scale_ImgProc_Resize--ImgProc_Resize---1280x720--CV_8U--Gray--INTER_NEAREST--0-5->
@@ -119783,4 +119315,468 @@
       <y>165</y>
       <cn>1</cn>
       <val>-7.8975457763671875e+02</val></rng2></gpu_dst></Sz_Depth_Cn_Inter_Scale_ImgProc_Resize--ImgProc_Resize---1920x1080--CV_32F--BGRA--INTER_CUBIC--2->
+ <!-- resumed -->
+
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>253.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>9.</val></last>
+    <rng1>
+      <x>468</x>
+      <y>700</y>
+      <val>139.</val></rng1>
+    <rng2>
+      <x>79</x>
+      <y>404</y>
+      <cn>2</cn>
+      <val>121.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>5.</min>
+    <max>254.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>27.</val></last>
+    <rng1>
+      <x>97</x>
+      <y>352</y>
+      <val>107.</val></rng1>
+    <rng2>
+      <x>471</x>
+      <y>212</y>
+      <cn>1</cn>
+      <val>86.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>586</x>
+      <y>537</y>
+      <cn>1</cn>
+      <val>32.</val></rng1>
+    <rng2>
+      <x>256</x>
+      <y>517</y>
+      <cn>1</cn>
+      <val>0.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>491</x>
+      <y>203</y>
+      <val>68.</val></rng1>
+    <rng2>
+      <x>945</x>
+      <y>183</y>
+      <val>0.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_8U--Luv2LRGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3403315734863281e+02</min>
+    <max>1.7453633117675781e+02</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>3.3856788635253906e+01</val></last>
+    <rng1>
+      <x>1144</x>
+      <y>649</y>
+      <val>4.5010070800781250e+01</val></rng1>
+    <rng2>
+      <x>1131</x>
+      <y>218</y>
+      <cn>2</cn>
+      <val>-7.9149017333984375e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3384332275390625e+02</min>
+    <max>1.7146958923339844e+02</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>1.4118975639343262e+01</val></last>
+    <rng1>
+      <x>243</x>
+      <y>202</y>
+      <val>7.6671119689941406e+01</val></rng1>
+    <rng2>
+      <x>1034</x>
+      <y>32</y>
+      <cn>2</cn>
+      <val>-5.6224361419677734e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.8908107280731201e-01</min>
+    <max>1.5760062500000000e+04</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>2.2238602861762047e-02</val></last>
+    <rng1>
+      <x>353</x>
+      <y>366</y>
+      <cn>1</cn>
+      <val>9.8960250616073608e-03</val></rng1>
+    <rng2>
+      <x>1158</x>
+      <y>387</y>
+      <cn>1</cn>
+      <val>1.9825780764222145e-02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.2077604532241821e+00</min>
+    <max>4.2020082473754883e+00</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>1.7219319706782699e-03</val></last>
+    <rng1>
+      <x>496</x>
+      <y>301</y>
+      <cn>2</cn>
+      <val>5.9181702090427279e-04</val></rng1>
+    <rng2>
+      <x>109</x>
+      <y>480</y>
+      <cn>1</cn>
+      <val>1.6196836950257421e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x720--CV_32F--Luv2LRGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>130.</val></last>
+    <rng1>
+      <x>1058</x>
+      <y>938</y>
+      <val>71.</val></rng1>
+    <rng2>
+      <x>2</x>
+      <y>731</y>
+      <cn>1</cn>
+      <val>110.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>5.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>133.</val></last>
+    <rng1>
+      <x>963</x>
+      <y>888</y>
+      <val>159.</val></rng1>
+    <rng2>
+      <x>33</x>
+      <y>771</y>
+      <val>209.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>96.</val></last>
+    <rng1>
+      <x>921</x>
+      <y>90</y>
+      <cn>2</cn>
+      <val>253.</val></rng1>
+    <rng2>
+      <x>555</x>
+      <y>749</y>
+      <cn>2</cn>
+      <val>160.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>30.</val></last>
+    <rng1>
+      <x>51</x>
+      <y>749</y>
+      <cn>2</cn>
+      <val>16.</val></rng1>
+    <rng2>
+      <x>243</x>
+      <y>252</y>
+      <cn>2</cn>
+      <val>0.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_8U--Luv2LRGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3403315734863281e+02</min>
+    <max>1.7453633117675781e+02</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>-2.9017297744750977e+01</val></last>
+    <rng1>
+      <x>1216</x>
+      <y>172</y>
+      <cn>1</cn>
+      <val>2.3979999542236328e+01</val></rng1>
+    <rng2>
+      <x>527</x>
+      <y>127</y>
+      <cn>1</cn>
+      <val>4.5754043579101562e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3384332275390625e+02</min>
+    <max>1.7146958923339844e+02</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>-1.9320648193359375e+01</val></last>
+    <rng1>
+      <x>711</x>
+      <y>964</y>
+      <cn>1</cn>
+      <val>-5.0099197387695312e+01</val></rng1>
+    <rng2>
+      <x>654</x>
+      <y>649</y>
+      <val>8.3520477294921875e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.8908107280731201e-01</min>
+    <max>1.5760062500000000e+04</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>3.0417582020163536e-02</val></last>
+    <rng1>
+      <x>718</x>
+      <y>368</y>
+      <cn>2</cn>
+      <val>-1.9775334745645523e-02</val></rng1>
+    <rng2>
+      <x>997</x>
+      <y>73</y>
+      <cn>2</cn>
+      <val>1.6034882515668869e-02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.2077604532241821e+00</min>
+    <max>4.2020082473754883e+00</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>2.3519969545304775e-03</val></last>
+    <rng1>
+      <x>329</x>
+      <y>354</y>
+      <cn>2</cn>
+      <val>1.4691010583192110e-03</val></rng1>
+    <rng2>
+      <x>944</x>
+      <y>606</y>
+      <cn>2</cn>
+      <val>1.0692810174077749e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1280x1024--CV_32F--Luv2LRGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>44.</val></last>
+    <rng1>
+      <x>617</x>
+      <y>71</y>
+      <val>192.</val></rng1>
+    <rng2>
+      <x>1183</x>
+      <y>90</y>
+      <val>141.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>24.</val></last>
+    <rng1>
+      <x>960</x>
+      <y>553</y>
+      <cn>1</cn>
+      <val>88.</val></rng1>
+    <rng2>
+      <x>192</x>
+      <y>719</y>
+      <val>193.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>22</x>
+      <y>750</y>
+      <val>110.</val></rng1>
+    <rng2>
+      <x>373</x>
+      <y>201</y>
+      <cn>1</cn>
+      <val>94.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>125</x>
+      <y>584</y>
+      <cn>2</cn>
+      <val>75.</val></rng1>
+    <rng2>
+      <x>1589</x>
+      <y>101</y>
+      <val>17.</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_8U--Luv2LRGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--BGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3403315734863281e+02</min>
+    <max>1.7453633117675781e+02</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>1.1035210609436035e+01</val></last>
+    <rng1>
+      <x>1809</x>
+      <y>1079</y>
+      <cn>2</cn>
+      <val>5.8212261199951172e+01</val></rng1>
+    <rng2>
+      <x>403</x>
+      <y>370</y>
+      <val>5.5906814575195312e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--BGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--LBGR2Luv->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.3385774230957031e+02</min>
+    <max>1.7338429260253906e+02</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>6.0543746948242188e+00</val></last>
+    <rng1>
+      <x>782</x>
+      <y>860</y>
+      <cn>1</cn>
+      <val>9.2724021911621094e+01</val></rng1>
+    <rng2>
+      <x>114</x>
+      <y>582</y>
+      <val>7.5710472106933594e+01</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--LBGR2Luv->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2RGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.8908108770847321e-01</min>
+    <max>1.5760062500000000e+04</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>-6.1220265924930573e-03</val></last>
+    <rng1>
+      <x>1843</x>
+      <y>316</y>
+      <val>4.8680689185857773e-02</val></rng1>
+    <rng2>
+      <x>1108</x>
+      <y>474</y>
+      <cn>2</cn>
+      <val>-4.7254428267478943e-02</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2RGB->
+<Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2LRGB->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-1.2077604532241821e+00</min>
+    <max>4.2020082473754883e+00</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>-4.7360267490148544e-04</val></last>
+    <rng1>
+      <x>743</x>
+      <y>658</y>
+      <cn>1</cn>
+      <val>2.8645845595747232e-03</val></rng1>
+    <rng2>
+      <x>338</x>
+      <y>1002</y>
+      <cn>1</cn>
+      <val>2.7548160869628191e-03</val></rng2></gpu_dst></Sz_Depth_Code_ImgProc_CvtColor--ImgProc_CvtColor---1920x1080--CV_32F--Luv2LRGB->
 </opencv_storage>
