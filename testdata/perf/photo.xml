@@ -3,22 +3,21 @@
   <inpaintedArea>
     <kind>65536</kind>
     <type>16</type>
-    <min>87.</min>
-    <max>215.</max>
+    <min>85.</min>
+    <max>211.</max>
     <last>
       <x>23</x>
       <y>23</y>
-      <val>177.</val></last>
+      <val>178.</val></last>
     <rng1>
-      <x>7</x>
-      <y>7</y>
-      <cn>2</cn>
-      <val>165.</val></rng1>
+      <x>20</x>
+      <y>3</y>
+      <val>157.</val></rng1>
     <rng2>
-      <x>22</x>
-      <y>23</y>
-      <cn>2</cn>
-      <val>185.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---24x24--INPAINT_NS->
+      <x>1</x>
+      <y>9</y>
+      <cn>1</cn>
+      <val>175.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---24x24--INPAINT_NS->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---24x24--INPAINT_TELEA->
   <inpaintedArea>
     <kind>65536</kind>
@@ -28,37 +27,37 @@
     <last>
       <x>23</x>
       <y>23</y>
-      <val>177.</val></last>
+      <val>181.</val></last>
     <rng1>
-      <x>9</x>
-      <y>22</y>
+      <x>3</x>
+      <y>21</y>
       <cn>2</cn>
-      <val>185.</val></rng1>
+      <val>171.</val></rng1>
     <rng2>
-      <x>12</x>
-      <y>20</y>
+      <x>6</x>
+      <y>6</y>
       <cn>2</cn>
-      <val>180.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---24x24--INPAINT_TELEA->
+      <val>170.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---24x24--INPAINT_TELEA->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---32x32--INPAINT_NS->
   <inpaintedArea>
     <kind>65536</kind>
     <type>16</type>
-    <min>5.</min>
-    <max>213.</max>
+    <min>6.</min>
+    <max>212.</max>
     <last>
       <x>31</x>
       <y>31</y>
       <val>212.</val></last>
     <rng1>
-      <x>9</x>
-      <y>12</y>
+      <x>17</x>
+      <y>30</y>
       <cn>2</cn>
-      <val>156.</val></rng1>
+      <val>152.</val></rng1>
     <rng2>
-      <x>25</x>
-      <y>13</y>
+      <x>15</x>
+      <y>12</y>
       <cn>1</cn>
-      <val>135.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---32x32--INPAINT_NS->
+      <val>143.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---32x32--INPAINT_NS->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---32x32--INPAINT_TELEA->
   <inpaintedArea>
     <kind>65536</kind>
@@ -70,34 +69,34 @@
       <y>31</y>
       <val>208.</val></last>
     <rng1>
-      <x>26</x>
-      <y>31</y>
-      <cn>2</cn>
-      <val>205.</val></rng1>
-    <rng2>
-      <x>11</x>
-      <y>11</y>
+      <x>9</x>
+      <y>6</y>
       <cn>1</cn>
+      <val>157.</val></rng1>
+    <rng2>
+      <x>14</x>
+      <y>8</y>
+      <cn>2</cn>
       <val>154.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---32x32--INPAINT_TELEA->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_NS->
   <inpaintedArea>
     <kind>65536</kind>
     <type>16</type>
-    <min>2.</min>
+    <min>3.</min>
     <max>248.</max>
     <last>
       <x>63</x>
       <y>63</y>
       <val>203.</val></last>
     <rng1>
-      <x>3</x>
-      <y>4</y>
-      <val>165.</val></rng1>
+      <x>53</x>
+      <y>22</y>
+      <val>141.</val></rng1>
     <rng2>
-      <x>0</x>
-      <y>5</y>
-      <cn>2</cn>
-      <val>193.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_NS->
+      <x>20</x>
+      <y>47</y>
+      <cn>1</cn>
+      <val>80.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_NS->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_TELEA->
   <inpaintedArea>
     <kind>65536</kind>
@@ -107,15 +106,15 @@
     <last>
       <x>63</x>
       <y>63</y>
-      <val>207.</val></last>
+      <val>206.</val></last>
     <rng1>
-      <x>31</x>
-      <y>39</y>
-      <val>185.</val></rng1>
+      <x>16</x>
+      <y>6</y>
+      <val>146.</val></rng1>
     <rng2>
-      <x>31</x>
-      <y>36</y>
-      <val>182.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_TELEA->
+      <x>17</x>
+      <y>18</y>
+      <val>151.</val></rng2></inpaintedArea></InpaintArea_InpaintingMethod_inpaint--inpaint---64x64--INPAINT_TELEA->
 <InpaintArea_InpaintingMethod_inpaint--inpaint---128x128--INPAINT_NS->
   <inpaintedArea>
     <kind>65536</kind>
