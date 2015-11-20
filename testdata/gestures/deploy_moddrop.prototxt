@@ -1,0 +1,429 @@
+name: "ModDrop"
+input: "depthSrcR"
+input_shape {
+	dim: 1
+	dim: 5
+	dim: 36
+	dim: 36
+}
+input: "colorSrcR"
+input_shape {
+	dim: 1
+	dim: 5
+	dim: 36
+	dim: 36
+}
+input: "depthSrcL"
+input_shape {
+	dim: 1
+	dim: 5
+	dim: 36
+	dim: 36
+}
+input: "colorSrcL"
+input_shape {
+	dim: 1
+	dim: 5
+	dim: 36
+	dim: 36
+}
+input: "mocap"
+input_shape {
+	dim: 1
+	dim: 860
+}
+
+layer {
+	name: "ReshapeDepthR"
+	type: "Reshape"
+	bottom: "depthSrcR"
+	top: "depthR"
+	reshape_param {
+		shape {
+			dim: 0
+			dim: 1
+			dim: 36
+			dim: 36
+			dim: 5
+		}
+	}
+}
+layer {
+	name: "ReshapeColorR"
+	type: "Reshape"
+	bottom: "colorSrcR"
+	top: "colorR"
+	reshape_param {
+		shape {
+			dim: 0
+			dim: 1
+			dim: 36
+			dim: 36
+			dim: 5
+		}
+	}
+}
+layer {
+	name: "ReshapeDepthL"
+	type: "Reshape"
+	bottom: "depthSrcL"
+	top: "depthL"
+	reshape_param {
+		shape {
+			dim: 0
+			dim: 1
+			dim: 36
+			dim: 36
+			dim: 5
+		}
+	}
+}
+layer {
+	name: "ReshapeColorL"
+	type: "Reshape"
+	bottom: "colorSrcL"
+	top: "colorL"
+	reshape_param {
+		shape {
+			dim: 0
+			dim: 1
+			dim: 36
+			dim: 36
+			dim: 5
+		}
+	}
+}
+
+layer {
+	name: "ConvDR1"
+	type: "Convolution"
+	bottom: "depthR"
+	top: "convDR1"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 3
+	}
+}
+layer {
+	name: "PoolDR2"
+	type: "Pooling"
+	bottom: "convDR1"
+	top: "poolDR2"
+	pooling_param {
+		pool: MAX
+		kernel_size: 2
+		kernel_size: 2
+		kernel_size: 3
+		stride: 2
+		stride: 2
+		stride: 3
+	}
+}
+layer {
+	name: "ConvDR2"
+	type: "Convolution"
+	bottom: "poolDR2"
+	top: "convDR2"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 1
+	}
+}
+
+layer {
+	name: "ConvCR1"
+	type: "Convolution"
+	bottom: "colorR"
+	top: "convCR1"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 3
+	}
+}
+layer {
+	name: "PoolCR2"
+	type: "Pooling"
+	bottom: "convCR1"
+	top: "poolCR2"
+	pooling_param {
+		pool: MAX
+		kernel_size: 2
+		kernel_size: 2
+		kernel_size: 3
+		stride: 2
+		stride: 2
+		stride: 3
+	}
+}
+layer {
+	name: "ConvCR2"
+	type: "Convolution"
+	bottom: "poolCR2"
+	top: "convCR2"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 1
+	}
+}
+
+layer {
+	name: "ConcatR"
+	type: "Concat"
+	bottom: "convDR2"
+	bottom: "convCR2"
+	top: "concatR"
+	concat_param {
+		concat_dim: 1
+	}
+}
+layer {
+	name: "HLV1R"
+	type: "InnerProduct"
+	bottom: "concatR"
+	top: "hlv1R"
+	inner_product_param {
+		num_output: 900
+	}
+}
+layer {
+	name: "HLV1R-act"
+	type: "TanH"
+	bottom: "hlv1R"
+	top: "hlv1R"
+}
+layer {
+	name: "HLV2R"
+	type: "InnerProduct"
+	bottom: "hlv1R"
+	top: "hlv2R"
+	inner_product_param {
+		num_output: 450
+	}
+}
+layer {
+	name: "HLV2R-act"
+	type: "TanH"
+	bottom: "hlv2R"
+	top: "hlv2R"
+}
+
+
+layer {
+	name: "ConvDL1"
+	type: "Convolution"
+	bottom: "depthL"
+	top: "convDL1"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 3
+	}
+}
+layer {
+	name: "PoolDL2"
+	type: "Pooling"
+	bottom: "convDL1"
+	top: "poolDL2"
+	pooling_param {
+		pool: MAX
+		kernel_size: 2
+		kernel_size: 2
+		kernel_size: 3
+		stride: 2
+		stride: 2
+		stride: 3
+	}
+}
+layer {
+	name: "ConvDL2"
+	type: "Convolution"
+	bottom: "poolDL2"
+	top: "convDL2"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 1
+	}
+}
+
+layer {
+	name: "ConvCL1"
+	type: "Convolution"
+	bottom: "colorL"
+	top: "convCL1"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 3
+	}
+}
+layer {
+	name: "PoolCL2"
+	type: "Pooling"
+	bottom: "convCL1"
+	top: "poolCL2"
+	pooling_param {
+		pool: MAX
+		kernel_size: 2
+		kernel_size: 2
+		kernel_size: 3
+		stride: 2
+		stride: 2
+		stride: 3
+	}
+}
+layer {
+	name: "ConvCL2"
+	type: "Convolution"
+	bottom: "poolCL2"
+	top: "convCL2"
+	convolution_param {
+		num_output: 25
+		kernel_size: 5
+		kernel_size: 5
+		kernel_size: 1
+	}
+}
+
+layer {
+	name: "ConcatL"
+	type: "Concat"
+	bottom: "convDL2"
+	bottom: "convCL2"
+	top: "concatL"
+	concat_param {
+		concat_dim: 1
+	}
+}
+layer {
+	name: "HLV1L"
+	type: "InnerProduct"
+	bottom: "concatL"
+	top: "hlv1L"
+	inner_product_param {
+		num_output: 900
+	}
+}
+layer {
+	name: "HLV1L-act"
+	type: "TanH"
+	bottom: "hlv1L"
+	top: "hlv1L"
+}
+layer {
+	name: "HLV2L"
+	type: "InnerProduct"
+	bottom: "hlv1L"
+	top: "hlv2L"
+	inner_product_param {
+		num_output: 450
+	}
+}
+layer {
+	name: "HLV2L-act"
+	type: "TanH"
+	bottom: "hlv2L"
+	top: "hlv2L"
+}
+
+
+layer {
+	name: "HLM1"
+	type: "InnerProduct"
+	bottom: "mocap"
+	top: "hlm1"
+	inner_product_param {
+		num_output: 700
+	}
+}
+layer {
+	name: "HLM1-act"
+	type: "TanH"
+	bottom: "hlm1"
+	top: "hlm1"
+}
+layer {
+	name: "HLM2"
+	type: "InnerProduct"
+	bottom: "hlm1"
+	top: "hlm2"
+	inner_product_param {
+		num_output: 700
+	}
+}
+layer {
+	name: "HLM2-act"
+	type: "TanH"
+	bottom: "hlm2"
+	top: "hlm2"
+}
+layer {
+	name: "HLM3"
+	type: "InnerProduct"
+	bottom: "hlm2"
+	top: "hlm3"
+	inner_product_param {
+		num_output: 350
+	}
+}
+layer {
+	name: "HLM3-act"
+	type: "TanH"
+	bottom: "hlm3"
+	top: "hlm3"
+}
+
+
+
+layer {
+	name: "ConcatMod"
+	type: "Concat"
+	bottom: "hlv2R"
+	bottom: "hlv2L"
+	bottom: "hlm3"
+	top: "concatMod"
+	concat_param {
+		concat_dim: 1
+	}
+}
+layer {
+	name: "HLS"
+	type: "InnerProduct"
+	bottom: "concatMod"
+	top: "hls"
+	inner_product_param {
+		num_output: 63
+	}
+}
+layer {
+	name: "HLS-act"
+	type: "TanH"
+	bottom: "hls"
+	top: "hls"
+}
+layer {
+	name: "output"
+	type: "InnerProduct"
+	bottom: "hls"
+	top: "output"
+	inner_product_param {
+		num_output: 21
+	}
+}
+layer {
+	name: "Proba"
+	type: "Softmax"
+	bottom: "output"
+	top: "prob"
+}
