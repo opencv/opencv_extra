@@ -836,4 +836,222 @@
       <x>178</x>
       <y>209</y>
       <val>415.</val></rng2></dst></TestStereoCorresp_SGBM--SGBM---640x480--128--StereoSGBM--MODE_SGBM_3WAY->
+ <!-- resumed -->
+
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354422225567835e-01 2.6238019420149250e-01
+        -8.8546928316563722e-01 -2.5177477964066541e-01
+        -7.4420063515682755e-01 -1.5114978759870996e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-99->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354422225567835e-01 2.6238019420149250e-01
+        -8.8546928316563722e-01 -2.5177477964066541e-01
+        -7.4420063515682755e-01 -1.5114978759870996e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-95->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354422225567835e-01 2.6238019420149250e-01
+        -8.8546928316563722e-01 -2.5177477964066541e-01
+        -7.4420063515682755e-01 -1.5114978759870996e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100000--0-9->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354405990758549e-01 2.6238021236755793e-01
+        -8.8545938854548201e-01 -2.5177439051535011e-01
+        -7.4420090384568949e-01 -1.5115105610521304e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-99->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354405990758549e-01 2.6238021236755793e-01
+        -8.8545938854548201e-01 -2.5177439051535011e-01
+        -7.4420090384568949e-01 -1.5115105610521304e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-95->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354405990758549e-01 2.6238021236755793e-01
+        -8.8545938854548201e-01 -2.5177439051535011e-01
+        -7.4420090384568949e-01 -1.5115105610521304e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---5000--0-9->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354421600463800e-01 2.6238022242326753e-01
+        -8.8546877127564749e-01 -2.5177444119325926e-01
+        -7.4420084023184352e-01 -1.5115059991244835e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-99->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354421600463800e-01 2.6238022242326753e-01
+        -8.8546877127564749e-01 -2.5177444119325926e-01
+        -7.4420084023184352e-01 -1.5115059991244835e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-95->
+<EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        5.6354421600463800e-01 2.6238022242326753e-01
+        -8.8546877127564749e-01 -2.5177444119325926e-01
+        -7.4420084023184352e-01 -1.5115059991244835e+00</data></val></aff_est></EstimateAffine_EstimateAffine2D--EstimateAffine2D---100--0-9->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458952202649981e-01 -1.5232156207209110e-01
+        1.1145317460727135e+00 1.5232156207209110e-01
+        1.2458952202649981e-01 1.7482250345539248e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-99->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458952202649981e-01 -1.5232156207209110e-01
+        1.1145317460727135e+00 1.5232156207209110e-01
+        1.2458952202649981e-01 1.7482250345539248e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-95->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458952202649981e-01 -1.5232156207209110e-01
+        1.1145317460727135e+00 1.5232156207209110e-01
+        1.2458952202649981e-01 1.7482250345539248e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100000--0-9->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458953571770191e-01 -1.5232155262458219e-01
+        1.1145306957811754e+00 1.5232155262458219e-01
+        1.2458953571770191e-01 1.7482257710502351e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-99->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458953571770191e-01 -1.5232155262458219e-01
+        1.1145306957811754e+00 1.5232155262458219e-01
+        1.2458953571770191e-01 1.7482257710502351e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-95->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458953571770191e-01 -1.5232155262458219e-01
+        1.1145306957811754e+00 1.5232155262458219e-01
+        1.2458953571770191e-01 1.7482257710502351e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---5000--0-9->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-99->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458956379787570e-01 -1.5232153627675044e-01
+        1.1145281449118329e+00 1.5232153627675044e-01
+        1.2458956379787570e-01 1.7482223984249048e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-99->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-95->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458956379787570e-01 -1.5232153627675044e-01
+        1.1145281449118329e+00 1.5232153627675044e-01
+        1.2458956379787570e-01 1.7482223984249048e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-95->
+<EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-9->
+  <aff_est>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>3</cols>
+      <dt>d</dt>
+      <data>
+        1.2458956379787570e-01 -1.5232153627675044e-01
+        1.1145281449118329e+00 1.5232153627675044e-01
+        1.2458956379787570e-01 1.7482223984249048e+00</data></val></aff_est></EstimateAffine_EstimateAffinePartial2D--EstimateAffinePartial2D---100--0-9->
 </opencv_storage>
