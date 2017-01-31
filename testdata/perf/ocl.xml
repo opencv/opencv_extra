@@ -30189,45 +30189,6 @@
       <y>378</y>
       <cn>1</cn>
       <val>159.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2BGR--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2YUV--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>208.</val></last>
-    <rng1>
-      <x>311</x>
-      <y>174</y>
-      <cn>1</cn>
-      <val>120.</val></rng1>
-    <rng2>
-      <x>454</x>
-      <y>57</y>
-      <cn>2</cn>
-      <val>217.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2YUV--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>218.</val></last>
-    <rng1>
-      <x>254</x>
-      <y>391</y>
-      <cn>1</cn>
-      <val>230.</val></rng1>
-    <rng2>
-      <x>421</x>
-      <y>149</y>
-      <val>255.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB--3--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2YCrCb--3--3-->
   <dst>
     <kind>65536</kind>
@@ -30461,25 +30422,6 @@
       <y>87</y>
       <cn>1</cn>
       <val>99.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_mRGBA2RGBA--4--4-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB_NV12--1--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>319</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>93</x>
-      <y>203</y>
-      <val>0.</val></rng1>
-    <rng2>
-      <x>180</x>
-      <y>233</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB_NV12--1--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2GRAY--3--1-->
   <dst>
     <kind>65536</kind>
@@ -30517,45 +30459,6 @@
       <y>241</y>
       <cn>1</cn>
       <val>15.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2BGR--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2YUV--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>440</x>
-      <y>250</y>
-      <cn>1</cn>
-      <val>86.</val></rng1>
-    <rng2>
-      <x>1199</x>
-      <y>97</y>
-      <cn>2</cn>
-      <val>200.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2YUV--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>88.</val></last>
-    <rng1>
-      <x>797</x>
-      <y>593</y>
-      <cn>1</cn>
-      <val>85.</val></rng1>
-    <rng2>
-      <x>526</x>
-      <y>176</y>
-      <val>254.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB--3--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2YCrCb--3--3-->
   <dst>
     <kind>65536</kind>
@@ -30785,26 +30688,6 @@
       <y>202</y>
       <cn>1</cn>
       <val>134.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_mRGBA2RGBA--4--4-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB_NV12--1--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>258</x>
-      <y>147</y>
-      <cn>1</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1137</x>
-      <y>406</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB_NV12--1--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2GRAY--3--1-->
   <dst>
     <kind>65536</kind>
@@ -30842,46 +30725,6 @@
       <x>1590</x>
       <y>393</y>
       <val>175.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2BGR--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2YUV--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>181.</val></last>
-    <rng1>
-      <x>571</x>
-      <y>486</y>
-      <cn>2</cn>
-      <val>117.</val></rng1>
-    <rng2>
-      <x>1516</x>
-      <y>947</y>
-      <cn>2</cn>
-      <val>68.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2YUV--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>538</x>
-      <y>284</y>
-      <cn>1</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1523</x>
-      <y>827</y>
-      <cn>1</cn>
-      <val>121.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB--3--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2YCrCb--3--3-->
   <dst>
     <kind>65536</kind>
@@ -31115,26 +30958,6 @@
       <x>1579</x>
       <y>614</y>
       <val>105.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_mRGBA2RGBA--4--4-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB_NV12--1--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>719</y>
-      <val>174.</val></last>
-    <rng1>
-      <x>387</x>
-      <y>304</y>
-      <cn>1</cn>
-      <val>248.</val></rng1>
-    <rng2>
-      <x>780</x>
-      <y>661</y>
-      <cn>2</cn>
-      <val>96.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB_NV12--1--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2GRAY--3--1-->
   <dst>
     <kind>65536</kind>
@@ -31171,45 +30994,6 @@
       <x>2773</x>
       <y>827</y>
       <val>41.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2BGR--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2YUV--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>144.</val></last>
-    <rng1>
-      <x>2471</x>
-      <y>2090</y>
-      <val>100.</val></rng1>
-    <rng2>
-      <x>3613</x>
-      <y>344</y>
-      <cn>2</cn>
-      <val>153.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2YUV--3--3-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB--3--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>138.</val></last>
-    <rng1>
-      <x>1577</x>
-      <y>1474</y>
-      <cn>2</cn>
-      <val>155.</val></rng1>
-    <rng2>
-      <x>3837</x>
-      <y>1662</y>
-      <cn>1</cn>
-      <val>45.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB--3--3-->
 <OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2YCrCb--3--3-->
   <dst>
     <kind>65536</kind>
@@ -31441,25 +31225,6 @@
       <x>1467</x>
       <y>1223</y>
       <val>226.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_mRGBA2RGBA--4--4-->
-<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB_NV12--1--3-->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>3839</x>
-      <y>1439</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>3468</x>
-      <y>308</y>
-      <cn>1</cn>
-      <val>104.</val></rng1>
-    <rng2>
-      <x>3590</x>
-      <y>853</y>
-      <val>255.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB_NV12--1--3-->
 <OCL_SplitFixture_Split--Split---640x480--CV_8U--2->
   <dst0>
     <kind>65536</kind>
@@ -32610,7 +32375,6 @@
       <cn>2</cn>
       <val>1.2793650817871094e+02</val></rng2></dst></OCL_BitwiseOrFixture_Bitwise_or--Bitwise_or---3840x2160--32FC4->
  <!-- resumed -->
-
 <OCL_DftFixture_Dft--Dft---640x480--4->
   <dst>
     <kind>65536</kind>
@@ -34168,7 +33932,6 @@
         7.3900614944172759e+01 7.3891484019185455e+01
         7.3908911300534228e+01 7.3901871095692783e+01</data></val></stddev></OCL_MeanStdDevFixture_MeanStdDev--MeanStdDev---3840x2160--32FC4->
  <!-- resumed -->
-
 <OCL_LUTFixture_LUT--LUT---640x480--8UC1->
   <dst>
     <kind>65536</kind>
@@ -34314,7 +34077,6 @@
       <y>1567</y>
       <val>3.8907863769531250e+03</val></rng2></dst></OCL_LUTFixture_LUT--LUT---3840x2160--32FC1->
  <!-- resumed -->
-
 <OCL_BruteForceMatcherFixture_Match--Match---640x480--32FC1->
   <matches-queryIdx>
     <kind>65536</kind>
@@ -34937,7 +34699,6 @@
       <dt>f</dt>
       <data></data></val></matches1-distance></OCL_BruteForceMatcherFixture_RadiusMatch--RadiusMatch---1920x1080--32FC1->
  <!-- resumed -->
-
 <KalmanFilterFixture_KalmanFilter--KalmanFilter---1000->
   <statePre_>
     <kind>65536</kind>
@@ -34975,7 +34736,6 @@
       <y>648</y>
       <val>0.</val></rng2></statePre_></KalmanFilterFixture_KalmanFilter--KalmanFilter---1500->
  <!-- resumed -->
-
 <OCL_SetIdentityFixture_SetIdentity--SetIdentity---640x480--8UC1->
   <src>
     <kind>65536</kind>
@@ -35274,7 +35034,6 @@
       <cn>1</cn>
       <val>0.</val></rng2></src></OCL_SetIdentityFixture_SetIdentity--SetIdentity---3840x2160--32FC4->
  <!-- resumed -->
-
 <OCL_GemmFixture_Gemm--Gemm---1000x1000--1->
   <dst>
     <kind>65536</kind>
@@ -35348,7 +35107,6 @@
       <y>1218</y>
       <val>2.2031752929687500e+03</val></rng2></dst></OCL_GemmFixture_Gemm--Gemm---1500x1500--3->
  <!-- resumed -->
-
 <OCL_PyrLKOpticalFlowFixture_PyrLKOpticalFlow--PyrLKOpticalFlow---1000->
   <value>
     <kind>131072</kind>
@@ -35380,7 +35138,6 @@
       <data>
         0.</data></val></value></OCL_PyrLKOpticalFlowFixture_PyrLKOpticalFlow--PyrLKOpticalFlow---4000->
  <!-- resumed -->
-
 <OCL_CalcHistFixture_CalcHist--CalcHist--640x480>
   <dst>
     <kind>65536</kind>
@@ -35752,4 +35509,236 @@
       <x>155</x>
       <y>3819</y>
       <val>-4.3036285400390625e+02</val></rng2></dst></OCL_PyrUpFixture_PyrUp--PyrUp---3840x2160--32FC4->
+ <!-- resumed -->
+<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2YUV--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.</val></last>
+    <rng1>
+      <x>486</x>
+      <y>131</y>
+      <cn>1</cn>
+      <val>112.</val></rng1>
+    <rng2>
+      <x>44</x>
+      <y>256</y>
+      <cn>2</cn>
+      <val>190.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_RGB2YUV--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>31</x>
+      <y>17</y>
+      <cn>2</cn>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>543</x>
+      <y>21</y>
+      <cn>1</cn>
+      <val>188.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB_NV12--1--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>319</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>611</x>
+      <y>194</y>
+      <cn>2</cn>
+      <val>50.</val></rng1>
+    <rng2>
+      <x>407</x>
+      <y>99</y>
+      <cn>2</cn>
+      <val>0.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---640x480---COLOR_YUV2RGB_NV12--1--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2YUV--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>160.</val></last>
+    <rng1>
+      <x>621</x>
+      <y>446</y>
+      <val>91.</val></rng1>
+    <rng2>
+      <x>1213</x>
+      <y>29</y>
+      <cn>2</cn>
+      <val>125.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_RGB2YUV--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>659</x>
+      <y>308</y>
+      <cn>1</cn>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>681</x>
+      <y>270</y>
+      <val>255.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB_NV12--1--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>479</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>466</x>
+      <y>95</y>
+      <cn>2</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>370</x>
+      <y>59</y>
+      <val>150.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1280x720---COLOR_YUV2RGB_NV12--1--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2YUV--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>246.</val></last>
+    <rng1>
+      <x>1409</x>
+      <y>705</y>
+      <val>89.</val></rng1>
+    <rng2>
+      <x>342</x>
+      <y>527</y>
+      <val>20.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_RGB2YUV--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>81.</val></last>
+    <rng1>
+      <x>1230</x>
+      <y>959</y>
+      <cn>2</cn>
+      <val>247.</val></rng1>
+    <rng2>
+      <x>764</x>
+      <y>815</y>
+      <val>9.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB_NV12--1--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>719</y>
+      <val>174.</val></last>
+    <rng1>
+      <x>1159</x>
+      <y>360</y>
+      <cn>2</cn>
+      <val>64.</val></rng1>
+    <rng2>
+      <x>1878</x>
+      <y>317</y>
+      <val>163.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---1920x1080---COLOR_YUV2RGB_NV12--1--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2YUV--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>2159</y>
+      <val>239.</val></last>
+    <rng1>
+      <x>2854</x>
+      <y>1518</y>
+      <cn>1</cn>
+      <val>153.</val></rng1>
+    <rng2>
+      <x>203</x>
+      <y>2025</y>
+      <val>141.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_RGB2YUV--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB--3--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>2159</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>2668</x>
+      <y>1048</y>
+      <cn>1</cn>
+      <val>37.</val></rng1>
+    <rng2>
+      <x>3643</x>
+      <y>1234</y>
+      <cn>1</cn>
+      <val>120.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB--3--3-->
+<OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB_NV12--1--3-->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>1439</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>2958</x>
+      <y>919</y>
+      <cn>2</cn>
+      <val>175.</val></rng1>
+    <rng2>
+      <x>3595</x>
+      <y>880</y>
+      <val>108.</val></rng2></dst></OCL_CvtColorFixture_CvtColor--CvtColor---3840x2160---COLOR_YUV2RGB_NV12--1--3-->
 </opencv_storage>

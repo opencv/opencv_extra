@@ -21865,25 +21865,6 @@
       <x>576</x>
       <y>8</y>
       <val>97.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>194.</val></last>
-    <rng1>
-      <x>587</x>
-      <y>16</y>
-      <cn>1</cn>
-      <val>136.</val></rng1>
-    <rng2>
-      <x>168</x>
-      <y>85</y>
-      <val>141.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR5552BGR->
   <dst>
     <kind>65536</kind>
@@ -22304,25 +22285,6 @@
       <y>468</y>
       <cn>1</cn>
       <val>113.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_BGRA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_BGRA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>607</x>
-      <y>154</y>
-      <cn>1</cn>
-      <val>39.</val></rng1>
-    <rng2>
-      <x>167</x>
-      <y>95</y>
-      <val>190.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_BGRA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_GRAY2BGR->
   <dst>
     <kind>65536</kind>
@@ -22975,25 +22937,6 @@
       <x>345</x>
       <y>307</y>
       <val>98.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGB2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGB2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>208.</val></last>
-    <rng1>
-      <x>235</x>
-      <y>436</y>
-      <cn>2</cn>
-      <val>30.</val></rng1>
-    <rng2>
-      <x>369</x>
-      <y>115</y>
-      <val>127.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGB2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGBA2BGR->
   <dst>
     <kind>65536</kind>
@@ -23203,25 +23146,6 @@
       <x>304</x>
       <y>111</y>
       <val>166.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_RGBA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_RGBA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>108.</val></last>
-    <rng1>
-      <x>422</x>
-      <y>141</y>
-      <val>155.</val></rng1>
-    <rng2>
-      <x>16</x>
-      <y>461</y>
-      <cn>2</cn>
-      <val>160.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_RGBA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_XYZ2BGR->
   <dst>
     <kind>65536</kind>
@@ -23377,83 +23301,6 @@
       <y>175</y>
       <cn>3</cn>
       <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YCrCb2RGBA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2BGR->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>332</x>
-      <y>408</y>
-      <cn>2</cn>
-      <val>17.</val></rng1>
-    <rng2>
-      <x>492</x>
-      <y>132</y>
-      <val>88.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2BGR->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2RGB->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>218.</val></last>
-    <rng1>
-      <x>161</x>
-      <y>386</y>
-      <cn>2</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>507</x>
-      <y>21</y>
-      <cn>2</cn>
-      <val>0.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2RGB->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2BGRA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>577</x>
-      <y>115</y>
-      <val>79.</val></rng1>
-    <rng2>
-      <x>540</x>
-      <y>148</y>
-      <cn>2</cn>
-      <val>97.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2BGRA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2RGBA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>539</x>
-      <y>116</y>
-      <val>89.</val></rng1>
-    <rng2>
-      <x>130</x>
-      <y>109</y>
-      <cn>2</cn>
-      <val>52.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2RGBA->
 <Size_CvtMode_cvtColor8u--cvtColor8u---1280x720--CV_BayerBG2BGR->
   <dst>
     <kind>65536</kind>
@@ -26011,24 +25858,6 @@
       <x>45</x>
       <y>517</y>
       <val>101.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>246.</val></last>
-    <rng1>
-      <x>1655</x>
-      <y>1016</y>
-      <val>184.</val></rng1>
-    <rng2>
-      <x>331</x>
-      <y>1074</y>
-      <val>190.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR5552BGR->
   <dst>
     <kind>65536</kind>
@@ -26453,26 +26282,6 @@
       <y>114</y>
       <cn>2</cn>
       <val>39.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_BGRA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_BGRA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>99.</val></last>
-    <rng1>
-      <x>1745</x>
-      <y>36</y>
-      <cn>1</cn>
-      <val>145.</val></rng1>
-    <rng2>
-      <x>1513</x>
-      <y>2</y>
-      <cn>1</cn>
-      <val>79.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_BGRA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_GRAY2BGR->
   <dst>
     <kind>65536</kind>
@@ -27133,25 +26942,6 @@
       <y>68</y>
       <cn>1</cn>
       <val>121.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGB2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGB2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>181.</val></last>
-    <rng1>
-      <x>1231</x>
-      <y>93</y>
-      <cn>2</cn>
-      <val>166.</val></rng1>
-    <rng2>
-      <x>705</x>
-      <y>97</y>
-      <val>198.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGB2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGBA2BGR->
   <dst>
     <kind>65536</kind>
@@ -27363,25 +27153,6 @@
       <y>465</y>
       <cn>2</cn>
       <val>164.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>209.</val></last>
-    <rng1>
-      <x>4</x>
-      <y>348</y>
-      <val>44.</val></rng1>
-    <rng2>
-      <x>122</x>
-      <y>853</y>
-      <cn>2</cn>
-      <val>117.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_XYZ2BGR->
   <dst>
     <kind>65536</kind>
@@ -27537,84 +27308,6 @@
       <y>619</y>
       <cn>1</cn>
       <val>6.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YCrCb2RGBA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2BGR->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>81.</val></last>
-    <rng1>
-      <x>633</x>
-      <y>505</y>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1869</x>
-      <y>209</y>
-      <cn>1</cn>
-      <val>127.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2BGR->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2RGB->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>484</x>
-      <y>726</y>
-      <cn>2</cn>
-      <val>250.</val></rng1>
-    <rng2>
-      <x>1299</x>
-      <y>719</y>
-      <cn>2</cn>
-      <val>115.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2RGB->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2BGRA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>147</x>
-      <y>679</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>775</x>
-      <y>230</y>
-      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2BGRA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2RGBA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>496</x>
-      <y>437</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>100</x>
-      <y>576</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2RGBA->
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BayerBG2BGR->
   <dst>
     <kind>65536</kind>
@@ -28096,26 +27789,6 @@
       <y>42</y>
       <cn>1</cn>
       <val>149.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>86.</val></last>
-    <rng1>
-      <x>38</x>
-      <y>21</y>
-      <cn>2</cn>
-      <val>185.</val></rng1>
-    <rng2>
-      <x>31</x>
-      <y>28</y>
-      <cn>2</cn>
-      <val>10.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR5552BGR->
   <dst>
     <kind>65536</kind>
@@ -28536,25 +28209,6 @@
       <y>31</y>
       <cn>2</cn>
       <val>116.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_BGRA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_BGRA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>252.</val></last>
-    <rng1>
-      <x>111</x>
-      <y>48</y>
-      <val>98.</val></rng1>
-    <rng2>
-      <x>52</x>
-      <y>30</y>
-      <cn>1</cn>
-      <val>209.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_BGRA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_GRAY2BGR->
   <dst>
     <kind>65536</kind>
@@ -29189,26 +28843,6 @@
       <x>0</x>
       <y>37</y>
       <val>193.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGB2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGB2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>187.</val></last>
-    <rng1>
-      <x>8</x>
-      <y>5</y>
-      <cn>1</cn>
-      <val>147.</val></rng1>
-    <rng2>
-      <x>122</x>
-      <y>58</y>
-      <cn>1</cn>
-      <val>117.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGB2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGBA2BGR->
   <dst>
     <kind>65536</kind>
@@ -29418,25 +29052,6 @@
       <y>22</y>
       <cn>2</cn>
       <val>158.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_RGBA2YCrCb->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_RGBA2YUV->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>96.</val></last>
-    <rng1>
-      <x>84</x>
-      <y>25</y>
-      <cn>2</cn>
-      <val>166.</val></rng1>
-    <rng2>
-      <x>53</x>
-      <y>42</y>
-      <val>216.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_RGBA2YUV->
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_XYZ2BGR->
   <dst>
     <kind>65536</kind>
@@ -29593,83 +29208,6 @@
       <y>18</y>
       <cn>2</cn>
       <val>142.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YCrCb2RGBA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2BGR->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>164.</val></last>
-    <rng1>
-      <x>92</x>
-      <y>44</y>
-      <cn>1</cn>
-      <val>26.</val></rng1>
-    <rng2>
-      <x>94</x>
-      <y>47</y>
-      <val>113.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2BGR->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2RGB->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>235.</val></last>
-    <rng1>
-      <x>71</x>
-      <y>18</y>
-      <val>18.</val></rng1>
-    <rng2>
-      <x>62</x>
-      <y>36</y>
-      <val>0.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2RGB->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2BGRA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>57</x>
-      <y>4</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1</x>
-      <y>5</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2BGRA->
-<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2RGBA->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>126</x>
-      <y>60</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>28</x>
-      <y>56</y>
-      <cn>1</cn>
-      <val>62.</val></rng1>
-    <rng2>
-      <x>48</x>
-      <y>58</y>
-      <cn>2</cn>
-      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2RGBA->
 <Size_CvtMode2_cvtColorYUV420--cvtColorYUV420---640x480--CV_YUV2BGR_NV12->
   <dst>
     <kind>65536</kind>
@@ -44441,7 +43979,6 @@
       <y>190</y>
       <val>205.</val></rng2></dst></MatInfo_Size_Size_resizeDownLinear--resizeDownLinear---8UC4--1280x720--320x240->
  <!-- resumed -->
-
 <TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT->
   <dst>
     <kind>65536</kind>
@@ -48511,7 +48048,6 @@
       <cn>1</cn>
       <val>114.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---4208x3120--INTER_LINEAR--BORDER_REPLICATE--8UC4->
  <!-- resumed -->
-
 <ImgSize_TmplSize_Method_matchTemplateSmall--matchTemplateSmall---128x128--12x12--CV_TM_SQDIFF->
   <result>
     <kind>65536</kind>
@@ -51321,7 +50857,6 @@
       <y>2</y>
       <val>-5.6855322327464819e-04</val></rng2></result></ImgSize_TmplSize_Method_matchTemplateBig--matchTemplateBig---1280x1024--1261x1013--CV_TM_CCOEFF_NORMED->
  <!-- resumed -->
-
 <Size_CvtMode3_cvtColorRGB2YUV420p--cvtColorRGB2YUV420p---640x480--CV_RGB2YUV_IYUV->
   <dst>
     <kind>65536</kind>
@@ -51899,7 +51434,6 @@
       <y>65</y>
       <val>105.</val></rng2></dst></Size_CvtMode3_cvtColorRGB2YUV420p--cvtColorRGB2YUV420p---130x60--CV_BGRA2YUV_YV12->
  <!-- resumed -->
-
 <Sz_ClipLimit_CLAHE--CLAHE---640x480--0->
   <dst>
     <kind>65536</kind>
@@ -52009,7 +51543,6 @@
       <y>582</y>
       <val>89.</val></rng2></dst></Sz_ClipLimit_CLAHE--CLAHE---1920x1080--40->
 <!-- resumed -->
-
 <Size_CvtMode2_cvtColorYUV420--cvtColorYUV420---640x480--CV_YUV2RGBA_UYVY->
   <dst>
     <kind>65536</kind>
@@ -52363,7 +51896,6 @@
       <cn>2</cn>
       <val>255.</val></rng2></dst></Size_CvtMode2_cvtColorYUV420--cvtColorYUV420---130x60--CV_YUV2BGRA_YVYU->
  <!-- resumed -->
-
 <Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2Luv->
   <dst>
     <kind>65536</kind>
@@ -53317,4 +52849,468 @@
       <y>320</y>
       <cn>2</cn>
       <val>173.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2Luv->
+ <!-- resumed -->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>187.</val></last>
+    <rng1>
+      <x>65</x>
+      <y>4</y>
+      <val>76.</val></rng1>
+    <rng2>
+      <x>39</x>
+      <y>34</y>
+      <cn>2</cn>
+      <val>84.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_BGR2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_BGRA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>96.</val></last>
+    <rng1>
+      <x>93</x>
+      <y>36</y>
+      <cn>2</cn>
+      <val>202.</val></rng1>
+    <rng2>
+      <x>91</x>
+      <y>15</y>
+      <cn>2</cn>
+      <val>202.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_BGRA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGB2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>86.</val></last>
+    <rng1>
+      <x>16</x>
+      <y>29</y>
+      <val>159.</val></rng1>
+    <rng2>
+      <x>38</x>
+      <y>37</y>
+      <val>203.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_RGB2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_RGBA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>252.</val></last>
+    <rng1>
+      <x>82</x>
+      <y>60</y>
+      <val>128.</val></rng1>
+    <rng2>
+      <x>124</x>
+      <y>48</y>
+      <cn>1</cn>
+      <val>126.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_RGBA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2BGR->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>235.</val></last>
+    <rng1>
+      <x>100</x>
+      <y>38</y>
+      <cn>1</cn>
+      <val>82.</val></rng1>
+    <rng2>
+      <x>100</x>
+      <y>54</y>
+      <val>88.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2BGR->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2RGB->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>124</x>
+      <y>54</y>
+      <val>50.</val></rng1>
+    <rng2>
+      <x>94</x>
+      <y>35</y>
+      <val>136.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CV_YUV2RGB->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2BGRA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>93</x>
+      <y>30</y>
+      <cn>1</cn>
+      <val>194.</val></rng1>
+    <rng2>
+      <x>103</x>
+      <y>9</y>
+      <cn>1</cn>
+      <val>121.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2BGRA->
+<Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2RGBA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>40</x>
+      <y>47</y>
+      <cn>3</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>18</x>
+      <y>12</y>
+      <val>49.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---127x61--CX_YUV2RGBA->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>208.</val></last>
+    <rng1>
+      <x>428</x>
+      <y>432</y>
+      <val>171.</val></rng1>
+    <rng2>
+      <x>339</x>
+      <y>224</y>
+      <cn>1</cn>
+      <val>154.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_BGR2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_BGRA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>108.</val></last>
+    <rng1>
+      <x>262</x>
+      <y>163</y>
+      <cn>1</cn>
+      <val>103.</val></rng1>
+    <rng2>
+      <x>379</x>
+      <y>176</y>
+      <cn>1</cn>
+      <val>145.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_BGRA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGB2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.</val></last>
+    <rng1>
+      <x>265</x>
+      <y>153</y>
+      <cn>1</cn>
+      <val>131.</val></rng1>
+    <rng2>
+      <x>177</x>
+      <y>98</y>
+      <cn>1</cn>
+      <val>113.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_RGB2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_RGBA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>155</x>
+      <y>46</y>
+      <cn>2</cn>
+      <val>98.</val></rng1>
+    <rng2>
+      <x>357</x>
+      <y>462</y>
+      <cn>1</cn>
+      <val>163.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_RGBA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2BGR->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>218.</val></last>
+    <rng1>
+      <x>143</x>
+      <y>314</y>
+      <val>136.</val></rng1>
+    <rng2>
+      <x>442</x>
+      <y>219</y>
+      <cn>2</cn>
+      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2BGR->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2RGB->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>226</x>
+      <y>83</y>
+      <cn>1</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>147</x>
+      <y>9</y>
+      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CV_YUV2RGB->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2BGRA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>310</x>
+      <y>108</y>
+      <cn>3</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>189</x>
+      <y>109</y>
+      <cn>1</cn>
+      <val>168.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2BGRA->
+<Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2RGBA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>78</x>
+      <y>449</y>
+      <val>86.</val></rng1>
+    <rng2>
+      <x>576</x>
+      <y>213</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---640x480--CX_YUV2RGBA->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>181.</val></last>
+    <rng1>
+      <x>734</x>
+      <y>334</y>
+      <cn>2</cn>
+      <val>140.</val></rng1>
+    <rng2>
+      <x>1372</x>
+      <y>897</y>
+      <cn>2</cn>
+      <val>116.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_BGR2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_BGRA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>209.</val></last>
+    <rng1>
+      <x>1325</x>
+      <y>936</y>
+      <cn>1</cn>
+      <val>107.</val></rng1>
+    <rng2>
+      <x>196</x>
+      <y>232</y>
+      <val>206.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_BGRA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGB2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>246.</val></last>
+    <rng1>
+      <x>106</x>
+      <y>261</y>
+      <cn>2</cn>
+      <val>197.</val></rng1>
+    <rng2>
+      <x>140</x>
+      <y>186</y>
+      <val>179.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_RGB2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2YUV->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>99.</val></last>
+    <rng1>
+      <x>1786</x>
+      <y>877</y>
+      <cn>1</cn>
+      <val>137.</val></rng1>
+    <rng2>
+      <x>1513</x>
+      <y>53</y>
+      <val>80.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2YUV->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2BGR->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>257</x>
+      <y>646</y>
+      <cn>2</cn>
+      <val>228.</val></rng1>
+    <rng2>
+      <x>341</x>
+      <y>141</y>
+      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2BGR->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2RGB->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>81.</val></last>
+    <rng1>
+      <x>1083</x>
+      <y>184</y>
+      <cn>1</cn>
+      <val>112.</val></rng1>
+    <rng2>
+      <x>1648</x>
+      <y>786</y>
+      <cn>1</cn>
+      <val>202.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CV_YUV2RGB->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2BGRA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1445</x>
+      <y>398</y>
+      <cn>2</cn>
+      <val>237.</val></rng1>
+    <rng2>
+      <x>1183</x>
+      <y>1053</y>
+      <cn>1</cn>
+      <val>0.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2BGRA->
+<Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2RGBA->
+  <dst>
+    <kind>65536</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1168</x>
+      <y>656</y>
+      <cn>2</cn>
+      <val>192.</val></rng1>
+    <rng2>
+      <x>1644</x>
+      <y>577</y>
+      <val>255.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_YUV2RGBA->
 </opencv_storage>
