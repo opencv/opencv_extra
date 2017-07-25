@@ -1,0 +1,99 @@
+{
+  "simple_values": {
+    "value_int32_pos": 1023,
+    "value_string": "mystring",
+    "value_uint64": [ 877, 355 ],
+    "value_int32_neg": -150,
+    "value_string_skip": {},
+    "value_float": {},
+    "value_double": {},
+    "value_bool": {},
+    "value_uint32": {}
+  },
+
+  "nested_message": {
+    "nested_msg_value": [
+      {
+        "value": 114,
+        "value_float_default": {},
+        "packed_int32": {}
+      },
+      {
+        "value": 88,
+        "value_float_default": {},
+        "packed_int32": {}
+      }
+    ],
+    "simple_value": {
+      "value_int32_pos": 1023,
+      "value_int32_neg": -1023,
+      "value_float": -0.93,
+      "value_double": -13.1329,
+      "value_bool": true,
+      "value_uint32": 999,
+      "value_string": {},
+      "value_uint64": {},
+      "value_string_skip": {}
+    }
+  },
+
+  "default_values": {
+    "value_string": "non-empty",
+    "value_float": 5.1421,
+    "value_int32": -324,
+    "value_true": {},
+    "value_false": {},
+    "value_double": {}
+  },
+
+  "enums": {
+    "enum_value": "MACRO_ENUM_VALUE_1",
+    "embedded_enum_value": [
+      "EMBEDDED_ENUM_VALUE_2",
+      "EMBEDDED_ENUM_VALUE_1",
+      "EMBEDDED_ENUM_VALUE_2"
+    ],
+    "enum_value_default": {}
+  },
+
+  "packed_values": {
+    "packed_floats": [-13.42, 1.041, 0.900],
+    "value_string": "test_string",
+    "nested_msg": [
+      {
+        "value": 153,
+        "value_float_default": {},
+        "packed_int32": [99, -9, 1200]
+      },
+      {
+        "value": -99,
+        "value_float_default": {},
+        "packed_int32": [123, 0]
+      }
+    ]
+  },
+
+  "package": {
+    "msg": { "value": 700.0 }
+  },
+
+  "map": {
+    "int_to_string": {
+      "1": "first string",
+      "-2": "string with negative key"
+    },
+    "string_to_float": {
+      "key1": -9.321,
+      "key2": 8.05
+    },
+    "string_to_mix": {
+      "abcd": {
+        "value": [ 124, 12, 0 ],
+        "str": "mystr"
+      },
+      "efgh": {
+        "value": [ 42 ]
+      }
+    }
+  }
+}

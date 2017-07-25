@@ -1,0 +1,56 @@
+syntax = "proto2";
+
+enum MacroEnum {
+  MACRO_ENUM_VALUE_0 = 0;
+  MACRO_ENUM_VALUE_1 = 1;
+  MACRO_ENUM_VALUE_3 = 3;
+};
+
+message EnumValues {
+  required MacroEnum enum_value = 1;
+  optional MacroEnum enum_value_default = 2 [default = MACRO_ENUM_VALUE_3];
+  repeated HostMsg.EmbeddedEnum embedded_enum_value = 3;
+};
+
+message HostMsg {
+  message NestedMsg {
+    required int32 value = 1;
+    optional float value_float_default = 2 [default = -0.9];
+    repeated int32 packed_int32 = 3 [packed = true];
+  };
+
+  enum EmbeddedEnum {
+    EMBEDDED_ENUM_VALUE_1 = 1;
+    EMBEDDED_ENUM_VALUE_2 = 2;
+  };
+
+  repeated NestedMsg nested_msg_value = 1;
+  required SimpleValues simple_value = 2;
+};
+
+message SimpleValues {
+  required int32 value_int32_pos = 1;
+  optional string value_string = 2;
+  required int32 value_int32_neg = 100;
+  optional string value_string_skip = 3;
+  repeated uint64 value_uint64 = 5;
+  optional float value_float = 7;
+  optional double value_double = 8;
+  optional bool value_bool = 9;
+  optional uint32 value_uint32 = 10;
+};
+
+message DefaultValues {
+  optional bool value_true = 1 [default = true];
+  optional bool value_false = 2 [default = false];
+  optional string value_string = 3 [default = "empty"];
+  required float value_float = 7 [default = -9.043];
+  optional double value_double = 8 [default = 1e-2];
+  required int32 value_int32 = 4 [default = 42];
+};
+
+message PackedValues {
+  repeated float packed_floats = 1 [packed = true];
+  required string value_string = 2;
+  repeated HostMsg.NestedMsg nested_msg = 3;
+};
