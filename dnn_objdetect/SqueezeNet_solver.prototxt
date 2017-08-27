@@ -10,8 +10,8 @@ stepsize: 100000
 momentum: 0.9
 weight_decay: 0.0002
 snapshot: 1000
-snapshot_prefix: "/users/TeamVideoSummarization/gsoc/practice/snapshot/train"
+snapshot_prefix: "snapshot"
 solver_mode: GPU
-net: "/users/TeamVideoSummarization/gsoc/opencv_contrib/modules/dnn_objdetect/proto/SqueezeNet_train_test.prototxt" 
+net: "SqueezeNet_train_test.prototxt" 
 random_seed: 42
 average_loss: 80

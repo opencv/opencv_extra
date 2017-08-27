@@ -13,7 +13,7 @@ layer {
       mean_value: 123
    }
    data_param {
-      source: "/users2/Datasets/ILSVRC_2012/train/ImageNet_train_lmdb"
+      source: "ImageNet_train_lmdb"
       batch_size: 64
       backend: LMDB
    }
@@ -33,7 +33,7 @@ layer {
       mean_value: 123
    }
    data_param {
-      source: "/users2/Datasets/ILSVRC_2012/val/ImageNet_val_lmdb"
+      source: "ImageNet_val_lmdb"
       batch_size: 5
       backend: LMDB
    }

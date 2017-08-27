@@ -8,11 +8,11 @@ layer {
    top: "data"
    top: "bbox"
    bbox_data_param {
-     source:   "/users2/Datasets/PASCAL_VOC/VOCdevkit/VOC2012_Resize/source.txt"
+     source:   "source.txt"
      batch_size: 2 
      is_color: true
      shuffle: true
-     root_folder: "/users2/Datasets/PASCAL_VOC/VOCdevkit/VOC2012_Resize/"
+     root_folder: "VOC2012_Resize"
    }
    transform_param {
      mean_value: 104
@@ -1136,7 +1136,6 @@ layer {
    bottom: "delta_bbox"
    bottom: "bbox"
    top: "loss"
-   top: "mAP"
    squeezedet_param {
       engine: CAFFE
       classes: 20
