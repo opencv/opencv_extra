@@ -8,11 +8,11 @@ layer {
    top: "data"
    top: "bbox"
    bbox_data_param {
-     source:   "source.txt"
-     batch_size: 2 
+     source:   "/home/kv/Desktop/source.txt"
+     batch_size: 2
      is_color: true
      shuffle: true
-     root_folder: "VOC2012_Resize"
+     root_folder: "/home/kv/Desktop/"
    }
    transform_param {
      mean_value: 104
@@ -21,6 +21,27 @@ layer {
    }
    include {
      phase: TRAIN
+   }
+}
+layer {
+   name: "data"
+   type: "BboxData"
+   top: "data"
+   top: "bbox"
+   bbox_data_param {
+     source:   "/home/kv/Desktop/source.txt"
+     batch_size: 2
+     is_color: true
+     shuffle: true
+     root_folder: "/home/kv/Desktop/"
+   }
+   transform_param {
+     mean_value: 104
+     mean_value: 117
+     mean_value: 123
+   }
+   include {
+     phase: TEST
    }
 }
 layer {
@@ -1091,7 +1112,7 @@ layer {
   name: "slice"
   type: "Slice"
   bottom: "permute_conv11"
-  top: "soft_class_reg" 
+  top: "soft_class_reg"
   top: "sig_conf_reg"
   top: "delta_bbox"
   slice_param {
@@ -1164,4 +1185,3 @@ layer {
       lambda_conf: 1
    }
 }
-
