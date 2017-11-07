@@ -15,8 +15,8 @@
 	case_teddy_0 teddy "48" "3" "0"
 	case_teddy_1 teddy "48" "3" "1"
 	case_tsukuba_0 tsukuba "16" "1" "0"
-	case_tsukuba_1 tsukuba "16" "1" "0"
+	case_tsukuba_1 tsukuba "16" "1" "1"
 	case_venus_0 venus "32" "3" "0"
-	case_venus_1 venus "32" "3" "0"
+	case_venus_1 venus "32" "3" "1"
 </params>
 </opencv_storage>
