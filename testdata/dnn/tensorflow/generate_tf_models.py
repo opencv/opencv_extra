@@ -392,6 +392,10 @@ beta = tf.Variable(tf.random_normal([5], dtype=tf.float32))
 bn = tf.nn.fused_batch_norm(inp, gamma, beta, epsilon=1e-5, is_training=True)[0]
 save(inp, bn, 'mvn_batch_norm_1x1')
 ################################################################################
+inp = tf.placeholder(tf.float32, [2, 3, 4, 5], 'input')
+reduced = tf.reduce_mean(inp, axis=[1, 2], keepdims=True)
+save(inp, reduced, 'reduce_mean')
+################################################################################
 
 # Uncomment to print the final graph.
 # with tf.gfile.FastGFile('fused_batch_norm_net.pb') as f:
