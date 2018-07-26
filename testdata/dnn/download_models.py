@@ -328,6 +328,17 @@ models = [
         member='faster_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
         sha='f2e4bf386b9bb3e25ddfcbbd382c20f417e444f3',
         filename='faster_rcnn_inception_v2_coco_2018_01_28.pb'),
+    Model(
+        name='AlexNet (ONNX)',
+        url='https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_alexnet.tar.gz',
+        sha='c713be2852472582224fa7395e2ab4641f8b6356',
+        filename='bvlc_alexnet.tar.gz'),
+    Model(
+        name='AlexNet (ONNX)',
+        archive='bvlc_alexnet.tar.gz',
+        member='bvlc_alexnet/model.onnx',
+        sha='b256703f2b125d8681a0a6e5a40a6c9deb7d2b4b',
+        filename='onnx/models/alexnet.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory

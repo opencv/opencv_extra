@@ -43,7 +43,6 @@ def save_data_and_model(name, input, model):
 
     onnx_model_pb = export_to_string(model, input)
     model_def = assertONNXExpected(onnx_model_pb)
-    output_dir = os.path.join("models", "Clean_models_false")
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
 
@@ -96,16 +95,3 @@ input = Variable(torch.randn(2, 3))
 dropout = nn.Dropout()
 dropout.eval()
 save_data_and_model("dropout", input, dropout)
-
-
-
-# import opencv_onnx_pb2
-# import sys
-# def clear_data(model):
-#     try:
-#       f = open(model, "rb")
-#       model_structure = opencv_onnx_pb2.
-#       model_structure.ParseFromString(f.read())
-#       f.close()
-#     except IOError:
-#       print model + ": Could not open file.  Creating a new one."
