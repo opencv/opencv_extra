@@ -75,7 +75,7 @@ conv2 = nn.Sequential(
           nn.Conv2d(3, 6, kernel_size=(5,3), stride=1, padding=1),
           nn.Conv2d(6, 4, kernel_size=5, stride=2, padding=(0,2))
           )
-save_data_and_model("convolution2", input, conv2)
+save_data_and_model("two_convolution", input, conv2)
 
 
 input = Variable(torch.randn(2, 3, 30, 45))
@@ -83,7 +83,7 @@ maxpool2 = nn.Sequential(
            nn.MaxPool2d(kernel_size=5, stride=1, padding=0, dilation=1),
            nn.MaxPool2d(kernel_size=3, stride=1, padding=0, dilation=1)
            )
-save_data_and_model("maxpooling2", input, maxpool2)
+save_data_and_model("two_maxpooling", input, maxpool2)
 
 
 input = Variable(torch.randn(1, 2, 10, 10))
