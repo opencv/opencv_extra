@@ -179,3 +179,24 @@ input1 = Variable(torch.randn(1, 2, 2, 2))
 input2 = Variable(torch.randn(1, 2, 2, 2))
 model = MultyInputs()
 save_data_and_model_multy_inputs("multy_inputs", model, input1, input2)
+
+class Flatten(nn.Module):
+    def forward(self, x):
+        return x.view(-1, 16*5*5)
+
+model = nn.Sequential(
+                nn.Conv2d(3,6,5),
+                nn.ReLU(),
+                nn.MaxPool2d(2, 2),
+                nn.Conv2d(6, 16, 5),
+                nn.ReLU(),
+                nn.MaxPool2d(2, 2),
+                Flatten(),
+                nn.Linear(16 * 5 * 5, 120),
+                nn.ReLU(),
+                nn.Linear(120, 84),
+                nn.ReLU(),
+                nn.Linear(84, 10)
+                )
+input = Variable(torch.randn(1, 3, 32, 32))
+save_data_and_model("constant", input, model)

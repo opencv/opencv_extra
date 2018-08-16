@@ -681,6 +681,29 @@ models = [
         member='resnet100/test_data_set_0/output_0.pb',
         sha='f54c73699d00b18b5c40e4ea895b1e88e7f8dea3',
         filename='onnx/data/output_LResNet100E_IR.pb'),
+    Model(
+        name='Emotion FERPlus (ONNX)',
+        url='https://www.cntk.ai/OnnxModels/emotion_ferplus/opset_7/emotion_ferplus.tar.gz',
+        sha='3a430611d47cae5ba84f1019531a3041cf5085c1',
+        filename='emotion_ferplus.tar.gz'),
+    Model(
+        name='Emotion FERPlus (ONNX)',
+        archive='emotion_ferplus.tar.gz',
+        member='emotion_ferplus/model.onnx',
+        sha='3c0546c99910156aed7d7809fe7be9bd92168b05',
+        filename='onnx/models/emotion_ferplus.onnx'),
+    Model(
+        name='Emotion FERPlus (ONNX)',
+        archive='emotion_ferplus.tar.gz',
+        member='emotion_ferplus/test_data_set_0/input_0.pb',
+        sha='3a3189093cc38a6ffab10c65eda90a24e12d7e1a',
+        filename='onnx/data/input_emotion_ferplus.pb'),
+    Model(
+        name='Emotion FERPlus (ONNX)',
+        archive='emotion_ferplus.tar.gz',
+        member='emotion_ferplus/test_data_set_0/output_0.pb',
+        sha='a4842733bf293dfa08482509a2a7b2b23af9d5b0',
+        filename='onnx/data/output_emotion_ferplus.pb'),
 ]
 
 # Note: models will be downloaded to current working directory
