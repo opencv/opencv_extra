@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package test;
+
+message MessageOne {
+  required float value = 1;
+};
+
+message MessageTwo {
+  required MessageOne msg = 1;
+};

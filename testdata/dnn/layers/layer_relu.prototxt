@@ -8,7 +8,17 @@ input_dim: 113
 
 layer {
   type: "ReLU"
-  name: "output"
+  name: "prelu"
   bottom: "input"
+  top: "prelu"
+  relu_param {
+    negative_slope: -0.3
+  }
+}
+
+layer {
+  type: "ReLU"
+  name: "output"
+  bottom: "prelu"
   top: "output"
 }
