@@ -59,6 +59,9 @@ input = Variable(torch.randn(1, 3, 10, 10))
 conv = nn.Conv2d(3, 5, kernel_size=5, stride=2, padding=1)
 save_data_and_model("convolution", input, conv)
 
+input = Variable(torch.randn(1, 3, 10, 10))
+deconv = nn.ConvTranspose2d(3, 5, kernel_size=5, stride=2, padding=1)
+save_data_and_model("deconvolution", input, deconv)
 
 input = Variable(torch.randn(2, 3))
 linear = nn.Linear(3, 4, bias=True)
@@ -80,6 +83,12 @@ conv2 = nn.Sequential(
           )
 save_data_and_model("two_convolution", input, conv2)
 
+input = Variable(torch.randn(1, 3, 10, 20))
+deconv2 = nn.Sequential(
+    nn.ConvTranspose2d(3, 6, kernel_size=(5,3), stride=1, padding=1),
+    nn.ConvTranspose2d(6, 4, kernel_size=5, stride=2, padding=(0,2))
+)
+save_data_and_model("two_deconvolution", input, deconv2)
 
 input = Variable(torch.randn(2, 3, 12, 9))
 maxpool2 = nn.Sequential(
@@ -208,10 +217,10 @@ class Transpose(nn.Module):
 
     def __init__(self):
         super(Transpose, self).__init__()
-        self.squeeze1 = nn.Linear(3, 4, bias=True)
+        self.relu = nn.ReLU()
 
     def forward(self, x):
-        x = self.squeeze1(x)
+        x = self.relu(x)
         return torch.t(x)
 
 
@@ -219,88 +228,21 @@ input = Variable(torch.randn(2, 3))
 model = Transpose()
 save_data_and_model("transpose", input, model)
 
-class BidirectionalLSTM(nn.Module):
-
-    def __init__(self, nIn, nHidden, nOut):
-    # def __init__(self, nIn, nHidden):
-        super(BidirectionalLSTM, self).__init__()
-
-        self.rnn = nn.LSTM(nIn, nHidden, bidirectional=True)
-        # self.embedding = nn.Linear(nHidden * 2, nOut)
-
-    def forward(self, input):
-        recurrent, _ = self.rnn(input)
-        return recurrent
-        # T, b, h = recurrent.size()
-        # t_rec = recurrent.view(T * b, h)
-
-        # output = self.embedding(t_rec)  # [T * b, nOut]
-        # output = output.view(T, b, -1)
-
-        # return output
+input = Variable(torch.randn(1, 2, 3, 4))
+pad = nn.ZeroPad2d((4,3, 2,1))  # left,right, top,bottom
+save_data_and_model("padding", input, pad)
 
 
-class CRNNNET(nn.Module):
+class DynamicReshapeNet(nn.Module):
+    def __init__(self):
+        super(DynamicReshapeNet, self).__init__()
 
-    # def __init__(self, imgH, nc, nclass, nh, n_rnn=2, leakyRelu=False):
-    def __init__(self, imgH, nc, nh, n_rnn=2, leakyRelu=False):
-        super(CRNNNET, self).__init__()
-        assert imgH % 16 == 0, 'imgH has to be a multiple of 16'
+    def forward(self, image):
+        batch_size = image.size(0)
+        channels = image.size(1)
+        image = image.permute(0, 2, 3, 1).contiguous().view(batch_size, -1, channels)
+        return image
 
-        ks = [3, 3, 3, 3, 3, 3, 2]
-        ps = [1, 1, 1, 1, 1, 1, 0]
-        ss = [1, 1, 1, 1, 1, 1, 1]
-        nm = [64, 128, 256, 256, 512, 512, 512]
-
-        cnn = nn.Sequential()
-
-        def convRelu(i, batchNormalization=False):
-            nIn = nc if i == 0 else nm[i - 1]
-            nOut = nm[i]
-            cnn.add_module('conv{0}'.format(i),
-                           nn.Conv2d(nIn, nOut, ks[i], ss[i], ps[i]))
-            if batchNormalization:
-                cnn.add_module('batchnorm{0}'.format(i), nn.BatchNorm2d(nOut))
-            if leakyRelu:
-                cnn.add_module('relu{0}'.format(i),
-                               nn.LeakyReLU(0.2, inplace=True))
-            else:
-                cnn.add_module('relu{0}'.format(i), nn.ReLU(True))
-
-        convRelu(0)
-        cnn.add_module('pooling{0}'.format(0), nn.MaxPool2d(2, 2))  # 64x16x64
-        convRelu(1)
-        cnn.add_module('pooling{0}'.format(1), nn.MaxPool2d(2, 2))  # 128x8x32
-        convRelu(2, True)
-        convRelu(3)
-        cnn.add_module('pooling{0}'.format(2),
-                       nn.MaxPool2d((2, 2), (2, 1), (0, 1)))  # 256x4x16
-        convRelu(4, True)
-        convRelu(5)
-        cnn.add_module('pooling{0}'.format(3),
-                       nn.MaxPool2d((2, 2), (2, 1), (0, 1)))  # 512x2x16
-        convRelu(6, True)  # 512x1x16
-
-        self.cnn = cnn
-        self.rnn = BidirectionalLSTM(512, nh, nh)
-        # self.rnn = nn.Sequential(
-        #     BidirectionalLSTM(512, nh, nh),
-        #     BidirectionalLSTM(nh, nh, nclass))
-
-
-    def forward(self, input):
-        # conv features
-        conv = self.cnn(input)
-        b, c, h, w = conv.size()
-        assert h == 1, "the height of conv must be 1"
-        conv = conv.squeeze(2)
-        conv = conv.permute(2, 0, 1)  # [w, b, c]
-
-        output = self.rnn(conv)
-        return output
-
-
-input = Variable(torch.randn(1, 1, 32, 128))
-model = CRNNNET(input.shape[2], 1, 128)
-save_data_and_model("LSTM", input, model)
-# output = np.ascontiguousarray(output.detach().numpy())
+input = Variable(torch.randn(1, 2, 3, 4))
+model = DynamicReshapeNet()
+save_data_and_model("dynamic_reshape", input, model)
