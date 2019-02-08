@@ -363,8 +363,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -5.4988878944016972e-01 8.0857577434663885e-01
-        -6.9620650311494492e-01</data></val></rvec>
+        1.4174734185364321e-01 8.1415404962890581e-01
+        6.2210689388886820e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -373,8 +373,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -3.5308854288604175e+03 -3.2622350248547849e+02
-        1.6556800163692922e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_ITERATIVE->
+        5.5735731891601992e-01 2.0009055469450729e-01
+        5.7572404948683076e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_ITERATIVE->
 <PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_EPNP->
   <rvec>
     <kind>65536</kind>
@@ -384,8 +384,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9623718160937125e-01 -6.7751885611986762e-01
-        2.1609523921028795e+00</data></val></rvec>
+        1.4174922682027555e-01 8.1415102327790534e-01
+        6.2211119941258819e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -394,8 +394,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5309026056688735e+03 3.2620499700015228e+02
-        -5.9426436685061026e+02</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_EPNP->
+        5.5733464778129616e-01 2.0008953422786213e-01
+        5.7567048662881248e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_EPNP->
 <PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_UPNP->
   <rvec>
     <kind>65536</kind>
@@ -405,8 +405,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9623718160937125e-01 -6.7751885611986762e-01
-        2.1609523921028795e+00</data></val></rvec>
+        1.4174922682027555e-01 8.1415102327790534e-01
+        6.2211119941258819e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -415,8 +415,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5309026056688735e+03 3.2620499700015228e+02
-        -5.9426436685061026e+02</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_UPNP->
+        5.5733464778129616e-01 2.0008953422786213e-01
+        5.7567048662881248e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_UPNP->
 <PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_DLS->
   <rvec>
     <kind>65536</kind>
@@ -426,8 +426,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9623718160937125e-01 -6.7751885611986762e-01
-        2.1609523921028795e+00</data></val></rvec>
+        1.4174813290215982e-01 8.1415452209928652e-01
+        6.2211010595529082e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -436,8 +436,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5309026056688735e+03 3.2620499700015228e+02
-        -5.9426436685061026e+02</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_DLS->
+        5.5738391870548742e-01 2.0009071216010277e-01
+        5.7575493045728976e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---5--SOLVEPNP_DLS->
 <PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_ITERATIVE->
   <rvec>
     <kind>65536</kind>
@@ -447,8 +447,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -7.7572147730160884e-02 1.2133800025883548e-01
-        -3.3313785370820437e-01</data></val></rvec>
+        1.4174162362613471e-01 8.1414330920756361e-01
+        6.2209785460591982e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -457,8 +457,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1.7577992994398035e+03 2.6103242907211052e+03
-        -3.9744186470119676e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_ITERATIVE->
+        5.5731229363433998e-01 2.0007893852654710e-01
+        5.7556045370725240e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_ITERATIVE->
 <PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_EPNP->
   <rvec>
     <kind>65536</kind>
@@ -468,8 +468,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7185951769125921e-01 -1.0986766997047170e-01
-        2.8013243262923742e+00</data></val></rvec>
+        1.4174289653469607e-01 8.1414355515412151e-01
+        6.2209873591571241e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -478,8 +478,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7578550685542068e+03 -2.6103115223798491e+03
-        4.5119157195223052e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_EPNP->
+        5.5732498460336100e-01 2.0008767274050132e-01
+        5.7557771899108801e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_EPNP->
 <PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_UPNP->
   <rvec>
     <kind>65536</kind>
@@ -489,8 +489,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7185951769125921e-01 -1.0986766997047170e-01
-        2.8013243262923742e+00</data></val></rvec>
+        1.4174289653469607e-01 8.1414355515412151e-01
+        6.2209873591571241e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -499,8 +499,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7578550685542068e+03 -2.6103115223798491e+03
-        4.5119157195223052e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_UPNP->
+        5.5732498460336100e-01 2.0008767274050132e-01
+        5.7557771899108801e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_UPNP->
 <PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_DLS->
   <rvec>
     <kind>65536</kind>
@@ -510,8 +510,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7185951769125921e-01 -1.0986766997047170e-01
-        2.8013243262923742e+00</data></val></rvec>
+        1.4174283139044924e-01 8.1414366994733522e-01
+        6.2209854194638536e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -520,8 +520,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -1.7578550685542068e+03 -2.6103115223798491e+03
-        4.5119157195223052e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_DLS->
+        5.5732036016129438e-01 2.0008693348907181e-01
+        5.7557450185932879e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---27--SOLVEPNP_DLS->
 <PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_ITERATIVE->
   <rvec>
     <kind>65536</kind>
@@ -531,8 +531,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.7470113675312683e-01 -1.2974442518825329e+00
-        -1.8510291655301740e+00</data></val></rvec>
+        1.4174104288392533e-01 8.1414473297507861e-01
+        6.2209378582931008e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -541,8 +541,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        5.8057684068882608e+01 -3.0866998462205597e+03
-        -1.4086536763376814e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_ITERATIVE->
+        5.5729596351760680e-01 2.0008460950216284e-01
+        5.7554423592826742e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_ITERATIVE->
 <PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_EPNP->
   <rvec>
     <kind>65536</kind>
@@ -552,8 +552,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1.1333130007091725e+00 3.2728989517240104e-01
-        9.0616818730173354e-01</data></val></rvec>
+        1.4174091883751652e-01 8.1414570733337466e-01
+        6.2209406282395208e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -562,8 +562,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -5.7995756265962768e+01 3.0867063283338252e+03
-        1.7246145875107734e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_EPNP->
+        5.5728686946455230e-01 2.0008005773288762e-01
+        5.7554406864794672e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_EPNP->
 <PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_UPNP->
   <rvec>
     <kind>65536</kind>
@@ -573,8 +573,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1.1333130007091725e+00 3.2728989517240104e-01
-        9.0616818730173354e-01</data></val></rvec>
+        1.4174091883751652e-01 8.1414570733337466e-01
+        6.2209406282395208e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -583,8 +583,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -5.7995756265962768e+01 3.0867063283338252e+03
-        1.7246145875107734e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_UPNP->
+        5.5728686946455230e-01 2.0008005773288762e-01
+        5.7554406864794672e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_UPNP->
 <PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_DLS->
   <rvec>
     <kind>65536</kind>
@@ -594,8 +594,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1.1333130007091725e+00 3.2728989517240104e-01
-        9.0616818730173354e-01</data></val></rvec>
+        1.4174116979656828e-01 8.1414503431571705e-01
+        6.2209404533893886e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -604,8 +604,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -5.7995756265962768e+01 3.0867063283338252e+03
-        1.7246145875107734e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_DLS->
+        5.5727838186892242e-01 2.0008161613629694e-01
+        5.7552982282663567e-01</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---91--SOLVEPNP_DLS->
 <PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_P3P->
   <rvec>
     <kind>65536</kind>
@@ -615,8 +615,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1.7552252047697623e+00 -1.9882956269580414e+00
-        8.1428976973598555e-01</data></val></rvec>
+        1.4172622660031262e-01 8.1409377755503021e-01
+        6.2212605901284923e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -625,8 +625,29 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        2.6849035776465316e+03 -3.9480282635984777e+03
-        3.3993599987079228e+03</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_P3P->
+        5.5754925111783482e-01 1.9992115577927505e-01
+        5.7521390552996277e-01</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_P3P->
+<PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_AP3P->
+  <rvec>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>3</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.4172629210197918e-01 8.1410503288134128e-01
+        6.2212152218682881e-01</data></val></rvec>
+  <tvec>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>3</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        5.5747853169610639e-01 1.9990685177125944e-01
+        5.7527496780361265e-01</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_AP3P->
 <PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_EPNP->
   <rvec>
     <kind>65536</kind>
@@ -636,8 +657,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9624290258378945e-01 -6.7751468164617135e-01
-        2.1609514348813397e+00</data></val></rvec>
+        1.4174700476249488e-01 8.1413757648829932e-01
+        6.2209654275919979e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -646,8 +667,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5308960898112496e+03 3.2622770699157866e+02
-        -5.9426185267769813e+02</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_EPNP->
+        5.5727234706239326e-01 2.0006178301191868e-01
+        5.7552867229467086e-01</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_EPNP->
 <PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_DLS->
   <rvec>
     <kind>65536</kind>
@@ -657,8 +678,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9624290258378945e-01 -6.7751468164617135e-01
-        2.1609514348813397e+00</data></val></rvec>
+        1.4174668174184665e-01 8.1413808544797539e-01
+        6.2209636969388338e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -667,8 +688,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5308960898112496e+03 3.2622770699157866e+02
-        -5.9426185267769813e+02</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_DLS->
+        5.5727701237539140e-01 2.0006034802162165e-01
+        5.7553801924037273e-01</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_DLS->
 <PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_UPNP->
   <rvec>
     <kind>65536</kind>
@@ -678,8 +699,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        -9.9624290258378945e-01 -6.7751468164617135e-01
-        2.1609514348813397e+00</data></val></rvec>
+        1.4174700476249488e-01 8.1413757648829932e-01
+        6.2209654275919979e-01</data></val></rvec>
   <tvec>
     <kind>65536</kind>
     <type>6</type>
@@ -688,8 +709,8 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        3.5308960898112496e+03 3.2622770699157866e+02
-        -5.9426185267769813e+02</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_UPNP->
+        5.5727234706239326e-01 2.0006178301191868e-01
+        5.7552867229467086e-01</data></val></tvec></PointsNum_Algo_solvePnPSmallPoints--solvePnPSmallPoints---5--SOLVEPNP_UPNP->
  <!-- resumed -->
 <TestStereoCorresp_SGBM--SGBM---1280x720--256--StereoSGBM--MODE_SGBM->
   <dst>
