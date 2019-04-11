@@ -263,3 +263,11 @@ input = Variable(torch.randn(1, 2, 3))
 model = Unsqueeze()
 model.eval()
 save_data_and_model("unsqueeze", input, model)
+
+input = Variable(torch.randn(1, 3, 8, 12, 16))
+conv3d = nn.Conv3d(3, 5, (2, 3, 4), stride=(1, 1, 1), padding=(0, 0, 0), groups=1, dilation=(1, 1, 1), bias=False)
+save_data_and_model("conv3d", input, conv3d)
+
+input = Variable(torch.randn(1, 3, 8, 12, 16))
+conv3d = nn.Conv3d(3, 5, (2, 3, 4), stride=(1, 2, 3), padding=(0, 1, 2), groups=1, dilation=(1, 2, 3), bias=True)
+save_data_and_model("conv3d_bias", input, conv3d)
