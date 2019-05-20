@@ -284,3 +284,29 @@ save_data_and_model("max_pool3d", input, maxpool3d)
 input = torch.randn(1, 2, 3, 5, 6)
 avepool3d = nn.AvgPool3d((3, 4, 3), stride=(1, 2, 3), padding=(1, 2, 0))
 save_data_and_model("ave_pool3d", input, avepool3d)
+
+class Softmax(nn.Module):
+
+    def __init__(self):
+        super(Softmax, self).__init__()
+        self.softmax = nn.Softmax(dim=-1)
+
+    def forward(self, x):
+        return self.softmax(x)
+
+input = torch.randn(2, 3)
+model = Softmax()
+save_data_and_model("softmax", input, model)
+
+class LogSoftmax(nn.Module):
+
+    def __init__(self):
+        super(LogSoftmax, self).__init__()
+        self.log_softmax = nn.LogSoftmax(dim=-1)
+
+    def forward(self, x):
+        return self.log_softmax(x)
+
+input = torch.randn(2, 3)
+model = LogSoftmax()
+save_data_and_model("log_softmax", input, model)
