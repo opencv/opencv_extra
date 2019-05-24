@@ -798,6 +798,11 @@ models = [
         member='shufflenet/test_data_set_0/output_0.pb',
         sha='6a33ed6ccef4c69a27a3993363c3f854d0f79bb0',
         filename='onnx/data/output_shufflenet.pb'),
+    Model(
+        name='ResNet-34_kinetics (ONNX)',
+        url='',
+        sha='0c7377ebeb4e69f1fc8b1631dca35f4c2764b486',
+        filename='resnet-34_kinetics.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
