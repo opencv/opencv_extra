@@ -800,8 +800,8 @@ models = [
         filename='onnx/data/output_shufflenet.pb'),
     Model(
         name='ResNet-34_kinetics (ONNX)',
-        url='',
-        sha='0c7377ebeb4e69f1fc8b1631dca35f4c2764b486',
+        url='https://www.dropbox.com/s/065l4vr8bptzohb/resnet-34_kinetics.onnx?dl=1',
+        sha='88897629e4abb0fddef939f0c2d668a4edeb0788',
         filename='resnet-34_kinetics.onnx'),
 ]
 
