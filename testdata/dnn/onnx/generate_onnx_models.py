@@ -338,3 +338,19 @@ class Eltwise(nn.Module):
 input = Variable(torch.randn(1, 1, 2, 3, 4))
 model = Eltwise()
 save_data_and_model("eltwise3d", input, model)
+
+
+class InstanceNorm(nn.Module):
+
+    def __init__(self):
+        super(InstanceNorm, self).__init__()
+        self.inorm2 = nn.InstanceNorm2d(3, affine=True)
+
+    def forward(self, x):
+
+        x = self.inorm2(x)
+        return x
+
+input = Variable(torch.rand(1, 3, 4, 4))
+model = InstanceNorm()
+save_data_and_model("instancenorm", input, model)
