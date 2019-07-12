@@ -1,0 +1,23 @@
+pytorch0.4:°
+0
+01"
+ReduceMean*
+axes@ *
+keepdims 
+0
+12"
+ReduceMean*
+axes@ *
+keepdims torch-jit-exportZ
+0
+
+
+
+
+b
+2
+
+
+
+
+B	

@@ -396,3 +396,16 @@ save_data_and_model("deconv3d_pad", input, deconv)
 input = Variable(torch.randn(1, 3, 4, 5, 3))
 deconv = nn.ConvTranspose3d(3, 5, kernel_size=(2, 3, 1), stride=(2, 2, 2), padding=(1, 2, 1), output_padding=1, bias=True)
 save_data_and_model("deconv3d_adjpad", input, deconv)
+
+class ReduceMean(nn.Module):
+
+    def __init__(self):
+        super(ReduceMean, self).__init__()
+
+    def forward(self, x):
+        x = torch.mean(x, dim=2, keepdim=True)
+        return torch.mean(x, dim=3, keepdim=True)
+
+input = Variable(torch.randn(1, 3, 4, 2))
+model = ReduceMean()
+save_data_and_model("reduce_mean", input, model)
