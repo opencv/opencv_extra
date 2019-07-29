@@ -10,9 +10,9 @@ input_shape {
 input: "shape"
 input_shape {
   dim: 1
-  dim: 1
-  dim: 1
   dim: 2
+  dim: 3
+  dim: 4
 }
 
 layer {
