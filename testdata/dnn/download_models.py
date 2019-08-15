@@ -95,6 +95,16 @@ class Model:
 
 models = [
     Model(
+        name='Denoiser CNN (ONNX)', # https://github.com/SaoYan/DnCNN-PyTorch
+        url='https://drive.google.com/uc?export=dowload&id=11kFC0LQNNmOUFpIyRPFOcZEGWVDn2Z2t',
+        sha='d521587458ab645a47a9e02664de9554560d944c',
+        filename='DnCnn.onnx'),
+    Model(
+        name='Fast Neural Style (ONNX)', # https://github.com/rrmina/fast-neural-style-pytorch
+        url='https://drive.google.com/uc?export=dowload&id=1zMSn44Sd1mHW1FOISSXU5TegrrB-1FaH',
+        sha='9ed022bb290281157b131f9018c8f56b21f92648',
+        filename='fast_style.onnx'),
+    Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
         sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
