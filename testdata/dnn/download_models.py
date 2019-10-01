@@ -781,12 +781,21 @@ models = [
 #       expected working directory is opencv_extra/testdata/dnn
 if __name__ == '__main__':
     failedSums = []
+    failedGets = []
     for m in models:
         print(m)
-        if not m.get():
-            failedSums.append(m.filename)
+        try:
+            if not m.get():
+                failedSums.append(m.filename)
+        except Exception as e:
+            print(' catch {}'.format(e))
+            failedGets.append(m.filename)
     if failedSums:
         print("Checksum verification failed for:")
         for f in failedSums:
+            print("* {}".format(f))
+    if failedGets:
+        print("Getting the model failed for:")
+        for f in failedGets:
             print("* {}".format(f))
         exit(15)
