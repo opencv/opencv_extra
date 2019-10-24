@@ -1,0 +1,70 @@
+{
+    "multiple_images": [ { "image_name": "2_qrcodes.jpg", "x": [ [ 818,
+                    584, 533, 741 ], [ 137, 324, 286, 75 ] ], "y": [ [
+                    351, 393, 211, 175 ], [ 98, 106, 262, 250 ] ], "info": [
+                "I Love OpenCV",
+                "https://en.wikipedia.org/wiki/Computer_vision" ] }, {
+            "image_name": "3_close_qrcodes.jpg", "x": [ [ 146, 326, 304,
+                    103 ], [ 639, 646, 846, 863 ] ], "y": [ [ 316, 304,
+                    471, 478 ], [ 458, 293, 298, 472 ] ], "info": [
+                "I Love OpenCV", "https://github.com/rayonnant14" ] }, {
+            "image_name": "3_qrcodes.jpg", "x": [ [ 362, 558, 548, 334 ],
+                [ 86, 26, 196, 268 ], [ 446, 621, 637, 452 ] ], "y": [ [
+                    360, 374, 572, 555 ], [ 389, 241, 165, 303 ], [ 92,
+                    81, 243, 248 ] ], "info": [
+                "https://en.wikipedia.org/wiki/Computer_vision",
+                "I Love OpenCV",
+                "https://github.com/opencv/opencv/tree/3.4" ] }, {
+            "image_name": "4_qrcodes.png", "x": [ [ 544, 550, 395, 404 ],
+                [ 207, 339, 332, 188 ], [ 408, 528, 534, 404 ], [ 338,
+                    210, 225, 344 ] ], "y": [ [ 280, 421, 407, 267 ], [
+                    277, 283, 422, 412 ], [ 100, 108, 217, 207 ], [ 200,
+                    195, 89, 94 ] ], "info": [
+                "https://github.com/opencv/opencv/tree/3.4",
+                "Great Place to work", "Great Place to work",
+                "计算机视觉" ] }, { "image_name": "5_qrcodes.png",
+            "x": [ [ 222, 211, 71, 96 ], [ 344, 452, 470, 356 ], [ 327,
+                    446, 437, 305 ], [ 223, 314, 247, 154 ], [ 594, 623,
+                    489, 472 ] ], "y": [ [ 254, 377, 377, 253 ], [ 83,
+                    76, 165, 174 ], [ 224, 239, 358, 337 ], [ 79, 128,
+                    212, 157 ], [ 185, 300, 303, 190 ] ], "info": [
+                "https://en.wikipedia.org/wiki/Computer_vision",
+                "Great Place to work", "Great Place to work",
+                "计算机视觉",
+                "https://github.com/opencv/opencv/tree/3.4" ] }, {
+            "image_name": "6_qrcodes.jpg", "x": [ [ 383, 359, 178, 221 ],
+                [ 809, 844, 621, 616 ], [ 578, 579, 362, 390 ], [ 579,
+                    578, 395, 415 ], [ 778, 803, 614, 610 ], [ 354, 321,
+                    108, 169 ] ], "y": [ [ 225, 346, 339, 216 ], [ 396,
+                    566, 556, 386 ], [ 384, 553, 539, 375 ], [ 234, 358,
+                    348, 226 ], [ 241, 368, 359, 234 ], [ 373, 536, 526,
+                    363 ] ], "info": [ "STEP FORWARD", "QUESTION",
+                "STEP BACK", "SKIP", "EXTRA", "TWO STEPS FORWARD" ] }, {
+            "image_name": "7_qrcodes.jpg", "x": [ [ 797, 811, 502, 487 ],
+                [ 99, 29, 338, 412 ], [ 948, 629, 629, 952 ], [ 99, 397,
+                    307, 12 ], [ 1460, 1369, 1054, 1142 ], [ 1220, 915,
+                    985, 1292 ], [ 491, 807, 846, 529 ] ], "y": [ [ 880,
+                    1189, 1206, 894 ], [ 1041, 728, 654, 969 ], [ 706,
+                    706, 381, 383 ], [ 1191, 1280, 1578, 1487 ], [ 799,
+                    1112, 1028, 717 ], [ 1557, 1480, 1176, 1251 ], [
+                    1461, 1422, 1742, 1775 ] ], "info": [
+                "Great Place to work",
+                "https://en.wikipedia.org/wiki/Computer_vision",
+                "计算机视觉", "https://github.com/rayonnant14",
+                "https://en.wikipedia.org/wiki/Computer_vision",
+                "Great Place to work", "I Love OpenCV" ] }, {
+            "image_name": "8_close_qrcodes.jpg", "x": [ [ 342, 652, 626,
+                    297 ], [ 311, 254, 530, 601 ], [ 136, 401, 391, 111 ],
+                [ 1180, 1318, 1542, 1409 ], [ 472, 463, 206, 227 ], [
+                    854, 1085, 1153, 911 ], [ 673, 931, 974, 701 ], [
+                    1271, 1003, 869, 1129 ] ], "y": [ [ 1709, 1726, 2072,
+                    2055 ], [ 1630, 1346, 1265, 1542 ], [ 750, 747, 992,
+                    993 ], [ 1049, 858, 1007, 1211 ], [ 453, 667, 669,
+                    453 ], [ 611, 571, 782, 829 ], [ 1057, 1028, 1283,
+                    1318 ], [ 1698, 1838, 1544, 1419 ] ], "info": [
+                "Polina", "Great Place to work",
+                "https://en.wikipedia.org/wiki/Computer_vision",
+                "https://github.com/opencv/opencv/tree/3.4", "Polina",
+                "https://github.com/rayonnant14", "Great Place to work",
+                "https://en.wikipedia.org/wiki/Computer_vision" ] } ]
+}
