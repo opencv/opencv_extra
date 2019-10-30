@@ -6,8 +6,8 @@
                 "https://en.wikipedia.org/wiki/Computer_vision" ] }, {
             "image_name": "3_close_qrcodes.jpg", "x": [ [ 146, 326, 304,
                     103 ], [ 639, 646, 846, 863 ] ], "y": [ [ 316, 304,
-                    471, 478 ], [ 458, 293, 298, 472 ] ], "info": [
-                "I Love OpenCV", "https://github.com/rayonnant14" ] }, {
+                    471, 478 ], [ 458, 293, 298, 472 ] ], "info": [ "I Love OpenCV",
+                "https://github.com/rayonnant14" ] }, {
             "image_name": "3_qrcodes.jpg", "x": [ [ 362, 558, 548, 334 ],
                 [ 86, 26, 196, 268 ], [ 446, 621, 637, 452 ] ], "y": [ [
                     360, 374, 572, 555 ], [ 389, 241, 165, 303 ], [ 92,
