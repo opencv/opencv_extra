@@ -69,12 +69,18 @@ class Model:
 
         print(' done')
         print(' file {}'.format(self.filename))
-        return self.verify()
+        try:
+            return self.verify()
+        except Exception as e:
+            return False
 
     def download(self):
-        r = urlopen(self.url)
-        self.printRequest(r)
-        self.save(r)
+        try:
+            r = urlopen(self.url)
+            self.printRequest(r)
+            self.save(r)
+        except Exception as e:
+            print('  catch {}'.format(e))
 
     def extract(self):
         with tarfile.open(self.archive) as f:
