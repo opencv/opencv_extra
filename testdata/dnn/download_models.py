@@ -854,6 +854,16 @@ models = [
         downloader=GDrive('1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br'),
         sha='49776d262993c387542f84d9cd16566840404f26',
         filename='gsoc2016-goturn/goturn.caffemodel'),
+    Model(
+        name='Alexnet Facial Keypoints (ONNX)', # https://github.com/ismalakazel/Facial-Keypoint-Detection
+        url='https://drive.google.com/uc?export=dowload&id=1etGXT9WQK1KjDkJ0pUTH-CaHHva4p9cY',
+        sha='e1b82b56b59ab96b50189e1b39487d91d4fa0eea',
+        filename='onnx/models/facial_keypoints.onnx'),
+    Model(
+        name='LightWeight Human Pose Estimation (ONNX)', # https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
+        url='https://drive.google.com/uc?export=dowload&id=1T2Kq01WXzPMrQdnEOUEiVBhwouW8Pka5',
+        sha='20370164b8c43aa14625c0be4e31f62b9b397ac4',
+        filename='onnx/models/lightweight_pose_estimation.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
