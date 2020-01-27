@@ -790,7 +790,7 @@ models = [
         name='LightWeight Human Pose Estimation (ONNX)', # https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
         url='https://drive.google.com/uc?export=dowload&id=1--Ij_gIzCeNA488u5TA4FqWMMdxBqOji',
         sha='5960f7aef233d75f8f4020be1fd911b2d93fbffc',
-        filename='onnx/models/lightweight_pose_estimation.onnx'),
+        filename='onnx/models/lightweight_pose_estimation_201912.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
