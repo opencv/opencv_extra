@@ -428,7 +428,7 @@ save_onnx_data_and_model(input, output, 'reduce_mean3d', 'ReduceMean', axes=(3, 
 
 class Split(nn.Module):
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(Split, self).__init__()
         self.split_size_sections = \
             kwargs.get('split_size_sections', 2)
