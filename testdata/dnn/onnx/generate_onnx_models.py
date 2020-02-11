@@ -431,26 +431,24 @@ class Split(nn.Module):
     def __init__(self, *args, **kwargs):
         super(Split, self).__init__()
         self.split_size_sections = \
-            kwargs.get('split_size_sections', 2)
+            kwargs.get('split_size_sections', 1)
         self.dim = kwargs.get('dim', 0)
 
     def forward(self, x):
-        output = torch.split(x, self.split_size_sections, self.dim)
-        tensor_o = torch.tensor([output[i].tolist() for i in range(len(output))],
-                                dtype=torch.float32)
-        return tensor_o
+        tup = torch.split(x, self.split_size_sections, self.dim)
+        return torch.cat(tup)
 
 model = Split()
-input = Variable(torch.tensor([1., 2., 3., 4., 5., 6.], dtype=torch.float32))
+input = Variable(torch.tensor([1., 2.], dtype=torch.float32))
 save_data_and_model("split_1", input, model)
 
 model = Split(dim=0)
 save_data_and_model("split_2", input, model)
 
-model = Split(split_size_sections=[3, 3])
+model = Split(split_size_sections=[1, 1])
 save_data_and_model("split_3", input, model)
 
-model = Split(dim=0, split_size_sections=[3, 3])
+model = Split(dim=0, split_size_sections=[1, 1])
 save_data_and_model("split_4", input, model)
 
 class SplitMax(nn.Module):
