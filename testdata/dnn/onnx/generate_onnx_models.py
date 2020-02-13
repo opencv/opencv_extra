@@ -273,6 +273,14 @@ input = Variable(torch.randn(1, 2, 3, 4))
 resize = nn.Upsample(scale_factor=2, mode='nearest')
 save_data_and_model("resize_nearest", input, resize)
 
+input = Variable(torch.randn(1, 3, 4, 5))
+upsample_unfused = nn.Sequential(
+        nn.Conv2d(3, 2, kernel_size=3, stride=1, padding=1),
+        nn.BatchNorm2d(2),
+        nn.Upsample(scale_factor=2, mode='nearest')
+        )
+save_data_and_model("upsample_unfused", input, upsample_unfused)
+
 class Unsqueeze(nn.Module):
 
     def __init__(self):
