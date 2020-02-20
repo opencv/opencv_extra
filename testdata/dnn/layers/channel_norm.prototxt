@@ -1,0 +1,14 @@
+name: "ChannelNorm"
+input: "input"
+input_shape {
+  dim: 1
+  dim: 3
+  dim: 4
+  dim: 3
+}
+layer {
+  name: "ChannelNorm1"
+  type: "ChannelNorm"
+  bottom: "input"
+  top: "out"
+}
