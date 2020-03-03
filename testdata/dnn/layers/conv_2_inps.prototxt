@@ -33,3 +33,13 @@ layer {
     }
   }
 }
+layer {
+  type: "Eltwise"
+  name: "eltwise_sum"
+  bottom: "out_0"
+  bottom: "out_1"
+  top: "out"
+  eltwise_param {
+    operation: SUM
+  }
+}
