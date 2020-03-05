@@ -632,13 +632,13 @@ class DynamicResize(nn.Module):
     def __init__(self):
         super(DynamicResize, self).__init__()
 
-    def forward(self, inp, sizes):
-        h = sizes.size(2)
-        w = sizes.size(3)
+    def forward(self, x, y):
+        h = y.size(2)
+        w = y.size(3)
         up = nn.Upsample(size=[h, w], mode='bilinear')
-        return up(inp)
+        return up(x) + y
 
-input = Variable(torch.randn(1, 2, 8, 6))
-sizes = Variable(torch.randn(1, 2, 4, 3))
+input_0 = Variable(torch.randn(1, 3, 8, 6))
+input_1 = Variable(torch.randn(1, 3, 4, 3))
 model = DynamicResize()
-save_data_and_model_multy_inputs("dynamic_resize", model, input, sizes, version=11)
+save_data_and_model_multy_inputs("dynamic_resize", model, input, input_1, version=11)
