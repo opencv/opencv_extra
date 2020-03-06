@@ -657,7 +657,6 @@ x = Variable(torch.Tensor([[1, 2, 3], [1, 2, 3]]))
 model = ShapeConst()
 save_data_and_model("shape_of_constant", x, model, version=11)
 
-
 class LSTM(nn.Module):
 
     def __init__(self, features, hidden, batch, num_layers=1, bidirectional=False):
@@ -775,3 +774,16 @@ class L2Norm(nn.Module):
 model = L2Norm(2, 20)
 x = Variable(torch.randn(1, 2, 3, 4))
 save_data_and_model("reduceL2_subgraph_2", x, model)
+
+class Sqrt(nn.Module):
+
+    def __init__(self):
+        super(Sqrt, self).__init__()
+
+    def forward(self, a):
+        return torch.sqrt(torch.FloatTensor.abs(a))
+
+a = Variable(torch.randn(1, 3, 2, 2))
+model = Sqrt()
+model.eval()
+save_data_and_model("sqrt", a, model)
