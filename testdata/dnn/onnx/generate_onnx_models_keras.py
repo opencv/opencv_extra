@@ -168,3 +168,44 @@ b = FloorLayer(shape[1:])(a)
 model = Model(inputs=a, outputs=b)
 save_data_and_model("floor", shape, model, a, 11)
 
+class ExpLayer(Layer):
+
+    def __init__(self, output_dim, **kwargs):
+        self.output_dim = output_dim
+        super(ExpLayer, self).__init__(**kwargs)
+
+    def build(self, input_shape):
+        super(ExpLayer, self).build(input_shape)
+
+    def call(self, x):
+        return tf.math.exp(x)
+
+    def compute_output_shape(self, input_shape):
+        return (input_shape[0], self.output_dim)
+
+shape=[1,2,3,4]
+a = Input(shape=shape[1:])
+b = ExpLayer(shape[1:])(a)
+model = Model(inputs=a, outputs=b)
+save_data_and_model("exp", shape, model, a, 11)
+
+class NotLayer(Layer):
+
+    def __init__(self, output_dim, **kwargs):
+        self.output_dim = output_dim
+        super(NotLayer, self).__init__(**kwargs)
+
+    def build(self, input_shape):
+        super(NotLayer, self).build(input_shape)
+
+    def call(self, x):
+        return tf.math.logical_not(x)
+
+    def compute_output_shape(self, input_shape):
+        return (input_shape[0], self.output_dim)
+
+shape=[1,2,3,4]
+a = Input(shape=shape[1:], dtype=tf.bool)
+b = NotLayer(shape[1:])(a)
+model = Model(inputs=a, outputs=b)
+save_data_and_model("not", shape, model, a, 11)
