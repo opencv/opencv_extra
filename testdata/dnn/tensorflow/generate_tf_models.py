@@ -213,7 +213,7 @@ save(inp, relu, 'defun_dropout')
 ################################################################################
 # Use not 4 dimensions to save the raw data (see writeBlob function)
 inp = tf.placeholder(tf.float32, [2, 3, 4], 'input')
-shift = tf.Variable(tf.random_normal([2, 3, 4]), name='shift')
+shift = tf.Variable(tf.random_normal([1, 3, 4]), name='shift')
 shifted = tf.add(inp, shift, name='shifted')
 reshape = tf.reshape(shifted, [4, 3, 2], 'reshaped')
 save(inp, reshape, 'shift_reshape_no_reorder')
