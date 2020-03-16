@@ -642,3 +642,16 @@ input_0 = Variable(torch.randn(1, 3, 8, 6))
 input_1 = Variable(torch.randn(1, 3, 4, 3))
 model = DynamicResize()
 save_data_and_model_multy_inputs("dynamic_resize", model, input_0, input_1, version=11)
+
+class ShapeConst(nn.Module):
+    def __init__(self):
+        super(ShapeConst, self).__init__()
+
+    def forward(self, x):
+      x = 2 * x
+      z = torch.zeros(x.shape, dtype=torch.float32)
+      return z + x
+
+x = Variable(torch.Tensor([[1, 2, 3], [1, 2, 3]]))
+model = ShapeConst()
+save_data_and_model("shape_of_constant", x, model, version=11)
