@@ -1,0 +1,21 @@
+%YAML:1.0
+---
+CameraMatrix: !<tag:yaml.org,2002:opencv-matrix>
+  rows: 3
+  cols: 3
+  dt: d
+  data: [338.99126016399202, 0, 636.11384328104941, 0, 337.84486287472214, 542.52596483696834, 0, 0, 1]
+DistortionCoeffs: !<tag:yaml.org,2002:opencv-matrix>
+  rows: 4
+  cols: 1
+  dt: d
+  data: [-0.01017814115694435, 0.066693053611465325, -0.018450144605964301, 0.00081304613011604499]
+Width: 1280
+Height: 1080
+Timestamp: 2020-04-15 20:35:12 UTC
+Scale: 1
+CalibrationQuality: 83,000000%
+Error: 0.255722016
+HFOV: 189.9245
+VFOV: 164.255096
+DFOV: -1
