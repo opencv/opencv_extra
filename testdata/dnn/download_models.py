@@ -853,6 +853,21 @@ models = [
         url='https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights',
         sha='d110379b7b86899226b591ad4affc7115f707157',
         filename='yolov4-tiny.weights'),
+    Model(
+        name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
+        downloader=GDrive('1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br'),
+        sha='49776d262993c387542f84d9cd16566840404f26',
+        filename='gsoc2016-goturn/goturn.caffemodel'),
+    Model(
+        name='crnn',
+        url='https://drive.google.com/uc?export=dowload&id=1ooaLR-rkTl8jdpGy1DoQs0-X0lQsB6Fj',
+        sha='270d92c9ccb670ada2459a25977e8deeaf8380d3',
+        filename='onnx/models/crnn.onnx'),
+    Model(
+        name='DB_TD500_resnet50',
+        url='https://drive.google.com/uc?export=dowload&id=1_9KB6QkIghp2VNZti_dJ3Araz-nDZBsL',
+        sha='6d3b7b84fc23906be7d583a8cedef727cc351fad',
+        filename='onnx/models/DB_TD500_resnet50.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
