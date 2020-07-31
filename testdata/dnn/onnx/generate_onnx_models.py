@@ -813,7 +813,7 @@ model = UpsampleUnfusedTwoInput()
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset9_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=9)
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset11_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=11)
 
- class FrozenBatchNorm2d(nn.Module):
+class FrozenBatchNorm2d(nn.Module):
     def __init__(self, n):
         super(FrozenBatchNorm2d, self).__init__()
         self.register_buffer("weight", torch.ones(n))
@@ -831,3 +831,42 @@ save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset11_torch1.4",
 x = Variable(torch.randn(1, 2, 3, 4))
 model = FrozenBatchNorm2d(2)
 save_data_and_model("batch_norm_subgraph", x, model)
+
+class LinearWithConstantInput(nn.Module):
+    def __init__(self, constDim=512, outDim = 512):
+        super(LinearWithConstantInput, self).__init__()
+        self.constDim = constDim
+        self.linConst = nn.Linear(constDim, outDim)
+    def forward(self, x):
+        const = torch.zeros(1, self.constDim)
+        return self.linConst(const)
+
+x = Variable(torch.rand([1, 25, 512]))
+model = LinearWithConstantInput()
+save_data_and_model("lin_with_constant", x, model)
+
+class MatmulWithTwoInputs(nn.Module):
+    def __init__(self, in_dim = 512, const_dim=512, interm_dim = 512):
+        super(MatmulWithTwoInputs, self).__init__()
+        self.in_dim = in_dim
+        self.const_dim = const_dim
+        self.interm_dim = interm_dim
+        self.linear_for_const = nn.Linear(const_dim, interm_dim)
+        self.first_linear = nn.Linear(in_dim, interm_dim)
+        self.second_linear = nn.Linear(interm_dim, 1)
+    def forward(self, x):
+        x = x.reshape(-1, self.in_dim)
+        x_projected = self.first_linear(x)
+        const = torch.zeros(1, self.interm_dim)
+        const_projected = self.linear_for_const(const)
+        const_projected = const_projected.expand(25, self.interm_dim)
+        sum_tanh = torch.tanh(const_projected + x_projected) 
+        sum_tanh = sum_tanh.reshape(-1, self.interm_dim)
+        sum_tanh_projected = self.second_linear(sum_tanh)
+        sum_tanh_projected = sum_tanh_projected.reshape(1, 25)
+        after_softmax = F.softmax(sum_tanh_projected, dim=1)     
+        return torch.matmul(after_softmax, x)
+
+x = Variable(torch.rand([1, 25, 512]))
+model = MatmulWithTwoInputs()
+save_data_and_model("matmul_with_two_inputs", x, model)
