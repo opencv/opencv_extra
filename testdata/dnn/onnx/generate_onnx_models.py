@@ -832,7 +832,6 @@ x = Variable(torch.randn(1, 2, 3, 4))
 model = FrozenBatchNorm2d(2)
 save_data_and_model("batch_norm_subgraph", x, model)
 
-<<<<<<< HEAD
  class GatherScalar(nn.Module):
     def forward(self, x):
         return x[1]
@@ -848,7 +847,7 @@ save_data_and_model("gather_scalar", x, model)
 x = Variable(torch.randn(2, 2, 2, 2))
 model = Gather()
 save_data_and_model("gather", x, model)
-=======
+
 class LinearWithConstantInput(nn.Module):
     def __init__(self, in_dim = 10, const_dim=10, out_dim = 10):
         super(LinearWithConstantInput, self).__init__()
@@ -892,4 +891,32 @@ class MatmulWithTwoInputs(nn.Module):
 x = Variable(torch.rand([1, 5, 10]))
 model = MatmulWithTwoInputs()
 save_data_and_model("matmul_with_two_inputs", x, model)
->>>>>>> b21b582... Add new testdata for Matmul and Expand operations
+
+class Conv(nn.Module):
+    def forward(self, x, kernel):
+        out = F.conv2d(x, kernel, groups=1)
+        return out
+
+x = Variable(torch.randn(2, 2, 10, 10))
+kernel = Variable(torch.randn(2, 2, 2, 2))
+model = Conv()
+save_data_and_model_multy_inputs("conv_variable_w", model, x, kernel)
+
+class ConvBias(nn.Module):
+    def forward(self, x, kernel, bias):
+      batch = kernel.size(0)
+      channel = kernel.size(1)
+      x = x.view(1, batch*channel, x.size(2), x.size(3))
+      kernel = kernel.view(batch*channel, 1, kernel.size(2), kernel.size(3))
+      conv = nn.Conv2d(batch*channel, batch*channel, kernel_size=(kernel.size(2), kernel.size(3)), bias=False, groups=batch*channel)
+      conv.weight = nn.Parameter(kernel)
+      conv.bias = nn.Parameter(bias)
+      out = conv(x)
+      out = out.view(batch, channel, out.size(2), out.size(3))
+      return out
+
+x = Variable(torch.randn(2, 2, 5, 5))
+kernel = Variable(torch.randn(2, 2, 2, 2))
+bias = Variable(torch.randn(4))
+model = ConvBias()
+save_data_and_model_multy_inputs("conv_variable_wb", model, x, kernel, bias)
