@@ -854,9 +854,9 @@ models = [
         sha='d110379b7b86899226b591ad4affc7115f707157',
         filename='yolov4-tiny.weights'),
     Model(
-        name='ResNet-tiny',  # https://github.com/opencv/opencv/issues/17588
-        url='https://drive.google.com/uc?export=download&confirm=QccG&id=1Sbu9Is_QemC75goe9vy-fdUwKEU84Pvk',
-        sha='0f8ecd80c6ee7353bdf94042d1dfeb390e21dc59',
+        name='ResNet-demo',  # https://github.com/opencv/opencv/issues/17588
+        downloader=GDrive('1Sbu9Is_QemC75goe9vy-fdUwKEU84Pvk'),
+        sha='2fd1f973239525543e3f3975adb1674fbfe69ee6',
         filename='resnet_demo.caffemodel'),
 ]
 
