@@ -1,5 +1,6 @@
 # export PYTHONPATH=/path/to/darknet/python/:$PYTHONPATH
 # export LD_LIBRARY_PATH=/path/to/darknet/:$LD_LIBRARY_PATH
+from builtins import range
 import darknet as dn
 import numpy as np
 

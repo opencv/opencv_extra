@@ -1,18 +1,23 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from __future__ import division
+from future import standard_library
+standard_library.install_aliases()
+from builtins import object
+from past.utils import old_div
 import hashlib
 import sys
 import tarfile
 import requests
 
 if sys.version_info[0] < 3:
-    from urllib2 import urlopen
+    from urllib.request import urlopen
 else:
     from urllib.request import urlopen
 
 
-class Model:
+class Model(object):
     MB = 1024*1024
     BUFSIZE = 10*MB
 
@@ -33,7 +38,7 @@ class Model:
             d = dict(r.info())
             for c in ['content-length', 'Content-Length']:
                 if c in d:
-                    return int(d[c]) / self.MB
+                    return old_div(int(d[c]), self.MB)
             return '<unknown>'
         print('  {} {} [{} Mb]'.format(r.getcode(), r.msg, getMB(r)))
 
@@ -72,7 +77,7 @@ class Model:
             assert self.downloader
             print('  hash check failed - downloading')
             sz = self.downloader(self.filename)
-            print('  size = %.2f Mb' % (sz / (1024.0 * 1024)))
+            print('  size = %.2f Mb' % (old_div(sz, (1024.0 * 1024))))
 
         print(' done')
         print(' file {}'.format(self.filename))
@@ -115,7 +120,7 @@ def GDrive(gid):
         response = session.get(URL, params = { 'id' : gid }, stream = True)
 
         def get_confirm_token(response):  # in case of large files
-            for key, value in response.cookies.items():
+            for key, value in list(response.cookies.items()):
                 if key.startswith('download_warning'):
                     return value
             return None
