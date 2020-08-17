@@ -877,6 +877,7 @@ bias = Variable(torch.randn(4))
 model = ConvBias()
 save_data_and_model_multy_inputs("conv_variable_wb", model, x, kernel, bias)
 
+<<<<<<< HEAD
 class LinearWithConstantInput(nn.Module):
     def __init__(self, in_dim = 10, const_dim=10, out_dim = 10):
         super(LinearWithConstantInput, self).__init__()
@@ -920,3 +921,15 @@ class MatmulWithTwoInputs(nn.Module):
 x = Variable(torch.rand([1, 5, 10]))
 model = MatmulWithTwoInputs()
 save_data_and_model("matmul_with_two_inputs", x, model)
+=======
+x = Variable(torch.randn(1, 2, 2))
+model = nn.Linear(2, 2, bias=True)
+save_data_and_model("matmul_add", x, model)
+input = np.random.rand(1, 3, 4, 2)
+output = np.sum(input, axis=(-1), keepdims=False)
+save_onnx_data_and_model(input, output, 'reduce_sum', 'ReduceSum', axes=(-1), keepdims=False)
+
+x = Variable(torch.randn(1, 2, 2))
+model = Expand(shape=[2, -1, -1, -1])
+save_data_and_model("expand_neg_batch", x, model)
+>>>>>>> upstream/3.4
