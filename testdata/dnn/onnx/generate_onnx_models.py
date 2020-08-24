@@ -931,3 +931,15 @@ class MatmulWithTwoInputs(nn.Module):
 x = Variable(torch.rand([1, 2, 2]))
 model = MatmulWithTwoInputs()
 save_data_and_model("matmul_with_two_inputs", x, model)
+
+class Power(nn.Module):
+  def __init__(self, norm):
+    super(Power, self).__init__()
+    self.p = norm
+
+  def forward(self, x):
+    return x.pow(self.p)
+
+x = Variable(torch.randn(2, 2))
+model = Power(2)
+save_data_and_model("pow2", x, model)
