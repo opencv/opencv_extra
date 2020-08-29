@@ -835,6 +835,16 @@ models = [
         sha='88897629e4abb0fddef939f0c2d668a4edeb0788',
         filename='resnet-34_kinetics.onnx'),
     Model(
+        name='Alexnet Facial Keypoints (ONNX)', # https://github.com/ismalakazel/Facial-Keypoint-Detection
+        url='https://drive.google.com/uc?export=dowload&id=1etGXT9WQK1KjDkJ0pUTH-CaHHva4p9cY',
+        sha='e1b82b56b59ab96b50189e1b39487d91d4fa0eea',
+        filename='onnx/models/facial_keypoints.onnx'),
+    Model(
+        name='LightWeight Human Pose Estimation (ONNX)', # https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
+        url='https://drive.google.com/uc?export=dowload&id=1--Ij_gIzCeNA488u5TA4FqWMMdxBqOji',
+        sha='5960f7aef233d75f8f4020be1fd911b2d93fbffc',
+        filename='onnx/models/lightweight_pose_estimation_201912.onnx'),
+    Model(
         name='EfficientDet-D0', # https://github.com/google/automl
         url='https://www.dropbox.com/s/9mqp99fd2tpuqn6/efficientdet-d0.pb?dl=1',
         sha='f178cc17b44e3ed2f3956a0adc1800a7d2a3b3ae',
@@ -855,17 +865,7 @@ models = [
         sha='49776d262993c387542f84d9cd16566840404f26',
         filename='gsoc2016-goturn/goturn.caffemodel'),
     Model(
-        name='Alexnet Facial Keypoints (ONNX)', # https://github.com/ismalakazel/Facial-Keypoint-Detection
-        url='https://drive.google.com/uc?export=dowload&id=1etGXT9WQK1KjDkJ0pUTH-CaHHva4p9cY',
-        sha='e1b82b56b59ab96b50189e1b39487d91d4fa0eea',
-        filename='onnx/models/facial_keypoints.onnx'),
-    Model(
-        name='LightWeight Human Pose Estimation (ONNX)', # https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
-        url='https://drive.google.com/uc?export=dowload&id=1--Ij_gIzCeNA488u5TA4FqWMMdxBqOji',
-        sha='5960f7aef233d75f8f4020be1fd911b2d93fbffc',
-        filename='onnx/models/lightweight_pose_estimation_201912.onnx'),
-     Model(
-        name='ResNet-tiny',  # https://github.com/opencv/opencv/issues/17588
+        name='ResNet-demo',  # https://github.com/opencv/opencv/issues/17588
         downloader=GDrive('1Sbu9Is_QemC75goe9vy-fdUwKEU84Pvk'),
         sha='2fd1f973239525543e3f3975adb1674fbfe69ee6',
         filename='resnet_demo.caffemodel'),
