@@ -831,3 +831,158 @@ save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset11_torch1.4",
 x = Variable(torch.randn(1, 2, 3, 4))
 model = FrozenBatchNorm2d(2)
 save_data_and_model("batch_norm_subgraph", x, model)
+
+ class GatherScalar(nn.Module):
+    def forward(self, x):
+        return x[1]
+
+x = Variable(torch.randn(2))
+model = GatherScalar()
+save_data_and_model("gather_scalar", x, model)
+
+ class Gather(nn.Module):
+    def forward(self, x):
+        return x[..., 1]
+
+x = Variable(torch.randn(2, 2, 2, 2))
+model = Gather()
+save_data_and_model("gather", x, model)
+
+class Conv(nn.Module):
+    def forward(self, x, kernel):
+        out = F.conv2d(x, kernel, groups=1)
+        return out
+
+x = Variable(torch.randn(2, 2, 10, 10))
+kernel = Variable(torch.randn(2, 2, 2, 2))
+model = Conv()
+save_data_and_model_multy_inputs("conv_variable_w", model, x, kernel)
+
+class ConvBias(nn.Module):
+    def forward(self, x, kernel, bias):
+      batch = kernel.size(0)
+      channel = kernel.size(1)
+      x = x.view(1, batch*channel, x.size(2), x.size(3))
+      kernel = kernel.view(batch*channel, 1, kernel.size(2), kernel.size(3))
+      conv = nn.Conv2d(batch*channel, batch*channel, kernel_size=(kernel.size(2), kernel.size(3)), bias=False, groups=batch*channel)
+      conv.weight = nn.Parameter(kernel)
+      conv.bias = nn.Parameter(bias)
+      out = conv(x)
+      out = out.view(batch, channel, out.size(2), out.size(3))
+      return out
+
+x = Variable(torch.randn(2, 2, 5, 5))
+kernel = Variable(torch.randn(2, 2, 2, 2))
+bias = Variable(torch.randn(4))
+model = ConvBias()
+save_data_and_model_multy_inputs("conv_variable_wb", model, x, kernel, bias)
+
+x = Variable(torch.randn(1, 2, 2))
+model = nn.Linear(2, 2, bias=True)
+save_data_and_model("matmul_add", x, model)
+input = np.random.rand(1, 3, 4, 2)
+output = np.sum(input, axis=(-1), keepdims=False)
+save_onnx_data_and_model(input, output, 'reduce_sum', 'ReduceSum', axes=(-1), keepdims=False)
+
+x = Variable(torch.randn(1, 2, 2))
+model = Expand(shape=[2, -1, -1, -1])
+save_data_and_model("expand_neg_batch", x, model)
+
+class LinearWithConstantInput(nn.Module):
+    def __init__(self, in_dim = 2, const_dim=2, out_dim = 2):
+        super(LinearWithConstantInput, self).__init__()
+        self.in_dim = in_dim
+        self.const_dim = const_dim
+        self.lin_const = nn.Linear(const_dim, out_dim)
+        self.lin_inp = nn.Linear(in_dim, out_dim)
+    def forward(self, x):
+        x = x.reshape(-1, self.in_dim)
+        const = torch.zeros(1, self.const_dim)
+        x_projected = self.lin_inp(x)
+        const_projected = self.lin_const(const)
+        return x_projected*const_projected
+
+x = Variable(torch.rand([1, 2, 2]))
+model = LinearWithConstantInput()
+save_data_and_model("lin_with_constant", x, model)
+
+class MatmulWithTwoInputs(nn.Module):
+    def __init__(self, in_dim = 2, const_dim=2, interm_dim = 2):
+        super(MatmulWithTwoInputs, self).__init__()
+        self.in_dim = in_dim
+        self.const_dim = const_dim
+        self.interm_dim = interm_dim
+        self.linear_for_const = nn.Linear(const_dim, interm_dim)
+        self.first_linear = nn.Linear(in_dim, interm_dim)
+        self.second_linear = nn.Linear(interm_dim, 1)
+    def forward(self, x):
+        x = x.reshape(-1, self.in_dim)
+        x_projected = self.first_linear(x)
+        const = torch.zeros(1, self.interm_dim)
+        const_projected = self.linear_for_const(const)
+        const_projected = const_projected.expand(2, self.interm_dim)
+        sum_tanh = torch.tanh(const_projected + x_projected) 
+        sum_tanh = sum_tanh.reshape(-1, self.interm_dim)
+        sum_tanh_projected = self.second_linear(sum_tanh)
+        sum_tanh_projected = sum_tanh_projected.reshape(1, 2)
+        after_softmax = F.softmax(sum_tanh_projected, dim=1)     
+        return torch.matmul(after_softmax, x)
+
+x = Variable(torch.rand([1, 2, 2]))
+model = MatmulWithTwoInputs()
+save_data_and_model("matmul_with_two_inputs", x, model)
+
+class Power(nn.Module):
+  def __init__(self, norm):
+    super(Power, self).__init__()
+    self.p = norm
+
+  def forward(self, x):
+    return x.pow(self.p)
+
+x = Variable(torch.randn(2, 2))
+model = Power(2)
+save_data_and_model("pow2", x, model)
+
+class ReduceMax(nn.Module):
+  def forward(self, x):
+    out = torch.max(x)
+    return torch.unsqueeze(out, 0)
+
+x = Variable(torch.randn(1, 3, 2, 2))
+model = ReduceMax()
+save_data_and_model("reduce_max", x, model)
+
+class ResizeConv(nn.Module):
+    def __init__(
+            self,
+            in_channels,
+            skip_channels,
+            out_channels,
+            use_batchnorm=True,
+            attention_type=None,
+    ):
+        super().__init__()
+        self.conv1 = conv = nn.Conv2d(
+            in_channels,
+            out_channels,
+            kernel_size=2,
+            bias=False)
+
+    def forward(self, x, skip=None):
+        x = F.interpolate(x, scale_factor=2, mode="nearest")
+        x = self.conv1(x)
+        return x
+
+x = Variable(torch.rand(1, 2, 2, 2))
+model = ResizeConv(2, 0, 2)
+save_data_and_model("resize_opset11_torch1.6", x, model, 11)
+
+class Scale(nn.Module):
+  def forward(self, x):
+    w = torch.mean(x, axis=(2, 3), keepdim=True)
+    return w * x
+
+x = Variable(torch.randn(1, 3, 2, 2))
+model = Scale()
+save_data_and_model("scale", x, model)

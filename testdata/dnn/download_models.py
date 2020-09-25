@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import hashlib
+import os
 import sys
 import tarfile
 import requests
@@ -58,6 +59,11 @@ class Model:
         if self.verify():
             print('  hash match - skipping')
             return True
+
+        basedir = os.path.dirname(self.filename)
+        if not os.path.exists(basedir):
+            print('  creating directory: ' + basedir)
+            os.makedirs(basedir, exist_ok=True)
 
         if self.archive or self.member:
             assert(self.archive and self.member)
