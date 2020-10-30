@@ -986,3 +986,7 @@ class Scale(nn.Module):
 x = Variable(torch.randn(1, 3, 2, 2))
 model = Scale()
 save_data_and_model("scale", x, model)
+
+input = Variable(torch.randn(1, 3, 25))
+conv1d = nn.Conv1d(3, 2, kernel_size=3, padding=2, stride=2, dilation=2, bias=True)
+save_data_and_model("conv1d", input, conv1d)
