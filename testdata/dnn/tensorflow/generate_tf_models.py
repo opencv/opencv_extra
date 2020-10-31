@@ -1,4 +1,7 @@
+from __future__ import division
 # This script is used to generate test data for OpenCV deep learning module.
+from builtins import zip
+from past.utils import old_div
 import numpy as np
 import tensorflow as tf
 import os
@@ -877,8 +880,8 @@ save(inp, conv, 'fused_resize_conv')
 inp = tf.placeholder(tf.float32, [1, 9, 6, 2], 'input')
 conv = tf.layers.conv2d(inp, filters=2, kernel_size=[1, 1])
 shape_input = tf.shape(inp)
-hi = shape_input[1] / 3
-wi = shape_input[2] / 2
+hi = old_div(shape_input[1], 3)
+wi = old_div(shape_input[2], 2)
 input_down = tf.image.resize(conv, size=[hi,wi], method=0, name='resize_down')
 save(inp, input_down, 'resize_bilinear_down')
 ################################################################################

@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys, re, os.path
 from xml.dom.minidom import parse
 
@@ -20,7 +21,7 @@ def process(filename, expr, save_results):
         if case.nodeName == "#text":
             continue
         if expr.search(case.nodeName):
-            print case.nodeName
+            print(case.nodeName)
             fstorage.removeChild(case)
 
     if save_results:
@@ -35,8 +36,8 @@ def process(filename, expr, save_results):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print "This script is used to remove entries from sanity xml"
-        print "  Usage:\n", os.path.basename(sys.argv[0]), "<name>.xml <regex>"
+        print("This script is used to remove entries from sanity xml")
+        print("  Usage:\n", os.path.basename(sys.argv[0]), "<name>.xml <regex>")
         exit(0)
 
     process(sys.argv[1], re.compile(sys.argv[2]), len(sys.argv) == 4)

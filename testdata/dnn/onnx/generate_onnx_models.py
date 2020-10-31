@@ -1,4 +1,7 @@
 from __future__ import print_function
+from __future__ import division
+from builtins import str
+from past.utils import old_div
 import torch
 from torch.autograd import Variable
 import torch.nn.init as init
@@ -12,7 +15,7 @@ import io
 
 
 def assertExpected(s):
-    if not (isinstance(s, str) or (sys.version_info[0] == 2 and isinstance(s, unicode))):
+    if not (isinstance(s, str) or (sys.version_info[0] == 2 and isinstance(s, str))):
         raise TypeError("assertExpected is strings only")
 
 def assertONNXExpected(binary_pb):
@@ -556,7 +559,7 @@ class SoftMaxUnfused(nn.Module):
     def forward(self, x):
         exp = torch.exp(x)
         sum = torch.sum(exp, dim=2, keepdim=True)
-        return exp / sum
+        return old_div(exp, sum)
 
 input = Variable(torch.randn(1, 2, 4, 3))
 model = SoftMaxUnfused()
@@ -587,7 +590,7 @@ class ReshapeByDiv(nn.Module):
         channels = image.size(1)
         h = image.size(2)
         w = image.size(3)
-        image = image.view(batch_size, channels*h* (w / 2), -1)
+        image = image.view(batch_size, channels*h* (old_div(w, 2)), -1)
         return image
 
 input = Variable(torch.randn(1, 2, 3, 4))
@@ -600,7 +603,7 @@ class Broadcast(nn.Module):
         super(Broadcast, self).__init__()
 
     def forward(self, x, y):
-        return x * y + (x - x) / y - y
+        return x * y + old_div((x - x), y) - y
 
 input1 = Variable(torch.randn(1, 4, 1, 2))
 input2 = Variable(torch.randn(1, 4, 1, 1))
@@ -746,7 +749,7 @@ class NormL2(nn.Module):
       norm = torch.norm(x, p=2, dim=1, keepdim=True)
       clip = torch.clamp(norm, min=0)
       expand = clip.expand_as(x)
-      return x / expand
+      return old_div(x, expand)
 
 model = NormL2()
 x = Variable(torch.randn(1, 2, 3, 4))
@@ -813,7 +816,7 @@ model = UpsampleUnfusedTwoInput()
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset9_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=9)
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset11_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=11)
 
- class FrozenBatchNorm2d(nn.Module):
+class FrozenBatchNorm2d(nn.Module):
     def __init__(self, n):
         super(FrozenBatchNorm2d, self).__init__()
         self.register_buffer("weight", torch.ones(n))
@@ -832,7 +835,7 @@ x = Variable(torch.randn(1, 2, 3, 4))
 model = FrozenBatchNorm2d(2)
 save_data_and_model("batch_norm_subgraph", x, model)
 
- class GatherScalar(nn.Module):
+class GatherScalar(nn.Module):
     def forward(self, x):
         return x[1]
 
@@ -840,7 +843,7 @@ x = Variable(torch.randn(2))
 model = GatherScalar()
 save_data_and_model("gather_scalar", x, model)
 
- class Gather(nn.Module):
+class Gather(nn.Module):
     def forward(self, x):
         return x[..., 1]
 

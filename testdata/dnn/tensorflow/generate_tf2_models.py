@@ -1,4 +1,5 @@
 # This script is used to generate test data for OpenCV deep learning module.
+from builtins import next
 import numpy as np
 import tensorflow as tf
 import shutil
@@ -37,7 +38,7 @@ def save(model, name, **kwargs):
 
     assert(len(kwargs) == 1)
 
-    inputData = gen_data(next(iter(kwargs.values())))
+    inputData = gen_data(next(iter(list(kwargs.values()))))
     outputData = model(inputData)
 
     writeBlob(inputData, name + '_in')

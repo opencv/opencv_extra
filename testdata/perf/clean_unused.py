@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys, re, os.path
 from xml.dom.minidom import parse
 
@@ -33,7 +34,7 @@ def processLogFile(outname, inname, tests):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print "Usage:\n", os.path.basename(sys.argv[0]), "<log_name>.xml <log_name>.backup.xml"
+        print("Usage:\n", os.path.basename(sys.argv[0]), "<log_name>.xml <log_name>.backup.xml")
         exit(0)
 
     tests = parseLogFile(sys.argv[1])

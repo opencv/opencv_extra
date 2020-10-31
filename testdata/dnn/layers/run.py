@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from __future__ import print_function
 import sys, os, glob
 
 CAFFE_ROOT = "/home/vitaliy/opencv/caffe/"
@@ -20,7 +21,7 @@ def get_cafe_output(inp_blob, proto_name, caffemodel_name):
     out_blob = net.blobs['output'].data[...];
 
     if net.params.get('output'):
-        print "Params count:", len(net.params['output'])
+        print("Params count:", len(net.params['output']))
         net.save(caffemodel_name)
 
     return out_blob
@@ -37,9 +38,9 @@ if __name__ == '__main__':
         inp_blob_name = proto_basename + ".input.npy"
         inp_blob = np.load(inp_blob_name) if os.path.exists(inp_blob_name) else np.load('blob.npy')
 
-        print "\nGenerate data for:"
-        print cfmod_basename, inp_blob.shape
+        print("\nGenerate data for:")
+        print(cfmod_basename, inp_blob.shape)
 
         out_blob = get_cafe_output(inp_blob, proto_filename, cfmod_basename)
-        print out_blob.shape
+        print(out_blob.shape)
         np.save(npy_filename, out_blob)

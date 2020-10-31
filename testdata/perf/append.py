@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys, re, os.path
 from xml.dom.minidom import parse
 
@@ -22,7 +23,7 @@ def processLogFile(outname, inname):
         if case.nodeName in tests:
             del tests[case.nodeName]
 
-    for case in tests.items():
+    for case in list(tests.items()):
         fstorage.appendChild(case[1])
 
     if tests:
@@ -39,7 +40,7 @@ def processLogFile(outname, inname):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print "Usage:\n", os.path.basename(sys.argv[0]), "<log_name>.xml <new_log_name>.xml"
+        print("Usage:\n", os.path.basename(sys.argv[0]), "<log_name>.xml <new_log_name>.xml")
         exit(0)
 
     processLogFile(sys.argv[1], sys.argv[2])
