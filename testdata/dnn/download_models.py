@@ -871,8 +871,8 @@ models = [
         filename='onnx/models/crnn.onnx'),
     Model(
         name='DB_TD500_resnet50',
-        url='https://drive.google.com/uc?export=dowload&id=1_9KB6QkIghp2VNZti_dJ3Araz-nDZBsL',
-        sha='6d3b7b84fc23906be7d583a8cedef727cc351fad',
+        url='https://drive.google.com/uc?export=dowload&id=19YWhArrNccaoSza0CfkXlA8im4-lAGsR',
+        sha='1b4dd21a6baa5e3523156776970895bd3db6960a',
         filename='onnx/models/DB_TD500_resnet50.onnx'),
 ]
 
