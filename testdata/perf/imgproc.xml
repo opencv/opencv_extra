@@ -73247,24 +73247,7 @@
     <rng2>
       <x>0</x>
       <y>970</y>
-      <val>424.</val></rng2></dst>
-    <values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.8877723487094045e-03</min>
-      <max>5.9674546122550964e-02</max>
-      <last>
-        <x>999</x>
-        <y>0</y>
-        <val>1.8877723487094045e-03</val></last>
-      <rng1>
-        <x>823</x>
-        <y>0</y>
-        <val>2.1316856145858765e-03</val></rng1>
-      <rng2>
-        <x>931</x>
-        <y>0</y>
-        <val>1.9799026194959879e-03</val></rng2></values></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---0--false->
+      <val>424.</val></rng2></dst></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---0--false->
 <OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---0--true->
   <dst>
     <kind>655360</kind>
@@ -73282,24 +73265,7 @@
     <rng2>
       <x>0</x>
       <y>7</y>
-      <val>319.</val></rng2></dst>
-    <values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>5.2063831390114501e-05</min>
-      <max>5.0770235247910023e-03</max>
-      <last>
-        <x>205</x>
-        <y>0</y>
-        <val>5.2063831390114501e-05</val></last>
-      <rng1>
-        <x>110</x>
-        <y>0</y>
-        <val>1.0987462883349508e-04</val></rng1>
-      <rng2>
-        <x>201</x>
-        <y>0</y>
-        <val>5.3501691581914201e-05</val></rng2></values></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---0--true->
+      <val>319.</val></rng2></dst></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---0--true->
 <OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--false->
   <dst>
     <kind>655360</kind>
@@ -73318,24 +73284,7 @@
     <rng2>
       <x>0</x>
       <y>333</y>
-      <val>464.</val></rng2></dst>
-    <values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.7089432803913951e-03</min>
-      <max>5.9674546122550964e-02</max>
-      <last>
-        <x>999</x>
-        <y>0</y>
-        <val>1.7089432803913951e-03</val></last>
-      <rng1>
-        <x>128</x>
-        <y>0</y>
-        <val>7.3307184502482414e-03</val></rng1>
-      <rng2>
-        <x>11</x>
-        <y>0</y>
-        <val>4.1246607899665833e-02</val></rng2></values></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--false->
+      <val>464.</val></rng2></dst></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--false->
 <OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--true->
   <dst>
     <kind>655360</kind>
@@ -73354,24 +73303,7 @@
       <x>0</x>
       <y>186</y>
       <cn>1</cn>
-      <val>37.</val></rng2></dst>
-    <values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>5.2063831390114501e-05</min>
-      <max>5.0770235247910023e-03</max>
-      <last>
-        <x>197</x>
-        <y>0</y>
-        <val>5.2063831390114501e-05</val></last>
-      <rng1>
-        <x>90</x>
-        <y>0</y>
-        <val>1.5294477634597570e-04</val></rng1>
-      <rng2>
-        <x>9</x>
-        <y>0</y>
-        <val>2.9049383010715246e-03</val></rng2></values></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--true->
+      <val>37.</val></rng2></dst></OCL_GoodFeaturesToTrackFixture_GoodFeaturesToTrack--GoodFeaturesToTrack----gpu-opticalflow-rubberwhale1-png---3--true->
 <OCL_RemapFixture_Remap--Remap---640x480--8UC3--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -91911,24 +91843,7 @@
     <rng2>
       <x>0</x>
       <y>0</y>
-      <val>478.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.0379668325185776e-01</min>
-      <max>1.9887496531009674e-01</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.0379668325185776e-01</val></last>
-      <rng1>
-        <x>16</x>
-        <y>0</y>
-        <val>1.4009049534797668e-01</val></rng1>
-      <rng2>
-        <x>5</x>
-        <y>0</y>
-        <val>1.6234268248081207e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--3--false->
+      <val>478.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -91946,24 +91861,7 @@
     <rng2>
       <x>29</x>
       <y>0</y>
-      <val>428.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.7216563224792480e-02</min>
-      <max>4.0472965687513351e-02</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.7216563224792480e-02</val></last>
-      <rng1>
-        <x>85</x>
-        <y>0</y>
-        <val>1.8183616921305656e-02</val></rng1>
-      <rng2>
-        <x>46</x>
-        <y>0</y>
-        <val>2.1522641181945801e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--3--true->
+      <val>428.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -91982,24 +91880,7 @@
     <rng2>
       <x>34</x>
       <y>0</y>
-      <val>452.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>8.8879686594009399e-01</min>
-      <max>1.5285872220993042e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>8.8879686594009399e-01</val></last>
-      <rng1>
-        <x>2</x>
-        <y>0</y>
-        <val>1.4206527471542358e+00</val></rng1>
-      <rng2>
-        <x>43</x>
-        <y>0</y>
-        <val>1.0160410404205322e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--false->
+      <val>452.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -92018,24 +91899,7 @@
       <x>29</x>
       <y>0</y>
       <cn>1</cn>
-      <val>357.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.3059759140014648e+00</min>
-      <max>2.8650312423706055e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.3059759140014648e+00</val></last>
-      <rng1>
-        <x>45</x>
-        <y>0</y>
-        <val>1.6327651739120483e+00</val></rng1>
-      <rng2>
-        <x>45</x>
-        <y>0</y>
-        <val>1.6327651739120483e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--true->
+      <val>357.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -92055,24 +91919,7 @@
       <x>40</x>
       <y>0</y>
       <cn>1</cn>
-      <val>380.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.9792584776878357e-02</min>
-      <max>1.5884506702423096e-01</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>9.9792584776878357e-02</val></last>
-      <rng1>
-        <x>47</x>
-        <y>0</y>
-        <val>1.1280925571918488e-01</val></rng1>
-      <rng2>
-        <x>20</x>
-        <y>0</y>
-        <val>1.2604798376560211e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--false->
+      <val>380.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -92090,24 +91937,7 @@
     <rng2>
       <x>42</x>
       <y>0</y>
-      <val>453.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.4120814390480518e-02</min>
-      <max>2.9542785137891769e-02</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.4120814390480518e-02</val></last>
-      <rng1>
-        <x>99</x>
-        <y>0</y>
-        <val>1.4120814390480518e-02</val></rng1>
-      <rng2>
-        <x>81</x>
-        <y>0</y>
-        <val>1.4979899860918522e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--true->
+      <val>453.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -92127,24 +91957,7 @@
       <x>37</x>
       <y>0</y>
       <cn>1</cn>
-      <val>330.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.4561803340911865e-01</min>
-      <max>1.7151342630386353e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>9.4561803340911865e-01</val></last>
-      <rng1>
-        <x>64</x>
-        <y>0</y>
-        <val>1.0470650196075439e+00</val></rng1>
-      <rng2>
-        <x>70</x>
-        <y>0</y>
-        <val>1.0205729007720947e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--false->
+      <val>330.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -92163,24 +91976,7 @@
     <rng2>
       <x>3</x>
       <y>0</y>
-      <val>432.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.2300641536712646e+00</min>
-      <max>2.7769780158996582e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.2300641536712646e+00</val></last>
-      <rng1>
-        <x>25</x>
-        <y>0</y>
-        <val>1.7601455450057983e+00</val></rng1>
-      <rng2>
-        <x>89</x>
-        <y>0</y>
-        <val>1.2613852024078369e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--true->
+      <val>432.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-1--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -92198,24 +91994,7 @@
     <rng2>
       <x>19</x>
       <y>0</y>
-      <val>430.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.0379668325185776e-01</min>
-      <max>1.9887496531009674e-01</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.0379668325185776e-01</val></last>
-      <rng1>
-        <x>57</x>
-        <y>0</y>
-        <val>1.1748354136943817e-01</val></rng1>
-      <rng2>
-        <x>80</x>
-        <y>0</y>
-        <val>1.1059378832578659e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--false->
+      <val>430.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -92233,24 +92012,7 @@
     <rng2>
       <x>21</x>
       <y>0</y>
-      <val>462.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.7216563224792480e-02</min>
-      <max>4.0472965687513351e-02</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.7216563224792480e-02</val></last>
-      <rng1>
-        <x>27</x>
-        <y>0</y>
-        <val>2.5019738823175430e-02</val></rng1>
-      <rng2>
-        <x>86</x>
-        <y>0</y>
-        <val>1.8147101625800133e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--true->
+      <val>462.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -92269,24 +92031,7 @@
       <x>22</x>
       <y>0</y>
       <cn>1</cn>
-      <val>603.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>8.8879686594009399e-01</min>
-      <max>1.5285872220993042e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>8.8879686594009399e-01</val></last>
-      <rng1>
-        <x>46</x>
-        <y>0</y>
-        <val>1.0067517757415771e+00</val></rng1>
-      <rng2>
-        <x>25</x>
-        <y>0</y>
-        <val>1.1489734649658203e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--false->
+      <val>603.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -92305,24 +92050,7 @@
       <x>18</x>
       <y>0</y>
       <cn>1</cn>
-      <val>419.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.3059759140014648e+00</min>
-      <max>2.8650312423706055e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.3059759140014648e+00</val></last>
-      <rng1>
-        <x>52</x>
-        <y>0</y>
-        <val>1.5851733684539795e+00</val></rng1>
-      <rng2>
-        <x>22</x>
-        <y>0</y>
-        <val>1.9576478004455566e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--true->
+      <val>419.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -92340,24 +92068,7 @@
     <rng2>
       <x>8</x>
       <y>0</y>
-      <val>487.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.9792584776878357e-02</min>
-      <max>1.5884506702423096e-01</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>9.9792584776878357e-02</val></last>
-      <rng1>
-        <x>99</x>
-        <y>0</y>
-        <val>9.9792584776878357e-02</val></rng1>
-      <rng2>
-        <x>26</x>
-        <y>0</y>
-        <val>1.2209506332874298e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--false->
+      <val>487.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -92376,24 +92087,7 @@
       <x>43</x>
       <y>0</y>
       <cn>1</cn>
-      <val>376.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.4120814390480518e-02</min>
-      <max>2.9542785137891769e-02</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.4120814390480518e-02</val></last>
-      <rng1>
-        <x>59</x>
-        <y>0</y>
-        <val>1.7039082944393158e-02</val></rng1>
-      <rng2>
-        <x>57</x>
-        <y>0</y>
-        <val>1.7191385850310326e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--true->
+      <val>376.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -92412,24 +92106,7 @@
     <rng2>
       <x>41</x>
       <y>0</y>
-      <val>476.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.4561803340911865e-01</min>
-      <max>1.7151342630386353e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>9.4561803340911865e-01</val></last>
-      <rng1>
-        <x>97</x>
-        <y>0</y>
-        <val>9.5307296514511108e-01</val></rng1>
-      <rng2>
-        <x>44</x>
-        <y>0</y>
-        <val>1.1116983890533447e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--false->
+      <val>476.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -92449,24 +92126,7 @@
       <x>43</x>
       <y>0</y>
       <cn>1</cn>
-      <val>377.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.2300641536712646e+00</min>
-      <max>2.7769780158996582e+00</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>1.2300641536712646e+00</val></last>
-      <rng1>
-        <x>99</x>
-        <y>0</y>
-        <val>1.2300641536712646e+00</val></rng1>
-      <rng2>
-        <x>99</x>
-        <y>0</y>
-        <val>1.2300641536712646e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--true->
+      <val>377.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---100--0-01--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -92486,24 +92146,7 @@
       <x>23</x>
       <y>0</y>
       <cn>1</cn>
-      <val>376.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.9688085913658142e-02</min>
-      <max>1.9887496531009674e-01</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.9688085913658142e-02</val></last>
-      <rng1>
-        <x>227</x>
-        <y>0</y>
-        <val>7.8844085335731506e-02</val></rng1>
-      <rng2>
-        <x>450</x>
-        <y>0</y>
-        <val>5.3506378084421158e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--false->
+      <val>376.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -92521,24 +92164,7 @@
     <rng2>
       <x>34</x>
       <y>0</y>
-      <val>458.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>5.0911898724734783e-03</min>
-      <max>4.0472965687513351e-02</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>5.0911898724734783e-03</val></last>
-      <rng1>
-        <x>290</x>
-        <y>0</y>
-        <val>9.3891602009534836e-03</val></rng1>
-      <rng2>
-        <x>103</x>
-        <y>0</y>
-        <val>1.6854099929332733e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--true->
+      <val>458.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -92558,24 +92184,7 @@
       <x>47</x>
       <y>0</y>
       <cn>1</cn>
-      <val>437.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.1306379437446594e-01</min>
-      <max>1.5285872220993042e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.1306379437446594e-01</val></last>
-      <rng1>
-        <x>341</x>
-        <y>0</y>
-        <val>5.4907798767089844e-01</val></rng1>
-      <rng2>
-        <x>189</x>
-        <y>0</y>
-        <val>7.2076058387756348e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--false->
+      <val>437.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -92594,24 +92203,7 @@
     <rng2>
       <x>0</x>
       <y>0</y>
-      <val>486.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.7794512510299683e-01</min>
-      <max>2.8650312423706055e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.7794512510299683e-01</val></last>
-      <rng1>
-        <x>235</x>
-        <y>0</y>
-        <val>8.6043643951416016e-01</val></rng1>
-      <rng2>
-        <x>490</x>
-        <y>0</y>
-        <val>3.8565734028816223e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--true->
+      <val>486.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -92629,24 +92221,7 @@
     <rng2>
       <x>13</x>
       <y>0</y>
-      <val>473.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.3113999068737030e-02</min>
-      <max>1.5884506702423096e-01</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.3113999068737030e-02</val></last>
-      <rng1>
-        <x>294</x>
-        <y>0</y>
-        <val>6.7320443689823151e-02</val></rng1>
-      <rng2>
-        <x>239</x>
-        <y>0</y>
-        <val>7.5958535075187683e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--false->
+      <val>473.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -92664,24 +92239,7 @@
     <rng2>
       <x>48</x>
       <y>0</y>
-      <val>423.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.4815684668719769e-03</min>
-      <max>2.9542785137891769e-02</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.4815684668719769e-03</val></last>
-      <rng1>
-        <x>395</x>
-        <y>0</y>
-        <val>6.2752310186624527e-03</val></rng1>
-      <rng2>
-        <x>292</x>
-        <y>0</y>
-        <val>8.3896368741989136e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--true->
+      <val>423.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -92701,24 +92259,7 @@
       <x>44</x>
       <y>0</y>
       <cn>1</cn>
-      <val>638.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.6148601770401001e-01</min>
-      <max>1.7151342630386353e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.6148601770401001e-01</val></last>
-      <rng1>
-        <x>447</x>
-        <y>0</y>
-        <val>4.1562873125076294e-01</val></rng1>
-      <rng2>
-        <x>406</x>
-        <y>0</y>
-        <val>4.5542842149734497e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--false->
+      <val>638.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -92737,24 +92278,7 @@
       <x>20</x>
       <y>0</y>
       <cn>1</cn>
-      <val>377.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.4115350246429443e-01</min>
-      <max>2.7769780158996582e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.4115350246429443e-01</val></last>
-      <rng1>
-        <x>353</x>
-        <y>0</y>
-        <val>5.7874965667724609e-01</val></rng1>
-      <rng2>
-        <x>215</x>
-        <y>0</y>
-        <val>8.9344227313995361e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--true->
+      <val>377.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-1--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -92773,24 +92297,7 @@
       <x>19</x>
       <y>0</y>
       <cn>1</cn>
-      <val>419.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.9688085913658142e-02</min>
-      <max>1.9887496531009674e-01</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.9688085913658142e-02</val></last>
-      <rng1>
-        <x>320</x>
-        <y>0</y>
-        <val>6.7676633596420288e-02</val></rng1>
-      <rng2>
-        <x>276</x>
-        <y>0</y>
-        <val>7.3003992438316345e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--false->
+      <val>419.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -92808,24 +92315,7 @@
     <rng2>
       <x>44</x>
       <y>0</y>
-      <val>476.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>5.0911898724734783e-03</min>
-      <max>4.0472965687513351e-02</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>5.0911898724734783e-03</val></last>
-      <rng1>
-        <x>216</x>
-        <y>0</y>
-        <val>1.1613977141678333e-02</val></rng1>
-      <rng2>
-        <x>33</x>
-        <y>0</y>
-        <val>2.3589819669723511e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--true->
+      <val>476.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -92845,24 +92335,7 @@
       <x>32</x>
       <y>0</y>
       <cn>1</cn>
-      <val>376.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.1306379437446594e-01</min>
-      <max>1.5285872220993042e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.1306379437446594e-01</val></last>
-      <rng1>
-        <x>171</x>
-        <y>0</y>
-        <val>7.5471234321594238e-01</val></rng1>
-      <rng2>
-        <x>263</x>
-        <y>0</y>
-        <val>6.3038480281829834e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--false->
+      <val>376.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -92881,24 +92354,7 @@
       <x>33</x>
       <y>0</y>
       <cn>1</cn>
-      <val>362.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.7794512510299683e-01</min>
-      <max>2.8650312423706055e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.7794512510299683e-01</val></last>
-      <rng1>
-        <x>136</x>
-        <y>0</y>
-        <val>1.1345195770263672e+00</val></rng1>
-      <rng2>
-        <x>36</x>
-        <y>0</y>
-        <val>1.6950572729110718e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--true->
+      <val>362.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -92918,24 +92374,7 @@
       <x>39</x>
       <y>0</y>
       <cn>1</cn>
-      <val>378.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.3113999068737030e-02</min>
-      <max>1.5884506702423096e-01</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.3113999068737030e-02</val></last>
-      <rng1>
-        <x>438</x>
-        <y>0</y>
-        <val>4.9610462039709091e-02</val></rng1>
-      <rng2>
-        <x>461</x>
-        <y>0</y>
-        <val>4.6673089265823364e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--false->
+      <val>378.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -92954,24 +92393,7 @@
     <rng2>
       <x>45</x>
       <y>0</y>
-      <val>473.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>4.4815684668719769e-03</min>
-      <max>2.9542785137891769e-02</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>4.4815684668719769e-03</val></last>
-      <rng1>
-        <x>189</x>
-        <y>0</y>
-        <val>1.0826762765645981e-02</val></rng1>
-      <rng2>
-        <x>198</x>
-        <y>0</y>
-        <val>1.0694919154047966e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--true->
+      <val>473.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -92989,24 +92411,7 @@
     <rng2>
       <x>35</x>
       <y>0</y>
-      <val>50.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.6148601770401001e-01</min>
-      <max>1.7151342630386353e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.6148601770401001e-01</val></last>
-      <rng1>
-        <x>383</x>
-        <y>0</y>
-        <val>4.7961005568504333e-01</val></rng1>
-      <rng2>
-        <x>222</x>
-        <y>0</y>
-        <val>6.9672435522079468e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--false->
+      <val>50.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -93025,24 +92430,7 @@
     <rng2>
       <x>29</x>
       <y>0</y>
-      <val>561.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>3.4115350246429443e-01</min>
-      <max>2.7769780158996582e+00</max>
-      <last>
-        <x>499</x>
-        <y>0</y>
-        <val>3.4115350246429443e-01</val></last>
-      <rng1>
-        <x>182</x>
-        <y>0</y>
-        <val>9.7194969654083252e-01</val></rng1>
-      <rng2>
-        <x>266</x>
-        <y>0</y>
-        <val>7.7202641963958740e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--true->
+      <val>561.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----stitching-a1-png---500--0-01--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -93061,24 +92449,7 @@
       <x>27</x>
       <y>0</y>
       <cn>1</cn>
-      <val>175.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.1746711805462837e-02</min>
-      <max>2.1381965279579163e-01</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>2.1746711805462837e-02</val></last>
-      <rng1>
-        <x>16</x>
-        <y>0</y>
-        <val>4.5074384659528732e-02</val></rng1>
-      <rng2>
-        <x>19</x>
-        <y>0</y>
-        <val>3.5197310149669647e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--false->
+      <val>175.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -93097,19 +92468,7 @@
       <x>4</x>
       <y>0</y>
       <cn>1</cn>
-      <val>10.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>16</cols>
-        <dt>f</dt>
-        <data>
-          5.69046400e-02 5.40399477e-02 5.14762811e-02 4.89982292e-02
-          2.56407522e-02 2.56342944e-02 2.22030990e-02 2.17372626e-02
-          2.01115459e-02 1.88804083e-02 1.71685964e-02 1.10533535e-02
-          1.06589012e-02 7.81631004e-03 7.68365525e-03 7.61787593e-03</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--true->
+      <val>10.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -93129,21 +92488,7 @@
       <x>2</x>
       <y>0</y>
       <cn>1</cn>
-      <val>277.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>21</cols>
-        <dt>f</dt>
-        <data>
-          1.15419126e+00 9.50343907e-01 9.35009837e-01 9.19833362e-01
-          7.81537890e-01 6.49984360e-01 4.79810119e-01 4.65884507e-01
-          4.57863539e-01 4.18674678e-01 4.10249650e-01 3.43061805e-01
-          3.42013955e-01 3.39655757e-01 2.88335145e-01 2.74958372e-01
-          2.66962618e-01 1.98516369e-01 1.97367847e-01 1.96823955e-01
-          1.16196364e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--false->
+      <val>277.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -93162,20 +92507,7 @@
     <rng2>
       <x>8</x>
       <y>0</y>
-      <val>382.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>17</cols>
-        <dt>f</dt>
-        <data>
-          2.52174950e+00 2.42989731e+00 2.33973503e+00 1.57185793e+00
-          1.50020516e+00 1.34963000e+00 6.54090345e-01 6.03358269e-01
-          5.32898188e-01 4.35743392e-01 3.82401764e-01 3.78546119e-01
-          3.74884218e-01 3.74116778e-01 3.16542923e-01 3.09723049e-01
-          3.01674813e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--true->
+      <val>382.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -93194,24 +92526,7 @@
     <rng2>
       <x>2</x>
       <y>0</y>
-      <val>238.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.9532345235347748e-02</min>
-      <max>1.8718370795249939e-01</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>1.9532345235347748e-02</val></last>
-      <rng1>
-        <x>21</x>
-        <y>0</y>
-        <val>2.6015169918537140e-02</val></rng1>
-      <rng2>
-        <x>6</x>
-        <y>0</y>
-        <val>1.3490471243858337e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--false->
+      <val>238.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -93230,19 +92545,7 @@
     <rng2>
       <x>8</x>
       <y>0</y>
-      <val>241.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>13</cols>
-        <dt>f</dt>
-        <data>
-          4.11051139e-02 4.04594056e-02 3.98371816e-02 2.85294149e-02
-          2.79543065e-02 2.42569819e-02 2.26873532e-02 1.98141877e-02
-          1.38695855e-02 1.27739143e-02 5.17465128e-03 5.04379859e-03
-          4.93584713e-03</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--true->
+      <val>241.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -93261,21 +92564,7 @@
       <x>0</x>
       <y>0</y>
       <cn>1</cn>
-      <val>276.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>22</cols>
-        <dt>f</dt>
-        <data>
-          1.35242629e+00 1.33729434e+00 1.32235312e+00 1.05516171e+00
-          9.28084493e-01 8.19328964e-01 6.70568168e-01 6.43263459e-01
-          6.09012604e-01 5.98079741e-01 4.44309235e-01 4.24378872e-01
-          4.20925409e-01 4.13081795e-01 3.52381825e-01 2.97278792e-01
-          2.46894076e-01 2.42225394e-01 2.39316985e-01 1.84514165e-01
-          1.44233063e-01 1.41241893e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--false->
+      <val>276.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -93294,19 +92583,7 @@
     <rng2>
       <x>10</x>
       <y>0</y>
-      <val>123.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>15</cols>
-        <dt>f</dt>
-        <data>
-          2.58336186e+00 2.55615568e+00 2.52942634e+00 1.91455007e+00
-          1.00643802e+00 1.00076938e+00 6.33696795e-01 5.91456413e-01
-          5.42649925e-01 4.27485317e-01 3.38456571e-01 3.25839967e-01
-          3.21145833e-01 3.14577222e-01 2.75148302e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--true->
+      <val>123.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-1--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -93326,24 +92603,7 @@
       <x>16</x>
       <y>0</y>
       <cn>1</cn>
-      <val>118.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.7308613061904907e-03</min>
-      <max>2.1381965279579163e-01</max>
-      <last>
-        <x>99</x>
-        <y>0</y>
-        <val>2.7308613061904907e-03</val></last>
-      <rng1>
-        <x>24</x>
-        <y>0</y>
-        <val>2.5016054511070251e-02</val></rng1>
-      <rng2>
-        <x>88</x>
-        <y>0</y>
-        <val>3.1313225626945496e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--false->
+      <val>118.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -93361,24 +92621,7 @@
     <rng2>
       <x>7</x>
       <y>0</y>
-      <val>246.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.0821097530424595e-03</min>
-      <max>5.6904640048742294e-02</max>
-      <last>
-        <x>29</x>
-        <y>0</y>
-        <val>1.0821097530424595e-03</val></last>
-      <rng1>
-        <x>1</x>
-        <y>0</y>
-        <val>5.4039947688579559e-02</val></rng1>
-      <rng2>
-        <x>29</x>
-        <y>0</y>
-        <val>1.0821097530424595e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--true->
+      <val>246.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -93396,24 +92639,7 @@
     <rng2>
       <x>8</x>
       <y>0</y>
-      <val>210.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.1604070663452148e-02</min>
-      <max>1.1541912555694580e+00</max>
-      <last>
-        <x>81</x>
-        <y>0</y>
-        <val>1.1604070663452148e-02</val></last>
-      <rng1>
-        <x>62</x>
-        <y>0</y>
-        <val>1.2820482254028320e-02</val></rng1>
-      <rng2>
-        <x>58</x>
-        <y>0</y>
-        <val>1.3177990913391113e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--false->
+      <val>210.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -93432,24 +92658,7 @@
     <rng2>
       <x>9</x>
       <y>0</y>
-      <val>246.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.8919527307152748e-02</min>
-      <max>2.5217494964599609e+00</max>
-      <last>
-        <x>25</x>
-        <y>0</y>
-        <val>2.8919527307152748e-02</val></last>
-      <rng1>
-        <x>17</x>
-        <y>0</y>
-        <val>1.6285464167594910e-01</val></rng1>
-      <rng2>
-        <x>17</x>
-        <y>0</y>
-        <val>1.6285464167594910e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--true->
+      <val>246.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -93468,24 +92677,7 @@
     <rng2>
       <x>8</x>
       <y>0</y>
-      <val>242.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.9205845892429352e-03</min>
-      <max>1.8718370795249939e-01</max>
-      <last>
-        <x>78</x>
-        <y>0</y>
-        <val>1.9205845892429352e-03</val></last>
-      <rng1>
-        <x>19</x>
-        <y>0</y>
-        <val>3.2026428729295731e-02</val></rng1>
-      <rng2>
-        <x>53</x>
-        <y>0</y>
-        <val>2.4126954376697540e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--false->
+      <val>242.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -93503,24 +92695,7 @@
     <rng2>
       <x>1</x>
       <y>0</y>
-      <val>21.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.4537169206887484e-04</min>
-      <max>4.1105113923549652e-02</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>9.4537169206887484e-04</val></last>
-      <rng1>
-        <x>13</x>
-        <y>0</y>
-        <val>3.6235281731933355e-03</val></rng1>
-      <rng2>
-        <x>2</x>
-        <y>0</y>
-        <val>3.9837181568145752e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--true->
+      <val>21.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -93540,24 +92715,7 @@
       <x>25</x>
       <y>0</y>
       <cn>1</cn>
-      <val>194.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.4509081840515137e-02</min>
-      <max>1.3524262905120850e+00</max>
-      <last>
-        <x>36</x>
-        <y>0</y>
-        <val>1.4509081840515137e-02</val></last>
-      <rng1>
-        <x>18</x>
-        <y>0</y>
-        <val>2.3931698501110077e-01</val></rng1>
-      <rng2>
-        <x>2</x>
-        <y>0</y>
-        <val>1.3223531246185303e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--false->
+      <val>194.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -93575,24 +92733,7 @@
     <rng2>
       <x>4</x>
       <y>0</y>
-      <val>241.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.8844751417636871e-02</min>
-      <max>2.5833618640899658e+00</max>
-      <last>
-        <x>26</x>
-        <y>0</y>
-        <val>2.8844751417636871e-02</val></last>
-      <rng1>
-        <x>24</x>
-        <y>0</y>
-        <val>3.5195522010326385e-02</val></rng1>
-      <rng2>
-        <x>5</x>
-        <y>0</y>
-        <val>1.0007693767547607e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--true->
+      <val>241.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---100--0-01--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -93610,24 +92751,7 @@
     <rng2>
       <x>26</x>
       <y>0</y>
-      <val>261.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.1746711805462837e-02</min>
-      <max>2.1381965279579163e-01</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>2.1746711805462837e-02</val></last>
-      <rng1>
-        <x>17</x>
-        <y>0</y>
-        <val>3.9304293692111969e-02</val></rng1>
-      <rng2>
-        <x>16</x>
-        <y>0</y>
-        <val>4.5074384659528732e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--false->
+      <val>261.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -93646,19 +92770,7 @@
       <x>1</x>
       <y>0</y>
       <cn>1</cn>
-      <val>277.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>16</cols>
-        <dt>f</dt>
-        <data>
-          5.69046400e-02 5.40399477e-02 5.14762811e-02 4.89982292e-02
-          2.56407522e-02 2.56342944e-02 2.22030990e-02 2.17372626e-02
-          2.01115459e-02 1.88804083e-02 1.71685964e-02 1.10533535e-02
-          1.06589012e-02 7.81631004e-03 7.68365525e-03 7.61787593e-03</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--true->
+      <val>277.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -93676,21 +92788,7 @@
     <rng2>
       <x>13</x>
       <y>0</y>
-      <val>360.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>21</cols>
-        <dt>f</dt>
-        <data>
-          1.15419126e+00 9.50343907e-01 9.35009837e-01 9.19833362e-01
-          7.81537890e-01 6.49984360e-01 4.79810119e-01 4.65884507e-01
-          4.57863539e-01 4.18674678e-01 4.10249650e-01 3.43061805e-01
-          3.42013955e-01 3.39655757e-01 2.88335145e-01 2.74958372e-01
-          2.66962618e-01 1.98516369e-01 1.97367847e-01 1.96823955e-01
-          1.16196364e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--false->
+      <val>360.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -93709,20 +92807,7 @@
       <x>2</x>
       <y>0</y>
       <cn>1</cn>
-      <val>10.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>17</cols>
-        <dt>f</dt>
-        <data>
-          2.52174950e+00 2.42989731e+00 2.33973503e+00 1.57185793e+00
-          1.50020516e+00 1.34963000e+00 6.54090345e-01 6.03358269e-01
-          5.32898188e-01 4.35743392e-01 3.82401764e-01 3.78546119e-01
-          3.74884218e-01 3.74116778e-01 3.16542923e-01 3.09723049e-01
-          3.01674813e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--true->
+      <val>10.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -93740,24 +92825,7 @@
     <rng2>
       <x>7</x>
       <y>0</y>
-      <val>246.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.9532345235347748e-02</min>
-      <max>1.8718370795249939e-01</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>1.9532345235347748e-02</val></last>
-      <rng1>
-        <x>13</x>
-        <y>0</y>
-        <val>5.6593127548694611e-02</val></rng1>
-      <rng2>
-        <x>17</x>
-        <y>0</y>
-        <val>3.2461665570735931e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--false->
+      <val>246.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -93775,19 +92843,7 @@
     <rng2>
       <x>11</x>
       <y>0</y>
-      <val>328.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>13</cols>
-        <dt>f</dt>
-        <data>
-          4.11051139e-02 4.04594056e-02 3.98371816e-02 2.85294149e-02
-          2.79543065e-02 2.42569819e-02 2.26873532e-02 1.98141877e-02
-          1.38695855e-02 1.27739143e-02 5.17465128e-03 5.04379859e-03
-          4.93584713e-03</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--true->
+      <val>328.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -93806,21 +92862,7 @@
     <rng2>
       <x>7</x>
       <y>0</y>
-      <val>381.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>22</cols>
-        <dt>f</dt>
-        <data>
-          1.35242629e+00 1.33729434e+00 1.32235312e+00 1.05516171e+00
-          9.28084493e-01 8.19328964e-01 6.70568168e-01 6.43263459e-01
-          6.09012604e-01 5.98079741e-01 4.44309235e-01 4.24378872e-01
-          4.20925409e-01 4.13081795e-01 3.52381825e-01 2.97278792e-01
-          2.46894076e-01 2.42225394e-01 2.39316985e-01 1.84514165e-01
-          1.44233063e-01 1.41241893e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--false->
+      <val>381.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -93838,19 +92880,7 @@
     <rng2>
       <x>5</x>
       <y>0</y>
-      <val>246.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <val type_id="opencv-matrix">
-        <rows>1</rows>
-        <cols>15</cols>
-        <dt>f</dt>
-        <data>
-          2.58336186e+00 2.55615568e+00 2.52942634e+00 1.91455007e+00
-          1.00643802e+00 1.00076938e+00 6.33696795e-01 5.91456413e-01
-          5.42649925e-01 4.27485317e-01 3.38456571e-01 3.25839967e-01
-          3.21145833e-01 3.14577222e-01 2.75148302e-01</data></val></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--true->
+      <val>246.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-1--5--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--false->
   <corners>
     <kind>196608</kind>
@@ -93868,24 +92898,7 @@
     <rng2>
       <x>21</x>
       <y>0</y>
-      <val>241.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.1894834935665131e-03</min>
-      <max>2.1381965279579163e-01</max>
-      <last>
-        <x>124</x>
-        <y>0</y>
-        <val>2.1894834935665131e-03</val></last>
-      <rng1>
-        <x>119</x>
-        <y>0</y>
-        <val>2.3429915308952332e-03</val></rng1>
-      <rng2>
-        <x>68</x>
-        <y>0</y>
-        <val>3.8991514593362808e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--false->
+      <val>241.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--true->
   <corners>
     <kind>196608</kind>
@@ -93905,24 +92918,7 @@
       <x>14</x>
       <y>0</y>
       <cn>1</cn>
-      <val>22.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.0821097530424595e-03</min>
-      <max>5.6904640048742294e-02</max>
-      <last>
-        <x>29</x>
-        <y>0</y>
-        <val>1.0821097530424595e-03</val></last>
-      <rng1>
-        <x>3</x>
-        <y>0</y>
-        <val>4.8998229205608368e-02</val></rng1>
-      <rng2>
-        <x>0</x>
-        <y>0</y>
-        <val>5.6904640048742294e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--true->
+      <val>22.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--false->
   <corners>
     <kind>196608</kind>
@@ -93941,24 +92937,7 @@
     <rng2>
       <x>23</x>
       <y>0</y>
-      <val>41.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.1604070663452148e-02</min>
-      <max>1.1541912555694580e+00</max>
-      <last>
-        <x>81</x>
-        <y>0</y>
-        <val>1.1604070663452148e-02</val></last>
-      <rng1>
-        <x>21</x>
-        <y>0</y>
-        <val>1.1320106685161591e-01</val></rng1>
-      <rng2>
-        <x>66</x>
-        <y>0</y>
-        <val>1.2416422367095947e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--false->
+      <val>41.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--true->
   <corners>
     <kind>196608</kind>
@@ -93978,24 +92957,7 @@
       <x>11</x>
       <y>0</y>
       <cn>1</cn>
-      <val>22.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.8919527307152748e-02</min>
-      <max>2.5217494964599609e+00</max>
-      <last>
-        <x>25</x>
-        <y>0</y>
-        <val>2.8919527307152748e-02</val></last>
-      <rng1>
-        <x>25</x>
-        <y>0</y>
-        <val>2.8919527307152748e-02</val></rng1>
-      <rng2>
-        <x>9</x>
-        <y>0</y>
-        <val>4.3574339151382446e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--true->
+      <val>22.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--3--5--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--false->
   <corners>
     <kind>196608</kind>
@@ -94013,24 +92975,7 @@
     <rng2>
       <x>33</x>
       <y>0</y>
-      <val>97.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.9205845892429352e-03</min>
-      <max>1.8718370795249939e-01</max>
-      <last>
-        <x>78</x>
-        <y>0</y>
-        <val>1.9205845892429352e-03</val></last>
-      <rng1>
-        <x>16</x>
-        <y>0</y>
-        <val>3.4741200506687164e-02</val></rng1>
-      <rng2>
-        <x>44</x>
-        <y>0</y>
-        <val>2.7437023818492889e-03</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--false->
+      <val>97.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--true->
   <corners>
     <kind>196608</kind>
@@ -94049,24 +92994,7 @@
       <x>28</x>
       <y>0</y>
       <cn>1</cn>
-      <val>251.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>9.4537169206887484e-04</min>
-      <max>4.1105113923549652e-02</max>
-      <last>
-        <x>28</x>
-        <y>0</y>
-        <val>9.4537169206887484e-04</val></last>
-      <rng1>
-        <x>4</x>
-        <y>0</y>
-        <val>2.7954306453466415e-02</val></rng1>
-      <rng2>
-        <x>3</x>
-        <y>0</y>
-        <val>2.8529414907097816e-02</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--true->
+      <val>251.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--3--true->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--false->
   <corners>
     <kind>196608</kind>
@@ -94086,24 +93014,7 @@
       <x>13</x>
       <y>0</y>
       <cn>1</cn>
-      <val>90.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>1.4509081840515137e-02</min>
-      <max>1.3524262905120850e+00</max>
-      <last>
-        <x>36</x>
-        <y>0</y>
-        <val>1.4509081840515137e-02</val></last>
-      <rng1>
-        <x>29</x>
-        <y>0</y>
-        <val>2.9848456382751465e-02</val></rng1>
-      <rng2>
-        <x>3</x>
-        <y>0</y>
-        <val>1.0551617145538330e+00</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--false->
+      <val>90.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--false->
 <Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--true->
   <corners>
     <kind>196608</kind>
@@ -94122,24 +93033,7 @@
       <x>14</x>
       <y>0</y>
       <cn>1</cn>
-      <val>147.</val></rng2></corners>
-    <corners_values>
-      <kind>196608</kind>
-      <type>5</type>
-      <min>2.8844751417636871e-02</min>
-      <max>2.5833618640899658e+00</max>
-      <last>
-        <x>26</x>
-        <y>0</y>
-        <val>2.8844751417636871e-02</val></last>
-      <rng1>
-        <x>6</x>
-        <y>0</y>
-        <val>6.3369679450988770e-01</val></rng1>
-      <rng2>
-        <x>10</x>
-        <y>0</y>
-        <val>3.3845657110214233e-01</val></rng2></corners_values></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--true->
+      <val>147.</val></rng2></corners></Image_MaxCorners_QualityLevel_MinDistance_BlockSize_gradientSize_UseHarris_goodFeaturesToTrack--goodFeaturesToTrack----cv-shared-pic5-png---500--0-01--5--5--true->
  <!-- resumed -->
 <Size_AdaptThreshType_AdaptThreshMethod_BlockSize_Delta_adaptiveThreshold--adaptiveThreshold---640x480--THRESH_BINARY--ADAPTIVE_THRESH_MEAN_C--3--0->
   <dst>
