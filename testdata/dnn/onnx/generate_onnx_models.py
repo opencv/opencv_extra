@@ -1,6 +1,6 @@
 from __future__ import print_function
 import torch
-from torch.autograd import Variable
+from torch.autograd import Variable, Function
 import torch.nn.init as init
 import torch.nn as nn
 import torch.nn.functional as F
@@ -24,14 +24,14 @@ def assertONNXExpected(binary_pb):
     return model_def
 
 
-def export_to_string(model, inputs, version=None):
+def export_to_string(model, inputs, version=None, export_params=False):
     f = io.BytesIO()
     with torch.no_grad():
-        torch.onnx.export(model, inputs, f, export_params=True, opset_version=version)
+        torch.onnx.export(model, inputs, f, export_params=export_params, opset_version=version)
     return f.getvalue()
 
 
-def save_data_and_model(name, input, model, version=None):
+def save_data_and_model(name, input, model, version=None, export_params=False):
     model.eval()
     print(name + " input has sizes",  input.shape)
     input_files = os.path.join("data", "input_" + name)
@@ -46,7 +46,7 @@ def save_data_and_model(name, input, model, version=None):
 
     models_files = os.path.join("models", name + ".onnx")
 
-    onnx_model_pb = export_to_string(model, input, version)
+    onnx_model_pb = export_to_string(model, input, version, export_params)
     model_def = assertONNXExpected(onnx_model_pb)
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
@@ -192,7 +192,7 @@ def save_data_and_model_multy_inputs(name, model, *args, **kwargs):
 
     models_files = os.path.join("models", name + ".onnx")
 
-    onnx_model_pb = export_to_string(model, (args), version=kwargs.get('version', None))
+    onnx_model_pb = export_to_string(model, (args), version=kwargs.get('version', None), export_params=kwargs.get('export_params', False))
     model_def = assertONNXExpected(onnx_model_pb)
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
@@ -378,16 +378,61 @@ save_data_and_model("log_softmax", input, model)
 
 class Slice(nn.Module):
 
-    def __init__(self):
+    def __init__(self, custom_slice=None):
+        self.custom_slice=custom_slice
         super(Slice, self).__init__()
 
     def forward(self, x):
+        if self.custom_slice:
+           return x[self.custom_slice]
+
         return x[..., 1:-1, 0:3]
 
 input = Variable(torch.randn(1, 2, 4, 4))
 model = Slice()
 save_data_and_model("slice", input, model)
-save_data_and_model("slice_opset_11", input, model, opset_version=11)
+save_data_and_model("slice_opset_11", input, model, version=11)
+
+input_2 = Variable(torch.randn(6, 6))
+custom_slice_list = [
+    slice(1, 3, 1),
+    slice(0, 3, 2)
+]
+model_2 = Slice(custom_slice=custom_slice_list)
+save_data_and_model("slice_opset_11_steps_2d", input_2, model_2, version=11)
+postprocess_model("models/slice_opset_11_steps_2d.onnx", [['height', 'width']])
+
+input_3 = Variable(torch.randn(3, 6, 6))
+custom_slice_list_3 = [
+    slice(None, None, 2),
+    slice(None, None, 2),
+    slice(None, None, 2)
+]
+model_3 = Slice(custom_slice=custom_slice_list_3)
+save_data_and_model("slice_opset_11_steps_3d", input_3, model_3, version=11)
+postprocess_model("models/slice_opset_11_steps_3d.onnx", [[3, 'height', 'width']])
+
+input_4 = Variable(torch.randn(1, 3, 6, 6))
+custom_slice_list_4 = [
+    slice(0, 5, None),
+    slice(None, None, None),
+    slice(1, None, 2),
+    slice(None, None, None)
+]
+model_4 = Slice(custom_slice=custom_slice_list_4)
+save_data_and_model("slice_opset_11_steps_4d", input_4, model_4, version=11)
+postprocess_model("models/slice_opset_11_steps_4d.onnx", [["batch_size", 3, 'height', 'width']])
+
+input_5 = Variable(torch.randn(1, 2, 3, 6, 6))
+custom_slice_list_5 = [
+    slice(None, None, None),
+    slice(None, None, None),
+    slice(0, None, 3),
+    slice(None, None, None),
+    slice(None, None, 2)
+]
+model_5 = Slice(custom_slice=custom_slice_list_5)
+save_data_and_model("slice_opset_11_steps_5d", input_5, model_5, version=11)
 
 class Eltwise(nn.Module):
 
@@ -587,7 +632,7 @@ class ReshapeByDiv(nn.Module):
         channels = image.size(1)
         h = image.size(2)
         w = image.size(3)
-        image = image.view(batch_size, channels*h* (w / 2), -1)
+        image = image.view(batch_size, channels*h*(w // 2), -1)
         return image
 
 input = Variable(torch.randn(1, 2, 3, 4))
@@ -652,7 +697,21 @@ class DynamicResize(nn.Module):
 input_0 = Variable(torch.randn(1, 3, 8, 6))
 input_1 = Variable(torch.randn(1, 3, 4, 3))
 model = DynamicResize()
-save_data_and_model_multy_inputs("dynamic_resize", model, input_0, input_1, version=11)
+save_data_and_model_multy_inputs("dynamic_resize_9", model, input_0, input_1, version=9)
+save_data_and_model_multy_inputs("dynamic_resize_10", model, input_0, input_1, version=10)
+save_data_and_model_multy_inputs("dynamic_resize_11", model, input_0, input_1, version=11)
+
+class DynamicResizeScale(nn.Module):
+    def forward(self, x, y):
+        up = nn.Upsample(scale_factor=(0.5, 0.5), mode='bilinear')
+        return up(x) + y
+
+input_0 = Variable(torch.randn(1, 3, 8, 6))
+input_1 = Variable(torch.randn(1, 3, 4, 3))
+model = DynamicResizeScale()
+save_data_and_model_multy_inputs("dynamic_resize_scale_9", model, input_0, input_1, version=9, export_params=True)
+save_data_and_model_multy_inputs("dynamic_resize_scale_10", model, input_0, input_1, version=10, export_params=True)
+save_data_and_model_multy_inputs("dynamic_resize_scale_11", model, input_0, input_1, version=11, export_params=True)
 
 class ShapeConst(nn.Module):
     def __init__(self):
@@ -813,7 +872,7 @@ model = UpsampleUnfusedTwoInput()
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset9_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=9)
 save_data_and_model_multy_inputs("upsample_unfused_two_inputs_opset11_torch1.4", UpsampleUnfusedTwoInput(), input_0, input_1, version=11)
 
- class FrozenBatchNorm2d(nn.Module):
+class FrozenBatchNorm2d(nn.Module):
     def __init__(self, n):
         super(FrozenBatchNorm2d, self).__init__()
         self.register_buffer("weight", torch.ones(n))
@@ -832,7 +891,7 @@ x = Variable(torch.randn(1, 2, 3, 4))
 model = FrozenBatchNorm2d(2)
 save_data_and_model("batch_norm_subgraph", x, model)
 
- class GatherScalar(nn.Module):
+class GatherScalar(nn.Module):
     def forward(self, x):
         return x[1]
 
@@ -840,7 +899,7 @@ x = Variable(torch.randn(2))
 model = GatherScalar()
 save_data_and_model("gather_scalar", x, model)
 
- class Gather(nn.Module):
+class Gather(nn.Module):
     def forward(self, x):
         return x[..., 1]
 
@@ -876,3 +935,379 @@ kernel = Variable(torch.randn(2, 2, 2, 2))
 bias = Variable(torch.randn(4))
 model = ConvBias()
 save_data_and_model_multy_inputs("conv_variable_wb", model, x, kernel, bias)
+
+x = Variable(torch.randn(1, 2, 2))
+model = nn.Linear(2, 2, bias=True)
+save_data_and_model("matmul_add", x, model)
+input = np.random.rand(1, 3, 4, 2)
+output = np.sum(input, axis=(-1), keepdims=False)
+save_onnx_data_and_model(input, output, 'reduce_sum', 'ReduceSum', axes=(-1), keepdims=False)
+
+x = Variable(torch.randn(1, 2, 2))
+model = Expand(shape=[2, -1, -1, -1])
+save_data_and_model("expand_neg_batch", x, model)
+
+class LinearWithConstantInput(nn.Module):
+    def __init__(self, in_dim = 2, const_dim=2, out_dim = 2):
+        super(LinearWithConstantInput, self).__init__()
+        self.in_dim = in_dim
+        self.const_dim = const_dim
+        self.lin_const = nn.Linear(const_dim, out_dim)
+        self.lin_inp = nn.Linear(in_dim, out_dim)
+    def forward(self, x):
+        x = x.reshape(-1, self.in_dim)
+        const = torch.zeros(1, self.const_dim)
+        x_projected = self.lin_inp(x)
+        const_projected = self.lin_const(const)
+        return x_projected*const_projected
+
+x = Variable(torch.rand([1, 2, 2]))
+model = LinearWithConstantInput()
+save_data_and_model("lin_with_constant", x, model)
+
+class MatmulWithTwoInputs(nn.Module):
+    def __init__(self, in_dim = 2, const_dim=2, interm_dim = 2):
+        super(MatmulWithTwoInputs, self).__init__()
+        self.in_dim = in_dim
+        self.const_dim = const_dim
+        self.interm_dim = interm_dim
+        self.linear_for_const = nn.Linear(const_dim, interm_dim)
+        self.first_linear = nn.Linear(in_dim, interm_dim)
+        self.second_linear = nn.Linear(interm_dim, 1)
+    def forward(self, x):
+        x = x.reshape(-1, self.in_dim)
+        x_projected = self.first_linear(x)
+        const = torch.zeros(1, self.interm_dim)
+        const_projected = self.linear_for_const(const)
+        const_projected = const_projected.expand(2, self.interm_dim)
+        sum_tanh = torch.tanh(const_projected + x_projected)
+        sum_tanh = sum_tanh.reshape(-1, self.interm_dim)
+        sum_tanh_projected = self.second_linear(sum_tanh)
+        sum_tanh_projected = sum_tanh_projected.reshape(1, 2)
+        after_softmax = F.softmax(sum_tanh_projected, dim=1)
+        return torch.matmul(after_softmax, x)
+
+x = Variable(torch.rand([1, 2, 2]))
+model = MatmulWithTwoInputs()
+save_data_and_model("matmul_with_two_inputs", x, model)
+
+class Power(nn.Module):
+  def __init__(self, norm):
+    super(Power, self).__init__()
+    self.p = norm
+
+  def forward(self, x):
+    return x.pow(self.p)
+
+x = Variable(torch.randn(2, 2))
+model = Power(2)
+save_data_and_model("pow2", x, model)
+
+class Exp(nn.Module):
+  def forward(self, x):
+    return x.exp()
+
+x = Variable(torch.randn(2, 2))
+model = Exp()
+save_data_and_model("exp", x, model)
+
+class ReduceMaxGlobal(nn.Module):
+  def forward(self, x):
+    out = torch.max(x)
+    return torch.unsqueeze(out, 0)
+
+x = Variable(torch.randn(1, 3, 2, 2))
+model = ReduceMaxGlobal()
+save_data_and_model("reduce_max", x, model)
+
+class ReduceMax(nn.Module):
+      def __init__(self, axes):
+    super(ReduceMax, self).__init__()
+    self.axes = axes
+
+  def forward(self, x):
+    # torch.return_types.max(values, indices)
+    out = torch.max(x, dim=self.axes, keepdim=False)[0]
+    return out
+
+x = Variable(torch.randn(1, 3, 2, 2))
+
+model = ReduceMax(axes=0)
+save_data_and_model("reduce_max_axis_0", x, model)
+
+model = ReduceMax(axes=1)
+save_data_and_model("reduce_max_axis_1", x, model)
+
+class ResizeConv(nn.Module):
+    def __init__(
+            self,
+            in_channels,
+            skip_channels,
+            out_channels,
+            use_batchnorm=True,
+            attention_type=None,
+    ):
+        super().__init__()
+        self.conv1 = conv = nn.Conv2d(
+            in_channels,
+            out_channels,
+            kernel_size=2,
+            bias=False)
+
+    def forward(self, x, skip=None):
+        x = F.interpolate(x, scale_factor=2, mode="nearest")
+        x = self.conv1(x)
+        return x
+
+x = Variable(torch.rand(1, 2, 2, 2))
+model = ResizeConv(2, 0, 2)
+save_data_and_model("resize_opset11_torch1.6", x, model, 11)
+
+class Scale(nn.Module):
+  def forward(self, x):
+    w = torch.mean(x, axis=(2, 3), keepdim=True)
+    return w * x
+
+x = Variable(torch.randn(1, 3, 2, 2))
+model = Scale()
+save_data_and_model("scale", x, model)
+
+x = Variable(torch.randn(1, 3, 25))
+conv1d = nn.Conv1d(3, 2, kernel_size=3, padding=2, stride=2, dilation=2, bias=False)
+save_data_and_model("conv1d", x, conv1d)
+
+x = Variable(torch.randn(1, 3, 25))
+conv1d = nn.Conv1d(3, 2, kernel_size=3, padding=0, stride=1, dilation=1, bias=True)
+save_data_and_model("conv1d_bias", x, conv1d)
+
+class Conv1d(nn.Module):
+    def forward(self, x, kernel):
+        out = F.conv1d(x, kernel, groups=1)
+        return out
+
+x = Variable(torch.randn(2, 2, 10))
+kernel = Variable(torch.randn(2, 2, 2))
+model = Conv1d()
+save_data_and_model_multy_inputs("conv1d_variable_w", model, x, kernel)
+
+class Conv1dBias(nn.Module):
+    def forward(self, x, kernel, bias):
+      batch = x.size(0)
+      channel = x.size(1)
+      x = x.view(1, batch*channel, x.size(2))
+      kernel = kernel.view(batch*channel, 1, 2)
+      conv = nn.Conv1d(4, 4, kernel_size=2, bias=False, groups=4)
+      conv.weight = nn.Parameter(kernel)
+      conv.bias = nn.Parameter(bias)
+      out = conv(x)
+      out = out.view(batch, channel, out.size(2))
+      return out
+
+x = Variable(torch.randn(2, 2, 5))
+kernel = Variable(torch.randn(2, 2, 2))
+bias = Variable(torch.randn(4))
+model = Conv1dBias()
+save_data_and_model_multy_inputs("conv1d_variable_wb", model, x, kernel, bias)
+
+class GatherMultiOutput(nn.Module):
+    def __init__(self, in_dim = 2):
+        super(GatherMultiOutput, self).__init__()
+        self.in_dim = in_dim
+        self.lin_inp = nn.Linear(in_dim, 2, bias=False)
+    def forward(self, x):
+        x_projected = self.lin_inp(x).long()
+        x_gather = x_projected[:,0,:]
+        x_float1 = x_gather.float()
+        x_float2 = x_gather.float()
+        x_float3 = x_gather.float()
+        return x_float1+x_float2+x_float3
+
+x = Variable(torch.zeros([1, 2, 2]))
+model = GatherMultiOutput()
+save_data_and_model("gather_multi_output", x, model)
+
+def postprocess_model(model_path, inputs_shapes):
+    onnx_model = onnx.load(model_path)
+
+    def update_inputs_dims(model, input_dims):
+        """
+            This function updates the sizes of dimensions of the model's inputs to the values
+            provided in input_dims. if the dim value provided is negative, a unique dim_param
+            will be set for that dimension.
+        """
+        def update_dim(tensor, dim, i, j, dim_param_prefix):
+            dim_proto = tensor.type.tensor_type.shape.dim[j]
+            if isinstance(dim, int):
+                if dim >= 0:
+                    dim_proto.dim_value = dim
+                else:
+                    dim_proto.dim_param = dim_param_prefix + str(i) + '_' + str(j)
+            elif isinstance(dim, str):
+                dim_proto.dim_param = dim
+            else:
+                raise ValueError('Only int or str is accepted as dimension value, incorrect type: {}'.format(type(dim)))
+
+        for i, input_dim_arr in enumerate(input_dims):
+            for j, dim in enumerate(input_dim_arr):
+                update_dim(model.graph.input[i], dim, i, j, 'in_')
+
+        onnx.checker.check_model(model)
+        return model
+    
+    onnx_model = update_inputs_dims(onnx_model, inputs_shapes)
+    onnx.save(onnx_model, model_path)
+
+class UnsqueezeAndConv(nn.Module):
+    def __init__(self):
+        super(UnsqueezeAndConv, self).__init__()
+        self.conv = nn.Conv2d(3, 3, kernel_size=1, stride=1, padding=0)
+    def forward(self, x):
+        x = x.unsqueeze(axis=0)
+        out = self.conv(x)
+        return out
+
+x = Variable(torch.randn(3, 10, 10))
+model = UnsqueezeAndConv()
+save_data_and_model("unsqueeze_and_conv_dynamic_axes", x, model)
+postprocess_model("models/unsqueeze_and_conv_dynamic_axes.onnx", [[3, 'height', 'width']])
+
+class SqueezeAndConv(nn.Module):
+    def __init__(self):
+        super(SqueezeAndConv, self).__init__()
+        self.conv = nn.Conv2d(3, 3, kernel_size=1, stride=1, padding=0)
+    def forward(self, x):
+        x = x.squeeze()
+        out = self.conv(x)
+        return out
+
+x = Variable(torch.randn(2, 1, 3, 3, 3))
+model = SqueezeAndConv()
+save_data_and_model("squeeze_and_conv_dynamic_axes", x, model)
+postprocess_model("models/squeeze_and_conv_dynamic_axes.onnx", [["batch_size", 1, "channels", 'height', 'width']])
+
+x = Variable(torch.randn(2))
+model = GatherScalar()
+save_data_and_model("gather_scalar_dynamic_axes", x, model)
+postprocess_model("models/gather_scalar_dynamic_axes.onnx", [['shape']])
+
+x = Variable(torch.randn(2, 2, 2, 2))
+print(x)
+model = Gather()
+print(model(x))
+print(model(x).shape)
+save_data_and_model("gather_dynamic_axes", x, model)
+postprocess_model("models/gather_dynamic_axes.onnx", [["batch_size", 2, 'height', 'width']])
+
+input = Variable(torch.randn(1, 2, 4, 4))
+model = Slice()
+save_data_and_model("slice_dynamic_axes", input, model)
+save_data_and_model("slice_opset_11_dynamic_axes", input, model, version=11)
+postprocess_model("models/slice_dynamic_axes.onnx", [["batch_size", 2, 'height', 'width']])
+postprocess_model("models/slice_opset_11_dynamic_axes.onnx", [["batch_size", 2, 'height', 'width']])
+
+x = Variable(torch.rand(1, 2, 2, 2))
+model = ResizeConv(2, 0, 2)
+save_data_and_model("resize_opset11_torch1.6_dynamic_axes", x, model, 11)
+postprocess_model("models/resize_opset11_torch1.6_dynamic_axes.onnx", [["batch_size", 2, 'height', 'width']])
+
+maxpooling_sigmoid = nn.Sequential(
+          nn.MaxPool2d(kernel_size=4, stride=2, padding=(1, 2), dilation=1),
+          nn.Sigmoid()
+        )
+input = Variable(torch.randn(2, 3, 12, 18))
+save_data_and_model("maxpooling_sigmoid_dynamic_axes", input, maxpooling_sigmoid)
+postprocess_model("models/maxpooling_sigmoid_dynamic_axes.onnx", [[2, 3, 'height', 'width']])
+
+ave_pool = nn.AvgPool2d(kernel_size=3, stride=2, padding=1)
+input = Variable(torch.randn(1, 3, 7, 5))
+save_data_and_model("average_pooling_dynamic_axes", input, ave_pool)
+postprocess_model("models/average_pooling_dynamic_axes.onnx", [[1, 3, 'height', 'width']])
+
+x = Variable(torch.randn(1, 3, 10))
+max_pool = nn.MaxPool1d(kernel_size=(5), stride=1, padding=2, dilation=1)
+save_data_and_model("maxpooling_1d", x, max_pool)
+
+x = Variable(torch.randn(2, 3, 12))
+maxpooling_sigmoid = nn.Sequential(
+          nn.MaxPool1d(kernel_size=4, stride=2, padding=(2), dilation=1),
+          nn.Sigmoid()
+        )
+save_data_and_model("maxpooling_sigmoid_1d", x, maxpooling_sigmoid)
+
+x = Variable(torch.randn(2, 3, 12))
+maxpool2 = nn.Sequential(
+           nn.MaxPool1d(kernel_size=5, stride=1, padding=0, dilation=1),
+           nn.MaxPool1d(kernel_size=3, stride=1, padding=0, dilation=1)
+           )
+save_data_and_model("two_maxpooling_1d", x, maxpool2)
+
+x = Variable(torch.randn(1, 3, 7))
+ave_pool = nn.AvgPool1d(kernel_size=3, stride=2, padding=1)
+save_data_and_model("average_pooling_1d", x, ave_pool)
+
+class PoolConv1d(nn.Module):
+
+    def __init__(self):
+        super(PoolConv1d, self).__init__()
+        self.pool = nn.MaxPool1d(3, stride=2, padding=1)
+        self.conv = nn.Conv1d(2, 2, kernel_size=3, stride=1, padding=1)
+
+    def forward(self, x):
+        x = self.pool(x)
+        y = self.conv(x)
+        return y
+
+x = Variable(torch.randn(1, 2, 4))
+model = PoolConv1d()
+save_data_and_model("pool_conv_1d", x, model)
+
+class Conv1ResizePoold(nn.Module):
+    def __init__(self):
+        super(Conv1ResizePoold, self).__init__()
+        self.pool = nn.MaxPool1d(3, stride=2, padding=1)
+        self.conv = nn.Conv2d(2, 2, kernel_size=3, stride=1, padding=1)
+
+    def forward(self, x):
+        batch_size = x.size(0)
+        channels = x.size(1)
+        x = self.conv(x)
+        x = x.view(batch_size, channels, -1)
+        y = self.pool(x)
+        return y
+
+x = Variable(torch.randn(1, 2, 20, 20))
+model = Conv1ResizePoold()
+save_data_and_model("conv_resize_pool_1d", x, model)
+
+class Mish(nn.Module):
+    def forward(self, x):
+        return x * (torch.tanh(F.softplus(x)))
+
+x = Variable(torch.randn([1, 2, 2, 2]))
+model = Mish()
+save_data_and_model("mish", x, model)
+
+class PadCalculation(nn.Module):
+    def forward(self, x):
+        y = F.max_pool2d(x, kernel_size=2)
+        diff_h = x.shape[2] - y.shape[2]
+        diff_w = x.shape[3] - y.shape[3]
+        y = F.pad(y, [diff_w // 2, diff_w - diff_w // 2, diff_h // 2, diff_h - diff_h // 2])
+        return y
+
+x = Variable(torch.randn([1, 1, 3, 4]))
+model = PadCalculation()
+save_data_and_model("calc_pads", x, model, version=11)
+
+class NormalizeFusion(nn.Module):
+    def forward(self, x):
+        mul = x * x
+        sum = torch.sum(mul, dim=(1), keepdim=True)
+        maximum = torch.clamp(sum, min=1e-8)
+        sqrt = torch.sqrt(maximum)
+        reciprocal = torch.reciprocal(sqrt)
+        return x * reciprocal
+
+x = Variable(torch.randn([2, 3]))
+model = NormalizeFusion()
+save_data_and_model("normalize_fusion", x, model)
