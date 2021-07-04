@@ -1379,3 +1379,47 @@ class NormalizeFusion(nn.Module):
 x = Variable(torch.randn([2, 3]))
 model = NormalizeFusion()
 save_data_and_model("normalize_fusion", x, model)
+
+class CumSum(nn.Module):
+    def __init__(self, dim):
+        super(CumSum, self).__init__()
+        self._dim = dim
+
+    def forward(self, x):
+        return torch.cumsum(x, self._dim)
+
+x = torch.randn(2, 3)
+save_data_and_model("cumsum_2d_dim_1", x, CumSum(dim=1), version=11)
+
+x = torch.randn(2, 3, 4)
+save_data_and_model("cumsum_3d_dim_2", x, CumSum(dim=2), version=11)
+
+# Torch does not support cumsum "exclusive" and "reverse" attributes so they are manually added.
+x = np.random.rand(3)
+
+def add_axis_node(model_name: str) -> None:
+    model_path = "models/" + model_name + ".onnx"
+    model = onnx.load(model_path)
+
+    # Cumsum has an axis node separate from input node.
+    axis_node = onnx.helper.make_node(
+        "Constant",
+        inputs=[],
+        outputs=["axis"],
+        value=onnx.helper.make_tensor('value', onnx.TensorProto.INT64, [], [0]))
+    model.graph.node.insert(0, axis_node)
+    model.graph.node[1].input.append("axis")
+    onnx.checker.check_model(model)
+    onnx.save(model, model_path)
+
+output = np.array([0, x[0], x[0] + x[1]])
+save_onnx_data_and_model(x, output, "cumsum_1d_exclusive_1", 'CumSum', exclusive=1)
+add_axis_node("cumsum_1d_exclusive_1")
+
+output = np.array([sum(x), x[1] + x[2], x[2]])
+save_onnx_data_and_model(x, output, "cumsum_1d_reverse", 'CumSum', reverse=1)
+add_axis_node("cumsum_1d_reverse")
+
+output = np.array([x[1] + x[2], x[2], 0])
+save_onnx_data_and_model(x, output, "cumsum_1d_exclusive_1_reverse", 'CumSum', exclusive=1, reverse=1)
+add_axis_node("cumsum_1d_exclusive_1_reverse")
