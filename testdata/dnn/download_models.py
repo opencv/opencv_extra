@@ -869,6 +869,24 @@ models = [
         url='https://www.dropbox.com/s/qvmtszx5h339a0w/dasiamrpn_kernel_cls1.onnx?dl=1',
         sha='e9ccd270ce8059bdf7ed0d1845c03ef4a951ee0f',
         filename='onnx/models/dasiamrpn_kernel_cls1.onnx'),
+    Model(
+        name='LSTM Tanh Bidirectional',
+        url='https://github.com/microsoft/onnxruntime/raw/master/onnxruntime/test/testdata/CNTK/test_LSTM.tanh.bidirectional/model.onnx',
+        sha='fb12fe6032c7f82c4fec44d2a2db36a0694677c3',
+        filename='onnx/models/lstm_cntk_tanh.onnx'
+    ),
+    Model(
+        name='LSTM Tanh Bidirectional Input',
+        url='https://github.com/microsoft/onnxruntime/raw/master/onnxruntime/test/testdata/CNTK/test_LSTM.tanh.bidirectional/test_data_set_0/input_0.pb',
+        sha='db67a85da8017d714fbd97269890640f4179dca3',
+        filename='onnx/data/input_lstm_cntk_tanh.pb'
+    ),
+    Model(
+        name='LSTM Tanh Bidirectional Output',
+        url='https://github.com/microsoft/onnxruntime/raw/master/onnxruntime/test/testdata/CNTK/test_LSTM.tanh.bidirectional/test_data_set_0/output_0.pb',
+        sha='46cf68f140ac79e72268c63d8bc70aa32c652b06',
+        filename='onnx/data/output_lstm_cntk_tanh.pb'
+    )
 ]
 
 # Note: models will be downloaded to current working directory
