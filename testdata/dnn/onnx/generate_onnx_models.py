@@ -4,8 +4,8 @@ from torch.autograd import Variable, Function
 import torch.nn.init as init
 import torch.nn as nn
 import torch.nn.functional as F
-import tensorflow as tf
-import tf2onnx
+import tensorflow as tf # version 2.5.0
+import tf2onnx # version 1.9.1
 import numpy as np
 import os.path
 import onnx
