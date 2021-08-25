@@ -82,7 +82,12 @@ class Model:
 
         print(' done')
         print(' file {}'.format(self.filename))
-        return self.verify()
+        candidate_verify = self.verify()
+        if not candidate_verify:
+            if os.path.exists(self.filename):
+                print('  deleting invalid file')
+                os.remove(self.filename)
+        return candidate_verify
 
     def download(self):
         try:
