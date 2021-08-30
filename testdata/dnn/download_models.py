@@ -51,7 +51,8 @@ class Model:
                         break
                     sha.update(buf)
             print('  actual {}'.format(sha.hexdigest()))
-            return self.sha == sha.hexdigest()
+            self.sha_actual = sha.hexdigest()
+            return self.sha == self.sha_actual
         except Exception as e:
             print('  catch {}'.format(e))
 
@@ -84,9 +85,7 @@ class Model:
         print(' file {}'.format(self.filename))
         candidate_verify = self.verify()
         if not candidate_verify:
-            if os.path.exists(self.filename):
-                print('  deleting invalid file')
-                os.remove(self.filename)
+            self.handle_bad_download()
         return candidate_verify
 
     def download(self):
@@ -116,6 +115,27 @@ class Model:
                 f.write(buf)
                 print('>', end='')
                 sys.stdout.flush()
+
+    def handle_bad_download(self):
+        if os.path.exists(self.filename):
+            # rename file for further investigation
+            try:
+                # NB: using `self.sha_actual` may create unbounded number of files
+                rename_target = self.filename + '.invalid'
+                # TODO: use os.replace (Python 3.3+)
+                try:
+                    if os.path.exists(rename_target):  # avoid FileExistsError on Windows from os.rename()
+                        os.remove(rename_target)
+                finally:
+                    os.rename(self.filename, rename_target)
+                    print('  renaming invalid file to ' + rename_target)
+            except:
+                import traceback
+                traceback.print_exc()
+            finally:
+                if os.path.exists(self.filename):
+                    print('  deleting invalid file')
+                    os.remove(self.filename)
 
 
 def GDrive(gid):
