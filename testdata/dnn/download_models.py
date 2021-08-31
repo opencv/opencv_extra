@@ -894,7 +894,11 @@ models = [
         url='https://github.com/ShiqiYu/libfacedetection.train/raw/master/tasks/task1/onnx/YuFaceDetectNet.onnx',
         sha='decd9c9b4e2154dca44140dcd04b65af6ea452c5',
         filename='onnx/models/yunet.onnx'),
-
+    Model(
+        name='face_recognizer_fast',
+        url='https://drive.google.com/uc?export=dowload&id=1ClK9WiB492c5OZFKveF3XiHCejoOxINW',
+        sha='12ff8b1f5c8bff62e8dd91eabdacdfc998be255e',
+        filename='onnx/models/face_recognizer_fast.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
