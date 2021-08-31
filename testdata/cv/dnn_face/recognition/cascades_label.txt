@@ -1,0 +1,6 @@
+Alexander_Payne_0001.jpg Alexander_Payne_0002.jpg 1
+Alexis_Dennisoff_0001.jpg Alexis_Dennisoff_0004.jpg 1
+Alexander_Payne_0001.jpg Alexis_Dennisoff_0001.jpg 0
+Alexander_Payne_0001.jpg Alexis_Dennisoff_0004.jpg 0
+Alexander_Payne_0002.jpg Alexis_Dennisoff_0001.jpg 0
+Alexander_Payne_0002.jpg Alexis_Dennisoff_0004.jpg 0
