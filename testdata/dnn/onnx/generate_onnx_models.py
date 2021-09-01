@@ -4,6 +4,7 @@ from torch.autograd import Variable, Function
 import torch.nn.init as init
 import torch.nn as nn
 import torch.nn.functional as F
+import paddle # version 2.1.1
 import numpy as np
 import os.path
 import onnx
@@ -428,7 +429,7 @@ class SliceStarts(nn.Module):
         return x[-1:]
 
 model = SliceStarts()
-input_ = Variable(torch.tensor(list(range(10)), dtype=torch.float32))
+input_ = Variable(torch.randn(1, 10, dtype=torch.float32))
 save_data_and_model("slice_neg_starts", input_, model)
 
 input_2 = Variable(torch.randn(6, 6))
@@ -598,10 +599,10 @@ class SplitAxis(nn.Module):
 
     def forward(self, x):
         tup = torch.split(x, 2, -1)
-        return torch.cat(tup)
+        return torch.cat(tup, 1)
 
 model = SplitAxis()
-input_ = Variable(torch.tensor(list(range(10)), dtype=torch.float32))
+input_ = Variable(torch.randn(1, 10, dtype=torch.float32))
 save_data_and_model("split_neg_axis", input_, model)
 
 class SplitMax(nn.Module):
@@ -1196,6 +1197,19 @@ x = Variable(torch.randn(1, 3, 2, 2))
 model = Scale()
 save_data_and_model("scale", x, model)
 
+class ScaleBroadcast(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super(ScaleBroadcast, self).__init__()
+
+    def forward(self, x0, x1, x2):
+        return torch.mul(torch.mul(x0, x1), x2)
+
+model = ScaleBroadcast()
+input_0 = Variable(torch.ones(2, 1, 4, 5, dtype=torch.float32))
+input_1 = Variable(torch.ones(1, 4, 1, dtype=torch.float32))
+input_2 = Variable(torch.ones(2, 1, 4, 1, dtype=torch.float32))
+save_data_and_model_multy_inputs("scale_broadcast", model, input_0, input_1, input_2)
+
 class ScaleBroadcastMid(nn.Module):
     def __init__(self, *args, **kwargs):
         super(ScaleBroadcastMid, self).__init__()
@@ -1359,6 +1373,19 @@ input = Variable(torch.randn(1, 3, 7, 5))
 save_data_and_model("average_pooling_dynamic_axes", input, ave_pool)
 postprocess_model("models/average_pooling_dynamic_axes.onnx", [[1, 3, 'height', 'width']])
 
+class DynamicBatch(nn.Module):
+    def __init__(self, *args, **kwargs):
+        super(DynamicBatch, self).__init__()
+        self.pool = nn.MaxPool2d(2, stride=2)
+
+    def forward(self, x):
+        return torch.cat((self.pool(x), torch.ones(2, 3, 1, 2)))
+
+model = DynamicBatch()
+input_ = Variable(torch.ones(2, 3, 3, 4, dtype=torch.float32))
+save_data_and_model("dynamic_batch", input_, model, export_params=True)
+postprocess_model("models/dynamic_batch.onnx", [['batch_size', 3, 3, 4]])
+
 x = Variable(torch.randn(1, 3, 10))
 max_pool = nn.MaxPool1d(kernel_size=(5), stride=1, padding=2, dilation=1)
 save_data_and_model("maxpooling_1d", x, max_pool)
@@ -1447,3 +1474,26 @@ class NormalizeFusion(nn.Module):
 x = Variable(torch.randn([2, 3]))
 model = NormalizeFusion()
 save_data_and_model("normalize_fusion", x, model)
+
+#paddle2onnx model
+class Resize_HumanSeg(paddle.nn.Layer):
+    def __init__(self, ):
+        super(Resize_HumanSeg, self).__init__()
+
+    def forward(self, x0):
+        x1 = paddle.nn.functional.interpolate(x0,size=[6,8],mode='bilinear',align_corners=False)
+        return x1
+
+def save_data_and_paddle_model(model, name, input_data):
+    model.eval()
+    np.save(os.path.join("data", "input_" + name + ".npy"), input_data.numpy())
+    output = model(input_data)
+    np.save(os.path.join("data", "output_" + name + ".npy"), output.numpy())
+    inputs = [paddle.static.InputSpec(shape=input_data.shape, dtype="float32")]
+    paddle.onnx.export(model, "models/" + name,
+                       input_spec=inputs,
+                       opset_version=11)
+
+input_shape = [1, 2, 3, 4]
+x = paddle.rand(input_shape, dtype="float32")
+save_data_and_paddle_model(Resize_HumanSeg(), "resize_humanseg", x)
