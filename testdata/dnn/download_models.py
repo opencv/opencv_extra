@@ -891,7 +891,7 @@ models = [
         filename='onnx/models/DB_TD500_resnet50.onnx'),
     Model(
         name='YuNet',
-        url='https://github.com/ShiqiYu/libfacedetection.train/raw/master/tasks/task1/onnx/YuFaceDetectNet.onnx',
+        url='https://github.com/ShiqiYu/libfacedetection.train/raw/master/tasks/task1/onnx/yunet.onnx',
         sha='decd9c9b4e2154dca44140dcd04b65af6ea452c5',
         filename='onnx/models/yunet.onnx'),
     Model(
