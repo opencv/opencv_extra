@@ -885,6 +885,19 @@ model.eval()
 save_data_and_model("expand", input, model, export_params=True, version=12)
 simplify('models/expand.onnx', False)
 
+class ExpandIdentity(nn.Module):
+    def __init__(self):
+        super(ExpandIdentity, self).__init__()
+
+    def forward(self, x):
+        return x.expand(1, 3, -1, -1)
+
+input = Variable(torch.randn(1, 3, 2, 4))
+model = ExpandIdentity()
+model.eval()
+save_data_and_model("expand_identity", input, model, export_params=True, version=12)
+simplify('models/expand_identity.onnx', False)
+
 class Expand(nn.Module):
     def __init__(self, shape):
         super(Expand, self).__init__()
