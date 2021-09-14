@@ -1019,6 +1019,16 @@ wi = shape_input[2] / 2
 input_down = tf.image.resize(conv, size=[hi, wi], method=0, name='resize_down')
 save(inp, input_down, 'resize_bilinear_down')
 ################################################################################
+inp = tf.placeholder(tf.float32, [1, 2, 3, 4], 'input')
+expand_dim = inp + 1
+expand_dim = tf.expand_dims(expand_dim, -1)
+save(inp, expand_dim, prefix + 'expand_dim_1', optimize=False)
+################################################################################
+inp = tf.placeholder(tf.float32, [1, 2, 3, 4], 'input')
+expand_dim = inp + 1
+expand_dim = tf.expand_dims(expand_dim, 2)
+save(inp, expand_dim, prefix + 'expand_dim_2', optimize=False)
+################################################################################
 
 # Uncomment to print the final graph.
 # with tf.gfile.FastGFile('fused_batch_norm_net.pb', 'rb') as f:
