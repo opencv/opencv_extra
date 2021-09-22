@@ -892,7 +892,7 @@ models = [
     Model(
         name='YuNet',
         url='https://github.com/ShiqiYu/libfacedetection.train/raw/master/tasks/task1/onnx/yunet.onnx',
-        sha='decd9c9b4e2154dca44140dcd04b65af6ea452c5',
+        sha='49c52f484b1895e8298dc59e37f262ba7841a601',
         filename='onnx/models/yunet.onnx'),
     Model(
         name='face_recognizer_fast',
