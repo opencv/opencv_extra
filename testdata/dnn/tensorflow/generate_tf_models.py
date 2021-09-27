@@ -1035,12 +1035,12 @@ save(inp, sub, prefix + 'bias_add_1', optimize=False)
 inp = tf.placeholder(tf.float32, [1, 2, 3, 4], 'input')
 expand_dim = inp + 1
 expand_dim = tf.expand_dims(expand_dim, -2)
-save(inp, expand_dim, prefix + 'expand_dim_1', optimize=False)
+save(inp, expand_dim, prefix + 'expand_dims_1', optimize=False)
 ################################################################################
 inp = tf.placeholder(tf.float32, [1, 2, 3, 4, 5], 'input')
 expand_dim = inp + 1
 expand_dim = tf.expand_dims(expand_dim, 2)
-save(inp, expand_dim, prefix + 'expand_dim_2', optimize=False)
+save(inp, expand_dim, prefix + 'expand_dims_2', optimize=False)
 ################################################################################
 
 # Uncomment to print the final graph.
