@@ -594,6 +594,9 @@ save(inp, reduced, 'reduce_sum')
 inp = tf.placeholder(tf.float32, [2, 3, 4, 5], 'input')
 reduced = tf.reduce_sum(inp, axis=[2], keepdims=False)
 save(inp, reduced, 'sum_pool_by_axis')
+# NWC -> NCW, NHC -> NWC
+np.save('sum_pool_by_axis_out.npy', np.load('sum_pool_by_axis_out.npy').transpose(0, 2, 1))
+
 ################################################################################
 inp = tf.placeholder(tf.float32, [1, 4, 2, 3], 'input')
 out = tf.math.reduce_sum(inp, axis=-1)
