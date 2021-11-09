@@ -603,8 +603,9 @@ for axis in axises:
         biasadd = tf.nn.bias_add(inp, [1], data_format='NHWC')
         print(axis, keepdims)
         reduced = tf.reduce_sum(biasadd, axis=axis, keepdims=keepdims)
-        save(inp, reduced + 1, f'reduce_sum_{axis[0]}_{keepdims}')
-        if len(axis) == 2:
+        if len(axis) == 1:
+            save(inp, reduced + 1, f'reduce_sum_{axis[0]}_{keepdims}')
+        else:
             save(inp, reduced + 1, f'reduce_sum_{axis[0]}_{axis[1]}_{keepdims}')
 ################################################################################
 inp = tf.placeholder(tf.float32, [1, 4, 2, 3], 'input')
