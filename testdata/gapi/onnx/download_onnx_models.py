@@ -125,7 +125,8 @@ if __name__ == '__main__':
     if selected_model_name is not None:
         print('Model: {}'.format(selected_model_name))
 
-    download_cache()
+    if not print_all_models:
+        download_cache()
 
     failedModels = []
     for m in models:
