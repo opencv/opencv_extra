@@ -1077,6 +1077,32 @@ save(inp, argmax, 'argmax')
 inp = tf.placeholder(tf.float32, [2, 3, 4], 'input')
 argmin = tf.argmin(inp, 1)
 save(inp, argmin, 'argmin')
+###############################################################################
+inp = tf.placeholder(tf.float32, [1,2,5,3], 'input')
+const_1 = tf.Variable([0.5],dtype=tf.float32)
+const_2 = tf.Variable([10,-10,2],dtype=tf.float32)
+max_1 = tf.maximum(inp,const_1)
+max_2 = tf.maximum(inp,const_2)
+save(inp, max_1, "maximum_scale_const", optimize=False)
+save(inp, max_2, "maximum_vector_const", optimize=False)
+################################################################################
+inp = tf.placeholder(tf.float32, [1,2,5,4], 'input')
+const_1 = tf.Variable(tf.random_normal([1],stddev=2))
+const_2 = tf.Variable([-10,9,8,-7],dtype=tf.float32)
+min_1 = tf.minimum(inp,const_1)
+min_2 = tf.minimum(inp,const_2)
+save(inp, min_1, "minimum_scale_const", optimize=False)
+save(inp, min_2, "minimum_vector_const", optimize=False)
+################################################################################
+inp = tf.placeholder(tf.float32, [1,2,5,4], 'input')
+add = tf.nn.bias_add(inp,[-1,1,-1,1])
+max = tf.maximum(inp,add)
+save(inp, max, "maximum_two_inputs", optimize=False)
+################################################################################
+inp = tf.placeholder(tf.float32, [1,2,5,4], 'input')
+add = tf.nn.bias_add(inp,[-1,-1,-0.1,1])
+min = tf.minimum(inp,add)
+save(inp, min, "minimum_two_inputs", optimize=False)
 ################################################################################
 # Uncomment to print the final graph.
 # with tf.gfile.FastGFile('fused_batch_norm_net.pb', 'rb') as f:
