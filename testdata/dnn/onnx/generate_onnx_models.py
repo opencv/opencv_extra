@@ -734,6 +734,20 @@ input1 = Variable(torch.randn(1, 4, 1, 2))
 input2 = Variable(torch.randn(1, 4, 1, 1))
 save_data_and_model_multy_inputs("channel_broadcast", Broadcast(), input1, input2)
 
+class AddBroadcast(nn.Module):
+
+    def __init__(self):
+        super(AddBroadcast, self).__init__()
+
+    def forward(self, x, y):
+        return x + y
+
+input0 = Variable(torch.randn(1, 4, 2, 1))
+input1 = Variable(torch.randn(1, 4))
+
+# expected output size [1, 4, 2, 4]
+save_data_and_model_multy_inputs("add_broadcast", AddBroadcast(), input0, input1)
+
 class FlattenConst(Function):
     @staticmethod
     def symbolic(g, x):
