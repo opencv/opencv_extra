@@ -740,13 +740,43 @@ class AddBroadcast(nn.Module):
         super(AddBroadcast, self).__init__()
 
     def forward(self, x, y):
-        return x + y
+        z = Variable(torch.ones(2, 4, 2, 4))
+        return x + y - z
 
 input0 = Variable(torch.randn(1, 4, 2, 1))
 input1 = Variable(torch.randn(1, 4))
-
-# expected output size [1, 4, 2, 4]
+# expected output size [2, 4, 2, 4]
 save_data_and_model_multy_inputs("add_broadcast", AddBroadcast(), input0, input1)
+
+class GreaterLessBroadcast(nn.Module):
+
+    def __init__(self):
+        super(GreaterLessBroadcast, self).__init__()
+
+    def forward(self, x, y):
+        z0 = Variable(torch.ones(2, 4, 2, 4))
+        z3 = Variable(torch.ones(2, 4, 2, 4))
+        z1 = torch.greater(x, y)
+        z2 = torch.less(z1, z0)
+        return z3 * z2
+input0 = Variable(torch.randn(1, 4, 2, 1))
+input1 = Variable(torch.randn(2, 4))
+save_data_and_model_multy_inputs("greater_less_broadcast", GreaterLessBroadcast(), input0, input1)
+
+class MaxMinBroadcast(nn.Module):
+
+    def __init__(self):
+        super(MaxMinBroadcast, self).__init__()
+
+    def forward(self, x, y):
+        z0 = Variable(torch.ones(2, 4, 2, 4))
+        z1 = torch.max(x, y)
+        return torch.min(z1, z0)
+
+input0 = Variable(torch.randn(1, 4, 2, 1))
+input1 = Variable(torch.randn(1, 4))
+save_data_and_model_multy_inputs("maxmin_broadcast", MaxMinBroadcast(), input0, input1)
+
 
 class FlattenConst(Function):
     @staticmethod
