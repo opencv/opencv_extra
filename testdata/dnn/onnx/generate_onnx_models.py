@@ -68,10 +68,20 @@ def save_onnx_data_and_model(input, output, name, operation, *args, **kwargs):
     np.save(output_files, np.ascontiguousarray(output.data))
 
     models_files = os.path.join("models", name + ".onnx")
+    opt_inputs = []
+    opt_names = []
+    opt_initializers = []
+    if(args):
+        opt_info = args[0]
+        for info in opt_info:
+            opt_names.append(info[0])
+            opt_inputs.append(onnx.helper.make_tensor_value_info(info[0], onnx.TensorProto.FLOAT, info[1].shape))
+            opt_initializers.append(onnx.helper.make_tensor(info[0], onnx.TensorProto.FLOAT, info[1].shape, info[1].data))
+        args = args[1:]
     X = onnx.helper.make_tensor_value_info('input', onnx.TensorProto.FLOAT, input.shape)
     Y = onnx.helper.make_tensor_value_info('output', onnx.TensorProto.FLOAT, output.shape)
-    node = onnx.helper.make_node(operation, inputs=['input'], outputs=['output'], *args, **kwargs)
-    graph = onnx.helper.make_graph([node], name, [X], [Y])
+    node = onnx.helper.make_node(operation, inputs=['input'] + opt_names, outputs=['output'], *args, **kwargs)
+    graph = onnx.helper.make_graph([node], name, [X] + opt_inputs, [Y], opt_initializers)
     model = onnx.helper.make_model(graph, producer_name=name)
     onnx.save(model, models_files)
 
@@ -574,6 +584,13 @@ class Clip(nn.Module):
 model = Clip()
 input = Variable(torch.rand(1, 10, 2, 2))
 save_data_and_model('clip', input, model)
+
+min = -1
+max = 1
+input = np.random.randn(3, 4, 5).astype(np.float32)
+output = np.clip(input, min, max)
+opt_info = [("min", np.array([min])), ("max", np.array([max]))]
+save_onnx_data_and_model(input, output, "clip_init_min_max", "Clip", opt_info)
 
 input = Variable(torch.randn(1, 3, 6, 6, 6))
 deconv = nn.ConvTranspose3d(3, 3, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(0, 0, 0), bias=False)
@@ -1426,14 +1443,14 @@ model = ReduceMaxGlobal()
 save_data_and_model("reduce_max", x, model)
 
 class ReduceMax(nn.Module):
-      def __init__(self, axes):
-    super(ReduceMax, self).__init__()
-    self.axes = axes
+    def __init__(self, axes):
+        super(ReduceMax, self).__init__()
+        self.axes = axes
 
-  def forward(self, x):
-    # torch.return_types.max(values, indices)
-    out = torch.max(x, dim=self.axes, keepdim=False)[0]
-    return out
+    def forward(self, x):
+        # torch.return_types.max(values, indices)
+        out = torch.max(x, dim=self.axes, keepdim=False)[0]
+        return out
 
 x = Variable(torch.randn(1, 3, 2, 2))
 
