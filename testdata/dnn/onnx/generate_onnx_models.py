@@ -13,7 +13,6 @@ import google.protobuf.text_format
 import io
 from typing import Optional
 
-
 def assertExpected(s):
     if not (isinstance(s, str) or (sys.version_info[0] == 2 and isinstance(s, unicode))):
         raise TypeError("assertExpected is strings only")
@@ -90,6 +89,7 @@ def save_data_and_onnx_model(name, input_np, output_np, onnx_model):
     model_def = assertONNXExpected(onnx_model_pb)
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
+
 
 def simplify(name, rename=False, **kwargs):
     model, check = onnxsim.simplify(name, **kwargs)
