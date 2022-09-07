@@ -4,6 +4,7 @@ from torch.autograd import Variable, Function
 import torch.nn.init as init
 import torch.nn as nn
 import torch.nn.functional as F
+from torchvision.ops import nms
 import tensorflow as tf # version 2.5.0
 import tf2onnx # version 1.9.1
 import paddle # version 2.1.1
@@ -2129,3 +2130,21 @@ onnx_model = onnx.helper.make_model(graph)
 
 output_np = input_np/input2_np
 save_data_and_onnx_model_multy_inputs("div_test_1x1", [input_np, input2_np], output_np, onnx_model)
+
+class NMS(nn.Module):
+    def forward(self, x, score):
+        return x[nms(x, score, 0.5)]
+
+x = Variable(torch.Tensor(
+    [[400, 400, 600, 600],
+     [420, 420, 620, 620],
+     [427, 427, 627, 627],
+     [500, 500, 700, 700],
+     [610, 620, 750, 760]
+    ]
+))
+score = Variable(torch.Tensor(
+    [0.9, 0.95, 0.88, 0.87, 0.75]
+))
+model = NMS()
+save_data_and_model_multy_inputs("nms", model, x, score, version=11)
