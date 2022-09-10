@@ -2133,7 +2133,10 @@ save_data_and_onnx_model_multy_inputs("div_test_1x1", [input_np, input2_np], out
 
 class NMS(nn.Module):
     def forward(self, x, score):
-        return x[nms(x, score, 0.5)]
+        ret = nms(x, score, 0.5)
+        # blobFromNPY reads float32 data for now, so convert to float
+        return ret.to(torch.float)
+        #return x[nms(x, score, 0.5)] # needs gather #21738
 
 x = Variable(torch.Tensor(
     [[400, 400, 600, 600],
