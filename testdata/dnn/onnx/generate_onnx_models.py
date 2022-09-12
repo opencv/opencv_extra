@@ -2151,3 +2151,14 @@ score = Variable(torch.Tensor(
 ))
 model = NMS()
 save_data_and_model_multy_inputs("nms", model, x, score, version=11)
+
+class Batched_NMS(nn.Module):
+    def forward(self, boxes, scores, idxs):
+        ret = batched_nms(boxes, scores, idxs, 0.5)
+        return ret.to(torch.float)
+
+idxs = Variable(torch.Tensor(
+    [0, 0, 1, 2, 2]
+))
+model = Batched_NMS()
+save_data_and_model_multy_inputs("batched_nms", model, x, score, idxs, version=11, export_params=True)
