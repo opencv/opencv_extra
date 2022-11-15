@@ -1002,12 +1002,12 @@ models = [
         filename='onnx/models/yolov7_not_simplified.onnx'),
     Model(
         name='NanoTrack (ONNX)',
-        url='https://github.com/HonglinChu/SiamTrackers/blob/master/NanoTrack/models/onnx/nanotrack_backbone_sim.onnx',
+        url='https://github.com/zihaomu/opencv_extra_data_backup/blob/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
         sha='9b083a2dbe10dcfe17e694879aa6749302a5888f',
         filename='onnx/models/nanotrack_backbone_sim.onnx'),
     Model(
         name='NanoTrack (ONNX)',
-        url='https://github.com/HonglinChu/SiamTrackers/blob/master/NanoTrack/models/onnx/nanotrack_head_sim.onnx',
+        url='https://github.com/zihaomu/opencv_extra_data_backup/blob/main/NanoTrack/models/nanotrack_head_sim.onnx',
         sha='8fa668893b27b726f9cab6695846b4690650a199',
         filename='onnx/models/nanotrack_head_sim.onnx'),
 ]
