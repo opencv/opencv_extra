@@ -1020,6 +1020,11 @@ models = [
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrackV2/models/nanotrack_head_sim_v2.onnx',
         sha='39f168489671700cf739e402dfc67d41ce648aef',
         filename='onnx/models/nanotrack_head_sim_v2.onnx'),
+    Model(
+        name='YuNetV2',
+        url='https://raw.githubusercontent.com/ShiqiYu/libfacedetection.train/master/onnx/yunet_s_640_640.onnx',
+        sha='acbe4b5976ade60c4b866a30d0720d71589c8bbc', 
+        filename='onnx/models/yunet-202212.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
