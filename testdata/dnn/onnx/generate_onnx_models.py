@@ -2441,3 +2441,241 @@ tile=dict(
 )
 
 generate_onnx_single_operator(tile, "tile")
+
+def gen_layer_norm_expanded(input_shape=[1, 4, 5], axis=-1):
+    X = onnx.helper.make_tensor_value_info("X", onnx.TensorProto.FLOAT, input_shape)
+    Y = onnx.helper.make_tensor_value_info("Y", onnx.TensorProto.FLOAT, input_shape)
+
+    #   -> ReduceMean ->     -> Pow(2) -> ReduceMean -> Add(epsilon) -> Sqrt ->
+    # x                  Sub                                                    Div -> Mul(weight) -> Add(bias)
+    #   --------------->     ------------------------------------------------->
+
+    node_reducemean_0 = onnx.helper.make_node(
+        name="ReduceMean.0",
+        op_type="ReduceMean",
+        inputs=["X"],
+        outputs=["ReduceMean.0.out"],
+        axes=np.array([axis], dtype=np.int64),
+    )
+
+    node_sub_0 = onnx.helper.make_node(
+        name="Sub.0",
+        op_type="Sub",
+        inputs=["X", "ReduceMean.0.out"],
+        outputs=["Sub.0.out"],
+    )
+
+    node_const_pow_0 = onnx.helper.make_node(
+        op_type="Constant",
+        inputs=[],
+        outputs=["Const.Pow.0.out"],
+        value=onnx.helper.make_tensor(name="Const.Pow.0.tensor", data_type=onnx.TensorProto.FLOAT, dims=[], vals=[2]),
+    )
+    node_pow_0 = onnx.helper.make_node(
+        name="Pow.0",
+        op_type="Pow",
+        inputs=["Sub.0.out", "Const.Pow.0.out"],
+        outputs=["Pow.0.out"],
+    )
+
+    node_reducemean_1 = onnx.helper.make_node(
+        name="ReduceMean.1",
+        op_type="ReduceMean",
+        inputs=["Pow.0.out"],
+        outputs=["ReduceMean.1.out"],
+        axes=np.array([axis], dtype=np.int64),
+    )
+
+    node_const_add_0 = onnx.helper.make_node(
+        op_type="Constant",
+        inputs=[],
+        outputs=["Const.Add.0.out"],
+        value=onnx.helper.make_tensor(name="Const.Add.0.tensor", data_type=onnx.TensorProto.FLOAT, dims=[], vals=[1e-5]),
+    )
+    node_add_0 = onnx.helper.make_node(
+        name="Add.0",
+        op_type="Add",
+        inputs=["ReduceMean.1.out", "Const.Add.0.out"],
+        outputs=["Add.0.out"],
+    )
+
+    node_sqrt_0 = onnx.helper.make_node(
+        name="Sqrt.0",
+        op_type="Sqrt",
+        inputs=["Add.0.out"],
+        outputs=["Sqrt.0.out"],
+    )
+
+    node_div_0 = onnx.helper.make_node(
+        name="Div.0",
+        op_type="Div",
+        inputs=["Sub.0.out", "Sqrt.0.out"],
+        outputs=["Div.0.out"],
+    )
+
+    weight_shape = input_shape[axis:]
+    weight_value = np.random.rand(*weight_shape).astype(np.float32)
+    node_const_mul_0 = onnx.helper.make_node(
+        op_type="Constant",
+        inputs=[],
+        outputs=["Const.Mul.0.out"],
+        value=onnx.helper.make_tensor(name="Const.Mul.0.tensor", data_type=onnx.TensorProto.FLOAT, dims=weight_shape, vals=weight_value),
+    )
+    node_mul_0 = onnx.helper.make_node(
+        name="Mul.0",
+        op_type="Mul",
+        inputs=["Div.0.out", "Const.Mul.0.out"],
+        outputs=["Mul.0.out"],
+    )
+
+    bias_value = np.random.rand(*weight_shape).astype(np.float32)
+    node_const_add_1 = onnx.helper.make_node(
+        op_type="Constant",
+        inputs=[],
+        outputs=["Const.Add.1.out"],
+        value=onnx.helper.make_tensor(name="Const.Add.1.tensor", data_type=onnx.TensorProto.FLOAT, dims=weight_shape, vals=bias_value),
+    )
+    node_add_1 = onnx.helper.make_node(
+        name="Add.1",
+        op_type="Add",
+        inputs=["Mul.0.out", "Const.Add.1.out"],
+        outputs=["Y"],
+    )
+
+    graph_name = "layer_norm_expanded"
+    graph_def = onnx.helper.make_graph(
+        [node_reducemean_0, node_sub_0, node_const_pow_0 , node_pow_0, node_reducemean_1, node_const_add_0, node_add_0, node_sqrt_0, node_div_0, node_const_mul_0, node_mul_0, node_const_add_1, node_add_1],
+        graph_name,
+        [X],
+        [Y],
+    )
+    model_def = onnx.helper.make_model(graph_def, producer_name="github.com/opencv/opencv_extra")
+    onnx.checker.check_model(model_def)
+    shape_inferred_model_def = onnx.shape_inference.infer_shapes(model_def)
+    onnx.save(shape_inferred_model_def, "models/{}.onnx".format(graph_name))
+
+    # infer & save data
+    input_blob = np.random.rand(*input_shape).astype(np.float32)
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(graph_name))
+    output_blobs = sess.run(["Y"], {"X": input_blob})
+    np.save("data/input_{}.npy".format(graph_name), input_blob)
+    np.save("data/output_{}.npy".format(graph_name), output_blobs[0])
+
+gen_layer_norm_expanded()
+
+def gen_layer_norm_expanded_with_initializer(input_shape=[1, 4, 5], axis=-1):
+    X = onnx.helper.make_tensor_value_info("X", onnx.TensorProto.FLOAT, input_shape)
+    Y = onnx.helper.make_tensor_value_info("Y", onnx.TensorProto.FLOAT, input_shape)
+    initializers = []
+
+    #   -> ReduceMean ->     -> Pow(2) -> ReduceMean -> Add(epsilon) -> Sqrt ->
+    # x                  Sub                                                    Div -> Mul(weight) -> Add(bias)
+    #   --------------->     ------------------------------------------------->
+
+    node_reducemean_0 = onnx.helper.make_node(
+        name="ReduceMean.0",
+        op_type="ReduceMean",
+        inputs=["X"],
+        outputs=["ReduceMean.0.out"],
+        axes=np.array([axis], dtype=np.int64),
+    )
+
+    node_sub_0 = onnx.helper.make_node(
+        name="Sub.0",
+        op_type="Sub",
+        inputs=["X", "ReduceMean.0.out"],
+        outputs=["Sub.0.out"],
+    )
+
+    initializers.append(
+        onnx.helper.make_tensor("Const.Pow.0.out", onnx.TensorProto.FLOAT, dims=[], vals=[2])
+    )
+    node_pow_0 = onnx.helper.make_node(
+        name="Pow.0",
+        op_type="Pow",
+        inputs=["Sub.0.out", "Const.Pow.0.out"],
+        outputs=["Pow.0.out"],
+    )
+
+    node_reducemean_1 = onnx.helper.make_node(
+        name="ReduceMean.1",
+        op_type="ReduceMean",
+        inputs=["Pow.0.out"],
+        outputs=["ReduceMean.1.out"],
+        axes=np.array([axis], dtype=np.int64),
+    )
+
+    initializers.append(
+        onnx.helper.make_tensor("Const.Add.0.out", onnx.TensorProto.FLOAT, dims=[], vals=[1e-5])
+    )
+    node_add_0 = onnx.helper.make_node(
+        name="Add.0",
+        op_type="Add",
+        inputs=["ReduceMean.1.out", "Const.Add.0.out"],
+        outputs=["Add.0.out"],
+    )
+
+    node_sqrt_0 = onnx.helper.make_node(
+        name="Sqrt.0",
+        op_type="Sqrt",
+        inputs=["Add.0.out"],
+        outputs=["Sqrt.0.out"],
+    )
+
+    node_div_0 = onnx.helper.make_node(
+        name="Div.0",
+        op_type="Div",
+        inputs=["Sub.0.out", "Sqrt.0.out"],
+        # outputs=["Y"],
+        outputs=["Div.0.out"],
+    )
+
+    weight_shape = input_shape[axis:]
+    weight_value = np.random.rand(*weight_shape).astype(np.float32)
+    initializers.append(
+        onnx.helper.make_tensor("Const.Mul.0.out", onnx.TensorProto.FLOAT, dims=weight_shape, vals=weight_value)
+    )
+    node_mul_0 = onnx.helper.make_node(
+        name="Mul.0",
+        op_type="Mul",
+        inputs=["Div.0.out", "Const.Mul.0.out"],
+        outputs=["Mul.0.out"],
+    )
+
+    bias_value = np.random.rand(*weight_shape).astype(np.float32)
+    initializers.append(
+        onnx.helper.make_tensor("Const.Add.1.out", onnx.TensorProto.FLOAT, dims=weight_shape, vals=bias_value)
+    )
+    node_add_1 = onnx.helper.make_node(
+        name="Add.1",
+        op_type="Add",
+        inputs=["Mul.0.out", "Const.Add.1.out"],
+        outputs=["Y"],
+    )
+
+    graph_name = "layer_norm_expanded_with_initializers"
+    graph_def = onnx.helper.make_graph(
+        [node_reducemean_0, node_sub_0, node_pow_0, node_reducemean_1, node_add_0, node_sqrt_0, node_div_0, node_mul_0, node_add_1],
+        graph_name,
+        [X],
+        [Y],
+        initializers
+    )
+    model_def = onnx.helper.make_model(graph_def, producer_name="github.com/opencv/opencv_extra")
+    onnx.checker.check_model(model_def)
+    shape_inferred_model_def = onnx.shape_inference.infer_shapes(model_def)
+    onnx.save(shape_inferred_model_def, "models/{}.onnx".format(graph_name))
+
+
+    # infer & save data
+    input_blob = np.random.rand(*input_shape).astype(np.float32)
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(graph_name))
+    output_blobs = sess.run(["Y"], {"X": input_blob})
+    np.save("data/input_{}.npy".format(graph_name), input_blob)
+    np.save("data/output_{}.npy".format(graph_name), output_blobs[0])
+
+gen_layer_norm_expanded_with_initializer()
