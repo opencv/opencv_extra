@@ -73927,4 +73927,150 @@
       <y>2076</y>
       <cn>1</cn>
       <val>1.7699999999999999e+01</val></rng2></src></OCL_PatchNaNsFixture_PatchNaNs--PatchNaNs---3840x2160--64FC3->
+ <!-- resumed -->
+
+<OCL_NanMaskFixture_NanMask--NanMask---640x480--32FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>537</x>
+      <y>12</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>254</x>
+      <y>339</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---640x480--32FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---640x480--64FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>521</x>
+      <y>307</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>532</x>
+      <y>234</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---640x480--64FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---1280x720--32FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>436</x>
+      <y>656</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>1234</x>
+      <y>148</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---1280x720--32FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---1280x720--64FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>351</x>
+      <y>55</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>480</x>
+      <y>180</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---1280x720--64FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---1920x1080--32FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1276</x>
+      <y>734</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>256</x>
+      <y>314</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---1920x1080--32FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---1920x1080--64FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1873</x>
+      <y>597</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>334</x>
+      <y>1046</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---1920x1080--64FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---3840x2160--32FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>2159</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1064</x>
+      <y>158</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>186</x>
+      <y>620</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---3840x2160--32FC3->
+<OCL_NanMaskFixture_NanMask--NanMask---3840x2160--64FC3->
+  <mask>
+    <kind>655360</kind>
+    <type>0</type>
+    <min>255.</min>
+    <max>255.</max>
+    <last>
+      <x>3839</x>
+      <y>2159</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1792</x>
+      <y>1003</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>2882</x>
+      <y>1123</y>
+      <val>255.</val></rng2></mask></OCL_NanMaskFixture_NanMask--NanMask---3840x2160--64FC3->
 </opencv_storage>
