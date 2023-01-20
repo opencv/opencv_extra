@@ -183,11 +183,11 @@ models = [
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
         sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
         filename='bvlc_googlenet.caffemodel'),
-    Model(
-        name='Alexnet',
-        url='http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel',
-        sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
-        filename='bvlc_alexnet.caffemodel'),
+    # Model(
+    #     name='Alexnet',
+    #     url='http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel',
+    #     sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
+    #     filename='bvlc_alexnet.caffemodel'),
     Model(
         name='Inception',
         url='https://github.com/petewarden/tf_ios_makefile_example/raw/master/data/tensorflow_inception_graph.pb',
@@ -1010,6 +1010,11 @@ models = [
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_head_sim.onnx',
         sha='8fa668893b27b726f9cab6695846b4690650a199',
         filename='onnx/models/nanotrack_head_sim.onnx'),
+    Model(
+        name='Face Mesh (TFLite)',
+        url='https://storage.googleapis.com/mediapipe-assets/face_landmark.tflite',
+        sha='eb01d1d88c833aaea64c880506da72e4a4f43154',
+        filename='tflite/face_landmark.tflite'),
 ]
 
 # Note: models will be downloaded to current working directory
