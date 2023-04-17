@@ -1218,18 +1218,16 @@ save_data_and_model("lstm_cell_forward", input_, lstm, export_params=True)
 
 
 ## Test for various sequence lengths and batch sizes
-batch_sizes = [1, 5, 50]
-seq_lens = [1, 5, 50]
+tup_bs_sl = [(1, 50), (50, 1), (5, 5)]
 features = 4
 hidden = 3
-num_layers=1
-bidirectional=False
+num_layers = 1
+bidirectional = False
 
-for bs in batch_sizes:
-    for sl in seq_lens:
-        input_ = Variable(torch.randn(sl, bs, features))
-        lstm = LSTM(features, hidden, bs, num_layers, bidirectional)
-        save_data_and_model(f"lstm_cell_batchsize_{bs}_seqlen_{sl}", input_, lstm, export_params=True)
+for sl, bs in tup_bs_sl:
+    input_ = Variable(torch.randn(sl, bs, features))
+    lstm = LSTM(features, hidden, bs, num_layers, bidirectional)
+    save_data_and_model(f"lstm_cell_batchsize_{bs}_seqlen_{sl}", input_, lstm, export_params=True)
 
 class MatMul(nn.Module):
     def __init__(self):
