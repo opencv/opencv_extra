@@ -15,6 +15,37 @@ import google.protobuf.text_format
 import io
 from typing import Optional
 
+def postprocess_model(model_path, inputs_shapes):
+    onnx_model = onnx.load(model_path)
+
+    def update_inputs_dims(model, input_dims):
+        """
+            This function updates the sizes of dimensions of the model's inputs to the values
+            provided in input_dims. if the dim value provided is negative, a unique dim_param
+            will be set for that dimension.
+        """
+        def update_dim(tensor, dim, i, j, dim_param_prefix):
+            dim_proto = tensor.type.tensor_type.shape.dim[j]
+            if isinstance(dim, int):
+                if dim >= 0:
+                    dim_proto.dim_value = dim
+                else:
+                    dim_proto.dim_param = dim_param_prefix + str(i) + '_' + str(j)
+            elif isinstance(dim, str):
+                dim_proto.dim_param = dim
+            else:
+                raise ValueError('Only int or str is accepted as dimension value, incorrect type: {}'.format(type(dim)))
+
+        for i, input_dim_arr in enumerate(input_dims):
+            for j, dim in enumerate(input_dim_arr):
+                update_dim(model.graph.input[i], dim, i, j, 'in_')
+
+        onnx.checker.check_model(model)
+        return model
+
+    onnx_model = update_inputs_dims(onnx_model, inputs_shapes)
+    onnx.save(onnx_model, model_path)
+
 def assertExpected(s):
     if not (isinstance(s, str) or (sys.version_info[0] == 2 and isinstance(s, unicode))):
         raise TypeError("assertExpected is strings only")
@@ -1162,7 +1193,7 @@ bidirectional=True
 
 class LSTM(nn.Module):
 
-    def __init__(self):
+    def __init__(self, features, hidden, batch, num_layers, bidirectional):
         super(LSTM, self).__init__()
         self.lstm = nn.LSTM(features, hidden, num_layers, bidirectional=bidirectional)
         self.h0 = torch.from_numpy(np.ones((num_layers + int(bidirectional), batch, hidden), dtype=np.float32))
@@ -1177,14 +1208,28 @@ class LSTM(nn.Module):
 
 
 input_ = Variable(torch.randn(seq_len, batch, features))
-lstm = LSTM()
+lstm = LSTM(features, hidden, batch, num_layers, bidirectional)
 save_data_and_model("lstm_cell_bidirectional", input_, lstm, export_params=True)
 
 bidirectional = False
 input_ = Variable(torch.randn(seq_len, batch, features))
-lstm = LSTM()
+lstm = LSTM(features, hidden, batch, num_layers, bidirectional)
 save_data_and_model("lstm_cell_forward", input_, lstm, export_params=True)
 
+
+## Test for various sequence lengths and batch sizes
+batch_sizes = [1, 5, 50]
+seq_lens = [1, 5, 50]
+features = 4
+hidden = 3
+num_layers=1
+bidirectional=False
+
+for bs in batch_sizes:
+    for sl in seq_lens:
+        input_ = Variable(torch.randn(sl, bs, features))
+        lstm = LSTM(features, hidden, bs, num_layers, bidirectional)
+        save_data_and_model(f"lstm_cell_batchsize_{bs}_seqlen_{sl}", input_, lstm, export_params=True)
 
 class MatMul(nn.Module):
     def __init__(self):
@@ -1891,37 +1936,6 @@ x = Variable(torch.zeros([1, 2, 2]))
 model = GatherMultiOutput()
 save_data_and_model("gather_multi_output", x, model)
 
-def postprocess_model(model_path, inputs_shapes):
-    onnx_model = onnx.load(model_path)
-
-    def update_inputs_dims(model, input_dims):
-        """
-            This function updates the sizes of dimensions of the model's inputs to the values
-            provided in input_dims. if the dim value provided is negative, a unique dim_param
-            will be set for that dimension.
-        """
-        def update_dim(tensor, dim, i, j, dim_param_prefix):
-            dim_proto = tensor.type.tensor_type.shape.dim[j]
-            if isinstance(dim, int):
-                if dim >= 0:
-                    dim_proto.dim_value = dim
-                else:
-                    dim_proto.dim_param = dim_param_prefix + str(i) + '_' + str(j)
-            elif isinstance(dim, str):
-                dim_proto.dim_param = dim
-            else:
-                raise ValueError('Only int or str is accepted as dimension value, incorrect type: {}'.format(type(dim)))
-
-        for i, input_dim_arr in enumerate(input_dims):
-            for j, dim in enumerate(input_dim_arr):
-                update_dim(model.graph.input[i], dim, i, j, 'in_')
-
-        onnx.checker.check_model(model)
-        return model
-    
-    onnx_model = update_inputs_dims(onnx_model, inputs_shapes)
-    onnx.save(onnx_model, model_path)
-
 class UnsqueezeAndConv(nn.Module):
     def __init__(self):
         super(UnsqueezeAndConv, self).__init__()
@@ -2517,7 +2531,7 @@ def gen_layer_norm_expanded(input_shape=[1, 4, 5], axis=-1, constant_as_initiali
                 self.name_dict[op_type] += 1
             else:
                 self.name_dict[op_type] = 0
-            
+
             return "{}.{}".format(op_type, self.name_dict[op_type])
 
     node_name_manager = NodeNameManager()
