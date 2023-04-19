@@ -1196,7 +1196,9 @@ bidirectional = False
 for sl, bs in tup_bs_sl:
     input_ = Variable(torch.randn(sl, bs, features))
     lstm = LSTM(features, hidden, bs, num_layers, bidirectional)
+    gru  = GRU(features, hidden, num_layers, bidirectional)
     save_data_and_model(f"lstm_cell_batchsize_{bs}_seqlen_{sl}", input_, lstm, export_params=True)
+    save_data_and_model(f"gru_cell_batchsize_{bs}_seqlen_{sl}", input_, lstm, export_params=True)
 
 class MatMul(nn.Module):
     def __init__(self):
