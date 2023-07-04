@@ -441,9 +441,9 @@ models = [
         sha='b256703f2b125d8681a0a6e5a40a6c9deb7d2b4b',
         filename='onnx/models/alexnet.onnx'),
     Model(
-        name='GoogleNet (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.onnx',
-        sha='534a16d7e2472f6a9a1925a5ee6c9abc2f5c02b0',
+        name='GoogleNet (ONNX) 2023',
+        url='https://drive.google.com/u/0/uc?id=1FucNLURGgdPk4nCxT0378isPigCcbZ1M&export=download',
+        sha='b8d2f2213381e18fb5f21603e02f939385bd4481',
         filename='onnx/models/googlenet.onnx'),
     Model(
         name='CaffeNet (ONNX)',
