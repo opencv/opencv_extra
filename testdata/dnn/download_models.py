@@ -444,7 +444,7 @@ models = [
         name='GoogleNet (ONNX) 2023',
         url='https://drive.google.com/u/0/uc?id=1FucNLURGgdPk4nCxT0378isPigCcbZ1M&export=download',
         sha='b8d2f2213381e18fb5f21603e02f939385bd4481',
-        filename='onnx/models/googlenet.onnx'),
+        filename='onnx/models/googlenet_2023.onnx'),
     Model(
         name='CaffeNet (ONNX)',
         url='https://github.com/onnx/models/raw/4eff8f9b9189672de28d087684e7085ad977747c/vision/classification/caffenet/model/caffenet-8.tar.gz',
