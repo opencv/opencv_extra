@@ -442,7 +442,7 @@ models = [
         filename='onnx/models/alexnet.onnx'),
     Model(
         name='GoogleNet (ONNX) 2023',
-        url='https://drive.google.com/u/0/uc?id=1FucNLURGgdPk4nCxT0378isPigCcbZ1M&export=download',
+        url='https://drive.google.com/u/0/uc?id=1fmGC76CMvxdMRDZJjJ4gKIo6FFPyl29P&export=download',
         sha='b8d2f2213381e18fb5f21603e02f939385bd4481',
         filename='onnx/models/googlenet_2023.onnx'),
     Model(
