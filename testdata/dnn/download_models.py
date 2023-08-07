@@ -178,353 +178,353 @@ def GDrive(gid):
 
 
 models = [
-    Model(
-        name='GoogleNet',
-        url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
-        sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
-        filename='bvlc_googlenet.caffemodel'),
-    Model(
-        name='Alexnet',
-        url='http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel',
-        sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
-        filename='bvlc_alexnet.caffemodel'),
-    Model(
-        name='Inception',
-        url='https://github.com/petewarden/tf_ios_makefile_example/raw/master/data/tensorflow_inception_graph.pb',
-        sha='c8a5a000ee8d8dd75886f152a50a9c5b53d726a5',
-        filename='tensorflow_inception_graph.pb'),
-    Model(
-        name='Enet',  # https://github.com/e-lab/ENet-training
-        url='https://www.dropbox.com/s/tdde0mawbi5dugq/Enet-model-best.net?dl=1',
-        sha='b4123a73bf464b9ebe9cfc4ab9c2d5c72b161315',
-        filename='Enet-model-best.net'),
-    Model(
-        name='Fcn',
-        url='http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel',
-        sha='c449ea74dd7d83751d1357d6a8c323fcf4038962',
-        filename='fcn8s-heavy-pascal.caffemodel'),
-    Model(
-        name='Ssd_vgg16',
-        url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
-        sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
-        filename='VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel'),
-    Model(
-        name='ResNet50',
-        url='https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
-        sha='b7c79ccc21ad0479cddc0dd78b1d20c4d722908d',
-        filename='ResNet-50-model.caffemodel'),
-    Model(
-        name='SqueezeNet_v1.1',
-        url='https://raw.githubusercontent.com/DeepScale/SqueezeNet/b5c3f1a23713c8b3fd7b801d229f6b04c64374a5/SqueezeNet_v1.1/squeezenet_v1.1.caffemodel',
-        sha='3397f026368a45ae236403ccc81cfcbe8ebe1bd0',
-        filename='squeezenet_v1.1.caffemodel'),
-    Model(
-        name='MobileNet-SSD',  # https://github.com/chuanqi305/MobileNet-SSD
-        url='https://drive.google.com/uc?export=download&id=0B3gersZ2cHIxRm5PMWRoTkdHdHc',
-        sha='994d30a8afaa9e754d17d2373b2d62a7dfbaaf7a',
-        filename='MobileNetSSD_deploy.caffemodel'),
-    Model(
-        name='MobileNet-SSD',
-        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/daef68a6c2f5fbb8c88404266aa28180646d17e0/MobileNetSSD_deploy.prototxt',
-        sha='d77c9cf09619470d49b82a9dd18704813a2043cd',
-        filename='MobileNetSSD_deploy.prototxt'),
-    Model(
-        name='OpenFace',  # https://github.com/cmusatyalab/openface
-        url='https://storage.cmusatyalab.org/openface-models/nn4.small2.v1.t7',
-        sha='ac8161a4376fb5a79ceec55d85bbb57ef81da9fe',
-        filename='openface_nn4.small2.v1.t7'),
-    Model(
-        name='YoloV2voc',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolo-voc.weights',
-        sha='1cc1a7f8ad12d563d85b76e9de025dc28ac397bb',
-        filename='yolo-voc.weights'),
-    Model(
-        name='TinyYoloV2voc',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolov2-tiny-voc.weights',
-        sha='24b4bd049fc4fa5f5e95f684a8967e65c625dff9',
-        filename='tiny-yolo-voc.weights'),
-    Model(
-        name='DenseNet-121',  # https://github.com/shicai/DenseNet-Caffe
-        url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
-        sha='02b520138e8a73c94473b05879978018fefe947b',
-        filename='DenseNet_121.caffemodel'),
-    Model(
-        name='DenseNet-121',
-        url='https://raw.githubusercontent.com/shicai/DenseNet-Caffe/master/DenseNet_121.prototxt',
-        sha='4922099342af5993d9d09f63081c8a392f3c1cc6',
-        filename='DenseNet_121.prototxt'),
-    Model(
-        name='Fast-Neural-Style',
-        url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
-        sha='5b5e115253197b84d6c6ece1dafe6c15d7105ca6',
-        filename='fast_neural_style_eccv16_starry_night.t7'),
-    Model(
-        name='Fast-Neural-Style',
-        url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
-        sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
-        filename='fast_neural_style_instance_norm_feathers.t7'),
-    Model(
-        name='MobileNet-SSD (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz',
-        sha='a88a18cca9fe4f9e496d73b8548bfd157ad286e2',
-        filename='ssd_mobilenet_v1_coco_11_06_217.tar.gz'),
-    Model(
-        name='MobileNet-SSD (TensorFlow)',
-        archive='ssd_mobilenet_v1_coco_11_06_217.tar.gz',
-        member='ssd_mobilenet_v1_coco_11_06_2017/frozen_inference_graph.pb',
-        sha='aaf36f068fab10359eadea0bc68388d96cf68139',
-        filename='ssd_mobilenet_v1_coco.pb'),
-    Model(
-        name='MobileNet-SSD v1 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
-        sha='6157ddb6da55db2da89dd561eceb7f944928e317',
-        filename='ssd_mobilenet_v1_coco_2017_11_17.tar.gz'),
-    Model(
-        name='MobileNet-SSD v1 (TensorFlow)',
-        archive='ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
-        member='ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb',
-        sha='9e4bcdd98f4c6572747679e4ce570de4f03a70e2',
-        filename='ssd_mobilenet_v1_coco_2017_11_17.pb'),
-    Model(
-        name='MobileNet-SSD v2 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
-        sha='69c93d29e292bc9682396a5c78355b1dfe481b61',
-        filename='ssd_mobilenet_v2_coco_2018_03_29.tar.gz'),
-    Model(
-        name='MobileNet-SSD v2 (TensorFlow)',
-        archive='ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
-        member='ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb',
-        sha='35d571ac314f1d32ae678a857f87cc0ef6b220e8',
-        filename='ssd_mobilenet_v2_coco_2018_03_29.pb'),
-    Model(
-        name='Colorization',
-        url='https://raw.githubusercontent.com/richzhang/colorization/master/models/colorization_deploy_v2.prototxt',
-        sha='f528334e386a69cbaaf237a7611d833bef8e5219',
-        filename='colorization_deploy_v2.prototxt'),
-    Model(
-        name='Colorization',
-        url='http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
-        sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
-        filename='colorization_release_v2.caffemodel'),
-    Model(
-        name='Face_detector',
-        url='https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel',
-        sha='15aa726b4d46d9f023526d85537db81cbc8dd566',
-        filename='opencv_face_detector.caffemodel'),
-    Model(
-        name='Face_detector (FP16)',
-        url='https://github.com/opencv/opencv_3rdparty/raw/19512576c112aa2c7b6328cb0e8d589a4a90a26d/res10_300x300_ssd_iter_140000_fp16.caffemodel',
-        sha='31fc22bfdd907567a04bb45b7cfad29966caddc1',
-        filename='opencv_face_detector_fp16.caffemodel'),
-    Model(
-        name='Face_detector (UINT8)',
-        url='https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb',
-        sha='4f2fdf6f231d759d7bbdb94353c5a68690f3d2ae',
-        filename='opencv_face_detector_uint8.pb'),
-    Model(
-        name='InceptionV2-SSD (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz',
-        sha='b9546dcd1ba99282b5bfa81c460008c885ca591b',
-        filename='ssd_inception_v2_coco_2017_11_17.tar.gz'),
-    Model(
-        name='InceptionV2-SSD (TensorFlow)',
-        archive='ssd_inception_v2_coco_2017_11_17.tar.gz',
-        member='ssd_inception_v2_coco_2017_11_17/frozen_inference_graph.pb',
-        sha='554a75594e9fd1ccee291b3ba3f1190b868a54c9',
-        filename='ssd_inception_v2_coco_2017_11_17.pb'),
-    Model(
-        name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
-        url='https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
-        sha='51bca62727c3fe5d14b66e9331373c1e297df7d1',
-        filename='faster_rcnn_models.tgz'),
-    Model(
-        name='Faster-RCNN VGG16',
-        archive='faster_rcnn_models.tgz',
-        member='faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel',
-        sha='dd099979468aafba21f3952718a9ceffc7e57699',
-        filename='VGG16_faster_rcnn_final.caffemodel'),
-    Model(
-        name='Faster-RCNN ZF',
-        archive='faster_rcnn_models.tgz',
-        member='faster_rcnn_models/ZF_faster_rcnn_final.caffemodel',
-        sha='7af886686f149622ed7a41c08b96743c9f4130f5',
-        filename='ZF_faster_rcnn_final.caffemodel'),
-    Model(
-        name='R-FCN',  # https://github.com/YuwenXiong/py-R-FCN
-        url='https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
-        sha='bb3180da68b2b71494f8d3eb8f51b2d47467da3e',
-        filename='rfcn_models.tar.gz'),
-    Model(
-        name='R-FCN ResNet-50',
-        archive='rfcn_models.tar.gz',
-        member='rfcn_models/resnet50_rfcn_final.caffemodel',
-        sha='e00beca7af2790801efb1724d77bddba89e7081c',
-        filename='resnet50_rfcn_final.caffemodel'),
-    Model(
-        name='OpenPose/pose/coco',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
-        sha='ac7e97da66f3ab8169af2e601384c144e23a95c1',
-        filename='openpose_pose_coco.caffemodel'),
-    Model(
-        name='OpenPose/pose/mpi',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
-        sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
-        filename='openpose_pose_mpi.caffemodel'),
-    Model(
-        name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolov3.weights',
-        sha='520878f12e97cf820529daea502acca380f1cb8e',
-        filename='yolov3.weights'),
-    Model(
-        name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
-        url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
-        sha='3ca8233d6edd748f7ed23246c8ca24cbf696bb94',
-        filename='frozen_east_text_detection.tar.gz'),
-    Model(
-        name='EAST',
-        archive='frozen_east_text_detection.tar.gz',
-        member='frozen_east_text_detection.pb',
-        sha='fffabf5ac36f37bddf68e34e84b45f5c4247ed06',
-        filename='frozen_east_text_detection.pb'),
-    Model(
-        name='Faster-RCNN, InveptionV2 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sha='c710f25e5c6a3ce85fe793d5bf266d581ab1c230',
-        filename='faster_rcnn_inception_v2_coco_2018_01_28.tar.gz'),
-    Model(
-        name='Faster-RCNN, InveptionV2 (TensorFlow)',
-        archive='faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        member='faster_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
-        sha='f2e4bf386b9bb3e25ddfcbbd382c20f417e444f3',
-        filename='faster_rcnn_inception_v2_coco_2018_01_28.pb'),
-    Model(
-        name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03.tar.gz',
-        sha='549ae0fd82c202786abe53c306b191c578599c44',
-        filename='ssd_mobilenet_v1_ppn_coco.tar.gz'),
-    Model(
-        name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
-        archive='ssd_mobilenet_v1_ppn_coco.tar.gz',
-        member='ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03/frozen_inference_graph.pb',
-        sha='7943c51c6305b38173797d4afbf70697cf57ab48',
-        filename='ssd_mobilenet_v1_ppn_coco.pb'),
-    Model(
-        name='mask_rcnn_inception_v2_coco_2018_01_28 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sha='f8a920756744d0f7ee812b3ec2474979f74ab40c',
-        filename='mask_rcnn_inception_v2_coco_2018_01_28.tar.gz'),
-    Model(
-        name='mask_rcnn_inception_v2_coco_2018_01_28 (TensorFlow)',
-        archive='mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        member='mask_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
-        sha='c8adff66a1e23e607f57cf1a7cfabad0faa371f9',
-        filename='mask_rcnn_inception_v2_coco_2018_01_28.pb'),
-    Model(
-        name='faster_rcnn_resnet50_coco (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
-        sha='3066e8dd156b99c4b4d78a2ccd13e33fc263beb7',
-        filename='faster_rcnn_resnet50_coco_2018_01_28.tar.gz'),
-    Model(
-        name='faster_rcnn_resnet50_coco (TensorFlow)',
-        archive='faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
-        member='faster_rcnn_resnet50_coco_2018_01_28/frozen_inference_graph.pb',
-        sha='27feaef9924650299b2ef5d29f041627b6f298b2',
-        filename='faster_rcnn_resnet50_coco_2018_01_28.pb'),
-    Model(
-        name='AlexNet (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_alexnet.tar.gz',
-        sha='c713be2852472582224fa7395e2ab4641f8b6356',
-        filename='bvlc_alexnet.tar.gz'),
-    Model(
-        name='AlexNet (ONNX)',
-        archive='bvlc_alexnet.tar.gz',
-        member='bvlc_alexnet/model.onnx',
-        sha='b256703f2b125d8681a0a6e5a40a6c9deb7d2b4b',
-        filename='onnx/models/alexnet.onnx'),
-    Model(
-        name='GoogleNet (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_googlenet.tar.gz',
-        sha='739732220ba2e3efa88f7c26f13badad9b7514bc',
-        filename='bvlc_googlenet.tar.gz'),
-    Model(
-        name='GoogleNet (ONNX)',
-        archive='bvlc_googlenet.tar.gz',
-        member='bvlc_googlenet/model.onnx',
-        sha='534a16d7e2472f6a9a1925a5ee6c9abc2f5c02b0',
-        filename='onnx/models/googlenet.onnx'),
-    Model(
-        name='CaffeNet (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_reference_caffenet.tar.gz',
-        sha='f9f5dd60d4c9172a7e26bd4268eab7ecddb37393',
-        filename='bvlc_reference_caffenet.tar.gz'),
-    Model(
-        name='CaffeNet (ONNX)',
-        archive='bvlc_reference_caffenet.tar.gz',
-        member='bvlc_reference_caffenet/model.onnx',
-        sha='6b2be0cd598914e13b60787c63cba0533723d746',
-        filename='onnx/models/caffenet.onnx'),
-    Model(
-        name='CaffeNet (ONNX)',
-        archive='bvlc_reference_caffenet.tar.gz',
-        member='bvlc_reference_caffenet/test_data_set_0/input_0.pb',
-        sha='e5d6fb75a66ef157023a7fc2f88abdcb371f2f16',
-        filename='onnx/data/input_caffenet.pb'),
-    Model(
-        name='CaffeNet (ONNX)',
-        archive='bvlc_reference_caffenet.tar.gz',
-        member='bvlc_reference_caffenet/test_data_set_0/output_0.pb',
-        sha='eaff902ef71a648aaaeffa495e5fddf2dc0b77c1',
-        filename='onnx/data/output_caffenet.pb'),
-    Model(
-        name='RCNN_ILSVRC13 (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/bvlc_reference_rcnn_ilsvrc13.tar.gz',
-        sha='b1b27a41066c26f824d57e99036dc885459017f0',
-        filename='bvlc_reference_rcnn_ilsvrc13.tar.gz'),
-    Model(
-        name='RCNN_ILSVRC13 (ONNX)',
-        archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
-        member='bvlc_reference_rcnn_ilsvrc13/model.onnx',
-        sha='fbf174b62a1918bff43c0287e41fdc6017b46256',
-        filename='onnx/models/rcnn_ilsvrc13.onnx'),
-    Model(
-        name='RCNN_ILSVRC13 (ONNX)',
-        archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
-        member='bvlc_reference_rcnn_ilsvrc13/test_data_set_0/input_0.pb',
-        sha='dcfd587bede888606a7f10e9feadc7f25bed7da4',
-        filename='onnx/data/input_rcnn_ilsvrc13.pb'),
-    Model(
-        name='RCNN_ILSVRC13 (ONNX)',
-        archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
-        member='bvlc_reference_rcnn_ilsvrc13/test_data_set_0/output_0.pb',
-        sha='e09eea540b93a2f450e32db59e198ca96c3b8637',
-        filename='onnx/data/output_rcnn_ilsvrc13.pb'),
-    Model(
-        name='ZFNet512 (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/zfnet512.tar.gz',
-        sha='c040c455c8aac71c8cda57595b698b76449e4ff4',
-        filename='zfnet512.tar.gz'),
-    Model(
-        name='ZFNet512 (ONNX)',
-        archive='zfnet512.tar.gz',
-        member='zfnet512/model.onnx',
-        sha='c32b9ae0bbe65e2ee60f98639b170645000e2c75',
-        filename='onnx/models/zfnet512.onnx'),
-    Model(
-        name='ZFNet512 (ONNX)',
-        archive='zfnet512.tar.gz',
-        member='zfnet512/test_data_set_0/input_0.pb',
-        sha='2dc2c8020edbd84a52f0550d6666c9ae7e93c01f',
-        filename='onnx/data/input_zfnet512.pb'),
-    Model(
-        name='ZFNet512 (ONNX)',
-        archive='zfnet512.tar.gz',
-        member='zfnet512/test_data_set_0/output_0.pb',
-        sha='a74974096088954ca4e4e89bec212c1ac2ab0745',
-        filename='onnx/data/output_zfnet512.pb'),
+    # Model(
+    #     name='GoogleNet',
+    #     url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
+    #     sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
+    #     filename='bvlc_googlenet.caffemodel'),
+    # Model(
+    #     name='Alexnet',
+    #     url='http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel',
+    #     sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
+    #     filename='bvlc_alexnet.caffemodel'),
+    # Model(
+    #     name='Inception',
+    #     url='https://github.com/petewarden/tf_ios_makefile_example/raw/master/data/tensorflow_inception_graph.pb',
+    #     sha='c8a5a000ee8d8dd75886f152a50a9c5b53d726a5',
+    #     filename='tensorflow_inception_graph.pb'),
+    # Model(
+    #     name='Enet',  # https://github.com/e-lab/ENet-training
+    #     url='https://www.dropbox.com/s/tdde0mawbi5dugq/Enet-model-best.net?dl=1',
+    #     sha='b4123a73bf464b9ebe9cfc4ab9c2d5c72b161315',
+    #     filename='Enet-model-best.net'),
+    # Model(
+    #     name='Fcn',
+    #     url='http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel',
+    #     sha='c449ea74dd7d83751d1357d6a8c323fcf4038962',
+    #     filename='fcn8s-heavy-pascal.caffemodel'),
+    # Model(
+    #     name='Ssd_vgg16',
+    #     url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
+    #     sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
+    #     filename='VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel'),
+    # Model(
+    #     name='ResNet50',
+    #     url='https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
+    #     sha='fa0aa79aecbcce25052e4f46dc10dcba230a4bf5',
+    #     filename='ResNet-50-model.caffemodel'),
+    # Model(
+    #     name='SqueezeNet_v1.1',
+    #     url='https://raw.githubusercontent.com/DeepScale/SqueezeNet/b5c3f1a23713c8b3fd7b801d229f6b04c64374a5/SqueezeNet_v1.1/squeezenet_v1.1.caffemodel',
+    #     sha='3397f026368a45ae236403ccc81cfcbe8ebe1bd0',
+    #     filename='squeezenet_v1.1.caffemodel'),
+    # Model(
+    #     name='MobileNet-SSD',  # https://github.com/chuanqi305/MobileNet-SSD
+    #     url='https://drive.google.com/uc?export=download&id=0B3gersZ2cHIxRm5PMWRoTkdHdHc',
+    #     sha='51484f6d547a32292013da8033e90a6d7c1b1009',
+    #     filename='MobileNetSSD_deploy.caffemodel'),
+    # Model(
+    #     name='MobileNet-SSD',
+    #     url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/daef68a6c2f5fbb8c88404266aa28180646d17e0/MobileNetSSD_deploy.prototxt',
+    #     sha='d77c9cf09619470d49b82a9dd18704813a2043cd',
+    #     filename='MobileNetSSD_deploy.prototxt'),
+    # Model(
+    #     name='OpenFace',  # https://github.com/cmusatyalab/openface
+    #     url='https://storage.cmusatyalab.org/openface-models/nn4.small2.v1.t7',
+    #     sha='ac8161a4376fb5a79ceec55d85bbb57ef81da9fe',
+    #     filename='openface_nn4.small2.v1.t7'),
+    # Model(
+    #     name='YoloV2voc',  # https://pjreddie.com/darknet/yolo/
+    #     url='https://pjreddie.com/media/files/yolo-voc.weights',
+    #     sha='1cc1a7f8ad12d563d85b76e9de025dc28ac397bb',
+    #     filename='yolo-voc.weights'),
+    # Model(
+    #     name='TinyYoloV2voc',  # https://pjreddie.com/darknet/yolo/
+    #     url='https://pjreddie.com/media/files/yolov2-tiny-voc.weights',
+    #     sha='24b4bd049fc4fa5f5e95f684a8967e65c625dff9',
+    #     filename='tiny-yolo-voc.weights'),
+    # Model(
+    #     name='DenseNet-121',  # https://github.com/shicai/DenseNet-Caffe
+    #     url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
+    #     sha='02b520138e8a73c94473b05879978018fefe947b',
+    #     filename='DenseNet_121.caffemodel'),
+    # Model(
+    #     name='DenseNet-121',
+    #     url='https://raw.githubusercontent.com/shicai/DenseNet-Caffe/master/DenseNet_121.prototxt',
+    #     sha='4922099342af5993d9d09f63081c8a392f3c1cc6',
+    #     filename='DenseNet_121.prototxt'),
+    # Model(
+    #     name='Fast-Neural-Style',
+    #     url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
+    #     sha='5b5e115253197b84d6c6ece1dafe6c15d7105ca6',
+    #     filename='fast_neural_style_eccv16_starry_night.t7'),
+    # Model(
+    #     name='Fast-Neural-Style',
+    #     url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
+    #     sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
+    #     filename='fast_neural_style_instance_norm_feathers.t7'),
+    # Model(
+    #     name='MobileNet-SSD (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz',
+    #     sha='a88a18cca9fe4f9e496d73b8548bfd157ad286e2',
+    #     filename='ssd_mobilenet_v1_coco_11_06_217.tar.gz'),
+    # Model(
+    #     name='MobileNet-SSD (TensorFlow)',
+    #     archive='ssd_mobilenet_v1_coco_11_06_217.tar.gz',
+    #     member='ssd_mobilenet_v1_coco_11_06_2017/frozen_inference_graph.pb',
+    #     sha='aaf36f068fab10359eadea0bc68388d96cf68139',
+    #     filename='ssd_mobilenet_v1_coco.pb'),
+    # Model(
+    #     name='MobileNet-SSD v1 (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
+    #     sha='6157ddb6da55db2da89dd561eceb7f944928e317',
+    #     filename='ssd_mobilenet_v1_coco_2017_11_17.tar.gz'),
+    # Model(
+    #     name='MobileNet-SSD v1 (TensorFlow)',
+    #     archive='ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
+    #     member='ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb',
+    #     sha='9e4bcdd98f4c6572747679e4ce570de4f03a70e2',
+    #     filename='ssd_mobilenet_v1_coco_2017_11_17.pb'),
+    # Model(
+    #     name='MobileNet-SSD v2 (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
+    #     sha='69c93d29e292bc9682396a5c78355b1dfe481b61',
+    #     filename='ssd_mobilenet_v2_coco_2018_03_29.tar.gz'),
+    # Model(
+    #     name='MobileNet-SSD v2 (TensorFlow)',
+    #     archive='ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
+    #     member='ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb',
+    #     sha='35d571ac314f1d32ae678a857f87cc0ef6b220e8',
+    #     filename='ssd_mobilenet_v2_coco_2018_03_29.pb'),
+    # Model(
+    #     name='Colorization',
+    #     url='https://raw.githubusercontent.com/richzhang/colorization/caffe/models/colorization_deploy_v2.prototxt',
+    #     sha='f528334e386a69cbaaf237a7611d833bef8e5219',
+    #     filename='colorization_deploy_v2.prototxt'),
+    # Model(
+    #     name='Colorization',
+    #     url='http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
+    #     sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
+    #     filename='colorization_release_v2.caffemodel'),
+    # Model(
+    #     name='Face_detector',
+    #     url='https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel',
+    #     sha='15aa726b4d46d9f023526d85537db81cbc8dd566',
+    #     filename='opencv_face_detector.caffemodel'),
+    # Model(
+    #     name='Face_detector (FP16)',
+    #     url='https://github.com/opencv/opencv_3rdparty/raw/19512576c112aa2c7b6328cb0e8d589a4a90a26d/res10_300x300_ssd_iter_140000_fp16.caffemodel',
+    #     sha='31fc22bfdd907567a04bb45b7cfad29966caddc1',
+    #     filename='opencv_face_detector_fp16.caffemodel'),
+    # Model(
+    #     name='Face_detector (UINT8)',
+    #     url='https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb',
+    #     sha='4f2fdf6f231d759d7bbdb94353c5a68690f3d2ae',
+    #     filename='opencv_face_detector_uint8.pb'),
+    # Model(
+    #     name='InceptionV2-SSD (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz',
+    #     sha='b9546dcd1ba99282b5bfa81c460008c885ca591b',
+    #     filename='ssd_inception_v2_coco_2017_11_17.tar.gz'),
+    # Model(
+    #     name='InceptionV2-SSD (TensorFlow)',
+    #     archive='ssd_inception_v2_coco_2017_11_17.tar.gz',
+    #     member='ssd_inception_v2_coco_2017_11_17/frozen_inference_graph.pb',
+    #     sha='554a75594e9fd1ccee291b3ba3f1190b868a54c9',
+    #     filename='ssd_inception_v2_coco_2017_11_17.pb'),
+    # Model(
+    #     name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
+    #     url='https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
+    #     sha='51bca62727c3fe5d14b66e9331373c1e297df7d1',
+    #     filename='faster_rcnn_models.tgz'),
+    # Model(
+    #     name='Faster-RCNN VGG16',
+    #     archive='faster_rcnn_models.tgz',
+    #     member='faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel',
+    #     sha='dd099979468aafba21f3952718a9ceffc7e57699',
+    #     filename='VGG16_faster_rcnn_final.caffemodel'),
+    # Model(
+    #     name='Faster-RCNN ZF',
+    #     archive='faster_rcnn_models.tgz',
+    #     member='faster_rcnn_models/ZF_faster_rcnn_final.caffemodel',
+    #     sha='7af886686f149622ed7a41c08b96743c9f4130f5',
+    #     filename='ZF_faster_rcnn_final.caffemodel'),
+    # Model(
+    #     name='R-FCN',  # https://github.com/YuwenXiong/py-R-FCN
+    #     url='https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
+    #     sha='bb3180da68b2b71494f8d3eb8f51b2d47467da3e',
+    #     filename='rfcn_models.tar.gz'),
+    # Model(
+    #     name='R-FCN ResNet-50',
+    #     archive='rfcn_models.tar.gz',
+    #     member='rfcn_models/resnet50_rfcn_final.caffemodel',
+    #     sha='e00beca7af2790801efb1724d77bddba89e7081c',
+    #     filename='resnet50_rfcn_final.caffemodel'),
+    # Model(
+    #     name='OpenPose/pose/coco',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
+    #     url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
+    #     sha='ac7e97da66f3ab8169af2e601384c144e23a95c1',
+    #     filename='openpose_pose_coco.caffemodel'),
+    # Model(
+    #     name='OpenPose/pose/mpi',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
+    #     url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
+    #     sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
+    #     filename='openpose_pose_mpi.caffemodel'),
+    # Model(
+    #     name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
+    #     url='https://pjreddie.com/media/files/yolov3.weights',
+    #     sha='520878f12e97cf820529daea502acca380f1cb8e',
+    #     filename='yolov3.weights'),
+    # Model(
+    #     name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
+    #     url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
+    #     sha='3ca8233d6edd748f7ed23246c8ca24cbf696bb94',
+    #     filename='frozen_east_text_detection.tar.gz'),
+    # Model(
+    #     name='EAST',
+    #     archive='frozen_east_text_detection.tar.gz',
+    #     member='frozen_east_text_detection.pb',
+    #     sha='fffabf5ac36f37bddf68e34e84b45f5c4247ed06',
+    #     filename='frozen_east_text_detection.pb'),
+    # Model(
+    #     name='Faster-RCNN, InveptionV2 (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
+    #     sha='c710f25e5c6a3ce85fe793d5bf266d581ab1c230',
+    #     filename='faster_rcnn_inception_v2_coco_2018_01_28.tar.gz'),
+    # Model(
+    #     name='Faster-RCNN, InveptionV2 (TensorFlow)',
+    #     archive='faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
+    #     member='faster_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
+    #     sha='f2e4bf386b9bb3e25ddfcbbd382c20f417e444f3',
+    #     filename='faster_rcnn_inception_v2_coco_2018_01_28.pb'),
+    # Model(
+    #     name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03.tar.gz',
+    #     sha='549ae0fd82c202786abe53c306b191c578599c44',
+    #     filename='ssd_mobilenet_v1_ppn_coco.tar.gz'),
+    # Model(
+    #     name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
+    #     archive='ssd_mobilenet_v1_ppn_coco.tar.gz',
+    #     member='ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03/frozen_inference_graph.pb',
+    #     sha='7943c51c6305b38173797d4afbf70697cf57ab48',
+    #     filename='ssd_mobilenet_v1_ppn_coco.pb'),
+    # Model(
+    #     name='mask_rcnn_inception_v2_coco_2018_01_28 (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
+    #     sha='f8a920756744d0f7ee812b3ec2474979f74ab40c',
+    #     filename='mask_rcnn_inception_v2_coco_2018_01_28.tar.gz'),
+    # Model(
+    #     name='mask_rcnn_inception_v2_coco_2018_01_28 (TensorFlow)',
+    #     archive='mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
+    #     member='mask_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
+    #     sha='c8adff66a1e23e607f57cf1a7cfabad0faa371f9',
+    #     filename='mask_rcnn_inception_v2_coco_2018_01_28.pb'),
+    # Model(
+    #     name='faster_rcnn_resnet50_coco (TensorFlow)',
+    #     url='http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
+    #     sha='3066e8dd156b99c4b4d78a2ccd13e33fc263beb7',
+    #     filename='faster_rcnn_resnet50_coco_2018_01_28.tar.gz'),
+    # Model(
+    #     name='faster_rcnn_resnet50_coco (TensorFlow)',
+    #     archive='faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
+    #     member='faster_rcnn_resnet50_coco_2018_01_28/frozen_inference_graph.pb',
+    #     sha='27feaef9924650299b2ef5d29f041627b6f298b2',
+    #     filename='faster_rcnn_resnet50_coco_2018_01_28.pb'),
+    # Model(
+    #     name='AlexNet (ONNX)',
+    #     url='https://github.com/onnx/models/raw/main/vision/classification/alexnet/model/bvlcalexnet-8.tar.gz',
+    #     sha='94ca6dbc4b98c8195d57aa6c9d3f27d1138c1500',
+    #     filename='bvlc_alexnet.tar.gz'),
+    # Model(
+    #     name='AlexNet (ONNX)',
+    #     archive='bvlc_alexnet.tar.gz',
+    #     member='model/model.onnx',
+    #     sha='b256703f2b125d8681a0a6e5a40a6c9deb7d2b4b',
+    #     filename='onnx/models/alexnet.onnx'),
+    # Model(
+    #     name='GoogleNet (ONNX)',
+    #     url='https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/googlenet/model/googlenet-8.tar.gz',
+    #     sha='a397f744c70a1e712125b3035d56264b2f115751',
+    #     filename='bvlc_googlenet.tar.gz'),
+    # Model(
+    #     name='GoogleNet (ONNX)',
+    #     archive='bvlc_googlenet.tar.gz',
+    #     member='model/model.onnx',
+    #     sha='534a16d7e2472f6a9a1925a5ee6c9abc2f5c02b0',
+    #     filename='onnx/models/googlenet.onnx'),
+    # Model(
+    #     name='CaffeNet (ONNX)',
+    #     url='https://github.com/onnx/models/raw/main/vision/classification/caffenet/model/caffenet-8.tar.gz',
+    #     sha='d4017748ffa69d0b1044c3265189a437c1390003',
+    #     filename='bvlc_reference_caffenet.tar.gz'),
+    # Model(
+    #     name='CaffeNet (ONNX)',
+    #     archive='bvlc_reference_caffenet.tar.gz',
+    #     member='model/model.onnx',
+    #     sha='6b2be0cd598914e13b60787c63cba0533723d746',
+    #     filename='onnx/models/caffenet.onnx'),
+    # Model(
+    #     name='CaffeNet (ONNX)',
+    #     archive='bvlc_reference_caffenet.tar.gz',
+    #     member='model/test_data_set_0/input_0.pb',
+    #     sha='b689f7ddbdc3f871d15276296355d1d50a36500a',
+    #     filename='onnx/data/input_caffenet.pb'),
+    # Model(
+    #     name='CaffeNet (ONNX)',
+    #     archive='bvlc_reference_caffenet.tar.gz',
+    #     member='model/test_data_set_0/output_0.pb',
+    #     sha='3366d5a5c50f143bf4ddbbdc76abf145ff562a27',
+    #     filename='onnx/data/output_caffenet.pb'),
+    # Model(
+    #     name='RCNN_ILSVRC13 (ONNX)',
+    #     url='https://github.com/onnx/models/raw/main/vision/classification/rcnn_ilsvrc13/model/rcnn-ilsvrc13-8.tar.gz',
+    #     sha='f8f35d6bd1bfb2f2868edce120915452a7c32904',
+    #     filename='bvlc_reference_rcnn_ilsvrc13.tar.gz'),
+    # Model(
+    #     name='RCNN_ILSVRC13 (ONNX)',
+    #     archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
+    #     member='model/model.onnx',
+    #     sha='fbf174b62a1918bff43c0287e41fdc6017b46256',
+    #     filename='onnx/models/rcnn_ilsvrc13.onnx'),
+    # Model(
+    #     name='RCNN_ILSVRC13 (ONNX)',
+    #     archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
+    #     member='model/test_data_set_0/input_0.pb',
+    #     sha='27de73ef72ad594fddf7705b01b52c67d85ffb78',
+    #     filename='onnx/data/input_rcnn_ilsvrc13.pb'),
+    # Model(
+    #     name='RCNN_ILSVRC13 (ONNX)',
+    #     archive='bvlc_reference_rcnn_ilsvrc13.tar.gz',
+    #     member='model/test_data_set_0/output_0.pb',
+    #     sha='632447fa62b1480d1fc4dc061470b69a2915b29f',
+    #     filename='onnx/data/output_rcnn_ilsvrc13.pb'),
+    # Model(
+    #     name='ZFNet512 (ONNX)',
+    #     url='https://github.com/onnx/models/raw/main/vision/classification/zfnet-512/model/zfnet512-8.tar.gz',
+    #     sha='920bc80e48a03f1007c1e86ff18e76e773444c61',
+    #     filename='zfnet512.tar.gz'),
+    # Model(
+    #     name='ZFNet512 (ONNX)',
+    #     archive='zfnet512.tar.gz',
+    #     member='model/model.onnx',
+    #     sha='c32b9ae0bbe65e2ee60f98639b170645000e2c75',
+    #     filename='onnx/models/zfnet512.onnx'),
+    # Model(
+    #     name='ZFNet512 (ONNX)',
+    #     archive='zfnet512.tar.gz',
+    #     member='model/test_data_set_0/input_0.pb',
+    #     sha='0668bee1a3790c20e84ce1e39bcefd1b28507afe',
+    #     filename='onnx/data/input_zfnet512.pb'),
+    # Model(
+    #     name='ZFNet512 (ONNX)',
+    #     archive='zfnet512.tar.gz',
+    #     member='model/test_data_set_0/output_0.pb',
+    #     sha='b51c03cca2d91d5167a5e68d45a8506efa8330d4',
+    #     filename='onnx/data/output_zfnet512.pb'),
     Model(
         name='VGG16_bn (ONNX)',
-        url='https://s3.amazonaws.com/onnx-model-zoo/vgg/vgg16-bn/vgg16-bn.tar.gz',
-        sha='60f4685aed632d2ce3b137017cf44ae1a5c55459',
+        url='https://github.com/onnx/models/raw/main/vision/classification/vgg/model/vgg16-bn-7.tar.gz',
+        sha='3d507af8ff7139b6a570eb06e744cd15c3018b40',
         filename='vgg16-bn.tar.gz'),
     Model(
         name='VGG16_bn (ONNX)',
@@ -546,7 +546,7 @@ models = [
         filename='onnx/data/output_vgg16-bn.pb'),
     Model(
         name='ResNet-18v1 (ONNX)',
-        url='https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet18v1/resnet18v1.tar.gz',
+        url='https://github.com/onnx/models/raw/main/vision/classification/resnet/model/resnet18-v1-7.tar.gz',
         sha='d132be4857d024de9caa21fd5300dee7c063bc35',
         filename='resnet18v1.tar.gz'),
     Model(
@@ -569,7 +569,7 @@ models = [
         filename='onnx/data/output_resnet18v1.pb'),
     Model(
         name='ResNet-50v1 (ONNX)',
-        url='https://s3.amazonaws.com/onnx-model-zoo/resnet/resnet50v1/resnet50v1.tar.gz',
+        url='https://github.com/onnx/models/raw/main/vision/classification/resnet/model/resnet50-v1-7.tar.gz',
         sha='a4ac2da7e0024d61fdb80481496ba966b48b9fea',
         filename='resnet50v1.tar.gz'),
     Model(
@@ -592,7 +592,7 @@ models = [
         filename='onnx/data/output_resnet50v1.pb'),
     Model(
         name='ResNet50-Int8 (ONNX)',
-        url='https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz',
+        url='https://github.com/onnx/models/raw/main/vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz',
         sha='2ff2a58f4a27362ee6234915452e86287cdcf269',
         filename='resnet50-v1-12-int8.tar.gz'),
     Model(
@@ -626,7 +626,7 @@ models = [
         filename='ssd_mobilenet_v1_ppn_coco.pb'),
     Model(
         name='ResNet101_DUC_HDC (ONNX)',
-        url='https://s3.amazonaws.com/onnx-model-zoo/duc/ResNet101_DUC_HDC.tar.gz',
+        url='https://github.com/onnx/models/raw/main/vision/classification/resnet/model/resnet101-v1-7.tar.gz',
         sha='f8314f381939d01045ac31dbb53d7d35fe3ff9a0',
         filename='ResNet101_DUC_HDC.tar.gz'),
     Model(
@@ -764,8 +764,8 @@ models = [
         filename='onnx/data/output_emotion_ferplus.pb'),
     Model(
         name='Squeezenet (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/squeezenet.tar.gz',
-        sha='57348321d4d460c07c41af814def3abe728b3a03',
+        url='https://github.com/onnx/models/raw/main/vision/classification/squeezenet/model/squeezenet1.0-8.tar.gz',
+        sha='b6fef6438a4cee469538b605f55a9ed2f0aeb0ab',
         filename='squeezenet.tar.gz'),
     Model(
         name='Squeezenet (ONNX)',
@@ -787,8 +787,8 @@ models = [
         filename='onnx/data/output_squeezenet.pb'),
     Model(
         name='DenseNet121 (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/densenet121.tar.gz',
-        sha='338b70e871e73b0550fc8ccc0863b8382e90e8e5',
+        url='https://github.com/onnx/models/raw/main/vision/classification/densenet-121/model/densenet-8.tar.gz',
+        sha='46c9baaa201aedb8f115adcf21d3c42f8960c030',
         filename='densenet121.tar.gz'),
     Model(
         name='DenseNet121 (ONNX)',
@@ -810,8 +810,8 @@ models = [
         filename='onnx/data/output_densenet121.pb'),
     Model(
         name='Inception v1 (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/inception_v1.tar.gz',
-        sha='94ecb2bd1426704dca578dc746e3c27bedf22352',
+        url='https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/inception_v1/model/inception-v1-8.tar.gz',
+        sha='ed46d0eab6da9bbedd9da99e5c4919e1833c818f',
         filename='inception_v1.tar.gz'),
     Model(
         name='Inception v1 (ONNX)',
@@ -833,8 +833,8 @@ models = [
         filename='onnx/data/output_inception_v1.pb'),
     Model(
         name='Inception v2 (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_8/inception_v2.tar.gz',
-        sha='d07a442a84d939232c37c976fd8d624fa9f82026',
+        url='https://github.com/onnx/models/raw/main/vision/classification/inception_and_googlenet/inception_v2/model/inception-v2-8.tar.gz',
+        sha='11b223965ce14089f9bcc19f4473a3a6149faf49',
         filename='inception_v2.tar.gz'),
     Model(
         name='Inception v2 (ONNX)',
@@ -856,8 +856,8 @@ models = [
         filename='onnx/data/output_inception_v2.pb'),
     Model(
         name='Shufflenet (ONNX)',
-        url='https://s3.amazonaws.com/download.onnx/models/opset_9/shufflenet.tar.gz',
-        sha='c99afcb7fcc809c0688cc99cb3709a052fde1de7',
+        url='https://github.com/onnx/models/raw/main/vision/classification/shufflenet/model/shufflenet-9.tar.gz',
+        sha='dd66a54b5954adc796d068d1289539101e51cb85',
         filename='shufflenet.tar.gz'),
     Model(
         name='Shufflenet (ONNX)',
