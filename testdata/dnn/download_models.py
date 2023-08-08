@@ -211,7 +211,7 @@ models = [
     Model(
         name='ResNet50',
         url='https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
-        sha='fa0aa79aecbcce25052e4f46dc10dcba230a4bf5',
+        sha='b7c79ccc21ad0479cddc0dd78b1d20c4d722908d',
         filename='ResNet-50-model.caffemodel'),
     Model(
         name='SqueezeNet_v1.1',
@@ -220,13 +220,13 @@ models = [
         filename='squeezenet_v1.1.caffemodel'),
     Model(
         name='MobileNet-SSD',  # https://github.com/chuanqi305/MobileNet-SSD
-        url='https://drive.google.com/uc?export=download&id=0B3gersZ2cHIxRm5PMWRoTkdHdHc',
-        sha='51484f6d547a32292013da8033e90a6d7c1b1009',
+        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/mobilenet_iter_73000.caffemodel',
+        sha='19e3ec38842f3e68b02c07a1c24424a1e9db57e9',
         filename='MobileNetSSD_deploy.caffemodel'),
     Model(
         name='MobileNet-SSD',
-        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/daef68a6c2f5fbb8c88404266aa28180646d17e0/MobileNetSSD_deploy.prototxt',
-        sha='d77c9cf09619470d49b82a9dd18704813a2043cd',
+        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/deploy.prototxt',
+        sha='50cf80235a8fcccc641bf9f8efc803edbf21c615',
         filename='MobileNetSSD_deploy.prototxt'),
     Model(
         name='OpenFace',  # https://github.com/cmusatyalab/openface
