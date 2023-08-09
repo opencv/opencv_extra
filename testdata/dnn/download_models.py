@@ -1056,6 +1056,36 @@ models = [
         member='PP_OCRv3_DB_text_det/PP_OCRv3_DB_text_det.onnx',
         sha='f541f0b448561c7ad919ba9fffa72ff105062934',
         filename='onnx/models/PP_OCRv3_DB_text_det.onnx'),
+    Model(
+        name='age-gender-recognition-retail-0013 (FP32)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml',
+        sha='9b99a163614a8f59bf90d5b094a98f0d3f63eb3c',
+        filename='omz_intel_models/intel/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml'),
+    Model(
+        name='age-gender-recognition-retail-0013 (FP32)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.bin',
+        sha='252a60879a066ae09bb5959aaca4b57cab6a98c6',
+        filename='omz_intel_models/intel/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.bin'),
+    Model(
+        name='age-gender-recognition-retail-0013 (FP16)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml',
+        sha='908aecde8e605535cc056c92ca9a142721b7caf6',
+        filename='omz_intel_models/intel/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml'),
+    Model(
+        name='age-gender-recognition-retail-0013 (FP16)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin',
+        sha='206f6e97e53cd600fcac7d31e1c56accbbe461b9',
+        filename='omz_intel_models/intel/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin'),
+    Model(
+        name='person-detection-retail-0013 (FP32)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/person-detection-retail-0013/FP32/person-detection-retail-0013.xml',
+        sha='c754d97ec43c8380502344956ba1ecb01a5d6750',
+        filename='omz_intel_models/intel/person-detection-retail-0013/FP32/person-detection-retail-0013.xml'),
+    Model(
+        name='person-detection-retail-0013 (FP32)',
+        url='https://storage.openvinotoolkit.org/repositories/open_model_zoo/2021.2/models_bin/3/person-detection-retail-0013/FP32/person-detection-retail-0013.bin',
+        sha='a8832446a10c85ac853381e1cc3fcab29328d5e2',
+        filename='omz_intel_models/intel/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'),
 ]
 
 # Note: models will be downloaded to current working directory
