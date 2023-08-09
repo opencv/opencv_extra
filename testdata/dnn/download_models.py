@@ -1049,6 +1049,11 @@ models = [
         url='https://github.com/opencv/opencv_zoo/raw/aab69020085e9b6390723b61f9789ec56b96b07e/models/text_recognition_crnn/text_recognition_CRNN_EN_2021sep.onnx',
         sha='dc8c70a52c6880f11859bf074bcd294a45860821',
         filename='text_recognition_CRNN_EN_2021sep.onnx'),
+    Model(
+        name='RAFT', # source is https://github.com/PINTO0309/PINTO_model_zoo/tree/main/252_RAFT (ONNX) https://github.com/princeton-vl/RAFT (Original Model)
+        url='https://drive.google.com/uc?export=dowload&id=1yWIbF4birkpZMhNNhqzy75d4EvJW-UXE',
+        sha='8165e43c7bd37cc651f66509532acdb3c292832b',
+        filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
