@@ -87,7 +87,17 @@ class Model:
             session = requests.Session()
             r = session.get(self.url, stream=True, timeout=60)
             self.printRequest(r)
-            self.save(r)
+
+            with open(self.filename, 'wb') as f:
+                print('  progress ', end='')
+                sys.stdout.flush()
+                for buf in r.iter_content(self.BUFSIZE):
+                    if not buf:
+                        continue
+                    f.write(buf)
+                    print('>', end='')
+                    sys.stdout.flush()
+
         except Exception as e:
             print('  download {}'.format(e))
 
@@ -95,20 +105,21 @@ class Model:
         try:
             with tarfile.open(self.archive) as f:
                 assert self.member in f.getnames()
-                self.save(f.extractfile(self.member))
+                r = f.extractfile(self.member)
+
+                with open(self.filename, 'wb') as f:
+                    print('  progress ', end='')
+                    sys.stdout.flush()
+                    while True:
+                        buf = r.read(self.BUFSIZE)
+                        if not buf:
+                            break
+                        f.write(buf)
+                        print('>', end='')
+                        sys.stdout.flush()
+
         except Exception as e:
             print('  extract {}'.format(e))
-
-    def save(self, r):
-        with open(self.filename, 'wb') as f:
-            print('  progress ', end='')
-            sys.stdout.flush()
-            for buf in r.iter_content(self.BUFSIZE):
-                if not buf:
-                    continue
-                f.write(buf)
-                print('>', end='')
-                sys.stdout.flush()
 
     def handle_bad_download(self):
         if os.path.exists(self.filename):
