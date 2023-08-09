@@ -7,12 +7,6 @@ import sys
 import tarfile
 import requests
 
-if sys.version_info[0] < 3:
-    from urllib2 import urlopen
-else:
-    from urllib.request import urlopen
-
-
 class Model:
     MB = 1024*1024
     BUFSIZE = 10*MB
@@ -31,12 +25,12 @@ class Model:
 
     def printRequest(self, r):
         def getMB(r):
-            d = dict(r.info())
+            d = dict(r.headers)
             for c in ['content-length', 'Content-Length']:
                 if c in d:
                     return int(d[c]) / self.MB
             return '<unknown>'
-        print('  {} {} [{} Mb]'.format(r.getcode(), r.msg, getMB(r)))
+        print('  {} [{} Mb]'.format(r.status_code, getMB(r)))
 
     def verify(self):
         if not self.sha:
@@ -90,7 +84,8 @@ class Model:
 
     def download(self):
         try:
-            r = urlopen(self.url, timeout=60)
+            session = requests.Session()
+            r = session.get(self.url, stream=True, timeout=60)
             self.printRequest(r)
             self.save(r)
         except Exception as e:
@@ -108,10 +103,9 @@ class Model:
         with open(self.filename, 'wb') as f:
             print('  progress ', end='')
             sys.stdout.flush()
-            while True:
-                buf = r.read(self.BUFSIZE)
+            for buf in r.iter_content(self.BUFSIZE):
                 if not buf:
-                    break
+                    continue
                 f.write(buf)
                 print('>', end='')
                 sys.stdout.flush()
