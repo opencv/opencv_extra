@@ -54,7 +54,7 @@ class Model:
             self.sha_actual = sha.hexdigest()
             return self.sha == self.sha_actual
         except Exception as e:
-            print('  catch {}'.format(e))
+            print('  verify {}'.format(e))
 
     def get(self):
         if self.verify():
@@ -94,7 +94,7 @@ class Model:
             self.printRequest(r)
             self.save(r)
         except Exception as e:
-            print('  catch {}'.format(e))
+            print('  download {}'.format(e))
 
     def extract(self):
         try:
@@ -102,7 +102,7 @@ class Model:
                 assert self.member in f.getnames()
                 self.save(f.extractfile(self.member))
         except Exception as e:
-            print('  catch {}'.format(e))
+            print('  extract {}'.format(e))
 
     def save(self, r):
         with open(self.filename, 'wb') as f:
