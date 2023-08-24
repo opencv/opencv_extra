@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+
 import hashlib
 import os
 import sys
 import tarfile
+
 import requests
 
 if sys.version_info[0] < 3:
@@ -178,6 +180,11 @@ def GDrive(gid):
 
 
 models = [
+    Model(
+    name='RAFT',
+    url='https://drive.google.com/u/0/uc?id=1yWIbF4birkpZMhNNhqzy75d4EvJW-UXE&export=download',
+    sha='8165e43c7bd37cc651f66509532acdb3c292832b',
+    filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx'),
     Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
