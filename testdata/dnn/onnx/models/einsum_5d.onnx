@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pytorch2.0.0:ö
 A
 one
@@ -16,6 +17,24 @@ A
 
 
 
+=======
+pytorch2.0.0:ì
+?
+one
+two2/Einsum"Einsum*
+equation"imkj,injs->imnks 	torch_jitZ
+one
+
+
+
+
+Z
+two
+
+
+
+
+>>>>>>> added test generator for einsum layer
 b`
 2[
 YU
