@@ -1418,6 +1418,62 @@ class LayoutLSTM:
         Y = np.squeeze(Y)
         return Y, Y_h
 
+class Einsum(nn.Module):
+    def __init__(self, equation):
+        super(Einsum, self).__init__()
+        self.equation = equation
+
+    def forward(self, one, two):
+        return torch.einsum(self.equation, one, two)
+
+
+# 1d test case
+mat1 = torch.ones(4)
+mat2 = torch.ones(4)
+equation  = 'i,i->i'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_1d", einsum, mat1, mat2, export_params=True)
+
+# 2d test case
+mat1 = torch.randn(4, 5)
+mat2 = torch.randn(5, 8)
+equation  = 'ij,jk->ik'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_2d", einsum, mat1, mat2, export_params=True)
+
+# 3d test case
+mat1 = torch.ones(2, 4, 5)
+mat2 = torch.ones(2, 5, 8)
+equation  = 'bij,bjk->bik'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_3d", einsum, mat1, mat2, export_params=True)
+
+# 4d test case
+mat1 = torch.randn(1, 4, 7, 9)
+mat2 = torch.randn(1, 5, 9, 8)
+equation  = 'imkj,injs->imnks'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_4d", einsum, mat1, mat2, export_params=True)
+
+# 5d test case
+mat1 = torch.randn(1, 4, 7, 6)
+mat2 = torch.randn(1, 5, 6, 8)
+equation  = 'imkj,injs->imnks'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_5d", einsum, mat1, mat2, export_params=True)
+
+
+
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
     if type_proto is None:
         if x is None:
