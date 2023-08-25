@@ -612,17 +612,7 @@ models = [
                 sha='6d45d2f06150e9045631c7928093728b07c8b12d',
                 filename='onnx/data/output_resnet50_int8.pb'),
         ]),
-    Model(
-        name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03.tar.gz',
-        sha='549ae0fd82c202786abe53c306b191c578599c44',
-        filename='ssd_mobilenet_v1_ppn_coco.tar.gz',
-        sub=[
-            Model(
-                member='ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03/frozen_inference_graph.pb',
-                sha='7943c51c6305b38173797d4afbf70697cf57ab48',
-                filename='ssd_mobilenet_v1_ppn_coco.pb'),
-        ]),
+
     Model(
         name='ResNet101_DUC_HDC (ONNX)',
         url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet101-v1-7.tar.gz',
