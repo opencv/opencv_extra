@@ -258,12 +258,12 @@ models = [
         sha='3397f026368a45ae236403ccc81cfcbe8ebe1bd0',
         filename='squeezenet_v1.1.caffemodel'),
     Model(
-        name='MobileNet-SSD',  # https://github.com/chuanqi305/MobileNet-SSD
+        name='MobileNet-SSD (caffemodel)',  # https://github.com/chuanqi305/MobileNet-SSD
         url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/mobilenet_iter_73000.caffemodel',
         sha='19e3ec38842f3e68b02c07a1c24424a1e9db57e9',
         filename='MobileNetSSD_deploy_19e3ec3.caffemodel'),
     Model(
-        name='MobileNet-SSD',
+        name='MobileNet-SSD (prototxt)',
         url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/deploy.prototxt',
         sha='50cf80235a8fcccc641bf9f8efc803edbf21c615',
         filename='MobileNetSSD_deploy_19e3ec3.prototxt'),
@@ -283,22 +283,22 @@ models = [
         sha='24b4bd049fc4fa5f5e95f684a8967e65c625dff9',
         filename='tiny-yolo-voc.weights'),
     Model(
-        name='DenseNet-121',  # https://github.com/shicai/DenseNet-Caffe
+        name='DenseNet-121 (caffemodel)',  # https://github.com/shicai/DenseNet-Caffe
         url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
         sha='02b520138e8a73c94473b05879978018fefe947b',
         filename='DenseNet_121.caffemodel'),
     Model(
-        name='DenseNet-121',
+        name='DenseNet-121 (prototxt)',
         url='https://raw.githubusercontent.com/shicai/DenseNet-Caffe/master/DenseNet_121.prototxt',
         sha='4922099342af5993d9d09f63081c8a392f3c1cc6',
         filename='DenseNet_121.prototxt'),
     Model(
-        name='Fast-Neural-Style',
+        name='Fast-Neural-Style (starry night)',
         url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
         sha='5b5e115253197b84d6c6ece1dafe6c15d7105ca6',
         filename='fast_neural_style_eccv16_starry_night.t7'),
     Model(
-        name='Fast-Neural-Style',
+        name='Fast-Neural-Style (feathers)',
         url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
         sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
         filename='fast_neural_style_instance_norm_feathers.t7'),
@@ -338,12 +338,12 @@ models = [
                 filename='ssd_mobilenet_v2_coco_2018_03_29.pb')
         ]),
     Model(
-        name='Colorization',
+        name='Colorization (prototxt)',
         url='https://raw.githubusercontent.com/richzhang/colorization/caffe/models/colorization_deploy_v2.prototxt',
         sha='f528334e386a69cbaaf237a7611d833bef8e5219',
         filename='colorization_deploy_v2.prototxt'),
     Model(
-        name='Colorization',
+        name='Colorization (caffemodel)',
         url='http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
         sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
         filename='colorization_release_v2.caffemodel'),
@@ -912,22 +912,22 @@ models = [
                 filename='onnx/data/output_mobilenetv2_fp16.npy'),
         ]),
     Model(
-        name='wechat_qr_detect',
+        name='wechat_qr_detect (prototxt)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.prototxt',
         sha='a6936962139282d300ebbf15a54c2aa94b144bb7',
         filename='wechat_2021-01/detect.prototxt'),
     Model(
-        name='wechat_qr_detect',
+        name='wechat_qr_detect (caffemodel)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.caffemodel',
         sha='d587623a055cbd58a648de62a8c703c7abb05f6d',
         filename='wechat_2021-01/detect.caffemodel'),
     Model(
-        name='wechat_super_resolution',
+        name='wechat_super_resolution (prototxt)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.prototxt',
         sha='39e1f1031c842766f1cc126615fea8e8256facd2',
         filename='wechat_2021-01/sr.prototxt'),
     Model(
-        name='wechat_super_resolution',
+        name='wechat_super_resolution (caffemodel)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.caffemodel',
         sha='2b181b55d1d7af718eaca6cabdeb741217b64c73',
         filename='wechat_2021-01/sr.caffemodel'),
@@ -937,22 +937,22 @@ models = [
         sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
         filename='onnx/models/yolov7_not_simplified.onnx'),
     Model(
-        name='NanoTrackV1 (ONNX)',
+        name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
         sha='9b083a2dbe10dcfe17e694879aa6749302a5888f',
         filename='onnx/models/nanotrack_backbone_sim.onnx'),
     Model(
-        name='NanoTrackV1 (ONNX)',
+        name='NanoTrackV1 (ONNX, head)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_head_sim.onnx',
         sha='8fa668893b27b726f9cab6695846b4690650a199',
         filename='onnx/models/nanotrack_head_sim.onnx'),
     Model(
-        name='NanoTrackV2 (ONNX)',
+        name='NanoTrackV2 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrackV2/models/nanotrack_backbone_sim_v2.onnx',
         sha='6e773a364457b78574f9f63a23b0659ee8646f8f',
         filename='onnx/models/nanotrack_backbone_sim_v2.onnx'),
     Model(
-        name='NanoTrackV2 (ONNX)',
+        name='NanoTrackV2 (ONNX, head)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrackV2/models/nanotrack_head_sim_v2.onnx',
         sha='39f168489671700cf739e402dfc67d41ce648aef',
         filename='onnx/models/nanotrack_head_sim_v2.onnx'),
