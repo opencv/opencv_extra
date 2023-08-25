@@ -67,9 +67,16 @@ class Model:
             candidate = cache / self.filename
             if candidate.is_file():
                 print('  cache {} -> {}'.format(candidate, self.filename))
-                self.prepare_file()
-                shutil.copy(candidate, self.filename)
-                return True
+                if candidate.absolute() == self.filename.absolute():
+                    print('  cache - skip copying the same file')
+                else:
+                    self.prepare_file()
+                    shutil.copy(candidate, self.filename)
+                if self.verify():
+                    return True
+                else:
+                    print('  cache - hash mismatch, removing')
+                    self.filename.unlink()
         except Exception as e:
             print('  cache {}'.format(e))
 
@@ -79,7 +86,7 @@ class Model:
         if self.verify():
             return True
         if self.cache_copy(cache):
-            return self.verify()
+            return True
         if arch.is_file():
             self.extract(arch)
             return self.verify()
@@ -95,10 +102,8 @@ class Model:
 
         # File - exists or get from cache or download from internet
         verified = False
-        if self.verify():
+        if self.verify() or self.cache_copy(cache):
             verified = True
-        elif self.cache_copy(cache):
-            pass
         elif self.url:
             print('  hash check failed - downloading')
             print('  get {}'.format(self.url))
