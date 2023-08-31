@@ -1006,7 +1006,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Download test models for OpenCV library")
     parser.add_argument("-d", "--dst", "--destination", help="Destination folder", default=Path.cwd())
     parser.add_argument("-l", "--list", action="store_true", help="List models")
-    parser.add_argument("-c", "--cache", help="Cache directory containing pre-downloaded models")
+    parser.add_argument("-c", "--cache", help="Cache directory containing pre-downloaded models (read-only)")
     parser.add_argument("--cleanup", action="store_true", help="Remove archives after download")
     parser.add_argument("model", nargs='*', help="Model name to download (substring, case-insensitive)")
     args = parser.parse_args()
