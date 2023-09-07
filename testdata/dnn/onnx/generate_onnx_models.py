@@ -1476,9 +1476,9 @@ output = einsum(mat1, mat2)
 save_data_and_model_multy_inputs("einsum_4d", einsum, mat1, mat2, export_params=True)
 
 # 5d test case
-mat1 = torch.randn(1, 4, 7, 6)
-mat2 = torch.randn(1, 5, 6, 8)
-equation  = 'imkj,injs->imnks'
+mat1 = torch.randn(4, 2, 3, 4, 5)
+mat2 = torch.randn(4, 2, 3, 5, 8)
+equation  = 'bhijk,bhikc->bhijc'
 einsum = Einsum(equation)
 output = einsum(mat1, mat2)
 
