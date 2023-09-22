@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 pytorch2.0.0:ö
 A
 one
@@ -18,34 +16,6 @@ A
 
 
 
-=======
-pytorch2.0.0:ì
-?
-=======
-pytorch2.0.0:ö
-A
->>>>>>> update einsum_5d test
-one
-two2/Einsum"Einsum*!
-equation"bhijk,bhikc->bhijc 	torch_jitZ!
-one
-
-
-
-
-
-Z!
-two
-
-
-
-
-
-<<<<<<< HEAD
-
->>>>>>> added test generator for einsum layer
-=======
->>>>>>> update einsum_5d test
 b`
 2[
 YU
