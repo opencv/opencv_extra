@@ -868,15 +868,6 @@ class Split(nn.Module):
         tup = torch.split(x, self.split_size_sections, self.dim)
         return torch.cat(tup)
 
-class SimpleSplit(nn.Module):
-    def forward(self, image):
-        return torch.cat([img for img in image])
-
-
-model = SimpleSplit()
-input = torch.ones((1, 3, 2, 2))
-save_data_and_model("split_0", input, model, version=11)
-
 model = Split()
 input = Variable(torch.tensor([1., 2.], dtype=torch.float32))
 save_data_and_model("split_1", input, model)
@@ -896,8 +887,6 @@ save_data_and_model("split_5", input2, model, version=13)
 
 model = Split(dim=-1, split_size_sections=[1, 2])
 save_data_and_model("split_6", input2, model, version=13)
-
-
 
 class SplitSizes(nn.Module):
     def __init__(self, *args, **kwargs):
@@ -1417,97 +1406,6 @@ class LayoutLSTM:
 
         Y = np.squeeze(Y)
         return Y, Y_h
-
-class Einsum(nn.Module):
-    def __init__(self, equation):
-        super(Einsum, self).__init__()
-        self.equation = equation
-
-    def forward(self, one, two):
-        return torch.einsum(self.equation, one, two)
-
-class EinsumSingleInput(Einsum):
-    def forward(self, x):
-        return torch.einsum(self.equation, x)
-
-# inner/dot product
-mat1 = torch.ones(4)
-mat2 = torch.ones(4)
-equation  = 'i,i'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_inner", einsum, mat1, mat2, export_params=True)
-
-# 1d hadamard
-mat1 = torch.ones(4)
-mat2 = torch.ones(4)
-equation  = 'i,i->i'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_hadamard", einsum, mat1, mat2, export_params=True)
-
-# 2d test case
-mat1 = torch.randn(4, 5)
-mat2 = torch.randn(5, 8)
-equation  = 'ij,jk->ik'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_2d", einsum, mat1, mat2, export_params=True)
-
-# 3d test case
-mat1 = torch.ones(2, 4, 5)
-mat2 = torch.ones(2, 5, 8)
-equation  = 'bij,bjk->bik'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_3d", einsum, mat1, mat2, export_params=True)
-
-# 4d test case
-mat1 = torch.randn(1, 4, 7, 9)
-mat2 = torch.randn(1, 5, 9, 8)
-equation  = 'imkj,injs->imnks'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_4d", einsum, mat1, mat2, export_params=True)
-
-# 5d test case
-mat1 = torch.randn(4, 2, 3, 4, 5)
-mat2 = torch.randn(4, 2, 3, 5, 8)
-equation  = 'bhijk,bhikc->bhijc'
-einsum = Einsum(equation)
-output = einsum(mat1, mat2)
-
-save_data_and_model_multy_inputs("einsum_5d", einsum, mat1, mat2, export_params=True)
-
-# sum
-mat = torch.randn(3, 4)
-equation  =  "ij->i"
-einsum = EinsumSingleInput(equation)
-output = einsum(mat)
-
-save_data_and_model("einsum_sum", mat, einsum, export_params=True)
-
-# sum
-mat = torch.randn(3, 5, 5)
-equation  = "...ii ->...i"
-einsum = EinsumSingleInput(equation)
-output = einsum(mat)
-
-save_data_and_model("einsum_batch_diagonal", mat, einsum, export_params=True)
-
-# einsum transpose
-mat = torch.randn(3, 4)
-equation  = "ij->ji"
-einsum = EinsumSingleInput(equation)
-output = einsum(mat)
-
-save_data_and_model("einsum_transpose", mat, einsum, export_params=True)
-
 
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
     if type_proto is None:
@@ -2542,7 +2440,7 @@ def save_data_and_tf_function(tf_function, name, input):
     np.save(os.path.join("data", "output_" + name + ".npy"), output)
     cumsum_model = tf2onnx.convert.from_function(
         function=tf_function,
-        input_signature=[tf.TensorSpec(input.shape, tf.float32)],
+        input_signature=[tf.TensorSpec([], tf.float32)],
         opset=14)[0]
     onnx.save(cumsum_model, os.path.join("models", name + ".onnx"))
 
@@ -3068,9 +2966,3 @@ input_files = os.path.join("data", "input_" + name)
 np.save(input_files, input.data)
 output_files = os.path.join("data", "output_" + name)
 np.save(output_files, np.ascontiguousarray(output.data))
-
-## tf_half_pixel_for_nn
-@tf.function
-def tf_resize_nearest(x):
-    return tf.compat.v1.image.resize_nearest_neighbor(x, size=(5, 6), align_corners=False, half_pixel_centers=True)
-save_data_and_tf_function(tf_resize_nearest, "tf_half_pixel_for_nn", np.random.rand(1, 2, 3, 2))
