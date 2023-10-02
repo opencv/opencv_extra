@@ -60,49 +60,49 @@ class Model:
         except Exception as e:
             print('  verify {}'.format(e))
 
-    def cache_copy(self, cache):
-        if not cache:
+    def ref_copy(self, ref):
+        if not ref:
             return False
         try:
-            candidate = cache / self.filename
+            candidate = ref / self.filename
             if candidate.is_file():
-                print('  cache {} -> {}'.format(candidate, self.filename))
+                print('  ref {} -> {}'.format(candidate, self.filename))
                 if candidate.absolute() == self.filename.absolute():
-                    print('  cache - skip copying the same file')
+                    print('  ref - skip copying the same file')
                 else:
                     self.prepare_file()
                     shutil.copy(candidate, self.filename)
                 if self.verify():
                     return True
                 else:
-                    print('  cache - hash mismatch, removing')
+                    print('  ref - hash mismatch, removing')
                     self.filename.unlink()
         except Exception as e:
-            print('  cache {}'.format(e))
+            print('  ref {}'.format(e))
 
-    def get_sub(self, cache, arch):
+    def get_sub(self, ref, arch):
         print('** {}'.format(self.filename))
 
         if self.verify():
             return True
-        if self.cache_copy(cache):
+        if self.ref_copy(ref):
             return True
         if arch.is_file():
             self.extract(arch)
             return self.verify()
 
-    def get(self, cache, arch=None):
+    def get(self, ref, arch=None):
         print("* {}".format(m.name))
 
-        # Sub elements - first attempt (cache)
+        # Sub elements - first attempt (ref)
         if len(self.sub) > 0:
-            res = [m.get_sub(cache, self.filename) for m in self.sub]
+            res = [m.get_sub(ref, self.filename) for m in self.sub]
             if all(res):
                 return True
 
-        # File - exists or get from cache or download from internet
+        # File - exists or get from ref or download from internet
         verified = False
-        if self.verify() or self.cache_copy(cache):
+        if self.verify() or self.ref_copy(ref):
             verified = True
         elif self.url:
             print('  hash check failed - downloading')
@@ -118,7 +118,7 @@ class Model:
         if verified or self.verify():
             # Sub elements - second attempt (extract)
             if len(self.sub) > 0:
-                res = [m.get_sub(cache, self.filename) for m in self.sub]
+                res = [m.get_sub(ref, self.filename) for m in self.sub]
                 return all(res)
             else:
                 return True
@@ -1006,11 +1006,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Download test models for OpenCV library")
     parser.add_argument("-d", "--dst", "--destination", help="Destination folder", default=Path.cwd())
     parser.add_argument("-l", "--list", action="store_true", help="List models")
-    parser.add_argument("-c", "--cache", "--reference", help="Cache (reference) directory containing pre-downloaded models (read-only)")
+    parser.add_argument("-r", "--ref", "--reference", help="Reference directory containing pre-downloaded models (read-only cache)")
     parser.add_argument("--cleanup", action="store_true", help="Remove archives after download")
     parser.add_argument("model", nargs='*', help="Model name to download (substring, case-insensitive)")
     args = parser.parse_args()
-    cache = Path(args.cache).absolute() if args.cache else None
+    ref = Path(args.ref).absolute() if args.ref else None
 
     # Apply filters
     filtered = []
@@ -1043,7 +1043,7 @@ if __name__ == '__main__':
     # Actual download
     results = dict()
     for m in filtered:
-        results[m] = m.get(cache=cache)
+        results[m] = m.get(ref=ref)
         print("* OK" if results[m] else "* FAIL")
 
     # Result handling
