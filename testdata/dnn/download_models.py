@@ -1050,8 +1050,8 @@ models = [
         sha='dc8c70a52c6880f11859bf074bcd294a45860821',
         filename='text_recognition_CRNN_EN_2021sep.onnx'),
     Model(
-        name='RAFT', # source is https://github.com/PINTO0309/PINTO_model_zoo/tree/main/252_RAFT (ONNX) https://github.com/princeton-vl/RAFT (Original Model)
-        url='https://drive.google.com/uc?export=dowload&id=1yWIbF4birkpZMhNNhqzy75d4EvJW-UXE',
+        name='RAFT', # See https://github.com/opencv/opencv_zoo/tree/main/models/optical_flow_estimation_raft#raft for source
+        url='https://github.com/opencv/opencv_zoo/raw/281d232cd99cd920853106d853c440edd35eb442/models/optical_flow_estimation_raft/optical_flow_estimation_raft_2023aug.onnx',
         sha='8165e43c7bd37cc651f66509532acdb3c292832b',
         filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx'),
 ]
