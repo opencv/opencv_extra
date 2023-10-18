@@ -2519,6 +2519,25 @@ save_data_and_model("cumsum_2d_dim_1", x, CumSum(dim=1), version=11)
 x = torch.randn(2, 3, 4)
 save_data_and_model("cumsum_3d_dim_2", x, CumSum(dim=2), version=11)
 
+# test: CumSum exclusive layer should not be executed inplace
+dims = h.make_node("Constant", inputs=[], outputs=["dims1"], name="node-c1",
+                   value=h.make_tensor(name="c1v", data_type=onnx.TensorProto.INT64, dims=[], vals=np.asarray([1, ], dtype=np.int64)))
+one = h.make_node("Constant", inputs=[], outputs=["one1"], name="node-c2",
+                   value=h.make_tensor(name="c2v", data_type=onnx.TensorProto.FLOAT, dims=[], vals=np.asarray([1, ], dtype=np.float32)))
+
+mult = h.make_node("Mul", inputs=["input1", "one1"], outputs=["mul_output1"], name="node-m1")
+cumsum = h.make_node("CumSum", inputs=["mul_output1", "dims1"], outputs=["cumsum_output1"], name="node-r1", exclusive=1)
+
+graph = h.make_graph([dims, one, mult, cumsum], "graph123",
+                     [h.make_tensor_value_info("input1", onnx.TensorProto.FLOAT, [1, 3, 1, 1]),],
+                     [h.make_tensor_value_info("cumsum_output1", onnx.TensorProto.FLOAT, [1, 3, 1, 1])])
+cumsum_model = h.make_model(graph, producer_name="model_cumsum")
+onnx.checker.check_model(cumsum_model)
+
+input_np = np.array([1, 2, 3], dtype=np.float32).reshape(1, 3, 1, 1)
+output_np = np.array([0, 1, 3], dtype=np.float32).reshape(1, 3, 1, 1)
+save_data_and_onnx_model("cumsum_exclusive_inplace", input_np, output_np, cumsum_model)
+
 # where layer
 class Where(nn.Module):
     def __init__(self, *args, **kwargs):
