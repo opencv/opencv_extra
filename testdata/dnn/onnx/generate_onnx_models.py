@@ -1457,6 +1457,15 @@ output = einsum(mat1, mat2)
 
 save_data_and_model_multy_inputs("einsum_2d", einsum, mat1, mat2, export_params=True)
 
+# 2d test case with ellipses
+mat1 = torch.randn(4, 5)
+mat2 = torch.randn(5, 8)
+equation  = "...ij, ...jk -> ...ik"
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_2d_ellipses", einsum, mat1, mat2, export_params=True)
+
 # 3d test case
 mat1 = torch.ones(2, 4, 5)
 mat2 = torch.ones(2, 5, 8)
