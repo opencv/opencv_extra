@@ -74677,9 +74677,11 @@
       <y>1510</y>
       <cn>1</cn>
       <val>0.</val></rng2></src></PatchNaNsFixture--PatchNaNs---3840x2160--64FC4->
+ <!-- resumed -->
+
 <FiniteMaskFixture--FiniteMask---640x480--32FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74688,16 +74690,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>335</x>
-      <y>126</y>
-      <val>0.</val></rng1>
+      <x>496</x>
+      <y>423</y>
+      <val>255.</val></rng1>
     <rng2>
-      <x>404</x>
-      <y>374</y>
-      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC1->
+      <x>265</x>
+      <y>296</y>
+      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC1->
 <FiniteMaskFixture--FiniteMask---640x480--32FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74706,16 +74708,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>424</x>
-      <y>354</y>
+      <x>373</x>
+      <y>14</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>136</x>
-      <y>26</y>
-      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC2->
+      <x>217</x>
+      <y>421</y>
+      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC2->
 <FiniteMaskFixture--FiniteMask---640x480--32FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74724,16 +74726,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>337</x>
-      <y>38</y>
+      <x>625</x>
+      <y>248</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>364</x>
-      <y>400</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC3->
+      <x>52</x>
+      <y>441</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC3->
 <FiniteMaskFixture--FiniteMask---640x480--32FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74742,16 +74744,16 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>501</x>
-      <y>372</y>
-      <val>255.</val></rng1>
+      <x>273</x>
+      <y>265</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>588</x>
-      <y>227</y>
+      <x>269</x>
+      <y>399</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--32FC4->
 <FiniteMaskFixture--FiniteMask---640x480--64FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74760,16 +74762,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>618</x>
-      <y>427</y>
-      <val>0.</val></rng1>
+      <x>79</x>
+      <y>378</y>
+      <val>255.</val></rng1>
     <rng2>
-      <x>185</x>
-      <y>35</y>
+      <x>338</x>
+      <y>322</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--64FC1->
 <FiniteMaskFixture--FiniteMask---640x480--64FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74778,16 +74780,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>546</x>
-      <y>153</y>
+      <x>416</x>
+      <y>217</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>187</x>
-      <y>77</y>
+      <x>482</x>
+      <y>458</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--64FC2->
 <FiniteMaskFixture--FiniteMask---640x480--64FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74796,16 +74798,16 @@
       <y>479</y>
       <val>255.</val></last>
     <rng1>
-      <x>61</x>
-      <y>433</y>
-      <val>255.</val></rng1>
+      <x>172</x>
+      <y>393</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>37</x>
-      <y>226</y>
+      <x>130</x>
+      <y>397</y>
       <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--64FC3->
 <FiniteMaskFixture--FiniteMask---640x480--64FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74814,16 +74816,16 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>409</x>
-      <y>450</y>
-      <val>255.</val></rng1>
+      <x>633</x>
+      <y>352</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>363</x>
-      <y>75</y>
+      <x>559</x>
+      <y>326</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---640x480--64FC4->
 <FiniteMaskFixture--FiniteMask---1280x720--32FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74832,34 +74834,34 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>847</x>
-      <y>57</y>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>114</x>
-      <y>257</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--32FC1->
-<FiniteMaskFixture--FiniteMask---1280x720--32FC2->
-  <mask>
-    <kind>655360</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1012</x>
-      <y>116</y>
+      <x>640</x>
+      <y>435</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>192</x>
-      <y>442</y>
+      <x>473</x>
+      <y>604</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--32FC1->
+<FiniteMaskFixture--FiniteMask---1280x720--32FC2->
+  <mask>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>313</x>
+      <y>162</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>1103</x>
+      <y>512</y>
       <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--32FC2->
 <FiniteMaskFixture--FiniteMask---1280x720--32FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74868,16 +74870,16 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>426</x>
-      <y>241</y>
+      <x>335</x>
+      <y>690</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>914</x>
-      <y>486</y>
+      <x>603</x>
+      <y>673</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--32FC3->
 <FiniteMaskFixture--FiniteMask---1280x720--32FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74886,16 +74888,16 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>74</x>
-      <y>131</y>
+      <x>933</x>
+      <y>342</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1243</x>
-      <y>236</y>
+      <x>554</x>
+      <y>282</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--32FC4->
 <FiniteMaskFixture--FiniteMask---1280x720--64FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74904,16 +74906,16 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>663</x>
-      <y>599</y>
-      <val>0.</val></rng1>
+      <x>345</x>
+      <y>139</y>
+      <val>255.</val></rng1>
     <rng2>
-      <x>684</x>
-      <y>14</y>
+      <x>811</x>
+      <y>473</y>
       <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--64FC1->
 <FiniteMaskFixture--FiniteMask---1280x720--64FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74922,34 +74924,34 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>451</x>
-      <y>410</y>
-      <val>0.</val></rng1>
-    <rng2>
-      <x>928</x>
-      <y>94</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--64FC2->
-<FiniteMaskFixture--FiniteMask---1280x720--64FC3->
-  <mask>
-    <kind>655360</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>357</x>
-      <y>236</y>
+      <x>137</x>
+      <y>222</y>
       <val>255.</val></rng1>
     <rng2>
-      <x>900</x>
-      <y>193</y>
+      <x>736</x>
+      <y>15</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--64FC2->
+<FiniteMaskFixture--FiniteMask---1280x720--64FC3->
+  <mask>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>342</x>
+      <y>368</y>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>1222</x>
+      <y>137</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--64FC3->
 <FiniteMaskFixture--FiniteMask---1280x720--64FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74958,16 +74960,16 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>374</x>
-      <y>134</y>
+      <x>1236</x>
+      <y>189</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>167</x>
-      <y>53</y>
+      <x>1096</x>
+      <y>360</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1280x720--64FC4->
 <FiniteMaskFixture--FiniteMask---1920x1080--32FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74976,16 +74978,16 @@
       <y>1079</y>
       <val>255.</val></last>
     <rng1>
-      <x>211</x>
-      <y>427</y>
-      <val>255.</val></rng1>
+      <x>1773</x>
+      <y>160</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>1487</x>
-      <y>262</y>
+      <x>489</x>
+      <y>858</y>
       <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--32FC1->
 <FiniteMaskFixture--FiniteMask---1920x1080--32FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -74994,16 +74996,16 @@
       <y>1079</y>
       <val>255.</val></last>
     <rng1>
-      <x>1208</x>
-      <y>905</y>
+      <x>380</x>
+      <y>200</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1698</x>
-      <y>644</y>
+      <x>1849</x>
+      <y>856</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--32FC2->
 <FiniteMaskFixture--FiniteMask---1920x1080--32FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75012,16 +75014,16 @@
       <y>1079</y>
       <val>255.</val></last>
     <rng1>
-      <x>466</x>
-      <y>762</y>
+      <x>1035</x>
+      <y>749</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>142</x>
-      <y>624</y>
+      <x>373</x>
+      <y>565</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--32FC3->
 <FiniteMaskFixture--FiniteMask---1920x1080--32FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75030,16 +75032,16 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>654</x>
-      <y>988</y>
+      <x>979</x>
+      <y>678</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1158</x>
-      <y>660</y>
+      <x>1461</x>
+      <y>877</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--32FC4->
 <FiniteMaskFixture--FiniteMask---1920x1080--64FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75048,52 +75050,52 @@
       <y>1079</y>
       <val>255.</val></last>
     <rng1>
-      <x>514</x>
-      <y>454</y>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>538</x>
-      <y>750</y>
-      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC1->
-<FiniteMaskFixture--FiniteMask---1920x1080--64FC2->
-  <mask>
-    <kind>655360</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1313</x>
-      <y>990</y>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1618</x>
-      <y>123</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC2->
-<FiniteMaskFixture--FiniteMask---1920x1080--64FC3->
-  <mask>
-    <kind>655360</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>979</x>
-      <y>428</y>
+      <x>852</x>
+      <y>843</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>836</x>
-      <y>787</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC3->
+      <x>1810</x>
+      <y>845</y>
+      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC1->
+<FiniteMaskFixture--FiniteMask---1920x1080--64FC2->
+  <mask>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1349</x>
+      <y>536</y>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>610</x>
+      <y>256</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC2->
+<FiniteMaskFixture--FiniteMask---1920x1080--64FC3->
+  <mask>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>75</x>
+      <y>993</y>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>706</x>
+      <y>89</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC3->
 <FiniteMaskFixture--FiniteMask---1920x1080--64FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75102,16 +75104,16 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>1252</x>
-      <y>478</y>
-      <val>255.</val></rng1>
+      <x>712</x>
+      <y>804</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>1192</x>
-      <y>387</y>
+      <x>913</x>
+      <y>142</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---1920x1080--64FC4->
 <FiniteMaskFixture--FiniteMask---3840x2160--32FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75120,16 +75122,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>907</x>
-      <y>1409</y>
-      <val>255.</val></rng1>
+      <x>3063</x>
+      <y>1717</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>2083</x>
-      <y>1910</y>
-      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC1->
+      <x>3039</x>
+      <y>1789</y>
+      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC1->
 <FiniteMaskFixture--FiniteMask---3840x2160--32FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75138,16 +75140,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>1816</x>
-      <y>516</y>
-      <val>255.</val></rng1>
+      <x>3339</x>
+      <y>1446</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>2175</x>
-      <y>1967</y>
-      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC2->
+      <x>3465</x>
+      <y>722</y>
+      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC2->
 <FiniteMaskFixture--FiniteMask---3840x2160--32FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75156,16 +75158,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>3742</x>
-      <y>1810</y>
-      <val>255.</val></rng1>
+      <x>183</x>
+      <y>2092</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>3290</x>
-      <y>664</y>
+      <x>2503</x>
+      <y>1124</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC3->
 <FiniteMaskFixture--FiniteMask---3840x2160--32FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75174,16 +75176,16 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>3401</x>
-      <y>1253</y>
+      <x>764</x>
+      <y>206</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>3372</x>
-      <y>543</y>
+      <x>672</x>
+      <y>586</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--32FC4->
 <FiniteMaskFixture--FiniteMask---3840x2160--64FC1->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75192,16 +75194,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>2205</x>
-      <y>2053</y>
+      <x>3314</x>
+      <y>1132</y>
       <val>255.</val></rng1>
     <rng2>
-      <x>190</x>
-      <y>324</y>
-      <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--64FC1->
+      <x>2473</x>
+      <y>1789</y>
+      <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--64FC1->
 <FiniteMaskFixture--FiniteMask---3840x2160--64FC2->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75210,16 +75212,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>1747</x>
-      <y>21</y>
-      <val>0.</val></rng1>
+      <x>2360</x>
+      <y>1466</y>
+      <val>255.</val></rng1>
     <rng2>
-      <x>1220</x>
-      <y>2116</y>
+      <x>2917</x>
+      <y>1074</y>
       <val>255.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--64FC2->
 <FiniteMaskFixture--FiniteMask---3840x2160--64FC3->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75228,16 +75230,16 @@
       <y>2159</y>
       <val>255.</val></last>
     <rng1>
-      <x>1019</x>
-      <y>621</y>
+      <x>3390</x>
+      <y>10</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>2432</x>
-      <y>1587</y>
+      <x>954</x>
+      <y>1997</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--64FC3->
 <FiniteMaskFixture--FiniteMask---3840x2160--64FC4->
   <mask>
-    <kind>655360</kind>
+    <kind>65536</kind>
     <type>0</type>
     <min>0.</min>
     <max>255.</max>
@@ -75246,11 +75248,11 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>662</x>
-      <y>139</y>
+      <x>1769</x>
+      <y>1371</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1309</x>
-      <y>124</y>
+      <x>733</x>
+      <y>1392</y>
       <val>0.</val></rng2></mask></FiniteMaskFixture--FiniteMask---3840x2160--64FC4->
 </opencv_storage>
