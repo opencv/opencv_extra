@@ -440,9 +440,38 @@ save_data_and_model("batch_norm_3d", input, conv3d)
 
 class Softmax(nn.Module):
 
-    def __init__(self):
+    def __init__(self, axis=-1):
         super(Softmax, self).__init__()
-        self.softmax = nn.Softmax(dim=-1)
+        self.softmax = nn.Softmax(dim=axis)
+
+    def forward(self, x):
+        return self.softmax(x)
+
+input = torch.randn(2, 3)
+model = Softmax(0)
+save_data_and_model("softmax_axis_0", input, model)
+model = Softmax(1)
+save_data_and_model("softmax_axis_1", input, model)
+model = Softmax(2)
+save_data_and_model("softmax_axis_2", input, model)
+model = Softmax(-1)
+save_data_and_model("softmax_axis_negative", input, model)
+##################### too large to generate input/output data, disabled by default ##################
+# input = torch.randn(16, 1080, 1920, 3)
+# model = Softmax(0)
+# save_data_and_model("softmax_large_axis_0", input, model)
+# model = Softmax(1)
+# save_data_and_model("softmax_large_axis_1", input, model)
+# model = Softmax(2)
+# save_data_and_model("softmax_large_axis_2", input, model)
+# model = Softmax(3)
+# save_data_and_model("softmax_large_axis_3", input, model)
+
+class Softmax(nn.Module):
+
+    def __init__(self, axis=-1):
+        super(Softmax, self).__init__()
+        self.softmax = nn.Softmax(dim=axis)
 
     def forward(self, x):
         return self.softmax(x)
@@ -450,6 +479,25 @@ class Softmax(nn.Module):
 input = torch.randn(2, 3)
 model = Softmax()
 save_data_and_model("softmax", input, model)
+input = torch.randn(3, 4, 5)
+model = Softmax(0)
+save_data_and_model("softmax_axis_0", input, model)
+model = Softmax(1)
+save_data_and_model("softmax_axis_1", input, model)
+model = Softmax(2)
+save_data_and_model("softmax_axis_2", input, model)
+model = Softmax(-1)
+save_data_and_model("softmax_axis_negative", input, model)
+##################### too large to generate input/output data, disabled by default ##################
+# input = torch.randn(16, 1080, 1920, 3)
+# model = Softmax(0)
+# save_data_and_model("softmax_large_axis_0", input, model)
+# model = Softmax(1)
+# save_data_and_model("softmax_large_axis_1", input, model)
+# model = Softmax(2)
+# save_data_and_model("softmax_large_axis_2", input, model)
+# model = Softmax(3)
+# save_data_and_model("softmax_large_axis_3", input, model)
 
 class LogSoftmax(nn.Module):
 
