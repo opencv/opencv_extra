@@ -84,6 +84,9 @@ def two_resizes_with_shared_subgraphs(x: ost.FLOAT["batch", 1, "height", "width"
     concat_1 = opset11.Cast(opset11.Concat(unsqueeze_h_1, unsqueeze_w_1, axis=0), to=ost.INT64.dtype)
     concat_2 = opset11.Cast(opset11.Concat(unsqueeze_h_2, unsqueeze_w_2, axis=0), to=ost.INT64.dtype)
 
+    # This op is required to test double node removal
+    y = opset11.Add(y, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [1], np.array([0.5], dtype=np.float32))))
+
     # First branch
     sliced = opset11.Slice(opset11.Shape(y),
         starts=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
