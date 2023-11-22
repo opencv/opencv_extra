@@ -8,6 +8,7 @@ import tarfile
 import requests
 import shutil
 import argparse
+import gdown
 from pathlib import Path
 
 class Model:
@@ -23,6 +24,7 @@ class Model:
         self.member = kwargs.pop('member', None)
         self.sub = kwargs.pop('sub', [])
         self.gdrive = kwargs.pop('gdrive', None)
+        self.gdown = kwargs.pop('gdown', None)
 
     def __str__(self):
         return 'Model <{}>'.format(self.name)
@@ -112,6 +114,10 @@ class Model:
             print('  hash check failed - downloading')
             print('  get {}'.format(self.gdrive))
             self.download_gdrive()
+        elif self.gdown:
+            print('  hash check failed - downloading')
+            print('  get {}'.format(self.gdrive))
+            self.download_gdown()
         else:
             raise Exception(info="Invalid model record", name=self.name)
 
@@ -165,6 +171,13 @@ class Model:
                 params = { 'id' : self.gdrive, 'confirm' : token }
                 response = session.get(URL, params = params, stream = True)
             self.download_response(response)
+        except Exception as e:
+            print('  download {}'.format(e))
+
+    def download_gdown(self):
+        try:
+            URL = f'https://drive.google.com/uc?id={self.gdown}'
+            gdown.download(URL, str(self.filename), quiet=False)
         except Exception as e:
             print('  download {}'.format(e))
 
@@ -933,7 +946,7 @@ models = [
         filename='wechat_2021-01/sr.caffemodel'),
     Model(
         name='yolov7_not_simplified',
-        gdrive='1rm3mIqjJNu0xPTCjMKnXccspazV1B2zv',
+        gdown='1ljSh81ydO5ylsnDoV_mt3zj5RX_cgLu8',
         sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
         filename='onnx/models/yolov7_not_simplified.onnx'),
     Model(
