@@ -937,6 +937,11 @@ models = [
         sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
         filename='onnx/models/yolov7_not_simplified.onnx'),
     Model(
+        name='yolox_s_inf_decoder',
+        url='https://drive.google.com/u/0/uc?id=12dVy3ob7T4fYHOkLYnrpUmlysq6JEc5P&export=download',
+        sha='b205b00122cc7bf559a0e845680408320df3a898',
+        filename='onnx/models/yolox_s_inf_decoder.onnx'),
+    Model(
         name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
         sha='9b083a2dbe10dcfe17e694879aa6749302a5888f',
