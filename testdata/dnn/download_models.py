@@ -1131,6 +1131,21 @@ models = [
         url='https://github.com/opencv/opencv_zoo/raw/281d232cd99cd920853106d853c440edd35eb442/models/optical_flow_estimation_raft/optical_flow_estimation_raft_2023aug.onnx',
         sha='8165e43c7bd37cc651f66509532acdb3c292832b',
         filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx'),
+    Model(
+        name='vit_b_32',
+        url=[
+            'https://drive.google.com/u/0/uc?id=1UEeAyBs76XVkypk56ou7B8rBEIAlirkD&export=download', # See https://github.com/opencv/opencv_extra/pull/1128 to generate this model from torchvision
+            'https://dl.opencv.org/models/vit/vit_b_32.onnx',
+        ],
+        sha='88144dca52cf3c6fee3aed8f8ca5c0b431e0afbd',
+        filename='onnx/models/vit_b_32.onnx'),
+    Model(
+        name='object_tracking_vittrack',
+        url=[
+            'https://github.com/opencv/opencv_zoo/raw/fef72f8fa7c52eaf116d3df358d24e6e959ada0e/models/object_tracking_vittrack/object_tracking_vittrack_2023sep.onnx',
+        ],
+        sha='50008bb4f6a27b1aa940ad886b1bd1936ac4ed3e',
+        filename='onnx/models/object_tracking_vittrack_2023sep.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
