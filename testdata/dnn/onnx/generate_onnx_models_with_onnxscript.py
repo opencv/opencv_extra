@@ -124,3 +124,18 @@ def two_resizes_with_shared_subgraphs(x: ost.FLOAT["batch", 1, "height", "width"
     return opset11.Add(resized_y, resized_z)
 
 make_model_and_data(two_resizes_with_shared_subgraphs, np.random.rand(1, 1, 4, 5).astype(np.float32), np.random.rand(1, 1, 3, 2).astype(np.float32), np.random.rand(1, 1, 2, 1).astype(np.float32))
+
+@ost.script()
+def bias_gelu(x: ost.FLOAT[1, 2, 3]) -> ost.FLOAT[1, 2, 3]:
+    bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [3], np.array([0.1, 0.3, 0.2], dtype=np.float32)))
+    add1 = op.Add(x, bias)
+    tmp = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([np.sqrt(2)], dtype=np.float32)))
+    div = op.Div(add1, tmp)
+    erf = op.Erf(div)
+    tmp_0 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([1], dtype=np.float32)))
+    add2 = op.Add(erf, tmp_0)
+    mul = op.Mul(add1, add2)
+    tmp_1 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([0.5], dtype=np.float32)))
+    return op.Mul(mul, tmp_1)
+
+make_model_and_data(bias_gelu, np.random.rand(1, 2, 3).astype(np.float32))
