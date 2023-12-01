@@ -1002,8 +1002,17 @@ models = [
             'https://dl.opencv.org/models/yolox/yolox_s_inf_decoder.onnx'
         ],
         sha='b205b00122cc7bf559a0e845680408320df3a898',
-        filename='onnx/models/yolox_s_inf_decoder.onnx'
-    ),
+        filename='onnx/models/yolox_s_inf_decoder.onnx'),
+    Model(
+        name='yolov6n',
+        url='https://dl.opencv.org/models/yolov6/yolov6n.onnx',
+        sha='a704c0ace51103a43920c50a396b2c8b09d2daec',
+        filename='onnx/models/yolov6n.onnx'),
+    Model(
+        name='yolov8n',
+        url='https://dl.opencv.org/models/yolov8/yolov8n.onnx',
+        sha='136807b88d0b02bc226bdeb9741141d857752e10',
+        filename='onnx/models/yolov8n.onnx'),
     Model(
         name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
