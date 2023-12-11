@@ -5,215 +5,235 @@ import hashlib
 import os
 import sys
 import tarfile
-import requests
 import shutil
 import argparse
+import time
+from urllib.parse import urlparse
 from pathlib import Path
+try:
+    import requests
+except ImportError:
+    print("This script requires 'requests' library")
+    exit(13)
 
-class Model:
+
+class BuiltinDownloader:
     MB = 1024*1024
     BUFSIZE = 10*MB
+    TIMEOUT = 60
 
-    def __init__(self, **kwargs):
-        self.name = kwargs.pop('name', None)
-        self.url = kwargs.pop('url', None)
-        self.downloader = kwargs.pop('downloader', None)
-        self.filename = Path(kwargs.pop('filename'))
-        self.sha = kwargs.pop('sha', None)
-        self.member = kwargs.pop('member', None)
-        self.sub = kwargs.pop('sub', [])
-        self.gdrive = kwargs.pop('gdrive', None)
+    def print_response(self, response):
+        rcode = response.status_code
+        rsize = int(response.headers.get('content-length', 0)) / self.MB
+        print('    {} [{:.2f} Mb]'.format(rcode, rsize))
 
-    def __str__(self):
-        return 'Model <{}>'.format(self.name)
+    def make_response(self, url, session):
+        pieces = urlparse(url)
+        if pieces.netloc in ["docs.google.com", "drive.google.com"]:
+            return session.get(url, params={'confirm': True}, stream=True, timeout=self.TIMEOUT)
+        else:
+            return session.get(url, stream=True, timeout=self.TIMEOUT)
 
-    def printRequest(self, r):
-        def getMB(r):
-            d = dict(r.headers)
-            for c in ['content-length', 'Content-Length']:
-                if c in d:
-                    return int(d[c]) / self.MB
-            return 0
-        print('  {} [{:.2f} Mb]'.format(r.status_code, getMB(r)))
+    def download_response(self, response, filename):
+        with open(filename, 'wb') as f:
+            print('    progress ', end='')
+            sys.stdout.flush()
+            for buf in response.iter_content(self.BUFSIZE):
+                if not buf:
+                    continue
+                f.write(buf)
+                print('>', end='')
+                sys.stdout.flush()
+        print('')
 
-    def prepare_file(self):
-        self.filename.parent.mkdir(parents=True, exist_ok=True)
-
-    def verify(self):
-        if not self.sha:
-            return False
-        print('  expect {}'.format(self.sha))
-        sha = hashlib.sha1()
+    def download(self, url, filename):
         try:
-            if not self.filename.is_file():
-                print('  verify - file does not exist')
-                return False
-            with open(self.filename, 'rb') as f:
+            session = requests.Session()
+            response = self.make_response(url, session)
+            self.print_response(response)
+            response.raise_for_status()
+            self.download_response(response, filename)
+            return True
+        except Exception as e:
+            print('  download failed: {}'.format(e))
+            return False
+
+
+class BuiltinVerifier:
+    MB = 1024*1024
+    BUFSIZE = 100*MB
+
+    def verify(self, filename, expected_sum):
+        if not filename.is_file():
+            return False
+        sha_calculator = hashlib.sha1()
+        try:
+            with open(filename, 'rb') as f:
                 while True:
                     buf = f.read(self.BUFSIZE)
                     if not buf:
                         break
-                    sha.update(buf)
-            print('  actual {}'.format(sha.hexdigest()))
-            self.sha_actual = sha.hexdigest()
-            return self.sha == self.sha_actual
-        except Exception as e:
-            print('  verify {}'.format(e))
-
-    def ref_copy(self, ref):
-        if not ref:
-            return False
-        try:
-            candidate = ref / self.filename
-            if candidate.is_file():
-                print('  ref {} -> {}'.format(candidate, self.filename))
-                if candidate.absolute() == self.filename.absolute():
-                    print('  ref - skip copying the same file')
-                else:
-                    self.prepare_file()
-                    shutil.copy(candidate, self.filename)
-                if self.verify():
-                    return True
-                else:
-                    print('  ref - hash mismatch, removing')
-                    self.filename.unlink()
-        except Exception as e:
-            print('  ref {}'.format(e))
-
-    def get_sub(self, ref, arch):
-        print('** {}'.format(self.filename))
-
-        if self.verify():
+                    sha_calculator.update(buf)
+            if expected_sum != sha_calculator.hexdigest():
+                print('  checksum mismatch:')
+                print('    expect {}'.format(expected_sum))
+                print('    actual {}'.format(sha_calculator.hexdigest()))
+                return False
             return True
-        if self.ref_copy(ref):
-            return True
-        if arch.is_file():
-            self.extract(arch)
-            return self.verify()
-
-    def get(self, ref, arch=None):
-        print("* {}".format(m.name))
-
-        # Sub elements - first attempt (ref)
-        if len(self.sub) > 0:
-            res = [m.get_sub(ref, self.filename) for m in self.sub]
-            if all(res):
-                return True
-
-        # File - exists or get from ref or download from internet
-        verified = False
-        if self.verify() or self.ref_copy(ref):
-            verified = True
-        elif self.url:
-            print('  hash check failed - downloading')
-            print('  get {}'.format(self.url))
-            self.download()
-        elif self.gdrive:
-            print('  hash check failed - downloading')
-            print('  get {}'.format(self.gdrive))
-            self.download_gdrive()
-        else:
-            raise Exception(info="Invalid model record", name=self.name)
-
-        if verified or self.verify():
-            # Sub elements - second attempt (extract)
-            if len(self.sub) > 0:
-                res = [m.get_sub(ref, self.filename) for m in self.sub]
-                return all(res)
-            else:
-                return True
-        else:
-            self.handle_bad_download()
+        except Exception as e:
+            print('  verify failed: {}'.format(e))
             return False
 
-    def download_response(self, response):
-        self.printRequest(response)
-        try:
-            self.prepare_file()
-            with open(self.filename, 'wb') as f:
-                print('  progress ', end='')
-                sys.stdout.flush()
-                for buf in response.iter_content(self.BUFSIZE):
-                    if not buf:
-                        continue
-                    f.write(buf)
-                    print('>', end='')
-                    sys.stdout.flush()
-            print('')
-        except Exception as e:
-            print('  download {}'.format(e))
 
-    def download(self, response=None):
-        try:
-            session = requests.Session()
-            response = session.get(self.url, stream=True, timeout=60)
-            self.download_response(response)
-        except Exception as e:
-            print('  download {}'.format(e))
+class BuiltinExtractor:
+    MB = 1024*1024
+    BUFSIZE = 100*MB
 
-    def download_gdrive(self):
-        try:
-            session = requests.Session()  # re-use cookies
-            URL = "https://docs.google.com/uc?export=download"
-            response = session.get(URL, params={'id': self.gdrive}, stream=True, timeout=60)
-            def get_confirm_token(response):  # in case of large files
-                for key, value in response.cookies.items():
-                    if key.startswith('download_warning'):
-                        return value
-            token = get_confirm_token(response)
-            if token:
-                params = { 'id' : self.gdrive, 'confirm' : token }
-                response = session.get(URL, params = params, stream = True)
-            self.download_response(response)
-        except Exception as e:
-            print('  download {}'.format(e))
-
-    def extract(self, arch):
+    def extract(self, arch, member, filename):
+        if not arch.is_file():
+            return False
         try:
             with tarfile.open(arch) as f:
-                assert self.member in f.getnames()
-                r = f.extractfile(self.member)
-                self.prepare_file()
-                with open(self.filename, 'wb') as f:
-                    print('  progress ', end='')
+                if member not in f.getnames():
+                    print('  extract - missing member: {}'.format(member))
+                    return False
+                r = f.extractfile(member)
+                with open(filename, 'wb') as f:
+                    # print('    progress ', end='')
                     sys.stdout.flush()
                     while True:
                         buf = r.read(self.BUFSIZE)
                         if not buf:
                             break
                         f.write(buf)
-                        print('>', end='')
+                        # print('>', end='')
                         sys.stdout.flush()
+            # print('')
+            return True
         except Exception as e:
-            print('  extract {}'.format(e))
+            print('  extract failed: {}'.format(e))
+            return False
 
-    def cleanup(self):
+
+class Processor:
+    def __init__(self, **kwargs):
+        self.reference = kwargs.pop('reference', None)
+        self.verifier = BuiltinVerifier()
+        self.downloader = BuiltinDownloader()
+        self.extractor = BuiltinExtractor()
+
+    def prepare_folder(self, filename):
+        filename.parent.mkdir(parents=True, exist_ok=True)
+
+    def download(self, url, filename):
+        return self.downloader.download(url, filename)
+
+    def verify(self, mdl):
+        return self.verifier.verify(mdl.filename, mdl.sha)
+
+    def extract(self, arch, mdl):
+        return self.extractor.extract(arch, mdl.member, mdl.filename)
+
+    def ref_copy(self, mdl):
+        if not self.reference:
+            return False
+        candidate = self.reference / mdl.filename
+        if not candidate.is_file():
+            return False
+        print('  ref {} -> {}'.format(candidate, mdl.filename))
         try:
-            if self.filename.is_file() and ".tar" in self.filename.suffixes:
-                print("  cleanup - {}".format(self.filename))
-                self.filename.unlink()
+            if candidate.absolute() != mdl.filename.absolute():
+                self.prepare_folder(mdl.filename)
+                shutil.copy(candidate, mdl.filename)
+            if self.verify(mdl):
+                return True
+            else:
+                print('  ref - hash mismatch, removing')
+                mdl.filename.unlink()
+                return False
         except Exception as e:
-            print("  cleanup failed for {} - {}".format(self.filename, e))
+            print('  ref failed: {}'.format(e))
 
-    def handle_bad_download(self):
-        if self.filename.is_file():
-            # rename file for further investigation
-            try:
-                # NB: using `self.sha_actual` may create unbounded number of files
-                rename_target = self.filename.with_suffix(self.filename.suffix + '.invalid')
-                try:
-                    if rename_target.is_file():  # avoid FileExistsError on Windows from os.rename()
-                        rename_target.unlink()
-                finally:
-                    self.filename.rename(rename_target)
-                    print('  renaming invalid file to {}'.format(rename_target))
-            except:
-                import traceback
-                traceback.print_exc()
-            finally:
-                if self.filename.is_file():
-                    print('  deleting invalid file')
-                    self.filename.unlink()
+    def cleanup(self, filename):
+        print("  cleanup - {}".format(filename))
+        try:
+            filename.unlink()
+        except Exception as e:
+            print("  cleanup failed: {}".format(e))
+
+    def handle_bad_download(self, filename):
+        # rename file for further investigation
+        rename_target = filename.with_suffix(filename.suffix + '.invalid')
+        print('  renaming invalid file to {}'.format(rename_target))
+        try:
+            if rename_target.is_file():  # avoid FileExistsError on Windows from os.rename()
+                rename_target.unlink()
+            filename.rename(rename_target)
+        except Exception as e:
+            print('  rename failed: {}'.format(e))
+
+    def get_sub(self, arch, mdl):
+        print('** {}'.format(mdl.filename))
+        if self.verify(mdl):
+            return True
+        if self.ref_copy(mdl):
+            return True
+        self.prepare_folder(mdl.filename)
+        return self.extract(arch, mdl) and self.verify(mdl)
+
+    def get(self, mdl):
+        print("* {}".format(mdl.name))
+
+        # Sub elements - first attempt (ref)
+        if len(mdl.sub) > 0:
+            if all(self.get_sub(mdl.filename, m) for m in mdl.sub):
+                return True
+
+        # File - exists or get from ref or download from internet
+        verified = False
+        if self.verify(mdl) or self.ref_copy(mdl):
+            verified = True
+
+        if not verified:
+            self.prepare_folder(mdl.filename)
+            for one_url in mdl.url:
+                print('  get {}'.format(one_url))
+                if self.download(one_url, mdl.filename):
+                    if self.verify(mdl):
+                        verified = True
+                        break
+            # TODO: we lose all failed files except the last one
+            if not verified and mdl.filename.is_file():
+                self.handle_bad_download(mdl.filename)
+
+        if verified or self.verify(mdl):
+            # Sub elements - second attempt (extract)
+            if len(mdl.sub) > 0:
+                return all(self.get_sub(mdl.filename, m) for m in mdl.sub)
+            else:
+                return True
+        else:
+            return False
+
+
+class Model:
+
+    def __init__(self, **kwargs):
+        self.name = kwargs.pop('name', None)
+        self.url = kwargs.pop('url', [])
+        self.filename = Path(kwargs.pop('filename'))
+        self.sha = kwargs.pop('sha', None)
+        self.member = kwargs.pop('member', None)
+        self.sub = kwargs.pop('sub', [])
+        if not isinstance(self.url, list) and self.url:
+            self.url = [self.url]
+        # TODO: add completeness assertion
+
+    def __str__(self):
+        return 'Model <{}>'.format(self.name)
+
+    def is_archive(self):
+        return self.filename.is_file() and ".tar" in self.filename.suffixes
 
 
 models = [
@@ -249,7 +269,10 @@ models = [
         filename='VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel'),
     Model(
         name='ResNet50',
-        url='https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
+        url=[
+            'https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
+            'https://dl.opencv.org/models/ResNet-50-model.caffemodel'
+        ],
         sha='b7c79ccc21ad0479cddc0dd78b1d20c4d722908d',
         filename='ResNet-50-model.caffemodel'),
     Model(
@@ -294,12 +317,18 @@ models = [
         filename='DenseNet_121.prototxt'),
     Model(
         name='Fast-Neural-Style (starry night)',
-        url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
+        url=[
+            'https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
+            'https://dl.opencv.org/models/fast_neural_style_eccv16_starry_night.t7'
+        ],
         sha='5b5e115253197b84d6c6ece1dafe6c15d7105ca6',
         filename='fast_neural_style_eccv16_starry_night.t7'),
     Model(
         name='Fast-Neural-Style (feathers)',
-        url='http://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
+        url=[
+            'https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
+            'https://dl.opencv.org/models/fast_neural_style_instance_norm_feathers.t7'
+        ],
         sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
         filename='fast_neural_style_instance_norm_feathers.t7'),
     Model(
@@ -344,7 +373,10 @@ models = [
         filename='colorization_deploy_v2.prototxt'),
     Model(
         name='Colorization (caffemodel)',
-        url='http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
+        url=[
+            'http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
+            'https://dl.opencv.org/models/colorization_release_v2.caffemodel'
+        ],
         sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
         filename='colorization_release_v2.caffemodel'),
     Model(
@@ -375,7 +407,10 @@ models = [
         ]),
     Model(
         name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
-        url='https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
+        url=[
+            'https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
+            'https://dl.opencv.org/models/faster_rcnn_models.tgz'
+        ],
         sha='51bca62727c3fe5d14b66e9331373c1e297df7d1',
         filename='faster_rcnn_models.tgz',
         sub=[
@@ -390,7 +425,10 @@ models = [
         ]),
     Model(
         name='R-FCN',  # https://github.com/YuwenXiong/py-R-FCN
-        url='https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
+        url=[
+            'https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
+            'https://dl.opencv.org/models/rfcn_models.tar.gz'
+        ],
         sha='bb3180da68b2b71494f8d3eb8f51b2d47467da3e',
         filename='rfcn_models.tar.gz',
         sub=[
@@ -401,12 +439,18 @@ models = [
         ]),
     Model(
         name='OpenPose/pose/coco',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
+        url=[
+            'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
+            'https://dl.opencv.org/models/openpose_pose_coco.caffemodel'
+        ],
         sha='ac7e97da66f3ab8169af2e601384c144e23a95c1',
         filename='openpose_pose_coco.caffemodel'),
     Model(
         name='OpenPose/pose/mpi',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url='http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
+        url=[
+            'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
+            'https://dl.opencv.org/models/openpose_pose_mpi.caffemodel'
+        ],
         sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
         filename='openpose_pose_mpi.caffemodel'),
     Model(
@@ -557,7 +601,10 @@ models = [
         ]),
     Model(
         name='ResNet-18v1 (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet18-v1-7.tar.gz',
+        url=[
+            'https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet18-v1-7.tar.gz',
+            'https://dl.opencv.org/models/resnet18v1.tar.gz'
+        ],
         sha='d132be4857d024de9caa21fd5300dee7c063bc35',
         filename='resnet18v1.tar.gz',
         sub=[
@@ -576,7 +623,10 @@ models = [
         ]),
     Model(
         name='ResNet-50v1 (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet50-v1-7.tar.gz',
+        url=[
+            'https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet50-v1-7.tar.gz',
+            'https://dl.opencv.org/models/resnet50v1.tar.gz'
+        ],
         sha='a4ac2da7e0024d61fdb80481496ba966b48b9fea',
         filename='resnet50v1.tar.gz',
         sub=[
@@ -612,10 +662,13 @@ models = [
                 sha='6d45d2f06150e9045631c7928093728b07c8b12d',
                 filename='onnx/data/output_resnet50_int8.pb'),
         ]),
-
+    # TODO: bad file
     Model(
         name='ResNet101_DUC_HDC (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet101-v1-7.tar.gz',
+        url=[
+            'https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet101-v1-7.tar.gz',
+            'https://dl.opencv.org/models/ResNet101_DUC_HDC.tar.gz'
+        ],
         sha='f8314f381939d01045ac31dbb53d7d35fe3ff9a0',
         filename='ResNet101_DUC_HDC.tar.gz',
         sub=[
@@ -859,7 +912,10 @@ models = [
         filename='yolov4x-mish.weights'),
     Model(
         name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
-        gdrive='1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br',
+        url=[
+            'https://docs.google.com/uc?export=download&id=1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br',
+            'https://dl.opencv.org/models/goturn.caffemodel'
+        ],
         sha='49776d262993c387542f84d9cd16566840404f26',
         filename='gsoc2016-goturn/goturn.caffemodel'),
     Model(
@@ -933,9 +989,30 @@ models = [
         filename='wechat_2021-01/sr.caffemodel'),
     Model(
         name='yolov7_not_simplified',
-        gdrive='1rm3mIqjJNu0xPTCjMKnXccspazV1B2zv',
+        url=[
+            'https://docs.google.com/uc?export=download&id=1ljSh81ydO5ylsnDoV_mt3zj5RX_cgLu8',
+            'https://dl.opencv.org/models/yolov7/yolov7_not_simplified.onnx'
+        ],
         sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
         filename='onnx/models/yolov7_not_simplified.onnx'),
+    Model(
+        name='yolox_s_inf_decoder',
+        url=[
+            'https://drive.google.com/u/0/uc?id=12dVy3ob7T4fYHOkLYnrpUmlysq6JEc5P&export=download',
+            'https://dl.opencv.org/models/yolox/yolox_s_inf_decoder.onnx'
+        ],
+        sha='b205b00122cc7bf559a0e845680408320df3a898',
+        filename='onnx/models/yolox_s_inf_decoder.onnx'),
+    Model(
+        name='yolov6n',
+        url='https://dl.opencv.org/models/yolov6/yolov6n.onnx',
+        sha='a704c0ace51103a43920c50a396b2c8b09d2daec',
+        filename='onnx/models/yolov6n.onnx'),
+    Model(
+        name='yolov8n',
+        url='https://dl.opencv.org/models/yolov8/yolov8n.onnx',
+        sha='136807b88d0b02bc226bdeb9741141d857752e10',
+        filename='onnx/models/yolov8n.onnx'),
     Model(
         name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
@@ -1086,8 +1163,8 @@ if __name__ == '__main__':
 
     # List models
     if args.list:
-        for m in filtered:
-            print(m.name)
+        for mdl in filtered:
+            print(mdl.name)
         exit()
 
     # Destination directory
@@ -1098,17 +1175,19 @@ if __name__ == '__main__':
     os.chdir(dest)
 
     # Actual download
+    proc = Processor(reference=ref)
     results = dict()
-    for m in filtered:
-        results[m] = m.get(ref=ref)
-        print("* OK" if results[m] else "* FAIL")
+    for mdl in filtered:
+        t = time.time()
+        results[mdl] = proc.get(mdl)
+        print("* {} ({:.2f} sec)".format("OK" if results[mdl] else "FAIL", time.time() - t))
 
     # Result handling
-    for (m, res) in results.items():
-        if args.cleanup and res:
-            m.cleanup()
+    for (mdl, res) in results.items():
+        if args.cleanup and res and mdl.is_archive():
+            proc.cleanup(mdl.filename)
         if not res:
-            print("FAILED: {} - {}".format(m.name, m.filename))
+            print("FAILED: {} - {}".format(mdl.name, mdl.filename))
     if list(results.values()).count(False) > 0:
         exit(15)
     else:
