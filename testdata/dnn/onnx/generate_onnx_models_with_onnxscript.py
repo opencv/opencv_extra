@@ -43,99 +43,258 @@ def make_model_and_data(model, *args, **kwargs):
     output_files = os.path.join("data", "output_" + name)
     np.save(output_files, output)
 
+# '''
+#     It builds a model with two Gather ops sharing a single same indices:
+
+#     [Input] -> Gather(indices=0) -> Gather(indices=0) -> [Output]
+
+#     , where the two indices constants have the same name.
+# '''
+# @ost.script()
+# def gather_shared_indices(x: ost.FLOAT[2, 1, 3, 4]) -> ost.FLOAT[3, 4]:
+#     indices = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([0], dtype=np.int64)))
+#     y0 = op.Gather(x, indices, axis=0)
+#     y1 = op.Gather(y0, indices, axis=0)
+#     return y1
+# make_model_and_data(gather_shared_indices, np.random.rand(2, 1, 3, 4).astype(np.float32))
+
+# '''
+#     [Input] -> Greater(B=61) -> [Output]
+#                         \
+#                         dtype=np.int64
+# '''
+# @ost.script()
+# def greater_input_dtype_int64(x: ost.FLOAT[27, 9]) ->ost.BOOL[27, 9]:
+#     y = op.Greater(x, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([61], dtype=np.int64))))
+#     return y
+# make_model_and_data(greater_input_dtype_int64, np.random.randint(0, 100, size=[27, 9], dtype=np.int64), force_saving_input_as_dtype_float32=True, force_saving_output_as_dtype_float32=True)
+
+# from onnxscript import opset11
+
+# @ost.script()
+# def two_resizes_with_shared_subgraphs(x: ost.FLOAT["batch", 1, "height", "width"], y: ost.FLOAT[1, 1, 3, 2], z: ost.FLOAT[1, 1, 2, 1]) ->ost.FLOAT["batch", 1, "height", "width"]:
+#     shape_src_1 = opset11.Shape(x)
+#     shape_src_2 = opset11.Shape(x)
+#     gather_h = opset11.Gather(shape_src_1, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([2], dtype=np.int64))), axis=0)
+#     gather_w = opset11.Gather(shape_src_2, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([3], dtype=np.int64))), axis=0)
+#     unsqueeze_w_1 = opset11.Unsqueeze(gather_w, axes=[0])
+#     unsqueeze_w_2 = opset11.Unsqueeze(gather_w, axes=[0])
+#     unsqueeze_h_1 = opset11.Unsqueeze(gather_h, axes=[0])
+#     unsqueeze_h_2 = opset11.Unsqueeze(gather_h, axes=[0])
+#     concat_1 = opset11.Cast(opset11.Concat(unsqueeze_h_1, unsqueeze_w_1, axis=0), to=ost.INT64.dtype)
+#     concat_2 = opset11.Cast(opset11.Concat(unsqueeze_h_2, unsqueeze_w_2, axis=0), to=ost.INT64.dtype)
+
+#     # This op is required to test double node removal
+#     y = opset11.Add(y, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [1], np.array([0.5], dtype=np.float32))))
+
+#     # First branch
+#     sliced = opset11.Slice(opset11.Shape(y),
+#         starts=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+#         ends=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([2], dtype=np.int64))),
+#         axes=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+#     )
+#     concat_y = opset11.Concat(sliced, concat_1, axis=0)
+#     resized_y = opset11.Resize(y,
+#         roi=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
+#         scales=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
+#         sizes=concat_y,
+#         coordinate_transformation_mode='pytorch_half_pixel',
+#         cubic_coeff_a=-0.75,
+#         mode='linear',
+#         nearest_mode='floor'
+#     )
+
+#     # Second branch
+#     sliced = opset11.Slice(opset11.Shape(z),
+#         starts=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+#         ends=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([2], dtype=np.int64))),
+#         axes=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+#     )
+#     concat_z = opset11.Concat(sliced, concat_2, axis=0)
+#     resized_z = opset11.Resize(z,
+#         roi=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
+#         scales=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
+#         sizes=concat_z,
+#         coordinate_transformation_mode='pytorch_half_pixel',
+#         cubic_coeff_a=-0.75,
+#         mode='linear',
+#         nearest_mode='floor'
+#     )
+
+#     return opset11.Add(resized_y, resized_z)
+
+# make_model_and_data(two_resizes_with_shared_subgraphs, np.random.rand(1, 1, 4, 5).astype(np.float32), np.random.rand(1, 1, 3, 2).astype(np.float32), np.random.rand(1, 1, 2, 1).astype(np.float32))
+
+
+# @ost.script()
+# def bias_gelu(x: ost.FLOAT[1, 2, 3]) -> ost.FLOAT[1, 2, 3]:
+#     bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [3], np.array([0.1, 0.3, 0.2], dtype=np.float32)))
+#     add1 = op.Add(x, bias)
+#     tmp = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([np.sqrt(2)], dtype=np.float32)))
+#     div = op.Div(add1, tmp)
+#     erf = op.Erf(div)
+#     tmp_0 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([1], dtype=np.float32)))
+#     add2 = op.Add(erf, tmp_0)
+#     mul = op.Mul(add1, add2)
+#     tmp_1 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([0.5], dtype=np.float32)))
+#     return op.Mul(mul, tmp_1)
+
+# make_model_and_data(bias_gelu, np.random.rand(1, 2, 3).astype(np.float32))
+
+batch_size = 1
+sequence_length = 320
+input_hidden_size = 48
+qk_hidden_size = 48
+v_hidden_size = 48
+num_heads = 4
+qk_head_size = int(qk_hidden_size / num_heads)
+v_head_size = int(v_hidden_size / num_heads)
+attention_weight = np.random.rand(input_hidden_size, qk_hidden_size + qk_hidden_size + v_hidden_size).astype(np.float32)
+attention_bias = np.random.rand(qk_hidden_size + qk_hidden_size + v_hidden_size).astype(np.float32)
+
 '''
-    It builds a model with two Gather ops sharing a single same indices:
+    Attention Subgraph.
 
-    [Input] -> Gather(indices=0) -> Gather(indices=0) -> [Output]
-
-    , where the two indices constants have the same name.
+                   [Input](BxSxW)
+                      |
+                   LayerNorm
+                      |
+                   Transpose(perm=[1, 0, 2])
+                      |
+                      | (SxBxW)
+                      |
+                    Matmul[Weight(Wx3W)]
+                      |
+                     Add[Bias(3W)]
+          /           |           \
+      q_Slice      k_Slice      v_Slice   (output(SxBxW))
+         |            |            |
+     q_Reshape    k_Reshape    v_Reshape  (output(Sx(BxN)xH), could be optional if N=1)
+         |            |            |
+    q_Transpose  k_Transpose  v_Transpose
+      (1,0,2)      (1,2,0)    (perm=1,0,2)
+         |((BxN)xSxH) |((BxN)xHxS) |
+       q_Div         /            /
+         \          /            /
+          qk_MatMul             /
+              |                /
+         qk_Softmax           /
+              | ((BxN)xSxS)  / ((BxN)xSxH)
+               \            /
+                 qkv_MatMul  (output((BxN)xSxH))
+                     |
+                 Transpose(perm=1,2,0)
+                     |
+                  Reshape  (output(SxH))
+                     |
+                   MatMul
+                     |
+                    Add
+                     |
+                  [Output](BxSxW)
 '''
+
 @ost.script()
-def gather_shared_indices(x: ost.FLOAT[2, 1, 3, 4]) -> ost.FLOAT[3, 4]:
-    indices = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([0], dtype=np.int64)))
-    y0 = op.Gather(x, indices, axis=0)
-    y1 = op.Gather(y0, indices, axis=0)
-    return y1
-make_model_and_data(gather_shared_indices, np.random.rand(2, 1, 3, 4).astype(np.float32))
+def attention(x: ost.FLOAT[batch_size, sequence_length, input_hidden_size]) -> ost.FLOAT[batch_size, sequence_length, input_hidden_size]:
+    transpose = op.Transpose(x, perm=[1, 0, 2])
+    qkv_matmul_weight = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, attention_weight.shape, attention_weight))
+    qkv_matmul = op.MatMul(transpose, qkv_matmul_weight)
+
+    qkv_add_bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, attention_bias.shape, attention_bias))
+    qkv_add = op.Add(qkv_add_bias, qkv_matmul)
+
+    # q path
+    q_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    q_path_reshape = op.Reshape(q_path_slice, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [3], np.array([sequence_length, batch_size * num_heads, qk_head_size], dtype=np.int64))), allowzero=0)
+    q_path_transpose = op.Transpose(q_path_reshape, perm=[1, 0, 2])
+    q_path_div = op.Div(q_path_transpose, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([np.sqrt(qk_hidden_size)], dtype=np.float32))))
+    # k path
+    k_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size + qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    k_path_reshape = op.Reshape(k_path_slice, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [3], np.array([sequence_length, batch_size * num_heads, qk_head_size], dtype=np.int64))), allowzero=0)
+    k_path_transpose = op.Transpose(k_path_reshape, perm=[1, 2, 0])
+
+    # qk path
+    qk_matmul = op.MatMul(q_path_div, k_path_transpose)
+    qk_softmax = op.Softmax(qk_matmul, axis=-1)
+
+    # v path
+    v_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size + qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size + qk_hidden_size + v_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    v_path_reshape = op.Reshape(v_path_slice, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [3], np.array([sequence_length, batch_size * num_heads, v_head_size], dtype=np.int64))), allowzero=0)
+    v_path_transpose = op.Transpose(v_path_reshape, perm=[1, 0, 2])
+
+    # matmul
+    matmul = op.MatMul(qk_softmax, v_path_transpose)
+    trans = op.Transpose(matmul, perm=[1, 0, 2])
+    reshape = op.Reshape(trans, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [3], np.array([batch_size, sequence_length, v_hidden_size], dtype=np.int64))))
+
+    return reshape
+
+make_model_and_data(attention, np.random.rand(batch_size, sequence_length, input_hidden_size).astype(np.float32))
+
+batch_size = 1
+sequence_length = 320
+input_hidden_size = 48
+qk_hidden_size = 48
+v_hidden_size = 48
+num_heads = 1
+qk_head_size = int(qk_hidden_size / num_heads)
+v_head_size = int(v_hidden_size / num_heads)
+attention_weight = np.random.rand(input_hidden_size, qk_hidden_size + qk_hidden_size + v_hidden_size).astype(np.float32)
+attention_bias = np.random.rand(qk_hidden_size + qk_hidden_size + v_hidden_size).astype(np.float32)
 
 '''
-    [Input] -> Greater(B=61) -> [Output]
-                        \
-                        dtype=np.int64
+    Single-head attention subgraph like the above one but without the appended Reshape after each Slice.
+    Also v_Slice.end = INT64_MAX which stands for slicing till the end of dimension of the actual tensor.
 '''
-@ost.script()
-def greater_input_dtype_int64(x: ost.FLOAT[27, 9]) ->ost.BOOL[27, 9]:
-    y = op.Greater(x, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([61], dtype=np.int64))))
-    return y
-make_model_and_data(greater_input_dtype_int64, np.random.randint(0, 100, size=[27, 9], dtype=np.int64), force_saving_input_as_dtype_float32=True, force_saving_output_as_dtype_float32=True)
-
-from onnxscript import opset11
 
 @ost.script()
-def two_resizes_with_shared_subgraphs(x: ost.FLOAT["batch", 1, "height", "width"], y: ost.FLOAT[1, 1, 3, 2], z: ost.FLOAT[1, 1, 2, 1]) ->ost.FLOAT["batch", 1, "height", "width"]:
-    shape_src_1 = opset11.Shape(x)
-    shape_src_2 = opset11.Shape(x)
-    gather_h = opset11.Gather(shape_src_1, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([2], dtype=np.int64))), axis=0)
-    gather_w = opset11.Gather(shape_src_2, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([3], dtype=np.int64))), axis=0)
-    unsqueeze_w_1 = opset11.Unsqueeze(gather_w, axes=[0])
-    unsqueeze_w_2 = opset11.Unsqueeze(gather_w, axes=[0])
-    unsqueeze_h_1 = opset11.Unsqueeze(gather_h, axes=[0])
-    unsqueeze_h_2 = opset11.Unsqueeze(gather_h, axes=[0])
-    concat_1 = opset11.Cast(opset11.Concat(unsqueeze_h_1, unsqueeze_w_1, axis=0), to=ost.INT64.dtype)
-    concat_2 = opset11.Cast(opset11.Concat(unsqueeze_h_2, unsqueeze_w_2, axis=0), to=ost.INT64.dtype)
+def attention_single_head(x: ost.FLOAT[batch_size, sequence_length, input_hidden_size]) -> ost.FLOAT[batch_size, sequence_length, input_hidden_size]:
+    transpose = op.Transpose(x, perm=[1, 0, 2])
+    qkv_matmul_weight = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, attention_weight.shape, attention_weight))
+    qkv_matmul = op.MatMul(transpose, qkv_matmul_weight)
 
-    # This op is required to test double node removal
-    y = opset11.Add(y, opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [1], np.array([0.5], dtype=np.float32))))
+    qkv_add_bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, attention_bias.shape, attention_bias))
+    qkv_add = op.Add(qkv_add_bias, qkv_matmul)
 
-    # First branch
-    sliced = opset11.Slice(opset11.Shape(y),
-        starts=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
-        ends=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([2], dtype=np.int64))),
-        axes=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
-    )
-    concat_y = opset11.Concat(sliced, concat_1, axis=0)
-    resized_y = opset11.Resize(y,
-        roi=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
-        scales=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
-        sizes=concat_y,
-        coordinate_transformation_mode='pytorch_half_pixel',
-        cubic_coeff_a=-0.75,
-        mode='linear',
-        nearest_mode='floor'
-    )
+    # q path
+    q_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    q_path_transpose = op.Transpose(q_path_slice, perm=[1, 0, 2])
+    q_path_div = op.Div(q_path_transpose, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([np.sqrt(qk_hidden_size)], dtype=np.float32))))
+    # k path
+    k_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size + qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    k_path_transpose = op.Transpose(k_path_slice, perm=[1, 2, 0])
 
-    # Second branch
-    sliced = opset11.Slice(opset11.Shape(z),
-        starts=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
-        ends=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([2], dtype=np.int64))),
-        axes=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([0], dtype=np.int64))),
-    )
-    concat_z = opset11.Concat(sliced, concat_2, axis=0)
-    resized_z = opset11.Resize(z,
-        roi=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
-        scales=opset11.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [0], np.empty([0]))),
-        sizes=concat_z,
-        coordinate_transformation_mode='pytorch_half_pixel',
-        cubic_coeff_a=-0.75,
-        mode='linear',
-        nearest_mode='floor'
-    )
+    # qk path
+    qk_matmul = op.MatMul(q_path_div, k_path_transpose)
+    qk_softmax = op.Softmax(qk_matmul, axis=-1)
 
-    return opset11.Add(resized_y, resized_z)
+    # v path
+    v_path_slice = op.Slice(qkv_add,
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([qk_hidden_size + qk_hidden_size], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([np.iinfo(np.int64).max], dtype=np.int64))),
+                        op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [1], np.array([-1], dtype=np.int64))))
+    v_path_transpose = op.Transpose(v_path_slice, perm=[1, 0, 2])
 
-make_model_and_data(two_resizes_with_shared_subgraphs, np.random.rand(1, 1, 4, 5).astype(np.float32), np.random.rand(1, 1, 3, 2).astype(np.float32), np.random.rand(1, 1, 2, 1).astype(np.float32))
+    # matmul
+    matmul = op.MatMul(qk_softmax, v_path_transpose)
+    trans = op.Transpose(matmul, perm=[1, 0, 2])
+    reshape = op.Reshape(trans, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [3], np.array([batch_size, sequence_length, v_hidden_size], dtype=np.int64))))
 
-@ost.script()
-def bias_gelu(x: ost.FLOAT[1, 2, 3]) -> ost.FLOAT[1, 2, 3]:
-    bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [3], np.array([0.1, 0.3, 0.2], dtype=np.float32)))
-    add1 = op.Add(x, bias)
-    tmp = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([np.sqrt(2)], dtype=np.float32)))
-    div = op.Div(add1, tmp)
-    erf = op.Erf(div)
-    tmp_0 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([1], dtype=np.float32)))
-    add2 = op.Add(erf, tmp_0)
-    mul = op.Mul(add1, add2)
-    tmp_1 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([0.5], dtype=np.float32)))
-    return op.Mul(mul, tmp_1)
+    return reshape
 
-make_model_and_data(bias_gelu, np.random.rand(1, 2, 3).astype(np.float32))
+make_model_and_data(attention_single_head, np.random.rand(batch_size, sequence_length, input_hidden_size).astype(np.float32))
