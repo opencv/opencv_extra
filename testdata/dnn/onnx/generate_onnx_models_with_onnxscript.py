@@ -298,3 +298,15 @@ def attention_single_head(x: ost.FLOAT[batch_size, sequence_length, input_hidden
     return reshape
 
 make_model_and_data(attention_single_head, np.random.rand(batch_size, sequence_length, input_hidden_size).astype(np.float32))
+
+# Einsum_const_inputs
+
+input_0_data = np.random.rand(3, 2, 2, 4).astype(np.float32)
+input_1_data = np.random.rand(2, 2, 4).astype(np.float32)
+
+@ost.script()
+def einsum_const_inputs(input_0: ost.FLOAT[3, 2, 2, 4]) -> ost.FLOAT[3, 2, 2, 2]:
+    input_1 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, input_1_data.shape, input_1_data))
+    return op.Einsum(input_0, input_1, equation="bhwc, hkc -> bhwk")
+
+make_model_and_data(einsum_const_inputs, input_0_data)
