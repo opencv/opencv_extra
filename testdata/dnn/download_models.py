@@ -988,13 +988,12 @@ models = [
         sha='2b181b55d1d7af718eaca6cabdeb741217b64c73',
         filename='wechat_2021-01/sr.caffemodel'),
     Model(
-        name='yolov7_not_simplified',
+        name='yolov7',
         url=[
-            'https://docs.google.com/uc?export=download&id=1ljSh81ydO5ylsnDoV_mt3zj5RX_cgLu8',
-            'https://dl.opencv.org/models/yolov7/yolov7_not_simplified.onnx'
+            'https://dl.opencv.org/models/yolov7/yolov7.onnx'
         ],
-        sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
-        filename='onnx/models/yolov7_not_simplified.onnx'),
+        sha='9f5199c266418462771a26a7b8ea25a90412ce2e',
+        filename='onnx/models/yolov7.onnx'),
     Model(
         name='yolox_s_inf_decoder',
         url=[
