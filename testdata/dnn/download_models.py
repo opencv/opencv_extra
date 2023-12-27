@@ -286,16 +286,6 @@ models = [
         sha='50cf80235a8fcccc641bf9f8efc803edbf21c615',
         filename='MobileNetSSD_deploy_19e3ec3.prototxt'),
     Model(
-        name='YoloV2voc',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolo-voc.weights',
-        sha='1cc1a7f8ad12d563d85b76e9de025dc28ac397bb',
-        filename='yolo-voc.weights'),
-    Model(
-        name='TinyYoloV2voc',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolov2-tiny-voc.weights',
-        sha='24b4bd049fc4fa5f5e95f684a8967e65c625dff9',
-        filename='tiny-yolo-voc.weights'),
-    Model(
         name='DenseNet-121 (caffemodel)',  # https://github.com/shicai/DenseNet-Caffe
         url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
         sha='02b520138e8a73c94473b05879978018fefe947b',
@@ -434,11 +424,6 @@ models = [
         ],
         sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
         filename='openpose_pose_mpi.caffemodel'),
-    Model(
-        name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
-        url='https://pjreddie.com/media/files/yolov3.weights',
-        sha='520878f12e97cf820529daea502acca380f1cb8e',
-        filename='yolov3.weights'),
     Model(
         name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
         url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
@@ -870,21 +855,6 @@ models = [
         url='https://www.dropbox.com/s/9mqp99fd2tpuqn6/efficientdet-d0.pb?dl=1',
         sha='f178cc17b44e3ed2f3956a0adc1800a7d2a3b3ae',
         filename='efficientdet-d0.pb'),
-    Model(
-        name='YOLOv4',  # https://github.com/opencv/opencv/issues/17148
-        url="https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4.weights",
-        sha='0143deb6c46fcc7f74dd35bf3c14edc3784e99ee',
-        filename='yolov4.weights'),
-    Model(
-        name='YOLOv4-tiny-2020-12',  # https://github.com/opencv/opencv/issues/17148
-        url='https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4-tiny.weights',
-        sha='451caaab22fb9831aa1a5ee9b5ba74a35ffa5dcb',
-        filename='yolov4-tiny-2020-12.weights'),
-    Model(
-        name='YOLOv4x-mish',  # https://github.com/opencv/opencv/issues/18975
-        url='https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4x-mish.weights',
-        sha='a6f2879af2241de2e9730d317a55db6afd0af00b',
-        filename='yolov4x-mish.weights'),
     Model(
         name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
         url=[
