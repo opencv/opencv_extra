@@ -1517,6 +1517,25 @@ output = einsum(mat)
 
 save_data_and_model("einsum_transpose", mat, einsum, export_params=True)
 
+class MulMat(nn.Module):
+    def __init__(self):
+        super(MulMat, self).__init__()
+        self.yy = torch.randn(1, 84)
+        self.xx = torch.randn(1, 4, 84)
+        self.xxx = torch.randn(1, 4, 84)
+
+    def forward(self, x):
+        x1= x + self.xx
+        x2= x + self.xxx
+        x3 = x2 * self.yy
+        x4 = torch.sigmoid(x1)
+        x5 = torch.cat((x3, x4), 1)
+        return x5
+
+mat = torch.randn(1, 4, 84)
+model_concat = MulMat()
+
+save_data_and_model("matmul_concat", mat, model_concat, export_params=True)
 
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
     if type_proto is None:
