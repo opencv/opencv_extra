@@ -3,6 +3,8 @@ import numpy as np
 import onnx
 import onnxscript as ost
 from onnxscript import opset19 as op # opset19 is the lastest by 202309
+from onnxscript import opset11
+from onnxscript import opset13
 
 np.random.seed(0)
 
@@ -68,8 +70,6 @@ def greater_input_dtype_int64(x: ost.FLOAT[27, 9]) ->ost.BOOL[27, 9]:
     y = op.Greater(x, op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.INT64, [], np.array([61], dtype=np.int64))))
     return y
 make_model_and_data(greater_input_dtype_int64, np.random.randint(0, 100, size=[27, 9], dtype=np.int64), force_saving_input_as_dtype_float32=True, force_saving_output_as_dtype_float32=True)
-
-from onnxscript import opset11
 
 @ost.script()
 def two_resizes_with_shared_subgraphs(x: ost.FLOAT["batch", 1, "height", "width"], y: ost.FLOAT[1, 1, 3, 2], z: ost.FLOAT[1, 1, 2, 1]) ->ost.FLOAT["batch", 1, "height", "width"]:
@@ -310,3 +310,32 @@ def einsum_const_inputs(input_0: ost.FLOAT[3, 2, 2, 4]) -> ost.FLOAT[3, 2, 2, 2]
     return op.Einsum(input_0, input_1, equation="bhwc, hkc -> bhwk")
 
 make_model_and_data(einsum_const_inputs, input_0_data)
+
+''' This subgraph looks the same as LayerNorm expanded, but it has
+    axes=1 in ReduceMean which does not meet the requirement of LayerNorm:
+        - axes[-1] = -1 or the axis of last dimension
+        - adjacent axes, e.g. [1, 2, 3] or [-3, -2, -1]
+'''
+
+n = 1
+c = 4
+h = w = 8
+mul_weight = np.random.rand(c, 1, 1).astype(np.float32)
+add_weight = np.random.rand(c, 1, 1).astype(np.float32)
+
+@ost.script()
+def layer_norm_no_fusion(x: ost.FLOAT[n, c, h, w]) -> ost.FLOAT[n, c, h, w]:
+    reduce_mean = opset13.ReduceMean(x, axes=[1], keepdims=1)
+    sub = opset13.Sub(x, reduce_mean)
+
+    pow = opset13.Pow(sub, opset13.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([2], dtype=np.float32))))
+    reduce_mean_1 = opset13.ReduceMean(pow, axes=[1], keepdims=1)
+    add = opset13.Add(reduce_mean_1, opset13.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([9.999999974752427e-7], dtype=np.float32))))
+    sqrt = opset13.Sqrt(add)
+
+    div = opset13.Div(sub, sqrt)
+    mul = opset13.Mul(opset13.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [c, 1, 1], mul_weight)), div)
+    add = opset13.Add(mul, opset13.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [c, 1, 1], add_weight)))
+
+    return add
+make_model_and_data(layer_norm_no_fusion, np.random.rand(n, c, h, w).astype(np.float32))
