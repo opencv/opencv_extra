@@ -1012,6 +1012,13 @@ models = [
         url='https://dl.opencv.org/models/yolov8/yolov8n.onnx',
         sha='136807b88d0b02bc226bdeb9741141d857752e10',
         filename='onnx/models/yolov8n.onnx'),
+
+    Model(
+        name='yolo_nas_s',
+        url='https://dl.opencv.org/models/yolo-nas/yolo_nas_s.onnx',
+        sha='089942fbdf8591875a7a6ff10ac50fb6864e7aa4',
+        filename='onnx/models/yolo_nas_s.onnx'),
+
     Model(
         name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
