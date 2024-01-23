@@ -963,13 +963,12 @@ models = [
         sha='2b181b55d1d7af718eaca6cabdeb741217b64c73',
         filename='wechat_2021-01/sr.caffemodel'),
     Model(
-        name='yolov7_not_simplified',
+        name='yolov7',
         url=[
-            'https://docs.google.com/uc?export=download&id=1ljSh81ydO5ylsnDoV_mt3zj5RX_cgLu8',
-            'https://dl.opencv.org/models/yolov7/yolov7_not_simplified.onnx'
+            'https://dl.opencv.org/models/yolov7/yolov7.onnx'
         ],
-        sha='fcd0fa401c83bf2b29e18239a9c2c989c9b8669d',
-        filename='onnx/models/yolov7_not_simplified.onnx'),
+        sha='9f5199c266418462771a26a7b8ea25a90412ce2e',
+        filename='onnx/models/yolov7.onnx'),
     Model(
         name='yolox_s_inf_decoder',
         url=[
@@ -988,6 +987,13 @@ models = [
         url='https://dl.opencv.org/models/yolov8/yolov8n.onnx',
         sha='136807b88d0b02bc226bdeb9741141d857752e10',
         filename='onnx/models/yolov8n.onnx'),
+
+    Model(
+        name='yolo_nas_s',
+        url='https://dl.opencv.org/models/yolo-nas/yolo_nas_s.onnx',
+        sha='089942fbdf8591875a7a6ff10ac50fb6864e7aa4',
+        filename='onnx/models/yolo_nas_s.onnx'),
+
     Model(
         name='NanoTrackV1 (ONNX, backbone)',
         url='https://raw.githubusercontent.com/zihaomu/opencv_extra_data_backup/main/NanoTrack/models/nanotrack_backbone_sim.onnx',
