@@ -1152,6 +1152,72 @@ models = [
         ],
         sha='50008bb4f6a27b1aa940ad886b1bd1936ac4ed3e',
         filename='onnx/models/object_tracking_vittrack_2023sep.onnx'),
+
+    # Original Intel Open Model Zoo models
+    Model(
+        name='age-gender-recognition-retail-0013-fp32 (xml)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml',
+            'https://dl.opencv.org/models/intel_open_model_zoo/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml'
+        ],
+        sha='6d0789605fa378af8bce0ec0f9723bdd356aaf62',
+        filename='../intel/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.xml'),
+    Model(
+        name='age-gender-recognition-retail-0013-fp32 (weights)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.bin',
+            'https://dl.opencv.org/models/intel_open_model_zoo/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.bin'
+        ],
+        sha='4a31977cdb95bb153de3b949003a977d4ea4ed07',
+        filename='../intel/age-gender-recognition-retail-0013/FP32/age-gender-recognition-retail-0013.bin'),
+    Model(
+        name='age-gender-recognition-retail-0013-fp16 (xml)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml',
+            'https://dl.opencv.org/models/intel_open_model_zoo/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml'
+        ],
+        sha='fa6872f82ee3ab9cbaca326d9191c1ce7b717ece',
+        filename='../intel/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.xml'),
+    Model(
+        name='age-gender-recognition-retail-0013-fp16 (weights)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin',
+            'https://dl.opencv.org/models/intel_open_model_zoo/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin'
+        ],
+        sha='c6c0d0e57cdebece1b09794043caca0ca097532e',
+        filename='../intel/age-gender-recognition-retail-0013/FP16/age-gender-recognition-retail-0013.bin'),
+    Model(
+        name='person-detection-retail-0013-fp32 (xml)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-detection-retail-0013/FP32/person-detection-retail-0013.xml',
+            'https://dl.opencv.org/models/intel_open_model_zoo/person-detection-retail-0013/FP32/person-detection-retail-0013.xml'
+        ],
+        sha='df95657b05e5affc1c89165bd8c29b0e15dcdea9',
+        filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.xml'),
+    Model(
+        name='person-detection-retail-0013-fp32 (weights)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-detection-retail-0013/FP32/person-detection-retail-0013.bin',
+            'https://dl.opencv.org/models/intel_open_model_zoo/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'
+        ],
+        sha='682e59855466f88eb0cab9d40ca16e9fd6303bea',
+        filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.xml'),
+    Model(
+        name='person-vehicle-bike-detection-2004-fp32 (xml)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml',
+            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'
+        ],
+        sha='55eef16bc3eb58c255ea8edb77216d2ec408c0f8',
+        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'),
+    Model(
+        name='person-vehicle-bike-detection-2004-fp32 (weights)',
+        url=[
+            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin',
+            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'
+        ],
+        sha='b4b901f53234e87227b81046d7e7aed9a7e6f2c3',
+        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'),
 ]
 
 # Note: models will be downloaded to current working directory
