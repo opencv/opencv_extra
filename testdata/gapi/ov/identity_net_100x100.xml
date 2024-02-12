@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<net name="main_graph" version="11">
+	<layers>
+		<layer id="0" name="onnx::Reshape_0" type="Parameter" version="opset1">
+			<data shape="1,100,100,3" element_type="f32" />
+			<rt_info>
+				<attribute name="old_api_map_element_type" version="0" value="f16" />
+			</rt_info>
+			<output>
+				<port id="0" precision="FP32" names="onnx::Reshape_0">
+					<dim>1</dim>
+					<dim>100</dim>
+					<dim>100</dim>
+					<dim>3</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="1" name="/Constant" type="Const" version="opset1">
+			<data element_type="i64" shape="2" offset="0" size="16" />
+			<rt_info>
+				<attribute name="precise" version="0" />
+			</rt_info>
+			<output>
+				<port id="0" precision="I64" names="/Constant_output_0">
+					<dim>2</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="2" name="/Reshape" type="Reshape" version="opset1">
+			<data special_zero="true" />
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>100</dim>
+					<dim>100</dim>
+					<dim>3</dim>
+				</port>
+				<port id="1" precision="I64">
+					<dim>2</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="/Reshape_output_0">
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="3" name="/conv1d/Constant" type="Const" version="opset1">
+			<data element_type="i64" shape="1" offset="16" size="8" />
+			<output>
+				<port id="0" precision="I64" names="/conv1d/Constant_output_0">
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="4" name="/conv1d/Unsqueeze" type="Unsqueeze" version="opset1">
+			<input>
+				<port id="0" precision="FP32">
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="I64">
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="/conv1d/Unsqueeze_output_0">
+					<dim>1</dim>
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="5" name="Reshape_15_compressed" type="Const" version="opset1">
+			<data element_type="f16" shape="30000, 1, 1, 1" offset="24" size="60000" />
+			<output>
+				<port id="0" precision="FP16">
+					<dim>30000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="6" name="Reshape_15" type="Convert" version="opset1">
+			<data destination_type="f32" />
+			<rt_info>
+				<attribute name="decompression" version="0" />
+			</rt_info>
+			<input>
+				<port id="0" precision="FP16">
+					<dim>30000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1" precision="FP32">
+					<dim>30000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="7" name="/conv1d/Conv/WithoutBiases" type="GroupConvolution" version="opset1">
+			<data strides="1" pads_begin="0" pads_end="0" dilations="1" auto_pad="explicit" />
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="FP32">
+					<dim>30000</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="/conv1d/Conv_output_0">
+					<dim>1</dim>
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="8" name="/conv1d/Constant_1" type="Const" version="opset1">
+			<data element_type="i64" shape="1" offset="16" size="8" />
+			<output>
+				<port id="0" precision="I64" names="/conv1d/Constant_1_output_0">
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="9" name="9" type="Squeeze" version="opset1">
+			<input>
+				<port id="0" precision="FP32">
+					<dim>1</dim>
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+				<port id="1" precision="I64">
+					<dim>1</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2" precision="FP32" names="output">
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="10" name="9/sink_port_0" type="Result" version="opset1">
+			<input>
+				<port id="0" precision="FP32">
+					<dim>30000</dim>
+					<dim>1</dim>
+				</port>
+			</input>
+		</layer>
+	</layers>
+	<edges>
+		<edge from-layer="0" from-port="0" to-layer="2" to-port="0" />
+		<edge from-layer="1" from-port="0" to-layer="2" to-port="1" />
+		<edge from-layer="2" from-port="2" to-layer="4" to-port="0" />
+		<edge from-layer="3" from-port="0" to-layer="4" to-port="1" />
+		<edge from-layer="4" from-port="2" to-layer="7" to-port="0" />
+		<edge from-layer="5" from-port="0" to-layer="6" to-port="0" />
+		<edge from-layer="6" from-port="1" to-layer="7" to-port="1" />
+		<edge from-layer="7" from-port="2" to-layer="9" to-port="0" />
+		<edge from-layer="8" from-port="0" to-layer="9" to-port="1" />
+		<edge from-layer="9" from-port="2" to-layer="10" to-port="0" />
+	</edges>
+	<rt_info>
+		<Runtime_version value="2023.2.0-13089-cfd42bd2cb0-HEAD" />
+		<conversion_parameters>
+			<is_python_object value="False" />
+			<output_model value="test_net.xml" />
+		</conversion_parameters>
+	</rt_info>
+</net>
