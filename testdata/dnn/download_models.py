@@ -1009,9 +1009,20 @@ models = [
         filename='onnx/models/yolov6n.onnx'),
     Model(
         name='yolov8n',
-        url='https://dl.opencv.org/models/yolov8/yolov8n.onnx',
+        url=[
+            'https://huggingface.co/cabelo/yolov8/resolve/main/yolov8n.onnx?download=true',
+            'https://dl.opencv.org/models/yolov8/yolov8n.onnx'
+        ],
         sha='136807b88d0b02bc226bdeb9741141d857752e10',
         filename='onnx/models/yolov8n.onnx'),
+    Model(
+        name='yolov8x',
+        url=[
+            'https://huggingface.co/cabelo/yolov8/resolve/main/yolov8x.onnx?download=true',
+            'https://dl.opencv.org/models/yolov8/yolov8x.onnx'
+        ],
+        sha='462f15d668c046d38e27d3df01fe8142dd004cb4',
+        filename='onnx/models/yolov8x.onnx'),
 
     Model(
         name='yolo_nas_s',
