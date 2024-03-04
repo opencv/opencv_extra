@@ -2665,7 +2665,7 @@ class ArgMax(nn.Module):
         super(ArgMax, self).__init__()
 
     def forward(self, x):
-        return torch.argmax(x, dim=2, keepdims=False).to(torch.float32)
+        return torch.argmax(x, dim=2, keepdims=False)
 
 model = ArgMax()
 input_ = Variable(torch.randn(2, 3, 4, 5, dtype=torch.float32))
@@ -2676,7 +2676,7 @@ class ArgMin(nn.Module):
         super(ArgMin, self).__init__()
 
     def forward(self, x):
-        return torch.argmin(x, dim=-1, keepdims=True).to(torch.float32)
+        return torch.argmin(x, dim=-1, keepdims=True)
 
 model = ArgMin()
 input_ = Variable(torch.randn(2, 3, 4, 5, dtype=torch.float32))
