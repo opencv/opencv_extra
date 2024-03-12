@@ -286,6 +286,11 @@ models = [
         sha='50cf80235a8fcccc641bf9f8efc803edbf21c615',
         filename='MobileNetSSD_deploy_19e3ec3.prototxt'),
     Model(
+        name='TinyYoloV2voc',  # https://pjreddie.com/darknet/yolo/
+        url='https://github.com/onnx/models/raw/main/validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx',
+        sha='7ad8395edc8057030d17c14459de6d07f4d11ac6',
+        filename='tiny-yolov2-voc.onnx'),
+    Model(
         name='DenseNet-121 (caffemodel)',  # https://github.com/shicai/DenseNet-Caffe
         url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
         sha='02b520138e8a73c94473b05879978018fefe947b',
@@ -424,6 +429,12 @@ models = [
         ],
         sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
         filename='openpose_pose_mpi.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25200
+    # Model(
+    #     name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
+    #     url='',
+    #     sha='',
+    #     filename='yolov3.onnx'),
     Model(
         name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
         url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
@@ -855,6 +866,17 @@ models = [
         url='https://www.dropbox.com/s/9mqp99fd2tpuqn6/efficientdet-d0.pb?dl=1',
         sha='f178cc17b44e3ed2f3956a0adc1800a7d2a3b3ae',
         filename='efficientdet-d0.pb'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25200
+    # Model(
+    #     name='YOLOv4',  # https://github.com/opencv/opencv/issues/17148
+    #     url='',
+    #     sha='',
+    #     filename='yolov4.onnx'),
+    # Model(
+    #     name='YOLOv4-tiny',  # https://github.com/opencv/opencv/issues/17148
+    #     url='',
+    #     sha='',
+    #     filename='yolov4-tiny.onnx'),
     Model(
         name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
         url=[
