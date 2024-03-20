@@ -289,7 +289,7 @@ models = [
         name='TinyYoloV2voc',  # https://pjreddie.com/darknet/yolo/
         url='https://github.com/onnx/models/raw/main/validated/vision/object_detection_segmentation/tiny-yolov2/model/tinyyolov2-8.onnx',
         sha='7ad8395edc8057030d17c14459de6d07f4d11ac6',
-        filename='tiny-yolov2-voc.onnx'),
+        filename='tinyyolov2-8.onnx'),
     Model(
         name='DenseNet-121 (caffemodel)',  # https://github.com/shicai/DenseNet-Caffe
         url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
