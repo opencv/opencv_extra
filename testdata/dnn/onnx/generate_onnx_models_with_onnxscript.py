@@ -364,4 +364,6 @@ def biased_matmul(x: ost.FLOAT[b, m, k]) -> ost.FLOAT[b, m, n]:
     matmul = op.MatMul(x, weight)
     bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], np.random.rand(n).astype(np.float32)))
     return op.Add(bias, matmul)
+# Use onnxruntime to get inference result because onnxscript produces incorrect result in eager mode.
+# More details see https://github.com/microsoft/onnxscript/issues/1313.
 make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32), use_ort=True, ort_input_keys=["x"])
