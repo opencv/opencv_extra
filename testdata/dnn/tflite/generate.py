@@ -2,7 +2,7 @@
 import os
 import numpy as np
 import tensorflow as tf
-import mediapipe as mp
+# import mediapipe as mp
 
 import cv2 as cv
 
@@ -35,16 +35,16 @@ def run_tflite_model(model_name, inp_size):
         np.save(f"{model_name}_out_{out_name}.npy", out)
 
 
-def run_mediapipe_solution(solution, inp_size):
-    with solution as selfie_segmentation:
-        inp = cv.resize(image, inp_size)
-        results = selfie_segmentation.process(inp)
-        np.save(f"selfie_segmentation_out_activation_10.npy", results.segmentation_mask)
+# def run_mediapipe_solution(solution, inp_size):
+#     with solution as selfie_segmentation:
+#         inp = cv.resize(image, inp_size)
+#         results = selfie_segmentation.process(inp)
+#         np.save(f"selfie_segmentation_out_activation_10.npy", results.segmentation_mask)
 
-run_tflite_model("face_landmark", (192, 192))
-run_tflite_model("face_detection_short_range", (128, 128))
+# run_tflite_model("face_landmark", (192, 192))
+# run_tflite_model("face_detection_short_range", (128, 128))
 
-run_mediapipe_solution(mp.solutions.selfie_segmentation.SelfieSegmentation(model_selection=0), (256, 256))
+# run_mediapipe_solution(mp.solutions.selfie_segmentation.SelfieSegmentation(model_selection=0), (256, 256))
 
 # Save TensorFlow model as TFLite
 def save_tflite_model(model, inp, name):
@@ -58,20 +58,34 @@ def save_tflite_model(model, inp, name):
         f.write(tflite_model)
 
     out = model(inp)
+    out = np.array(out)
 
-    np.save(f'{name}_inp.npy', inp.transpose(0, 3, 1, 2))
-    np.save(f'{name}_out_Identity.npy', np.array(out).transpose(0, 3, 1, 2))
+    if len(inp.shape) == 4:
+        inp = inp.transpose(0, 3, 1, 2)
+        out = out.transpose(0, 3, 1, 2)
+
+    np.save(f'{name}_inp.npy', inp)
+    np.save(f'{name}_out_Identity.npy', out)
 
 
-@tf.function(input_signature=[tf.TensorSpec(shape=[1, 3, 3, 1], dtype=tf.float32)])
-def replicate_by_pack(x):
-    pack_1 = tf.stack([x, x], axis=3)
-    reshape_1 = tf.reshape(pack_1, [1, 3, 6, 1])
-    pack_2 = tf.stack([reshape_1, reshape_1], axis=2)
-    reshape_2 = tf.reshape(pack_2, [1, 6, 6, 1])
-    scaled = tf.image.resize(reshape_2, size=(3, 3), method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
-    return scaled + x
+# @tf.function(input_signature=[tf.TensorSpec(shape=[1, 3, 3, 1], dtype=tf.float32)])
+# def replicate_by_pack(x):
+#     pack_1 = tf.stack([x, x], axis=3)
+#     reshape_1 = tf.reshape(pack_1, [1, 3, 6, 1])
+#     pack_2 = tf.stack([reshape_1, reshape_1], axis=2)
+#     reshape_2 = tf.reshape(pack_2, [1, 6, 6, 1])
+#     scaled = tf.image.resize(reshape_2, size=(3, 3), method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
+#     return scaled + x
 
-inp = np.random.standard_normal((1, 3, 3, 1)).astype(np.float32)
-save_tflite_model(replicate_by_pack, inp, 'replicate_by_pack')
+# inp = np.random.standard_normal((1, 3, 3, 1)).astype(np.float32)
+# save_tflite_model(replicate_by_pack, inp, 'replicate_by_pack')
 
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 3], dtype=tf.float32)])
+def split(x):
+    splitted = tf.split(
+        x, 3, axis=-1, num=None, name='split'
+    )
+    return tf.concat((splitted[2], splitted[1], splitted[0]), axis=-1)
+
+inp = np.random.standard_normal((1, 3)).astype(np.float32)
+save_tflite_model(split, inp, 'split')
