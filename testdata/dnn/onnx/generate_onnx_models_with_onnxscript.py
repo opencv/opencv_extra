@@ -6,6 +6,8 @@ from onnxscript import opset19 as op # opset19 is the lastest by 202309
 from onnxscript import opset11
 from onnxscript import opset13
 
+import onnxruntime as ort
+
 np.random.seed(0)
 
 def make_model_and_data(model, *args, **kwargs):
@@ -13,6 +15,13 @@ def make_model_and_data(model, *args, **kwargs):
 
     # TODO: support multiple outputs
     output = model(*args) # eager mode
+    if "use_ort" in kwargs and kwargs["use_ort"]:
+        assert "ort_input_keys" in kwargs, "use_ort: input keys are required to use onnxruntime for inference"
+        ort_inf_sess = ort.InferenceSession(model.to_model_proto().SerializeToString(), providers=["CPUExecutionProvider"])
+        inputs_dict = dict()
+        for k, v in zip(kwargs["ort_input_keys"], args):
+            inputs_dict[k] = v
+        output = ort_inf_sess.run([], inputs_dict)[0]
 
     # Save model
     model_proto = model.to_model_proto()
@@ -339,3 +348,20 @@ def layer_norm_no_fusion(x: ost.FLOAT[n, c, h, w]) -> ost.FLOAT[n, c, h, w]:
 
     return add
 make_model_and_data(layer_norm_no_fusion, np.random.rand(n, c, h, w).astype(np.float32))
+
+
+''' Subgraph: [Input] -> MatMul<B> -> Add<A> -> [Output]
+'''
+
+b = 2
+m = 32
+n = 64
+k = 16
+
+@ost.script()
+def biased_matmul(x: ost.FLOAT[b, m, k]) -> ost.FLOAT[b, m, n]:
+    weight = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [k, n], np.random.rand(k, n).astype(np.float32)))
+    matmul = op.MatMul(x, weight)
+    bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], np.random.rand(n).astype(np.float32)))
+    return op.Add(bias, matmul)
+make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32), use_ort=True, ort_input_keys=["x"])
