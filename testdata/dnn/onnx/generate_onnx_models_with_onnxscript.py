@@ -6,7 +6,12 @@ from onnxscript import opset19 as op # opset19 is the lastest by 202309
 from onnxscript import opset11
 from onnxscript import opset13
 
-import onnxruntime as ort
+###############
+### CAUTION!!!
+### Be sure to put constant numpy arrays out of @ost.script() decorated fucntion.
+### Otherwise random values change each time eager mode is enter.
+### See discussions in https://github.com/microsoft/onnxscript/issues/1313
+###############
 
 np.random.seed(0)
 
@@ -15,13 +20,6 @@ def make_model_and_data(model, *args, **kwargs):
 
     # TODO: support multiple outputs
     output = model(*args) # eager mode
-    if "use_ort" in kwargs and kwargs["use_ort"]:
-        assert "ort_input_keys" in kwargs, "use_ort: input keys are required to use onnxruntime for inference"
-        ort_inf_sess = ort.InferenceSession(model.to_model_proto().SerializeToString(), providers=["CPUExecutionProvider"])
-        inputs_dict = dict()
-        for k, v in zip(kwargs["ort_input_keys"], args):
-            inputs_dict[k] = v
-        output = ort_inf_sess.run([], inputs_dict)[0]
 
     # Save model
     model_proto = model.to_model_proto()
@@ -357,13 +355,13 @@ b = 2
 m = 32
 n = 64
 k = 16
+weight_data = np.random.rand(k, n).astype(np.float32)
+bias_data = np.random.rand(n).astype(np.float32)
 
 @ost.script()
 def biased_matmul(x: ost.FLOAT[b, m, k]) -> ost.FLOAT[b, m, n]:
-    weight = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [k, n], np.random.rand(k, n).astype(np.float32)))
+    weight = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [k, n], weight_data))
     matmul = op.MatMul(x, weight)
-    bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], np.random.rand(n).astype(np.float32)))
+    bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], bias_data))
     return op.Add(bias, matmul)
-# Use onnxruntime to get inference result because onnxscript produces incorrect result in eager mode.
-# More details see https://github.com/microsoft/onnxscript/issues/1313.
 make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32), use_ort=True, ort_input_keys=["x"])
