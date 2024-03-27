@@ -56,6 +56,28 @@ def save_data_and_model(name, input, model, version=None, export_params=False):
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
 
+def save_data_and_model_multy_inputs(name, input_list, model, version=None, export_params=False):
+    model.eval()
+
+    for index in range(len(input_list)):
+        print(name + " input  "+str(index)+" has sizes",  input_list[index].shape)
+        input_file = os.path.join("data", "input_" + name + "_" + str(index))
+        np.save(input_file, input_list[index].data)
+
+    output = model(*input_list)
+
+    print(name + " output has sizes", output.shape)
+    print()
+    output_files =  os.path.join("data", "output_" + name)
+    np.save(output_files, np.ascontiguousarray(output.data))
+
+    models_files = os.path.join("models", name + ".onnx")
+
+    onnx_model_pb = export_to_string(model, input_list, version, export_params)
+    model_def = assertONNXExpected(onnx_model_pb)
+    with open(models_files, 'wb') as file:
+        file.write(model_def.SerializeToString())
+
 def save_onnx_data_and_model(input, output, name, operation, *args, **kwargs):
     print(name + " input has sizes",  input.shape)
     input_files = os.path.join("data", "input_" + name)
@@ -2520,13 +2542,21 @@ class CumSum(nn.Module):
         self._dim = dim
 
     def forward(self, x):
-        return torch.cumsum(x, self._dim)
+        return torch.cumsum(x, self._dim, dtype=x.dtype)
 
 x = torch.randn(2, 3)
 save_data_and_model("cumsum_2d_dim_1", x, CumSum(dim=1), version=11)
 
 x = torch.randn(2, 3, 4)
 save_data_and_model("cumsum_3d_dim_2", x, CumSum(dim=2), version=11)
+
+x = torch.randint(100, 200, (3, 4, 5), dtype=torch.int32)
+save_data_and_model("cumsum_3d_dim_2_int32", x, CumSum(dim=2), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (4, 3, 2), dtype=torch.int64)
+save_data_and_model("cumsum_3d_dim_2_int64", x, CumSum(dim=2), version=18)
+
+
 
 # test: CumSum exclusive layer should not be executed inplace
 dims = h.make_node("Constant", inputs=[], outputs=["dims1"], name="node-c1",
@@ -3102,3 +3132,62 @@ np.save(output_files, np.ascontiguousarray(output.data))
 def tf_resize_nearest(x):
     return tf.compat.v1.image.resize_nearest_neighbor(x, size=(5, 6), align_corners=False, half_pixel_centers=True)
 save_data_and_tf_function(tf_resize_nearest, "tf_half_pixel_for_nn", np.random.rand(1, 2, 3, 2))
+
+################# Sum #################
+
+class Sum(nn.Module):
+    def __init__(self, dims, keepdim):
+        super(Sum, self).__init__()
+        self.dims = dims
+        self.keepdim = keepdim
+
+    def forward(self, x):
+        #print(x.dtype, x.sum(dim=self.dims, keepdim=self.keepdim, dtype=x.dtype).dtype)
+        return torch.sum(x, dim=self.dims, keepdim=self.keepdim, dtype=x.dtype)
+
+# Different bihavior in Pytorch and ONNX: Pytorch converts values to int64, ONNX doesn't
+# x = torch.randint(100, 200, (2, 3, 4, 5), dtype=torch.int32)
+# save_data_and_model("reduce_sum_int32", x, Sum((2, 3), keepdim=False), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
+save_data_and_model("reduce_sum_int64", x, Sum((1,), keepdim=False), version=18)
+
+################# Scatter #################
+
+class Scatter(nn.Module):
+    def __init__(self, dim):
+        super(Scatter, self).__init__()
+        self.dim = dim
+
+    def forward(self, x, y, indices):
+        return torch.scatter(x, self.dim, indices, y)
+
+x = torch.randint(100, 200, (2, 3, 10, 7), dtype=torch.int32)
+y = torch.randint(100, 200, (2, 3, 5, 7), dtype=torch.int32)
+indices = torch.zeros((2, 3, 5, 7), dtype=torch.int64)
+for i in range(5):
+    indices[:, :, i, :] = 7 - i
+save_data_and_model_multy_inputs("scatter_int32", (x, y, indices), Scatter(2), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (2, 9, 3, 2), dtype=torch.int64)
+y = torch.randint(1000000000000000, 1000000000000200, (2, 4, 3, 2), dtype=torch.int64)
+indices = torch.zeros((2, 4, 3, 2), dtype=torch.int64)
+for i in range(4):
+    indices[:, i, :, :] = 2 + i
+save_data_and_model_multy_inputs("scatter_int64", (x, y, indices), Scatter(1), version=18)
+
+################# Tile #################
+
+class Tile(nn.Module):
+    def __init__(self, dims):
+        super(Tile, self).__init__()
+        self.dims = dims
+
+    def forward(self, x):
+        return x.repeat(self.dims)
+
+x = torch.randint(100, 200, (2, 3, 4, 5), dtype=torch.int32)
+save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
+save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
