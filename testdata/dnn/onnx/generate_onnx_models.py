@@ -2556,8 +2556,6 @@ save_data_and_model("cumsum_3d_dim_2_int32", x, CumSum(dim=2), version=18)
 x = torch.randint(1000000000000000, 1000000000000200, (4, 3, 2), dtype=torch.int64)
 save_data_and_model("cumsum_3d_dim_2_int64", x, CumSum(dim=2), version=18)
 
-
-
 # test: CumSum exclusive layer should not be executed inplace
 dims = h.make_node("Constant", inputs=[], outputs=["dims1"], name="node-c1",
                    value=h.make_tensor(name="c1v", data_type=onnx.TensorProto.INT64, dims=[], vals=np.asarray([1, ], dtype=np.int64)))
