@@ -91,6 +91,8 @@ save_tflite_model(split, inp, 'split')
 
 fully_connected = tf.keras.models.Sequential([
   tf.keras.layers.Dense(3),
+  tf.keras.layers.ReLU(),
+  tf.keras.layers.Softmax(),
 ])
 
 fully_connected = tf.function(
