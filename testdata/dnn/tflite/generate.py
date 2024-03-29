@@ -52,15 +52,18 @@ def save_tflite_model(model, inp, name):
     converter = tf.lite.TFLiteConverter.from_concrete_functions([func])
     tflite_model = converter.convert()
 
-    interpreter = tf.lite.Interpreter(model_content=tflite_model)
-
     with open(f'{name}.tflite', 'wb') as f:
         f.write(tflite_model)
 
     out = model(inp)
+    out = np.array(out)
 
-    np.save(f'{name}_inp.npy', inp.transpose(0, 3, 1, 2))
-    np.save(f'{name}_out_Identity.npy', np.array(out).transpose(0, 3, 1, 2))
+    if len(inp.shape) == 4:
+        inp = inp.transpose(0, 3, 1, 2)
+        out = out.transpose(0, 3, 1, 2)
+
+    np.save(f'{name}_inp.npy', inp)
+    np.save(f'{name}_out_Identity.npy', out)
 
 
 @tf.function(input_signature=[tf.TensorSpec(shape=[1, 3, 3, 1], dtype=tf.float32)])
@@ -75,3 +78,27 @@ def replicate_by_pack(x):
 inp = np.random.standard_normal((1, 3, 3, 1)).astype(np.float32)
 save_tflite_model(replicate_by_pack, inp, 'replicate_by_pack')
 
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 3], dtype=tf.float32)])
+def split(x):
+    splitted = tf.split(
+        x, 3, axis=-1, num=None, name='split'
+    )
+    return tf.concat((splitted[2], splitted[1], splitted[0]), axis=-1)
+
+inp = np.random.standard_normal((1, 3)).astype(np.float32)
+save_tflite_model(split, inp, 'split')
+
+
+fully_connected = tf.keras.models.Sequential([
+  tf.keras.layers.Dense(3),
+  tf.keras.layers.ReLU(),
+  tf.keras.layers.Softmax(),
+])
+
+fully_connected = tf.function(
+      fully_connected.call,
+      input_signature=[tf.TensorSpec((1,2), tf.float32)],
+)
+
+inp = np.random.standard_normal((1, 2)).astype(np.float32)
+save_tflite_model(fully_connected, inp, 'fully_connected')
