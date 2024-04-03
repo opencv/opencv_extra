@@ -238,53 +238,28 @@ class Model:
 
 models = [
     Model(
-        name='GoogleNet',
-        url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
-        sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
-        filename='bvlc_googlenet.caffemodel'),
-    Model(
-        name='Alexnet',
-        url='http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel',
-        sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
-        filename='bvlc_alexnet.caffemodel'),
-    Model(
         name='Inception',
         url='https://github.com/petewarden/tf_ios_makefile_example/raw/master/data/tensorflow_inception_graph.pb',
         sha='c8a5a000ee8d8dd75886f152a50a9c5b53d726a5',
         filename='tensorflow_inception_graph.pb'),
-    Model(
-        name='Fcn',
-        url='http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel',
-        sha='c449ea74dd7d83751d1357d6a8c323fcf4038962',
-        filename='fcn8s-heavy-pascal.caffemodel'),
-    Model(
-        name='Ssd_vgg16',
-        url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
-        sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
-        filename='VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel'),
-    Model(
-        name='ResNet50',
-        url=[
-            'https://onedrive.live.com/download?cid=4006CBB8476FF777&resid=4006CBB8476FF777%2117895&authkey=%21AAFW2%2DFVoxeVRck',
-            'https://dl.opencv.org/models/ResNet-50-model.caffemodel'
-        ],
-        sha='b7c79ccc21ad0479cddc0dd78b1d20c4d722908d',
-        filename='ResNet-50-model.caffemodel'),
-    Model(
-        name='SqueezeNet_v1.1',
-        url='https://raw.githubusercontent.com/DeepScale/SqueezeNet/b5c3f1a23713c8b3fd7b801d229f6b04c64374a5/SqueezeNet_v1.1/squeezenet_v1.1.caffemodel',
-        sha='3397f026368a45ae236403ccc81cfcbe8ebe1bd0',
-        filename='squeezenet_v1.1.caffemodel'),
-    Model(
-        name='MobileNet-SSD (caffemodel)',  # https://github.com/chuanqi305/MobileNet-SSD
-        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/mobilenet_iter_73000.caffemodel',
-        sha='19e3ec38842f3e68b02c07a1c24424a1e9db57e9',
-        filename='MobileNetSSD_deploy_19e3ec3.caffemodel'),
-    Model(
-        name='MobileNet-SSD (prototxt)',
-        url='https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/97406996b1eee2d40eb0a00ae567cf41e23369f9/deploy.prototxt',
-        sha='50cf80235a8fcccc641bf9f8efc803edbf21c615',
-        filename='MobileNetSSD_deploy_19e3ec3.prototxt'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='Fcn',
+    #     url='https://github.com/onnx/models/raw/491ce05590abb7551d7fae43c067c060eeb575a6/validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx',
+    #     sha='',
+    #     filename='onnx/models/fcn-resnet50-12.onnx'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='ssd',
+    #     url='https://github.com/onnx/models/raw/491ce05590abb7551d7fae43c067c060eeb575a6/validated/vision/object_detection_segmentation/ssd/model/ssd-12.onnx',
+    #     sha='20c86b1cbd0a4be6194e40bb8c92cf0401adee8b',
+    #     filename='onnx/models/ssd-12.onnx'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='MobileNet-SSD',
+    #     url='https://github.com/onnx/models/raw/491ce05590abb7551d7fae43c067c060eeb575a6/validated/vision/object_detection_segmentation/ssd-mobilenetv1/model/ssd_mobilenet_v1_12.onnx',
+    #     sha='83536889adce1eda154175f8e3b156dd20443631',
+    #     filename='onnx/models/ssd_mobilenet_v1_12.onnx'),
     Model(
         name='YoloV2voc',  # https://pjreddie.com/darknet/yolo/
         url='https://pjreddie.com/media/files/yolo-voc.weights',
@@ -296,15 +271,10 @@ models = [
         sha='24b4bd049fc4fa5f5e95f684a8967e65c625dff9',
         filename='tiny-yolo-voc.weights'),
     Model(
-        name='DenseNet-121 (caffemodel)',  # https://github.com/shicai/DenseNet-Caffe
-        url='https://drive.google.com/uc?export=download&id=0B7ubpZO7HnlCcHlfNmJkU2VPelE',
-        sha='02b520138e8a73c94473b05879978018fefe947b',
-        filename='DenseNet_121.caffemodel'),
-    Model(
-        name='DenseNet-121 (prototxt)',
-        url='https://raw.githubusercontent.com/shicai/DenseNet-Caffe/master/DenseNet_121.prototxt',
-        sha='4922099342af5993d9d09f63081c8a392f3c1cc6',
-        filename='DenseNet_121.prototxt'),
+        name='DenseNet-121 (ONNX)',
+        url='https://github.com/onnx/models/raw/491ce05590abb7551d7fae43c067c060eeb575a6/validated/vision/classification/densenet-121/model/densenet-12.onnx',
+        sha='4f4fe414af50b5fc2675eb1e6fdf5d712eeee735',
+        filename='onnx/models/densenet-12.onnx'),
     Model(
         name='Fast-Neural-Style',
         url=[
@@ -352,24 +322,21 @@ models = [
         url='https://raw.githubusercontent.com/richzhang/colorization/caffe/models/colorization_deploy_v2.prototxt',
         sha='f528334e386a69cbaaf237a7611d833bef8e5219',
         filename='colorization_deploy_v2.prototxt'),
-    Model(
-        name='Colorization (caffemodel)',
-        url=[
-            'http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
-            'https://dl.opencv.org/models/colorization_release_v2.caffemodel'
-        ],
-        sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
-        filename='colorization_release_v2.caffemodel'),
-    Model(
-        name='Face_detector',
-        url='https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel',
-        sha='15aa726b4d46d9f023526d85537db81cbc8dd566',
-        filename='opencv_face_detector.caffemodel'),
-    Model(
-        name='Face_detector (FP16)',
-        url='https://github.com/opencv/opencv_3rdparty/raw/19512576c112aa2c7b6328cb0e8d589a4a90a26d/res10_300x300_ssd_iter_140000_fp16.caffemodel',
-        sha='31fc22bfdd907567a04bb45b7cfad29966caddc1',
-        filename='opencv_face_detector_fp16.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='Colorization (caffemodel)',
+    #     url=[
+    #         'http://eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v2/colorization_release_v2.caffemodel',
+    #         'https://dl.opencv.org/models/colorization_release_v2.caffemodel'
+    #     ],
+    #     sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
+    #     filename='colorization_release_v2.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='Face_detector (FP16)',
+    #     url='https://github.com/opencv/opencv_3rdparty/raw/19512576c112aa2c7b6328cb0e8d589a4a90a26d/res10_300x300_ssd_iter_140000_fp16.caffemodel',
+    #     sha='31fc22bfdd907567a04bb45b7cfad29966caddc1',
+    #     filename='opencv_face_detector_fp16.caffemodel'),
     Model(
         name='Face_detector (UINT8)',
         url='https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb',
@@ -386,54 +353,58 @@ models = [
                 sha='554a75594e9fd1ccee291b3ba3f1190b868a54c9',
                 filename='ssd_inception_v2_coco_2017_11_17.pb')
         ]),
-    Model(
-        name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
-        url=[
-            'https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
-            'https://dl.opencv.org/models/faster_rcnn_models.tgz'
-        ],
-        sha='51bca62727c3fe5d14b66e9331373c1e297df7d1',
-        filename='faster_rcnn_models.tgz',
-        sub=[
-            Model(
-                member='faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel',
-                sha='dd099979468aafba21f3952718a9ceffc7e57699',
-                filename='VGG16_faster_rcnn_final.caffemodel'),
-            Model(
-                member='faster_rcnn_models/ZF_faster_rcnn_final.caffemodel',
-                sha='7af886686f149622ed7a41c08b96743c9f4130f5',
-                filename='ZF_faster_rcnn_final.caffemodel'),
-        ]),
-    Model(
-        name='R-FCN',  # https://github.com/YuwenXiong/py-R-FCN
-        url=[
-            'https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
-            'https://dl.opencv.org/models/rfcn_models.tar.gz'
-        ],
-        sha='bb3180da68b2b71494f8d3eb8f51b2d47467da3e',
-        filename='rfcn_models.tar.gz',
-        sub=[
-            Model(
-                member='rfcn_models/resnet50_rfcn_final.caffemodel',
-                sha='e00beca7af2790801efb1724d77bddba89e7081c',
-                filename='resnet50_rfcn_final.caffemodel'),
-        ]),
-    Model(
-        name='OpenPose/pose/coco',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url=[
-            'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
-            'https://dl.opencv.org/models/openpose_pose_coco.caffemodel'
-        ],
-        sha='ac7e97da66f3ab8169af2e601384c144e23a95c1',
-        filename='openpose_pose_coco.caffemodel'),
-    Model(
-        name='OpenPose/pose/mpi',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
-        url=[
-            'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
-            'https://dl.opencv.org/models/openpose_pose_mpi.caffemodel'
-        ],
-        sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
-        filename='openpose_pose_mpi.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
+    #     url=[
+    #         'https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0',
+    #         'https://dl.opencv.org/models/faster_rcnn_models.tgz'
+    #     ],
+    #     sha='51bca62727c3fe5d14b66e9331373c1e297df7d1',
+    #     filename='faster_rcnn_models.tgz',
+    #     sub=[
+    #         Model(
+    #             member='faster_rcnn_models/VGG16_faster_rcnn_final.caffemodel',
+    #             sha='dd099979468aafba21f3952718a9ceffc7e57699',
+    #             filename='VGG16_faster_rcnn_final.caffemodel'),
+    #         Model(
+    #             member='faster_rcnn_models/ZF_faster_rcnn_final.caffemodel',
+    #             sha='7af886686f149622ed7a41c08b96743c9f4130f5',
+    #             filename='ZF_faster_rcnn_final.caffemodel'),
+    #     ]),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='R-FCN',  # https://github.com/YuwenXiong/py-R-FCN
+    #     url=[
+    #         'https://onedrive.live.com/download?cid=10B28C0E28BF7B83&resid=10B28C0E28BF7B83%215317&authkey=%21AIeljruhoLuail8',
+    #         'https://dl.opencv.org/models/rfcn_models.tar.gz'
+    #     ],
+    #     sha='bb3180da68b2b71494f8d3eb8f51b2d47467da3e',
+    #     filename='rfcn_models.tar.gz',
+    #     sub=[
+    #         Model(
+    #             member='rfcn_models/resnet50_rfcn_final.caffemodel',
+    #             sha='e00beca7af2790801efb1724d77bddba89e7081c',
+    #             filename='resnet50_rfcn_final.caffemodel'),
+    #     ]),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='OpenPose/pose/coco',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
+    #     url=[
+    #         'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/coco/pose_iter_440000.caffemodel',
+    #         'https://dl.opencv.org/models/openpose_pose_coco.caffemodel'
+    #     ],
+    #     sha='ac7e97da66f3ab8169af2e601384c144e23a95c1',
+    #     filename='openpose_pose_coco.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='OpenPose/pose/mpi',  # https://github.com/CMU-Perceptual-Computing-Lab/openpose
+    #     url=[
+    #         'http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel',
+    #         'https://dl.opencv.org/models/openpose_pose_mpi.caffemodel'
+    #     ],
+    #     sha='a344f4da6b52892e44a0ca8a4c68ee605fc611cf',
+    #     filename='openpose_pose_mpi.caffemodel'),
     Model(
         name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
         url='https://pjreddie.com/media/files/yolov3.weights',
@@ -886,14 +857,6 @@ models = [
         sha='a6f2879af2241de2e9730d317a55db6afd0af00b',
         filename='yolov4x-mish.weights'),
     Model(
-        name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
-        url=[
-            'https://docs.google.com/uc?export=download&id=1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br',
-            'https://dl.opencv.org/models/goturn.caffemodel'
-        ],
-        sha='49776d262993c387542f84d9cd16566840404f26',
-        filename='gsoc2016-goturn/goturn.caffemodel'),
-    Model(
         name='DaSiamRPM Tracker network (ONNX)',
         url='https://www.dropbox.com/s/rr1lk9355vzolqv/dasiamrpn_model.onnx?dl=1',
         sha='91b774fce7df4c0e4918469f0f482d9a27d0e2d4',
@@ -947,21 +910,24 @@ models = [
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.prototxt',
         sha='a6936962139282d300ebbf15a54c2aa94b144bb7',
         filename='wechat_2021-01/detect.prototxt'),
-    Model(
-        name='wechat_qr_detect (caffemodel)',
-        url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.caffemodel',
-        sha='d587623a055cbd58a648de62a8c703c7abb05f6d',
-        filename='wechat_2021-01/detect.caffemodel'),
-    Model(
-        name='wechat_super_resolution (prototxt)',
-        url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.prototxt',
-        sha='39e1f1031c842766f1cc126615fea8e8256facd2',
-        filename='wechat_2021-01/sr.prototxt'),
-    Model(
-        name='wechat_super_resolution (caffemodel)',
-        url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.caffemodel',
-        sha='2b181b55d1d7af718eaca6cabdeb741217b64c73',
-        filename='wechat_2021-01/sr.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='wechat_qr_detect (caffemodel)',
+    #     url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.caffemodel',
+    #     sha='d587623a055cbd58a648de62a8c703c7abb05f6d',
+    #     filename='wechat_2021-01/detect.caffemodel'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='wechat_super_resolution (prototxt)',
+    #     url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.prototxt',
+    #     sha='39e1f1031c842766f1cc126615fea8e8256facd2',
+    #     filename='wechat_2021-01/sr.prototxt'),
+    # Disabled due to the lack of the model support. https://github.com/opencv/opencv/issues/25314
+    # Model(
+    #     name='wechat_super_resolution (caffemodel)',
+    #     url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.caffemodel',
+    #     sha='2b181b55d1d7af718eaca6cabdeb741217b64c73',
+    #     filename='wechat_2021-01/sr.caffemodel'),
     Model(
         name='yolov7',
         url=[
