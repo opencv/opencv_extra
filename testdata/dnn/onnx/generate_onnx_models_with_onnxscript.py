@@ -8,8 +8,8 @@ from onnxscript import opset13
 
 ###############
 ### CAUTION!!!
-### Be sure to put constant numpy arrays out of @ost.script() decorated fucntion.
-### Otherwise random values change each time eager mode is enter.
+### Be sure to put random-generated constant numpy arrays out of @ost.script() decorated fucntion.
+### Otherwise random values change each time eager mode is entereded.
 ### See discussions in https://github.com/microsoft/onnxscript/issues/1313
 ###############
 
@@ -364,4 +364,19 @@ def biased_matmul(x: ost.FLOAT[b, m, k]) -> ost.FLOAT[b, m, n]:
     matmul = op.MatMul(x, weight)
     bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], bias_data))
     return op.Add(bias, matmul)
-make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32), use_ort=True, ort_input_keys=["x"])
+make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32))
+
+''' Subgraph: [Input] -> Clip<min=0, max=6> -> Add<B=6> -> Clip<min=0, max=6> -> Add<B=6> -> [Output]
+
+    Here max=6 and B=6 shares the same Constant node.
+'''
+
+@ost.script()
+def clip_div_shared_constant(x: ost.FLOAT[1, 8, 12, 10]) -> ost.FLOAT[1, 8, 12, 10]:
+    Constant_output_0 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([0], dtype=np.float32)))
+    Constant_1_output_0 = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [], np.array([6], dtype=np.float32)))
+
+    div = op.Div(x, Constant_1_output_0)
+    clip = op.Clip(div, Constant_output_0, Constant_1_output_0)
+    return clip
+make_model_and_data(clip_div_shared_constant, np.random.rand(1, 8, 12, 10).astype(np.float32))
