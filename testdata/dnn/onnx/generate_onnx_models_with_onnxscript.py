@@ -9,7 +9,7 @@ from onnxscript import opset13
 ###############
 ### CAUTION!!!
 ### Be sure to put random-generated constant numpy arrays out of @ost.script() decorated fucntion.
-### Otherwise random values change each time eager mode is entered.
+### Otherwise random values change each time eager mode is entereded.
 ### See discussions in https://github.com/microsoft/onnxscript/issues/1313
 ###############
 
@@ -364,7 +364,7 @@ def biased_matmul(x: ost.FLOAT[b, m, k]) -> ost.FLOAT[b, m, n]:
     matmul = op.MatMul(x, weight)
     bias = op.Constant(value=onnx.helper.make_tensor("", onnx.TensorProto.FLOAT, [n], bias_data))
     return op.Add(bias, matmul)
-make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32), use_ort=True, ort_input_keys=["x"])
+make_model_and_data(biased_matmul, np.random.rand(b, m, k).astype(np.float32))
 
 ''' Subgraph: [Input] -> Clip<min=0, max=6> -> Add<B=6> -> Clip<min=0, max=6> -> Add<B=6> -> [Output]
 
