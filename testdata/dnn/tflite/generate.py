@@ -58,9 +58,14 @@ def save_tflite_model(model, inp, name):
     out = model(inp)
     out = np.array(out)
 
-    if len(inp.shape) == 4:
+    # convert NHWC to NCHW format
+    if inp.ndim == 4:
         inp = inp.transpose(0, 3, 1, 2)
+        inp = np.copy(inp, order='C').astype(inp.dtype)
+
+    if out.ndim == 4:
         out = out.transpose(0, 3, 1, 2)
+        out = np.copy(out, order='C').astype(out.dtype)
 
     np.save(f'{name}_inp.npy', inp)
     np.save(f'{name}_out_Identity.npy', out)
