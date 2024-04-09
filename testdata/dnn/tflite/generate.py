@@ -107,3 +107,25 @@ fully_connected = tf.function(
 
 inp = np.random.standard_normal((1, 2)).astype(np.float32)
 save_tflite_model(fully_connected, inp, 'fully_connected')
+
+permutation_3d = tf.keras.models.Sequential([
+  tf.keras.layers.Permute((2,1))
+])
+
+permutation_3d = tf.function(
+    permutation_3d.call,
+    input_signature=[tf.TensorSpec((1,2,3), tf.float32)],
+)
+inp = np.random.standard_normal((1, 2, 3)).astype(np.float32)
+save_tflite_model(permutation_3d, inp, 'permutation_3d')
+
+permutation_4d = tf.keras.models.Sequential([
+  tf.keras.layers.Permute((3,2,1))
+])
+
+permutation_4d = tf.function(
+    permutation_4d.call,
+    input_signature=[tf.TensorSpec((1,2,3,4), tf.float32)],
+)
+inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
+save_tflite_model(permutation_4d, inp, 'permutation_4d')
