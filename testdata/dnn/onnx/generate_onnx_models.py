@@ -1903,6 +1903,35 @@ x = Variable(torch.randn(2, 2, 2, 2))
 model = Gather()
 save_data_and_model("gather", x, model)
 
+def create_range_test(name, np_dtype, onnx_dtype, start_val, end_val, step_val, inp, out):
+    start = onnx.helper.make_node("Constant", inputs=[], outputs=["start1"], name="node-c1",
+                    value=onnx.helper.make_tensor(name="c1v", data_type=onnx_dtype, dims=[], vals=np.asarray([start_val,], dtype=np_dtype)))
+    end = onnx.helper.make_node("Constant", inputs=[], outputs=["end1"], name="node-c2",
+                    value=onnx.helper.make_tensor(name="c2v", data_type=onnx_dtype, dims=[], vals=np.asarray([end_val,], dtype=np_dtype)))
+    step = onnx.helper.make_node("Constant", inputs=[], outputs=["step1"], name="node-c3",
+                    value=onnx.helper.make_tensor(name="c3v", data_type=onnx_dtype, dims=[], vals=np.asarray([step_val,], dtype=np_dtype)))
+
+    range = onnx.helper.make_node("Range", inputs=["start1", "end1", "step1"], outputs=["range_output1"], name="node-r1")
+    add = onnx.helper.make_node("Add", inputs=["input1", "range_output1"], outputs=["add_output1"], name="node-a1")
+
+    graph = onnx.helper.make_graph([start, end, step, range, add], "graph123",
+                        [onnx.helper.make_tensor_value_info("input1", onnx_dtype, [1, 4]),],
+                        [onnx.helper.make_tensor_value_info("add_output1", onnx_dtype, [1, 4])])
+    range_model = onnx.helper.make_model(graph, producer_name="model_range")
+    onnx.checker.check_model(range_model)
+
+    input_np = np.array(inp, dtype=np_dtype)
+    output_np = np.array(out, dtype=np_dtype)
+
+    onnx.save(range_model, os.path.join("models", name + ".onnx"))
+    input_file = os.path.join("data", "input_" + name)
+    np.save(input_file, input_np)
+    output_file = os.path.join("data", "output_" + name)
+    np.save(output_file, output_np)
+
+create_range_test("range_float", np.float32, onnx.TensorProto.FLOAT, 1.1, 8.5, 2.0, [[0, 0, 0, 0]], [[1.1, 3.1, 5.1, 7.1]])
+create_range_test("range_float_negative", np.float32, onnx.TensorProto.FLOAT, 8.5, 0.6, -2.0, [[0, 0, 0, 0]], [[8.5, 6.5, 4.5, 2.5]])
+
 class Conv(nn.Module):
     def forward(self, x, kernel):
         out = F.conv2d(x, kernel, groups=1)
