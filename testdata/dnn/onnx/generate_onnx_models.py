@@ -1954,6 +1954,14 @@ def create_range_test(name, np_dtype, onnx_dtype, start_val, end_val, step_val, 
 create_range_test("range_float", np.float32, onnx.TensorProto.FLOAT, 1.1, 8.5, 2.0, [[0, 0, 0, 0]], [[1.1, 3.1, 5.1, 7.1]])
 create_range_test("range_float_negative", np.float32, onnx.TensorProto.FLOAT, 8.5, 0.6, -2.0, [[0, 0, 0, 0]], [[8.5, 6.5, 4.5, 2.5]])
 
+t = 1000000000
+create_range_test("range_int32", np.int32, onnx.TensorProto.INT32, t + 1, t + 9, 2, [[0, 0, 0, 0]], [[t + 1, t + 3, t + 5, t + 7]])
+create_range_test("range_int32_negative", np.int32, onnx.TensorProto.INT32, t + 8, t + 1, -2, [[0, 0, 0, 0]], [[t + 8, t + 6, t + 4, t + 2]])
+
+t = 1000000000000000000
+create_range_test("range_int64", np.int64, onnx.TensorProto.INT64, t + 1, t + 8, 2, [[0, 0, 0, 0]], [[t + 1, t + 3, t + 5, t + 7]])
+create_range_test("range_int64_negative", np.int64, onnx.TensorProto.INT64, t + 9, t + 1, -2, [[0, 0, 0, 0]], [[t + 9, t + 7, t + 5, t + 3]])
+
 class Conv(nn.Module):
     def forward(self, x, kernel):
         out = F.conv2d(x, kernel, groups=1)
