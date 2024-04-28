@@ -886,14 +886,6 @@ models = [
         sha='a6f2879af2241de2e9730d317a55db6afd0af00b',
         filename='yolov4x-mish.weights'),
     Model(
-        name='GSOC2016-GOTURN',  # https://github.com/opencv/opencv_contrib/issues/941
-        url=[
-            'https://docs.google.com/uc?export=download&id=1j4UTqVE4EGaUFiK7a5I_CYX7twO9c5br',
-            'https://dl.opencv.org/models/goturn.caffemodel'
-        ],
-        sha='49776d262993c387542f84d9cd16566840404f26',
-        filename='gsoc2016-goturn/goturn.caffemodel'),
-    Model(
         name='DaSiamRPM Tracker network (ONNX)',
         url='https://www.dropbox.com/s/rr1lk9355vzolqv/dasiamrpn_model.onnx?dl=1',
         sha='91b774fce7df4c0e4918469f0f482d9a27d0e2d4',
