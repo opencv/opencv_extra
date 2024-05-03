@@ -263,6 +263,11 @@ models = [
         sha='c449ea74dd7d83751d1357d6a8c323fcf4038962',
         filename='fcn8s-heavy-pascal.caffemodel'),
     Model(
+        name='Fcn',
+        url='https://github.com/onnx/models/raw/491ce05590abb7551d7fae43c067c060eeb575a6/validated/vision/object_detection_segmentation/fcn/model/fcn-resnet50-12.onnx',
+        sha='1bb0c7e0034038969aecc6251166f1612a139230',
+        filename='onnx/models/fcn-resnet50-12.onnx'),
+    Model(
         name='Ssd_vgg16',
         url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
         sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
