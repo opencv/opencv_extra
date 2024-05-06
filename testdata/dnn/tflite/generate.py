@@ -121,7 +121,8 @@ save_tflite_model(permutation_3d, inp, 'permutation_3d')
 
 # Temporarily disabled as TFLiteConverter produces a incorrect graph in this case
 #permutation_4d_0123 = tf.keras.models.Sequential([
-#  tf.keras.layers.Permute((1,2,3))
+#  tf.keras.layers.Permute((1,2,3)),
+#  tf.keras.layers.Conv2D(3,1)
 #])
 #
 #permutation_4d_0123 = tf.function(
@@ -132,7 +133,8 @@ save_tflite_model(permutation_3d, inp, 'permutation_3d')
 #save_tflite_model(permutation_4d_0123, inp, 'permutation_4d_0123')
 
 permutation_4d_0132 = tf.keras.models.Sequential([
-  tf.keras.layers.Permute((1,3,2))
+  tf.keras.layers.Permute((1,3,2)),
+  tf.keras.layers.Conv2D(3,1)
 ])
 
 permutation_4d_0132 = tf.function(
@@ -143,7 +145,8 @@ inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
 save_tflite_model(permutation_4d_0132, inp, 'permutation_4d_0132')
 
 permutation_4d_0213 = tf.keras.models.Sequential([
-  tf.keras.layers.Permute((2,1,3))
+  tf.keras.layers.Permute((2,1,3)),
+  tf.keras.layers.Conv2D(3,1)
 ])
 
 permutation_4d_0213 = tf.function(
@@ -154,7 +157,8 @@ inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
 save_tflite_model(permutation_4d_0213, inp, 'permutation_4d_0213')
 
 permutation_4d_0231 = tf.keras.models.Sequential([
-  tf.keras.layers.Permute((2,3,1))
+  tf.keras.layers.Permute((2,3,1)),
+  tf.keras.layers.Conv2D(3,1)
 ])
 
 permutation_4d_0231 = tf.function(
@@ -163,25 +167,3 @@ permutation_4d_0231 = tf.function(
 )
 inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
 save_tflite_model(permutation_4d_0231, inp, 'permutation_4d_0231')
-
-permutation_4d_0312 = tf.keras.models.Sequential([
-  tf.keras.layers.Permute((3,1,2))
-])
-
-permutation_4d_0312 = tf.function(
-    permutation_4d_0312.call,
-    input_signature=[tf.TensorSpec((1,2,3,4), tf.float32)],
-)
-inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
-save_tflite_model(permutation_4d_0312, inp, 'permutation_4d_0312')
-
-permutation_4d_0321 = tf.keras.models.Sequential([
-  tf.keras.layers.Permute((3,2,1))
-])
-
-permutation_4d_0321 = tf.function(
-    permutation_4d_0321.call,
-    input_signature=[tf.TensorSpec((1,2,3,4), tf.float32)],
-)
-inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
-save_tflite_model(permutation_4d_0321, inp, 'permutation_4d_0321')
