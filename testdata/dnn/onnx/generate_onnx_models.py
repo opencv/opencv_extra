@@ -56,6 +56,28 @@ def save_data_and_model(name, input, model, version=None, export_params=False):
     with open(models_files, 'wb') as file:
         file.write(model_def.SerializeToString())
 
+def save_data_and_model_multy_inputs(name, input_list, model, version=None, export_params=False):
+    model.eval()
+
+    for index in range(len(input_list)):
+        print(name + " input  "+str(index)+" has sizes",  input_list[index].shape)
+        input_file = os.path.join("data", "input_" + name + "_" + str(index))
+        np.save(input_file, input_list[index].data)
+
+    output = model(*input_list)
+
+    print(name + " output has sizes", output.shape)
+    print()
+    output_files =  os.path.join("data", "output_" + name)
+    np.save(output_files, np.ascontiguousarray(output.data))
+
+    models_files = os.path.join("models", name + ".onnx")
+
+    onnx_model_pb = export_to_string(model, input_list, version, export_params)
+    model_def = assertONNXExpected(onnx_model_pb)
+    with open(models_files, 'wb') as file:
+        file.write(model_def.SerializeToString())
+
 def save_onnx_data_and_model(input, output, name, operation, *args, **kwargs):
     print(name + " input has sizes",  input.shape)
     input_files = os.path.join("data", "input_" + name)
@@ -868,6 +890,15 @@ class Split(nn.Module):
         tup = torch.split(x, self.split_size_sections, self.dim)
         return torch.cat(tup)
 
+class SimpleSplit(nn.Module):
+    def forward(self, image):
+        return torch.cat([img for img in image])
+
+
+model = SimpleSplit()
+input = torch.ones((1, 3, 2, 2))
+save_data_and_model("split_0", input, model, version=11)
+
 model = Split()
 input = Variable(torch.tensor([1., 2.], dtype=torch.float32))
 save_data_and_model("split_1", input, model)
@@ -887,6 +918,8 @@ save_data_and_model("split_5", input2, model, version=13)
 
 model = Split(dim=-1, split_size_sections=[1, 2])
 save_data_and_model("split_6", input2, model, version=13)
+
+
 
 class SplitSizes(nn.Module):
     def __init__(self, *args, **kwargs):
@@ -1407,6 +1440,106 @@ class LayoutLSTM:
         Y = np.squeeze(Y)
         return Y, Y_h
 
+class Einsum(nn.Module):
+    def __init__(self, equation):
+        super(Einsum, self).__init__()
+        self.equation = equation
+
+    def forward(self, one, two):
+        return torch.einsum(self.equation, one, two)
+
+class EinsumSingleInput(Einsum):
+    def forward(self, x):
+        return torch.einsum(self.equation, x)
+
+# inner/dot product
+mat1 = torch.ones(4)
+mat2 = torch.ones(4)
+equation  = 'i,i'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_inner", einsum, mat1, mat2, export_params=True)
+
+# 1d hadamard
+mat1 = torch.ones(4)
+mat2 = torch.ones(4)
+equation  = 'i,i->i'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_hadamard", einsum, mat1, mat2, export_params=True)
+
+# 2d test case
+mat1 = torch.randn(4, 5)
+mat2 = torch.randn(5, 8)
+equation  = 'ij,jk->ik'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_2d", einsum, mat1, mat2, export_params=True)
+
+# 2d test case with ellipses
+mat1 = torch.randn(4, 5)
+mat2 = torch.randn(5, 8)
+equation  = "...ij, ...jk -> ...ik"
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_2d_ellipses", einsum, mat1, mat2, export_params=True)
+
+# 3d test case
+mat1 = torch.ones(2, 4, 5)
+mat2 = torch.ones(2, 5, 8)
+equation  = 'bij,bjk->bik'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_3d", einsum, mat1, mat2, export_params=True)
+
+# 4d test case
+mat1 = torch.randn(1, 4, 7, 9)
+mat2 = torch.randn(1, 5, 9, 8)
+equation  = 'imkj,injs->imnks'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_4d", einsum, mat1, mat2, export_params=True)
+
+# 5d test case
+mat1 = torch.randn(4, 2, 3, 4, 5)
+mat2 = torch.randn(4, 2, 3, 5, 8)
+equation  = 'bhijk,bhikc->bhijc'
+einsum = Einsum(equation)
+output = einsum(mat1, mat2)
+
+save_data_and_model_multy_inputs("einsum_5d", einsum, mat1, mat2, export_params=True)
+
+# sum
+mat = torch.randn(3, 4)
+equation  =  "ij->i"
+einsum = EinsumSingleInput(equation)
+output = einsum(mat)
+
+save_data_and_model("einsum_sum", mat, einsum, export_params=True)
+
+# sum
+mat = torch.randn(3, 5, 5)
+equation  = "...ii ->...i"
+einsum = EinsumSingleInput(equation)
+output = einsum(mat)
+
+save_data_and_model("einsum_batch_diagonal", mat, einsum, export_params=True)
+
+# einsum transpose
+mat = torch.randn(3, 4)
+equation  = "ij->ji"
+einsum = EinsumSingleInput(equation)
+output = einsum(mat)
+
+save_data_and_model("einsum_transpose", mat, einsum, export_params=True)
+
+
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
     if type_proto is None:
         if x is None:
@@ -1791,6 +1924,43 @@ class Gather(nn.Module):
 x = Variable(torch.randn(2, 2, 2, 2))
 model = Gather()
 save_data_and_model("gather", x, model)
+
+def create_range_test(name, np_dtype, onnx_dtype, start_val, end_val, step_val, inp, out):
+    start = onnx.helper.make_node("Constant", inputs=[], outputs=["start1"], name="node-c1",
+                    value=onnx.helper.make_tensor(name="c1v", data_type=onnx_dtype, dims=[], vals=np.asarray([start_val,], dtype=np_dtype)))
+    end = onnx.helper.make_node("Constant", inputs=[], outputs=["end1"], name="node-c2",
+                    value=onnx.helper.make_tensor(name="c2v", data_type=onnx_dtype, dims=[], vals=np.asarray([end_val,], dtype=np_dtype)))
+    step = onnx.helper.make_node("Constant", inputs=[], outputs=["step1"], name="node-c3",
+                    value=onnx.helper.make_tensor(name="c3v", data_type=onnx_dtype, dims=[], vals=np.asarray([step_val,], dtype=np_dtype)))
+
+    range = onnx.helper.make_node("Range", inputs=["start1", "end1", "step1"], outputs=["range_output1"], name="node-r1")
+    add = onnx.helper.make_node("Add", inputs=["input1", "range_output1"], outputs=["add_output1"], name="node-a1")
+
+    graph = onnx.helper.make_graph([start, end, step, range, add], "graph123",
+                        [onnx.helper.make_tensor_value_info("input1", onnx_dtype, [1, 4]),],
+                        [onnx.helper.make_tensor_value_info("add_output1", onnx_dtype, [1, 4])])
+    range_model = onnx.helper.make_model(graph, producer_name="model_range")
+    onnx.checker.check_model(range_model)
+
+    input_np = np.array(inp, dtype=np_dtype)
+    output_np = np.array(out, dtype=np_dtype)
+
+    onnx.save(range_model, os.path.join("models", name + ".onnx"))
+    input_file = os.path.join("data", "input_" + name)
+    np.save(input_file, input_np)
+    output_file = os.path.join("data", "output_" + name)
+    np.save(output_file, output_np)
+
+create_range_test("range_float", np.float32, onnx.TensorProto.FLOAT, 1.1, 8.5, 2.0, [[0, 0, 0, 0]], [[1.1, 3.1, 5.1, 7.1]])
+create_range_test("range_float_negative", np.float32, onnx.TensorProto.FLOAT, 8.5, 0.6, -2.0, [[0, 0, 0, 0]], [[8.5, 6.5, 4.5, 2.5]])
+
+t = 1000000000
+create_range_test("range_int32", np.int32, onnx.TensorProto.INT32, t + 1, t + 9, 2, [[0, 0, 0, 0]], [[t + 1, t + 3, t + 5, t + 7]])
+create_range_test("range_int32_negative", np.int32, onnx.TensorProto.INT32, t + 8, t + 1, -2, [[0, 0, 0, 0]], [[t + 8, t + 6, t + 4, t + 2]])
+
+t = 1000000000000000000
+create_range_test("range_int64", np.int64, onnx.TensorProto.INT64, t + 1, t + 8, 2, [[0, 0, 0, 0]], [[t + 1, t + 3, t + 5, t + 7]])
+create_range_test("range_int64_negative", np.int64, onnx.TensorProto.INT64, t + 9, t + 1, -2, [[0, 0, 0, 0]], [[t + 9, t + 7, t + 5, t + 3]])
 
 class Conv(nn.Module):
     def forward(self, x, kernel):
@@ -2409,13 +2579,38 @@ class CumSum(nn.Module):
         self._dim = dim
 
     def forward(self, x):
-        return torch.cumsum(x, self._dim)
+        return torch.cumsum(x, self._dim, dtype=x.dtype)
 
 x = torch.randn(2, 3)
 save_data_and_model("cumsum_2d_dim_1", x, CumSum(dim=1), version=11)
 
 x = torch.randn(2, 3, 4)
 save_data_and_model("cumsum_3d_dim_2", x, CumSum(dim=2), version=11)
+
+x = torch.randint(100, 200, (3, 4, 5), dtype=torch.int32)
+save_data_and_model("cumsum_3d_dim_2_int32", x, CumSum(dim=2), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (4, 3, 2), dtype=torch.int64)
+save_data_and_model("cumsum_3d_dim_2_int64", x, CumSum(dim=2), version=18)
+
+# test: CumSum exclusive layer should not be executed inplace
+dims = h.make_node("Constant", inputs=[], outputs=["dims1"], name="node-c1",
+                   value=h.make_tensor(name="c1v", data_type=onnx.TensorProto.INT64, dims=[], vals=np.asarray([1, ], dtype=np.int64)))
+one = h.make_node("Constant", inputs=[], outputs=["one1"], name="node-c2",
+                   value=h.make_tensor(name="c2v", data_type=onnx.TensorProto.FLOAT, dims=[], vals=np.asarray([1, ], dtype=np.float32)))
+
+mult = h.make_node("Mul", inputs=["input1", "one1"], outputs=["mul_output1"], name="node-m1")
+cumsum = h.make_node("CumSum", inputs=["mul_output1", "dims1"], outputs=["cumsum_output1"], name="node-r1", exclusive=1)
+
+graph = h.make_graph([dims, one, mult, cumsum], "graph123",
+                     [h.make_tensor_value_info("input1", onnx.TensorProto.FLOAT, [1, 3, 1, 1]),],
+                     [h.make_tensor_value_info("cumsum_output1", onnx.TensorProto.FLOAT, [1, 3, 1, 1])])
+cumsum_model = h.make_model(graph, producer_name="model_cumsum")
+onnx.checker.check_model(cumsum_model)
+
+input_np = np.array([1, 2, 3], dtype=np.float32).reshape(1, 3, 1, 1)
+output_np = np.array([0, 1, 3], dtype=np.float32).reshape(1, 3, 1, 1)
+save_data_and_onnx_model("cumsum_exclusive_inplace", input_np, output_np, cumsum_model)
 
 # where layer
 class Where(nn.Module):
@@ -2440,7 +2635,7 @@ def save_data_and_tf_function(tf_function, name, input):
     np.save(os.path.join("data", "output_" + name + ".npy"), output)
     cumsum_model = tf2onnx.convert.from_function(
         function=tf_function,
-        input_signature=[tf.TensorSpec([], tf.float32)],
+        input_signature=[tf.TensorSpec(input.shape, tf.float32)],
         opset=14)[0]
     onnx.save(cumsum_model, os.path.join("models", name + ".onnx"))
 
@@ -2535,7 +2730,7 @@ class ArgMax(nn.Module):
         super(ArgMax, self).__init__()
 
     def forward(self, x):
-        return torch.argmax(x, dim=2, keepdims=False).to(torch.float32)
+        return torch.argmax(x, dim=2, keepdims=False)
 
 model = ArgMax()
 input_ = Variable(torch.randn(2, 3, 4, 5, dtype=torch.float32))
@@ -2546,7 +2741,7 @@ class ArgMin(nn.Module):
         super(ArgMin, self).__init__()
 
     def forward(self, x):
-        return torch.argmin(x, dim=-1, keepdims=True).to(torch.float32)
+        return torch.argmin(x, dim=-1, keepdims=True)
 
 model = ArgMin()
 input_ = Variable(torch.randn(2, 3, 4, 5, dtype=torch.float32))
@@ -2940,7 +3135,7 @@ embedding = onnx.numpy_helper.from_array(embedding, name='embedding')
 X = onnx.helper.make_tensor_value_info('input', onnx.TensorProto.FLOAT, input.shape)
 Y = onnx.helper.make_tensor_value_info('output', onnx.TensorProto.FLOAT, output.shape)
 
-shape = np.array([1, 1, -1], dtype=np.int32)
+shape = np.array([1, 1, 1], dtype=np.int64)
 shape = onnx.numpy_helper.from_array(shape, name='shape')
 expand = onnx.helper.make_node("Expand", inputs=['embedding', 'shape'], outputs=['expand'])
 
@@ -2966,3 +3161,68 @@ input_files = os.path.join("data", "input_" + name)
 np.save(input_files, input.data)
 output_files = os.path.join("data", "output_" + name)
 np.save(output_files, np.ascontiguousarray(output.data))
+
+## tf_half_pixel_for_nn
+@tf.function
+def tf_resize_nearest(x):
+    return tf.compat.v1.image.resize_nearest_neighbor(x, size=(5, 6), align_corners=False, half_pixel_centers=True)
+save_data_and_tf_function(tf_resize_nearest, "tf_half_pixel_for_nn", np.random.rand(1, 2, 3, 2))
+
+################# Sum #################
+
+class Sum(nn.Module):
+    def __init__(self, dims, keepdim):
+        super(Sum, self).__init__()
+        self.dims = dims
+        self.keepdim = keepdim
+
+    def forward(self, x):
+        #print(x.dtype, x.sum(dim=self.dims, keepdim=self.keepdim, dtype=x.dtype).dtype)
+        return torch.sum(x, dim=self.dims, keepdim=self.keepdim, dtype=x.dtype)
+
+# Different bihavior in Pytorch and ONNX: Pytorch converts values to int64, ONNX doesn't
+# x = torch.randint(100, 200, (2, 3, 4, 5), dtype=torch.int32)
+# save_data_and_model("reduce_sum_int32", x, Sum((2, 3), keepdim=False), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
+save_data_and_model("reduce_sum_int64", x, Sum((1,), keepdim=False), version=18)
+
+################# Scatter #################
+
+class Scatter(nn.Module):
+    def __init__(self, dim):
+        super(Scatter, self).__init__()
+        self.dim = dim
+
+    def forward(self, x, y, indices):
+        return torch.scatter(x, self.dim, indices, y)
+
+x = torch.randint(100, 200, (2, 3, 10, 7), dtype=torch.int32)
+y = torch.randint(100, 200, (2, 3, 5, 7), dtype=torch.int32)
+indices = torch.zeros((2, 3, 5, 7), dtype=torch.int64)
+for i in range(5):
+    indices[:, :, i, :] = 7 - i
+save_data_and_model_multy_inputs("scatter_int32", (x, y, indices), Scatter(2), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (2, 9, 3, 2), dtype=torch.int64)
+y = torch.randint(1000000000000000, 1000000000000200, (2, 4, 3, 2), dtype=torch.int64)
+indices = torch.zeros((2, 4, 3, 2), dtype=torch.int64)
+for i in range(4):
+    indices[:, i, :, :] = 2 + i
+save_data_and_model_multy_inputs("scatter_int64", (x, y, indices), Scatter(1), version=18)
+
+################# Tile #################
+
+class Tile(nn.Module):
+    def __init__(self, dims):
+        super(Tile, self).__init__()
+        self.dims = dims
+
+    def forward(self, x):
+        return x.repeat(self.dims)
+
+x = torch.randint(100, 200, (2, 3, 4, 5), dtype=torch.int32)
+save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
+
+x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
+save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)

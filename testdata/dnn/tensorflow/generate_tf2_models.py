@@ -28,7 +28,7 @@ def writeBlob(data, name, nchw = False):
         # NDHWC->NCDHW
         data = data.transpose(0, 4, 1, 2, 3)
 
-    data = np.ascontiguousarray(data.astype(np.float32))
+    data = np.ascontiguousarray(data)
     np.save(name + '.npy', data)
 
 
@@ -76,9 +76,9 @@ model = tf.keras.models.Sequential([
 save(model, 'tf2_dense', flatten_input=tf.TensorSpec(shape=[None, 1, 2, 3], dtype=tf.float32))
 ################################################################################
 model = tf.keras.models.Sequential([
-  tf.keras.layers.PReLU(input_shape=(1, 2, 3)),
+  tf.keras.layers.PReLU(input_shape=(1, 4, 6), alpha_initializer='random_normal'),
 ])
-save(model, 'tf2_prelu', p_re_lu_input=tf.TensorSpec(shape=[None, 1, 2, 3], dtype=tf.float32))
+save(model, 'tf2_prelu', p_re_lu_input=tf.TensorSpec(shape=[None, 1, 4, 6], dtype=tf.float32))
 ################################################################################
 model = tf.keras.models.Sequential([
   tf.keras.layers.AveragePooling2D(input_shape=(4, 6, 3), pool_size=(2, 2)),
@@ -148,6 +148,18 @@ kernel = np.random.standard_normal((3, 3, 2, 3)).astype(np.float32)
 y = tf.compat.v1.nn.conv2d_backprop_input(input_sizes=tf.constant([1, 3, 4, 2]), filter=kernel, out_backprop=x, data_format = "NHWC", padding = [[0, 0], [2, 1], [2, 1], [0, 0]], strides = [1, 3, 2, 1])
 model = tf.keras.Model(x, y)
 save(model, 'conv2d_backprop_input_asymmetric_pads_nhwc', False, x=tf.TensorSpec(shape=(1, 2, 3, 3), dtype=tf.float32))
+################################################################################
+tf.keras.backend.set_image_data_format('channels_first')
+x = tf.keras.layers.Input(batch_shape = (2, 3, 4), name='x')
+y = tf.math.argmax(x, axis=-1)
+model = tf.keras.Model(x, y)
+save(model, 'argmax', True, x=tf.TensorSpec(shape=(2, 3, 4), dtype=tf.float32))
+################################################################################
+tf.keras.backend.set_image_data_format('channels_last')
+x = tf.keras.layers.Input(batch_shape = (2, 3, 4), name='x')
+y = tf.math.argmin(x, axis=1)
+model = tf.keras.Model(x, y)
+save(model, 'argmin', False, x=tf.TensorSpec(shape=(2, 3, 4), dtype=tf.float32))
 
 # Uncomment to print the final graph.
 # with tf.io.gfile.GFile('tf2_prelu_net.pb', 'rb') as f:

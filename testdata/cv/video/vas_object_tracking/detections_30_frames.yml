@@ -1,0 +1,216 @@
+%YAML:1.0
+---
+Frame_0:
+   {}
+Frame_1:
+   box_1:
+      x: 278.
+      y: 251.
+      width: 39.
+      height: 108.
+      id: 15
+Frame_2:
+   box_1:
+      x: 288.
+      y: 252.
+      width: 38.
+      height: 102.
+      id: 15
+Frame_3:
+   box_1:
+      x: 297.
+      y: 251.
+      width: 31.
+      height: 100.
+      id: 15
+Frame_4:
+   box_1:
+      x: 288.
+      y: 252.
+      width: 38.
+      height: 102.
+      id: 15
+Frame_5:
+   box_1:
+      x: 297.
+      y: 251.
+      width: 31.
+      height: 100.
+      id: 15
+Frame_6:
+   box_1:
+      x: 303.
+      y: 245.
+      width: 28.
+      height: 103.
+      id: 15
+Frame_7:
+   box_1:
+      x: 311.
+      y: 243.
+      width: 36.
+      height: 102.
+      id: 15
+Frame_8:
+   box_1:
+      x: 316.
+      y: 244.
+      width: 35.
+      height: 99.
+      id: 15
+Frame_9:
+   box_1:
+      x: 319.
+      y: 239.
+      width: 35.
+      height: 104.
+      id: 15
+Frame_10:
+   box_1:
+      x: 330.
+      y: 235.
+      width: 31.
+      height: 103.
+      id: 15
+Frame_11:
+   box_1:
+      x: 332.
+      y: 237.
+      width: 34.
+      height: 99.
+      id: 15
+Frame_12:
+   box_1:
+      x: 335.
+      y: 236.
+      width: 36.
+      height: 100.
+      id: 15
+Frame_13:
+   box_1:
+      x: 340.
+      y: 234.
+      width: 34.
+      height: 101.
+      id: 15
+Frame_14:
+   box_1:
+      x: 340.
+      y: 234.
+      width: 34.
+      height: 101.
+      id: 15
+Frame_15:
+   box_1:
+      x: 349.
+      y: 230.
+      width: 38.
+      height: 97.
+      id: 15
+Frame_16:
+   box_1:
+      x: 352.
+      y: 232.
+      width: 37.
+      height: 93.
+      id: 15
+Frame_17:
+   box_1:
+      x: 357.
+      y: 233.
+      width: 36.
+      height: 92.
+      id: 15
+Frame_18:
+   box_1:
+      x: 359.
+      y: 227.
+      width: 36.
+      height: 97.
+      id: 15
+Frame_19:
+   box_1:
+      x: 358.
+      y: 225.
+      width: 36.
+      height: 97.
+      id: 15
+Frame_20:
+   box_1:
+      x: 364.
+      y: 225.
+      width: 28.
+      height: 100.
+      id: 15
+Frame_21:
+   box_1:
+      x: 379.
+      y: 216.
+      width: 28.
+      height: 94.
+      id: 15
+Frame_22:
+   {}
+Frame_23:
+   {}
+Frame_24:
+   {}
+Frame_25:
+   box_1:
+      x: 374.
+      y: 210.
+      width: 30.
+      height: 104.
+      id: 15
+Frame_26:
+   box_1:
+      x: 373.
+      y: 209.
+      width: 32.
+      height: 107.
+      id: 15
+   box_1:
+      x: 665.
+      y: 294.
+      width: 31.
+      height: 123.
+      id: 15
+Frame_27:
+   box_1:
+      x: 374.
+      y: 210.
+      width: 30.
+      height: 102.
+      id: 15
+   box_2:
+      x: 659.
+      y: 291.
+      width: 34.
+      height: 117.
+      id: 15
+Frame_28:
+   box_1:
+      x: 374.
+      y: 209.
+      width: 30.
+      height: 105.
+      id: 15
+   box_2:
+      x: 659.
+      y: 291.
+      width: 34.
+      height: 117.
+      id: 15
+Frame_29:
+   box_1:
+      x: 375.
+      y: 208.
+      width: 30.
+      height: 105.
+      id: 15
+   box_2:
+      x: 643.
+      y: 285.
+      width: 32.
+      height: 126.
+      id: 15

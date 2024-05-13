@@ -1070,14 +1070,6 @@ inp = tf.placeholder(tf.float32, [2, 3], 'input')
 square = tf.square(inp)
 save(inp, square, 'square')
 ################################################################################
-inp = tf.placeholder(tf.float32, [2, 3, 4], 'input')
-argmax = tf.argmax(inp, -1)
-save(inp, argmax, 'argmax')
-################################################################################
-inp = tf.placeholder(tf.float32, [2, 3, 4], 'input')
-argmin = tf.argmin(inp, 1)
-save(inp, argmin, 'argmin')
-################################################################################
 # Generate graph and test data for Reshape permutations check
 stride = 1
 kernel_size = 3
