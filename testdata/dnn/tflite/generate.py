@@ -129,3 +129,21 @@ for perm_axis in permutation_4d_list:
     permutation_4d_model, inp = keras_to_tf(permutation_4d_model, (1, 2, 3, 4))
     model_name = f"permutation_4d_0{''.join(map(str, perm_axis))}"
     save_tflite_model(permutation_4d_model, inp, model_name)
+
+global_average_pooling_2d = tf.keras.models.Sequential([
+  tf.keras.layers.GlobalAveragePooling2D(keepdims=True),
+  tf.keras.layers.ZeroPadding2D(1),
+  tf.keras.layers.GlobalAveragePooling2D(keepdims=False)
+])
+
+global_average_pooling_2d, inp = keras_to_tf(global_average_pooling_2d, (1, 7, 7, 5))
+save_tflite_model(global_average_pooling_2d, inp, 'global_average_pooling_2d')
+
+global_max_pool = tf.keras.models.Sequential([
+  tf.keras.layers.GlobalMaxPool2D(keepdims=True),
+  tf.keras.layers.ZeroPadding2D(1),
+  tf.keras.layers.GlobalMaxPool2D(keepdims=True)
+])
+
+global_max_pool, inp = keras_to_tf(global_max_pool, (1, 7, 7, 5))
+save_tflite_model(global_max_pool, inp, 'global_max_pooling_2d')
