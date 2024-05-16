@@ -93,6 +93,14 @@ def split(x):
 inp = np.random.standard_normal((1, 3)).astype(np.float32)
 save_tflite_model(split, inp, 'split')
 
+def keras_to_tf(model, input_shape):
+    tf_func = tf.function(
+      model.call,
+      input_signature=[tf.TensorSpec(input_shape, tf.float32)],
+    )
+    inp = np.random.standard_normal((input_shape)).astype(np.float32)
+
+    return tf_func, inp
 
 fully_connected = tf.keras.models.Sequential([
   tf.keras.layers.Dense(3),
@@ -100,23 +108,14 @@ fully_connected = tf.keras.models.Sequential([
   tf.keras.layers.Softmax(),
 ])
 
-fully_connected = tf.function(
-      fully_connected.call,
-      input_signature=[tf.TensorSpec((1,2), tf.float32)],
-)
-
-inp = np.random.standard_normal((1, 2)).astype(np.float32)
+fully_connected, inp = keras_to_tf(fully_connected, (1, 2))
 save_tflite_model(fully_connected, inp, 'fully_connected')
 
 permutation_3d = tf.keras.models.Sequential([
   tf.keras.layers.Permute((2, 1))
 ])
 
-permutation_3d = tf.function(
-    permutation_3d.call,
-    input_signature=[tf.TensorSpec((1,2,3), tf.float32)],
-)
-inp = np.random.standard_normal((1, 2, 3)).astype(np.float32)
+permutation_3d, inp = keras_to_tf(permutation_3d, (1, 2, 3))
 save_tflite_model(permutation_3d, inp, 'permutation_3d')
 
 # (1, 2, 3) is temporarily disabled as TFLiteConverter produces a incorrect graph in this case
@@ -127,11 +126,6 @@ for perm_axis in permutation_4d_list:
         tf.keras.layers.Conv2D(3, 1)
     ])
 
-    permutation_4d_model = tf.function(
-        permutation_4d_model.call,
-        input_signature=[tf.TensorSpec((1,2,3,4), tf.float32)],
-    )
-
-    inp = np.random.standard_normal((1, 2, 3, 4)).astype(np.float32)
+    permutation_4d_model, inp = keras_to_tf(permutation_4d_model, (1, 2, 3, 4))
     model_name = f"permutation_4d_0{''.join(map(str, perm_axis))}"
     save_tflite_model(permutation_4d_model, inp, model_name)
