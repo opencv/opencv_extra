@@ -58,9 +58,14 @@ def save_tflite_model(model, inp, name):
     out = model(inp)
     out = np.array(out)
 
-    if len(inp.shape) == 4:
+    # convert NHWC to NCHW format
+    if inp.ndim == 4:
         inp = inp.transpose(0, 3, 1, 2)
+        inp = np.copy(inp, order='C').astype(inp.dtype)
+
+    if out.ndim == 4:
         out = out.transpose(0, 3, 1, 2)
+        out = np.copy(out, order='C').astype(out.dtype)
 
     np.save(f'{name}_inp.npy', inp)
     np.save(f'{name}_out_Identity.npy', out)
@@ -88,6 +93,14 @@ def split(x):
 inp = np.random.standard_normal((1, 3)).astype(np.float32)
 save_tflite_model(split, inp, 'split')
 
+def keras_to_tf(model, input_shape):
+    tf_func = tf.function(
+      model.call,
+      input_signature=[tf.TensorSpec(input_shape, tf.float32)],
+    )
+    inp = np.random.standard_normal((input_shape)).astype(np.float32)
+
+    return tf_func, inp
 
 fully_connected = tf.keras.models.Sequential([
   tf.keras.layers.Dense(3),
@@ -95,10 +108,42 @@ fully_connected = tf.keras.models.Sequential([
   tf.keras.layers.Softmax(),
 ])
 
-fully_connected = tf.function(
-      fully_connected.call,
-      input_signature=[tf.TensorSpec((1,2), tf.float32)],
-)
-
-inp = np.random.standard_normal((1, 2)).astype(np.float32)
+fully_connected, inp = keras_to_tf(fully_connected, (1, 2))
 save_tflite_model(fully_connected, inp, 'fully_connected')
+
+permutation_3d = tf.keras.models.Sequential([
+  tf.keras.layers.Permute((2, 1))
+])
+
+permutation_3d, inp = keras_to_tf(permutation_3d, (1, 2, 3))
+save_tflite_model(permutation_3d, inp, 'permutation_3d')
+
+# (1, 2, 3) is temporarily disabled as TFLiteConverter produces a incorrect graph in this case
+permutation_4d_list = [(1, 3, 2), (2, 1, 3), (2, 3, 1)]
+for perm_axis in permutation_4d_list:
+    permutation_4d_model = tf.keras.models.Sequential([
+        tf.keras.layers.Permute(perm_axis),
+        tf.keras.layers.Conv2D(3, 1)
+    ])
+
+    permutation_4d_model, inp = keras_to_tf(permutation_4d_model, (1, 2, 3, 4))
+    model_name = f"permutation_4d_0{''.join(map(str, perm_axis))}"
+    save_tflite_model(permutation_4d_model, inp, model_name)
+
+global_average_pooling_2d = tf.keras.models.Sequential([
+  tf.keras.layers.GlobalAveragePooling2D(keepdims=True),
+  tf.keras.layers.ZeroPadding2D(1),
+  tf.keras.layers.GlobalAveragePooling2D(keepdims=False)
+])
+
+global_average_pooling_2d, inp = keras_to_tf(global_average_pooling_2d, (1, 7, 7, 5))
+save_tflite_model(global_average_pooling_2d, inp, 'global_average_pooling_2d')
+
+global_max_pool = tf.keras.models.Sequential([
+  tf.keras.layers.GlobalMaxPool2D(keepdims=True),
+  tf.keras.layers.ZeroPadding2D(1),
+  tf.keras.layers.GlobalMaxPool2D(keepdims=True)
+])
+
+global_max_pool, inp = keras_to_tf(global_max_pool, (1, 7, 7, 5))
+save_tflite_model(global_max_pool, inp, 'global_max_pooling_2d')
