@@ -39273,7 +39273,7 @@
       <x>913</x>
       <y>1463</y>
       <val>79.</val></rng2></dst></MatInfo_Size_Scale_Area_ResizeArea--ResizeArea---8UC4--3840x2160--0-81->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1--1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -39284,14 +39284,51 @@
       <y>479</y>
       <val>143.</val></last>
     <rng1>
-      <x>173</x>
-      <y>436</y>
-      <val>209.</val></rng1>
+      <x>206</x>
+      <y>85</y>
+      <val>2.</val></rng1>
+    <rng2>
+      <x>152</x>
+      <y>334</y>
+      <val>243.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>143.</val></last>
+    <rng1>
+      <x>456</x>
+      <y>437</y>
+      <val>17.</val></rng1>
+    <rng2>
+      <x>77</x>
+      <y>128</y>
+      <val>134.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3--1->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>179.</val></last>
+    <rng1>
+      <x>265</x>
+      <y>428</y>
+      <cn>1</cn>
+      <val>199.</val></rng1>
     <rng2>
       <x>548</x>
-      <y>19</y>
-      <val>55.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3->
+      <y>450</y>
+      <val>135.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3--5->
   <dst>
     <kind>65536</kind>
     <type>16</type>
@@ -39302,53 +39339,89 @@
       <y>479</y>
       <val>179.</val></last>
     <rng1>
-      <x>532</x>
-      <y>252</y>
-      <cn>2</cn>
-      <val>57.</val></rng1>
+      <x>553</x>
+      <y>291</y>
+      <val>51.</val></rng1>
     <rng2>
-      <x>11</x>
-      <y>446</y>
-      <val>127.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1->
+      <x>232</x>
+      <y>72</y>
+      <val>14.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_8UC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1--1->
   <dst>
     <kind>65536</kind>
     <type>5</type>
-    <min>-4.0949680175781250e+03</min>
-    <max>4.0948154296875000e+03</max>
+    <min>-4094.968017578125</min>
+    <max>4094.8154296875</max>
     <last>
       <x>639</x>
       <y>479</y>
-      <val>2.7859538574218750e+03</val></last>
+      <val>2785.953857421875</val></last>
     <rng1>
-      <x>115</x>
-      <y>250</y>
-      <val>2.1969851074218750e+03</val></rng1>
+      <x>353</x>
+      <y>444</y>
+      <val>2695.35302734375</val></rng1>
     <rng2>
-      <x>207</x>
-      <y>2</y>
-      <val>3.9446435546875000e+03</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3->
+      <x>493</x>
+      <y>77</y>
+      <val>-824.53997802734375</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-4094.968017578125</min>
+    <max>4094.8154296875</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>2785.953857421875</val></last>
+    <rng1>
+      <x>495</x>
+      <y>48</y>
+      <val>-2003.9671630859375</val></rng1>
+    <rng2>
+      <x>423</x>
+      <y>260</y>
+      <val>-117.90904235839844</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3--1->
   <dst>
     <kind>65536</kind>
     <type>21</type>
-    <min>-4.0949919433593750e+03</min>
-    <max>4.0949797363281250e+03</max>
+    <min>-4094.991943359375</min>
+    <max>4094.979736328125</max>
     <last>
       <x>639</x>
       <y>479</y>
-      <val>-5.2719696044921875e+02</val></last>
+      <val>-527.19696044921875</val></last>
     <rng1>
-      <x>185</x>
-      <y>467</y>
-      <cn>1</cn>
-      <val>-3.9393471679687500e+03</val></rng1>
+      <x>221</x>
+      <y>96</y>
+      <val>-3358.406982421875</val></rng1>
     <rng2>
-      <x>180</x>
-      <y>393</y>
+      <x>338</x>
+      <y>69</y>
       <cn>2</cn>
-      <val>-4.5213275146484375e+02</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1->
+      <val>3668.428466796875</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-4094.991943359375</min>
+    <max>4094.979736328125</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>-527.19696044921875</val></last>
+    <rng1>
+      <x>208</x>
+      <y>465</y>
+      <cn>2</cn>
+      <val>1039.642333984375</val></rng1>
+    <rng2>
+      <x>470</x>
+      <y>128</y>
+      <cn>1</cn>
+      <val>3202.266845703125</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--3--CV_32FC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1--1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -39357,147 +39430,149 @@
     <last>
       <x>639</x>
       <y>479</y>
-      <val>143.</val></last>
+      <val>142.</val></last>
     <rng1>
-      <x>538</x>
-      <y>449</y>
-      <val>144.</val></rng1>
+      <x>156</x>
+      <y>324</y>
+      <val>16.</val></rng1>
     <rng2>
-      <x>124</x>
-      <y>225</y>
-      <val>57.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3->
+      <x>555</x>
+      <y>46</y>
+      <val>55.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1--5->
   <dst>
     <kind>65536</kind>
-    <type>16</type>
+    <type>0</type>
     <min>0.</min>
     <max>255.</max>
     <last>
       <x>639</x>
       <y>479</y>
-      <val>179.</val></last>
+      <val>142.</val></last>
     <rng1>
-      <x>504</x>
-      <y>466</y>
-      <cn>2</cn>
-      <val>200.</val></rng1>
-    <rng2>
-      <x>229</x>
-      <y>181</y>
-      <cn>1</cn>
-      <val>151.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1->
-  <dst>
-    <kind>65536</kind>
-    <type>5</type>
-    <min>-4.0949680175781250e+03</min>
-    <max>4.0948154296875000e+03</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>2.7859538574218750e+03</val></last>
-    <rng1>
-      <x>324</x>
+      <x>289</x>
       <y>279</y>
-      <val>3.9318035888671875e+02</val></rng1>
+      <val>244.</val></rng1>
     <rng2>
-      <x>31</x>
-      <y>151</y>
-      <val>2.1430471191406250e+03</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3->
+      <x>331</x>
+      <y>217</y>
+      <val>157.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3--1->
   <dst>
     <kind>65536</kind>
-    <type>21</type>
-    <min>-4.0949919433593750e+03</min>
-    <max>4.0949797363281250e+03</max>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
     <last>
       <x>639</x>
       <y>479</y>
-      <val>-5.2719696044921875e+02</val></last>
+      <val>179.</val></last>
     <rng1>
-      <x>491</x>
-      <y>160</y>
-      <val>-1.8228996582031250e+03</val></rng1>
+      <x>346</x>
+      <y>25</y>
+      <cn>1</cn>
+      <val>7.</val></rng1>
     <rng2>
-      <x>112</x>
-      <y>277</y>
-      <cn>2</cn>
-      <val>-3.4463830566406250e+03</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>721</x>
-      <y>688</y>
-      <val>44.</val></rng1>
-    <rng2>
-      <x>520</x>
-      <y>483</y>
-      <val>182.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3->
+      <x>602</x>
+      <y>327</y>
+      <cn>1</cn>
+      <val>250.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3--5->
   <dst>
     <kind>65536</kind>
     <type>16</type>
     <min>0.</min>
     <max>255.</max>
     <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>164.</val></last>
+      <x>639</x>
+      <y>479</y>
+      <val>179.</val></last>
     <rng1>
+      <x>242</x>
+      <y>406</y>
+      <cn>2</cn>
+      <val>151.</val></rng1>
+    <rng2>
+      <x>292</x>
+      <y>88</y>
+      <cn>1</cn>
+      <val>95.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_8UC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1--1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-4094.968017578125</min>
+    <max>4094.8154296875</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>2785.953857421875</val></last>
+    <rng1>
+      <x>546</x>
+      <y>159</y>
+      <val>2397.65478515625</val></rng1>
+    <rng2>
       <x>67</x>
-      <y>987</y>
-      <val>217.</val></rng1>
-    <rng2>
-      <x>452</x>
-      <y>247</y>
-      <val>178.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1->
+      <y>290</y>
+      <val>2660.023681640625</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1--5->
   <dst>
     <kind>65536</kind>
     <type>5</type>
-    <min>-4.0949975585937500e+03</min>
-    <max>4.0949975585937500e+03</max>
+    <min>-4094.968017578125</min>
+    <max>4094.8154296875</max>
     <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>1.1108820800781250e+03</val></last>
+      <x>639</x>
+      <y>479</y>
+      <val>2785.953857421875</val></last>
     <rng1>
-      <x>1867</x>
-      <y>118</y>
-      <val>-1.5497755126953125e+03</val></rng1>
+      <x>197</x>
+      <y>427</y>
+      <val>3197.61181640625</val></rng1>
     <rng2>
-      <x>1067</x>
-      <y>596</y>
-      <val>1.9815803527832031e+02</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3->
+      <x>555</x>
+      <y>8</y>
+      <val>3832.87841796875</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3--1->
   <dst>
     <kind>65536</kind>
     <type>21</type>
-    <min>-4.0949985351562500e+03</min>
-    <max>4.0949987792968750e+03</max>
+    <min>-4094.991943359375</min>
+    <max>4094.979736328125</max>
     <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>2.2732944335937500e+03</val></last>
+      <x>639</x>
+      <y>479</y>
+      <val>-527.19696044921875</val></last>
     <rng1>
-      <x>1095</x>
-      <y>701</y>
-      <cn>2</cn>
-      <val>3.9060661621093750e+03</val></rng1>
+      <x>131</x>
+      <y>18</y>
+      <val>-3147.337890625</val></rng1>
     <rng2>
-      <x>83</x>
-      <y>258</y>
-      <cn>2</cn>
-      <val>-8.5425659179687500e+02</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1->
+      <x>382</x>
+      <y>8</y>
+      <cn>1</cn>
+      <val>-1611.0643310546875</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-4094.991943359375</min>
+    <max>4094.979736328125</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>-527.19696044921875</val></last>
+    <rng1>
+      <x>347</x>
+      <y>222</y>
+      <cn>1</cn>
+      <val>-2268.432373046875</val></rng1>
+    <rng2>
+      <x>256</x>
+      <y>291</y>
+      <cn>1</cn>
+      <val>-466.12521362304688</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---640x480--5--CV_32FC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1--1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -39508,14 +39583,32 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>210</x>
-      <y>560</y>
-      <val>139.</val></rng1>
+      <x>1092</x>
+      <y>118</y>
+      <val>82.</val></rng1>
     <rng2>
-      <x>1001</x>
-      <y>287</y>
-      <val>226.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3->
+      <x>1270</x>
+      <y>119</y>
+      <val>96.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>1611</x>
+      <y>651</y>
+      <val>181.</val></rng1>
+    <rng2>
+      <x>1852</x>
+      <y>389</y>
+      <val>191.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3--1->
   <dst>
     <kind>65536</kind>
     <type>16</type>
@@ -39526,52 +39619,254 @@
       <y>1079</y>
       <val>164.</val></last>
     <rng1>
-      <x>953</x>
-      <y>630</y>
-      <cn>2</cn>
-      <val>131.</val></rng1>
+      <x>918</x>
+      <y>158</y>
+      <val>64.</val></rng1>
     <rng2>
-      <x>881</x>
-      <y>609</y>
+      <x>509</x>
+      <y>282</y>
       <cn>1</cn>
-      <val>64.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1->
+      <val>88.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>1806</x>
+      <y>474</y>
+      <val>145.</val></rng1>
+    <rng2>
+      <x>106</x>
+      <y>637</y>
+      <cn>1</cn>
+      <val>123.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_8UC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1--1->
   <dst>
     <kind>65536</kind>
     <type>5</type>
-    <min>-4.0949975585937500e+03</min>
-    <max>4.0949975585937500e+03</max>
+    <min>-4094.99755859375</min>
+    <max>4094.99755859375</max>
     <last>
       <x>1919</x>
       <y>1079</y>
-      <val>1.1108820800781250e+03</val></last>
+      <val>1110.882080078125</val></last>
     <rng1>
-      <x>804</x>
-      <y>268</y>
-      <val>-2.6138156738281250e+03</val></rng1>
+      <x>1457</x>
+      <y>302</y>
+      <val>2704.513671875</val></rng1>
     <rng2>
-      <x>1397</x>
-      <y>364</y>
-      <val>1.9991632080078125e+03</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1->
-<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3->
+      <x>1166</x>
+      <y>228</y>
+      <val>787.34271240234375</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-4094.99755859375</min>
+    <max>4094.99755859375</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>1110.882080078125</val></last>
+    <rng1>
+      <x>1200</x>
+      <y>562</y>
+      <val>-572.35516357421875</val></rng1>
+    <rng2>
+      <x>1003</x>
+      <y>404</y>
+      <val>-3175.745361328125</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3--1->
   <dst>
     <kind>65536</kind>
     <type>21</type>
-    <min>-4.0949985351562500e+03</min>
-    <max>4.0949987792968750e+03</max>
+    <min>-4094.99853515625</min>
+    <max>4094.998779296875</max>
     <last>
       <x>1919</x>
       <y>1079</y>
-      <val>2.2732944335937500e+03</val></last>
+      <val>2273.29443359375</val></last>
     <rng1>
-      <x>186</x>
-      <y>924</y>
-      <cn>1</cn>
-      <val>2.8619130859375000e+03</val></rng1>
+      <x>1407</x>
+      <y>634</y>
+      <cn>2</cn>
+      <val>1425.3770751953125</val></rng1>
     <rng2>
-      <x>1775</x>
-      <y>896</y>
-      <val>1.4588387451171875e+03</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3->
+      <x>634</x>
+      <y>875</y>
+      <val>3800.40283203125</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-4094.99853515625</min>
+    <max>4094.998779296875</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>2273.29443359375</val></last>
+    <rng1>
+      <x>1897</x>
+      <y>50</y>
+      <val>2714.62158203125</val></rng1>
+    <rng2>
+      <x>1429</x>
+      <y>87</y>
+      <val>-2103.01611328125</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--3--CV_32FC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>507</x>
+      <y>566</y>
+      <val>142.</val></rng1>
+    <rng2>
+      <x>1550</x>
+      <y>53</y>
+      <val>130.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>726</x>
+      <y>663</y>
+      <val>205.</val></rng1>
+    <rng2>
+      <x>677</x>
+      <y>19</y>
+      <val>166.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3--1->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>747</x>
+      <y>1077</y>
+      <cn>1</cn>
+      <val>84.</val></rng1>
+    <rng2>
+      <x>1374</x>
+      <y>639</y>
+      <val>250.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>978</x>
+      <y>43</y>
+      <val>196.</val></rng1>
+    <rng2>
+      <x>1725</x>
+      <y>630</y>
+      <val>204.</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_8UC3--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1--1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-4094.99755859375</min>
+    <max>4094.99755859375</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>1110.882080078125</val></last>
+    <rng1>
+      <x>1118</x>
+      <y>593</y>
+      <val>-3654.7568359375</val></rng1>
+    <rng2>
+      <x>665</x>
+      <y>317</y>
+      <val>-662.82135009765625</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1--5->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-4094.99755859375</min>
+    <max>4094.99755859375</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>1110.882080078125</val></last>
+    <rng1>
+      <x>1228</x>
+      <y>796</y>
+      <val>-177.74404907226562</val></rng1>
+    <rng2>
+      <x>1374</x>
+      <y>910</y>
+      <val>563.53790283203125</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC1--5->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3--1->
+  <dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-4094.99853515625</min>
+    <max>4094.998779296875</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>2273.29443359375</val></last>
+    <rng1>
+      <x>909</x>
+      <y>423</y>
+      <cn>2</cn>
+      <val>-2636.8115234375</val></rng1>
+    <rng2>
+      <x>413</x>
+      <y>753</y>
+      <cn>2</cn>
+      <val>1881.744140625</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3--1->
+<TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3--5->
+  <dst>
+    <kind>65536</kind>
+    <type>21</type>
+    <min>-4094.99853515625</min>
+    <max>4094.998779296875</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>2273.29443359375</val></last>
+    <rng1>
+      <x>447</x>
+      <y>367</y>
+      <val>2102.269287109375</val></rng1>
+    <rng2>
+      <x>228</x>
+      <y>629</y>
+      <cn>2</cn>
+      <val>-2822.56640625</val></rng2></dst></TestBilateralFilter_BilateralFilter--BilateralFilter---1920x1080--5--CV_32FC3--5->
 <Img_BlockSize_ApertureSize_BorderType_cornerEigenValsAndVecs--cornerEigenValsAndVecs----stitching-a1-png---3--3--BORDER_REPLICATE->
   <l1>
     <kind>65536</kind>
