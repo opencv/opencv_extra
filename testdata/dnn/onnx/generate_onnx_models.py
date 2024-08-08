@@ -1589,7 +1589,7 @@ class Conv2D(nn.Module):
         return self.layer(x)
 
 model = Conv2D(3, 6, 3, 1, 1)
-x = torch.randn(1, 3, 30, 30)
+x = torch.randn(1, 3, 30, 30) * 30
 save_data_and_model("conv2dPadding", x, model, export_params=True)
 
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
