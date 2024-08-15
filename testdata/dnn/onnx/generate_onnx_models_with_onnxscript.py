@@ -380,3 +380,13 @@ def clip_div_shared_constant(x: ost.FLOAT[1, 8, 12, 10]) -> ost.FLOAT[1, 8, 12, 
     clip = op.Clip(div, Constant_output_0, Constant_1_output_0)
     return clip
 make_model_and_data(clip_div_shared_constant, np.random.rand(1, 8, 12, 10).astype(np.float32))
+
+''' Subgraph [Input] -> MatMul<B> -> [Outpunt]
+'''
+
+B = np.random.randn(16, 8).astype(np.float32)
+
+@ost.script()
+def matmul_bcast(x: ost.FLOAT[64, 1, 16]) -> ost.FLOAT[64, 1, 8]:
+    return op.MatMul(x, op.Constant(value=onnx.numpy_helper.from_array(B)))
+make_model_and_data(matmul_bcast, np.random.randn(64, 1, 16).astype(np.float32))
