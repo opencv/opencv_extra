@@ -1518,6 +1518,47 @@ output = einsum(mat)
 save_data_and_model("einsum_transpose", mat, einsum, export_params=True)
 
 
+class TorchAttentionLayer(nn.Module):
+    def __init__(self, embed_dim=6, num_heads=1):
+        super(TorchAttentionLayer, self).__init__()
+        self.attention = nn.MultiheadAttention(
+            embed_dim=embed_dim,
+            num_heads=num_heads,
+            bias=True,
+            batch_first=True)
+    def forward(self, x):
+        return self.attention(x, x, x)[0]
+
+num_heads = 1
+batch_size = 2
+num_tokens = 5
+emb_dim = 6
+model = TorchAttentionLayer(embed_dim=emb_dim, num_heads=num_heads).eval()
+
+x = torch.rand(batch_size, num_tokens, emb_dim)
+with torch.no_grad():
+    output = model(x)
+
+save_data_and_model("pytorch_attention_single_head", x, model, export_params=True)
+class Unflatten(torch.nn.Module):
+    def __init__(self, E, times):
+        super(Unflatten, self).__init__()
+        self.E = E
+        self.times = times
+
+    def forward(self, x):
+        return x.unflatten(-1, (self.times, self.E))
+
+unflatten_dim = 5
+times = 3
+model = Unflatten(unflatten_dim, times).eval()
+
+x = torch.rand(10, 3, unflatten_dim * times)
+with torch.no_grad():
+    output = model(x)
+
+save_data_and_model("unflatten", x, model, export_params=True)
+
 def _extract_value_info(x, name, type_proto=None):  # type: (Union[List[Any], np.ndarray, None], Text, Optional[TypeProto]) -> onnx.ValueInfoProto
     if type_proto is None:
         if x is None:

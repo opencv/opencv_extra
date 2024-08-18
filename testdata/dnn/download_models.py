@@ -1028,7 +1028,16 @@ models = [
         ],
         sha='462f15d668c046d38e27d3df01fe8142dd004cb4',
         filename='onnx/models/yolov8x.onnx'),
-
+    Model(
+        name='yolov9t',
+        url='https://dl.opencv.org/models/yolov9/yolov9t.onnx',
+        sha='330292f15e1b312b11ce58e70a9e455d54415fa3',
+        filename='onnx/models/yolov9t.onnx'),
+    Model(
+        name='yolov10s',
+        url='https://dl.opencv.org/models/yolov10/yolov10s.onnx',
+        sha='5311212e431912a27d5f54b3a5277bc573890a99',
+        filename='onnx/models/yolov10s.onnx'),
     Model(
         name='yolo_nas_s',
         url='https://dl.opencv.org/models/yolo-nas/yolo_nas_s.onnx',
