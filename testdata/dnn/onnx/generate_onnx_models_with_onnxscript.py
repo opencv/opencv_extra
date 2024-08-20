@@ -397,3 +397,8 @@ def reducesum_consts(x: ost.FLOAT[batch_size, 1]) -> ost.FLOAT[dim_size]:
     output = op.Add(output, x)
     return output
 make_model_and_data(reducesum_consts, np.zeros((batch_size, 1), dtype=np.float32))
+
+@ost.script()
+def and_op(x: ost.BOOL[5], y: ost.BOOL[5]) -> ost.BOOL[5]:
+    return op.And(x, y)
+make_model_and_data(and_op, np.ones(5, dtype=np.bool_), np.zeros(5, dtype=np.bool_))
