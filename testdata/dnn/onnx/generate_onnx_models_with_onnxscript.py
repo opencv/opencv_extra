@@ -19,7 +19,7 @@ def make_model_and_data(model, *args, **kwargs):
     name = model._name
 
     # TODO: support multiple outputs
-    output = model(*args) # eager mode
+    outputs = model(*args) # eager mode
 
     # Save model
     model_proto = model.to_model_proto()
@@ -34,7 +34,7 @@ def make_model_and_data(model, *args, **kwargs):
         model_proto_ = onnx.shape_inference.infer_shapes(model_proto)
         onnx.save(model_proto_, save_path)
 
-    # Save inputs and output
+    # Save inputs
     inputs = args
     if "force_saving_input_as_dtype_float32" in kwargs and kwargs["force_saving_input_as_dtype_float32"]:
         inputs = []
@@ -42,15 +42,41 @@ def make_model_and_data(model, *args, **kwargs):
             inputs.append(input.astype(np.float32))
     if len(args) == 1:
         input_file = os.path.join("data", "input_" + name)
-        np.save(input_file, inputs[0])
+        if "save_inputs_as_pb" in kwargs and kwargs["save_inputs_as_pb"]:
+            input_tensor = onnx.numpy_helper.from_array(inputs[0])
+            onnx.save_tensor(input_tensor, input_file + ".pb")
+        else:
+            np.save(input_file, inputs[0])
     else:
         for idx, input in enumerate(inputs, start=0):
-            input_files = os.path.join("data", "input_" + name + "_" + str(idx))
-            np.save(input_files, input)
-    if "force_saving_output_as_dtype_float32" in kwargs and kwargs["force_saving_output_as_dtype_float32"]:
-        output = output.astype(np.float32)
-    output_files = os.path.join("data", "output_" + name)
-    np.save(output_files, output)
+            input_file = os.path.join("data", "input_{}_{}".format(name, idx))
+            if "save_inputs_as_pb" in kwargs and kwargs["save_inputs_as_pb"]:
+                input_tensor = onnx.numpy_helper.from_array(input)
+                onnx.save_tensor(input_tensor, input_file + ".pb")
+            else:
+                np.save(input_file, input)
+
+    # Save outputs
+    if isinstance(outputs, tuple):
+        for idx, output in enumerate(outputs):
+            output_filepath = os.path.join("data", "output_{}_{}".format(name, idx))
+            if "force_saving_output_as_dtype_float32" in kwargs and kwargs["force_saving_output_as_dtype_float32"]:
+                output = output.astype(np.float32)
+            if "save_outputs_as_pb" in kwargs and kwargs["save_outputs_as_pb"]:
+                input_tensor = onnx.numpy_helper.from_array(output)
+                onnx.save_tensor(input_tensor, output_filepath + ".pb")
+            else:
+                np.save(output_filepath, output)
+    else:
+        output = outputs
+        if "force_saving_output_as_dtype_float32" in kwargs and kwargs["force_saving_output_as_dtype_float32"]:
+            output = output.astype(np.float32)
+        output_filepath = os.path.join("data", "output_" + name)
+        if "save_outputs_as_pb" in kwargs and kwargs["save_outputs_as_pb"]:
+            output_tensor = onnx.numpy_helper.from_array(output)
+            onnx.save_tensor(output_tensor, output_filepath + ".pb")
+        else:
+            np.save(output_filepath, output)
 
 '''
     It builds a model with two Gather ops sharing a single same indices:
@@ -390,3 +416,30 @@ B = np.random.randn(16, 8).astype(np.float32)
 def matmul_bcast(x: ost.FLOAT[64, 1, 16]) -> ost.FLOAT[64, 1, 8]:
     return op.MatMul(x, op.Constant(value=onnx.numpy_helper.from_array(B)))
 make_model_and_data(matmul_bcast, np.random.randn(64, 1, 16).astype(np.float32))
+
+''' TopK conformance
+'''
+
+top_k_K_arr = np.array([3], dtype=np.int64)
+@ost.script()
+def top_k(x: ost.FLOAT[3, 4]) -> (ost.FLOAT[3, 3], ost.INT64[3, 3]):
+    values, indices = op.TopK(x, op.Constant(value=onnx.numpy_helper.from_array(top_k_K_arr)), axis=1)
+    return values, indices
+
+@ost.script()
+def top_k_negative_axis(x: ost.FLOAT[3, 4]) -> (ost.FLOAT[3, 3], ost.INT64[3, 3]):
+    values, indices = op.TopK(x, op.Constant(value=onnx.numpy_helper.from_array(top_k_K_arr)), axis=-1)
+    return values, indices
+
+@ost.script()
+def top_k_smallest(x: ost.FLOAT[3, 4]) -> (ost.FLOAT[3, 3], ost.INT64[3, 3]):
+    values, indices = op.TopK(x, op.Constant(value=onnx.numpy_helper.from_array(top_k_K_arr)), axis=1, largest=0, sorted=1)
+    return values, indices
+
+top_k_input0 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+top_k_input1 = [0, 1, 2, 3, 4, 5, 6, 7, 11, 10, 9, 8]
+top_k_input0_arr = np.array(top_k_input0, dtype=np.float32).reshape(3, 4)
+top_k_input1_arr = np.array(top_k_input1, dtype=np.float32).reshape(3, 4)
+make_model_and_data(top_k,               top_k_input0_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
+make_model_and_data(top_k_negative_axis, top_k_input0_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
+make_model_and_data(top_k_smallest,      top_k_input1_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
