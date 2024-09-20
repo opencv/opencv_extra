@@ -147,3 +147,10 @@ global_max_pool = tf.keras.models.Sequential([
 
 global_max_pool, inp = keras_to_tf(global_max_pool, (1, 7, 7, 5))
 save_tflite_model(global_max_pool, inp, 'global_max_pooling_2d')
+
+leakyRelu = tf.keras.models.Sequential([
+    tf.keras.layers.LeakyReLU()
+])
+
+leakyRelu, inp = keras_to_tf(leakyRelu, (1, 7, 7, 5))
+save_tflite_model(leakyRelu, inp, 'leakyRelu')
