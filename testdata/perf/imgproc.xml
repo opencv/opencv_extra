@@ -42721,239 +42721,6 @@
       <x>209</x>
       <y>190</y>
       <val>205.</val></rng2></dst></MatInfo_Size_Size_resizeDownLinear--resizeDownLinear---8UC4--1280x720--320x240->
- <!-- resumed -->
-<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>234.</val></last>
-    <rng1>
-      <x>92</x>
-      <y>79</y>
-      <cn>1</cn>
-      <val>140.</val></rng1>
-    <rng2>
-      <x>398</x>
-      <y>131</y>
-      <val>175.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>437</x>
-      <y>50</y>
-      <cn>2</cn>
-      <val>84.</val></rng1>
-    <rng2>
-      <x>463</x>
-      <y>158</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>234.</val></last>
-    <rng1>
-      <x>343</x>
-      <y>92</y>
-      <cn>2</cn>
-      <val>82.</val></rng1>
-    <rng2>
-      <x>240</x>
-      <y>355</y>
-      <cn>1</cn>
-      <val>116.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>480</x>
-      <y>137</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>402</x>
-      <y>351</y>
-      <val>103.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>309</x>
-      <y>519</y>
-      <val>180.</val></rng1>
-    <rng2>
-      <x>452</x>
-      <y>625</y>
-      <cn>3</cn>
-      <val>218.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>741</x>
-      <y>594</y>
-      <val>55.</val></rng1>
-    <rng2>
-      <x>330</x>
-      <y>246</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>618</x>
-      <y>551</y>
-      <cn>1</cn>
-      <val>137.</val></rng1>
-    <rng2>
-      <x>333</x>
-      <y>350</y>
-      <val>23.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>231</x>
-      <y>280</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1121</x>
-      <y>504</y>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1715</x>
-      <y>200</y>
-      <cn>2</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>634</x>
-      <y>861</y>
-      <cn>3</cn>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>414</x>
-      <y>533</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>902</x>
-      <y>18</y>
-      <cn>2</cn>
-      <val>120.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>289</x>
-      <y>81</y>
-      <cn>1</cn>
-      <val>14.</val></rng1>
-    <rng2>
-      <x>168</x>
-      <y>672</y>
-      <val>41.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>764</x>
-      <y>655</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>1272</x>
-      <y>222</y>
-      <cn>2</cn>
-      <val>185.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
 <TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT->
   <dst>
     <kind>65536</kind>
@@ -62358,12 +62125,12 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>348</x>
-      <y>46</y>
-      <val>43.</val></rng1>
+      <x>1</x>
+      <y>17</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>535</x>
-      <y>38</y>
+      <x>476</x>
+      <y>79</y>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_LINEAR->
   <dst>
@@ -62376,124 +62143,49 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>442</x>
-      <y>236</y>
-      <val>27.</val></rng1>
+      <x>193</x>
+      <y>270</y>
+      <val>114.</val></rng1>
     <rng2>
-      <x>241</x>
-      <y>93</y>
-      <val>90.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_LINEAR->
+      <x>205</x>
+      <y>49</y>
+      <val>98.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99999219179153442</min>
-    <max>0.99995309114456177</max>
+    <min>-9.9999219179153442e-01</min>
+    <max>9.9995309114456177e-01</max>
     <last>
       <x>639</x>
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>511</x>
-      <y>469</y>
-      <val>0.</val></rng1>
+      <x>517</x>
+      <y>409</y>
+      <val>6.0737207531929016e-02</val></rng1>
     <rng2>
-      <x>413</x>
-      <y>80</y>
+      <x>458</x>
+      <y>19</y>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99811190366744995</min>
-    <max>0.996712327003479</max>
+    <min>-9.9811190366744995e-01</min>
+    <max>9.9671232700347900e-01</max>
     <last>
       <x>639</x>
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>596</x>
-      <y>439</y>
-      <val>0.</val></rng1>
+      <x>353</x>
+      <y>211</y>
+      <val>3.5196328163146973e-01</val></rng1>
     <rng2>
-      <x>576</x>
-      <y>70</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>498</x>
-      <y>294</y>
-      <cn>2</cn>
-      <val>129.</val></rng1>
-    <rng2>
-      <x>8</x>
-      <y>103</y>
-      <cn>1</cn>
-      <val>38.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>199</x>
-      <y>229</y>
-      <val>28.</val></rng1>
-    <rng2>
-      <x>133</x>
-      <y>114</y>
-      <val>126.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC3--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99999183416366577</min>
-    <max>0.99999505281448364</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>215</x>
-      <y>276</y>
-      <val>0.10300680249929428</val></rng1>
-    <rng2>
-      <x>123</x>
-      <y>103</y>
-      <val>-0.38741585612297058</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99747622013092041</min>
-    <max>0.99851423501968384</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>236</x>
-      <y>103</y>
-      <cn>1</cn>
-      <val>-0.17877012491226196</val></rng1>
-    <rng2>
-      <x>441</x>
-      <y>213</y>
-      <val>0.42740225791931152</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC3--INTER_LINEAR->
+      <x>579</x>
+      <y>241</y>
+      <val>-7.9590082168579102e-04</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -62505,14 +62197,14 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>64</x>
-      <y>11</y>
-      <val>209.</val></rng1>
+      <x>355</x>
+      <y>259</y>
+      <val>42.</val></rng1>
     <rng2>
-      <x>579</x>
-      <y>370</y>
+      <x>78</x>
+      <y>390</y>
       <cn>2</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_NEAREST->
+      <val>59.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -62524,53 +62216,54 @@
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>562</x>
-      <y>462</y>
-      <cn>2</cn>
-      <val>0.</val></rng1>
+      <x>430</x>
+      <y>323</y>
+      <cn>1</cn>
+      <val>113.</val></rng1>
     <rng2>
-      <x>126</x>
-      <y>200</y>
-      <cn>3</cn>
-      <val>75.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_LINEAR->
+      <x>356</x>
+      <y>477</y>
+      <cn>2</cn>
+      <val>143.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99999803304672241</min>
-    <max>0.99999505281448364</max>
+    <min>-9.9999803304672241e-01</min>
+    <max>9.9999505281448364e-01</max>
     <last>
       <x>639</x>
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>421</x>
-      <y>61</y>
-      <cn>1</cn>
+      <x>552</x>
+      <y>20</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>352</x>
-      <y>8</y>
-      <cn>2</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_NEAREST->
+      <x>305</x>
+      <y>457</y>
+      <cn>3</cn>
+      <val>-3.4852749109268188e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99917423725128174</min>
-    <max>0.99908733367919922</max>
+    <min>-9.9917423725128174e-01</min>
+    <max>9.9908733367919922e-01</max>
     <last>
       <x>639</x>
       <y>479</y>
       <val>0.</val></last>
     <rng1>
-      <x>153</x>
-      <y>321</y>
-      <val>-0.13461507856845856</val></rng1>
+      <x>38</x>
+      <y>65</y>
+      <cn>3</cn>
+      <val>6.4965778589248657e-01</val></rng1>
     <rng2>
-      <x>84</x>
-      <y>20</y>
-      <val>0.32639849185943604</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_LINEAR->
+      <x>4</x>
+      <y>37</y>
+      <cn>1</cn>
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -62582,13 +62275,13 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>396</x>
-      <y>525</y>
-      <val>143.</val></rng1>
+      <x>440</x>
+      <y>544</y>
+      <val>73.</val></rng1>
     <rng2>
-      <x>180</x>
-      <y>48</y>
-      <val>72.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC1--INTER_NEAREST->
+      <x>1032</x>
+      <y>557</y>
+      <val>49.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -62600,129 +62293,49 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>248</x>
-      <y>210</y>
-      <val>87.</val></rng1>
+      <x>323</x>
+      <y>8</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>1201</x>
-      <y>713</y>
+      <x>1278</x>
+      <y>339</y>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99999183416366577</min>
-    <max>0.99999505281448364</max>
+    <min>-9.9999183416366577e-01</min>
+    <max>9.9999505281448364e-01</max>
     <last>
       <x>1279</x>
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>49</x>
-      <y>111</y>
-      <val>0.3645908534526825</val></rng1>
+      <x>79</x>
+      <y>578</y>
+      <val>-2.6202371716499329e-01</val></rng1>
     <rng2>
-      <x>705</x>
-      <y>442</y>
-      <val>-0.64288592338562012</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_NEAREST->
+      <x>747</x>
+      <y>557</y>
+      <val>1.3233380019664764e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99960380792617798</min>
-    <max>0.9982110857963562</max>
+    <min>-9.9960380792617798e-01</min>
+    <max>9.9821108579635620e-01</max>
     <last>
       <x>1279</x>
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>133</x>
-      <y>242</y>
-      <val>0.17611373960971832</val></rng1>
-    <rng2>
-      <x>938</x>
-      <y>8</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1249</x>
-      <y>642</y>
-      <cn>1</cn>
+      <x>1095</x>
+      <y>448</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1016</x>
-      <y>295</y>
-      <cn>2</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>982</x>
-      <y>266</y>
-      <cn>1</cn>
-      <val>0.</val></rng1>
-    <rng2>
-      <x>1062</x>
-      <y>713</y>
-      <cn>1</cn>
-      <val>68.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC3--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99999940395355225</min>
-    <max>0.99999970197677612</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>846</x>
-      <y>648</y>
-      <cn>1</cn>
-      <val>0.32125204801559448</val></rng1>
-    <rng2>
-      <x>276</x>
-      <y>350</y>
-      <cn>2</cn>
-      <val>0.52296000719070435</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99971216917037964</min>
-    <max>0.99947613477706909</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1170</x>
-      <y>411</y>
-      <cn>1</cn>
-      <val>0.</val></rng1>
-    <rng2>
-      <x>275</x>
-      <y>550</y>
-      <cn>2</cn>
-      <val>-0.14567877352237701</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC3--INTER_LINEAR->
+      <x>140</x>
+      <y>606</y>
+      <val>5.8907115459442139e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -62734,14 +62347,14 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>1123</x>
-      <y>210</y>
-      <val>0.</val></rng1>
+      <x>1047</x>
+      <y>661</y>
+      <val>151.</val></rng1>
     <rng2>
-      <x>124</x>
-      <y>336</y>
+      <x>107</x>
+      <y>222</y>
       <cn>3</cn>
-      <val>244.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_NEAREST->
+      <val>13.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -62753,54 +62366,53 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>227</x>
-      <y>158</y>
-      <cn>3</cn>
-      <val>11.</val></rng1>
+      <x>295</x>
+      <y>22</y>
+      <cn>1</cn>
+      <val>206.</val></rng1>
     <rng2>
-      <x>684</x>
-      <y>418</y>
-      <cn>2</cn>
-      <val>57.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_LINEAR->
+      <x>102</x>
+      <y>0</y>
+      <cn>3</cn>
+      <val>139.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--8UC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99999940395355225</min>
-    <max>0.99999970197677612</max>
+    <min>-9.9999940395355225e-01</min>
+    <max>9.9999970197677612e-01</max>
     <last>
       <x>1279</x>
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>1232</x>
-      <y>519</y>
-      <cn>1</cn>
-      <val>0.</val></rng1>
+      <x>340</x>
+      <y>447</y>
+      <val>2.4958355724811554e-01</val></rng1>
     <rng2>
-      <x>963</x>
-      <y>251</y>
-      <cn>3</cn>
+      <x>839</x>
+      <y>115</y>
+      <cn>2</cn>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99895542860031128</min>
-    <max>0.9993823766708374</max>
+    <min>-9.9895542860031128e-01</min>
+    <max>9.9938237667083740e-01</max>
     <last>
       <x>1279</x>
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>722</x>
-      <y>439</y>
-      <cn>1</cn>
-      <val>-0.68349915742874146</val></rng1>
+      <x>349</x>
+      <y>257</y>
+      <cn>2</cn>
+      <val>4.5030811429023743e-01</val></rng1>
     <rng2>
-      <x>387</x>
-      <y>202</y>
-      <val>0.63845157623291016</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC4--INTER_LINEAR->
+      <x>1021</x>
+      <y>396</y>
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1280x720--32FC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -62812,13 +62424,13 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>1895</x>
-      <y>216</y>
+      <x>1313</x>
+      <y>338</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>1292</x>
-      <y>373</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_NEAREST->
+      <x>1255</x>
+      <y>682</y>
+      <val>135.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -62830,128 +62442,49 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>111</x>
-      <y>4</y>
-      <val>111.</val></rng1>
+      <x>621</x>
+      <y>520</y>
+      <val>117.</val></rng1>
     <rng2>
-      <x>1662</x>
-      <y>29</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_LINEAR->
+      <x>264</x>
+      <y>59</y>
+      <val>174.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99999803304672241</min>
-    <max>0.9999992847442627</max>
+    <min>-9.9999803304672241e-01</min>
+    <max>9.9999928474426270e-01</max>
     <last>
       <x>1919</x>
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>145</x>
-      <y>817</y>
-      <val>-0.57285606861114502</val></rng1>
+      <x>1130</x>
+      <y>619</y>
+      <val>-7.3397964239120483e-01</val></rng1>
     <rng2>
-      <x>638</x>
-      <y>906</y>
-      <val>-0.82994014024734497</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_NEAREST->
+      <x>1732</x>
+      <y>264</y>
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99926668405532837</min>
-    <max>0.99998956918716431</max>
+    <min>-9.9926668405532837e-01</min>
+    <max>9.9998956918716431e-01</max>
     <last>
       <x>1919</x>
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>147</x>
-      <y>725</y>
-      <val>-0.56314396858215332</val></rng1>
+      <x>460</x>
+      <y>1044</y>
+      <val>-4.5373195409774780e-01</val></rng1>
     <rng2>
-      <x>712</x>
-      <y>1064</y>
-      <val>-0.66310012340545654</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>694</x>
-      <y>246</y>
-      <cn>1</cn>
-      <val>181.</val></rng1>
-    <rng2>
-      <x>772</x>
-      <y>970</y>
-      <cn>1</cn>
-      <val>251.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1302</x>
-      <y>973</y>
-      <cn>1</cn>
-      <val>175.</val></rng1>
-    <rng2>
-      <x>1913</x>
-      <y>774</y>
-      <cn>2</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC3--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99999964237213135</min>
-    <max>0.99999970197677612</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>948</x>
-      <y>336</y>
-      <cn>1</cn>
-      <val>0.</val></rng1>
-    <rng2>
-      <x>339</x>
-      <y>549</y>
-      <val>0.95037382841110229</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99998873472213745</min>
-    <max>0.99983692169189453</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>492</x>
-      <y>797</y>
-      <cn>1</cn>
-      <val>-0.1462690681219101</val></rng1>
-    <rng2>
-      <x>1608</x>
-      <y>141</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC3--INTER_LINEAR->
+      <x>737</x>
+      <y>884</y>
+      <val>-3.9330214262008667e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -62963,14 +62496,14 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>1877</x>
-      <y>251</y>
-      <cn>3</cn>
-      <val>0.</val></rng1>
+      <x>1296</x>
+      <y>737</y>
+      <val>80.</val></rng1>
     <rng2>
-      <x>946</x>
-      <y>396</y>
-      <val>143.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC4--INTER_NEAREST->
+      <x>3</x>
+      <y>562</y>
+      <cn>2</cn>
+      <val>250.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -62982,53 +62515,53 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>824</x>
-      <y>359</y>
-      <cn>2</cn>
-      <val>137.</val></rng1>
+      <x>1740</x>
+      <y>500</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>1919</x>
-      <y>313</y>
+      <x>876</x>
+      <y>191</y>
       <cn>1</cn>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--8UC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99999964237213135</min>
-    <max>0.99999970197677612</max>
+    <min>-9.9999964237213135e-01</min>
+    <max>9.9999970197677612e-01</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>1330</x>
+      <y>280</y>
+      <cn>1</cn>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>874</x>
+      <y>410</y>
+      <cn>3</cn>
+      <val>-6.9796973466873169e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_NEAREST->
+<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_LINEAR->
+  <dst>
+    <kind>655360</kind>
+    <type>29</type>
+    <min>-9.9932676553726196e-01</min>
+    <max>9.9980413913726807e-01</max>
     <last>
       <x>1919</x>
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
       <x>1353</x>
-      <y>982</y>
-      <val>0.62815386056900024</val></rng1>
-    <rng2>
-      <x>652</x>
-      <y>4</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>29</type>
-    <min>-0.99932676553726196</min>
-    <max>0.99980413913726807</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1829</x>
-      <y>1016</y>
+      <y>353</y>
       <cn>3</cn>
       <val>0.</val></rng1>
     <rng2>
-      <x>1907</x>
-      <y>858</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_LINEAR->
+      <x>1199</x>
+      <y>870</y>
+      <val>-6.7737698554992676e-04</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---1920x1080--32FC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -63040,13 +62573,13 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>3628</x>
-      <y>1758</y>
-      <val>0.</val></rng1>
+      <x>1202</x>
+      <y>1621</y>
+      <val>151.</val></rng1>
     <rng2>
-      <x>1551</x>
-      <y>2019</y>
-      <val>203.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC1--INTER_NEAREST->
+      <x>2975</x>
+      <y>824</y>
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -63058,126 +62591,49 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>3288</x>
-      <y>1498</y>
+      <x>1309</x>
+      <y>158</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>3798</x>
-      <y>174</y>
+      <x>3700</x>
+      <y>1396</y>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99999964237213135</min>
-    <max>0.99999970197677612</max>
+    <min>-9.9999964237213135e-01</min>
+    <max>9.9999970197677612e-01</max>
     <last>
       <x>3839</x>
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>1004</x>
-      <y>173</y>
-      <val>0.</val></rng1>
+      <x>1941</x>
+      <y>1759</y>
+      <val>-3.6987505853176117e-02</val></rng1>
     <rng2>
-      <x>1611</x>
-      <y>176</y>
+      <x>2196</x>
+      <y>987</y>
       <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC1--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC1--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>5</type>
-    <min>-0.99890691041946411</min>
-    <max>0.99998956918716431</max>
+    <min>-9.9890691041946411e-01</min>
+    <max>9.9998956918716431e-01</max>
     <last>
       <x>3839</x>
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>864</x>
-      <y>1090</y>
-      <val>-0.25078499317169189</val></rng1>
-    <rng2>
-      <x>3470</x>
-      <y>1099</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC1--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1979</x>
-      <y>582</y>
-      <cn>1</cn>
+      <x>1712</x>
+      <y>749</y>
       <val>0.</val></rng1>
     <rng2>
-      <x>373</x>
-      <y>7</y>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1271</x>
-      <y>999</y>
-      <cn>1</cn>
-      <val>185.</val></rng1>
-    <rng2>
-      <x>2001</x>
-      <y>1655</y>
-      <cn>1</cn>
-      <val>144.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC3--INTER_LINEAR->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC3--INTER_NEAREST->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-1.</min>
-    <max>0.99999988079071045</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>1769</x>
-      <y>1127</y>
-      <cn>2</cn>
-      <val>-0.75684040784835815</val></rng1>
-    <rng2>
-      <x>370</x>
-      <y>1235</y>
-      <val>-0.29979723691940308</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC3--INTER_NEAREST->
-<OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC3--INTER_LINEAR->
-  <dst>
-    <kind>655360</kind>
-    <type>21</type>
-    <min>-0.99972337484359741</min>
-    <max>0.99977296590805054</max>
-    <last>
-      <x>3839</x>
-      <y>2159</y>
-      <val>0.</val></last>
-    <rng1>
-      <x>2789</x>
-      <y>2139</y>
-      <val>-0.022004861384630203</val></rng1>
-    <rng2>
-      <x>3605</x>
-      <y>1861</y>
-      <cn>1</cn>
-      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC3--INTER_LINEAR->
+      <x>1894</x>
+      <y>206</y>
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -63189,15 +62645,15 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>2178</x>
-      <y>974</y>
+      <x>3648</x>
+      <y>2018</y>
       <cn>2</cn>
       <val>0.</val></rng1>
     <rng2>
-      <x>1596</x>
-      <y>1923</y>
-      <cn>2</cn>
-      <val>176.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_NEAREST->
+      <x>175</x>
+      <y>930</y>
+      <cn>1</cn>
+      <val>127.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
@@ -63209,1184 +62665,53 @@
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>1665</x>
-      <y>181</y>
-      <cn>3</cn>
-      <val>0.</val></rng1>
+      <x>1187</x>
+      <y>1865</y>
+      <val>33.</val></rng1>
     <rng2>
-      <x>648</x>
-      <y>1741</y>
+      <x>86</x>
+      <y>210</y>
       <cn>2</cn>
-      <val>65.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_LINEAR->
+      <val>158.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--8UC4--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
     <type>29</type>
     <min>-1.</min>
-    <max>0.9999997615814209</max>
+    <max>9.9999976158142090e-01</max>
     <last>
       <x>3839</x>
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>1906</x>
-      <y>1433</y>
+      <x>2744</x>
+      <y>1748</y>
       <cn>3</cn>
-      <val>0.44293379783630371</val></rng1>
+      <val>5.7257753610610962e-01</val></rng1>
     <rng2>
-      <x>652</x>
-      <y>1047</y>
-      <val>-0.5956156849861145</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_NEAREST->
+      <x>1352</x>
+      <y>684</y>
+      <val>5.5406838655471802e-01</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_NEAREST->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_LINEAR->
   <dst>
     <kind>655360</kind>
     <type>29</type>
-    <min>-0.99962705373764038</min>
-    <max>0.99992603063583374</max>
+    <min>-9.9962705373764038e-01</min>
+    <max>9.9992603063583374e-01</max>
     <last>
       <x>3839</x>
       <y>2159</y>
       <val>0.</val></last>
     <rng1>
-      <x>1488</x>
-      <y>1248</y>
+      <x>3603</x>
+      <y>1936</y>
       <cn>3</cn>
-      <val>0.30376613140106201</val></rng1>
+      <val>0.</val></rng1>
     <rng2>
-      <x>1000</x>
-      <y>1506</y>
-      <val>0.18204833567142487</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_LINEAR->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>241</x>
-      <y>161</y>
-      <val>230.</val></rng1>
-    <rng2>
-      <x>223</x>
-      <y>285</y>
-      <val>20.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>317</x>
-      <y>415</y>
-      <cn>1</cn>
-      <val>238.</val></rng1>
-    <rng2>
-      <x>206</x>
-      <y>255</y>
+      <x>3806</x>
+      <y>280</y>
       <cn>2</cn>
-      <val>112.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>408</x>
-      <y>193</y>
-      <val>120.</val></rng1>
-    <rng2>
-      <x>491</x>
-      <y>397</y>
-      <cn>2</cn>
-      <val>157.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>226</x>
-      <y>379</y>
-      <val>220.</val></rng1>
-    <rng2>
-      <x>246</x>
-      <y>247</y>
-      <val>40.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>5</x>
-      <y>476</y>
-      <cn>2</cn>
-      <val>129.</val></rng1>
-    <rng2>
-      <x>487</x>
-      <y>408</y>
-      <cn>1</cn>
-      <val>240.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>606</x>
-      <y>305</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>261</x>
-      <y>366</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>374</x>
-      <y>416</y>
-      <val>184.</val></rng1>
-    <rng2>
-      <x>51</x>
-      <y>234</y>
-      <val>98.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>340</x>
-      <y>440</y>
-      <val>182.</val></rng1>
-    <rng2>
-      <x>48</x>
-      <y>209</y>
-      <val>31.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>621</x>
-      <y>208</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>157</x>
-      <y>226</y>
-      <cn>1</cn>
-      <val>113.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>318</x>
-      <y>245</y>
-      <val>91.</val></rng1>
-    <rng2>
-      <x>424</x>
-      <y>395</y>
-      <val>252.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>213</x>
-      <y>99</y>
-      <cn>2</cn>
-      <val>81.</val></rng1>
-    <rng2>
-      <x>356</x>
-      <y>279</y>
-      <cn>1</cn>
-      <val>64.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>388</x>
-      <y>426</y>
-      <cn>2</cn>
-      <val>180.</val></rng1>
-    <rng2>
-      <x>548</x>
-      <y>336</y>
-      <cn>1</cn>
-      <val>72.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>280</x>
-      <y>446</y>
-      <val>105.</val></rng1>
-    <rng2>
-      <x>91</x>
-      <y>277</y>
-      <val>210.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1071</x>
-      <y>432</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>310</x>
-      <y>478</y>
-      <cn>1</cn>
-      <val>130.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>897</x>
-      <y>172</y>
-      <cn>2</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>1120</x>
-      <y>576</y>
-      <cn>2</cn>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1025</x>
-      <y>641</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>762</x>
-      <y>136</y>
-      <val>90.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>339</x>
-      <y>118</y>
-      <cn>1</cn>
-      <val>165.</val></rng1>
-    <rng2>
-      <x>148</x>
-      <y>591</y>
-      <cn>1</cn>
-      <val>100.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>654</x>
-      <y>405</y>
-      <val>50.</val></rng1>
-    <rng2>
-      <x>785</x>
-      <y>227</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>551</x>
-      <y>159</y>
-      <val>127.</val></rng1>
-    <rng2>
-      <x>1168</x>
-      <y>708</y>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>978</x>
-      <y>444</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>942</x>
-      <y>292</y>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>295</x>
-      <y>525</y>
-      <val>133.</val></rng1>
-    <rng2>
-      <x>988</x>
-      <y>117</y>
-      <cn>1</cn>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1151</x>
-      <y>544</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>1238</x>
-      <y>120</y>
-      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>201</x>
-      <y>385</y>
-      <val>124.</val></rng1>
-    <rng2>
-      <x>870</x>
-      <y>510</y>
-      <cn>1</cn>
-      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>251</x>
-      <y>276</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>946</x>
-      <y>126</y>
-      <val>228.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>540</x>
-      <y>753</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>122</x>
-      <y>544</y>
-      <val>195.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1809</x>
-      <y>1072</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>568</x>
-      <y>141</y>
-      <val>49.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1001</x>
-      <y>933</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>1140</x>
-      <y>334</y>
-      <cn>3</cn>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>876</x>
-      <y>689</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>1861</x>
-      <y>317</y>
-      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>1521</x>
-      <y>880</y>
-      <cn>2</cn>
-      <val>199.</val></rng1>
-    <rng2>
-      <x>1191</x>
-      <y>692</y>
-      <cn>2</cn>
-      <val>199.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1418</x>
-      <y>438</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>1916</x>
-      <y>1057</y>
-      <cn>2</cn>
-      <val>199.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1816</x>
-      <y>152</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>1639</x>
-      <y>909</y>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1794</x>
-      <y>447</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>71</x>
-      <y>832</y>
-      <val>147.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>441</x>
-      <y>271</y>
-      <cn>2</cn>
-      <val>130.</val></rng1>
-    <rng2>
-      <x>1820</x>
-      <y>245</y>
-      <cn>1</cn>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--4->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1065</x>
-      <y>847</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>174</x>
-      <y>466</y>
-      <val>208.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--1->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--3->
-  <dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>199.</val></last>
-    <rng1>
-      <x>1370</x>
-      <y>1022</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>150</x>
-      <y>697</y>
-      <val>204.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--3->
-<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>220</x>
-      <y>606</y>
-      <val>94.</val></rng1>
-    <rng2>
-      <x>326</x>
-      <y>848</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>613</x>
-      <y>171</y>
-      <val>149.</val></rng1>
-    <rng2>
-      <x>140</x>
-      <y>178</y>
-      <val>205.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>184</x>
-      <y>272</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>99</x>
-      <y>162</y>
-      <val>208.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>155.</val></last>
-    <rng1>
-      <x>447</x>
-      <y>391</y>
-      <val>30.</val></rng1>
-    <rng2>
-      <x>416</x>
-      <y>164</y>
-      <val>220.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>635</x>
-      <y>156</y>
-      <val>220.</val></rng1>
-    <rng2>
-      <x>63</x>
-      <y>275</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>87</x>
-      <y>5</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>392</x>
-      <y>309</y>
-      <val>27.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>472</x>
-      <y>426</y>
-      <cn>3</cn>
-      <val>189.</val></rng1>
-    <rng2>
-      <x>504</x>
-      <y>218</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>155.</val></last>
-    <rng1>
-      <x>99</x>
-      <y>40</y>
-      <val>96.</val></rng1>
-    <rng2>
-      <x>82</x>
-      <y>229</y>
-      <val>48.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>107</x>
-      <y>313</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>447</x>
-      <y>65</y>
-      <val>216.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>79</x>
-      <y>94</y>
-      <val>142.</val></rng1>
-    <rng2>
-      <x>369</x>
-      <y>1008</y>
-      <val>70.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1460</x>
-      <y>631</y>
-      <cn>2</cn>
-      <val>120.</val></rng1>
-    <rng2>
-      <x>1762</x>
-      <y>423</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>215.</val></last>
-    <rng1>
-      <x>1732</x>
-      <y>150</y>
-      <val>240.</val></rng1>
-    <rng2>
-      <x>276</x>
-      <y>402</y>
-      <val>230.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>353</x>
-      <y>1023</y>
-      <cn>2</cn>
-      <val>190.</val></rng1>
-    <rng2>
-      <x>1168</x>
-      <y>694</y>
-      <val>45.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1343</x>
-      <y>684</y>
-      <val>58.</val></rng1>
-    <rng2>
-      <x>421</x>
-      <y>324</y>
-      <val>149.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>311</x>
-      <y>0</y>
-      <cn>2</cn>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>219</x>
-      <y>286</y>
-      <val>118.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>215.</val></last>
-    <rng1>
-      <x>358</x>
-      <y>350</y>
-      <val>25.</val></rng1>
-    <rng2>
-      <x>227</x>
-      <y>641</y>
-      <val>30.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1715</x>
-      <y>653</y>
-      <cn>2</cn>
-      <val>126.</val></rng1>
-    <rng2>
-      <x>1853</x>
-      <y>745</y>
-      <cn>2</cn>
-      <val>146.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>9</x>
-      <y>1305</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>947</x>
-      <y>298</y>
-      <val>170.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>219</x>
-      <y>338</y>
-      <val>220.</val></rng1>
-    <rng2>
-      <x>1039</x>
-      <y>649</y>
-      <val>45.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>25.</val></last>
-    <rng1>
-      <x>2097</x>
-      <y>1157</y>
-      <val>200.</val></rng1>
-    <rng2>
-      <x>313</x>
-      <y>1925</y>
-      <val>15.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>359</x>
-      <y>132</y>
-      <cn>1</cn>
-      <val>215.</val></rng1>
-    <rng2>
-      <x>1657</x>
-      <y>152</y>
-      <cn>1</cn>
-      <val>220.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_NEAREST--BORDER_REPLICATE--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>2204</x>
-      <y>1227</y>
-      <val>198.</val></rng1>
-    <rng2>
-      <x>444</x>
-      <y>117</y>
-      <val>153.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_CONSTANT--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>540</x>
-      <y>739</y>
-      <val>191.</val></rng1>
-    <rng2>
-      <x>399</x>
-      <y>600</y>
-      <cn>1</cn>
-      <val>59.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_CONSTANT--8UC4->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>25.</val></last>
-    <rng1>
-      <x>2075</x>
-      <y>1259</y>
-      <val>169.</val></rng1>
-    <rng2>
-      <x>1115</x>
-      <y>445</y>
-      <val>62.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_REPLICATE--8UC1->
-<TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_REPLICATE--8UC4->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>2591</x>
-      <y>1943</y>
-      <val>255.</val></last>
-    <rng1>
-      <x>1222</x>
-      <y>353</y>
-      <cn>2</cn>
-      <val>31.</val></rng1>
-    <rng2>
-      <x>748</x>
-      <y>265</y>
-      <cn>1</cn>
-      <val>228.</val></rng2></dst></TestWarpPerspectiveNear_t_WarpPerspectiveNear--WarpPerspectiveNear---2592x1944--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+      <val>0.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---3840x2160--32FC4--INTER_LINEAR->
 <OCL_ResizeFixture_Resize--Resize---640x480--8UC1--INTER_NEAREST--0-5->
   <dst>
     <kind>655360</kind>
@@ -89913,438 +88238,6 @@
       <x>11</x>
       <y>13</y>
       <val>-1.8754956054687500e+02</val></rng2></dst></Size_MatType_pyrDown_ovx--pyrDown_ovx---127x61--32FC4->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>122.</val></last>
-    <rng1>
-      <x>330</x>
-      <y>139</y>
-      <val>115.</val></rng1>
-    <rng2>
-      <x>171</x>
-      <y>224</y>
-      <val>100.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>115.</val></last>
-    <rng1>
-      <x>374</x>
-      <y>394</y>
-      <val>155.</val></rng1>
-    <rng2>
-      <x>102</x>
-      <y>390</y>
-      <val>160.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>121.</val></last>
-    <rng1>
-      <x>551</x>
-      <y>479</y>
-      <val>14.</val></rng1>
-    <rng2>
-      <x>141</x>
-      <y>182</y>
-      <val>16.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>114.</val></last>
-    <rng1>
-      <x>160</x>
-      <y>41</y>
-      <val>238.</val></rng1>
-    <rng2>
-      <x>234</x>
-      <y>357</y>
-      <val>76.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---640x480--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>643</x>
-      <y>383</y>
-      <val>70.</val></rng1>
-    <rng2>
-      <x>1123</x>
-      <y>438</y>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1278</x>
-      <y>471</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>260</x>
-      <y>476</y>
-      <val>190.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>595</x>
-      <y>706</y>
-      <val>148.</val></rng1>
-    <rng2>
-      <x>62</x>
-      <y>134</y>
-      <val>201.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1191</x>
-      <y>119</y>
-      <val>33.</val></rng1>
-    <rng2>
-      <x>101</x>
-      <y>398</y>
-      <val>147.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>633</x>
-      <y>635</y>
-      <val>139.</val></rng1>
-    <rng2>
-      <x>1457</x>
-      <y>553</y>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>340</x>
-      <y>982</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>328</x>
-      <y>388</y>
-      <val>90.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>1651</x>
-      <y>329</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>692</x>
-      <y>705</y>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>434</x>
-      <y>534</y>
-      <val>11.</val></rng1>
-    <rng2>
-      <x>625</x>
-      <y>1008</y>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine_ovx--WarpAffine_ovx---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>265</x>
-      <y>193</y>
-      <val>155.</val></rng1>
-    <rng2>
-      <x>297</x>
-      <y>245</y>
-      <val>50.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>393</x>
-      <y>277</y>
-      <val>175.</val></rng1>
-    <rng2>
-      <x>591</x>
-      <y>264</y>
-      <val>240.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>592</x>
-      <y>470</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>466</x>
-      <y>356</y>
-      <val>197.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>326</x>
-      <y>283</y>
-      <val>216.</val></rng1>
-    <rng2>
-      <x>55</x>
-      <y>191</y>
-      <val>2.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---640x480--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>991</x>
-      <y>295</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>292</x>
-      <y>358</y>
-      <val>205.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1211</x>
-      <y>667</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>145</x>
-      <y>448</y>
-      <val>190.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>670</x>
-      <y>113</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>805</x>
-      <y>145</y>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1239</x>
-      <y>554</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>142</x>
-      <y>624</y>
-      <val>121.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1280x720--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>573</x>
-      <y>828</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>1111</x>
-      <y>986</y>
-      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>257</x>
-      <y>158</y>
-      <val>135.</val></rng1>
-    <rng2>
-      <x>502</x>
-      <y>224</y>
-      <val>120.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>736</x>
-      <y>119</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>114</x>
-      <y>646</y>
-      <val>33.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>759</x>
-      <y>918</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>976</x>
-      <y>754</y>
-      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective_ovx--WarpPerspective_ovx---1920x1080--INTER_LINEAR--BORDER_REPLICATE->
 <Size_MatType_Accumulate--Accumulate---127x61--16SC1->
   <dst>
     <kind>65536</kind>
@@ -101681,7 +99574,66 @@
       <val>83.</val></rng2></dst></Size_CvtMode2_cvtColorYUV420--cvtColorYUV420---130x60--COLOR_BGRA2YUV_YVYU->
  <!-- resumed -->
 
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_NEAREST--BORDER_CONSTANT->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>546</x>
+      <y>208</y>
+      <cn>2</cn>
+      <val>118.</val></rng1>
+    <rng2>
+      <x>400</x>
+      <y>146</y>
+      <cn>1</cn>
+      <val>160.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>17921.</val></last>
+    <rng1>
+      <x>368</x>
+      <y>406</y>
+      <cn>1</cn>
+      <val>266.</val></rng1>
+    <rng2>
+      <x>459</x>
+      <y>14</y>
+      <cn>2</cn>
+      <val>15401.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>98.589996337890625</min>
+    <max>151248.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>122778.796875</val></last>
+    <rng1>
+      <x>513</x>
+      <y>343</y>
+      <cn>2</cn>
+      <val>117613.</val></rng1>
+    <rng2>
+      <x>276</x>
+      <y>175</y>
+      <val>229.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -101692,14 +99644,168 @@
       <y>479</y>
       <val>122.</val></last>
     <rng1>
-      <x>114</x>
-      <y>166</y>
-      <val>80.</val></rng1>
+      <x>300</x>
+      <y>396</y>
+      <val>75.</val></rng1>
+    <rng2>
+      <x>580</x>
+      <y>47</y>
+      <val>202.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>374.</val></last>
+    <rng1>
+      <x>540</x>
+      <y>26</y>
+      <val>222.</val></rng1>
+    <rng2>
+      <x>586</x>
+      <y>87</y>
+      <val>249.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.589996337890625</min>
+    <max>411.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>374.79998779296875</val></last>
+    <rng1>
+      <x>143</x>
+      <y>109</y>
+      <val>172.</val></rng1>
+    <rng2>
+      <x>222</x>
+      <y>448</y>
+      <val>324.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>234.</val></last>
+    <rng1>
+      <x>558</x>
+      <y>141</y>
+      <cn>1</cn>
+      <val>35.</val></rng1>
+    <rng2>
+      <x>564</x>
+      <y>304</y>
+      <cn>1</cn>
+      <val>210.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>185.</val></last>
+    <rng1>
+      <x>83</x>
+      <y>314</y>
+      <cn>2</cn>
+      <val>42000.</val></rng1>
+    <rng2>
+      <x>518</x>
+      <y>463</y>
+      <cn>3</cn>
+      <val>174.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>67.</min>
+    <max>151248.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>185.19999694824219</val></last>
+    <rng1>
+      <x>266</x>
+      <y>23</y>
+      <cn>1</cn>
+      <val>313.</val></rng1>
+    <rng2>
+      <x>19</x>
+      <y>259</y>
+      <val>203.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>168.</val></last>
+    <rng1>
+      <x>355</x>
+      <y>215</y>
+      <cn>1</cn>
+      <val>10.</val></rng1>
     <rng2>
       <x>170</x>
-      <y>78</y>
-      <val>190.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_NEAREST--BORDER_REPLICATE->
+      <y>105</y>
+      <val>135.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>22364.</val></last>
+    <rng1>
+      <x>423</x>
+      <y>48</y>
+      <cn>2</cn>
+      <val>12692.</val></rng1>
+    <rng2>
+      <x>409</x>
+      <y>272</y>
+      <cn>2</cn>
+      <val>27425.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>97.</min>
+    <max>153510.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>153436.</val></last>
+    <rng1>
+      <x>79</x>
+      <y>310</y>
+      <cn>2</cn>
+      <val>41238.</val></rng1>
+    <rng2>
+      <x>556</x>
+      <y>214</y>
+      <cn>1</cn>
+      <val>384.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -101710,14 +99816,166 @@
       <y>479</y>
       <val>115.</val></last>
     <rng1>
-      <x>46</x>
-      <y>438</y>
-      <val>130.</val></rng1>
+      <x>387</x>
+      <y>13</y>
+      <val>70.</val></rng1>
     <rng2>
-      <x>266</x>
-      <y>138</y>
-      <val>40.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_LINEAR--BORDER_CONSTANT->
+      <x>504</x>
+      <y>476</y>
+      <val>45.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>97.</min>
+    <max>431.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>431.</val></last>
+    <rng1>
+      <x>586</x>
+      <y>222</y>
+      <val>318.</val></rng1>
+    <rng2>
+      <x>532</x>
+      <y>338</y>
+      <val>351.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>97.</min>
+    <max>431.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>431.</val></last>
+    <rng1>
+      <x>413</x>
+      <y>228</y>
+      <val>281.</val></rng1>
+    <rng2>
+      <x>236</x>
+      <y>349</y>
+      <val>288.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>498</x>
+      <y>306</y>
+      <cn>3</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>106</x>
+      <y>307</y>
+      <cn>1</cn>
+      <val>95.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.</val></last>
+    <rng1>
+      <x>14</x>
+      <y>453</y>
+      <cn>2</cn>
+      <val>32364.</val></rng1>
+    <rng2>
+      <x>421</x>
+      <y>251</y>
+      <cn>1</cn>
+      <val>322.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>66.</min>
+    <max>153510.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.</val></last>
+    <rng1>
+      <x>278</x>
+      <y>35</y>
+      <cn>1</cn>
+      <val>315.</val></rng1>
+    <rng2>
+      <x>197</x>
+      <y>20</y>
+      <cn>2</cn>
+      <val>42900.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>164.</val></last>
+    <rng1>
+      <x>454</x>
+      <y>336</y>
+      <val>132.</val></rng1>
+    <rng2>
+      <x>241</x>
+      <y>345</y>
+      <val>92.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>17939.</val></last>
+    <rng1>
+      <x>383</x>
+      <y>277</y>
+      <cn>1</cn>
+      <val>301.</val></rng1>
+    <rng2>
+      <x>204</x>
+      <y>46</y>
+      <val>162.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>98.609939575195312</min>
+    <max>151024.078125</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>123021.1796875</val></last>
+    <rng1>
+      <x>628</x>
+      <y>165</y>
+      <val>285.97280883789062</val></rng1>
+    <rng2>
+      <x>358</x>
+      <y>207</y>
+      <cn>1</cn>
+      <val>307.2884521484375</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -101728,14 +99986,167 @@
       <y>479</y>
       <val>121.</val></last>
     <rng1>
-      <x>489</x>
-      <y>254</y>
-      <val>11.</val></rng1>
+      <x>498</x>
+      <y>242</y>
+      <val>3.</val></rng1>
     <rng2>
-      <x>614</x>
-      <y>253</y>
-      <val>151.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_LINEAR--BORDER_REPLICATE->
+      <x>217</x>
+      <y>1</y>
+      <val>224.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>374.</val></last>
+    <rng1>
+      <x>81</x>
+      <y>113</y>
+      <val>160.</val></rng1>
+    <rng2>
+      <x>106</x>
+      <y>316</y>
+      <val>246.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.609939575195312</min>
+    <max>410.99969482421875</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>375.14215087890625</val></last>
+    <rng1>
+      <x>537</x>
+      <y>74</y>
+      <val>248.2197265625</val></rng1>
+    <rng2>
+      <x>530</x>
+      <y>157</y>
+      <val>279.30160522460938</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>234.</val></last>
+    <rng1>
+      <x>110</x>
+      <y>17</y>
+      <cn>2</cn>
+      <val>50.</val></rng1>
+    <rng2>
+      <x>290</x>
+      <y>40</y>
+      <val>127.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>185.</val></last>
+    <rng1>
+      <x>329</x>
+      <y>288</y>
+      <cn>2</cn>
+      <val>13593.</val></rng1>
+    <rng2>
+      <x>401</x>
+      <y>172</y>
+      <cn>2</cn>
+      <val>19462.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>67.027130126953125</min>
+    <max>151024.078125</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>185.33186340332031</val></last>
+    <rng1>
+      <x>192</x>
+      <y>236</y>
+      <cn>3</cn>
+      <val>116.58158874511719</val></rng1>
+    <rng2>
+      <x>547</x>
+      <y>83</y>
+      <val>254.03529357910156</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>168.</val></last>
+    <rng1>
+      <x>1</x>
+      <y>347</y>
+      <cn>2</cn>
+      <val>91.</val></rng1>
+    <rng2>
+      <x>107</x>
+      <y>1</y>
+      <cn>1</cn>
+      <val>253.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>22340.</val></last>
+    <rng1>
+      <x>47</x>
+      <y>396</y>
+      <val>264.</val></rng1>
+    <rng2>
+      <x>280</x>
+      <y>366</y>
+      <cn>2</cn>
+      <val>7742.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>97.044319152832031</min>
+    <max>153411.859375</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>153411.859375</val></last>
+    <rng1>
+      <x>45</x>
+      <y>3</y>
+      <cn>1</cn>
+      <val>230.44029235839844</val></rng1>
+    <rng2>
+      <x>403</x>
+      <y>116</y>
+      <cn>2</cn>
+      <val>80993.3125</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC1->
   <dst>
     <kind>65536</kind>
     <type>0</type>
@@ -101746,241 +100157,110 @@
       <y>479</y>
       <val>114.</val></last>
     <rng1>
-      <x>583</x>
-      <y>441</y>
-      <val>24.</val></rng1>
+      <x>205</x>
+      <y>197</y>
+      <val>86.</val></rng1>
     <rng2>
-      <x>333</x>
-      <y>217</y>
-      <val>239.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--640x480--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>244</x>
-      <y>209</y>
-      <val>155.</val></rng1>
-    <rng2>
-      <x>313</x>
-      <y>680</y>
-      <val>142.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>1098</x>
-      <y>266</y>
-      <val>215.</val></rng1>
-    <rng2>
-      <x>1017</x>
-      <y>446</y>
-      <val>30.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>566</x>
-      <y>624</y>
-      <val>167.</val></rng1>
-    <rng2>
-      <x>420</x>
-      <y>508</y>
-      <val>78.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>113</x>
-      <y>244</y>
-      <val>74.</val></rng1>
-    <rng2>
-      <x>690</x>
-      <y>710</y>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1280x720--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>895</x>
-      <y>731</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>262</x>
-      <y>852</y>
-      <val>138.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>577</x>
-      <y>86</y>
-      <val>220.</val></rng1>
-    <rng2>
-      <x>252</x>
-      <y>964</y>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>336</x>
-      <y>156</y>
-      <val>154.</val></rng1>
-    <rng2>
-      <x>326</x>
-      <y>917</y>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>5.</val></last>
-    <rng1>
-      <x>828</x>
-      <y>388</y>
-      <val>150.</val></rng1>
-    <rng2>
-      <x>1296</x>
-      <y>673</y>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC1--1920x1080--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_NEAREST--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>234.</val></last>
-    <rng1>
-      <x>454</x>
-      <y>34</y>
-      <cn>3</cn>
-      <val>255.</val></rng1>
-    <rng2>
-      <x>113</x>
-      <y>142</y>
-      <cn>2</cn>
-      <val>69.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_NEAREST--BORDER_REPLICATE->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>639</x>
-      <y>479</y>
-      <val>255.</val></last>
-    <rng1>
       <x>613</x>
-      <y>40</y>
-      <cn>2</cn>
-      <val>98.</val></rng1>
-    <rng2>
-      <x>218</x>
-      <y>170</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_LINEAR--BORDER_CONSTANT->
+      <y>457</y>
+      <val>41.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC1->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
+    <type>2</type>
+    <min>97.</min>
+    <max>431.</max>
     <last>
       <x>639</x>
       <y>479</y>
-      <val>234.</val></last>
+      <val>431.</val></last>
     <rng1>
-      <x>50</x>
-      <y>448</y>
-      <cn>2</cn>
-      <val>111.</val></rng1>
+      <x>572</x>
+      <y>374</y>
+      <val>374.</val></rng1>
     <rng2>
-      <x>372</x>
-      <y>17</y>
-      <cn>1</cn>
-      <val>250.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_LINEAR--BORDER_REPLICATE->
+      <x>510</x>
+      <y>51</y>
+      <val>233.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC1->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>5</type>
+    <min>97.044319152832031</min>
+    <max>430.82891845703125</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>430.82891845703125</val></last>
+    <rng1>
+      <x>501</x>
+      <y>147</y>
+      <val>268.77420043945312</val></rng1>
+    <rng2>
+      <x>549</x>
+      <y>450</y>
+      <val>398.9586181640625</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
     <min>0.</min>
     <max>255.</max>
     <last>
       <x>639</x>
       <y>479</y>
       <val>255.</val></last>
+    <rng1>
+      <x>352</x>
+      <y>150</y>
+      <val>160.</val></rng1>
+    <rng2>
+      <x>457</x>
+      <y>432</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.</val></last>
     <rng1>
       <x>384</x>
-      <y>227</y>
-      <cn>2</cn>
-      <val>107.</val></rng1>
+      <y>356</y>
+      <cn>1</cn>
+      <val>284.</val></rng1>
     <rng2>
-      <x>85</x>
-      <y>50</y>
-      <cn>3</cn>
-      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--640x480--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_NEAREST--BORDER_CONSTANT->
+      <x>91</x>
+      <y>399</y>
+      <val>275.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC4->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>101</type>
+    <min>66.</min>
+    <max>153411.859375</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>194.07072448730469</val></last>
+    <rng1>
+      <x>39</x>
+      <y>232</y>
+      <cn>2</cn>
+      <val>34719.7265625</val></rng1>
+    <rng2>
+      <x>297</x>
+      <y>205</y>
+      <val>245.24214172363281</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---640x480--INTER_LINEAR--BORDER_REPLICATE--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
     <min>0.</min>
     <max>255.</max>
     <last>
@@ -101988,19 +100268,281 @@
       <y>719</y>
       <val>150.</val></last>
     <rng1>
-      <x>1262</x>
-      <y>291</y>
+      <x>848</x>
+      <y>82</y>
+      <cn>2</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>627</x>
+      <y>287</y>
+      <val>235.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>777</x>
+      <y>378</y>
+      <cn>2</cn>
+      <val>35903.</val></rng1>
+    <rng2>
+      <x>1111</x>
+      <y>433</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>93.75</min>
+    <max>168921.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1128</x>
+      <y>93</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>984</x>
+      <y>180</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>652</x>
+      <y>239</y>
+      <val>164.</val></rng1>
+    <rng2>
+      <x>1274</x>
+      <y>487</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>827</x>
+      <y>305</y>
+      <val>254.</val></rng1>
+    <rng2>
+      <x>93</x>
+      <y>63</y>
+      <val>143.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.589996337890625</min>
+    <max>411.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>619</x>
+      <y>664</y>
+      <val>191.8800048828125</val></rng1>
+    <rng2>
+      <x>581</x>
+      <y>218</y>
+      <val>315.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>60</x>
+      <y>457</y>
+      <cn>2</cn>
+      <val>113.</val></rng1>
+    <rng2>
+      <x>1250</x>
+      <y>667</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1009</x>
+      <y>438</y>
       <cn>1</cn>
       <val>150.</val></rng1>
     <rng2>
-      <x>469</x>
-      <y>543</y>
-      <cn>3</cn>
-      <val>248.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_NEAREST--BORDER_REPLICATE->
+      <x>998</x>
+      <y>513</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC4->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>101</type>
+    <min>67.</min>
+    <max>168921.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>350</x>
+      <y>381</y>
+      <cn>3</cn>
+      <val>146.</val></rng1>
+    <rng2>
+      <x>523</x>
+      <y>498</y>
+      <cn>2</cn>
+      <val>124812.78125</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>1106</x>
+      <y>672</y>
+      <cn>1</cn>
+      <val>70.</val></rng1>
+    <rng2>
+      <x>497</x>
+      <y>159</y>
+      <cn>2</cn>
+      <val>106.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>64513.</val></last>
+    <rng1>
+      <x>159</x>
+      <y>291</y>
+      <val>248.</val></rng1>
+    <rng2>
+      <x>805</x>
+      <y>382</y>
+      <val>430.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>50.</min>
+    <max>261121.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>261121.</val></last>
+    <rng1>
+      <x>316</x>
+      <y>561</y>
+      <cn>1</cn>
+      <val>210.</val></rng1>
+    <rng2>
+      <x>724</x>
+      <y>186</y>
+      <cn>2</cn>
+      <val>152760.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>817</x>
+      <y>432</y>
+      <val>225.</val></rng1>
+    <rng2>
+      <x>461</x>
+      <y>326</y>
+      <val>120.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>117</x>
+      <y>53</y>
+      <val>144.</val></rng1>
+    <rng2>
+      <x>616</x>
+      <y>272</y>
+      <val>344.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>227</x>
+      <y>533</y>
+      <val>358.</val></rng1>
+    <rng2>
+      <x>438</x>
+      <y>606</y>
+      <val>435.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
     <min>0.</min>
     <max>255.</max>
     <last>
@@ -102008,38 +100550,338 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>1067</x>
-      <y>452</y>
-      <val>5.</val></rng1>
-    <rng2>
-      <x>234</x>
-      <y>556</y>
-      <cn>2</cn>
-      <val>144.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_LINEAR--BORDER_CONSTANT->
-  <dst>
-    <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>150.</val></last>
-    <rng1>
-      <x>372</x>
-      <y>406</y>
+      <x>294</x>
+      <y>463</y>
       <cn>3</cn>
       <val>255.</val></rng1>
     <rng2>
-      <x>841</x>
-      <y>328</y>
-      <cn>1</cn>
-      <val>169.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_LINEAR--BORDER_REPLICATE->
+      <x>650</x>
+      <y>544</y>
+      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC4->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1148</x>
+      <y>676</y>
+      <cn>1</cn>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>1025</x>
+      <y>159</y>
+      <val>393.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>44.</min>
+    <max>261121.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>281</x>
+      <y>0</y>
+      <cn>2</cn>
+      <val>52164.</val></rng1>
+    <rng2>
+      <x>337</x>
+      <y>427</y>
+      <cn>3</cn>
+      <val>143.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1056</x>
+      <y>457</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>607</x>
+      <y>198</y>
+      <cn>1</cn>
+      <val>3.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>150</x>
+      <y>61</y>
+      <val>155.</val></rng1>
+    <rng2>
+      <x>948</x>
+      <y>140</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>93.750007629394531</min>
+    <max>168734.15625</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>438</x>
+      <y>384</y>
+      <cn>1</cn>
+      <val>298.55300903320312</val></rng1>
+    <rng2>
+      <x>1010</x>
+      <y>63</y>
+      <cn>2</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>728</x>
+      <y>572</y>
+      <val>140.</val></rng1>
+    <rng2>
+      <x>341</x>
+      <y>113</y>
+      <val>75.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>721</x>
+      <y>534</y>
+      <val>278.</val></rng1>
+    <rng2>
+      <x>468</x>
+      <y>432</y>
+      <val>373.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.609939575195312</min>
+    <max>410.99969482421875</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>932</x>
+      <y>184</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1130</x>
+      <y>227</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1102</x>
+      <y>558</y>
+      <cn>3</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>232</x>
+      <y>168</y>
+      <cn>1</cn>
+      <val>197.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>425</x>
+      <y>407</y>
+      <cn>2</cn>
+      <val>36446.</val></rng1>
+    <rng2>
+      <x>626</x>
+      <y>404</y>
+      <cn>2</cn>
+      <val>15526.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>67.027130126953125</min>
+    <max>168734.15625</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>360</x>
+      <y>629</y>
+      <val>383.70327758789062</val></rng1>
+    <rng2>
+      <x>1215</x>
+      <y>271</y>
+      <cn>3</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>904</x>
+      <y>625</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>204</x>
+      <y>237</y>
+      <val>164.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>64513.</val></last>
+    <rng1>
+      <x>466</x>
+      <y>461</y>
+      <cn>1</cn>
+      <val>292.</val></rng1>
+    <rng2>
+      <x>1247</x>
+      <y>482</y>
+      <cn>2</cn>
+      <val>64513.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>49.998855590820312</min>
+    <max>261121.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>261121.</val></last>
+    <rng1>
+      <x>454</x>
+      <y>454</y>
+      <cn>1</cn>
+      <val>288.94229125976562</val></rng1>
+    <rng2>
+      <x>949</x>
+      <y>54</y>
+      <val>333.98312377929688</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>542</x>
+      <y>437</y>
+      <val>79.</val></rng1>
+    <rng2>
+      <x>850</x>
+      <y>95</y>
+      <val>108.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>335</x>
+      <y>607</y>
+      <val>412.</val></rng1>
+    <rng2>
+      <x>242</x>
+      <y>378</y>
+      <val>301.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>97.044319152832031</min>
+    <max>511.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>1250</x>
+      <y>276</y>
+      <val>489.78204345703125</val></rng1>
+    <rng2>
+      <x>1066</x>
+      <y>49</y>
+      <val>358.60580444335938</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
     <min>0.</min>
     <max>255.</max>
     <last>
@@ -102047,59 +100889,59 @@
       <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>594</x>
-      <y>496</y>
-      <cn>2</cn>
-      <val>166.</val></rng1>
-    <rng2>
-      <x>509</x>
-      <y>221</y>
+      <x>170</x>
+      <y>477</y>
       <cn>1</cn>
-      <val>222.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1280x720--INTER_LINEAR--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_NEAREST--BORDER_CONSTANT->
+      <val>160.</val></rng1>
+    <rng2>
+      <x>522</x>
+      <y>242</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC4->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>98</type>
     <min>0.</min>
-    <max>255.</max>
+    <max>65504.</max>
     <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>150.</val></last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
     <rng1>
-      <x>1013</x>
-      <y>1049</y>
-      <cn>1</cn>
-      <val>150.</val></rng1>
+      <x>786</x>
+      <y>504</y>
+      <cn>3</cn>
+      <val>219.</val></rng1>
     <rng2>
-      <x>167</x>
+      <x>508</x>
       <y>100</y>
-      <cn>1</cn>
-      <val>250.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_NEAREST--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_NEAREST--BORDER_REPLICATE->
+      <cn>2</cn>
+      <val>32855.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC4->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
-    <min>0.</min>
-    <max>255.</max>
+    <type>101</type>
+    <min>43.998855590820312</min>
+    <max>261121.</max>
     <last>
-      <x>1919</x>
-      <y>1079</y>
+      <x>1279</x>
+      <y>719</y>
       <val>255.</val></last>
     <rng1>
-      <x>1523</x>
-      <y>153</y>
-      <cn>2</cn>
-      <val>196.</val></rng1>
+      <x>318</x>
+      <y>311</y>
+      <cn>3</cn>
+      <val>138.97575378417969</val></rng1>
     <rng2>
-      <x>933</x>
-      <y>443</y>
+      <x>1179</x>
+      <y>117</y>
       <cn>1</cn>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_NEAREST--BORDER_REPLICATE->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_LINEAR--BORDER_CONSTANT->
+      <val>511.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1280x720--INTER_LINEAR--BORDER_REPLICATE--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC3->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>64</type>
     <min>0.</min>
     <max>255.</max>
     <last>
@@ -102107,19 +100949,284 @@
       <y>1079</y>
       <val>150.</val></last>
     <rng1>
-      <x>923</x>
-      <y>107</y>
+      <x>1526</x>
+      <y>15</y>
       <cn>2</cn>
       <val>150.</val></rng1>
     <rng2>
-      <x>1703</x>
-      <y>931</y>
-      <cn>2</cn>
-      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_LINEAR--BORDER_CONSTANT->
-<TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_LINEAR--BORDER_REPLICATE->
+      <x>450</x>
+      <y>611</y>
+      <val>157.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC3->
   <dst>
     <kind>65536</kind>
-    <type>24</type>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>332</x>
+      <y>31</y>
+      <cn>2</cn>
+      <val>62345.</val></rng1>
+    <rng2>
+      <x>1228</x>
+      <y>888</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>93.75</min>
+    <max>168921.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1168</x>
+      <y>792</y>
+      <cn>2</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1628</x>
+      <y>421</y>
+      <cn>2</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1</x>
+      <y>780</y>
+      <val>101.</val></rng1>
+    <rng2>
+      <x>1603</x>
+      <y>194</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>783</x>
+      <y>894</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>506</x>
+      <y>534</y>
+      <val>392.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.589996337890625</min>
+    <max>411.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1143</x>
+      <y>217</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>318</x>
+      <y>695</y>
+      <val>349.239990234375</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1249</x>
+      <y>668</y>
+      <cn>1</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>599</x>
+      <y>108</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1379</x>
+      <y>958</y>
+      <cn>2</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>244</x>
+      <y>827</y>
+      <cn>2</cn>
+      <val>19344.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>67.</min>
+    <max>168921.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1696</x>
+      <y>665</y>
+      <cn>3</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>68</x>
+      <y>713</y>
+      <cn>2</cn>
+      <val>23943.119140625</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>538</x>
+      <y>676</y>
+      <cn>2</cn>
+      <val>189.</val></rng1>
+    <rng2>
+      <x>1740</x>
+      <y>884</y>
+      <cn>1</cn>
+      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>64513.</val></last>
+    <rng1>
+      <x>65</x>
+      <y>1051</y>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>1882</x>
+      <y>237</y>
+      <cn>2</cn>
+      <val>64513.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>0.</min>
+    <max>261121.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>261121.</val></last>
+    <rng1>
+      <x>1304</x>
+      <y>756</y>
+      <cn>1</cn>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>1034</x>
+      <y>1000</y>
+      <cn>1</cn>
+      <val>393.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>755</x>
+      <y>999</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>488</x>
+      <y>267</y>
+      <val>35.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>1040</x>
+      <y>876</y>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>102</x>
+      <y>426</y>
+      <val>288.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>41</x>
+      <y>789</y>
+      <val>417.</val></rng1>
+    <rng2>
+      <x>1891</x>
+      <y>864</y>
+      <val>511.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
     <min>0.</min>
     <max>255.</max>
     <last>
@@ -102127,13 +101234,1070 @@
       <y>1079</y>
       <val>255.</val></last>
     <rng1>
-      <x>1565</x>
-      <y>861</y>
+      <x>603</x>
+      <y>957</y>
+      <cn>1</cn>
+      <val>145.</val></rng1>
+    <rng2>
+      <x>573</x>
+      <y>976</y>
+      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1904</x>
+      <y>913</y>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>1273</x>
+      <y>182</y>
+      <cn>2</cn>
+      <val>37430.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>0.</min>
+    <max>261121.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>109</x>
+      <y>136</y>
+      <val>175.</val></rng1>
+    <rng2>
+      <x>1797</x>
+      <y>11</y>
+      <cn>1</cn>
+      <val>511.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_NEAREST--BORDER_REPLICATE--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1014</x>
+      <y>966</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1588</x>
+      <y>959</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1333</x>
+      <y>175</y>
+      <cn>2</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>579</x>
+      <y>873</y>
+      <cn>2</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>93.750007629394531</min>
+    <max>168734.15625</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>587</x>
+      <y>78</y>
+      <cn>2</cn>
+      <val>93917.25</val></rng1>
+    <rng2>
+      <x>1005</x>
+      <y>129</y>
+      <cn>2</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1584</x>
+      <y>522</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1620</x>
+      <y>974</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>98.</min>
+    <max>411.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>663</x>
+      <y>33</y>
+      <val>198.</val></rng1>
+    <rng2>
+      <x>568</x>
+      <y>38</y>
+      <val>225.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>98.609939575195312</min>
+    <max>410.99969482421875</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1359</x>
+      <y>248</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1686</x>
+      <y>8</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1633</x>
+      <y>1077</y>
+      <cn>3</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1534</x>
+      <y>1079</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1711</x>
+      <y>783</y>
+      <cn>2</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1505</x>
+      <y>328</y>
+      <cn>3</cn>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>67.027130126953125</min>
+    <max>168734.15625</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>197</x>
+      <y>380</y>
+      <cn>3</cn>
+      <val>119.59295654296875</val></rng1>
+    <rng2>
+      <x>1835</x>
+      <y>605</y>
+      <val>150.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_CONSTANT--32FC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>341</x>
+      <y>712</y>
+      <cn>1</cn>
+      <val>91.</val></rng1>
+    <rng2>
+      <x>1569</x>
+      <y>117</y>
+      <cn>2</cn>
+      <val>195.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>66</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>64513.</val></last>
+    <rng1>
+      <x>411</x>
+      <y>1012</y>
+      <val>511.</val></rng1>
+    <rng2>
+      <x>488</x>
+      <y>889</y>
+      <cn>2</cn>
+      <val>38433.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+  <dst>
+    <kind>65536</kind>
+    <type>69</type>
+    <min>0.</min>
+    <max>261121.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>261121.</val></last>
+    <rng1>
+      <x>718</x>
+      <y>338</y>
+      <cn>1</cn>
+      <val>419.22897338867188</val></rng1>
+    <rng2>
+      <x>1307</x>
+      <y>584</y>
+      <val>511.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC3->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>1763</x>
+      <y>937</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>578</x>
+      <y>186</y>
+      <val>22.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC1->
+  <dst>
+    <kind>65536</kind>
+    <type>2</type>
+    <min>97.</min>
+    <max>511.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>73</x>
+      <y>237</y>
+      <val>207.</val></rng1>
+    <rng2>
+      <x>67</x>
+      <y>567</y>
+      <val>335.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC1->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>97.044319152832031</min>
+    <max>511.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>511.</val></last>
+    <rng1>
+      <x>129</x>
+      <y>961</y>
+      <val>504.65814208984375</val></rng1>
+    <rng2>
+      <x>1297</x>
+      <y>584</y>
+      <val>511.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC1->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>661</x>
+      <y>797</y>
       <cn>2</cn>
       <val>199.</val></rng1>
     <rng2>
-      <x>1270</x>
-      <y>665</y>
+      <x>745</x>
+      <y>123</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--8UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC4->
+  <dst>
+    <kind>65536</kind>
+    <type>98</type>
+    <min>0.</min>
+    <max>65504.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>397</x>
+      <y>243</y>
+      <cn>2</cn>
+      <val>23433.</val></rng1>
+    <rng2>
+      <x>257</x>
+      <y>882</y>
+      <val>503.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--16UC4->
+<TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC4->
+  <dst>
+    <kind>65536</kind>
+    <type>101</type>
+    <min>0.</min>
+    <max>261121.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>1662</x>
+      <y>497</y>
+      <cn>3</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>573</x>
+      <y>708</y>
+      <cn>3</cn>
+      <val>179.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---1920x1080--INTER_LINEAR--BORDER_REPLICATE--32FC4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>434</x>
+      <y>464</y>
+      <val>145.</val></rng1>
+    <rng2>
+      <x>38</x>
+      <y>191</y>
+      <val>30.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>353</x>
+      <y>3</y>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>500</x>
+      <y>335</y>
+      <cn>2</cn>
+      <val>164.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>400</x>
+      <y>169</y>
+      <cn>3</cn>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>380</x>
+      <y>20</y>
+      <val>90.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>586</x>
+      <y>410</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>604</x>
+      <y>65</y>
+      <val>145.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>376</x>
+      <y>14</y>
       <cn>1</cn>
-      <val>5.</val></rng2></dst></TestWarpAffine_WarpAffine--WarpAffine---8UC4--1920x1080--INTER_LINEAR--BORDER_REPLICATE->
+      <val>15.</val></rng1>
+    <rng2>
+      <x>382</x>
+      <y>37</y>
+      <cn>2</cn>
+      <val>90.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>392</x>
+      <y>370</y>
+      <val>105.</val></rng1>
+    <rng2>
+      <x>179</x>
+      <y>278</y>
+      <cn>1</cn>
+      <val>95.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_NEAREST--BORDER_REPLICATE--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>147</x>
+      <y>116</y>
+      <val>44.</val></rng1>
+    <rng2>
+      <x>286</x>
+      <y>257</y>
+      <val>63.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>403</x>
+      <y>309</y>
+      <val>55.</val></rng1>
+    <rng2>
+      <x>144</x>
+      <y>221</y>
+      <val>219.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>74</x>
+      <y>329</y>
+      <val>132.</val></rng1>
+    <rng2>
+      <x>160</x>
+      <y>476</y>
+      <val>82.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>536</x>
+      <y>465</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>386</x>
+      <y>61</y>
+      <val>215.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>562</x>
+      <y>418</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>589</x>
+      <y>208</y>
+      <cn>2</cn>
+      <val>163.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>381</x>
+      <y>76</y>
+      <cn>2</cn>
+      <val>98.</val></rng1>
+    <rng2>
+      <x>204</x>
+      <y>135</y>
+      <cn>1</cn>
+      <val>148.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---640x480--INTER_LINEAR--BORDER_REPLICATE--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1130</x>
+      <y>98</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1277</x>
+      <y>104</y>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1092</x>
+      <y>58</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1234</x>
+      <y>264</y>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>819</x>
+      <y>319</y>
+      <cn>1</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>772</x>
+      <y>337</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>49</x>
+      <y>361</y>
+      <val>165.</val></rng1>
+    <rng2>
+      <x>618</x>
+      <y>134</y>
+      <val>165.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>475</x>
+      <y>356</y>
+      <cn>2</cn>
+      <val>158.</val></rng1>
+    <rng2>
+      <x>913</x>
+      <y>474</y>
+      <cn>2</cn>
+      <val>199.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>578</x>
+      <y>557</y>
+      <cn>1</cn>
+      <val>200.</val></rng1>
+    <rng2>
+      <x>1199</x>
+      <y>198</y>
+      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_NEAREST--BORDER_REPLICATE--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>223</x>
+      <y>378</y>
+      <val>142.</val></rng1>
+    <rng2>
+      <x>370</x>
+      <y>589</y>
+      <val>138.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>837</x>
+      <y>528</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1243</x>
+      <y>271</y>
+      <cn>2</cn>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>856</x>
+      <y>458</y>
+      <cn>3</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>576</x>
+      <y>388</y>
+      <cn>3</cn>
+      <val>202.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>779</x>
+      <y>91</y>
+      <val>180.</val></rng1>
+    <rng2>
+      <x>460</x>
+      <y>372</y>
+      <val>13.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>88</x>
+      <y>36</y>
+      <cn>2</cn>
+      <val>52.</val></rng1>
+    <rng2>
+      <x>957</x>
+      <y>174</y>
+      <cn>1</cn>
+      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>547</x>
+      <y>82</y>
+      <val>84.</val></rng1>
+    <rng2>
+      <x>624</x>
+      <y>655</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1280x720--INTER_LINEAR--BORDER_REPLICATE--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>764</x>
+      <y>446</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1773</x>
+      <y>578</y>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>618</x>
+      <y>41</y>
+      <val>147.</val></rng1>
+    <rng2>
+      <x>355</x>
+      <y>627</y>
+      <val>151.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1464</x>
+      <y>937</y>
+      <cn>1</cn>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>759</x>
+      <y>476</y>
+      <cn>3</cn>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>957</x>
+      <y>550</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>1478</x>
+      <y>162</y>
+      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>865</x>
+      <y>653</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>306</x>
+      <y>822</y>
+      <cn>2</cn>
+      <val>199.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>347</x>
+      <y>919</y>
+      <cn>2</cn>
+      <val>199.</val></rng1>
+    <rng2>
+      <x>1407</x>
+      <y>368</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_NEAREST--BORDER_REPLICATE--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>628</x>
+      <y>371</y>
+      <val>155.</val></rng1>
+    <rng2>
+      <x>77</x>
+      <y>360</y>
+      <val>169.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>1841</x>
+      <y>699</y>
+      <val>150.</val></rng1>
+    <rng2>
+      <x>1805</x>
+      <y>240</y>
+      <cn>1</cn>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>150.</val></last>
+    <rng1>
+      <x>109</x>
+      <y>383</y>
+      <cn>2</cn>
+      <val>113.</val></rng1>
+    <rng2>
+      <x>1914</x>
+      <y>363</y>
+      <cn>3</cn>
+      <val>150.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_CONSTANT--4->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>5.</val></last>
+    <rng1>
+      <x>964</x>
+      <y>865</y>
+      <val>5.</val></rng1>
+    <rng2>
+      <x>1639</x>
+      <y>162</y>
+      <val>5.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--1->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--3->
+  <dst>
+    <kind>65536</kind>
+    <type>64</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>199.</val></last>
+    <rng1>
+      <x>937</x>
+      <y>614</y>
+      <cn>1</cn>
+      <val>32.</val></rng1>
+    <rng2>
+      <x>1684</x>
+      <y>185</y>
+      <cn>2</cn>
+      <val>199.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--3->
+<TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--4->
+  <dst>
+    <kind>65536</kind>
+    <type>96</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>988</x>
+      <y>766</y>
+      <cn>2</cn>
+      <val>199.</val></rng1>
+    <rng2>
+      <x>139</x>
+      <y>818</y>
+      <val>32.</val></rng2></dst></TestWarpPerspective_WarpPerspective--WarpPerspective---1920x1080--INTER_LINEAR--BORDER_REPLICATE--4->
 </opencv_storage>

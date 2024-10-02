@@ -11756,7 +11756,7 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1. 0. 5.66389656e+00 0. 1. 7.19798422e+00</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_TRANSLATION->
+        1. 0. 5.65444279 0. 1. 7.21006584</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_TRANSLATION->
 <TransformationType_findTransformECC--findTransformECC---MOTION_EUCLIDEAN->
   <warpMat>
     <kind>65536</kind>
@@ -11766,8 +11766,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        9.99972403e-01 7.42940698e-03 -1.48095989e+00 -7.42940698e-03
-        9.99972403e-01 5.33262348e+00</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_EUCLIDEAN->
+        0.999972641 0.00739664352 -1.47662365 -0.00739664352 0.999972641
+        5.32866859</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_EUCLIDEAN->
 <TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
   <warpMat>
     <kind>65536</kind>
@@ -11777,8 +11777,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.02630472e+00 1.80504676e-02 6.01319695e+00 6.76517095e-03
-        9.77224469e-01 2.78590012e+00</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
+        1.02622533 0.0179986693 6.02822495 0.00675912853 0.977264762
+        2.78433943</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
 <TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
   <warpMat>
     <kind>65536</kind>
