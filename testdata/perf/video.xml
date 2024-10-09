@@ -11788,8 +11788,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.14262593e+00 -9.49451886e-03 3.55638933e+00 1.69192515e-02
-        9.79395449e-01 5.60504436e+00 7.35168287e-04 1.47735554e-05 1.</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
+        1.14284718 -0.0095061874 3.54340982 0.0170357283 0.979444981
+        5.59515953 0.000735950191 1.47672035e-05 1.</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
 <Path_Idx_NPoints_WSize_OpticalFlowPyrLK_ovx--OpticalFlowPyrLK_ovx----cv-optflow-frames-VGA_-02d-png---1---9--9---7->
   <outPoints>
     <kind>196608</kind>
