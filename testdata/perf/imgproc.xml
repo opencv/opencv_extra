@@ -61304,7 +61304,7 @@
     <kind>655360</kind>
     <type>0</type>
     <min>0.</min>
-    <max>255.</max>
+    <max>253.</max>
     <last>
       <x>639</x>
       <y>479</y>
@@ -61316,7 +61316,7 @@
     <rng2>
       <x>525</x>
       <y>257</y>
-      <val>130.</val></rng2></dst></OCL_WarpAffineFixture_WarpAffine--WarpAffine---640x480--8UC1--INTER_LINEAR->
+      <val>132.</val></rng2></dst></OCL_WarpAffineFixture_WarpAffine--WarpAffine---640x480--8UC1--INTER_LINEAR->
 <OCL_WarpAffineFixture_WarpAffine--WarpAffine---640x480--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -61464,7 +61464,7 @@
     <rng2>
       <x>311</x>
       <y>488</y>
-      <val>117.</val></rng2></dst></OCL_WarpAffineFixture_WarpAffine--WarpAffine---1280x720--8UC1--INTER_LINEAR->
+      <val>119.</val></rng2></dst></OCL_WarpAffineFixture_WarpAffine--WarpAffine---1280x720--8UC1--INTER_LINEAR->
 <OCL_WarpAffineFixture_WarpAffine--WarpAffine---1280x720--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
@@ -61610,7 +61610,7 @@
     <rng1>
       <x>676</x>
       <y>783</y>
-      <val>171.</val></rng1>
+      <val>173.</val></rng1>
     <rng2>
       <x>528</x>
       <y>967</y>
@@ -61836,7 +61836,7 @@
       <x>1780</x>
       <y>1256</y>
       <cn>1</cn>
-      <val>113.</val></rng1>
+      <val>115.</val></rng1>
     <rng2>
       <x>1627</x>
       <y>1180</y>
