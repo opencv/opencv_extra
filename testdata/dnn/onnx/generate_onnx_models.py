@@ -1431,10 +1431,14 @@ class LayoutLSTM:
         if self.num_directions == 1:
             Y[:, 0, :, :] = concatenated
 
-        if self.LAYOUT == 1:
+        if self.LAYOUT == 0:
+            Y_h = Y[-1]
+        else:
+            Y_h = Y[-1, :, :, :]
             Y = np.transpose(Y, [2, 0, 1, 3])
 
-        return Y
+        Y = np.squeeze(Y)
+        return Y, Y_h
 
 class Einsum(nn.Module):
     def __init__(self, equation):
@@ -1618,18 +1622,18 @@ def save_model_and_data_lstm_layout(lstm, layout, x, hx, cx, basename):
     lstm_node = onnx.helper.make_node(
             "LSTM",
             inputs=["x", "W", "R", "B", "", "hx", "cx"],
-            outputs=["y"],
+            outputs=["y", "y_h"],
             name = "LSTM",
             layout=layout,
             hidden_size=hidden_size,
         )
 
-    Y = lstm.step()
+    Y, Y_h = lstm.step()
 
     inputs = [x, hx, cx]
-    outputs = [Y]
+    outputs = [Y, Y_h]
     present_inputs = ['x', 'hx', 'cx']
-    present_outputs = ['y']
+    present_outputs = ['y', 'y_h']
 
     input_type_protos = [None] * len(inputs)
     output_type_protos = [None] * len(outputs)
@@ -1659,8 +1663,8 @@ def save_model_and_data_lstm_layout(lstm, layout, x, hx, cx, basename):
         np.save(input_files, np.ascontiguousarray(data.data))
 
     output_file = os.path.join("data", "output_" + basename + ".npy")
-    Y = Y.astype(np.float32)
-    np.save(output_file, np.ascontiguousarray(Y))
+    Y_h = data.astype(np.float32)
+    np.save(output_file, np.ascontiguousarray(Y_h.data))
 
 
 
