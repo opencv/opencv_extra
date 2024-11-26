@@ -11766,8 +11766,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        0.999972641 0.00739664352 -1.47662365 -0.00739664352 0.999972641
-        5.32866859</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_EUCLIDEAN->
+        0.99997234 0.00744014 -1.4860555 -0.00744014 0.99997234
+        5.3498988</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_EUCLIDEAN->
 <TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
   <warpMat>
     <kind>65536</kind>
@@ -11777,8 +11777,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.02622533 0.0179986693 6.02822495 0.00675912853 0.977264762
-        2.78433943</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
+        1.0260537 0.017903173 6.0604153 0.0067568514 0.97730231
+        2.7816501</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_AFFINE->
 <TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
   <warpMat>
     <kind>65536</kind>
@@ -11788,8 +11788,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.14284718 -0.0095061874 3.54340982 0.0170357283 0.979444981
-        5.59515953 0.000735950191 1.47672035e-05 1.</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
+        1.1433593 -0.0094177863 3.511395 0.017082714 0.97987837
+        5.5810776 0.0007377771 1.552554e-05 1</data></val></warpMat></TransformationType_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY->
 <Path_Idx_NPoints_WSize_OpticalFlowPyrLK_ovx--OpticalFlowPyrLK_ovx----cv-optflow-frames-VGA_-02d-png---1---9--9---7->
   <outPoints>
     <kind>196608</kind>
