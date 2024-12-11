@@ -1226,7 +1226,7 @@ models = [
             'https://dl.opencv.org/models/intel_open_model_zoo/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'
         ],
         sha='682e59855466f88eb0cab9d40ca16e9fd6303bea',
-        filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.xml'),
+        filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'),
     Model(
         name='person-vehicle-bike-detection-2004-fp32 (xml)',
         url=[
@@ -1242,7 +1242,7 @@ models = [
             'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'
         ],
         sha='b4b901f53234e87227b81046d7e7aed9a7e6f2c3',
-        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'),
+        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'),
 ]
 
 # Note: models will be downloaded to current working directory
