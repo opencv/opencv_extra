@@ -312,9 +312,7 @@ models = [
         filename='DenseNet_121.prototxt'),
     Model(
         name='Fast-Neural-Style',
-        url=[
-            'https://media.githubusercontent.com/media/onnx/models/main/vision/style_transfer/fast_neural_style/model/mosaic-9.onnx',
-        ],
+        url='https://github.com/onnx/models/raw/refs/heads/main/validated/vision/style_transfer/fast_neural_style/model/mosaic-9.onnx',
         sha='dc3ef19f7f8a5d906c97c84cd4dd2732bb73960a',
         filename='mosaic-9.onnx'),
     Model(
