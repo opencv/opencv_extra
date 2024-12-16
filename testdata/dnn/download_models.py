@@ -587,7 +587,10 @@ models = [
         ]),
     Model(
         name='ResNet-18v1 (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet18-v1-7.tar.gz',
+        url=[
+            'https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet18-v1-7.tar.gz',
+            'https://dl.opencv.org/models/resnet18v1.tar.gz'
+        ],
         sha='d132be4857d024de9caa21fd5300dee7c063bc35',
         filename='resnet18v1.tar.gz',
         sub=[
@@ -606,7 +609,10 @@ models = [
         ]),
     Model(
         name='ResNet-50v1 (ONNX)',
-        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet50-v1-7.tar.gz',
+        url=[
+            'https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/resnet/model/resnet50-v1-7.tar.gz',
+            'https://dl.opencv.org/models/resnet50v1.tar.gz'
+        ],
         sha='a4ac2da7e0024d61fdb80481496ba966b48b9fea',
         filename='resnet50v1.tar.gz',
         sub=[
