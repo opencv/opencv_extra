@@ -1227,22 +1227,6 @@ models = [
         ],
         sha='682e59855466f88eb0cab9d40ca16e9fd6303bea',
         filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'),
-    Model(
-        name='person-vehicle-bike-detection-2004-fp32 (xml)',
-        url=[
-            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml',
-            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'
-        ],
-        sha='55eef16bc3eb58c255ea8edb77216d2ec408c0f8',
-        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'),
-    Model(
-        name='person-vehicle-bike-detection-2004-fp32 (weights)',
-        url=[
-            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin',
-            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'
-        ],
-        sha='b4b901f53234e87227b81046d7e7aed9a7e6f2c3',
-        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'),
 ]
 
 # Note: models will be downloaded to current working directory
