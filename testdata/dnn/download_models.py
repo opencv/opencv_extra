@@ -311,10 +311,21 @@ models = [
         sha='4922099342af5993d9d09f63081c8a392f3c1cc6',
         filename='DenseNet_121.prototxt'),
     Model(
-        name='Fast-Neural-Style',
-        url='https://github.com/onnx/models/raw/refs/heads/main/validated/vision/style_transfer/fast_neural_style/model/mosaic-9.onnx',
-        sha='dc3ef19f7f8a5d906c97c84cd4dd2732bb73960a',
-        filename='mosaic-9.onnx'),
+        name='Fast-Neural-Style (starry night)',
+        url=[
+            'https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/eccv16/starry_night.t7',
+            'https://dl.opencv.org/models/fast_neural_style_eccv16_starry_night.t7'
+        ],
+        sha='5b5e115253197b84d6c6ece1dafe6c15d7105ca6',
+        filename='fast_neural_style_eccv16_starry_night.t7'),
+    Model(
+        name='Fast-Neural-Style (feathers)',
+        url=[
+            'https://cs.stanford.edu/people/jcjohns/fast-neural-style/models/instance_norm/feathers.t7',
+            'https://dl.opencv.org/models/fast_neural_style_instance_norm_feathers.t7'
+        ],
+        sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
+        filename='fast_neural_style_instance_norm_feathers.t7'),
     Model(
         name='MobileNet-SSD (TensorFlow)',
         url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz',
@@ -1198,22 +1209,6 @@ models = [
         ],
         sha='682e59855466f88eb0cab9d40ca16e9fd6303bea',
         filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'),
-    Model(
-        name='person-vehicle-bike-detection-2004-fp32 (xml)',
-        url=[
-            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml',
-            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'
-        ],
-        sha='55eef16bc3eb58c255ea8edb77216d2ec408c0f8',
-        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.xml'),
-    Model(
-        name='person-vehicle-bike-detection-2004-fp32 (weights)',
-        url=[
-            'https://storage.openvinotoolkit.org/repositories/open_model_zoo/2023.0/models_bin/1/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin',
-            'https://dl.opencv.org/models/intel_open_model_zoo/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'
-        ],
-        sha='b4b901f53234e87227b81046d7e7aed9a7e6f2c3',
-        filename='../intel/person-vehicle-bike-detection-2004/FP32/person-vehicle-bike-detection-2004.bin'),
 ]
 
 # Note: models will be downloaded to current working directory
