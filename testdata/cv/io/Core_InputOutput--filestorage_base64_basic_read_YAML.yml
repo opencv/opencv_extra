@@ -1,6 +1,6 @@
 %YAML:1.0
 ---
-normal_2d_mat_u8: !!opencv-matrix
+normal_2d_mat: !!opencv-matrix
    rows: 10
    cols: 20
    dt: "3u"
