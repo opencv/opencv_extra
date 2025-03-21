@@ -78295,7 +78295,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        274616143300451</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L1->
+        438524980217699</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L1->
 <Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L2->
   <n>
     <kind>131072</kind>
@@ -78325,7 +78325,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        0.8335192765975965</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L1-NORM_RELATIVE->
+        1.3310179798174724</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L1-NORM_RELATIVE->
 <Size_MatType_NormType_norm2_mask--norm2_mask---640x480--32SC1--NORM_L2-NORM_RELATIVE->
   <n>
     <kind>131072</kind>
@@ -78355,7 +78355,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        826737875259531</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L1->
+        1319216005288075</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L1->
 <Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L2->
   <n>
     <kind>131072</kind>
@@ -78385,7 +78385,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        0.83545630089109602</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L1-NORM_RELATIVE->
+        1.3331278955960686</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L1-NORM_RELATIVE->
 <Size_MatType_NormType_norm2_mask--norm2_mask---1280x720--32SC1--NORM_L2-NORM_RELATIVE->
   <n>
     <kind>131072</kind>
@@ -78415,7 +78415,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        1854735864522573</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L1->
+        2968481013917517</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L1->
 <Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L2->
   <n>
     <kind>131072</kind>
@@ -78445,7 +78445,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        0.83309159242339026</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L1-NORM_RELATIVE->
+        1.3333524316141494</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L1-NORM_RELATIVE->
 <Size_MatType_NormType_norm2_mask--norm2_mask---1920x1080--32SC1--NORM_L2-NORM_RELATIVE->
   <n>
     <kind>131072</kind>
@@ -78475,7 +78475,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        6878700842038</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L1->
+        11074883890230</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L1->
 <Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L2->
   <n>
     <kind>131072</kind>
@@ -78505,7 +78505,7 @@
       <cols>1</cols>
       <dt>d</dt>
       <data>
-        0.82897036462226514</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L1-NORM_RELATIVE->
+        1.3346634411728784</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L1-NORM_RELATIVE->
 <Size_MatType_NormType_norm2_mask--norm2_mask---127x61--32SC1--NORM_L2-NORM_RELATIVE->
   <n>
     <kind>131072</kind>
