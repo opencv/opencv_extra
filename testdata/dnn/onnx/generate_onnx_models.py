@@ -14,7 +14,7 @@ import onnxsim
 import google.protobuf.text_format
 import io
 from typing import Optional, Tuple, Any
-from onnx import TensorProto
+from onnx import TensorProto, helper, numpy_helper
 
 def assertExpected(s):
     if not (isinstance(s, str) or (sys.version_info[0] == 2 and isinstance(s, unicode))):
@@ -2893,6 +2893,7 @@ output_np = gemm_reference_implementation(weight_np.T, input_np.T)
 save_data_and_model("gemm_first_const", input_np, output_np, gemm_model)
 
 ## gemm with bias
+
 def generate_gemm_bias(name, inputA, inputB, inputC):
     outputY = gemm_reference_implementation(inputA, inputB, inputC)
 
@@ -2916,6 +2917,66 @@ inputA = np.random.ranf([3, 6]).astype(np.float32)
 inputB = np.random.ranf([6, 4]).astype(np.float32)
 inputC = np.random.ranf([1, 4]).astype(np.float32)
 generate_gemm_bias("gemm_vector_bias", inputA, inputB, inputC)
+
+## gemm with dynamic inputs
+
+def save_tensor_as_pb(tensor: np.ndarray, name: str, filepath: str):
+    tensor_proto = numpy_helper.from_array(tensor, name=name)
+    with open(filepath, 'wb') as f:
+        f.write(tensor_proto.SerializeToString())
+
+
+def generate_gemm_dynmaic_inputs(name, inputA, inputB, inputC, path_data, path_models):
+    outputY = gemm_reference_implementation(inputA, inputB, inputC)
+
+    A = onnx.helper.make_tensor_value_info("A", onnx.TensorProto.FLOAT, inputA.shape)
+    B = onnx.helper.make_tensor_value_info("B", onnx.TensorProto.FLOAT, inputB.shape)
+    C = onnx.helper.make_tensor_value_info("C", onnx.TensorProto.FLOAT, inputC.shape)
+    Y = onnx.helper.make_tensor_value_info("Y", onnx.TensorProto.FLOAT, outputY.shape)
+    node = onnx.helper.make_node("Gemm", inputs=["A", "B", "C"], outputs=["Y"])
+    graph = onnx.helper.make_graph([node], name, [A, B, C], [Y])
+    model = onnx.helper.make_model(graph, producer_name=name)
+    onnx.save(model, os.path.join(path_models,  f"{name}.onnx"))
+
+    save_tensor_as_pb(inputA, "A", os.path.join(path_data, f"input_{name}_0.pb"))
+    save_tensor_as_pb(inputB, "B", os.path.join(path_data, f"input_{name}_1.pb"))
+    save_tensor_as_pb(inputC, "C", os.path.join(path_data, f"input_{name}_2.pb"))
+    save_tensor_as_pb(outputY, "Y", os.path.join(path_data, f"output_{name}.pb"))
+
+
+gemm_dynamic_inputs_testcases = {
+    "vector_bias" : {
+        "inputA" : np.random.ranf([3, 6]).astype(np.float32),
+        "inputB" : np.random.ranf([6, 4]).astype(np.float32),
+        "inputC" : np.random.ranf([1, 4]).astype(np.float32),
+    },
+    "matrix_bias" : {
+        "inputA" : np.random.ranf([3, 6]).astype(np.float32),
+        "inputB" : np.random.ranf([6, 4]).astype(np.float32),
+        "inputC" : np.random.ranf([3, 4]).astype(np.float32),
+    },
+    "scalar_bias": {
+        "inputA": np.random.ranf([3, 6]).astype(np.float32),
+        "inputB": np.random.ranf([6, 4]).astype(np.float32),
+        "inputC": np.array(0.5, dtype=np.float32),  # scalar value
+    },
+    "single_elem_vector_bias": {
+        "inputA": np.random.ranf([3, 6]).astype(np.float32),
+        "inputB": np.random.ranf([6, 4]).astype(np.float32),
+        "inputC": np.array([0.5], dtype=np.float32),  # 1D tensor with shape [1]
+    }
+}
+
+for name, inputs in gemm_dynamic_inputs_testcases.items():
+    generate_gemm_dynmaic_inputs(
+        f"test_gemm_3inputs_{name}", 
+        inputs["inputA"], 
+        inputs["inputB"], 
+        inputs["inputC"],
+        "data",
+        "models"
+    )
+
 
 # ########################## ReduceSum with Dynamic Batch ##########################
 input_np = np.random.rand(2, 4, 4, 4).astype("float32")
