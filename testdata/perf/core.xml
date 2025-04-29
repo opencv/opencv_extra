@@ -79716,4 +79716,84 @@
       <dt>d</dt>
       <data>
         206814.52062139678</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---127x61--64FC1--NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---1920x1080--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>18</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>44827.</val></last>
+    <rng1>
+      <x>428</x>
+      <y>830</y>
+      <cn>1</cn>
+      <val>56025.</val></rng1>
+    <rng2>
+      <x>1326</x>
+      <y>153</y>
+      <cn>1</cn>
+      <val>22581.</val></rng2></dst></Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---1920x1080--16UC3->
+<Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---1920x1080--32SC2->
+  <dst>
+    <kind>65536</kind>
+    <type>12</type>
+    <min>-2147482865.</min>
+    <max>2147482988.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>1367426877.</val></last>
+    <rng1>
+      <x>1541</x>
+      <y>1011</y>
+      <cn>1</cn>
+      <val>-828002990.</val></rng1>
+    <rng2>
+      <x>526</x>
+      <y>84</y>
+      <val>1827645499.</val></rng2></dst></Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---1920x1080--32SC2->
+<Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---127x61--16UC3->
+  <dst>
+    <kind>65536</kind>
+    <type>18</type>
+    <min>0.</min>
+    <max>65535.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>47427.</val></last>
+    <rng1>
+      <x>34</x>
+      <y>60</y>
+      <cn>2</cn>
+      <val>4093.</val></rng1>
+    <rng2>
+      <x>9</x>
+      <y>46</y>
+      <cn>1</cn>
+      <val>9660.</val></rng2></dst></Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---127x61--16UC3->
+<Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---127x61--32SC2->
+  <dst>
+    <kind>65536</kind>
+    <type>12</type>
+    <min>-2147020120.</min>
+    <max>2147377472.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>-1638256053.</val></last>
+    <rng1>
+      <x>14</x>
+      <y>41</y>
+      <cn>1</cn>
+      <val>-160794729.</val></rng1>
+    <rng2>
+      <x>15</x>
+      <y>53</y>
+      <val>1576696853.</val></rng2></dst></Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---127x61--32SC2->
 </opencv_storage>
