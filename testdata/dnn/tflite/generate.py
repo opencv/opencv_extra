@@ -154,3 +154,10 @@ leakyRelu = tf.keras.models.Sequential([
 
 leakyRelu, inp = keras_to_tf(leakyRelu, (1, 7, 7, 5))
 save_tflite_model(leakyRelu, inp, 'leakyRelu')
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 1, 1, 4], dtype=tf.float32)])
+def strided_slice(x):
+    return x[-1:, ..., ::2]
+
+inp = np.random.standard_normal((2, 1, 1, 4)).astype(np.float32)
+save_tflite_model(strided_slice, inp, 'strided_slice')
