@@ -2,7 +2,7 @@
 import os
 import numpy as np
 import tensorflow as tf
-# import mediapipe as mp
+import mediapipe as mp
 
 import cv2 as cv
 
@@ -58,7 +58,9 @@ face_blendshapes_inp = face_blendshapes_inp[[
     361, 362, 365, 373, 374, 375, 377, 378, 379, 380, 381, 382, 384, 385, 386, 387, 388, 389, 390, 397, 398, 400, 402, 405,
     409, 415, 454, 466, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477
 ]]
-run_tflite_model("face_blendshapes", inp=face_blendshapes_inp[:, [0, 1]].reshape(1, -1, 2))
+face_blendshapes_inp = face_blendshapes_inp[:, [0, 1]].reshape(1, -1, 2)
+np.save("face_blendshapes_inp.npy", np.ascontiguousarray(face_blendshapes_inp))
+run_tflite_model("face_blendshapes", inp=face_blendshapes_inp)
 
 run_mediapipe_solution(mp.solutions.selfie_segmentation.SelfieSegmentation(model_selection=0), (256, 256))
 
