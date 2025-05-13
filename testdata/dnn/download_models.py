@@ -1227,6 +1227,11 @@ models = [
         ],
         sha='682e59855466f88eb0cab9d40ca16e9fd6303bea',
         filename='../intel/person-detection-retail-0013/FP32/person-detection-retail-0013.bin'),
+    Model(
+        name='MediaPipe Blendshape V2 (TFLite)',
+        url='https://storage.googleapis.com/mediapipe-assets/face_blendshapes.tflite?generation=1677787708051579',
+        sha='eaf27df74abb6e112f3edbd7b06eb3d464fd02cc',
+        filename='face_blendshapes.tflite'),
 ]
 
 # Note: models will be downloaded to current working directory
