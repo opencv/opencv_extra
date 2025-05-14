@@ -33,7 +33,7 @@ def run_tflite_model(model_name, inp_size=None, inp=None):
     for details in output_details:
         out = interpreter.get_tensor(details['index'])  # Or use an intermediate layer index
         out_name = details['name']
-        np.save(f"{model_name}_out_{out_name}.npy", out)
+        np.save(f"{model_name}_out_{out_name.replace(":", "_")}.npy", out)
 
 
 def run_mediapipe_solution(solution, inp_size):
