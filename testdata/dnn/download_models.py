@@ -1231,7 +1231,7 @@ models = [
         name='MediaPipe Blendshape V2 (TFLite)',
         url='https://storage.googleapis.com/mediapipe-assets/face_blendshapes.tflite?generation=1677787708051579',
         sha='eaf27df74abb6e112f3edbd7b06eb3d464fd02cc',
-        filename='face_blendshapes.tflite'),
+        filename='tflite/face_blendshapes.tflite'),
 ]
 
 # Note: models will be downloaded to current working directory
