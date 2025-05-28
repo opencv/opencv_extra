@@ -11,7 +11,7 @@ testdata = os.environ['OPENCV_TEST_DATA_PATH']
 image = cv.imread(os.path.join(testdata, "cv", "shared", "lena.png"))
 image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
-def run_tflite_model(model_name, inp_size):
+def run_tflite_model(model_name, inp_size=None, inp=None):
     interpreter = tf.lite.Interpreter(model_name + ".tflite",
                                       experimental_preserve_all_tensors=True)
     interpreter.allocate_tensors()
@@ -21,9 +21,10 @@ def run_tflite_model(model_name, inp_size):
     output_details = interpreter.get_output_details()
 
     # Run model
-    inp = cv.resize(image, inp_size)
-    inp = np.expand_dims(inp, 0)
-    inp = inp.astype(np.float32) / 255  # NHWC
+    if inp is None:
+        inp = cv.resize(image, inp_size)
+        inp = np.expand_dims(inp, 0)
+        inp = inp.astype(np.float32) / 255  # NHWC
 
     interpreter.set_tensor(input_details[0]['index'], inp)
 
@@ -32,7 +33,7 @@ def run_tflite_model(model_name, inp_size):
     for details in output_details:
         out = interpreter.get_tensor(details['index'])  # Or use an intermediate layer index
         out_name = details['name']
-        np.save(f"{model_name}_out_{out_name}.npy", out)
+        np.save(f"{model_name}_out_{out_name.replace(":", "_")}.npy", out)
 
 
 def run_mediapipe_solution(solution, inp_size):
@@ -43,6 +44,23 @@ def run_mediapipe_solution(solution, inp_size):
 
 run_tflite_model("face_landmark", (192, 192))
 run_tflite_model("face_detection_short_range", (128, 128))
+
+# Download from https://storage.googleapis.com/mediapipe-assets/facemesh2_lite_iris_faceflag_2023_02_14.tflite?generation=1681322470818178
+# run_tflite_model("facemesh2_lite_iris_faceflag_2023_02_14", (192, 192))
+
+# source: https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Blendshape%20V2.pdf
+face_blendshapes_inp = np.load("facemesh2_lite_iris_faceflag_2023_02_14_out_StatefulPartitionedCall:1.npy").reshape(-1, 3)
+face_blendshapes_inp = face_blendshapes_inp[[
+    0, 1, 4, 5, 6, 7, 8, 10, 13, 14, 17, 21, 33, 37, 39, 40, 46, 52, 53, 54, 55, 58, 61, 63, 65, 66, 67, 70, 78, 80,
+    81, 82, 84, 87, 88, 91, 93, 95, 103, 105, 107, 109, 127, 132, 133, 136, 144, 145, 146, 148, 149, 150, 152, 153, 154, 155, 157,
+    158, 159, 160, 161, 162, 163, 168, 172, 173, 176, 178, 181, 185, 191, 195, 197, 234, 246, 249, 251, 263, 267, 269, 270, 276, 282,
+    283, 284, 285, 288, 291, 293, 295, 296, 297, 300, 308, 310, 311, 312, 314, 317, 318, 321, 323, 324, 332, 334, 336, 338, 356,
+    361, 362, 365, 373, 374, 375, 377, 378, 379, 380, 381, 382, 384, 385, 386, 387, 388, 389, 390, 397, 398, 400, 402, 405,
+    409, 415, 454, 466, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477
+]]
+face_blendshapes_inp = face_blendshapes_inp[:, [0, 1]].reshape(1, -1, 2)
+np.save("face_blendshapes_inp.npy", np.ascontiguousarray(face_blendshapes_inp))
+run_tflite_model("face_blendshapes", inp=face_blendshapes_inp)
 
 run_mediapipe_solution(mp.solutions.selfie_segmentation.SelfieSegmentation(model_selection=0), (256, 256))
 
@@ -154,3 +172,10 @@ leakyRelu = tf.keras.models.Sequential([
 
 leakyRelu, inp = keras_to_tf(leakyRelu, (1, 7, 7, 5))
 save_tflite_model(leakyRelu, inp, 'leakyRelu')
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 1, 1, 4], dtype=tf.float32)])
+def strided_slice(x):
+    return x[-1:, ..., ::2]
+
+inp = np.random.standard_normal((2, 1, 1, 4)).astype(np.float32)
+save_tflite_model(strided_slice, inp, 'strided_slice')
