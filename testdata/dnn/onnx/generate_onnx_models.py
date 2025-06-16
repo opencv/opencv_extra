@@ -2977,6 +2977,60 @@ for name, inputs in gemm_dynamic_inputs_testcases.items():
         "models"
     )
 
+## gemm with external data.
+
+import numpy as np
+import onnx
+from onnx import helper, TensorProto, numpy_helper
+from onnx.external_data_helper import convert_model_to_external_data
+import os
+import onnxruntime as ort
+
+input_dim = 64
+output_dim = 128
+batch_dim = 32
+onnx_model_path = "gemm_external_data.onnx"
+B_filename = "gemm_external_data_B"
+C_filename = "gemm_external_data_C"
+
+A_data = np.random.randn(batch_dim, input_dim).astype(np.float32)  # Batch size = 1
+
+A = helper.make_tensor_value_info("A", TensorProto.FLOAT, A_data.shape)
+Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [batch_dim, output_dim])
+
+np.random.seed(0)
+B_data = np.random.randn(input_dim, output_dim).astype(np.float32)
+C_data = np.random.randn(output_dim).astype(np.float32)
+
+B_tensor = numpy_helper.from_array(B_data, name="B")
+C_tensor = numpy_helper.from_array(C_data, name="C")
+
+gemm_node = helper.make_node("Gemm", ["A", "B", "C"], ["Y"], alpha=1.0, beta=1.0, transB=0)
+graph = helper.make_graph([gemm_node], "GEMMGraph", [A], [Y], [B_tensor, C_tensor])
+model = helper.make_model(graph)
+onnx.checker.check_model(model)
+
+convert_model_to_external_data(
+    model,
+    all_tensors_to_one_file=False,
+    size_threshold=0,  # Force all tensors to external
+    convert_attribute=False
+)
+
+for initializer in model.graph.initializer:
+    if initializer.name == "B":
+        initializer.external_data[0].value = B_filename
+    elif initializer.name == "C":
+        initializer.external_data[0].value = C_filename
+
+onnx.save_model(model, onnx_model_path)
+
+session = ort.InferenceSession(onnx_model_path)
+outputs = session.run(None, {"A": A_data})
+Y_data = outputs[0]
+
+np.save("input_test_gemm_external_data.npy", A_data)
+np.save("output_test_gemm_external_data.npy", Y_data)
 
 # ########################## ReduceSum with Dynamic Batch ##########################
 input_np = np.random.rand(2, 4, 4, 4).astype("float32")
