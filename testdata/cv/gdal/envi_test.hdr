@@ -1,0 +1,11 @@
+ENVI
+description = { 
+  OpenCV test image
+}
+samples=3
+lines=5
+bands=7
+header offset=0
+data type=4
+interleave=bsq
+byte order=1
