@@ -2986,9 +2986,9 @@ from onnx.external_data_helper import convert_model_to_external_data
 import os
 import onnxruntime as ort
 
-input_dim = 64
-output_dim = 128
-batch_dim = 32
+input_dim = 8
+output_dim = 32
+batch_dim = 4
 onnx_model_path = "gemm_external_data.onnx"
 B_filename = "gemm_external_data_B"
 C_filename = "gemm_external_data_C"
