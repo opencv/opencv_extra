@@ -42,6 +42,14 @@ testcases = [
     "upper": 0,
   },
   {
+    "lab":"tril_one_row1D",
+    "X":\
+      [6, 2, 4, 1, 6],
+    "Y":\
+      [6, 0, 0, 0, 0],
+    "upper": 0,
+  },
+  {
     "lab":"tril_out_neg",
     "X":\
       [[4, 7, 3, 7, 9],
