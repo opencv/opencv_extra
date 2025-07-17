@@ -1,3 +1,12 @@
+from onnx import TensorProto, version_converter
+import onnx
+from onnx.helper import (
+    make_model, make_node, make_graph, make_tensor_value_info,
+)
+import numpy as np
+import onnxruntime as ort
+import os
+
 testcases = [
   {
     "lab":"tril",
@@ -248,21 +257,6 @@ testcases = [
     "k": -1
   }
 ]
-
-
-from onnx import TensorProto, version_converter
-import onnx
-from onnx.helper import (
-    make_model, make_node, make_graph, make_tensor_value_info,
-)
-import numpy as np
-import onnxruntime as ort
-import os
-
-
-
-
-
 
 for i in range(len(testcases)):
     data_case = testcases[i]
