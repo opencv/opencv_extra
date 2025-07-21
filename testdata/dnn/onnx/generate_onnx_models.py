@@ -2969,9 +2969,9 @@ gemm_dynamic_inputs_testcases = {
 
 for name, inputs in gemm_dynamic_inputs_testcases.items():
     generate_gemm_dynmaic_inputs(
-        f"test_gemm_3inputs_{name}", 
-        inputs["inputA"], 
-        inputs["inputB"], 
+        f"test_gemm_3inputs_{name}",
+        inputs["inputA"],
+        inputs["inputB"],
         inputs["inputC"],
         "data",
         "models"
@@ -3382,3 +3382,74 @@ save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
 
 x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
 save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
+
+
+################# Clip13 #################
+
+from onnx import TensorProto, version_converter
+import onnx
+from onnx.helper import (
+    make_model, make_node, make_graph, make_tensor_value_info,OperatorSetIdProto
+)
+from onnx import helper, numpy_helper
+import numpy as np
+import onnxruntime as ort
+import os
+
+
+x = make_tensor_value_info("x", TensorProto.FLOAT, ["shape_1", "shape_2"])
+min_input = make_tensor_value_info("min_const", TensorProto.FLOAT, [1])
+y = make_tensor_value_info("y", TensorProto.FLOAT, ["shape_1", "shape_2"])
+
+# Add a constant tensor for min
+min_val = np.array([0.5], dtype=np.float32)
+
+# Node with input min (no upper limit)
+node = helper.make_node(
+    "Clip",
+    inputs=["x", "min_const"],  # [input, min, (optional) max]
+    outputs=["y"],
+)
+
+# Graph
+graph = helper.make_graph(
+    [node],
+    "Clip13",
+    [x, min_input],
+    [y],
+)
+
+# Set specific opset version
+opset_version = 13
+opset = OperatorSetIdProto()
+opset.version = opset_version
+
+
+# Model
+model = make_model(
+    graph,
+    producer_name="Clip13",
+    opset_imports=[opset],  # Set the opset version explicitly here
+)
+
+assert any(imp.version == 13 and (imp.domain == "" or imp.domain is None) for imp in model.opset_import), \
+        f"Expected opset version 13 for default domain, but got {[imp.version for imp in model.opset_import]}"
+
+model_path =  os.path.join("models","clip13.onnx")
+
+# print absolute full model path
+print(f"Saving model to: { os.path.abspath(model_path)}")
+
+onnx.save_model(model, model_path)
+input_array = np.random.rand(3, 4).astype(np.float32)  # shape must match a concrete version
+session = ort.InferenceSession(model_path)
+
+# Run the model
+outputs = session.run(None, {"x": input_array, "min_const": min_val})
+output = outputs[0]
+# save x and y as npy
+np.save(os.path.join("data",f"input_clip13_0.npy"), input_array.data)
+np.save(os.path.join("data",f"input_clip13_1.npy"), min_val)
+
+np.save(os.path.join("data",f"output_clip13.npy"), output.data)
+
