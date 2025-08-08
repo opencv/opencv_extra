@@ -1,5 +1,5 @@
 {
-  "model_type": "cl100k_base",
+  "model_type": "gpt4",
   "vocab_size": 100263,
   "tokenizer_class": "PreTrainedTokenizerFast",
   "eos_token": "",
