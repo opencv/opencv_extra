@@ -1,7 +1,5 @@
 # GPT-2 tokenizer 
 
-This folder contains third-party tokenizer files used for OpenCV DNN 
-
 ## Contents
 - `config.json`
 - `tokenizer.json`
@@ -9,7 +7,7 @@ This folder contains third-party tokenizer files used for OpenCV DNN
 - `vocab.bpe`
 
 ## Sources
-- `tokenizer.json`, `config.json`:  
+- `tokenizer.json`: 
   https://huggingface.co/openai-community/gpt2/tree/main
 - `encoder.json`, `vocab.bpe`:  
   https://openaipublic.blob.core.windows.net/gpt-2/encodings/main/encoder.json  
