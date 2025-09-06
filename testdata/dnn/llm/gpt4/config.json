@@ -1,5 +1,6 @@
 {
   "model_type": "gpt4",
+  "method": "BPE",
   "vocab_size": 100263,
   "tokenizer_class": "PreTrainedTokenizerFast",
   "eos_token": "",
