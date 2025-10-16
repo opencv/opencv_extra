@@ -1,0 +1,12 @@
+{
+  "model_type": "gpt4",
+  "method": "BPE",
+  "vocab_size": 100263,
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "eos_token": "",
+  "bos_token": null,
+  "pad_token": null,
+  "unk_token": null,
+  "special_tokens_map_file": null
+}
+
