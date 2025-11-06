@@ -993,4 +993,46 @@
       <dt>f</dt>
       <data>
         2.73960669e+03 -9.76128174e+02 3.14725879e+03</data></val></tvec></PointsNum_Algo_solvePnP--solvePnP---6--SOLVEPNP_DLS->
+ <!-- resumed -->
+
+<EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--RANSAC--10->
+  <T_est_mat>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        -0.077894223481416697 -1.0980759312212467</data></val></T_est_mat></EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--RANSAC--10->
+<EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--RANSAC--0->
+  <T_est_mat>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        -0.07789423614740372 -1.0980759957432746</data></val></T_est_mat></EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--RANSAC--0->
+<EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--LMEDS--10->
+  <T_est_mat>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        -0.077894279360771174 -1.0980759686231614</data></val></T_est_mat></EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--LMEDS--10->
+<EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--LMEDS--0->
+  <T_est_mat>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>2</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        -0.077894281347592673 -1.0980760141213735</data></val></T_est_mat></EstimateTranslation2DPerf_EstimateTranslation2D--EstimateTranslation2D---1000--0-95--LMEDS--0->
 </opencv_storage>
