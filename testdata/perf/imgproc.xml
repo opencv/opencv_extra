@@ -91148,7 +91148,7 @@
       <cn>2</cn>
       <val>60.</val></rng2></dst></Size_CvtMode_cvtColor8u--cvtColor8u---1920x1080--CX_RGBA2Luv->
  <!-- resumed -->
-<OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-0174533->
+ <OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-0174533->
   <result>
     <kind>65536</kind>
     <type>13</type>
@@ -91157,9 +91157,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 9.99500046e+001 1.57079637e+000
-        1.99949997e+002 0. 1.99949997e+002 1.57079637e+000
-        3.99950012e+002 0. 3.99950012e+002 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-1->
   <result>
     <kind>65536</kind>
@@ -91169,7 +91168,7 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 1.99949997e+002 0. 3.99950012e+002 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-1->
+        100. 0. 200. 0. 400. 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--0-1--0-1->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--1--0-0174533->
   <result>
     <kind>65536</kind>
@@ -91179,8 +91178,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        100. 0. 100. 1.57079637e+000 200. 0. 200. 1.57079637e+000 400.
-        0. 400. 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---640x480--1--0-1->
   <result>
     <kind>65536</kind>
@@ -91200,9 +91199,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 9.99500046e+001 1.57079637e+000
-        1.99949997e+002 0. 1.99949997e+002 1.57079637e+000
-        3.99950012e+002 0. 3.99950012e+002 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--0-1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--0-1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--0-1--0-1->
   <result>
     <kind>65536</kind>
@@ -91212,7 +91210,7 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 1.99949997e+002 0. 3.99950012e+002 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--0-1--0-1->
+        100. 0. 200. 0. 400. 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--0-1--0-1->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--1--0-0174533->
   <result>
     <kind>65536</kind>
@@ -91222,8 +91220,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        100. 0. 100. 1.57079637e+000 200. 0. 200. 1.57079637e+000 400.
-        0. 400. 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1280x720--1--0-1->
   <result>
     <kind>65536</kind>
@@ -91243,9 +91241,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 9.99500046e+001 1.57079637e+000
-        1.99949997e+002 0. 1.99949997e+002 1.57079637e+000
-        3.99950012e+002 0. 3.99950012e+002 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--0-1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--0-1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--0-1--0-1->
   <result>
     <kind>65536</kind>
@@ -91255,7 +91252,7 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 1.99949997e+002 0. 3.99950012e+002 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--0-1--0-1->
+        100. 0. 200. 0. 400. 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--0-1--0-1->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--1--0-0174533->
   <result>
     <kind>65536</kind>
@@ -91265,8 +91262,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        100. 0. 100. 1.57079637e+000 200. 0. 200. 1.57079637e+000 400.
-        0. 400. 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---1920x1080--1--0-1->
   <result>
     <kind>65536</kind>
@@ -91286,9 +91283,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 9.99500046e+001 1.57079637e+000
-        1.99949997e+002 0. 1.99949997e+002 1.57079637e+000
-        3.99950012e+002 0. 3.99950012e+002 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--0-1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--0-1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--0-1--0-1->
   <result>
     <kind>65536</kind>
@@ -91298,7 +91294,7 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        9.99500046e+001 0. 1.99949997e+002 0. 3.99950012e+002 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--0-1--0-1->
+        100. 0. 200. 0. 400. 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--0-1--0-1->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--1--0-0174533->
   <result>
     <kind>65536</kind>
@@ -91308,8 +91304,8 @@
       <cols>1</cols>
       <dt>"2f"</dt>
       <data>
-        100. 0. 100. 1.57079637e+000 200. 0. 200. 1.57079637e+000 400.
-        0. 400. 1.57079637e+000</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--1--0-0174533->
+        100. 0. 100. 1.57079637 200. 0. 200. 1.57079637 400. 0. 400.
+        1.57079637</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--1--0-0174533->
 <OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--1--0-1->
   <result>
     <kind>65536</kind>
@@ -91320,7 +91316,7 @@
       <dt>"2f"</dt>
       <data>
         100. 0. 200. 0. 400. 0.</data></val></result></OCL_HoughLinesFixture_HoughLines--HoughLines---3840x2160--1--0-1->
- <!-- resumed -->
+
  <!-- resumed -->
 <MomentsFixture_val_Moments1--Moments1---640x480--CV_16U--false->
   <m>
