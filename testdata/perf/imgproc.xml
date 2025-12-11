@@ -66600,7 +66600,7 @@
     <kind>655360</kind>
     <type>0</type>
     <min>0.</min>
-    <max>255.</max>
+    <max>254.</max>
     <last>
       <x>639</x>
       <y>479</y>
@@ -66612,7 +66612,7 @@
     <rng2>
       <x>241</x>
       <y>93</y>
-      <val>90.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_LINEAR->
+      <val>91.</val></rng2></dst></OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--8UC1--INTER_LINEAR->
 <OCL_WarpPerspectiveFixture_WarpPerspective--WarpPerspective---640x480--32FC1--INTER_NEAREST->
   <dst>
     <kind>655360</kind>
