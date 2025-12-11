@@ -66600,7 +66600,7 @@
     <kind>655360</kind>
     <type>0</type>
     <min>0.</min>
-    <max>255.</max>
+    <max>254.</max>
     <last>
       <x>639</x>
       <y>479</y>
