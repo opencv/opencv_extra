@@ -207,3 +207,30 @@ def save_maximum_test():
 
 save_maximum_test()
 
+@tf.function(input_signature=[
+    tf.TensorSpec(shape=[1, 4], dtype=tf.float32),
+    tf.TensorSpec(shape=[1, 4], dtype=tf.float32),
+])
+def minimum(x, y):
+    return tf.minimum(x, y)
+
+
+def save_minimum_test():
+    input_x = np.array([[1.0, 5.5, -1.0, -2.7]], dtype=np.float32)
+    input_y = np.array([[3.0, 2.4, -4.0, -6.8]], dtype=np.float32)
+
+    concrete_func = minimum.get_concrete_function()
+    converter = tf.lite.TFLiteConverter.from_concrete_functions([concrete_func])
+    tflite_model = converter.convert()
+
+    with open("minimum.tflite", "wb") as f:
+        f.write(tflite_model)
+
+    output = minimum(input_x, input_y).numpy()
+
+    np.save("minimum_input_x.npy", input_x)
+    np.save("minimum_input_y.npy", input_y)
+    np.save("minimum_output.npy", output)
+
+save_minimum_test()
+
