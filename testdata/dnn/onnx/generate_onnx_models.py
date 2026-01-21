@@ -3382,3 +3382,53 @@ save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
 
 x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
 save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
+
+# generates layer_norm_2outputs
+
+def gen_layer_norm_2outputs():
+    name = "layer_norm_2outputs"
+    model_path = os.path.join("models", name + ".onnx")
+
+    input_shape = [1, 3, 5]
+    input_info = helper.make_tensor_value_info('input', TensorProto.FLOAT, input_shape)
+
+    # output 1: Y (Same shape as input)
+    output_y = helper.make_tensor_value_info('Y', TensorProto.FLOAT, input_shape)
+
+    # output 2: Mean (reduced last axis)
+    output_mean = helper.make_tensor_value_info('Mean', TensorProto.FLOAT, [1, 3, 1])
+
+    # create Initializers (Scale and Bias)
+    scale_val = [1.0] * 5
+    bias_val = [0.0] * 5
+
+    scale_init = helper.make_tensor('scale', TensorProto.FLOAT, [5], scale_val)
+    bias_init = helper.make_tensor('bias', TensorProto.FLOAT, [5], bias_val)
+
+    # create the Node
+    node = helper.make_node(
+        'LayerNormalization',
+        inputs=['input', 'scale', 'bias'],
+        outputs=['Y', 'Mean'],  # <--- The 2 outputs we need to test
+        axis=-1,
+        name='layer_norm_node'
+    )
+
+    # graph generation
+    graph = helper.make_graph(
+        [node],
+        name,
+        [input_info],
+        [output_y, output_mean],
+        [scale_init, bias_init]
+    )
+
+    # create model
+    model = helper.make_model(graph, producer_name='opencv-test')
+    model.opset_import[0].version = 17
+
+
+    onnx.save(model, model_path)
+    print("Generated " + model_path)
+
+gen_layer_norm_2outputs()
