@@ -1214,6 +1214,11 @@ models = [
         url='https://storage.googleapis.com/mediapipe-assets/face_blendshapes.tflite?generation=1677787708051579',
         sha='eaf27df74abb6e112f3edbd7b06eb3d464fd02cc',
         filename='tflite/face_blendshapes.tflite'),
+    Model(
+        name='DISK (ONNX)',
+        url='https://github.com/satyam102006/opencv/releases/download/disk-v1/disk_standalone.onnx',
+        sha='f359220672076d46a60345109fca7146f65ae2b1',
+        filename='disk_standalone.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
