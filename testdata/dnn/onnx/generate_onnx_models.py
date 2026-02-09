@@ -3172,3 +3172,57 @@ np.save(output_files, np.ascontiguousarray(output.data))
 def tf_resize_nearest(x):
     return tf.compat.v1.image.resize_nearest_neighbor(x, size=(5, 6), align_corners=False, half_pixel_centers=True)
 save_data_and_tf_function(tf_resize_nearest, "tf_half_pixel_for_nn", np.random.rand(1, 2, 3, 2))
+
+## Conv Layer test case where bias input exists but is an empty tensor
+
+# 1. Define Data
+name = "conv_empty_initializer"
+input_shape = [1, 3, 5, 5]
+output_shape = [1, 3, 5, 5]
+
+# Generate random input
+input_data = np.random.standard_normal(input_shape).astype(np.float32)
+
+# Generate weights (standard 3x3 kernel, all ones for simplicity)
+W_vals = np.full((3, 3, 3, 3), 1.0, dtype=np.float32)
+
+# Compute reference output using PyTorch (effectively bias=0)
+t_input = torch.from_numpy(input_data)
+t_weight = torch.from_numpy(W_vals)
+t_output = torch.nn.functional.conv2d(t_input, t_weight, bias=None, padding=1)
+output_data = t_output.numpy()
+
+# 2. Create ONNX Components
+X = onnx.helper.make_tensor_value_info('input', onnx.TensorProto.FLOAT, input_shape)
+Y = onnx.helper.make_tensor_value_info('output', onnx.TensorProto.FLOAT, output_shape)
+
+W = onnx.helper.make_tensor('W', onnx.TensorProto.FLOAT, [3, 3, 3, 3], W_vals.flatten())
+# The Empty Bias Tensor (Shape [0])
+B = onnx.helper.make_tensor('B', onnx.TensorProto.FLOAT, [0], [])
+
+conv_node = onnx.helper.make_node(
+    'Conv',
+    inputs=['input', 'W', 'B'],
+    outputs=['output'],
+    kernel_shape=[3, 3],
+    pads=[1, 1, 1, 1],
+    name='ConvWithEmptyInitializer'
+)
+
+# 3. Build Graph & Save
+graph = onnx.helper.make_graph(
+    [conv_node],
+    name,
+    [X],
+    [Y],
+    [W, B]
+)
+
+model = onnx.helper.make_model(graph, producer_name="onnx-generated-test")
+onnx.save(model, os.path.join("models", name + ".onnx"))
+
+# 4. Save Input/Output Data
+np.save(os.path.join("data", "input_" + name), input_data)
+np.save(os.path.join("data", "output_" + name), output_data)
+
+print("Generated " + name)
