@@ -978,6 +978,10 @@ model.eval()
 save_data_and_model("squeeze", input, model)
 save_data_and_model("squeeze_axes_op13", input, model, version=13)
 
+input = np.random.randn(1, 2, 1, 4).astype(np.float32)
+output = np.squeeze(input)
+save_onnx_data_and_model(input, output, "squeeze_no_axes", "Squeeze")
+
 class Div(nn.Module):
 
     def __init__(self):
