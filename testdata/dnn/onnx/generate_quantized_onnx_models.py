@@ -429,3 +429,159 @@ def generate_qlinearsoftmax(shape=[1, 10, 3], axis=1, opset=11, name="qlinearsof
     np.save(output_files, np.ascontiguousarray(output.data))
 
 generate_qlinearsoftmax(shape, axis, name="qlinearsoftmax", previous_name=name)
+
+# model generation code for quantized layer testing
+
+def generate_single_qgemm(name="single_qgemm", opset=13):
+    from onnx import helper, TensorProto
+
+    A = helper.make_tensor_value_info('A', TensorProto.INT8, [1, 2])
+    Y = helper.make_tensor_value_info('Y', TensorProto.INT8, [1, 3])
+
+    initializers = [
+        helper.make_tensor('scale_1', TensorProto.FLOAT, [1], [1.0]),
+        helper.make_tensor('zp_0', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('B', TensorProto.INT8, [3, 2], [1, 1, 2, 2, 3, 3]),
+        helper.make_tensor('C', TensorProto.INT32, [3], [1, 2, 3])
+    ]
+
+    node = helper.make_node(
+        'QGemm',
+        inputs=['A', 'scale_1', 'zp_0', 'B', 'scale_1', 'zp_0', 'C', 'scale_1', 'zp_0'],
+        outputs=['Y'],
+        domain='com.microsoft',
+        transB=1
+    )
+
+    graph = helper.make_graph([node], name, [A], [Y], initializers)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra")
+    model.opset_import[0].version = opset
+    model.opset_import.extend([helper.make_opsetid("com.microsoft", 1)])
+
+    model_path = os.path.join("models", "{}.onnx".format(name))
+    onnx.save(model, model_path)
+
+    sess = rt.InferenceSession(model_path, providers=['CPUExecutionProvider'])
+    input_data = np.random.randint(-128, 127, size=[1, 2], dtype=np.int8)
+    output_data = sess.run(None, {'A': input_data})[0]
+
+    np.save(os.path.join("data", "input_{}.npy".format(name)), input_data)
+    np.save(os.path.join("data", "output_{}.npy".format(name)), np.ascontiguousarray(output_data))
+
+def generate_single_qlinearadd(name="single_qlinearadd", opset=13):
+    from onnx import helper, TensorProto
+
+    A = helper.make_tensor_value_info('A', TensorProto.INT8, [1, 1, 3, 3])
+    B = helper.make_tensor_value_info('B', TensorProto.INT8, [1, 1, 3, 3])
+    C_out = helper.make_tensor_value_info('C', TensorProto.INT8, [1, 1, 3, 3])
+
+    initializers = [
+        helper.make_tensor('A_scale', TensorProto.FLOAT, [1], [0.5]),
+        helper.make_tensor('A_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('B_scale', TensorProto.FLOAT, [1], [0.5]),
+        helper.make_tensor('B_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('C_scale', TensorProto.FLOAT, [1], [0.5]),
+        helper.make_tensor('C_zp', TensorProto.INT8, [1], [0])
+    ]
+
+    node = helper.make_node(
+        'QLinearAdd',
+        inputs=['A', 'A_scale', 'A_zp', 'B', 'B_scale', 'B_zp', 'C_scale', 'C_zp'],
+        outputs=['C'],
+        domain='com.microsoft'
+    )
+
+    graph = helper.make_graph([node], name, [A, B], [C_out], initializers)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra")
+    model.opset_import[0].version = opset
+    model.opset_import.extend([helper.make_opsetid("com.microsoft", 1)])
+
+    model_path = os.path.join("models", "{}.onnx".format(name))
+    onnx.save(model, model_path)
+
+    sess = rt.InferenceSession(model_path, providers=['CPUExecutionProvider'])
+    input_A = np.random.randint(-128, 127, size=[1, 1, 3, 3], dtype=np.int8)
+    input_B = np.random.randint(-128, 127, size=[1, 1, 3, 3], dtype=np.int8)
+    output_data = sess.run(None, {'A': input_A, 'B': input_B})[0]
+
+    np.save(os.path.join("data", "input_{}_0.npy".format(name)), input_A)
+    np.save(os.path.join("data", "input_{}_1.npy".format(name)), input_B)
+    np.save(os.path.join("data", "output_{}.npy".format(name)), np.ascontiguousarray(output_data))
+
+def generate_single_qlinearconv(name="single_qlinearconv", opset=13):
+    from onnx import helper, TensorProto
+    
+    X = helper.make_tensor_value_info('X', TensorProto.INT8, [1, 1, 3, 3])
+    Y = helper.make_tensor_value_info('Y', TensorProto.INT8, [1, 1, 2, 2])
+
+    initializers = [
+        helper.make_tensor('x_scale', TensorProto.FLOAT, [1], [0.5]),
+        helper.make_tensor('x_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('W', TensorProto.INT8, [1, 1, 2, 2], [1, 1, 1, 1]),
+        helper.make_tensor('w_scale', TensorProto.FLOAT, [1], [0.5]),
+        helper.make_tensor('w_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('y_scale', TensorProto.FLOAT, [1], [0.25]),
+        helper.make_tensor('y_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('B', TensorProto.INT32, [1], [1])
+    ]
+
+    node = helper.make_node(
+        'QLinearConv',
+        inputs=['X', 'x_scale', 'x_zp', 'W', 'w_scale', 'w_zp', 'y_scale', 'y_zp', 'B'],
+        outputs=['Y'],
+        kernel_shape=[2, 2],
+        pads=[0, 0, 0, 0],
+        strides=[1, 1]
+    )
+
+    graph = helper.make_graph([node], name, [X], [Y], initializers)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra")
+    model.opset_import[0].version = opset
+
+    model_path = os.path.join("models", "{}.onnx".format(name))
+    onnx.save(model, model_path)
+
+    sess = rt.InferenceSession(model_path, providers=['CPUExecutionProvider'])
+    input_data = np.random.randint(-128, 127, size=[1, 1, 3, 3], dtype=np.int8)
+    output_data = sess.run(None, {'X': input_data})[0]
+
+    np.save(os.path.join("data", "input_{}.npy".format(name)), input_data)
+    np.save(os.path.join("data", "output_{}.npy".format(name)), np.ascontiguousarray(output_data))
+
+def generate_single_qpool(name="single_qpool", opset=25):
+    from onnx import helper, TensorProto
+
+    X = helper.make_tensor_value_info('X', TensorProto.INT8, [1, 1, 3, 3])
+    Y = helper.make_tensor_value_info('Y', TensorProto.INT8, [1, 1, 1, 1])
+
+    initializers = [
+        helper.make_tensor('In_scale', TensorProto.FLOAT, [1], [1.0]),
+        helper.make_tensor('In_zp', TensorProto.INT8, [1], [0]),
+        helper.make_tensor('Out_scale', TensorProto.FLOAT, [1], [1.0]),
+        helper.make_tensor('Out_zp', TensorProto.INT8, [1], [0])
+    ]
+
+    node = helper.make_node(
+        'QLinearGlobalAveragePool',
+        inputs=['X', 'In_scale', 'In_zp', 'Out_scale', 'Out_zp'],
+        outputs=['Y']
+    )
+
+    graph = helper.make_graph([node], name, [X], [Y], initializers)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra")
+    model.opset_import[0].version = opset
+
+    model_path = os.path.join("models", "{}.onnx".format(name))
+    onnx.save(model, model_path)
+
+    sess = rt.InferenceSession(model_path, providers=['CPUExecutionProvider'])
+    input_data = np.random.randint(-128, 127, size=[1, 1, 3, 3], dtype=np.int8)
+    output_data = sess.run(None, {'X': input_data})[0]
+
+    np.save(os.path.join("data", "input_{}.npy".format(name)), input_data)
+    np.save(os.path.join("data", "output_{}.npy".format(name)), np.ascontiguousarray(output_data))
+
+generate_single_qgemm()
+generate_single_qlinearadd()
+generate_single_qlinearconv()
+generate_single_qpool()
