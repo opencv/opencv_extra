@@ -995,6 +995,16 @@ models = [
                 filename='onnx/data/output_mobilenetv2_fp16.npy'),
         ]),
     Model(
+        name='wechat_qr_detect (onnx)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/detect.onnx',
+        sha='8dff596d81e6c223f188defc2616df1c83a406ae',
+        filename='wechat_2021-01/detect.onnx'),
+    Model(
+        name='wechat_super_resolution (onnx)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/sr.onnx',
+        sha='854b183017c2303cc429bcaf598cc7fc18e076a6',
+        filename='wechat_2021-01/sr.onnx'),
+    Model(
         name='wechat_qr_detect (prototxt)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.prototxt',
         sha='a6936962139282d300ebbf15a54c2aa94b144bb7',
