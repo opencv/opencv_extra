@@ -657,6 +657,11 @@ models = [
                 sha='6d45d2f06150e9045631c7928093728b07c8b12d',
                 filename='onnx/data/output_resnet50_int8.pb'),
         ]),
+    Model(
+        name='SSD MobileNet v1 (ONNX)',
+        url='https://huggingface.co/onnxmodelzoo/ssd_mobilenet_v1_12/resolve/main/ssd_mobilenet_v1_12.onnx',
+        sha='83536889adce1eda154175f8e3b156dd20443631',
+        filename='onnx/models/ssd_mobilenet_v1_12.onnx'),
     # TODO: bad file
     Model(
         name='ResNet101_DUC_HDC (ONNX)',
