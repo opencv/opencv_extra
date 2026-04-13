@@ -639,6 +639,11 @@ models = [
                 filename='onnx/data/output_resnet50v1.pb'),
         ]),
     Model(
+        name='ResNet-50v1-QDQ (ONNX)',
+        url='https://github.com/onnx/models/raw/main/validated/vision/classification/resnet/model/resnet50-v1-12-qdq.onnx',
+        sha='3b0274b37ca450b9cf3efc3029d574409a7ad650',
+        filename='onnx/models/resnet50-v1-12-qdq.onnx'),
+    Model(
         name='ResNet50-Int8 (ONNX)',
         url='https://github.com/onnx/models/raw/771185265efbdc049fb223bd68ab1aeb1aecde76/vision/classification/resnet/model/resnet50-v1-12-int8.tar.gz',
         sha='2ff2a58f4a27362ee6234915452e86287cdcf269',
