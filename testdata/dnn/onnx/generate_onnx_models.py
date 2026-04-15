@@ -1091,6 +1091,22 @@ x = Variable(torch.rand(1, 2))
 model = FlattenModel()
 save_data_and_model("flatten_const", x, model)
 
+# Test ONNX Flatten with axis=rank (axis == number of input dimensions).
+# In ONNX spec, axis range is [0, rank] inclusive. axis=rank means
+# outer=product(all dims), inner=1, output shape=[total_elements, 1].
+inp = np.random.rand(2, 3).astype(np.float32)
+out = inp.reshape(6, 1)
+np.save(os.path.join("data", "input_flatten_axis_numaxes.npy"), inp)
+np.save(os.path.join("data", "output_flatten_axis_numaxes.npy"), out)
+input_tensor = onnx.helper.make_tensor_value_info('input', onnx.TensorProto.FLOAT, [2, 3])
+output_tensor = onnx.helper.make_tensor_value_info('output', onnx.TensorProto.FLOAT, [6, 1])
+flatten_node = onnx.helper.make_node('Flatten', inputs=['input'], outputs=['output'], axis=2)
+graph = onnx.helper.make_graph([flatten_node], 'flatten_axis_numaxes', [input_tensor], [output_tensor])
+flatten_axis_numaxes_model = onnx.helper.make_model(graph, opset_imports=[onnx.helper.make_opsetid('', 11)])
+flatten_axis_numaxes_model.ir_version = 6
+onnx.checker.check_model(flatten_axis_numaxes_model)
+onnx.save(flatten_axis_numaxes_model, os.path.join("models", "flatten_axis_numaxes.onnx"))
+
 class Cast(nn.Module):
     def __init__(self):
         super(Cast, self).__init__()
