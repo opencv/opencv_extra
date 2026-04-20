@@ -263,6 +263,11 @@ models = [
         sha='1bb0c7e0034038969aecc6251166f1612a139230',
         filename='onnx/models/fcn-resnet50-12.onnx'),
     Model(
+        name='FacePaint (onnx)',
+        url='https://raw.githubusercontent.com/Kazuhito00/AnimeGANv2-ONNX-Sample/main/model/face_paint_512_v2_0.onnx',
+        sha='b84067b920cf7edb23476fd8ed1dbcee44f6a852',
+        filename='onnx/models/face_paint_512_v2_0.onnx'),
+    Model(
         name='Ssd_vgg16',
         url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
         sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
