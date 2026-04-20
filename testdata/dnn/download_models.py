@@ -263,7 +263,12 @@ models = [
         sha='1bb0c7e0034038969aecc6251166f1612a139230',
         filename='onnx/models/fcn-resnet50-12.onnx'),
     Model(
-        name='FacePaint (onnx)',
+        name='BlazeFace (ONNX)',
+        url='https://huggingface.co/garavv/blazeface-onnx/resolve/main/blaze.onnx',
+        sha='1a51ac282f06186a7d8f4c524a8589addc6b706e',
+        filename='onnx/models/blazeface.onnx'),
+    Model(
+        name='FacePaint (ONNX)',
         url='https://raw.githubusercontent.com/Kazuhito00/AnimeGANv2-ONNX-Sample/main/model/face_paint_512_v2_0.onnx',
         sha='b84067b920cf7edb23476fd8ed1dbcee44f6a852',
         filename='onnx/models/face_paint_512_v2_0.onnx'),
