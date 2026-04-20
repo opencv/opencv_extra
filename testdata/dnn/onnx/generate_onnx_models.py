@@ -2989,9 +2989,9 @@ gemm_dynamic_inputs_testcases = {
 
 for name, inputs in gemm_dynamic_inputs_testcases.items():
     generate_gemm_dynmaic_inputs(
-        f"test_gemm_3inputs_{name}", 
-        inputs["inputA"], 
-        inputs["inputB"], 
+        f"test_gemm_3inputs_{name}",
+        inputs["inputA"],
+        inputs["inputB"],
         inputs["inputC"],
         "data",
         "models"
@@ -3402,3 +3402,110 @@ save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
 
 x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
 save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
+
+
+#####
+
+
+import os
+import numpy as np
+import onnx
+from onnx import helper, TensorProto
+
+def softmax(x, axis=-1):
+    e_x = np.exp(x - np.max(x, axis=axis, keepdims=True))
+    return e_x / e_x.sum(axis=axis, keepdims=True)
+
+def save_tensor(tensor, path):
+    np.save(path, tensor)
+
+def create_model_3d(path, B, S, N, D, scale):
+    H = N * D
+    q_info = helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, S, H])
+    k_info = helper.make_tensor_value_info('K', TensorProto.FLOAT, [B, S, H])
+    v_info = helper.make_tensor_value_info('V', TensorProto.FLOAT, [B, S, H])
+    y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, S, H])
+
+    node = helper.make_node(
+        'Attention',
+        inputs=['Q', 'K', 'V'],
+        outputs=['Y'],
+        name='attention_node',
+        domain='',
+        q_num_heads=N,
+        kv_num_heads=N,
+        scale=scale
+    )
+
+    graph = helper.make_graph([node], 'Attention3D', [q_info, k_info, v_info], [y_info])
+    model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
+    onnx.save(model, path)
+
+def create_model_4d(path, B, S, N, D, scale):
+    q_info = helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, N, S, D])
+    k_info = helper.make_tensor_value_info('K', TensorProto.FLOAT, [B, N, S, D])
+    v_info = helper.make_tensor_value_info('V', TensorProto.FLOAT, [B, N, S, D])
+    y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, N, S, D])
+
+    node = helper.make_node(
+        'Attention',
+        inputs=['Q', 'K', 'V'],
+        outputs=['Y'],
+        name='attention_node',
+        domain='',
+        scale=scale
+    )
+
+    graph = helper.make_graph([node], 'Attention4D', [q_info, k_info, v_info], [y_info])
+    model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
+    onnx.save(model, path)
+
+def generate_data_3d(B, S, N, D, scale, base_path):
+    H = N * D
+    Q = np.random.randn(B, S, H).astype(np.float32)
+    K = np.random.randn(B, S, H).astype(np.float32)
+    V = np.random.randn(B, S, H).astype(np.float32)
+
+    # Compute reference
+    rq = Q.reshape(B, S, N, D).transpose(0, 2, 1, 3)
+    rk = K.reshape(B, S, N, D).transpose(0, 2, 1, 3)
+    rv = V.reshape(B, S, N, D).transpose(0, 2, 1, 3)
+
+    scores = np.matmul(rq, rk.transpose(0, 1, 3, 2)) * scale
+    probs = softmax(scores)
+    Y_4d = np.matmul(probs, rv)
+    Y = Y_4d.transpose(0, 2, 1, 3).reshape(B, S, H).astype(np.float32)
+
+    save_tensor(Q, os.path.join(base_path, 'input_test_attention_kv_cache_3d_0.npy'))
+    save_tensor(K, os.path.join(base_path, 'input_test_attention_kv_cache_3d_1.npy'))
+    save_tensor(V, os.path.join(base_path, 'input_test_attention_kv_cache_3d_2.npy'))
+    save_tensor(Y, os.path.join(base_path, 'output_test_attention_kv_cache_3d.npy'))
+
+def generate_data_4d(B, S, N, D, scale, base_path):
+    Q = np.random.randn(B, N, S, D).astype(np.float32)
+    K = np.random.randn(B, N, S, D).astype(np.float32)
+    V = np.random.randn(B, N, S, D).astype(np.float32)
+
+    scores = np.matmul(Q, K.transpose(0, 1, 3, 2)) * scale
+    probs = softmax(scores)
+    Y = np.matmul(probs, V).astype(np.float32)
+
+    save_tensor(Q, os.path.join(base_path, 'input_test_attention_kv_cache_4d_0.npy'))
+    save_tensor(K, os.path.join(base_path, 'input_test_attention_kv_cache_4d_1.npy'))
+    save_tensor(V, os.path.join(base_path, 'input_test_attention_kv_cache_4d_2.npy'))
+    save_tensor(Y, os.path.join(base_path, 'output_test_attention_kv_cache_4d.npy'))
+
+
+B, S, N, D = 1, 256, 4, 111
+scale = np.sqrt(D)
+model_base_dir = os.path.join("models")
+data_base_dir = os.path.join("data")
+model_3d_path = os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx')
+create_model_3d(model_3d_path, B, S, N, D, scale)
+generate_data_3d(B, S, N, D, scale, data_base_dir)
+print(f"Created 3D model and data in {data_base_dir}")
+
+model_4d_path = os.path.join(model_base_dir, 'test_attention_kv_cache_4d.onnx')
+create_model_4d(model_4d_path, B, S, N, D, scale)
+generate_data_4d(B, S, N, D, scale, data_base_dir)
+print(f"Created 4D model and data in {data_base_dir}")
