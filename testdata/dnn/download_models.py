@@ -1224,6 +1224,31 @@ models = [
         url='https://storage.googleapis.com/mediapipe-assets/face_blendshapes.tflite?generation=1677787708051579',
         sha='eaf27df74abb6e112f3edbd7b06eb3d464fd02cc',
         filename='tflite/face_blendshapes.tflite'),
+    Model(
+        name='ViT Base Patch16 224 (ONNX)',
+        url='https://huggingface.co/onnxmodelzoo/vit_base_patch16_224_Opset16/resolve/main/vit_base_patch16_224_Opset16.onnx',
+        sha='c91050cfe5f538fd71d34304c0f892e216a94fca',
+        filename='vit_base_patch16_224_Opset16.onnx'),
+    Model(
+        name='DeiT Tiny Patch16 224 (ONNX)',
+        url='https://huggingface.co/onnxmodelzoo/deit_tiny_patch16_224_Opset16/resolve/main/deit_tiny_patch16_224_Opset16.onnx',
+        sha='f8d178ca90b9a4e639d5fef235262e50ea853349',
+        filename='deit_tiny_patch16_224_Opset16.onnx'),
+    Model(
+        name='MobileViT_XS_Opset16 (ONNX)',
+        url='https://github.com/onnx/models/raw/main/Computer_Vision/mobilevit_xs_Opset16_timm/mobilevit_xs_Opset16.onnx',
+        sha='e7bd07a3712ccfb207964b7ab44b2c6f4c7b7a40',
+        filename='mobilevit_xs_Opset16.onnx'),
+    Model(
+        name='MobileViTv2_100_Opset16 (ONNX)',
+        url='https://github.com/onnx/models/raw/main/Computer_Vision/mobilevitv2_100_Opset16_timm/mobilevitv2_100_Opset16.onnx',
+        sha='091fa7bcb572a184020d7dfb5fcfeabefecd5f9a',
+        filename='mobilevitv2_100_Opset16.onnx'),
+    Model(
+        name='BEiT Base Patch16 224 (ONNX)',
+        url='https://github.com/onnx/models/raw/main/Computer_Vision/skip/beit_base_patch16_224_Opset16_timm/beit_base_patch16_224_Opset16.onnx',
+        sha='119f6201d2a1bde5bf1d536e593369f4579718c3',
+        filename='beit_base_patch16_224_Opset16.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
