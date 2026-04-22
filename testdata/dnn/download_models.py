@@ -1230,6 +1230,11 @@ models = [
         sha='c91050cfe5f538fd71d34304c0f892e216a94fca',
         filename='vit_base_patch16_224_Opset16.onnx'),
     Model(
+        name='BERT Base Uncased (ONNX)',
+        url='https://huggingface.co/google-bert/bert-base-uncased/resolve/main/model.onnx',
+        sha='efacca472afac362a761e60d61ce72227be5eb1e',
+        filename='onnx/models/bert.onnx'),
+    Model(
         name='DeiT Tiny Patch16 224 (ONNX)',
         url='https://huggingface.co/onnxmodelzoo/deit_tiny_patch16_224_Opset16/resolve/main/deit_tiny_patch16_224_Opset16.onnx',
         sha='f8d178ca90b9a4e639d5fef235262e50ea853349',
