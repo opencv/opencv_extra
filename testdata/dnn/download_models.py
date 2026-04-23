@@ -454,6 +454,11 @@ models = [
         sha='520878f12e97cf820529daea502acca380f1cb8e',
         filename='yolov3.weights'),
     Model(
+        name='YOLOv3 (ONNX)',
+        url='https://huggingface.co/qualcomm/Yolo-v3/resolve/226ada6de9dcb32eebad7f74bf526714e2af6136/Yolo-v3.onnx',
+        sha='c37641ddf05cfe133efd4b66832f269d95f523cf',
+        filename='yolov3.onnx'),
+    Model(
         name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
         url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
         sha='3ca8233d6edd748f7ed23246c8ca24cbf696bb94',
@@ -910,6 +915,11 @@ models = [
         url='https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4-tiny.weights',
         sha='451caaab22fb9831aa1a5ee9b5ba74a35ffa5dcb',
         filename='yolov4-tiny-2020-12.weights'),
+    Model(
+        name='YOLOv4-tiny (ONNX)',
+        url='https://huggingface.co/Kalray/yolov4-tiny/resolve/d4625044dd555c909ad2ee396efa0d85b2ece68a/yolov4-tiny.onnx',
+        sha='5b9ac7f446afd6937a6c33d3e008c69bbb0dc926',
+        filename='yolov4-tiny.onnx'),
     Model(
         name='YOLOv4x-mish',  # https://github.com/opencv/opencv/issues/18975
         url='https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4x-mish.weights',
