@@ -2989,9 +2989,9 @@ gemm_dynamic_inputs_testcases = {
 
 for name, inputs in gemm_dynamic_inputs_testcases.items():
     generate_gemm_dynmaic_inputs(
-        f"test_gemm_3inputs_{name}", 
-        inputs["inputA"], 
-        inputs["inputB"], 
+        f"test_gemm_3inputs_{name}",
+        inputs["inputA"],
+        inputs["inputB"],
         inputs["inputC"],
         "data",
         "models"
@@ -3402,3 +3402,29 @@ save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
 
 x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
 save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
+
+################# PriorBox #################
+
+data  = helper.make_tensor_value_info("input_0", TensorProto.FLOAT, [1, 3, 10, 10])
+shape = helper.make_tensor_value_info("input_1", TensorProto.FLOAT, [1, 2, 3, 4])
+out   = helper.make_tensor_value_info("out",     TensorProto.FLOAT, ["d0", "d1", "d2"])
+node = helper.make_node("PriorBox", ["input_1", "input_0"], ["out"],
+                         min_size=[2.0, 3.0],
+                         max_size=[6.0, 7.0],
+                         aspect_ratio=[2.0],
+                         flip=1, clip=0,
+                         variance=[0.1, 0.1, 0.2, 0.2])
+graph = helper.make_graph([node], "prior_box", [data, shape], [out])
+onnx.save(helper.make_model(graph, producer_name="prior_box"),
+          os.path.join("models", "prior_box.onnx"))
+
+################# Resize Nearest #################
+
+inp = helper.make_tensor_value_info("input", TensorProto.FLOAT, [1, 1, 2, 3])
+out = helper.make_tensor_value_info("out",   TensorProto.FLOAT, [1, 1, 4, 6])
+roi    = numpy_helper.from_array(np.array([], dtype=np.float32),                  name="roi")
+scales = numpy_helper.from_array(np.array([1.0, 1.0, 2.0, 2.0], dtype=np.float32), name="scales")
+node = helper.make_node("Resize", ["input", "roi", "scales"], ["out"], mode="nearest")
+graph = helper.make_graph([node], "Resample", [inp], [out], initializer=[roi, scales])
+onnx.save(helper.make_model(graph, producer_name="nearest"),
+          os.path.join("models", "nearest.onnx"))
