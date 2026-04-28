@@ -376,7 +376,7 @@ models = [
         filename='colorization_release_v2.caffemodel'),
     Model(
         name='Colorization (ONNX)',
-        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.0.0/colorization_deploy_v2.onnx',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/submissions/colorization/colorization_deploy_v2_2026april.onnx',
         sha='5324bd59fbf2796fa21fff0496e4348f7c8afdee',
         filename='colorization_deploy_v2.onnx'),
     Model(
