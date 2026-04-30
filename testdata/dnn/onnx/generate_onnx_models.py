@@ -3526,3 +3526,17 @@ node = helper.make_node("Resize", ["input", "roi", "scales"], ["out"], mode="nea
 graph = helper.make_graph([node], "Resample", [inp], [out], initializer=[roi, scales])
 onnx.save(helper.make_model(graph, producer_name="nearest"),
           os.path.join("models", "nearest.onnx"))
+
+################# Net Input #################
+
+bg1 = helper.make_tensor_value_info("old_style_input_blue_green", TensorProto.FLOAT, [1, 2, 10, 11])
+r1  = helper.make_tensor_value_info("different_name_for_red",     TensorProto.FLOAT, [1, 1, 10, 11])
+bg2 = helper.make_tensor_value_info("input_layer_blue_green",     TensorProto.FLOAT, [1, 2, 10, 11])
+r2  = helper.make_tensor_value_info("old_style_input_red",        TensorProto.FLOAT, [1, 1, 10, 11])
+out = helper.make_tensor_value_info("output",                     TensorProto.FLOAT, [1, 3, 10, 11])
+
+node_concat1 = helper.make_node("Concat", inputs=["old_style_input_blue_green", "different_name_for_red"], outputs=["concat1_out"], axis=1)
+node_concat2 = helper.make_node("Concat", inputs=["input_layer_blue_green", "old_style_input_red"], outputs=["concat2_out"], axis=1)
+node_add = helper.make_node("Add", inputs=["concat1_out", "concat2_out"], outputs=["output"])
+graph = helper.make_graph([node_concat1, node_concat2, node_add], "net_input_graph", [bg1, r1, bg2, r2], [out])
+onnx.save(helper.make_model(graph, producer_name="opencv_test_generator"), os.path.join("models", "net_input.onnx"))
