@@ -906,15 +906,30 @@ models = [
         sha='0143deb6c46fcc7f74dd35bf3c14edc3784e99ee',
         filename='yolov4.weights'),
     Model(
+        name='YOLOv4 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4.onnx',
+        sha='68df7133bef095d79531ad62d79295d82614de3b',
+        filename='yolov4.onnx'),
+    Model(
         name='YOLOv4-tiny-2020-12',  # https://github.com/opencv/opencv/issues/17148
         url='https://github.com/AlexeyAB/darknet/releases/download/yolov4/yolov4-tiny.weights',
         sha='451caaab22fb9831aa1a5ee9b5ba74a35ffa5dcb',
         filename='yolov4-tiny-2020-12.weights'),
     Model(
+        name='YOLOv4-tiny (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4-tiny.onnx',
+        sha='158a74e9c6da57f5e4161c5dfc1ab592f47d958a',
+        filename='yolov4-tiny.onnx'),
+    Model(
         name='YOLOv4x-mish',  # https://github.com/opencv/opencv/issues/18975
         url='https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4x-mish.weights',
         sha='a6f2879af2241de2e9730d317a55db6afd0af00b',
         filename='yolov4x-mish.weights'),
+    Model(
+        name='YOLOv4x-mish (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4x-mish.onnx',
+        sha='aad7a2901b4231cc432d3218ccaf793caa08adeb',
+        filename='yolov4x-mish.onnx'),
     Model(
         name='DaSiamRPM Tracker network (ONNX)',
         url='https://www.dropbox.com/s/rr1lk9355vzolqv/dasiamrpn_model.onnx?dl=1',
