@@ -3509,3 +3509,28 @@ model_4d_path = os.path.join(model_base_dir, 'test_attention_kv_cache_4d.onnx')
 create_model_4d(model_4d_path, B, S, N, D, scale)
 generate_data_4d(B, S, N, D, scale, data_base_dir)
 print(f"Created 4D model and data in {data_base_dir}")
+################# PriorBox #################
+
+data  = helper.make_tensor_value_info("input_0", TensorProto.FLOAT, [1, 3, 10, 10])
+shape = helper.make_tensor_value_info("input_1", TensorProto.FLOAT, [1, 2, 3, 4])
+out   = helper.make_tensor_value_info("out",     TensorProto.FLOAT, ["d0", "d1", "d2"])
+node = helper.make_node("PriorBox", ["input_1", "input_0"], ["out"],
+                         min_size=[2.0, 3.0],
+                         max_size=[6.0, 7.0],
+                         aspect_ratio=[2.0],
+                         flip=1, clip=0,
+                         variance=[0.1, 0.1, 0.2, 0.2])
+graph = helper.make_graph([node], "prior_box", [data, shape], [out])
+onnx.save(helper.make_model(graph, producer_name="prior_box"),
+          os.path.join("models", "prior_box.onnx"))
+
+################# Resize Nearest #################
+
+inp = helper.make_tensor_value_info("input", TensorProto.FLOAT, [1, 1, 2, 3])
+out = helper.make_tensor_value_info("out",   TensorProto.FLOAT, [1, 1, 4, 6])
+roi    = numpy_helper.from_array(np.array([], dtype=np.float32),                  name="roi")
+scales = numpy_helper.from_array(np.array([1.0, 1.0, 2.0, 2.0], dtype=np.float32), name="scales")
+node = helper.make_node("Resize", ["input", "roi", "scales"], ["out"], mode="nearest")
+graph = helper.make_graph([node], "Resample", [inp], [out], initializer=[roi, scales])
+onnx.save(helper.make_model(graph, producer_name="nearest"),
+          os.path.join("models", "nearest.onnx"))
