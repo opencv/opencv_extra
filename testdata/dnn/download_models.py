@@ -237,6 +237,25 @@ class Model:
 
 
 models = [
+    # TODO: Add Grounding-DINO model entry
+    # Model(
+    #     name='Grounding-DINO SwinT OGC',
+    #     url='<url>',
+    #     sha='<sha1>',
+    #     filename='onnx/models/groundingdino_swint_ogc.onnx'),
+    # TODO: Add RF-DETR model entry
+    # Model(
+    #     name='RF-DETR',
+    #     url='<url>',
+    #     sha='6519ec745ce4803c83fc9acdd421133e14cebcf9',
+    #     filename='onnx/models/rfdetr.onnx'),
+    # TODO: Add RT-DETR L model entry
+    # Model(
+    #     name='RT-DETR-L',
+    #     url='<url>',
+    #     sha='108437883e4cf70ad86507c3925e5f65096f1e98',
+    #     filename='onnx/models/rtdetr-l.onnx'),
+
     Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
