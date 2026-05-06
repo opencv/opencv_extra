@@ -237,24 +237,16 @@ class Model:
 
 
 models = [
-    # TODO: Add Grounding-DINO model entry
-    # Model(
-    #     name='Grounding-DINO SwinT OGC',
-    #     url='<url>',
-    #     sha='<sha1>',
-    #     filename='onnx/models/groundingdino_swint_ogc.onnx'),
-    # TODO: Add RF-DETR model entry
-    # Model(
-    #     name='RF-DETR',
-    #     url='<url>',
-    #     sha='6519ec745ce4803c83fc9acdd421133e14cebcf9',
-    #     filename='onnx/models/rfdetr.onnx'),
-    # TODO: Add RT-DETR L model entry
-    # Model(
-    #     name='RT-DETR-L',
-    #     url='<url>',
-    #     sha='108437883e4cf70ad86507c3925e5f65096f1e98',
-    #     filename='onnx/models/rtdetr-l.onnx'),
+    Model(
+        name='RetinaFace-10G',
+        url='https://huggingface.co/wanesoft/faceswap_pack/resolve/main/retinaface_10g.onnx',
+        sha='7d7096939643629d43135e4765d53ed8570ef425',
+        filename='onnx/models/retinaface_10g.onnx'),
+    Model(
+        name='YOLO26n',
+        url='https://drive.google.com/uc?id=17OWMXSiefFMmj46CT42Fd2q5kl_jHRBC',
+        sha='fea8aaae1f90a3bea19469483e3b5e8bb3ced335',
+        filename='onnx/models/yolo26n.onnx'),
 
     Model(
         name='GoogleNet',
