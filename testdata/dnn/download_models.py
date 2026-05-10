@@ -1179,6 +1179,16 @@ models = [
         ],
         sha='50008bb4f6a27b1aa940ad886b1bd1936ac4ed3e',
         filename='onnx/models/object_tracking_vittrack_2023sep.onnx'),
+    Model(
+        name='ALIKED (ONNX)',
+        url='https://raw.githubusercontent.com/YangGuanyuhan/lightglue_opencv_project/main/model/aliked-n16rot-top1k-640.onnx',
+        sha='41faa7bf5d7eb68a2851471ba03aa20c9db30e4c',
+        filename='onnx/models/aliked-n16rot-top1k-640.onnx'),
+    Model(
+        name='ALIKED LightGlue (ONNX)',
+        url='https://raw.githubusercontent.com/YangGuanyuhan/lightglue_opencv_project/main/model/aliked_lightglue.onnx',
+        sha='02723aa521990e57fe33d90b67977590c460e351',
+        filename='onnx/models/aliked_lightglue.onnx'),
 
     # Original Intel Open Model Zoo models
     Model(
