@@ -385,6 +385,11 @@ models = [
         sha='21e61293a3fa6747308171c11b6dd18a68a26e7f',
         filename='colorization_release_v2.caffemodel'),
     Model(
+        name='Colorization (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/submissions/colorization/colorization_deploy_v2_2026april.onnx',
+        sha='5324bd59fbf2796fa21fff0496e4348f7c8afdee',
+        filename='colorization_deploy_v2.onnx'),
+    Model(
         name='Face_detector',
         url='https://github.com/opencv/opencv_3rdparty/raw/dnn_samples_face_detector_20170830/res10_300x300_ssd_iter_140000.caffemodel',
         sha='15aa726b4d46d9f023526d85537db81cbc8dd566',
