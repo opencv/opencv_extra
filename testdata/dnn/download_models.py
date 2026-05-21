@@ -273,6 +273,11 @@ models = [
         sha='b84067b920cf7edb23476fd8ed1dbcee44f6a852',
         filename='onnx/models/face_paint_512_v2_0.onnx'),
     Model(
+        name='SwinIR x4 GAN (ONNX)',
+        url='https://huggingface.co/rocca/swin-ir-onnx/resolve/main/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.onnx',
+        sha='bfa65d2369fe5476a0bc5686a3c006748d18bb15',
+        filename='onnx/models/swinir_x4_gan.onnx'),
+    Model(
         name='Ssd_vgg16',
         url='https://www.dropbox.com/s/8apyk3uzk2vl522/VGG_ILSVRC2016_SSD_300x300_iter_440000.caffemodel?dl=1',
         sha='0fc294d5257f3e0c8a3c5acaa1b1f6a9b0b6ade0',
