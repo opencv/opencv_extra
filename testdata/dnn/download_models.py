@@ -1399,6 +1399,11 @@ models = [
         sha='108437883e4cf70ad86507c3925e5f65096f1e98',
         filename='onnx/models/rtdetr-l.onnx',
         large=True),
+    Model(
+        name='DISK (ONNX)',
+        url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/disk.onnx',
+        sha='5f6a9069aed0af7302b67dcfb6d24b0d46707aec',
+        filename='disk.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
