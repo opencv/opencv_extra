@@ -429,3 +429,66 @@ def generate_qlinearsoftmax(shape=[1, 10, 3], axis=1, opset=11, name="qlinearsof
     np.save(output_files, np.ascontiguousarray(output.data))
 
 generate_qlinearsoftmax(shape, axis, name="qlinearsoftmax", previous_name=name)
+
+def generate_quantized_depthwise_conv():
+    # 16-group depthwise QLinearConv with non-zero x_zp.
+    # Minimal fixture for opencv/opencv#28798: the Conv2Int8 VNNI kernel writes
+    # K0=8 output channels per iteration, but groups with Kg<K0 share the same
+    # output slot and overwrite each other. ngroups=16, Kg=1 hits that path.
+    from onnx import numpy_helper
+    from onnx import helper, TensorProto
+    name = "quantized_depthwise_conv_int8_weights"
+    groups = 16
+    in_h = in_w = 8
+
+    np.random.seed(0)
+    W   = np.random.randint(-32, 32,   size=(groups, 1, 3, 3), dtype=np.int8)
+    B   = np.random.randint(-200, 200, size=(groups,),         dtype=np.int32)
+    inp = np.random.uniform(-1.0, 1.0, size=(1, groups, in_h, in_w)).astype(np.float32)
+
+    x_sc = np.float32(0.05); x_zp = np.int8(47)
+    w_sc = np.array([0.01], dtype=np.float32); w_zp = np.array([0], dtype=np.int8)
+    y_sc = np.float32(0.10); y_zp = np.int8(0)
+
+    inits = [
+        numpy_helper.from_array(x_sc, "x_sc"),
+        numpy_helper.from_array(x_zp, "x_zp"),
+        numpy_helper.from_array(W,    "W"),
+        numpy_helper.from_array(w_sc, "w_sc"),
+        numpy_helper.from_array(w_zp, "w_zp"),
+        numpy_helper.from_array(y_sc, "y_sc"),
+        numpy_helper.from_array(y_zp, "y_zp"),
+        numpy_helper.from_array(B,    "B"),
+    ]
+    nodes = [
+        helper.make_node("QuantizeLinear", ["X", "x_sc", "x_zp"], ["X_q"]),
+        helper.make_node(
+            "QLinearConv",
+            ["X_q", "x_sc", "x_zp", "W", "w_sc", "w_zp", "y_sc", "y_zp", "B"],
+            ["Y_q"],
+            group=groups, kernel_shape=[3, 3], pads=[1, 1, 1, 1],
+        ),
+        helper.make_node("DequantizeLinear", ["Y_q", "y_sc", "y_zp"], ["Y"]),
+    ]
+    graph = helper.make_graph(
+        nodes, name,
+        [helper.make_tensor_value_info("X", TensorProto.FLOAT, list(inp.shape))],
+        [helper.make_tensor_value_info("Y", TensorProto.FLOAT, list(inp.shape))],
+        inits,
+    )
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13)])
+    onnx.checker.check_model(model)
+
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+
+    sess = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"])
+    out = sess.run(["Y"], {"X": inp})[0]
+
+    print(name + " input has sizes", inp.shape)
+    np.save(os.path.join("data", "input_"  + name), inp)
+    print(name + " output has sizes", out.shape)
+    np.save(os.path.join("data", "output_" + name), np.ascontiguousarray(out))
+
+generate_quantized_depthwise_conv()
