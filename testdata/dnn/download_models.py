@@ -450,8 +450,7 @@ models = [
         filename='openpose_pose_mpi.caffemodel'),
     Model(
         name='YOLOv3 (ONNX)',
-        url=['https://huggingface.co/qualcomm/Yolo-v3/resolve/226ada6de9dcb32eebad7f74bf526714e2af6136/Yolo-v3.onnx',
-             'http://161.35.194.136/Yolo-v3.onnx'],
+        url='https://huggingface.co/qualcomm/Yolo-v3/resolve/226ada6de9dcb32eebad7f74bf526714e2af6136/Yolo-v3.onnx',
         sha='c37641ddf05cfe133efd4b66832f269d95f523cf',
         filename='yolov3.onnx'),
     Model(
@@ -903,20 +902,17 @@ models = [
         filename='efficientdet-d0.pb'),
     Model(
         name='YOLOv4 (ONNX)',
-        url=['https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4.onnx',
-             'http://161.35.194.136/yolov4.onnx'],
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4.onnx',
         sha='68df7133bef095d79531ad62d79295d82614de3b',
         filename='yolov4.onnx'),
     Model(
         name='YOLOv4-tiny (ONNX)',
-        url=['https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4-tiny.onnx',
-             'http://161.35.194.136/yolov4-tiny.onnx'],
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4-tiny.onnx',
         sha='158a74e9c6da57f5e4161c5dfc1ab592f47d958a',
         filename='yolov4-tiny.onnx'),
     Model(
         name='YOLOv4x-mish (ONNX)',
-        url=['https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4x-mish.onnx',
-             'http://161.35.194.136/yolov4x-mish.onnx'],
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4x-mish.onnx',
         sha='aad7a2901b4231cc432d3218ccaf793caa08adeb',
         filename='yolov4x-mish.onnx'),
     Model(
