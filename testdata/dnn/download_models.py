@@ -238,6 +238,16 @@ class Model:
 
 models = [
     Model(
+        name='RetinaFace-10G',
+        url='https://huggingface.co/wanesoft/faceswap_pack/resolve/main/retinaface_10g.onnx',
+        sha='7d7096939643629d43135e4765d53ed8570ef425',
+        filename='onnx/models/retinaface_10g.onnx'),
+    Model(
+        name='YOLO26n',
+        url='https://drive.google.com/uc?id=17OWMXSiefFMmj46CT42Fd2q5kl_jHRBC',
+        sha='fea8aaae1f90a3bea19469483e3b5e8bb3ced335',
+        filename='onnx/models/yolo26n.onnx'),
+    Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
         sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
