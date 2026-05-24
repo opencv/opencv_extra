@@ -3431,7 +3431,7 @@ def create_prefix_causal_mask(B, N, S, t0):
                     mask[:, :, i, j] = 1
     return mask
 
-def create_model_3d(path, B, S, N, D, scale, with_mask=False):
+def create_model_3d(path, B, S, N, D, scale):
     H = N * D
     inputs = [
         helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, S, H]),
@@ -3440,9 +3440,8 @@ def create_model_3d(path, B, S, N, D, scale, with_mask=False):
     ]
     node_inputs = ['Q', 'K', 'V']
 
-    if with_mask:
-        inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
-        node_inputs.append('Mask')
+    inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
+    node_inputs.append('Mask')
 
     y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, S, H])
 
@@ -3461,7 +3460,7 @@ def create_model_3d(path, B, S, N, D, scale, with_mask=False):
     model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
     onnx.save(model, path)
 
-def create_model_4d(path, B, S, N, D, scale, with_mask=False):
+def create_model_4d(path, B, S, N, D, scale):
     inputs = [
         helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, N, S, D]),
         helper.make_tensor_value_info('K', TensorProto.FLOAT, [B, N, S, D]),
@@ -3469,9 +3468,8 @@ def create_model_4d(path, B, S, N, D, scale, with_mask=False):
     ]
     node_inputs = ['Q', 'K', 'V']
 
-    if with_mask:
-        inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
-        node_inputs.append('Mask')
+    inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
+    node_inputs.append('Mask')
 
     y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, N, S, D])
 
@@ -3488,28 +3486,6 @@ def create_model_4d(path, B, S, N, D, scale, with_mask=False):
     model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
     onnx.save(model, path)
 
-def generate_inputs_3d(B, S, N, D, t0, base_path):
-    H = N * D
-    Q = np.random.randn(B, S, H).astype(np.float32)
-    K = np.random.randn(B, S, H).astype(np.float32)
-    V = np.random.randn(B, S, H).astype(np.float32)
-    M = create_prefix_causal_mask(B, N, S, t0)
-
-    save_tensor(Q, os.path.join(base_path, 'input_test_attention_kv_cache_3d_0.npy'))
-    save_tensor(K, os.path.join(base_path, 'input_test_attention_kv_cache_3d_1.npy'))
-    save_tensor(V, os.path.join(base_path, 'input_test_attention_kv_cache_3d_2.npy'))
-    save_tensor(M, os.path.join(base_path, 'input_test_attention_kv_cache_3d_3.npy'))
-
-def generate_inputs_4d(B, S, N, D, t0, base_path):
-    Q = np.random.randn(B, N, S, D).astype(np.float32)
-    K = np.random.randn(B, N, S, D).astype(np.float32)
-    V = np.random.randn(B, N, S, D).astype(np.float32)
-    M = create_prefix_causal_mask(B, N, S, t0)
-
-    save_tensor(Q, os.path.join(base_path, 'input_test_attention_kv_cache_4d_0.npy'))
-    save_tensor(K, os.path.join(base_path, 'input_test_attention_kv_cache_4d_1.npy'))
-    save_tensor(V, os.path.join(base_path, 'input_test_attention_kv_cache_4d_2.npy'))
-    save_tensor(M, os.path.join(base_path, 'input_test_attention_kv_cache_4d_3.npy'))
 
 B, S, N, D = 1, 256, 4, 111
 t0 = int(S/2)
@@ -3520,14 +3496,10 @@ model_base_dir = os.path.join("models")
 data_base_dir = os.path.join("data")
 model_3d_path = os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx')
 
-create_model_3d(os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx'), B, S, N, D, scale, with_mask=False)
-create_model_3d(os.path.join(model_base_dir, 'test_attention_kv_cache_3d_with_mask.onnx'), B, S, N, D, scale, with_mask=True)
-generate_inputs_3d(B, S, N, D, t0, data_base_dir)
+create_model_3d(os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx'), B, S, N, D, scale)
 
 # 4D Variants
-create_model_4d(os.path.join(model_base_dir, 'test_attention_kv_cache_4d.onnx'), B, S, N, D, scale, with_mask=False)
-create_model_4d(os.path.join(model_base_dir, 'test_attention_kv_cache_4d_with_mask.onnx'), B, S, N, D, scale, with_mask=True)
-generate_inputs_4d(B, S, N, D, t0, data_base_dir)
+create_model_4d(os.path.join(model_base_dir, 'test_attention_kv_cache_4d.onnx'), B, S, N, D, scale)
 
 ################# PriorBox #################
 
