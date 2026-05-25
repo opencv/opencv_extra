@@ -1199,6 +1199,16 @@ models = [
         ],
         sha='50008bb4f6a27b1aa940ad886b1bd1936ac4ed3e',
         filename='onnx/models/object_tracking_vittrack_2023sep.onnx'),
+    Model(
+        name='SuperPoint (ONNX)',
+        url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/superpoint.onnx',
+        sha='2be3adcdbab16db14ba08982d0b71b010566e288',
+        filename='onnx/models/superpoint.onnx'),
+    Model(
+        name='SuperPoint LightGlue (ONNX)',
+        url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/superpoint_lightglue.onnx',
+        sha='d9d33ee7c638f41910c653adf033d64dddc00208',
+        filename='onnx/models/superpoint_lightglue.onnx'),
 
     # Original Intel Open Model Zoo models
     Model(
