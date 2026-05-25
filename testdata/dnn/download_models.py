@@ -1284,6 +1284,11 @@ models = [
         url='https://github.com/onnx/models/raw/main/Computer_Vision/skip/beit_base_patch16_224_Opset16_timm/beit_base_patch16_224_Opset16.onnx',
         sha='119f6201d2a1bde5bf1d536e593369f4579718c3',
         filename='beit_base_patch16_224_Opset16.onnx'),
+    Model(
+        name='DISK (ONNX)',
+        url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/disk.onnx',
+        sha='5f6a9069aed0af7302b67dcfb6d24b0d46707aec',
+        filename='disk.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
