@@ -3403,6 +3403,104 @@ save_data_and_model("tile_int32", x, Tile((1, 1, 2, 3)), version=18)
 x = torch.randint(1000000000000000, 1000000000000200, (3, 4, 5, 6), dtype=torch.int64)
 save_data_and_model("tile_int64", x, Tile((1, 1, 1, 2)), version=18)
 
+
+#####
+
+
+import os
+import numpy as np
+import onnx
+from onnx import helper, TensorProto
+
+def save_tensor(tensor, path):
+    np.save(path, tensor)
+
+def create_prefix_causal_mask(B, N, S, t0):
+    """
+    Creates a (B, N, S, S) mask.
+    1 = Allow attention, 0 = Block attention
+    """
+    mask = np.zeros((B, N, S, S), dtype=np.int32)
+    for i in range(S):
+        for j in range(S):
+            if i < t0:
+                if j < t0:
+                    mask[:, :, i, j] = 1
+            else:
+                if j <= i:
+                    mask[:, :, i, j] = 1
+    return mask
+
+def create_model_3d(path, B, S, N, D, scale):
+    H = N * D
+    inputs = [
+        helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, S, H]),
+        helper.make_tensor_value_info('K', TensorProto.FLOAT, [B, S, H]),
+        helper.make_tensor_value_info('V', TensorProto.FLOAT, [B, S, H])
+    ]
+    node_inputs = ['Q', 'K', 'V']
+
+    inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
+    node_inputs.append('Mask')
+
+    y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, S, H])
+
+    node = helper.make_node(
+        'Attention',
+        inputs=node_inputs,
+        outputs=['Y'],
+        name='attention_node',
+        domain='',
+        q_num_heads=N,
+        kv_num_heads=N,
+        scale=scale
+    )
+
+    graph = helper.make_graph([node], 'Attention3D', inputs, [y_info])
+    model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
+    onnx.save(model, path)
+
+def create_model_4d(path, B, S, N, D, scale):
+    inputs = [
+        helper.make_tensor_value_info('Q', TensorProto.FLOAT, [B, N, S, D]),
+        helper.make_tensor_value_info('K', TensorProto.FLOAT, [B, N, S, D]),
+        helper.make_tensor_value_info('V', TensorProto.FLOAT, [B, N, S, D])
+    ]
+    node_inputs = ['Q', 'K', 'V']
+
+    inputs.append(helper.make_tensor_value_info('Mask', TensorProto.INT32, [B, N, S, S]))
+    node_inputs.append('Mask')
+
+    y_info = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [B, N, S, D])
+
+    node = helper.make_node(
+        'Attention',
+        inputs=node_inputs,
+        outputs=['Y'],
+        name='attention_node',
+        domain='',
+        scale=scale
+    )
+
+    graph = helper.make_graph([node], 'Attention4D', inputs, [y_info])
+    model = helper.make_model(graph, producer_name='onnx-example', opset_imports=[helper.make_opsetid("", 23)], ir_version=9)
+    onnx.save(model, path)
+
+
+B, S, N, D = 1, 256, 4, 111
+t0 = int(S/2)
+
+
+scale = np.sqrt(D)
+model_base_dir = os.path.join("models")
+data_base_dir = os.path.join("data")
+model_3d_path = os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx')
+
+create_model_3d(os.path.join(model_base_dir, 'test_attention_kv_cache_3d.onnx'), B, S, N, D, scale)
+
+# 4D Variants
+create_model_4d(os.path.join(model_base_dir, 'test_attention_kv_cache_4d.onnx'), B, S, N, D, scale)
+
 ################# PriorBox #################
 
 data  = helper.make_tensor_value_info("input_0", TensorProto.FLOAT, [1, 3, 10, 10])
