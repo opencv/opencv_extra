@@ -1186,8 +1186,7 @@ models = [
         name='RAFT', # See https://github.com/opencv/opencv_zoo/tree/main/models/optical_flow_estimation_raft#raft for source
         url='https://github.com/opencv/opencv_zoo/raw/281d232cd99cd920853106d853c440edd35eb442/models/optical_flow_estimation_raft/optical_flow_estimation_raft_2023aug.onnx',
         sha='8165e43c7bd37cc651f66509532acdb3c292832b',
-        filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx',
-        large=True),
+        filename='onnx/models/optical_flow_estimation_raft_2023aug.onnx'),
     Model(
         name='vit_b_32',
         url=[
