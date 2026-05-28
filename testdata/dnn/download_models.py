@@ -225,6 +225,7 @@ class Model:
         self.sha = kwargs.pop('sha', None)
         self.member = kwargs.pop('member', None)
         self.sub = kwargs.pop('sub', [])
+        self.large = kwargs.pop('large', False)
         if not isinstance(self.url, list) and self.url:
             self.url = [self.url]
         # TODO: add completeness assertion
@@ -241,12 +242,14 @@ models = [
         name='RetinaFace-10G',
         url='https://huggingface.co/wanesoft/faceswap_pack/resolve/main/retinaface_10g.onnx',
         sha='7d7096939643629d43135e4765d53ed8570ef425',
-        filename='onnx/models/retinaface_10g.onnx'),
+        filename='onnx/models/retinaface_10g.onnx',
+        large=True),
     Model(
         name='YOLO26n',
         url='https://drive.google.com/uc?id=17OWMXSiefFMmj46CT42Fd2q5kl_jHRBC',
         sha='fea8aaae1f90a3bea19469483e3b5e8bb3ced335',
-        filename='onnx/models/yolo26n.onnx'),
+        filename='onnx/models/yolo26n.onnx',
+        large=True),
     Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
@@ -1284,6 +1287,103 @@ models = [
         url='https://github.com/onnx/models/raw/main/Computer_Vision/skip/beit_base_patch16_224_Opset16_timm/beit_base_patch16_224_Opset16.onnx',
         sha='119f6201d2a1bde5bf1d536e593369f4579718c3',
         filename='beit_base_patch16_224_Opset16.onnx'),
+    Model(
+        name='RTMPose-m',  # https://drive.google.com/file/d/1HuR5jeGtgX6TKFlWR5JjwZ7be-JDwz57/view?usp=drive_link
+        url='https://drive.google.com/uc?id=1HuR5jeGtgX6TKFlWR5JjwZ7be-JDwz57',
+        sha='8f0c4b41dca865f2c54d9795c03cd66ee62ebaf9',
+        filename='onnx/models/rtmpose_m.onnx',
+        large=True),
+    Model(
+        name='U2Net',  # https://huggingface.co/tomjackson2023/rembg/resolve/main/u2net.onnx
+        url='https://huggingface.co/tomjackson2023/rembg/resolve/main/u2net.onnx',
+        sha='21bd665be60298ac224a2f1c0c0e3ee03374e54a',
+        filename='onnx/models/u2net.onnx',
+        large=True),
+    Model(
+        name='Real-ESRGAN-x4plus',  # https://huggingface.co/qualcomm/Real-ESRGAN-x4plus
+        url='https://huggingface.co/qualcomm/Real-ESRGAN-x4plus/resolve/01179a4da7bf5ac91faca650e6afbf282ac93933/Real-ESRGAN-x4plus.onnx',
+        sha='cdffba64fad5f6da023f9f2a3d6fa43a4f67b9f4',
+        filename='onnx/models/realesrgan_x4plus.onnx',
+        large=True),
+    Model(
+        name='BiRefNet',  # https://huggingface.co/onnx-community/BiRefNet-ONNX
+        url='https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/main/onnx/model.onnx',
+        sha='e199e023c0c0dcbb43623ca8c7058cadbef3dfb1',
+        filename='onnx/models/birefnet.onnx',
+        large=True),
+    Model(
+        name='NAFNet',  # https://drive.google.com/uc?id=1ZLRhkpCekNruJZggVpBgSoCx3k7bJ-5v
+        url='https://drive.google.com/uc?id=1ZLRhkpCekNruJZggVpBgSoCx3k7bJ-5v',
+        sha='7dabf3d4ede0770ef326afc4511f7e67a791286d',
+        filename='onnx/models/nafnet.onnx',
+        large=True),
+    Model(
+        name='DINOv2-Small',  # https://huggingface.co/onnx-community/dinov2-small
+        url='https://huggingface.co/onnx-community/dinov2-small/resolve/main/onnx/model.onnx',
+        sha='2c147e4cbd703f6ef2df3a737ace46b637af1ef3',
+        filename='onnx/models/dinov2_small.onnx',
+        large=True),
+    # Models added in https://github.com/opencv/opencv/pull/28945
+    Model(
+        name='SAM2 Encoder',  # https://huggingface.co/vietanhdev/segment-anything-2-onnx-models
+        url='https://huggingface.co/vietanhdev/segment-anything-2-onnx-models/resolve/main/sam2_hiera_large.encoder.onnx',
+        sha='edc45115a2a3b2a22a13513b9054eb16bcf8456e',
+        filename='onnx/models/sam2_hiera_large.encoder.onnx',
+        large=True),
+    Model(
+        name='SAM2 Decoder',  # https://huggingface.co/vietanhdev/segment-anything-2-onnx-models
+        url='https://huggingface.co/vietanhdev/segment-anything-2-onnx-models/resolve/main/sam2_hiera_large.decoder.onnx',
+        sha='26aeffc0848c3fa263064da1325409aca41f504d',
+        filename='onnx/models/sam2_hiera_large.decoder.onnx',
+        large=True),
+    Model(
+        name='OWLv2',  # https://huggingface.co/onnx-community/owlv2-base-patch16-finetuned-ONNX
+        url='https://huggingface.co/onnx-community/owlv2-base-patch16-finetuned-ONNX/resolve/main/onnx/model.onnx',
+        sha='025862e338274e685cf346a11875170a32557a43',
+        filename='onnx/models/owlv2_base_patch_16.onnx',
+        large=True),
+    Model(
+        name='YOLO26m-Seg',  # https://drive.google.com/file/d/1IU7iktOUbvNPFnDJb_ivl3LxYIdpEp3f
+        url='https://drive.google.com/uc?id=1IU7iktOUbvNPFnDJb_ivl3LxYIdpEp3f',
+        sha='e583cd789896c47aa0e423d0f3adbf73c8c41c54',
+        filename='onnx/models/yolo26m-seg.onnx',
+        large=True),
+    Model(
+        name='SegFormer-B2-Clothes',  # https://huggingface.co/Xenova/segformer_b2_clothes
+        url='https://huggingface.co/Xenova/segformer_b2_clothes/resolve/main/onnx/model.onnx',
+        sha='1a59c06815fbb71c2af503492782d75718428f64',
+        filename='onnx/models/segformer_b2_clothes.onnx',
+        large=True),
+    Model(
+        name='SigLIP',  # https://huggingface.co/Xenova/siglip-base-patch16-224
+        url='https://huggingface.co/Xenova/siglip-base-patch16-224/resolve/main/onnx/model.onnx',
+        sha='4da0fe2e79c593cdfcec82433767a27c07798134',
+        filename='onnx/models/siglip_base_patch16_224.onnx',
+        large=True),
+    Model(
+        name='Depth-Anything-V2-Small',  # https://huggingface.co/onnx-community/depth-anything-v2-small
+        url='https://huggingface.co/onnx-community/depth-anything-v2-small/resolve/main/onnx/model.onnx',
+        sha='034e45219f00397bb9691fa1f97cc7ef69f4dd7e',
+        filename='onnx/models/depth_anything_v2_small.onnx',
+        large=True),
+    Model(
+        name='Grounding-DINO-Tiny',  # https://huggingface.co/onnx-community/grounding-dino-tiny-ONNX
+        url='https://huggingface.co/onnx-community/grounding-dino-tiny-ONNX/resolve/main/onnx/model.onnx',
+        sha='2469bb6923f6663d6f3a793f1b14e30edeb2b456',
+        filename='onnx/models/grounding_dino_tiny.onnx',
+        large=True),
+    Model(
+        name='RF-DETR',  # https://drive.google.com/file/d/1P6a7oS_dV5y09FsCA4XDZK1-WcdZbWFh
+        url='https://drive.google.com/uc?id=1P6a7oS_dV5y09FsCA4XDZK1-WcdZbWFh',
+        sha='6519ec745ce4803c83fc9acdd421133e14cebcf9',
+        filename='onnx/models/rfdetr.onnx',
+        large=True),
+    Model(
+        name='RT-DETR-L',  # https://drive.google.com/file/d/1OrSmlXURayVQgW8nrrxjggzPMN7xPRGJ
+        url='https://drive.google.com/uc?id=1OrSmlXURayVQgW8nrrxjggzPMN7xPRGJ',
+        sha='108437883e4cf70ad86507c3925e5f65096f1e98',
+        filename='onnx/models/rtdetr-l.onnx',
+        large=True),
 ]
 
 # Note: models will be downloaded to current working directory
@@ -1295,6 +1395,7 @@ if __name__ == '__main__':
     parser.add_argument("-l", "--list", action="store_true", help="List models")
     parser.add_argument("-r", "--ref", "--reference", help="Reference directory containing pre-downloaded models (read-only cache)")
     parser.add_argument("--cleanup", action="store_true", help="Remove archives after download")
+    parser.add_argument("--download_large_model", action="store_true", help="Download large models (skipped by default)")
     parser.add_argument("model", nargs='*', help="Model name to download (substring, case-insensitive)")
     args = parser.parse_args()
     ref = Path(args.ref).absolute() if args.ref else None
@@ -1313,6 +1414,9 @@ if __name__ == '__main__':
             print("Filtered: {} models".format(len(filtered)))
     else:
         filtered = models
+
+    if not args.download_large_model:
+        filtered = [m for m in filtered if not m.large]
 
     # List models
     if args.list:
