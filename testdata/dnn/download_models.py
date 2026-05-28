@@ -1113,7 +1113,7 @@ models = [
         filename='onnx/models/yunet-202303.onnx'),
     Model(
         name='YuNet (dynamic input)',
-        url='https://drive.google.com/uc?export=download&id=1CHKd43cEakd1FgetInDPdsVIghNi8XI-',
+        url='https://media.githubusercontent.com/media/opencv/opencv_zoo/refs/heads/main/models/face_detection_yunet/face_detection_yunet_2026may.onnx',
         sha='ef67e5024c8b12fc1b4837796dd86b4727adec67',
         filename='onnx/models/yunet-202605.onnx'),
     Model(
