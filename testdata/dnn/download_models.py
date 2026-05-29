@@ -1112,6 +1112,11 @@ models = [
         sha='acbe4b5976ade60c4b866a30d0720d71589c8bbc',
         filename='onnx/models/yunet-202303.onnx'),
     Model(
+        name='YuNet (dynamic input)',
+        url='https://media.githubusercontent.com/media/opencv/opencv_zoo/refs/heads/main/models/face_detection_yunet/face_detection_yunet_2026may.onnx',
+        sha='ef67e5024c8b12fc1b4837796dd86b4727adec67',
+        filename='onnx/models/yunet-202605.onnx'),
+    Model(
         name='EfficientDet (TFLite)',
         url='https://storage.googleapis.com/mediapipe-assets/coco_efficientdet_lite0_v1_1.0_quant_2021_09_06.tflite?generation=1661875692679200',
         sha='200217d746d58e68028a64ad0472631060e6affb',
