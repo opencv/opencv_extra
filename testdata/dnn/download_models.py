@@ -484,6 +484,31 @@ models = [
         sha='c37641ddf05cfe133efd4b66832f269d95f523cf',
         filename='yolov3.onnx'),
     Model(
+        name='OpenPose/pose/coco (ONNX)',  # converted from caffemodel via opencv_extra/caffe_to_onnx/openpose_models.py
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.3.0/openpose_pose_coco.onnx',
+        sha='33935b1865edbedad26bcd463c104baec140f3e8',
+        filename='onnx/models/openpose_pose_coco.onnx'),
+    Model(
+        name='OpenPose/pose/mpi (ONNX)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.3.0/openpose_pose_mpi.onnx',
+        sha='0f77896fb58b5f5541190fdad10ab5929741c6ba',
+        filename='onnx/models/openpose_pose_mpi.onnx'),
+    Model(
+        name='OpenPose/pose/mpi_faster_4_stages (ONNX)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.3.0/openpose_pose_mpi_faster_4_stages.onnx',
+        sha='35fbf2544e501e084715354ff8a5fd4330d2c6b7',
+        filename='onnx/models/openpose_pose_mpi_faster_4_stages.onnx'),
+    Model(
+        name='Ssd_vgg16 (ONNX)',  # converted from caffemodel via opencv_extra/caffe_to_onnx/ssd_vgg16.py
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.2.0/ssd_vgg16.onnx',
+        sha='5c8b203f6f2f7a42988ccd36e59479df4a5aea9f',
+        filename='onnx/models/ssd_vgg16.onnx'),
+    Model(
+        name='YOLOv3',  # https://pjreddie.com/darknet/yolo/
+        url='https://pjreddie.com/media/files/yolov3.weights',
+        sha='520878f12e97cf820529daea502acca380f1cb8e',
+        filename='yolov3.weights'),
+    Model(
         name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
         url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
         sha='3ca8233d6edd748f7ed23246c8ca24cbf696bb94',
@@ -1014,6 +1039,16 @@ models = [
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.caffemodel',
         sha='d587623a055cbd58a648de62a8c703c7abb05f6d',
         filename='wechat_2021-01/detect.caffemodel'),
+    Model(
+        name='wechat_qr_detect (onnx)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/detect.onnx',
+        sha='8dff596d81e6c223f188defc2616df1c83a406ae',
+        filename='wechat_2021-01/detect.onnx'),
+    Model(
+        name='wechat_super_resolution (onnx)',
+        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/sr.onnx',
+        sha='854b183017c2303cc429bcaf598cc7fc18e076a6',
+        filename='wechat_2021-01/sr.onnx'),
     Model(
         name='wechat_super_resolution (prototxt)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.prototxt',
