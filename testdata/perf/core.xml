@@ -78094,4 +78094,43 @@
       <x>44</x>
       <y>28</y>
       <val>3117.43896484375</val></rng2></dst></Size_MatType_addWeighted--addWeighted---1920x1080--32FC1->
+
+<OCL_ReduceMinMaxFixture_Reduce--Reduce---640x480---8UC4--8UC4---0--CV_REDUCE_MIN->
+  <dst>
+    <kind>655360</kind>
+    <type>24</type>
+    <min>0.</min>
+    <max>3.</max>
+    <last>
+      <x>639</x>
+      <y>0</y>
+      <val>0.</val></last>
+    <rng1>
+      <x>255</x>
+      <y>0</y>
+      <cn>1</cn>
+      <val>0.</val></rng1>
+    <rng2>
+      <x>455</x>
+      <y>0</y>
+      <val>0.</val></rng2></dst></OCL_ReduceMinMaxFixture_Reduce--Reduce---640x480---8UC4--8UC4---0--CV_REDUCE_MIN->
+<OCL_ReduceMinMaxFixture_Reduce--Reduce---640x480---8UC4--8UC4---0--CV_REDUCE_MAX->
+  <dst>
+    <kind>655360</kind>
+    <type>24</type>
+    <min>251.</min>
+    <max>255.</max>
+    <last>
+      <x>639</x>
+      <y>0</y>
+      <val>255.</val></last>
+    <rng1>
+      <x>12</x>
+      <y>0</y>
+      <val>255.</val></rng1>
+    <rng2>
+      <x>182</x>
+      <y>0</y>
+      <cn>3</cn>
+      <val>255.</val></rng2></dst></OCL_ReduceMinMaxFixture_Reduce--Reduce---640x480---8UC4--8UC4---0--CV_REDUCE_MAX->
 </opencv_storage>
