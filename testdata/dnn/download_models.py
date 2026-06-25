@@ -1449,6 +1449,11 @@ models = [
         url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/disk.onnx',
         sha='5f6a9069aed0af7302b67dcfb6d24b0d46707aec',
         filename='disk.onnx'),
+    Model(
+        name='DISK LightGlue (ONNX)',
+        url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/disk_lightglue.onnx',
+        sha='9c885c13df94a0cadd5fb577c278471b78cc7058',
+        filename='onnx/models/disk_lightglue.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
