@@ -73329,7 +73329,6 @@
       <data>
         2.7513703240000000e+09</data></val></product></MatType_Length_dot--dot---32FC1--1024->
  <!-- resumed -->
-
 <PatchNaNsFixture--PatchNaNs---640x480--32FC1->
   <src>
     <kind>65536</kind>
@@ -73639,7 +73638,6 @@
       <cn>3</cn>
       <val>1.7700000762939453e+01</val></rng2></src></PatchNaNsFixture--PatchNaNs---3840x2160--32FC4->
  <!-- resumed -->
-
 <OCL_FlipFixture_Flip--Flip---640x480--8UC3--FLIP_BOTH->
   <dst>
     <kind>655360</kind>
@@ -74088,7 +74086,6 @@
       <y>220</y>
       <val>421.</val></rng2></dst></OCL_FlipFixture_Flip--Flip---3840x2160--16UC1--FLIP_COLS->
  <!-- resumed -->
-
 <Size_MatType_NormType_norm2--norm2---640x480--8SC1--NORM_INF->
   <n>
     <kind>131072</kind>
@@ -76490,7 +76487,6 @@
       <data>
         1.4124675426202311</data></val></n></Size_MatType_NormType_norm2_mask--norm2_mask---127x61--64FC1--NORM_L2-NORM_RELATIVE->
 <!-- resumed -->
-
 <Size_MatType_NormType_norm--norm---640x480--8SC1--NORM_INF->
   <n>
     <kind>131072</kind>
@@ -77692,7 +77688,6 @@
       <data>
         206814.52062139678</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---127x61--64FC1--NORM_L2->
  <!-- resumed -->
-
 <Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---1920x1080--16UC3->
   <dst>
     <kind>65536</kind>
@@ -77771,4 +77766,276 @@
       <x>15</x>
       <y>53</y>
       <val>1576696853.</val></rng2></dst></Size_MatType_Mat_CopyToWithMask--Mat_CopyToWithMask---127x61--32SC2->
+ <!-- resumed -->
+ <!-- resumed -->
+<GemmTest_gemmSmall--gemmSmall----8--8--8---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-33607192.</min>
+    <max>38792324.</max>
+    <last>
+      <x>7</x>
+      <y>7</y>
+      <val>18784708.</val></last>
+    <rng1>
+      <x>4</x>
+      <y>5</y>
+      <val>-7233692.</val></rng1>
+    <rng2>
+      <x>1</x>
+      <y>3</y>
+      <val>-25796900.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----8--8--8---32FC1--0->
+<GemmTest_gemmSmall--gemmSmall----8--8--8---32FC1--0-GEMM_2_T->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-39182484.</min>
+    <max>34929936.</max>
+    <last>
+      <x>7</x>
+      <y>7</y>
+      <val>-4799922.</val></last>
+    <rng1>
+      <x>5</x>
+      <y>6</y>
+      <val>-4921206.</val></rng1>
+    <rng2>
+      <x>4</x>
+      <y>1</y>
+      <val>34929936.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----8--8--8---32FC1--0-GEMM_2_T->
+<GemmTest_gemmSmall--gemmSmall----32--32--32---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-89838992.</min>
+    <max>101660504.</max>
+    <last>
+      <x>31</x>
+      <y>31</y>
+      <val>-49527936.</val></last>
+    <rng1>
+      <x>9</x>
+      <y>10</y>
+      <val>28400782.</val></rng1>
+    <rng2>
+      <x>4</x>
+      <y>26</y>
+      <val>36172872.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----32--32--32---32FC1--0->
+<GemmTest_gemmSmall--gemmSmall----32--32--32---32FC1--0-GEMM_2_T->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-106842048.</min>
+    <max>85998312.</max>
+    <last>
+      <x>31</x>
+      <y>31</y>
+      <val>6237340.</val></last>
+    <rng1>
+      <x>22</x>
+      <y>25</y>
+      <val>26347738.</val></rng1>
+    <rng2>
+      <x>31</x>
+      <y>12</y>
+      <val>-8392901.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----32--32--32---32FC1--0-GEMM_2_T->
+<GemmTest_gemmSmall--gemmSmall----64--64--64---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-152236784.</min>
+    <max>150709840.</max>
+    <last>
+      <x>63</x>
+      <y>63</y>
+      <val>-34217084.</val></last>
+    <rng1>
+      <x>50</x>
+      <y>41</y>
+      <val>-46883476.</val></rng1>
+    <rng2>
+      <x>44</x>
+      <y>22</y>
+      <val>15078034.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----64--64--64---32FC1--0->
+<GemmTest_gemmSmall--gemmSmall----64--64--64---32FC1--0-GEMM_2_T->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-148141184.</min>
+    <max>150301392.</max>
+    <last>
+      <x>63</x>
+      <y>63</y>
+      <val>-64762808.</val></last>
+    <rng1>
+      <x>50</x>
+      <y>22</y>
+      <val>34074176.</val></rng1>
+    <rng2>
+      <x>47</x>
+      <y>25</y>
+      <val>44137576.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----64--64--64---32FC1--0-GEMM_2_T->
+<GemmTest_gemmSmall--gemmSmall----8--16--32---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-97708400.</min>
+    <max>99584312.</max>
+    <last>
+      <x>15</x>
+      <y>7</y>
+      <val>-10833675.</val></last>
+    <rng1>
+      <x>14</x>
+      <y>2</y>
+      <val>40989268.</val></rng1>
+    <rng2>
+      <x>4</x>
+      <y>3</y>
+      <val>22695528.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----8--16--32---32FC1--0->
+<GemmTest_gemmSmall--gemmSmall----8--16--32---32FC1--0-GEMM_2_T->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-80420168.</min>
+    <max>92848320.</max>
+    <last>
+      <x>15</x>
+      <y>7</y>
+      <val>15058462.</val></last>
+    <rng1>
+      <x>0</x>
+      <y>4</y>
+      <val>4516997.</val></rng1>
+    <rng2>
+      <x>12</x>
+      <y>3</y>
+      <val>-27125686.</val></rng2></dst></GemmTest_gemmSmall--gemmSmall----8--16--32---32FC1--0-GEMM_2_T->
+<GemmTest_gemmSquare--gemmSquare----256--256--256---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-364427840.</min>
+    <max>366226176.</max>
+    <last>
+      <x>255</x>
+      <y>255</y>
+      <val>95097584.</val></last>
+    <rng1>
+      <x>194</x>
+      <y>180</y>
+      <val>-162553312.</val></rng1>
+    <rng2>
+      <x>27</x>
+      <y>9</y>
+      <val>45310872.</val></rng2></dst></GemmTest_gemmSquare--gemmSquare----256--256--256---32FC1--0->
+<GemmTest_gemmSquare--gemmSquare----512--512--512---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-637008192.</min>
+    <max>613151424.</max>
+    <last>
+      <x>511</x>
+      <y>511</y>
+      <val>98597040.</val></last>
+    <rng1>
+      <x>268</x>
+      <y>384</y>
+      <val>15217336.</val></rng1>
+    <rng2>
+      <x>18</x>
+      <y>224</y>
+      <val>-35385540.</val></rng2></dst></GemmTest_gemmSquare--gemmSquare----512--512--512---32FC1--0->
+<GemmTest_gemmRect--gemmRect----1024--64--256---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-442590272.</min>
+    <max>427128512.</max>
+    <last>
+      <x>63</x>
+      <y>1023</y>
+      <val>56028736.</val></last>
+    <rng1>
+      <x>45</x>
+      <y>707</y>
+      <val>56992080.</val></rng1>
+    <rng2>
+      <x>62</x>
+      <y>135</y>
+      <val>-43272348.</val></rng2></dst></GemmTest_gemmRect--gemmRect----1024--64--256---32FC1--0->
+<GemmTest_gemmRect--gemmRect----256--1024--512---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-606667904.</min>
+    <max>628588928.</max>
+    <last>
+      <x>1023</x>
+      <y>255</y>
+      <val>181840672.</val></last>
+    <rng1>
+      <x>790</x>
+      <y>18</y>
+      <val>-6654720.</val></rng1>
+    <rng2>
+      <x>521</x>
+      <y>122</y>
+      <val>233476080.</val></rng2></dst></GemmTest_gemmRect--gemmRect----256--1024--512---32FC1--0->
+<GemmTest_gemmM1--gemmM1----1--64--2500---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-610855232.</min>
+    <max>644370240.</max>
+    <last>
+      <x>63</x>
+      <y>0</y>
+      <val>181861584.</val></last>
+    <rng1>
+      <x>61</x>
+      <y>0</y>
+      <val>30661264.</val></rng1>
+    <rng2>
+      <x>27</x>
+      <y>0</y>
+      <val>-387067936.</val></rng2></dst></GemmTest_gemmM1--gemmM1----1--64--2500---32FC1--0->
+<GemmTest_gemmM1--gemmM1----1--64--2500---32FC1--0-GEMM_1_T->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-610855360.</min>
+    <max>644370368.</max>
+    <last>
+      <x>63</x>
+      <y>0</y>
+      <val>181861600.</val></last>
+    <rng1>
+      <x>33</x>
+      <y>0</y>
+      <val>351892544.</val></rng1>
+    <rng2>
+      <x>38</x>
+      <y>0</y>
+      <val>-226602208.</val></rng2></dst></GemmTest_gemmM1--gemmM1----1--64--2500---32FC1--0-GEMM_1_T->
+<GemmTest_gemmN1--gemmN1----256--1--256---32FC1--0->
+  <dst>
+    <kind>65536</kind>
+    <type>5</type>
+    <min>-340182816.</min>
+    <max>340073184.</max>
+    <last>
+      <x>0</x>
+      <y>255</y>
+      <val>70397312.</val></last>
+    <rng1>
+      <x>0</x>
+      <y>194</y>
+      <val>31710708.</val></rng1>
+    <rng2>
+      <x>0</x>
+      <y>111</y>
+      <val>13911731.</val></rng2></dst></GemmTest_gemmN1--gemmN1----256--1--256---32FC1--0->
 </opencv_storage>
