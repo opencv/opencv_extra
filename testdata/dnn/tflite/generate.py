@@ -180,6 +180,22 @@ def strided_slice(x):
 inp = np.random.standard_normal((2, 1, 1, 4)).astype(np.float32)
 save_tflite_model(strided_slice, inp, 'strided_slice')
 
+# Integer indexing sets shrink_axis_mask: one shrunk axis.
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 3, 4], dtype=tf.float32)])
+def strided_slice_shrink_1(x):
+    return x[1]
+
+inp = np.random.standard_normal((2, 3, 4)).astype(np.float32)
+save_tflite_model(strided_slice_shrink_1, inp, 'strided_slice_shrink_1')
+
+# Two shrunk axes.
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 3, 4], dtype=tf.float32)])
+def strided_slice_shrink_2(x):
+    return x[1, 2]
+
+inp = np.random.standard_normal((2, 3, 4)).astype(np.float32)
+save_tflite_model(strided_slice_shrink_2, inp, 'strided_slice_shrink_2')
+
 @tf.function(input_signature=[
     tf.TensorSpec(shape=[1, 4], dtype=tf.float32),
     tf.TensorSpec(shape=[1, 4], dtype=tf.float32),
