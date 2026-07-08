@@ -16,6 +16,18 @@ except ImportError:
     print("This script requires 'requests' library")
     exit(13)
 
+try:
+    import importlib.util
+    _spec = importlib.util.spec_from_file_location(
+        'pb_to_onnx',
+        os.path.join(os.path.dirname(__file__), 'onnx', 'tensorflow_to_onnx', 'pb_to_onnx.py')
+    )
+    _pb_to_onnx = importlib.util.module_from_spec(_spec)
+    _spec.loader.exec_module(_pb_to_onnx)
+    pb_to_onnx_convert = _pb_to_onnx.convert
+except Exception:
+    pb_to_onnx_convert = None
+
 
 class BuiltinDownloader:
     MB = 1024*1024
@@ -172,14 +184,25 @@ class Processor:
         except Exception as e:
             print('  rename failed: {}'.format(e))
 
+    def _run_convert(self, mdl):
+        if mdl.convert_to_onnx and pb_to_onnx_convert is not None:
+            pb_to_onnx_convert(mdl.filename)
+        elif mdl.convert_to_onnx:
+            print('  [convert] pb_to_onnx not available — skipping ONNX conversion')
+
     def get_sub(self, arch, mdl):
         print('** {}'.format(mdl.filename))
         if self.verify(mdl):
+            self._run_convert(mdl)
             return True
         if self.ref_copy(mdl):
+            self._run_convert(mdl)
             return True
         self.prepare_folder(mdl.filename)
-        return self.extract(arch, mdl) and self.verify(mdl)
+        ok = self.extract(arch, mdl) and self.verify(mdl)
+        if ok:
+            self._run_convert(mdl)
+        return ok
 
     def get(self, mdl):
         print("* {}".format(mdl.name))
@@ -211,6 +234,7 @@ class Processor:
             if len(mdl.sub) > 0:
                 return all(self.get_sub(mdl.filename, m) for m in mdl.sub)
             else:
+                self._run_convert(mdl)
                 return True
         else:
             return False
@@ -226,6 +250,7 @@ class Model:
         self.member = kwargs.pop('member', None)
         self.sub = kwargs.pop('sub', [])
         self.large = kwargs.pop('large', False)
+        self.convert_to_onnx = kwargs.pop('convert_to_onnx', False)
         if not isinstance(self.url, list) and self.url:
             self.url = [self.url]
         # TODO: add completeness assertion
@@ -261,10 +286,10 @@ models = [
         sha='9116a64c0fbe4459d18f4bb6b56d647b63920377',
         filename='bvlc_alexnet.caffemodel'),
     Model(
-        name='Inception',
-        url='https://github.com/petewarden/tf_ios_makefile_example/raw/master/data/tensorflow_inception_graph.pb',
-        sha='c8a5a000ee8d8dd75886f152a50a9c5b53d726a5',
-        filename='tensorflow_inception_graph.pb'),
+        name='Inception (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/tensorflow_inception_graph/tensorflow_inception_graph_2026jul.onnx?download=true',
+        sha='2dec49f8fea37936ee2c43c627627d1aaf721500',
+        filename='onnx/models/tensorflow_inception_graph.onnx'),
     Model(
         name='Fcn',
         url='http://dl.caffe.berkeleyvision.org/fcn8s-heavy-pascal.caffemodel',
@@ -367,28 +392,20 @@ models = [
             )
         ]),
     Model(
-        name='MobileNet-SSD v1 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
-        sha='6157ddb6da55db2da89dd561eceb7f944928e317',
-        filename='ssd_mobilenet_v1_coco_2017_11_17.tar.gz',
-        sub=[
-            Model(
-                member='ssd_mobilenet_v1_coco_2017_11_17/frozen_inference_graph.pb',
-                sha='9e4bcdd98f4c6572747679e4ce570de4f03a70e2',
-                filename='ssd_mobilenet_v1_coco_2017_11_17.pb'
-            )
-        ]),
+        name='MobileNet-SSD v1 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17_2026jul.onnx?download=true',
+        sha='c6f0e0ce4a97a66d228572f5819cab8aecbdc74a',
+        filename='onnx/models/ssd_mobilenet_v1_coco.onnx'),
+    Model(  # same model, full-date name expected by test_int8_layers.cpp
+        name='MobileNet-SSD v1 2017_11_17 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17_2026jul.onnx?download=true',
+        sha='c6f0e0ce4a97a66d228572f5819cab8aecbdc74a',
+        filename='onnx/models/ssd_mobilenet_v1_coco_2017_11_17.onnx'),
     Model(
-        name='MobileNet-SSD v2 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
-        sha='69c93d29e292bc9682396a5c78355b1dfe481b61',
-        filename='ssd_mobilenet_v2_coco_2018_03_29.tar.gz',
-        sub=[
-            Model(
-                member='ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb',
-                sha='35d571ac314f1d32ae678a857f87cc0ef6b220e8',
-                filename='ssd_mobilenet_v2_coco_2018_03_29.pb')
-        ]),
+        name='MobileNet-SSD v2 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v2_coco_2018_03_29/ssd_mobilenet_v2_coco_2018_03_29_2026jul.onnx?download=true',
+        sha='f418d1cbd169afdace1b5e821d838b83acf9fddf',
+        filename='onnx/models/ssd_mobilenet_v2_coco_2018_03_29.onnx'),
     Model(
         name='Colorization (prototxt)',
         url='https://raw.githubusercontent.com/richzhang/colorization/caffe/models/colorization_deploy_v2.prototxt',
@@ -418,21 +435,15 @@ models = [
         sha='31fc22bfdd907567a04bb45b7cfad29966caddc1',
         filename='opencv_face_detector_fp16.caffemodel'),
     Model(
-        name='Face_detector (UINT8)',
-        url='https://github.com/opencv/opencv_3rdparty/raw/8033c2bc31b3256f0d461c919ecc01c2428ca03b/opencv_face_detector_uint8.pb',
-        sha='4f2fdf6f231d759d7bbdb94353c5a68690f3d2ae',
-        filename='opencv_face_detector_uint8.pb'),
+        name='Face_detector (UINT8, ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/opencv_face_detector_uint8/opencv_face_detector_uint8_2026jul.onnx?download=true',
+        sha='a0fbb561e9bf4afac30bd36d788e7ab5b481d29e',
+        filename='onnx/models/opencv_face_detector_uint8.onnx'),
     Model(
-        name='InceptionV2-SSD (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2017_11_17.tar.gz',
-        sha='b9546dcd1ba99282b5bfa81c460008c885ca591b',
-        filename='ssd_inception_v2_coco_2017_11_17.tar.gz',
-        sub=[
-            Model(
-                member='ssd_inception_v2_coco_2017_11_17/frozen_inference_graph.pb',
-                sha='554a75594e9fd1ccee291b3ba3f1190b868a54c9',
-                filename='ssd_inception_v2_coco_2017_11_17.pb')
-        ]),
+        name='InceptionV2-SSD (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_inception_v2_coco_2017_11_17/ssd_inception_v2_coco_2017_11_17_2026jul.onnx?download=true',
+        sha='26abe3044c9b9f76767752f66b215765a951cb56',
+        filename='onnx/models/ssd_inception_v2_coco_2017_11_17.onnx'),
     Model(
         name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
         url=[
@@ -512,60 +523,30 @@ models = [
         sha='520878f12e97cf820529daea502acca380f1cb8e',
         filename='yolov3.weights'),
     Model(
-        name='EAST',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
-        url='https://www.dropbox.com/s/r2ingd0l3zt8hxs/frozen_east_text_detection.tar.gz?dl=1',
-        sha='3ca8233d6edd748f7ed23246c8ca24cbf696bb94',
-        filename='frozen_east_text_detection.tar.gz',
-        sub=[
-            Model(
-                member='frozen_east_text_detection.pb',
-                sha='fffabf5ac36f37bddf68e34e84b45f5c4247ed06',
-                filename='frozen_east_text_detection.pb'),
-        ]),
+        name='EAST (ONNX)',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/east_text_detection/east_text_detection_2026jul.onnx?download=true',
+        sha='4dbe8ff1a7d4cf0cd26ef83edac1979f7ef51cf7',
+        filename='onnx/models/east_text_detection.onnx'),
     Model(
-        name='Faster-RCNN, InveptionV2 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sha='c710f25e5c6a3ce85fe793d5bf266d581ab1c230',
-        filename='faster_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sub=[
-            Model(
-                member='faster_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
-                sha='f2e4bf386b9bb3e25ddfcbbd382c20f417e444f3',
-                filename='faster_rcnn_inception_v2_coco_2018_01_28.pb'),
-        ]),
+        name='Faster-RCNN, InceptionV2 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/faster_rcnn_inception_v2_coco_2018_01_28/faster_rcnn_inception_v2_coco_2018_01_28_2026jul.onnx?download=true',
+        sha='812819aedc0600ba6d114d74884a5ceef7c66dda',
+        filename='onnx/models/faster_rcnn_inception_v2_coco_2018_01_28.onnx'),
     Model(
-        name='ssd_mobilenet_v1_ppn_coco (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03.tar.gz',
-        sha='549ae0fd82c202786abe53c306b191c578599c44',
-        filename='ssd_mobilenet_v1_ppn_coco.tar.gz',
-        sub=[
-            Model(
-                member='ssd_mobilenet_v1_ppn_shared_box_predictor_300x300_coco14_sync_2018_07_03/frozen_inference_graph.pb',
-                sha='7943c51c6305b38173797d4afbf70697cf57ab48',
-                filename='ssd_mobilenet_v1_ppn_coco.pb'),
-        ]),
+        name='ssd_mobilenet_v1_ppn_coco (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_ppn_coco/ssd_mobilenet_v1_ppn_coco_2026jul.onnx?download=true',
+        sha='541a6bf5c6acd57477aadd1d1011109e5e85647d',
+        filename='onnx/models/ssd_mobilenet_v1_ppn_coco.onnx'),
     Model(
-        name='mask_rcnn_inception_v2_coco_2018_01_28 (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sha='f8a920756744d0f7ee812b3ec2474979f74ab40c',
-        filename='mask_rcnn_inception_v2_coco_2018_01_28.tar.gz',
-        sub=[
-            Model(
-                member='mask_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.pb',
-                sha='c8adff66a1e23e607f57cf1a7cfabad0faa371f9',
-                filename='mask_rcnn_inception_v2_coco_2018_01_28.pb'),
-        ]),
+        name='mask_rcnn_inception_v2_coco_2018_01_28 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/mask_rcnn_inception_v2_coco_2018_01_28/mask_rcnn_inception_v2_coco_2018_01_28_2026jul.onnx?download=true',
+        sha='47d11219c7c3ff91d130971876b41fdfd263b9a5',
+        filename='onnx/models/mask_rcnn_inception_v2_coco_2018_01_28.onnx'),
     Model(
-        name='faster_rcnn_resnet50_coco (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
-        sha='3066e8dd156b99c4b4d78a2ccd13e33fc263beb7',
-        filename='faster_rcnn_resnet50_coco_2018_01_28.tar.gz',
-        sub=[
-            Model(
-                member='faster_rcnn_resnet50_coco_2018_01_28/frozen_inference_graph.pb',
-                sha='27feaef9924650299b2ef5d29f041627b6f298b2',
-                filename='faster_rcnn_resnet50_coco_2018_01_28.pb'),
-        ]),
+        name='faster_rcnn_resnet50_coco (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/faster_rcnn_resnet50_coco_2018_01_28/faster_rcnn_resnet50_coco_2018_01_28_2026jul.onnx?download=true',
+        sha='339b1079e66b5fb56bdf6ff98b0297a768302b20',
+        filename='onnx/models/faster_rcnn_resnet50_coco_2018_01_28.onnx'),
     Model(
         name='AlexNet (ONNX)',
         url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/alexnet/model/bvlcalexnet-8.onnx',
@@ -954,10 +935,10 @@ models = [
         sha='5960f7aef233d75f8f4020be1fd911b2d93fbffc',
         filename='onnx/models/lightweight_pose_estimation_201912.onnx'),
     Model(
-        name='EfficientDet-D0', # https://github.com/google/automl
-        url='https://www.dropbox.com/s/9mqp99fd2tpuqn6/efficientdet-d0.pb?dl=1',
-        sha='f178cc17b44e3ed2f3956a0adc1800a7d2a3b3ae',
-        filename='efficientdet-d0.pb'),
+        name='EfficientDet-D0 (ONNX)', # https://github.com/google/automl
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/efficientdet-d0/efficientdet-d0_2026jul.onnx?download=true',
+        sha='195f0a7802055869f0d465b292f301703525f128',
+        filename='onnx/models/efficientdet-d0.onnx'),
     Model(
         name='YOLOv4 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov4/yolov4.onnx',
