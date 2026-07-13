@@ -78,7 +78,7 @@ class BuiltinVerifier:
     def verify(self, filename, expected_sum):
         if not filename.is_file():
             return False
-        sha_calculator = hashlib.sha1()
+        sha_calculator = hashlib.sha256() if len(expected_sum) == 64 else hashlib.sha1()
         try:
             with open(filename, 'rb') as f:
                 while True:
@@ -288,7 +288,7 @@ models = [
     Model(
         name='Inception (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/tensorflow_inception_graph/tensorflow_inception_graph_2026jul.onnx?download=true',
-        sha='2dec49f8fea37936ee2c43c627627d1aaf721500',
+        sha='829db6e4282ef0758fec4601e655505662083a45a252e2b36ab34194afcf078f',
         filename='onnx/models/tensorflow_inception_graph.onnx'),
     Model(
         name='Fcn',
@@ -394,17 +394,17 @@ models = [
     Model(
         name='MobileNet-SSD v1 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17_2026jul.onnx?download=true',
-        sha='c6f0e0ce4a97a66d228572f5819cab8aecbdc74a',
+        sha='7423295086c7ceaca3ccc0059c16989456a08c3e4b8c05e2cc415240f9148e65',
         filename='onnx/models/ssd_mobilenet_v1_coco.onnx'),
     Model(  # same model, full-date name expected by test_int8_layers.cpp
         name='MobileNet-SSD v1 2017_11_17 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17_2026jul.onnx?download=true',
-        sha='c6f0e0ce4a97a66d228572f5819cab8aecbdc74a',
+        sha='7423295086c7ceaca3ccc0059c16989456a08c3e4b8c05e2cc415240f9148e65',
         filename='onnx/models/ssd_mobilenet_v1_coco_2017_11_17.onnx'),
     Model(
         name='MobileNet-SSD v2 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v2_coco_2018_03_29/ssd_mobilenet_v2_coco_2018_03_29_2026jul.onnx?download=true',
-        sha='f418d1cbd169afdace1b5e821d838b83acf9fddf',
+        sha='7ba2fdaa87b8cbbb52c16b5c6e31a7452c00e8ad68aec580bfb7b07f5b212619',
         filename='onnx/models/ssd_mobilenet_v2_coco_2018_03_29.onnx'),
     Model(
         name='Colorization (prototxt)',
@@ -437,12 +437,12 @@ models = [
     Model(
         name='Face_detector (UINT8, ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/opencv_face_detector_uint8/opencv_face_detector_uint8_2026jul.onnx?download=true',
-        sha='a0fbb561e9bf4afac30bd36d788e7ab5b481d29e',
+        sha='f5b1efe9c4e792a010ac36248d92b64c3d94f9bdec764951d1e8684d919b1e40',
         filename='onnx/models/opencv_face_detector_uint8.onnx'),
     Model(
         name='InceptionV2-SSD (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_inception_v2_coco_2017_11_17/ssd_inception_v2_coco_2017_11_17_2026jul.onnx?download=true',
-        sha='26abe3044c9b9f76767752f66b215765a951cb56',
+        sha='5834f7214c7b9d80a9f708d23a3539d93e632fb346aeb5b1d013e63443354009',
         filename='onnx/models/ssd_inception_v2_coco_2017_11_17.onnx'),
     Model(
         name='Faster-RCNN',  # https://github.com/rbgirshick/py-faster-rcnn
@@ -525,27 +525,27 @@ models = [
     Model(
         name='EAST (ONNX)',  # https://github.com/argman/EAST (a TensorFlow model), https://arxiv.org/abs/1704.03155v2 (a paper)
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/east_text_detection/east_text_detection_2026jul.onnx?download=true',
-        sha='4dbe8ff1a7d4cf0cd26ef83edac1979f7ef51cf7',
+        sha='63f96881e90b81f3f0e7fd79dc705ead31276da70d3c7dca008ca28d3554883a',
         filename='onnx/models/east_text_detection.onnx'),
     Model(
         name='Faster-RCNN, InceptionV2 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/faster_rcnn_inception_v2_coco_2018_01_28/faster_rcnn_inception_v2_coco_2018_01_28_2026jul.onnx?download=true',
-        sha='812819aedc0600ba6d114d74884a5ceef7c66dda',
+        sha='bcf541da5a58e9d8ab6c16e4c803ccc4e0da7dd62ad89311ae2a75c36b39835b',
         filename='onnx/models/faster_rcnn_inception_v2_coco_2018_01_28.onnx'),
     Model(
         name='ssd_mobilenet_v1_ppn_coco (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_ppn_coco/ssd_mobilenet_v1_ppn_coco_2026jul.onnx?download=true',
-        sha='541a6bf5c6acd57477aadd1d1011109e5e85647d',
+        sha='f1b6be9dc0aca33aa1f78d34f2b32fe23097325f1482a837cfc4fc8aa62425ca',
         filename='onnx/models/ssd_mobilenet_v1_ppn_coco.onnx'),
     Model(
         name='mask_rcnn_inception_v2_coco_2018_01_28 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/mask_rcnn_inception_v2_coco_2018_01_28/mask_rcnn_inception_v2_coco_2018_01_28_2026jul.onnx?download=true',
-        sha='47d11219c7c3ff91d130971876b41fdfd263b9a5',
+        sha='27cdd89df33ab94f61fd278350f66996efec3437937b5679a311ba55e386690f',
         filename='onnx/models/mask_rcnn_inception_v2_coco_2018_01_28.onnx'),
     Model(
         name='faster_rcnn_resnet50_coco (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/faster_rcnn_resnet50_coco_2018_01_28/faster_rcnn_resnet50_coco_2018_01_28_2026jul.onnx?download=true',
-        sha='339b1079e66b5fb56bdf6ff98b0297a768302b20',
+        sha='217613103b36eba4771087bdae63a7c04ed545e7850087f205990db7e5f18b88',
         filename='onnx/models/faster_rcnn_resnet50_coco_2018_01_28.onnx'),
     Model(
         name='AlexNet (ONNX)',
@@ -937,7 +937,7 @@ models = [
     Model(
         name='EfficientDet-D0 (ONNX)', # https://github.com/google/automl
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/efficientdet-d0/efficientdet-d0_2026jul.onnx?download=true',
-        sha='195f0a7802055869f0d465b292f301703525f128',
+        sha='db344f69adf1c529e08a36bbaa1779d98b4b81621a2f046656fb966bdfdc6298',
         filename='onnx/models/efficientdet-d0.onnx'),
     Model(
         name='YOLOv4 (ONNX)',
