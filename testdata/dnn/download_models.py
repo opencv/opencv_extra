@@ -380,18 +380,6 @@ models = [
         sha='9838007df750d483b5b5e90b92d76e8ada5a31c0',
         filename='fast_neural_style_instance_norm_feathers.t7'),
     Model(
-        name='MobileNet-SSD (TensorFlow)',
-        url='http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_11_06_2017.tar.gz',
-        sha='a88a18cca9fe4f9e496d73b8548bfd157ad286e2',
-        filename='ssd_mobilenet_v1_coco_11_06_217.tar.gz',
-        sub=[
-            Model(
-                member='ssd_mobilenet_v1_coco_11_06_2017/frozen_inference_graph.pb',
-                filename='ssd_mobilenet_v1_coco.pb',
-                sha='aaf36f068fab10359eadea0bc68388d96cf68139'
-            )
-        ]),
-    Model(
         name='MobileNet-SSD v1 (ONNX)',
         url='https://huggingface.co/opencv/opencv_contribution/resolve/main/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_coco_2017_11_17_2026jul.onnx?download=true',
         sha='7423295086c7ceaca3ccc0059c16989456a08c3e4b8c05e2cc415240f9148e65',
