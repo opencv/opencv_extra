@@ -78998,4 +78998,150 @@
       <y>1873</y>
       <cn>2</cn>
       <val>0.99973171949386597</val></rng2></dst></OCL_ReduceMinMaxFixture_Reduce--Reduce---3840x2160---32FC3--32FC3---1--CV_REDUCE_MAX->
+ <!-- resumed -->
+
+<Size_Channel_extractChannel--extractChannel---640x480--0->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>235.</val></last>
+    <rng1>
+      <x>629</x>
+      <y>172</y>
+      <val>17.</val></rng1>
+    <rng2>
+      <x>122</x>
+      <y>446</y>
+      <val>190.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---640x480--0->
+<Size_Channel_extractChannel--extractChannel---640x480--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>639</x>
+      <y>479</y>
+      <val>186.</val></last>
+    <rng1>
+      <x>80</x>
+      <y>310</y>
+      <val>104.</val></rng1>
+    <rng2>
+      <x>337</x>
+      <y>317</y>
+      <val>40.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---640x480--1->
+<Size_Channel_extractChannel--extractChannel---1280x720--0->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>179.</val></last>
+    <rng1>
+      <x>578</x>
+      <y>601</y>
+      <val>201.</val></rng1>
+    <rng2>
+      <x>467</x>
+      <y>82</y>
+      <val>233.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---1280x720--0->
+<Size_Channel_extractChannel--extractChannel---1280x720--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>80.</val></last>
+    <rng1>
+      <x>659</x>
+      <y>463</y>
+      <val>103.</val></rng1>
+    <rng2>
+      <x>610</x>
+      <y>374</y>
+      <val>105.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---1280x720--1->
+<Size_Channel_extractChannel--extractChannel---1920x1080--0->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>165.</val></last>
+    <rng1>
+      <x>1257</x>
+      <y>864</y>
+      <val>96.</val></rng1>
+    <rng2>
+      <x>92</x>
+      <y>393</y>
+      <val>166.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---1920x1080--0->
+<Size_Channel_extractChannel--extractChannel---1920x1080--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>87.</val></last>
+    <rng1>
+      <x>329</x>
+      <y>748</y>
+      <val>159.</val></rng1>
+    <rng2>
+      <x>438</x>
+      <y>535</y>
+      <val>9.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---1920x1080--1->
+<Size_Channel_extractChannel--extractChannel---127x61--0->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>126.</val></last>
+    <rng1>
+      <x>98</x>
+      <y>22</y>
+      <val>102.</val></rng1>
+    <rng2>
+      <x>31</x>
+      <y>7</y>
+      <val>34.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---127x61--0->
+<Size_Channel_extractChannel--extractChannel---127x61--1->
+  <dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>0.</min>
+    <max>254.</max>
+    <last>
+      <x>126</x>
+      <y>60</y>
+      <val>118.</val></last>
+    <rng1>
+      <x>12</x>
+      <y>42</y>
+      <val>209.</val></rng1>
+    <rng2>
+      <x>104</x>
+      <y>45</y>
+      <val>235.</val></rng2></dst></Size_Channel_extractChannel--extractChannel---127x61--1->
 </opencv_storage>
