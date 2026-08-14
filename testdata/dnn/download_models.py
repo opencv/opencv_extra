@@ -1263,6 +1263,12 @@ models = [
         sha='02723aa521990e57fe33d90b67977590c460e351',
         filename='onnx/models/aliked_lightglue.onnx'),
 
+    Model(
+        name='XFeat (ONNX)',
+        url='https://raw.githubusercontent.com/YangGuanyuhan/lightglue_opencv_project/main/model/xfeat.onnx',
+        sha='0d8bdfff4e123e5e0c04b9fe3b52e46555b8ba2c',
+        filename='onnx/models/xfeat.onnx'),
+
     # Original Intel Open Model Zoo models
     Model(
         name='age-gender-recognition-retail-0013-fp32 (xml)',
