@@ -3059,6 +3059,30 @@ def generate_tile_neg_axis(name="tile_neg_axis"):
 
 generate_tile_neg_axis()
 
+def generate_empty_constant_int64(name="empty_constant_int64"):
+    data = np.array([10, 20, 30], dtype=np.int64)   # runtime input keeps the Concat un-foldable
+
+    empty_tensor = onnx.helper.make_tensor("empty_val", TensorProto.INT64, [0], vals=[])
+    const_node = onnx.helper.make_node("Constant", [], ["empty_const"], value=empty_tensor)
+    concat_node = onnx.helper.make_node("Concat", ["data", "empty_const"], ["output"], axis=0)
+
+    X = onnx.helper.make_tensor_value_info("data", TensorProto.INT64, [3])
+    Y = onnx.helper.make_tensor_value_info("output", TensorProto.INT64, [3])
+    graph = onnx.helper.make_graph([const_node, concat_node], name, [X], [Y])
+    model = onnx.helper.make_model(graph, producer_name=name,
+                                   opset_imports=[onnx.helper.make_opsetid("", 13)])
+    model.ir_version = 9
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(name))
+    out = sess.run(["output"], {"data": data})[0]
+    np.save("data/input_{}.npy".format(name), data)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_empty_constant_int64()
+
 def gen_layer_norm_expanded(input_shape=[1, 4, 5], axis=-1, constant_as_initializers=False):
     X = onnx.helper.make_tensor_value_info("X", onnx.TensorProto.FLOAT, input_shape)
     Y = onnx.helper.make_tensor_value_info("Y", onnx.TensorProto.FLOAT, input_shape)
@@ -3155,6 +3179,118 @@ def gen_layer_norm_expanded(input_shape=[1, 4, 5], axis=-1, constant_as_initiali
 
 gen_layer_norm_expanded()
 gen_layer_norm_expanded(constant_as_initializers=True)
+
+def generate_simplified_layer_normalization(name="simplified_layer_normalization"):
+    np.random.seed(0x12345)
+    B, S, H = 1, 4, 8
+    eps = 1e-5
+    x = np.random.randn(B, S, H).astype(np.float32)
+    scale = np.random.randn(H).astype(np.float32)
+
+    def init(nm, arr):
+        return onnx.helper.make_tensor(nm, TensorProto.FLOAT, list(arr.shape), arr.tobytes(), raw=True)
+    X = onnx.helper.make_tensor_value_info("x", TensorProto.FLOAT, [B, S, H])
+    Y = onnx.helper.make_tensor_value_info("y", TensorProto.FLOAT, [B, S, H])
+
+    node = onnx.helper.make_node("SimplifiedLayerNormalization", ["x", "scale"], ["y"],
+                                 domain="com.microsoft", axis=-1, epsilon=eps)
+    graph = onnx.helper.make_graph([node], name, [X], [Y], [init("scale", scale)])
+    model = onnx.helper.make_model(graph, producer_name=name,
+        opset_imports=[onnx.helper.make_opsetid("", 13), onnx.helper.make_opsetid("com.microsoft", 1)])
+    model.ir_version = 9
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    eps_t = onnx.helper.make_tensor("eps", TensorProto.FLOAT, [], [eps])
+    ref_nodes = [
+        onnx.helper.make_node("Mul", ["x", "x"], ["sq"]),
+        onnx.helper.make_node("ReduceMean", ["sq"], ["ms"], axes=[-1], keepdims=1),
+        onnx.helper.make_node("Add", ["ms", "eps"], ["mse"]),
+        onnx.helper.make_node("Sqrt", ["mse"], ["rms"]),
+        onnx.helper.make_node("Div", ["x", "rms"], ["xn"]),
+        onnx.helper.make_node("Mul", ["xn", "scale"], ["y"]),
+    ]
+    ref_graph = onnx.helper.make_graph(ref_nodes, name + "_ref", [X], [Y],
+                                       [init("scale", scale), eps_t])
+    ref_model = onnx.helper.make_model(ref_graph,
+        opset_imports=[onnx.helper.make_opsetid("", 13)])
+    ref_model.ir_version = 9
+    onnx.checker.check_model(ref_model)
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession(ref_model.SerializeToString())
+    y = sess.run(["y"], {"x": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), y)
+
+generate_simplified_layer_normalization()
+
+def generate_matmulnbits(name, bits, K=32, block_size=16):
+    np.random.seed(0x12345)
+    M, N = 3, 4
+    n_blk = (K + block_size - 1) // block_size   # ceil: K need not divide block_size (last block may be partial)
+    elems_per_byte = 8 // bits
+
+    A = (np.random.randn(M, K) * 0.3).astype(np.float32)
+    q = np.random.randint(0, 1 << bits, size=(N, n_blk, block_size)).astype(np.int32)
+    scales = (np.random.randn(N, n_blk) * 0.1).astype(np.float32)
+
+    blob = np.zeros((N, n_blk, block_size * bits // 8), np.uint8)
+    for n in range(N):
+        for b in range(n_blk):
+            for i in range(block_size):
+                byte, e = i // elems_per_byte, i % elems_per_byte
+                blob[n, b, byte] |= (int(q[n, b, i]) & ((1 << bits) - 1)) << (e * bits)
+
+    B = onnx.helper.make_tensor("B", TensorProto.UINT8, list(blob.shape), blob.tobytes(), raw=True)
+    sc = onnx.helper.make_tensor("scales", TensorProto.FLOAT, list(scales.shape), scales.reshape(-1))
+    node = onnx.helper.make_node("MatMulNBits", ["A", "B", "scales"], ["Y"],
+                                 domain="com.microsoft", K=K, N=N, bits=bits, block_size=block_size)
+    X = onnx.helper.make_tensor_value_info("A", TensorProto.FLOAT, [M, K])
+    Yv = onnx.helper.make_tensor_value_info("Y", TensorProto.FLOAT, [M, N])
+    graph = onnx.helper.make_graph([node], name, [X], [Yv], [B, sc])
+    model = onnx.helper.make_model(graph, producer_name=name,
+        opset_imports=[onnx.helper.make_opsetid("", 13), onnx.helper.make_opsetid("com.microsoft", 1)])
+    model.ir_version = 9
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(name))
+    Y = sess.run(["Y"], {"A": A})[0]
+    np.save("data/input_{}.npy".format(name), A)
+    np.save("data/output_{}.npy".format(name), Y)
+
+generate_matmulnbits("matmulnbits", 4)
+generate_matmulnbits("matmulnbits_8bits", 8)
+generate_matmulnbits("matmulnbits_partial_block", 4, K=34, block_size=16)
+
+def generate_resize_1d_linear(name="resize_1d_linear"):
+    # Rank-3 (N,C,W) Resize with linear/half_pixel: a 1-D resize of the last axis.
+    np.random.seed(0x12345)
+    C, W, W_out = 4, 7, 13
+    x = np.random.randn(1, C, W).astype(np.float32)
+
+    sizes = onnx.helper.make_tensor("sizes", TensorProto.INT64, [3], vals=[1, C, W_out])
+    resize = onnx.helper.make_node("Resize", ["x", "", "", "sizes"], ["y"],
+                                   mode="linear", coordinate_transformation_mode="half_pixel")
+
+    X = onnx.helper.make_tensor_value_info("x", TensorProto.FLOAT, [1, C, W])
+    Y = onnx.helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, C, W_out])
+    graph = onnx.helper.make_graph([resize], name, [X], [Y], [sizes])
+    model = onnx.helper.make_model(graph, producer_name=name,
+                                   opset_imports=[onnx.helper.make_opsetid("", 13)])
+    model.ir_version = 9
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(name))
+    out = sess.run(["y"], {"x": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_resize_1d_linear()
 
 ################# GELU #################
 
@@ -3406,3 +3542,61 @@ node_concat2 = helper.make_node("Concat", inputs=["input_layer_blue_green", "old
 node_add = helper.make_node("Add", inputs=["concat1_out", "concat2_out"], outputs=["output"])
 graph = helper.make_graph([node_concat1, node_concat2, node_add], "net_input_graph", [bg1, r1, bg2, r2], [out])
 onnx.save(helper.make_model(graph, producer_name="opencv_test_generator"), os.path.join("models", "net_input.onnx"))
+
+def generate_attention_shared_shape_reshape(name="attention_shared_shape_reshape"):
+    np.random.seed(0x12345)
+    S, C, H = 4, 8, 2
+    D = C // H
+
+    def w(nm):
+        return numpy_helper.from_array((np.random.randn(C, C) / np.sqrt(C)).astype(np.float32), nm)
+
+    def i64(nm, arr):
+        return numpy_helper.from_array(np.array(arr, dtype=np.int64), nm)
+
+    initializers = [
+        w("Wq"), w("Wk"), w("Wv"),
+        numpy_helper.from_array(np.float32(np.sqrt(D)), "div_scalar"),
+        i64("q_shape", [-1, S, H, D]), i64("kv_shape", [-1, S, H, D]), i64("out_shape", [-1, S, C]),
+        i64("gather_idx", 0), i64("dim0", [0]), i64("dim_S", [S]), i64("dim_C", [C]),
+    ]
+    nodes = [
+        helper.make_node("MatMul", ["X", "Wq"], ["Q"]),
+        helper.make_node("MatMul", ["X", "Wk"], ["K"]),
+        helper.make_node("MatMul", ["X", "Wv"], ["V"]),
+        helper.make_node("Reshape", ["Q", "q_shape"], ["Qr"]),
+        helper.make_node("Transpose", ["Qr"], ["Qt"], perm=[0, 2, 1, 3]),
+        helper.make_node("Reshape", ["K", "kv_shape"], ["Kr"]),
+        helper.make_node("Transpose", ["Kr"], ["Kt"], perm=[0, 2, 3, 1]),
+        helper.make_node("Reshape", ["V", "kv_shape"], ["Vr"]),
+        helper.make_node("Transpose", ["Vr"], ["Vt"], perm=[0, 2, 1, 3]),
+        helper.make_node("MatMul", ["Qt", "Kt"], ["qk"]),
+        helper.make_node("Div", ["qk", "div_scalar"], ["qk_s"]),
+        helper.make_node("Softmax", ["qk_s"], ["attn"], axis=-1),
+        helper.make_node("MatMul", ["attn", "Vt"], ["av"]),
+        helper.make_node("Transpose", ["av"], ["avt"], perm=[0, 2, 1, 3]),
+        helper.make_node("Reshape", ["avt", "out_shape"], ["attn_out"]),
+        helper.make_node("Shape", ["Q"], ["shapeQ"]),
+        helper.make_node("Gather", ["shapeQ", "gather_idx"], ["gB"], axis=0),
+        helper.make_node("Unsqueeze", ["gB", "dim0"], ["gB1"]),
+        helper.make_node("Concat", ["gB1", "dim_S", "dim_C"], ["res_shape"], axis=0),
+        helper.make_node("Reshape", ["X", "res_shape"], ["Zr"]),
+        helper.make_node("Add", ["attn_out", "Zr"], ["Y"]),
+    ]
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, ["B", S, C])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, ["B", S, C])
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    model = onnx.shape_inference.infer_shapes(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    x = (np.random.randn(1, S, C) * 0.5).astype(np.float32)
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(name))
+    out = sess.run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_attention_shared_shape_reshape()
