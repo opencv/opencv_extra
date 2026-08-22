@@ -12858,6 +12858,8 @@
       <y>0</y>
       <val>0.</val></rng2></err></Path_Idx_Cn_NPoints_WSize_Deriv_OpticalFlowPyrLK_self--OpticalFlowPyrLK_self----cv-optflow-frames-VGA_-02d-png---1--1---15--15---11--true->
  <!-- resumed -->
+ <!-- resumed -->
+
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_GRAYSCALE->
   <warpMat>
     <kind>65536</kind>
@@ -12867,7 +12869,7 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1. 0. 5.66389704 0. 1. 7.19798422</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_GRAYSCALE->
+        1. 0. 5.65288925 0. 1. 6.80625343</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_GRAYSCALE->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_COLOR->
   <warpMat>
     <kind>65536</kind>
@@ -12877,7 +12879,7 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1. 0. 5.66389656 0. 1. 7.19798374</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_COLOR->
+        1. 0. 5.65288925 0. 1. 6.80625296</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_TRANSLATION--IMREAD_COLOR->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_GRAYSCALE->
   <warpMat>
     <kind>65536</kind>
@@ -12887,8 +12889,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        0.999972582 0.00740487082 -1.47809148 -0.00740487082 0.999972582
-        5.3313446</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_GRAYSCALE->
+        0.999907911 0.0135696558 -1.94013417 -0.0135696558 0.999907911
+        5.27542734</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_GRAYSCALE->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_COLOR->
   <warpMat>
     <kind>65536</kind>
@@ -12898,8 +12900,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        0.999972582 0.00740487454 -1.47809148 -0.00740487454 0.999972582
-        5.33134413</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_COLOR->
+        0.999907911 0.013569545 -1.94011176 -0.013569545 0.999907911
+        5.27540588</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_EUCLIDEAN--IMREAD_COLOR->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_GRAYSCALE->
   <warpMat>
     <kind>65536</kind>
@@ -12909,8 +12911,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.0263046 0.0180508792 6.01317453 0.00676508341 0.977224648
-        2.78590178</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_GRAYSCALE->
+        1.03070784 0.00589328166 6.50791359 0.00960378163 0.976322889
+        2.51011777</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_GRAYSCALE->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_COLOR->
   <warpMat>
     <kind>65536</kind>
@@ -12920,8 +12922,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.02630627 0.0180513505 6.01289415 0.00676529482 0.977226436
-        2.78549767</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_COLOR->
+        1.03070807 0.00589547772 6.50775671 0.00960300397 0.97632122
+        2.51032114</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_AFFINE--IMREAD_COLOR->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_GRAYSCALE->
   <warpMat>
     <kind>65536</kind>
@@ -12931,8 +12933,8 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.14262474 -0.00949726813 3.55660748 0.0169195123 0.979393125
-        5.60513973 0.000735168403 1.47581377e-05 1.</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_GRAYSCALE->
+        1.16192842 -0.00339250965 2.14204216 0.0217898674 0.988392591
+        5.29586744 0.000778613263 6.87419088e-05 1.</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_GRAYSCALE->
 <ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_COLOR->
   <warpMat>
     <kind>65536</kind>
@@ -12942,6 +12944,6 @@
       <cols>3</cols>
       <dt>f</dt>
       <data>
-        1.13884926 -0.00999647379 3.63919997 0.0151256379 0.977176189
-        5.65469217 0.000721809047 5.96383688e-06 1.</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_COLOR->
+        1.15949488 -0.00367058301 2.18706846 0.0206779055 0.986853778
+        5.30143356 0.000769746781 6.24072854e-05 1.</data></val></warpMat></ECCPerfTest_findTransformECC--findTransformECC---MOTION_HOMOGRAPHY--IMREAD_COLOR->
 </opencv_storage>
