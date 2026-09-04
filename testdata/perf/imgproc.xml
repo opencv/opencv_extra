@@ -107336,4 +107336,228 @@
       <x>32</x>
       <y>892</y>
       <val>-3300.</val></rng2></dst></Perf_Laplacian_Laplacian--Laplacian---1920x1080--5--CV_16S--BORDER_REFLECT_101->
+ <!-- resumed -->
+
+<MomentsFixture_val_Moments1--Moments1---640x480--CV_8U--false->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        39124895. 12510752883 9379611303 5334441882513 2999505846787
+        2999842783039 2558534016861549 1279186936099657 959429209066597
+        1079056657903407 1333947014093.1309 238957309.00488281
+        751220507497.34229 -329070600755 181031502667.98364
+        71353764208.863968 -298905253392.80743 1.000871429447048
+        1.0000001561039775 1.0004907508803145 0.99999996563185045
+        1.0000000189069389 1.0000000074521906 0.99999996878232078</data></val></m></MomentsFixture_val_Moments1--Moments1---640x480--CV_8U--false->
+<MomentsFixture_val_Moments1--Moments1---640x480--CV_8U--true->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        305983. 97749262. 73292609. 41669332334 23415294024 23430194277
+        19984249175512 9982052067088 7485411718160 8426117125691
+        10442273140.824841 1177282.6142730713 5874238738.9563789
+        735743119.859375 143990404.20006755 -181380928.02163538
+        -315143768.03613645 1.1115329761091137 1.0000125744385728
+        1.0627422133137872 1.000014206480891 1.0000027803140241
+        0.99999649771144838 0.99999391488167821</data></val></m></MomentsFixture_val_Moments1--Moments1---640x480--CV_8U--true->
+<MomentsFixture_val_Moments1--Moments1---1280x720--CV_8U--false->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        117409809. 75088654289 42214327580 64047472507135 26993527769937
+        20247751988692 61453381665162344 23024922524622648
+        12948287425842024 10926020880001416 16025027884938.016
+        -4361959853.84375 5069723139968.2207 -5147240051087
+        2434338354309.7183 2110265041410.7886 399215414622.63745
+        1.0011624921748974 0.99999968357345559 1.0003677693119428
+        0.99999996554014237 1.0000000162974627 1.0000000141278496
+        1.0000000026726763</data></val></m></MomentsFixture_val_Moments1--Moments1---1280x720--CV_8U--false->
+<MomentsFixture_val_Moments1--Moments1---1280x720--CV_8U--true->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        917955. 587045582. 330007980. 500759594514 211047035347
+        158290969026 480546873626054 180030676414097 101228626230175
+        85416536318640 125334993530.04272 1900441.8840637207
+        39651836560.032822 -3802436128.5625 3253426735.434473
+        -2228692451.6718392 352419597.87127382 1.1487409344918031
+        1.0000022553426229 1.04705670027214 0.99999529012228694
+        1.0000040298486406 0.99999723943583685 1.0000004365236255</data></val></m></MomentsFixture_val_Moments1--Moments1---1280x720--CV_8U--true->
+<MomentsFixture_val_Moments1--Moments1---1920x1080--CV_8U--false->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        264150491. 253414502548 142499804442 324222352631038
+        136690952773202 102545350131406 4.6668673470629075e+17
+        1.7487908332954365e+17 98369784382338832 83022131896627968
+        81107489958841.281 -17167872195.234375 25671768463156.047
+        19893966669633 5583493374809.1406 10754061415796.672
+        4544795549575.6621 1.0011624067418747 0.99999975395551766
+        1.0003679196181827 1.0000000175425545 1.0000000049235398
+        1.0000000094829609 1.0000000040076131</data></val></m></MomentsFixture_val_Moments1--Moments1---1920x1080--CV_8U--false->
+<MomentsFixture_val_Moments1--Moments1---1920x1080--CV_8U--true->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        2065521. 1981945574. 1114379845. 2536291912024 1069271746208
+        801989444569 3651352198742900 1368322405010600 769518219970728
+        649314480728965 634539203585.30249 -18407581.956420898
+        200764359983.29541 -46411654190.5 -10808709699.2941
+        -1515096194.4940326 -2100298086.3168387 1.1487303671900602
+        0.99999568542564943 1.0470573871719451 0.99999243073802813
+        0.99999823721096082 0.99999975290344167 0.99999965746305064</data></val></m></MomentsFixture_val_Moments1--Moments1---1920x1080--CV_8U--true->
+<MomentsFixture_val_Moments1--Moments1---127x61--CV_8U--false->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        984473. 62139303. 29516660. 5250420619 1865228003. 1192423786.
+        498898301619 157664565671 75350730707 54165151946
+        1328223895.2260337 2153595.9757087231 307448734.88398957
+        -178649053.83154297 -26583254.756916974 -43506554.336320587
+        -22356811.390001815 1.0013704542800785 1.0000022220677289
+        1.0003172239522928 0.99999981422284778 0.9999999723560723
+        0.99999995475753312 0.99999997675115082</data></val></m></MomentsFixture_val_Moments1--Moments1---127x61--CV_8U--false->
+<MomentsFixture_val_Moments1--Moments1---127x61--CV_8U--true->
+  <m>
+    <kind>65536</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>24</cols>
+      <dt>d</dt>
+      <data>
+        7714. 485753. 231444. 40952997. 14575418. 9339186. 3884513147
+        1228660170. 588088448. 423851892. 10361138.384156622
+        -479.8524568900466 2394305.6358096721 306466.557929039
+        -150552.56485425442 -49139.482126228664 -79015.507635892936
+        1.1741649540643566 0.99999191713776581 1.0402469286383091
+        1.0000586574724215 0.9999711840650608 0.99999059451739181
+        0.99998487624955701</data></val></m></MomentsFixture_val_Moments1--Moments1---127x61--CV_8U--true->
+ <!-- resumed -->
+
+<MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I1->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        2.6876461182379074e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I1->
+<MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I2->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.7122204128305896e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I2->
+<MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I3->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        2.1451675526414539e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---64--CONTOURS_MATCH_I3->
+<MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I1->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.7064437469072047e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I1->
+<MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I2->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.0871298835701815e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I2->
+<MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I3->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.3620208238853653e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---256--CONTOURS_MATCH_I3->
+<MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I1->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.5370436865724812e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I1->
+<MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I2->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        9.7921437862691363e-06</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I2->
+<MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I3->
+  <dist>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.2268157211784408e-05</data></val></dist></MatchShapesFixture_matchShapes--matchShapes---1024--CONTOURS_MATCH_I3->
 </opencv_storage>
