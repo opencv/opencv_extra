@@ -16,18 +16,6 @@ except ImportError:
     print("This script requires 'requests' library")
     exit(13)
 
-try:
-    import importlib.util
-    _spec = importlib.util.spec_from_file_location(
-        'pb_to_onnx',
-        os.path.join(os.path.dirname(__file__), 'onnx', 'tensorflow_to_onnx', 'pb_to_onnx.py')
-    )
-    _pb_to_onnx = importlib.util.module_from_spec(_spec)
-    _spec.loader.exec_module(_pb_to_onnx)
-    pb_to_onnx_convert = _pb_to_onnx.convert
-except Exception:
-    pb_to_onnx_convert = None
-
 
 class BuiltinDownloader:
     MB = 1024*1024
@@ -184,24 +172,14 @@ class Processor:
         except Exception as e:
             print('  rename failed: {}'.format(e))
 
-    def _run_convert(self, mdl):
-        if mdl.convert_to_onnx and pb_to_onnx_convert is not None:
-            pb_to_onnx_convert(mdl.filename)
-        elif mdl.convert_to_onnx:
-            print('  [convert] pb_to_onnx not available — skipping ONNX conversion')
-
     def get_sub(self, arch, mdl):
         print('** {}'.format(mdl.filename))
         if self.verify(mdl):
-            self._run_convert(mdl)
             return True
         if self.ref_copy(mdl):
-            self._run_convert(mdl)
             return True
         self.prepare_folder(mdl.filename)
         ok = self.extract(arch, mdl) and self.verify(mdl)
-        if ok:
-            self._run_convert(mdl)
         return ok
 
     def get(self, mdl):
@@ -234,7 +212,6 @@ class Processor:
             if len(mdl.sub) > 0:
                 return all(self.get_sub(mdl.filename, m) for m in mdl.sub)
             else:
-                self._run_convert(mdl)
                 return True
         else:
             return False
@@ -250,7 +227,6 @@ class Model:
         self.member = kwargs.pop('member', None)
         self.sub = kwargs.pop('sub', [])
         self.large = kwargs.pop('large', False)
-        self.convert_to_onnx = kwargs.pop('convert_to_onnx', False)
         if not isinstance(self.url, list) and self.url:
             self.url = [self.url]
         # TODO: add completeness assertion
@@ -1424,6 +1400,17 @@ models = [
         url='https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v0.1.0/disk.onnx',
         sha='5f6a9069aed0af7302b67dcfb6d24b0d46707aec',
         filename='disk.onnx'),
+    # Models added in https://huggingface.co/opencv/opencv_contribution/discussions/16
+    Model(
+        name='LapSRN x4 (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/refs%2Fpr%2F16/lapsrn/lapsrn_x4_2026sep.onnx?download=true',
+        sha='70474758dab65ae3f488bed94b11b60fb77578f9de3d45a66d72263dcfefadb7',
+        filename='../cv/dnn_superres/LapSRN_x4.onnx'),
+    Model(
+        name='Macbeth Chart Detector (ONNX)',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/refs%2Fpr%2F16/macbeth_chart_detector/macbeth_chart_detector_2026sep.onnx?download=true',
+        sha='356587d28bcea41d188a743b38f86e2c744fd892e3d41512b6a42b6af038f249',
+        filename='../cv/mcc/macbeth_chart_detector.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
