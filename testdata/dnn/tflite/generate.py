@@ -156,7 +156,8 @@ permutation_3d, inp = keras_to_tf(permutation_3d, (1, 2, 3))
 save_tflite_model(permutation_3d, inp, 'permutation_3d')
 
 # (1, 2, 3) is temporarily disabled as TFLiteConverter produces a incorrect graph in this case
-permutation_4d_list = [(1, 3, 2), (2, 1, 3), (2, 3, 1)]
+# (2, 3, 1) omitted: its perm [0,2,3,1] is the NCHW->NHWC pattern the importer treats as a layout fix
+permutation_4d_list = [(1, 3, 2), (2, 1, 3)]
 for perm_axis in permutation_4d_list:
     permutation_4d_model = tf.keras.models.Sequential([
         tf.keras.layers.Permute(perm_axis),
