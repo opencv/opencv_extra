@@ -251,6 +251,36 @@ models = [
         filename='onnx/models/yolo26n.onnx',
         large=True),
     Model(
+        name='YOLO26n (dynamic batch)',  # https://huggingface.co/onnx-community/yolo26n-ONNX
+        url='https://huggingface.co/onnx-community/yolo26n-ONNX/resolve/main/onnx/model.onnx',
+        sha='c78973ba8a9dab38bffca1bf88b73757a50aa8be',
+        filename='onnx/models/yolo26n_dynbatch.onnx',
+        large=True),
+    Model(
+        name='MobileNetV2 (dynamic batch)',  # https://huggingface.co/onnx-community/mobilenet_v2_1.0_224
+        url='https://huggingface.co/onnx-community/mobilenet_v2_1.0_224/resolve/main/onnx/model.onnx',
+        sha='a9fb6ec85dad72ae351b453f883d04eacdd3af92',
+        filename='onnx/models/mobilenet_v2_dynbatch.onnx',
+        large=True),
+    Model(
+        name='SegFormer-B3-ADE (dynamic batch)',  # https://huggingface.co/onnx-community/segformer-b3-finetuned-ade-512-512-ONNX
+        url='https://huggingface.co/onnx-community/segformer-b3-finetuned-ade-512-512-ONNX/resolve/main/onnx/model.onnx',
+        sha='81c93651fa683937f170c76c2742c0c72a658387',
+        filename='onnx/models/segformer_b3_ade_dynbatch.onnx',
+        large=True),
+    Model(
+        name='ViTPose-plus-small (dynamic batch)',  # https://huggingface.co/onnx-community/vitpose-plus-small-ONNX
+        url='https://huggingface.co/onnx-community/vitpose-plus-small-ONNX/resolve/main/onnx/model.onnx',
+        sha='7457db05cd628ad1d48016b62be48ace47d39bc4',
+        filename='onnx/models/vitpose_plus_small_dynbatch.onnx',
+        large=True),
+    Model(
+        name='YOLO26n-pose (dynamic batch)',  # https://huggingface.co/onnx-community/yolo26n-pose-ONNX
+        url='https://huggingface.co/onnx-community/yolo26n-pose-ONNX/resolve/main/onnx/model.onnx',
+        sha='bd48749685489b5499023d686a4262ca7f51866e',
+        filename='onnx/models/yolo26n_pose_dynbatch.onnx',
+        large=True),
+    Model(
         name='GoogleNet',
         url='http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel',
         sha='405fc5acd08a3bb12de8ee5e23a96bec22f08204',
