@@ -1,0 +1,4 @@
+{
+    "do_lower_case": true,
+    "model_max_length": 512
+}
