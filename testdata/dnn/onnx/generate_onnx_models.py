@@ -3707,3 +3707,151 @@ def generate_deconv_transform_add():
     export(deconv_add, (x, residual), ["input", "residual"], "deconv_transform_add_broadcast")
 
 generate_deconv_transform_add()
+
+# ########################## LayerNorm + Gather from one external data file ##########################
+
+def generate_layer_norm_external_data():
+    np.random.seed(0)
+    name = "layer_norm_external_data"
+    data_filename = name + ".onnx_data"
+
+    X_data       = np.random.randn(2, 3, 4).astype(np.float32)
+    scale_data   = np.random.randn(4).astype(np.float32)
+    bias_data    = np.random.randn(4).astype(np.float32)
+    indices_data = np.array([0, 2], dtype=np.int64)
+
+    payload = bytearray()
+    offsets = {}
+    for tensor_name, arr in (("scale", scale_data), ("bias", bias_data), ("indices", indices_data)):
+        offsets[tensor_name] = (len(payload), arr.nbytes)
+        payload += arr.tobytes()
+    # location is resolved against the model's own directory, so the payload sits beside it.
+    with open("models/{}".format(data_filename), "wb") as f:
+        f.write(payload)
+
+    np_to_onnx = {np.dtype("float32"): TensorProto.FLOAT, np.dtype("int64"): TensorProto.INT64}
+
+    def external_tensor(tensor_name, arr):
+        offset, length = offsets[tensor_name]
+        tensor = TensorProto()
+        tensor.name = tensor_name
+        tensor.data_type = np_to_onnx[arr.dtype]
+        tensor.dims.extend(arr.shape)
+        tensor.data_location = TensorProto.EXTERNAL
+        for key, value in (("location", data_filename), ("offset", str(offset)),
+                           ("length", str(length))):
+            entry = tensor.external_data.add()
+            entry.key, entry.value = key, value
+        return tensor
+
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, X_data.shape)
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [2, 2, 4])
+    nodes = [helper.make_node("LayerNormalization", ["X", "scale", "bias"], ["N"],
+                              axis=-1, epsilon=1e-5),
+             helper.make_node("Gather", ["N", "indices"], ["Y"], axis=1)]
+    initializers = [external_tensor("scale", scale_data), external_tensor("bias", bias_data),
+                    external_tensor("indices", indices_data)]
+    graph = helper.make_graph(nodes, "LayerNormExternalData", [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    onnx.save_model(model, "models/{}.onnx".format(name))
+    # Checked by path so the external payload resolves beside the model.
+    onnx.checker.check_model("models/{}.onnx".format(name))
+
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(None, {"X": X_data})[0]
+    np.save("data/input_{}.npy".format(name), X_data)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_layer_norm_external_data()
+
+# ########################## LayerNorm + Gather at unaligned offsets ##########################
+
+def generate_layer_norm_external_data_unaligned():
+    np.random.seed(0)
+    name = "layer_norm_external_data_unaligned"
+    data_filename = name + ".onnx_data"
+
+    C = 1024
+    X_data       = np.random.randn(2, 3, C).astype(np.float32)
+    scale_data   = np.random.randn(C).astype(np.float32)
+    bias_data    = np.random.randn(C).astype(np.float32)
+    indices_data = np.array([0, 2], dtype=np.int64)
+
+    # 100 and 8292 are multiples of 4 but not of 4096; 16392 is a multiple of 8 but not of 4096.
+    offsets = {"scale": 100, "bias": 8292, "indices": 16392}
+    payload = bytearray()
+    for tensor_name, arr in (("scale", scale_data), ("bias", bias_data), ("indices", indices_data)):
+        off = offsets[tensor_name]
+        assert off >= len(payload), "offsets must be ascending"
+        payload += b"\x00" * (off - len(payload))
+        payload += arr.tobytes()
+    with open("models/{}".format(data_filename), "wb") as f:
+        f.write(payload)
+
+    np_to_onnx = {np.dtype("float32"): TensorProto.FLOAT, np.dtype("int64"): TensorProto.INT64}
+
+    def external_tensor(tensor_name, arr):
+        tensor = TensorProto()
+        tensor.name = tensor_name
+        tensor.data_type = np_to_onnx[arr.dtype]
+        tensor.dims.extend(arr.shape)
+        tensor.data_location = TensorProto.EXTERNAL
+        for key, value in (("location", data_filename), ("offset", str(offsets[tensor_name])),
+                           ("length", str(arr.nbytes))):
+            entry = tensor.external_data.add()
+            entry.key, entry.value = key, value
+        return tensor
+
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, X_data.shape)
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [2, 2, C])
+    nodes = [helper.make_node("LayerNormalization", ["X", "scale", "bias"], ["N"],
+                              axis=-1, epsilon=1e-5),
+             helper.make_node("Gather", ["N", "indices"], ["Y"], axis=1)]
+    initializers = [external_tensor("scale", scale_data), external_tensor("bias", bias_data),
+                    external_tensor("indices", indices_data)]
+    graph = helper.make_graph(nodes, "LayerNormExternalDataUnaligned", [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    onnx.save_model(model, "models/{}.onnx".format(name))
+    onnx.checker.check_model("models/{}.onnx".format(name))
+
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(None, {"X": X_data})[0]
+    np.save("data/input_{}.npy".format(name), X_data)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_layer_norm_external_data_unaligned()
+
+# ########################## External data shorter than the declared shape ##########################
+
+def generate_layer_norm_external_data_truncated():
+    np.random.seed(0)
+    name = "layer_norm_external_data_truncated"
+    data_filename = name + ".onnx_data"
+
+    C = 1024
+    with open("models/{}".format(data_filename), "wb") as f:
+        f.write(b"\x00" * 200)          # scale alone needs 100 + 4096 bytes
+
+    def external_tensor(tensor_name, dtype, dims, offset, length):
+        tensor = TensorProto()
+        tensor.name = tensor_name
+        tensor.data_type = dtype
+        tensor.dims.extend(dims)
+        tensor.data_location = TensorProto.EXTERNAL
+        for key, value in (("location", data_filename), ("offset", str(offset)),
+                           ("length", str(length))):
+            entry = tensor.external_data.add()
+            entry.key, entry.value = key, value
+        return tensor
+
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [2, 3, C])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [2, 3, C])
+    nodes = [helper.make_node("LayerNormalization", ["X", "scale", "bias"], ["Y"],
+                              axis=-1, epsilon=1e-5)]
+    initializers = [external_tensor("scale", TensorProto.FLOAT, [C], 100, 4 * C),
+                    external_tensor("bias", TensorProto.FLOAT, [C], 100 + 4 * C, 4 * C)]
+    graph = helper.make_graph(nodes, "LayerNormExternalDataTruncated", [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    onnx.save_model(model, "models/{}.onnx".format(name))
+
+generate_layer_norm_external_data_truncated()
