@@ -1155,6 +1155,94 @@ models = [
         sha='bba28400dfc264b1ed7ee95df718fada1879644d',
         filename='tflite/hair_segmentation.tflite'),
     Model(
+        name='MediaPipe Palm Detector Lite (TFLite)',
+        url=[
+            'https://storage.googleapis.com/mediapipe-assets/palm_detection_lite.tflite',
+            'https://dl.opencv.org/models/tflite/palm_detection_lite.tflite'
+        ],
+        sha='354f1eaff322f4049ffc5699898f2ba2df00961c',
+        filename='tflite/palm_detection_lite.tflite'),
+    Model(
+        name='MediaPipe Hand Landmark Lite (TFLite)',
+        url=[
+            'https://storage.googleapis.com/mediapipe-assets/hand_landmark_lite.tflite',
+            'https://dl.opencv.org/models/tflite/hand_landmark_lite.tflite'
+        ],
+        sha='7592c188e0bb124cd547b8ed46a3c5441810aea1',
+        filename='tflite/hand_landmark_lite.tflite'),
+    Model(
+        name='MediaPipe Pose Landmark Lite (TFLite)',
+        url=[
+            'https://storage.googleapis.com/mediapipe-assets/pose_landmark_lite.tflite',
+            'https://dl.opencv.org/models/tflite/pose_landmark_lite.tflite'
+        ],
+        sha='63191b9e476cf8eb1daa62b0434ca60676bcc9ac',
+        filename='tflite/pose_landmark_lite.tflite'),
+    Model(
+        name='MobileNet v2 (TFLite)',
+        url=[
+            'https://huggingface.co/litert-community/MobileNet-v2/resolve/main/mobilenet_v2.tflite',
+            'https://dl.opencv.org/models/tflite/mobilenet_v2.tflite'
+        ],
+        sha='490bfe16fb5fd4e52172422f163231fac174a8b2',
+        filename='tflite/mobilenet_v2.tflite'),
+    Model(
+        name='ResNet-18 (TFLite)',
+        url=[
+            'https://huggingface.co/litert-community/resnet18/resolve/main/resnet18.tflite',
+            'https://dl.opencv.org/models/tflite/resnet18.tflite'
+        ],
+        sha='8cb8b092147a3a97f9490120d73fc3807792f8d7',
+        filename='tflite/resnet18.tflite'),
+    Model(
+        name='SqueezeNet v1.1 (TFLite)',
+        url=[
+            'https://huggingface.co/litert-community/squeezenet1_1/resolve/main/squeezenet1_1.tflite',
+            'https://dl.opencv.org/models/tflite/squeezenet1_1.tflite'
+        ],
+        sha='ff9ff5b359e32ec31ee6174f573bf990713727b6',
+        filename='tflite/squeezenet1_1.tflite'),
+    Model(
+        name='YOLOv8n (TFLite)',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov8n/yolov8n.tflite',
+            'https://dl.opencv.org/models/tflite/yolov8n.tflite'
+        ],
+        sha='30a403b7698dbff8c4474e4a26959ba3af94cf21',
+        filename='tflite/yolov8n.tflite'),
+    Model(
+        name='YOLOv5nu (TFLite)',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/yolov5nu/yolov5nu.tflite',
+            'https://dl.opencv.org/models/tflite/yolov5nu.tflite'
+        ],
+        sha='abab2a8ff26d998ab86a8a3ee09dc69a40bea32d',
+        filename='tflite/yolov5nu.tflite'),
+    Model(
+        name='YOLO26n (TFLite)',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/yolo26n/yolo26n.tflite',
+            'https://dl.opencv.org/models/tflite/yolo26n.tflite'
+        ],
+        sha='a844afacbd6f00e5d84ae79f5f76ea24b5f1d840',
+        filename='tflite/yolo26n.tflite'),
+    Model(
+        name='YOLO26n-seg (TFLite)',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/yolo26n-seg/yolo26n-seg.tflite',
+            'https://dl.opencv.org/models/tflite/yolo26n-seg.tflite'
+        ],
+        sha='794d80d4878932e8c143610bb0d9b495cfa9fb26',
+        filename='tflite/yolo26n-seg.tflite'),
+    Model(
+        name='YuNet (TFLite)',
+        url=[
+            'https://github.com/Kazuhito00/YuNet-ONNX-TFLite-Sample/raw/main/model/model_float32.tflite',
+            'https://dl.opencv.org/models/tflite/yunet_float32.tflite'
+        ],
+        sha='2358b9b0cb9f568a0d494d0a6182bd04993fa5b0',
+        filename='tflite/yunet_float32.tflite'),
+    Model(
         name='YuNet',
         url='https://github.com/ShiqiYu/libfacedetection.train/raw/02246e79b1e976c83d1e135a85e0628120c93769/onnx/yunet_s_640_640.onnx',
         sha='acbe4b5976ade60c4b866a30d0720d71589c8bbc',
