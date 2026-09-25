@@ -1,0 +1,7 @@
+{
+  "method": "SentencePiece",
+  "tokenizer_class": "TokenizersBackend",
+  "eos_token": "</s>",
+  "bos_token": "<s>",
+  "pad_token": "<unk>"
+}
