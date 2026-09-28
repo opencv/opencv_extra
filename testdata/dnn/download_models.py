@@ -1024,12 +1024,12 @@ models = [
         ]),
     Model(
         name='wechat_qr_detect (onnx)',
-        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/detect.onnx',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/wechat_qr/detect_2026april.onnx',
         sha='8dff596d81e6c223f188defc2616df1c83a406ae',
         filename='wechat_2021-01/detect.onnx'),
     Model(
         name='wechat_super_resolution (onnx)',
-        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/sr.onnx',
+        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/wechat_qr/sr_2026april.onnx',
         sha='854b183017c2303cc429bcaf598cc7fc18e076a6',
         filename='wechat_2021-01/sr.onnx'),
     Model(
@@ -1042,16 +1042,6 @@ models = [
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/detect.caffemodel',
         sha='d587623a055cbd58a648de62a8c703c7abb05f6d',
         filename='wechat_2021-01/detect.caffemodel'),
-    Model(
-        name='wechat_qr_detect (onnx)',
-        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/detect.onnx',
-        sha='8dff596d81e6c223f188defc2616df1c83a406ae',
-        filename='wechat_2021-01/detect.onnx'),
-    Model(
-        name='wechat_super_resolution (onnx)',
-        url='https://github.com/omrope79/opencv-test-models/releases/download/v1.1.0/sr.onnx',
-        sha='854b183017c2303cc429bcaf598cc7fc18e076a6',
-        filename='wechat_2021-01/sr.onnx'),
     Model(
         name='wechat_super_resolution (prototxt)',
         url='https://raw.githubusercontent.com/WeChatCV/opencv_3rdparty/wechat_qrcode/sr.prototxt',
