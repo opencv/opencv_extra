@@ -3600,3 +3600,46 @@ def generate_attention_shared_shape_reshape(name="attention_shared_shape_reshape
     np.save("data/output_{}.npy".format(name), out)
 
 generate_attention_shared_shape_reshape()
+
+def generate_batchnorm_conv_fold(name, C_in, C_out, spatial, ksize, group):
+    # BatchNorm feeding a conv: fuseBN() folds the scale and shift into the conv weights,
+    # which are packed by then, so each weight layout the conv keeps has to be reached.
+    np.random.seed(0x12345)
+    S = spatial
+    W = (np.random.randn(C_out, C_in // group, ksize, ksize) / (C_in * ksize)).astype(np.float32)
+    initializers = [
+        numpy_helper.from_array(W, "W"),
+        numpy_helper.from_array((np.abs(np.random.randn(C_in)) + 0.5).astype(np.float32), "gamma"),
+        numpy_helper.from_array(np.random.randn(C_in).astype(np.float32), "beta"),
+        numpy_helper.from_array((np.random.randn(C_in) * 0.1).astype(np.float32), "mean"),
+        numpy_helper.from_array((np.abs(np.random.randn(C_in)) + 0.5).astype(np.float32), "var"),
+    ]
+    nodes = [
+        helper.make_node("BatchNormalization", ["X", "gamma", "beta", "mean", "var"], ["N"],
+                         epsilon=1e-5),
+        # The fold refuses a padded conv, and arms the MLAS 1x1 pre-pack only when every
+        # stride is stated, so both are explicit here.
+        helper.make_node("Conv", ["N", "W"], ["Y"], kernel_shape=[ksize, ksize],
+                         strides=[1, 1], dilations=[1, 1], pads=[0, 0, 0, 0], group=group),
+    ]
+    out_s = S - ksize + 1
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [1, C_in, S, S])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [1, C_out, out_s, out_s])
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    model = onnx.shape_inference.infer_shapes(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    x = (np.random.randn(1, C_in, S, S) * 0.5).astype(np.float32)
+    import onnxruntime as ort
+    sess = ort.InferenceSession("models/{}.onnx".format(name))
+    out = sess.run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_batchnorm_conv_fold("batchnorm_conv_dense", 8, 16, 10, 3, 1)
+generate_batchnorm_conv_fold("batchnorm_conv_depthwise", 8, 8, 10, 3, 8)
+generate_batchnorm_conv_fold("batchnorm_conv_grouped", 16, 16, 10, 3, 4)
+generate_batchnorm_conv_fold("batchnorm_conv_1x1_mlas", 256, 256, 16, 1, 1)
