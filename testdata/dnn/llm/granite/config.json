@@ -1,0 +1,9 @@
+{
+  "model_type": "gpt2",
+  "method": "BPE",
+  "vocab_size": 100352,
+  "tokenizer_class": "GPT2Tokenizer",
+  "eos_token": "<|end_of_text|>",
+  "bos_token": "<|start_of_role|>",
+  "pad_token": "<|pad|>"
+}

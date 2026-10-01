@@ -1,0 +1,179 @@
+{
+  "model": "granite-docling-258m",
+  "version": 1,
+  "generated_with": {
+    "tokenizers": "0.21.4",
+    "transformers": "4.55.0",
+    "tokenizer": "ibm-granite/granite-docling-258M"
+  },
+  "notes": "IDs generated directly from tokenizer.json via HuggingFace `tokenizers` library (Tokenizer.from_file); encode/decode round-trip verified.",
+  "samples": [
+    {
+      "name": "simple",
+      "text": "hello world",
+      "ids": [
+        15339,
+        1917
+      ]
+    },
+    {
+      "name": "numbers",
+      "text": "Invoice #12345, total: $1,234.56",
+      "ids": [
+        35774,
+        674,
+        4513,
+        1774,
+        11,
+        2860,
+        25,
+        400,
+        16,
+        11,
+        11727,
+        13,
+        3487
+      ]
+    },
+    {
+      "name": "punctuation",
+      "text": "Is this correct? Yes! (Maybe... 100%)",
+      "ids": [
+        3957,
+        420,
+        4495,
+        30,
+        7566,
+        0,
+        320,
+        22105,
+        1131,
+        220,
+        1041,
+        11587
+      ]
+    },
+    {
+      "name": "whitespace_runs",
+      "text": "col1     col2\t\tcol3\n\n\nrow2",
+      "ids": [
+        2119,
+        16,
+        257,
+        1400,
+        17,
+        197,
+        197,
+        2119,
+        18,
+        271,
+        198,
+        654,
+        17
+      ]
+    },
+    {
+      "name": "unicode_accents",
+      "text": "café naïve résumé",
+      "ids": [
+        936,
+        59958,
+        95980,
+        588,
+        9517,
+        1264,
+        978
+      ]
+    },
+    {
+      "name": "table_like",
+      "text": "| Name | Age | City |\n|------|-----|------|\n| Alice | 30 | NYC |",
+      "ids": [
+        91,
+        4076,
+        765,
+        13381,
+        765,
+        4409,
+        765,
+        198,
+        91,
+        16974,
+        91,
+        15431,
+        91,
+        16974,
+        91,
+        198,
+        91,
+        30505,
+        765,
+        220,
+        966,
+        765,
+        34385,
+        765
+      ]
+    },
+    {
+      "name": "mixed_case",
+      "text": "OCR Verification Test 2026-07-20",
+      "ids": [
+        94595,
+        56573,
+        3475,
+        220,
+        508,
+        1627,
+        12,
+        2589,
+        12,
+        508
+      ]
+    },
+    {
+      "name": "spanish",
+      "text": "¡Hola, mundo! ¿Cómo estás?",
+      "ids": [
+        40932,
+        69112,
+        11,
+        29452,
+        0,
+        29386,
+        96997,
+        1826,
+        7206,
+        30
+      ]
+    },
+    {
+      "name": "cjk",
+      "text": "文档解析测试",
+      "ids": [
+        17161,
+        44559,
+        96,
+        50338,
+        98871,
+        82805
+      ]
+    },
+    {
+      "name": "long_number",
+      "text": "3.14159265358979 and 42",
+      "ids": [
+        18,
+        13,
+        975,
+        11068,
+        14374,
+        17112,
+        25476,
+        323,
+        220,
+        2983
+      ]
+    }
+  ]
+}
