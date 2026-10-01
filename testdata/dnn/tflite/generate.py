@@ -45,6 +45,25 @@ def run_mediapipe_solution(solution, inp_size):
 run_tflite_model("face_landmark", (192, 192))
 run_tflite_model("face_detection_short_range", (128, 128))
 
+# YOLO exports: NCHW
+yolo_inp = np.expand_dims(cv.resize(image, (640, 640)), 0).astype(np.float32).transpose(0, 3, 1, 2) / 255
+for _m in ("yolo26n", "yolo26n-seg"):
+    run_tflite_model(_m, inp=yolo_inp)
+
+shuttle = cv.cvtColor(cv.imread(os.path.join(testdata, "dnn", "space_shuttle.jpg")), cv.COLOR_BGR2RGB)
+shuttle_nchw = np.expand_dims(cv.resize(shuttle, (224, 224)), 0).astype(np.float32).transpose(0, 3, 1, 2) / 255
+run_tflite_model("resnet18", inp=shuttle_nchw)
+run_tflite_model("mobilenet_v2", inp=shuttle_nchw)
+run_tflite_model("squeezenet1_1", inp=shuttle_nchw)
+
+run_tflite_model("yunet_float32", (160, 120))
+
+pose_img = cv.cvtColor(cv.imread(os.path.join(testdata, "dnn", "pose.png")), cv.COLOR_BGR2RGB)
+run_tflite_model("pose_landmark_lite", inp=np.expand_dims(cv.resize(pose_img, (256, 256)), 0).astype(np.float32) / 255)
+
+hand_crop = pose_img[138:278, 0:140]
+run_tflite_model("hand_landmark_lite", inp=np.expand_dims(cv.resize(hand_crop, (224, 224)), 0).astype(np.float32) / 255)
+
 # Download from https://storage.googleapis.com/mediapipe-assets/facemesh2_lite_iris_faceflag_2023_02_14.tflite?generation=1681322470818178
 # run_tflite_model("facemesh2_lite_iris_faceflag_2023_02_14", (192, 192))
 
@@ -137,7 +156,8 @@ permutation_3d, inp = keras_to_tf(permutation_3d, (1, 2, 3))
 save_tflite_model(permutation_3d, inp, 'permutation_3d')
 
 # (1, 2, 3) is temporarily disabled as TFLiteConverter produces a incorrect graph in this case
-permutation_4d_list = [(1, 3, 2), (2, 1, 3), (2, 3, 1)]
+# (2, 3, 1) omitted: its perm [0,2,3,1] is the NCHW->NHWC pattern the importer treats as a layout fix
+permutation_4d_list = [(1, 3, 2), (2, 1, 3)]
 for perm_axis in permutation_4d_list:
     permutation_4d_model = tf.keras.models.Sequential([
         tf.keras.layers.Permute(perm_axis),
@@ -179,6 +199,22 @@ def strided_slice(x):
 
 inp = np.random.standard_normal((2, 1, 1, 4)).astype(np.float32)
 save_tflite_model(strided_slice, inp, 'strided_slice')
+
+# Integer indexing sets shrink_axis_mask: one shrunk axis.
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 3, 4], dtype=tf.float32)])
+def strided_slice_shrink_1(x):
+    return x[1]
+
+inp = np.random.standard_normal((2, 3, 4)).astype(np.float32)
+save_tflite_model(strided_slice_shrink_1, inp, 'strided_slice_shrink_1')
+
+# Two shrunk axes.
+@tf.function(input_signature=[tf.TensorSpec(shape=[2, 3, 4], dtype=tf.float32)])
+def strided_slice_shrink_2(x):
+    return x[1, 2]
+
+inp = np.random.standard_normal((2, 3, 4)).astype(np.float32)
+save_tflite_model(strided_slice_shrink_2, inp, 'strided_slice_shrink_2')
 
 @tf.function(input_signature=[
     tf.TensorSpec(shape=[1, 4], dtype=tf.float32),
@@ -233,4 +269,69 @@ def save_minimum_test():
     np.save("minimum_output.npy", output)
 
 save_minimum_test()
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 4, 6], dtype=tf.float32)])
+def slice_op(x):
+    return tf.slice(x, [0, 1, 2], [1, 2, 3])
+
+inp = np.random.standard_normal((1, 4, 6)).astype(np.float32)
+save_tflite_model(slice_op, inp, 'slice')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 6], dtype=tf.float32)])
+def sign_op(x):
+    return tf.sign(x)
+
+inp = np.random.standard_normal((1, 6)).astype(np.float32)
+save_tflite_model(sign_op, inp, 'sign')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 3, 4], dtype=tf.float32)])
+def batch_matmul_op(x):
+    return tf.matmul(x, tf.constant(np.random.standard_normal((1, 4, 5)).astype(np.float32)))
+
+inp = np.random.standard_normal((1, 3, 4)).astype(np.float32)
+save_tflite_model(batch_matmul_op, inp, 'batch_matmul')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 4], dtype=tf.float32)])
+def select_op(x):
+    return tf.where(tf.constant([[True, False, True, False]]), x, tf.constant([[9., 9., 9., 9.]]))
+
+inp = np.random.standard_normal((1, 4)).astype(np.float32)
+save_tflite_model(select_op, inp, 'select')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 8], dtype=tf.float32)])
+def top_k_op(x):
+    return tf.math.top_k(x, k=3).values
+
+inp = np.random.standard_normal((1, 8)).astype(np.float32)
+save_tflite_model(top_k_op, inp, 'top_k')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 4], dtype=tf.float32)])
+def less_op(x):
+    return tf.cast(tf.less(x, tf.constant(0.0)), tf.float32)
+
+inp = np.random.standard_normal((1, 4)).astype(np.float32)
+save_tflite_model(less_op, inp, 'less')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 4], dtype=tf.float32)])
+def not_equal_op(x):
+    return tf.cast(tf.not_equal(x, tf.constant(0.0)), tf.float32)
+
+inp = np.random.standard_normal((1, 4)).astype(np.float32)
+save_tflite_model(not_equal_op, inp, 'not_equal')
+
+
+@tf.function(input_signature=[tf.TensorSpec(shape=[1, 4], dtype=tf.float32)])
+def logical_and_op(x):
+    return tf.cast(tf.logical_and(tf.not_equal(x, tf.constant(0.0)),
+                                  tf.constant([[True, True, False, False]])), tf.float32)
+
+inp = np.random.standard_normal((1, 4)).astype(np.float32)
+save_tflite_model(logical_and_op, inp, 'logical_and')
 
