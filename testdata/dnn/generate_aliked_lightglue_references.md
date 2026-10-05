@@ -1,54 +1,77 @@
 # ALIKED/LightGlue references
 
 Generate the eight NPY files from [#1366](https://github.com/opencv/opencv_extra/pull/1366)
-using ONNX Runtime CPU and OpenCV preprocessing.
+using ONNX Runtime CPU and OpenCV preprocessing. Requires `numpy`,
+`opencv-python` (or an OpenCV Python build), and `onnxruntime`. Match the ONNX
+Runtime version to the C++ build; Python 3.11+ is needed for ORT 1.25.1.
 
-Requires `numpy`, `opencv-python` (or an OpenCV Python build), and `onnxruntime`.
-Tested environments:
+## Resize and engine selection
 
-| Mode | Python | OpenCV | NumPy | ONNX Runtime |
-| --- | --- | --- | --- | --- |
-| Linear | 3.10 | 5.0.0-pre | 1.26.4 | 1.20.0 |
-| Linear exact | 3.13 | 4.13.0 | 2.4.5 | 1.25.1 |
+Current OpenCV `5.x` ALIKED uses `blobFromImage` with `INTER_LINEAR`. Use the
+script's default `--resize linear` for that branch. `--resize linear-exact`
+changes the input pixels and is **only** for a build with
+[opencv#30131](https://github.com/opencv/opencv/pull/30131), which enables
+`strictResize` in ALIKED. The OpenCV version string does not identify which
+preprocessing a build uses. Do not use exact resize with an unpatched `5.x` build.
 
-Match the ONNX Runtime version to the C++ build. Version 1.25.1 requires Python 3.11+.
+Inference in this script uses ORT CPU. The C++ tests default to `ENGINE_OPENCV`,
+which can produce different feature ordering and numerical results. To validate
+ORT references with the C++ ORT engine, build OpenCV with `WITH_ONNXRUNTIME=ON`
+and set `OPENCV_FORCE_DNN_ENGINE=2`. The script never changes the test engine;
+leave the variable unset to check the default OpenCV engine.
+
+## Commands
 
 From `testdata/dnn`:
 
 ```sh
 python download_models.py aliked
 
-# Check the original references.
-python generate_aliked_lightglue_references.py --resize linear --check
+# Regenerate for current 5.x, without replacing the checked-in references.
+python generate_aliked_lightglue_references.py --output-dir /tmp/aliked-linear
 
-# Generate references for opencv/opencv#30131.
-python generate_aliked_lightglue_references.py --resize linear-exact --output-dir /tmp/aliked-exact
+# Check all eight files AND run both C++ regressions against those files.
+OPENCV_FORCE_DNN_ENGINE=2 python generate_aliked_lightglue_references.py \
+    --output-dir /tmp/aliked-linear --check \
+    --test-binary /path/to/opencv-build/bin/opencv_test_features
+
+# Reproduce references for a build containing opencv#30131.
+python generate_aliked_lightglue_references.py \
+    --resize linear-exact --output-dir /tmp/aliked-exact
+OPENCV_FORCE_DNN_ENGINE=2 python generate_aliked_lightglue_references.py \
+    --resize linear-exact --output-dir /tmp/aliked-exact --check \
+    --test-binary /path/to/strict-resize-build/bin/opencv_test_features
+
+# Python/NPY comparison only; this cannot establish C++ compatibility.
+python generate_aliked_lightglue_references.py --check-npy
 ```
 
 Inputs are the downloaded models and `testdata/cv/shared/{box,box_in_scene}.png`.
 Use `--testdata` and `--models-dir` to override input locations. Omit `--output-dir`
-to replace the files in `testdata/dnn`; regenerate all eight together using the
-interpolation selected by your OpenCV branch.
+to replace the eight files in `testdata/dnn`. Regenerate all eight together.
 
-The script resizes uint8 images before `blobFromImage`, normalizes descriptors,
-and reproduces the C++ coordinate conversions. It prints versions and model
-hashes. `--check` writes nothing and exits 1 on mismatch: indices must match
-exactly; float tolerances are `1e-5`, or `1e-4` for LightGlue confidence scores.
+`--check` requires `--test-binary`, writes no reference files, and exits 1 on
+NPY mismatch or C++ failure. It stages a temporary testdata tree so both C++ tests
+read the selected images, models, and `--output-dir` references. Both
+`Features2d_ALIKED.Regression` and `Features2d_LightGlue.Regression` must actually
+run and pass; skipped or missing tests fail validation. An exact-resize NPY set
+can reproduce perfectly in Python and still fail a C++ build using linear resize.
+
+`--check-npy` compares Python-generated arrays only. Indices must match exactly;
+float tolerances are `1e-5`, or `1e-4` for LightGlue confidence scores. It prints
+explicitly that C++ tests were not run. ORT versions can change scores within
+small numerical differences even when keypoints, descriptors, and matches agree.
 
 ## Validation
 
-All eight original references pass comparison (211 matches). Exact linear
-interpolation produces 209 matches and identical arrays on repeated runs.
-Both C++ tests pass with `ENGINE_ORT` on opencv/opencv#30131 at `dc42d35511`
-(OpenCV 5.1.0-dev, ONNX Runtime 1.25.1):
+Tested with Python 3.13, OpenCV Python 4.13.0, NumPy 2.4.5, and ORT 1.25.1:
 
-```sh
-OPENCV_FORCE_DNN_ENGINE=2 OPENCV_TEST_DATA_PATH=/path/to/updated/testdata \
-    /path/to/opencv-build/bin/opencv_test_features \
-    --gtest_filter='Features2d_ALIKED.Regression:Features2d_LightGlue.Regression'
-```
+| C++ build | References | Engine | C++ result |
+| --- | --- | --- | --- |
+| `5.x` at `c90bebd67b` | Linear (211 matches) | ORT / OpenCV | Both pass |
+| `5.x` at `c90bebd67b` | Linear exact (209 matches) | ORT | Both fail; `--check` exits 1 |
+| #30131 at `dc42d35511` | Linear exact (209 matches) | ORT | Both pass |
 
-This requires `WITH_ONNXRUNTIME=ON`. The default `ENGINE_OPENCV` fails both
-ordered comparisons: it swaps rows 661/662 and 953/954 for `box`, and 630/631
-for `box_in_scene`, despite identical input blobs. Exact resize does not resolve
-this cross-engine ordering difference.
+The original eight committed references pass `--check-npy` with OpenCV
+5.0.0-pre, NumPy 1.26.4, and ORT 1.20.0. Validation also rejects skipped tests
+and a filter that runs no tests, even when the executable exits 0.
