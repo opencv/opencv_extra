@@ -3643,3 +3643,67 @@ generate_batchnorm_conv_fold("batchnorm_conv_dense", 8, 16, 10, 3, 1)
 generate_batchnorm_conv_fold("batchnorm_conv_depthwise", 8, 8, 10, 3, 8)
 generate_batchnorm_conv_fold("batchnorm_conv_grouped", 16, 16, 10, 3, 4)
 generate_batchnorm_conv_fold("batchnorm_conv_1x1_mlas", 256, 256, 16, 1, 1)
+
+# ConvTranspose + Add models for the TransformLayout+Add fusion and the
+# deconvolution spatial-chunking path.
+def generate_deconv_transform_add():
+    import onnxruntime as ort
+
+    class DeconvAdd(nn.Module):
+        def __init__(self, out_channels):
+            super(DeconvAdd, self).__init__()
+            self.deconv = nn.ConvTranspose2d(8, out_channels, kernel_size=3, stride=2, padding=1,
+                                             output_padding=1, bias=True)
+
+        def forward(self, x, residual):
+            return self.deconv(x) + residual
+
+    def init_deconv(deconv):
+        with torch.no_grad():
+            deconv.weight.uniform_(-0.5, 0.5)
+            deconv.bias.uniform_(-0.2, 0.2)
+
+    def export(model, inputs, input_names, name):
+        model.eval()
+        path = os.path.join("models", name + ".onnx")
+        with torch.no_grad():
+            expected = model(*inputs)
+            torch.onnx.export(model, inputs, path, input_names=input_names,
+                              output_names=["output"], opset_version=13, dynamo=False)
+        sess = ort.InferenceSession(path)
+        actual = sess.run(None, {n: i.numpy() for n, i in zip(input_names, inputs)})[0]
+        max_diff = np.abs(actual - expected.numpy()).max()
+        assert max_diff < 1e-5, "PyTorch/onnxruntime mismatch for {}: {}".format(name, max_diff)
+        return expected
+
+    torch.manual_seed(7)
+
+    # out_channels = 16 is a multiple of the block size C0 = 8, so the fused Add covers full channel blocks
+    deconv_add = DeconvAdd(16)
+    init_deconv(deconv_add.deconv)
+    x = torch.empty(1, 8, 6, 6).uniform_(-1, 1)
+    residual = torch.empty(1, 16, 12, 12).uniform_(-1, 1)
+    export(deconv_add, (x, residual), ["input", "residual"], "deconv_transform_add")
+
+    # out_channels = 12 is not a multiple of C0 = 8, so the last channel block is partial
+    deconv_add_partial = DeconvAdd(12)
+    init_deconv(deconv_add_partial.deconv)
+    x = torch.empty(1, 8, 6, 6).uniform_(-1, 1)
+    residual = torch.empty(1, 12, 12, 12).uniform_(-1, 1)
+    export(deconv_add_partial, (x, residual), ["input", "residual"], "deconv_transform_add_partial")
+
+    # out_channels = C0 = 8 gives a single output channel block (NK1 == 1), so the deconvolution
+    # is split into spatial chunks regardless of the number of threads
+    deconv_narrow = nn.ConvTranspose2d(4, 8, kernel_size=3, stride=2, padding=1, output_padding=1, bias=True)
+    init_deconv(deconv_narrow)
+    x = torch.empty(1, 4, 5, 5).uniform_(-1, 1)
+    output = export(deconv_narrow, (x,), ["input"], "deconv_spatial_narrow")
+    np.save(os.path.join("data", "input_deconv_spatial_narrow.npy"), x.numpy())
+    np.save(os.path.join("data", "output_deconv_spatial_narrow.npy"), np.ascontiguousarray(output.numpy()))
+
+    # Same weights as deconv_transform_add with a per-channel [1, 16, 1, 1] residual broadcast over H and W
+    residual = torch.empty(1, 16, 1, 1).uniform_(-1, 1)
+    x = torch.empty(1, 8, 6, 6).uniform_(-1, 1)
+    export(deconv_add, (x, residual), ["input", "residual"], "deconv_transform_add_broadcast")
+
+generate_deconv_transform_add()
