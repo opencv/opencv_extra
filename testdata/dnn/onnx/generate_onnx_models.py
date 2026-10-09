@@ -3292,6 +3292,23 @@ def generate_resize_1d_linear(name="resize_1d_linear"):
 
 generate_resize_1d_linear()
 
+def generate_resize_no_scales(name="resize_no_scales"):
+    # Resize carrying the data input only. roi/scales/sizes are all optional in
+    # the operator schema, so this passes onnx.checker, but the importer resolved
+    # "scales" at input index 2 for the opset-11+ layout and read past the node's
+    # input list. Load-only model, no reference data.
+    X = onnx.helper.make_tensor_value_info("X", TensorProto.FLOAT, [1, 1, 4, 4])
+    Y = onnx.helper.make_tensor_value_info("Y", TensorProto.FLOAT, [1, 1, 4, 4])
+    resize = onnx.helper.make_node("Resize", ["X"], ["Y"], mode="nearest")
+    graph = onnx.helper.make_graph([resize], name, [X], [Y])
+    model = onnx.helper.make_model(graph, producer_name=name,
+                                   opset_imports=[onnx.helper.make_opsetid("", 13)])
+    model.ir_version = 9
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+generate_resize_no_scales()
+
 ################# GELU #################
 
 x = torch.randn(1, 5, 20)
