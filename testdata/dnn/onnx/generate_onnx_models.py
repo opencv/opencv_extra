@@ -3225,9 +3225,8 @@ def generate_simplified_layer_normalization(name="simplified_layer_normalization
 
 generate_simplified_layer_normalization()
 
-def generate_matmulnbits(name, bits, K=32, block_size=16):
+def generate_matmulnbits(name, bits, K=32, block_size=16, M=3, N=4):
     np.random.seed(0x12345)
-    M, N = 3, 4
     n_blk = (K + block_size - 1) // block_size   # ceil: K need not divide block_size (last block may be partial)
     elems_per_byte = 8 // bits
 
@@ -3264,6 +3263,12 @@ def generate_matmulnbits(name, bits, K=32, block_size=16):
 generate_matmulnbits("matmulnbits", 4)
 generate_matmulnbits("matmulnbits_8bits", 8)
 generate_matmulnbits("matmulnbits_partial_block", 4, K=34, block_size=16)
+# M=1 takes a different kernel than M>1. block_size 16 and 32 straddle the width at
+# which a block stops filling one vector.
+generate_matmulnbits("matmulnbits_gemv", 4, K=128, block_size=32, M=1, N=32)
+generate_matmulnbits("matmulnbits_gemv_bs16", 4, K=128, block_size=16, M=1, N=32)
+generate_matmulnbits("matmulnbits_gemv_partial", 4, K=130, block_size=32, M=1, N=32)
+generate_matmulnbits("matmulnbits_gemv_8bits", 8, K=128, block_size=32, M=1, N=32)
 
 def generate_resize_1d_linear(name="resize_1d_linear"):
     # Rank-3 (N,C,W) Resize with linear/half_pixel: a 1-D resize of the last axis.
@@ -3707,3 +3712,74 @@ def generate_deconv_transform_add():
     export(deconv_add, (x, residual), ["input", "residual"], "deconv_transform_add_broadcast")
 
 generate_deconv_transform_add()
+
+def generate_slice_to_split(name="slice_to_split"):
+    # rotate_half, in both Slice arities: steps omitted on one pair, given on the other.
+    np.random.seed(0x12345)
+    B, H, S, D = 1, 2, 3, 8
+    END = np.iinfo(np.int64).max
+
+    def i64(nm, arr):
+        return numpy_helper.from_array(np.array(arr, dtype=np.int64), nm)
+
+    initializers = [i64("s0", [0]), i64("e0", [D // 2]), i64("s1", [D // 2]),
+                    i64("e1", [END]), i64("ax", [3]), i64("st", [1])]
+    nodes = [
+        helper.make_node("Slice", ["X", "s0", "e0", "ax"], ["a1"]),
+        helper.make_node("Slice", ["X", "s1", "e1", "ax"], ["a2"]),
+        helper.make_node("Neg", ["a2"], ["na2"]),
+        helper.make_node("Concat", ["na2", "a1"], ["R"], axis=-1),
+        helper.make_node("Slice", ["R", "s0", "e0", "ax", "st"], ["b1"]),
+        helper.make_node("Slice", ["R", "s1", "e1", "ax", "st"], ["b2"]),
+        helper.make_node("Neg", ["b2"], ["nb2"]),
+        helper.make_node("Concat", ["nb2", "b1"], ["Y"], axis=-1),
+    ]
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [B, H, S, D])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [B, H, S, D])
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    model = onnx.shape_inference.infer_shapes(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    x = (np.random.randn(B, H, S, D) * 0.5).astype(np.float32)
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_slice_to_split()
+
+def generate_input_scalar_fold(name="input_scalar_fold"):
+    # A scalar Mul before a MatMul and a scalar Div before a Softmax.
+    np.random.seed(0x12345)
+    S, C = 4, 8
+
+    initializers = [
+        numpy_helper.from_array((np.random.randn(C, C) / np.sqrt(C)).astype(np.float32), "W"),
+        numpy_helper.from_array(np.float32(0.35355), "mul_scalar"),
+        numpy_helper.from_array(np.float32(np.sqrt(C)), "div_scalar"),
+    ]
+    nodes = [
+        helper.make_node("Mul", ["X", "mul_scalar"], ["Xs"]),
+        helper.make_node("MatMul", ["Xs", "W"], ["P"]),
+        helper.make_node("Div", ["P", "div_scalar"], ["Ps"]),
+        helper.make_node("Softmax", ["Ps"], ["Y"], axis=-1),
+    ]
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [1, S, C])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [1, S, C])
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    model = onnx.shape_inference.infer_shapes(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    x = (np.random.randn(1, S, C) * 0.5).astype(np.float32)
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_input_scalar_fold()
