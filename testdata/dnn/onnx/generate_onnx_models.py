@@ -3724,3 +3724,86 @@ def generate_deconv_transform_add():
     export(deconv_add, (x, residual), ["input", "residual"], "deconv_transform_add_broadcast")
 
 generate_deconv_transform_add()
+
+# Attention blocks where a Q/K/V projection has no bias. The fused Attention layer still needs the
+# full QKV bias, so the missing part becomes zeros.
+def generate_attention_missing_bias():
+    import onnxruntime as ort
+
+    S, C, H = 6, 16, 2
+    D = C // H
+
+    # ViT-style: scores divided by sqrt(D) after Q*K^T (trOCR encoder, BEiT)
+    class VitAttention(nn.Module):
+        def __init__(self, q_bias, k_bias, v_bias):
+            super(VitAttention, self).__init__()
+            self.q = nn.Linear(C, C, bias=q_bias)
+            self.k = nn.Linear(C, C, bias=k_bias)
+            self.v = nn.Linear(C, C, bias=v_bias)
+
+        def heads(self, t):
+            return t.reshape(t.shape[0], t.shape[1], H, D).permute(0, 2, 1, 3)
+
+        def forward(self, x):
+            q, k, v = self.heads(self.q(x)), self.heads(self.k(x)), self.heads(self.v(x))
+            a = torch.softmax(torch.matmul(q, k.transpose(-1, -2)) / (D ** 0.5), dim=-1)
+            o = torch.matmul(a, v).permute(0, 2, 1, 3)
+            return o.reshape(o.shape[0], o.shape[1], C)
+
+    # CLIP-style: Q scaled before Q*K^T, batched matmuls on (B*H, S, D)
+    class ClipAttention(nn.Module):
+        def __init__(self):
+            super(ClipAttention, self).__init__()
+            self.q = nn.Linear(C, C)
+            self.k = nn.Linear(C, C, bias=False)
+            self.v = nn.Linear(C, C)
+
+        def heads(self, t, b, s):
+            return t.reshape(b, s, H, D).transpose(1, 2).reshape(b * H, s, D)
+
+        def forward(self, x):
+            b, s, _ = x.shape
+            q = self.heads(self.q(x) * (D ** -0.5), b, s)
+            k = self.heads(self.k(x), b, s)
+            v = self.heads(self.v(x), b, s)
+            a = torch.softmax(torch.bmm(q, k.transpose(1, 2)), dim=-1)
+            o = torch.bmm(a, v).reshape(b, H, s, D).transpose(1, 2)
+            return o.reshape(b, s, C)
+
+    # timm-style: one qkv projection, split by Reshape + Transpose + Gather
+    class CombinedQKVAttention(nn.Module):
+        def __init__(self):
+            super(CombinedQKVAttention, self).__init__()
+            self.qkv = nn.Linear(C, 3 * C, bias=False)
+
+        def forward(self, x):
+            b, s, _ = x.shape
+            qkv = self.qkv(x).reshape(b, s, 3, H, D).permute(2, 0, 3, 1, 4)
+            q, k, v = qkv[0], qkv[1], qkv[2]
+            a = torch.softmax(torch.matmul(q * (D ** -0.5), k.transpose(-2, -1)), dim=-1)
+            o = torch.matmul(a, v).transpose(1, 2)
+            return o.reshape(b, s, C)
+
+    def export(model, name):
+        for p in model.parameters():
+            nn.init.uniform_(p, -0.5, 0.5)
+        model.eval()
+        x = torch.empty(1, S, C).uniform_(-1, 1)
+        path = os.path.join("models", name + ".onnx")
+        with torch.no_grad():
+            expected = model(x)
+            torch.onnx.export(model, x, path, input_names=["input"], output_names=["output"],
+                              opset_version=13, dynamo=False)
+        actual = ort.InferenceSession(path).run(None, {"input": x.numpy()})[0]
+        max_diff = np.abs(actual - expected.numpy()).max()
+        assert max_diff < 1e-5, "PyTorch/onnxruntime mismatch for {}: {}".format(name, max_diff)
+        np.save(os.path.join("data", "input_" + name + ".npy"), x.numpy())
+        np.save(os.path.join("data", "output_" + name + ".npy"), np.ascontiguousarray(expected.numpy()))
+
+    torch.manual_seed(11)
+    export(VitAttention(False, False, False), "attention_no_qkv_bias")
+    export(VitAttention(True, False, True), "attention_no_k_bias")
+    export(ClipAttention(), "clip_attention_no_k_bias")
+    export(CombinedQKVAttention(), "attention_combined_qkv_no_bias")
+
+generate_attention_missing_bias()
