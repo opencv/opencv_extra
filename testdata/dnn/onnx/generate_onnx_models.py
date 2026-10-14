@@ -3806,4 +3806,13 @@ def generate_attention_missing_bias():
     export(ClipAttention(), "clip_attention_no_k_bias")
     export(CombinedQKVAttention(), "attention_combined_qkv_no_bias")
 
+    # K bias is one scalar instead of one value per channel, so it cannot fill the K part of the QKV bias
+    class ScalarBiasLinear(nn.Linear):
+        def forward(self, x):
+            return super(ScalarBiasLinear, self).forward(x) + 0.5
+
+    scalar_k_bias = VitAttention(True, False, True)
+    scalar_k_bias.k = ScalarBiasLinear(C, C, bias=False)
+    export(scalar_k_bias, "attention_scalar_k_bias")
+
 generate_attention_missing_bias()
