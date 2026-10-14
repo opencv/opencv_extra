@@ -4556,3 +4556,102 @@ def generate_layer_norm_external_data_truncated():
     onnx.save_model(model, "models/{}.onnx".format(name))
 
 generate_layer_norm_external_data_truncated()
+
+def save_with_ort_reference(name, nodes, initializers, x, out_shape):
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, list(x.shape))
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, out_shape)
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    model = onnx.shape_inference.infer_shapes(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+def generate_batchnorm_affine_fold(name, C, spatial, mul_shape, add_shape):
+    # BatchNorm, then Mul and Add by constants, as in DenseNet: the chain pass folds them into
+    # the BatchNorm when they are scalar or per channel. A per-row Mul must stay separate.
+    np.random.seed(0x12345)
+    S = spatial
+    rand = lambda *shape: np.asarray(np.random.randn(*shape), dtype=np.float32)
+    initializers = [
+        numpy_helper.from_array(np.abs(rand(C)) + 0.5, "gamma"),
+        numpy_helper.from_array(rand(C), "beta"),
+        numpy_helper.from_array(rand(C) * 0.1, "mean"),
+        numpy_helper.from_array(np.abs(rand(C)) + 0.5, "var"),
+        numpy_helper.from_array(rand(*mul_shape) + 1.0, "s"),
+        numpy_helper.from_array(rand(16, C, 3, 3) / (C * 3), "W"),
+    ]
+    nodes = [
+        helper.make_node("BatchNormalization", ["X", "gamma", "beta", "mean", "var"], ["N"],
+                         epsilon=1e-5),
+        helper.make_node("Mul", ["N", "s"], ["M"]),
+    ]
+    last = "M"
+    if add_shape is not None:
+        initializers.append(numpy_helper.from_array(rand(*add_shape), "b"))
+        nodes.append(helper.make_node("Add", ["M", "b"], ["A"]))
+        last = "A"
+    nodes += [
+        helper.make_node("Relu", [last], ["R"]),
+        helper.make_node("Conv", ["R", "W"], ["Y"], kernel_shape=[3, 3], pads=[1, 1, 1, 1]),
+    ]
+    save_with_ort_reference(name, nodes, initializers, rand(1, C, S, S) * 0.5, [1, 16, S, S])
+
+generate_batchnorm_affine_fold("batchnorm_mul_add", 12, 10, (12, 1, 1), ())
+# [C,1] on a C x C plane scales rows, so it must not be folded as per channel
+generate_batchnorm_affine_fold("batchnorm_mul_rows", 12, 12, (12, 1), None)
+
+def generate_block_layout_fixtures():
+    # Layers that keep or avoid block layout without a conversion around them.
+    # MaxPool and ConvTranspose precede the op under test, as Conv would absorb it.
+    np.random.seed(0x12345)
+    rand = lambda *shape: np.asarray(np.random.randn(*shape), dtype=np.float32)
+    weights = lambda name, *shape: numpy_helper.from_array(
+        rand(*shape) / np.float32(np.sqrt(np.prod(shape[1:]))), name)
+
+    # AveragePool keeps a plain input plain, borders included
+    nodes = [helper.make_node("AveragePool", ["X"], ["P"], kernel_shape=[3, 3], strides=[2, 2],
+                              pads=[1, 1, 1, 1], count_include_pad=0),
+             helper.make_node("AveragePool", ["P"], ["Y"], kernel_shape=[3, 3], strides=[1, 1],
+                              pads=[1, 1, 1, 1], count_include_pad=1)]
+    save_with_ort_reference("avgpool_plain_input", nodes, [], rand(2, 1, 15, 20), [2, 1, 8, 10])
+
+    # Mul by a scalar between two block layers stays in block layout
+    nodes = [helper.make_node("Conv", ["X", "W1"], ["A"], kernel_shape=[3, 3], pads=[1, 1, 1, 1]),
+             helper.make_node("MaxPool", ["A"], ["B"], kernel_shape=[2, 2], strides=[2, 2]),
+             helper.make_node("Mul", ["B", "s"], ["M"]),
+             helper.make_node("Conv", ["M", "W2"], ["Y"], kernel_shape=[3, 3], pads=[1, 1, 1, 1])]
+    inits = [weights("W1", 16, 8, 3, 3), weights("W2", 16, 16, 3, 3),
+             numpy_helper.from_array(np.array(0.5, np.float32), "s")]
+    save_with_ort_reference("eltwise_scalar_block", nodes, inits, rand(1, 8, 12, 12), [1, 16, 6, 6])
+
+    # global average and max pooling read and write block layout; C = 12 has padding lanes
+    for C in [12, 16]:
+        nodes = [helper.make_node("Conv", ["X", "W"], ["F"], kernel_shape=[3, 3],
+                                  pads=[1, 1, 1, 1]),
+                 helper.make_node("GlobalAveragePool", ["F"], ["GA"]),
+                 helper.make_node("GlobalMaxPool", ["F"], ["GM"]),
+                 helper.make_node("Conv", ["GA", "WA"], ["A"], kernel_shape=[1, 1]),
+                 helper.make_node("Conv", ["GM", "WM"], ["M"], kernel_shape=[1, 1]),
+                 helper.make_node("Concat", ["A", "M"], ["Y"], axis=1)]
+        inits = [weights("W", C, 8, 3, 3), weights("WA", 8, C, 1, 1), weights("WM", 8, C, 1, 1)]
+        save_with_ort_reference("global_pool_block_c{}".format(C), nodes, inits,
+                                rand(1, 8, 10, 10), [1, 16, 1, 1])
+
+    # elementwise ops between a 1-channel block output and Squeeze run after the conversion
+    nodes = [helper.make_node("ConvTranspose", ["X", "W"], ["T"], kernel_shape=[2, 2],
+                              strides=[2, 2]),
+             helper.make_node("Sigmoid", ["T"], ["S"]),
+             helper.make_node("Add", ["S", "b"], ["A"]),
+             helper.make_node("Squeeze", ["A", "axes"], ["Y"])]
+    inits = [weights("W", 8, 1, 2, 2),
+             numpy_helper.from_array(np.full((1, 1, 1, 1), 0.25, np.float32), "b"),
+             numpy_helper.from_array(np.array([1], np.int64), "axes")]
+    save_with_ort_reference("convtranspose_sigmoid_add", nodes, inits, rand(1, 8, 8, 8),
+                            [1, 16, 16])
+
+generate_block_layout_fixtures()
