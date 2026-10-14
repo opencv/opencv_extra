@@ -5,7 +5,8 @@
 """Generate the DISK NPY files under testdata/cv/features/disk.
 
 See generate_disk_references.md for dependencies and commands.
-Inference uses ONNX Runtime CPU; OpenCV supplies the C++ test preprocessing.
+Inference uses OpenCV DNN from the imported cv2, the engine the C++ test runs,
+so use the Python bindings of the OpenCV build under test.
 Use --check with --test-binary to validate the C++ regressions as well.
 """
 
@@ -20,7 +21,6 @@ import xml.etree.ElementTree as ET
 
 import cv2 as cv
 import numpy as np
-import onnxruntime as ort
 
 
 def canonical_order(xy):
@@ -59,16 +59,14 @@ def load_existing_counts(reference_dir, tags):
             for tag in tags}
 
 
-def make_session(path):
-    # Match OpenCV's CPU ORT engine, which uses default session options.
-    options = ort.SessionOptions()
+def make_net(path):
+    # Load the model the way DISK does, with readNetFromONNX and default backend/target
     print("Model: {} (SHA-1 {})".format(
         path, hashlib.sha1(path.read_bytes()).hexdigest()))
-    return ort.InferenceSession(str(path), options,
-                               providers=["CPUExecutionProvider"])
+    return cv.dnn.readNetFromONNX(str(path))
 
 
-def extract_features(session, image, net_size, interpolation):
+def extract_features(net, image, net_size, interpolation):
     # Current 5.x DISK calls blobFromImage directly (INTER_LINEAR internally).
     # For the strictResize variant, resize uint8 BGR before conversion to float:
     # INTER_LINEAR_EXACT falls back to INTER_LINEAR for float images.
@@ -76,8 +74,8 @@ def extract_features(session, image, net_size, interpolation):
         image, net_size, interpolation=interpolation)
     blob = cv.dnn.blobFromImage(resized, 1.0 / 255.0, net_size,
                                swapRB=True, crop=False)
-    keypoints, scores, descriptors = session.run(
-        ["keypoints", "scores", "descriptors"], {"image": blob})
+    net.setInput(blob, "image")
+    keypoints, scores, descriptors = net.forward(["keypoints", "scores", "descriptors"])
     keypoints = keypoints.reshape(-1, 2).astype(np.float32)
     scores = scores.reshape(-1).astype(np.float32)
     descriptors = descriptors.reshape(-1, 128).astype(np.float32)
@@ -95,7 +93,7 @@ def generate(testdata, models_dir, opencv_src, resize):
     tags = discover_tags(reference_dir)
     counts = load_existing_counts(reference_dir, tags)
     net_sizes = {tag: net_size_for_tag(tag, opencv_src) for tag in tags}
-    session = make_session(models_dir / "disk.onnx")
+    net = make_net(models_dir / "disk.onnx")
     path = testdata / "cv" / "shared" / "box_in_scene.png"
     image = cv.imread(str(path), cv.IMREAD_COLOR)
     if image is None:
@@ -105,7 +103,7 @@ def generate(testdata, models_dir, opencv_src, resize):
     references = {}
     for tag, net_size in net_sizes.items():
         keypoints, scores, descriptors = extract_features(
-            session, image, net_size, interpolation)
+            net, image, net_size, interpolation)
 
         # DISK_Impl::detectAndCompute: keep score > scoreThreshold_ (0.0f in
         # the regression test), then rescale net-space pixel coordinates back
@@ -127,7 +125,7 @@ def generate(testdata, models_dir, opencv_src, resize):
         references["box_in_scene_{}_kpts.npy".format(tag)] = np.concatenate(
             [keypoints[order], scores[order, None]], axis=1).astype(np.float32)
         references["box_in_scene_{}_desc.npy".format(tag)] = descriptors[order]
-    del session
+    del net
     return references
 
 
@@ -212,8 +210,8 @@ def main():
     models_dir = args.models_dir or args.testdata / "dnn"
     output_dir = args.output_dir or args.testdata / "cv" / "features" / "disk"
     opencv_src = args.opencv_src or args.testdata.parent.parent / "opencv"
-    print("OpenCV {}; NumPy {}; ONNX Runtime {}; resize={}".format(
-        cv.__version__, np.__version__, ort.__version__, args.resize))
+    print("OpenCV {} ({}); NumPy {}; resize={}".format(
+        cv.__version__, cv.__file__, np.__version__, args.resize))
     references = generate(args.testdata, models_dir, opencv_src, args.resize)
 
     # Compute everything before writing any files, so inference errors do not
