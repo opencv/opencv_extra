@@ -77,6 +77,14 @@ def generate(testdata, models_dir, resize):
         if image is None:
             raise FileNotFoundError("Cannot read image: {}".format(path))
         keypoints, descriptors, scores = extract_features(aliked, image, interpolation)
+
+        # Match the C++ tests' canonical order (position: x then y), since
+        # top-k order is not stable across inference engines.
+        order = np.lexsort((keypoints[:, 1], keypoints[:, 0]))
+        keypoints = keypoints[order]
+        descriptors = descriptors[order]
+        scores = scores[order]
+
         for label, values in (("keypoints", keypoints),
                               ("descriptors", descriptors), ("scores", scores)):
             references["aliked_{}_{}.npy".format(label, name)] = values
