@@ -3816,3 +3816,88 @@ def generate_attention_missing_bias():
     export(scalar_k_bias, "attention_scalar_k_bias")
 
 generate_attention_missing_bias()
+
+# Built with onnx.helper, not a traced PyTorch export, so the QKV reshape target stays a real
+# Shape/Gather/Mul/Concat chain instead of being constant-folded by the tracer.
+def generate_attention_qkv_grouping():
+    import onnxruntime as ort
+
+    def i64(name, arr):
+        return numpy_helper.from_array(np.array(arr, dtype=np.int64), name)
+
+    def build(name, merge_seq):
+        # merge_seq: reshape to [B, T*S, H, D] if True, else [B*T, S, H, D].
+        np.random.seed(0x2026)
+        B, T, S, C, H = 2, 3, 5, 8, 2
+        D = C // H
+
+        def w(nm):
+            return numpy_helper.from_array((np.random.randn(C, C) / np.sqrt(C)).astype(np.float32), nm)
+
+        initializers = [
+            w("Wq"), w("Wk"), w("Wv"),
+            numpy_helper.from_array(np.float32(np.sqrt(D)), "div_scalar"),
+            i64("idx0", 0), i64("idx1", 1), i64("idx2", 2),
+            i64("ax0", [0]),
+            i64("H_const", [H]), i64("D_const", [D]),
+            i64("out_shape", [B, T, S, C]),
+        ]
+
+        nodes = [
+            helper.make_node("MatMul", ["X", "Wq"], ["Q"]),
+            helper.make_node("MatMul", ["X", "Wk"], ["K"]),
+            helper.make_node("MatMul", ["X", "Wv"], ["V"]),
+            helper.make_node("Shape", ["X"], ["shpX"]),
+            helper.make_node("Gather", ["shpX", "idx0"], ["gB"], axis=0),
+            helper.make_node("Gather", ["shpX", "idx1"], ["gT"], axis=0),
+            helper.make_node("Gather", ["shpX", "idx2"], ["gS"], axis=0),
+        ]
+        if merge_seq:
+            # batch = gB alone; seq = gT * gS (evalDims recurses through the Mul)
+            nodes += [
+                helper.make_node("Mul", ["gT", "gS"], ["gMerged"]),
+                helper.make_node("Unsqueeze", ["gB", "ax0"], ["dim0"]),
+                helper.make_node("Unsqueeze", ["gMerged", "ax0"], ["dim1"]),
+            ]
+        else:
+            # batch = gB * gT; seq = gS alone
+            nodes += [
+                helper.make_node("Mul", ["gB", "gT"], ["gMerged"]),
+                helper.make_node("Unsqueeze", ["gMerged", "ax0"], ["dim0"]),
+                helper.make_node("Unsqueeze", ["gS", "ax0"], ["dim1"]),
+            ]
+        nodes += [
+            helper.make_node("Concat", ["dim0", "dim1", "H_const", "D_const"], ["qkv_shape"], axis=0),
+            helper.make_node("Reshape", ["Q", "qkv_shape"], ["Qr"]),
+            helper.make_node("Reshape", ["K", "qkv_shape"], ["Kr"]),
+            helper.make_node("Reshape", ["V", "qkv_shape"], ["Vr"]),
+            helper.make_node("Transpose", ["Qr"], ["Qt"], perm=[0, 2, 1, 3]),
+            helper.make_node("Transpose", ["Kr"], ["Kt"], perm=[0, 2, 3, 1]),
+            helper.make_node("Transpose", ["Vr"], ["Vt"], perm=[0, 2, 1, 3]),
+            helper.make_node("MatMul", ["Qt", "Kt"], ["QK"]),
+            helper.make_node("Div", ["QK", "div_scalar"], ["QKs"]),
+            helper.make_node("Softmax", ["QKs"], ["A"], axis=-1),
+            helper.make_node("MatMul", ["A", "Vt"], ["AV"]),
+            helper.make_node("Transpose", ["AV"], ["AVt"], perm=[0, 2, 1, 3]),
+            helper.make_node("Reshape", ["AVt", "out_shape"], ["Y"]),
+        ]
+
+        X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [B, T, S, C])
+        Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [B, T, S, C])
+        graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+        model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 13)])
+        model.ir_version = 8
+        onnx.checker.check_model(model)
+        model = onnx.shape_inference.infer_shapes(model)
+        path = os.path.join("models", name + ".onnx")
+        onnx.save(model, path)
+
+        x = (np.random.randn(B, T, S, C) * 0.5).astype(np.float32)
+        out = ort.InferenceSession(path).run(["Y"], {"X": x})[0]
+        np.save(os.path.join("data", "input_" + name + ".npy"), x)
+        np.save(os.path.join("data", "output_" + name + ".npy"), out)
+
+    build("attention_qkv_grouping_seq_merge", merge_seq=True)
+    build("attention_qkv_grouping_batch_merge", merge_seq=False)
+
+generate_attention_qkv_grouping()
