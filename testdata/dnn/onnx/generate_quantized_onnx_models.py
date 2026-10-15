@@ -492,3 +492,74 @@ def generate_quantized_depthwise_conv():
     np.save(os.path.join("data", "output_" + name), np.ascontiguousarray(out))
 
 generate_quantized_depthwise_conv()
+
+def generate_quantized_bn_mul_add():
+    from onnx import numpy_helper
+    from onnx import helper, TensorProto
+    name = "quantized_bn_mul_add"
+    C, H, W = 4, 2, 8
+    eps = 1e-5
+    mul = np.array([0.5, 0.25, 1.5, -0.5], dtype=np.float32)
+    add = np.array([0.5, -0.25, 0.0, 0.75], dtype=np.float32)
+
+    inits = [
+        numpy_helper.from_array(np.ones(C, dtype=np.float32),  "gamma"),
+        numpy_helper.from_array(np.zeros(C, dtype=np.float32), "beta"),
+        numpy_helper.from_array(np.zeros(C, dtype=np.float32), "mean"),
+        numpy_helper.from_array(np.ones(C, dtype=np.float32),  "var"),
+        numpy_helper.from_array(np.float32(1.0),  "x_sc"),
+        numpy_helper.from_array(np.uint8(128),    "x_zp"),
+        numpy_helper.from_array((128 + mul / 0.25).astype(np.uint8).reshape(C, 1, 1), "mul_q"),
+        numpy_helper.from_array(np.float32(0.25), "mul_sc"),
+        numpy_helper.from_array(np.uint8(128),    "mul_zp"),
+        numpy_helper.from_array(np.float32(1.0),  "m_sc"),
+        numpy_helper.from_array(np.uint8(128),    "m_zp"),
+        numpy_helper.from_array((128 + add / 0.25).astype(np.uint8).reshape(C, 1, 1), "add_q"),
+        numpy_helper.from_array(np.float32(0.25), "add_sc"),
+        numpy_helper.from_array(np.uint8(128),    "add_zp"),
+        numpy_helper.from_array(np.float32(1.0),  "y_sc"),
+        numpy_helper.from_array(np.uint8(128),    "y_zp"),
+    ]
+    nodes = [
+        helper.make_node("BatchNormalization", ["X", "gamma", "beta", "mean", "var"], ["X_bn"], epsilon=eps),
+        helper.make_node("QuantizeLinear", ["X_bn", "x_sc", "x_zp"], ["X_q"]),
+        helper.make_node("QLinearMul", ["X_q", "x_sc", "x_zp", "mul_q", "mul_sc", "mul_zp", "m_sc", "m_zp"],
+                         ["M_q"], domain="com.microsoft"),
+        helper.make_node("QLinearAdd", ["M_q", "m_sc", "m_zp", "add_q", "add_sc", "add_zp", "y_sc", "y_zp"],
+                         ["Y_q"], domain="com.microsoft"),
+        helper.make_node("DequantizeLinear", ["Y_q", "y_sc", "y_zp"], ["Y"]),
+    ]
+    graph = helper.make_graph(
+        nodes, name,
+        [helper.make_tensor_value_info("X", TensorProto.FLOAT, [1, C, H, W])],
+        [helper.make_tensor_value_info("Y", TensorProto.FLOAT, [1, C, H, W])],
+        inits,
+    )
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13), helper.make_opsetid("com.microsoft", 1)])
+    onnx.checker.check_model(model)
+
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+
+    values = np.array([1.4, 2.6, 3.0, 5.0, -1.4, -3.0, 0.6, 7.5,
+                       150.0, 200.0, -170.0, -300.0, 127.6, 255.0, 1000.0, -129.0], dtype=np.float32)
+    inp = np.broadcast_to(values.reshape(1, 1, H, W), (1, C, H, W)).astype(np.float32).copy()
+
+    sess = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"])
+    out = sess.run(["Y"], {"X": inp})[0]
+
+    bn = inp / np.sqrt(np.float32(1 + eps))
+    x_q = np.clip(np.round(bn) + 128, 0, 255) - 128
+    m_q = np.clip(np.round(x_q * mul.reshape(1, C, 1, 1)) + 128, 0, 255) - 128
+    y_q = np.clip(np.round(m_q + add.reshape(1, C, 1, 1)) + 128, 0, 255) - 128
+    folded = np.clip(np.round(bn * mul.reshape(1, C, 1, 1) + add.reshape(1, C, 1, 1)) + 128, 0, 255) - 128
+    assert np.array_equal(out, y_q), "ONNX Runtime disagrees with the int8 graph"
+    assert not np.array_equal(out, folded), "inputs do not separate the int8 graph from a folded affine"
+
+    print(name + " input has sizes", inp.shape)
+    np.save(os.path.join("data", "input_"  + name), inp)
+    print(name + " output has sizes", out.shape)
+    np.save(os.path.join("data", "output_" + name), np.ascontiguousarray(out))
+
+generate_quantized_bn_mul_add()
