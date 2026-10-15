@@ -8,7 +8,7 @@ import tarfile
 import shutil
 import argparse
 import time
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from pathlib import Path
 try:
     import requests
@@ -30,6 +30,11 @@ class BuiltinDownloader:
     def make_response(self, url, session):
         pieces = urlparse(url)
         if pieces.netloc in ["docs.google.com", "drive.google.com"]:
+            file_id = parse_qs(pieces.query).get('id')
+            if file_id:
+                return session.get('https://drive.usercontent.google.com/download',
+                                   params={'id': file_id[0], 'export': 'download', 'confirm': 't'},
+                                   stream=True, timeout=self.TIMEOUT)
             return session.get(url, params={'confirm': True}, stream=True, timeout=self.TIMEOUT)
         else:
             return session.get(url, stream=True, timeout=self.TIMEOUT)
