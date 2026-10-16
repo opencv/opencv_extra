@@ -716,3 +716,139 @@ generate_conv_integer_dynamic("convinteger_dynamic", (1, 8, 15, 13),
 generate_conv_integer_dynamic("convinteger_dynamic_block", (1, 3, 256, 256),
                               [(3, 32, 7, 4, 3, 1), (32, 32, 3, 1, 1, 32), (32, 128, 1, 1, 0, 1),
                                (128, 32, 1, 1, 0, 1)], save_data=False)
+
+def matmul_integer_ref(a, b, a_zp, b_zp):
+    # int64 reference of ONNX MatMulInteger
+    y = np.matmul(a.astype(np.int64) - np.int64(a_zp), b.astype(np.int64) - np.asarray(b_zp, np.int64))
+    assert np.abs(y).max() < 2 ** 31
+    return y.astype(np.int32)
+
+def generate_matmul_integer(name, a_shape, a_dtype, b, a_zp=None, b_zp=None, b_input=False,
+                            transpose_a=False, a_values=None):
+    from onnx import helper, numpy_helper, TensorProto
+    onnx_type = {np.uint8: TensorProto.UINT8, np.int8: TensorProto.INT8}
+    nd = len(a_shape)
+    # transpose_a feeds A through a Transpose of a graph input, so the graph keeps the Transpose
+    in_shape = list(a_shape[:-2]) + [a_shape[-1], a_shape[-2]] if transpose_a else list(a_shape)
+    inputs = [helper.make_tensor_value_info("a", onnx_type[a_dtype], in_shape)]
+    nodes, inits, a_name = [], [], "a"
+    if transpose_a:
+        nodes.append(helper.make_node("Transpose", ["a"], ["a_t"], perm=list(range(nd - 2)) + [nd - 1, nd - 2]))
+        a_name = "a_t"
+    if b_input:
+        inputs.append(helper.make_tensor_value_info("b", onnx_type[b.dtype.type], list(b.shape)))
+    else:
+        inits.append(numpy_helper.from_array(b, "b"))
+    node_inputs = [a_name, "b"]
+    if a_zp is not None or b_zp is not None:
+        node_inputs.append("" if a_zp is None else "a_zero_point")
+        if a_zp is not None:
+            inits.append(numpy_helper.from_array(np.array(a_zp, dtype=a_dtype), "a_zero_point"))
+    if b_zp is not None:
+        inits.append(numpy_helper.from_array(np.asarray(b_zp, dtype=b.dtype), "b_zero_point"))
+        node_inputs.append("b_zero_point")
+    nodes.append(helper.make_node("MatMulInteger", node_inputs, ["y"]))
+    y_shape = list(np.matmul(np.zeros(a_shape, np.float32), np.zeros(b.shape, np.float32)).shape)
+    graph = helper.make_graph(nodes, name, inputs,
+                              [helper.make_tensor_value_info("y", TensorProto.INT32, y_shape)], inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 11)], ir_version=7)
+    onnx.checker.check_model(model)
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+
+    info = np.iinfo(a_dtype)
+    a_in = random_int(in_shape, info.min, info.max, a_dtype) if a_values is None else a_values
+    a = np.swapaxes(a_in, -1, -2) if transpose_a else a_in
+    feeds = {"a": a_in, "b": b} if b_input else {"a": a_in}
+    ref = matmul_integer_ref(a, b, 0 if a_zp is None else a_zp, 0 if b_zp is None else b_zp)
+    out = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"]).run(["y"], feeds)[0]
+    assert np.array_equal(out, ref), name
+
+    for i, vi in enumerate(inputs):
+        suffix = "_%d" % i if len(inputs) > 1 else ""
+        np.save(os.path.join("data", "input_" + name + suffix), feeds[vi.name])
+    np.save(os.path.join("data", "output_" + name), ref)
+    print(name, "input", a_in.shape, "output", ref.shape, "checked by onnxruntime")
+
+def generate_matmul_integer_dynamic(name, x_shape, hidden, out, x_ranges=((-1, 1),), save_data=True):
+    # float MatMuls quantized by onnxruntime quantize_dynamic: DynamicQuantizeLinear -> MatMulInteger -> Cast -> Mul
+    # x feeds two MatMuls, so one DynamicQuantizeLinear output feeds two MatMulIntegers
+    from onnx import helper, numpy_helper, TensorProto
+    from onnxruntime.quantization import quantize_dynamic
+    d = x_shape[-1]
+    wts = {"w0": (d, hidden), "w1": (d, hidden), "w2": (hidden, out)}
+    inits = [numpy_helper.from_array(np.random.uniform(-0.5, 0.5, s).astype(np.float32), n)
+             for n, s in wts.items()]
+    inits += [numpy_helper.from_array(np.random.uniform(-0.1, 0.1, n).astype(np.float32), "b%d" % i)
+              for i, n in enumerate((hidden, out))]
+    nodes = [helper.make_node("MatMul", ["x", "w0"], ["m0"]),
+             helper.make_node("MatMul", ["x", "w1"], ["m1"]),
+             helper.make_node("Add", ["m0", "b0"], ["a0"]),
+             helper.make_node("Add", ["a0", "m1"], ["a1"]),
+             helper.make_node("Relu", ["a1"], ["r"]),
+             helper.make_node("MatMul", ["r", "w2"], ["m2"]),
+             helper.make_node("Add", ["m2", "b1"], ["y"])]
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("x", TensorProto.FLOAT, list(x_shape))],
+                              [helper.make_tensor_value_info("y", TensorProto.FLOAT, list(x_shape[:-1]) + [out])],
+                              inits)
+    float_model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                                    opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(float_model)
+    float_path = os.path.join("models", "dummy.onnx")
+    onnx.save(float_model, float_path)
+    model_path = os.path.join("models", name + ".onnx")
+    quantize_dynamic(float_path, model_path, op_types_to_quantize=["MatMul"], weight_type=QuantType.QInt8,
+                     per_channel=True)
+    os.remove(float_path)
+    assert sum(n.op_type == "MatMulInteger" for n in onnx.load(model_path).graph.node) == 3, name
+    if not save_data:
+        print(name, "model only")
+        return
+    sess = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"])
+    for i, (lo, hi) in enumerate(x_ranges):
+        x = np.random.uniform(lo, hi, x_shape).astype(np.float32)
+        y = sess.run(None, {"x": x})[0]
+        suffix = "" if i == 0 else "_set%d" % (i + 1)
+        np.save(os.path.join("data", "input_" + name + suffix), x)
+        np.save(os.path.join("data", "output_" + name + suffix), np.ascontiguousarray(y))
+        print(name + suffix, "input", x.shape, "output", y.shape)
+
+np.random.seed(1)
+generate_matmul_integer("matmulinteger_u8_per_column", (2, 13, 37), np.uint8,
+                        random_int((37, 21), 0, 127, np.uint8), a_zp=131,
+                        b_zp=random_int((21,), 55, 72, np.uint8))
+generate_matmul_integer("matmulinteger_s8_weights", (24, 64), np.uint8,
+                        random_int((64, 40), -128, 127, np.int8), a_zp=128, b_zp=np.int8(0))
+generate_matmul_integer("matmulinteger_full_range_weights", (20, 48), np.uint8,
+                        random_int((48, 24), 0, 255, np.uint8), a_zp=131, b_zp=np.uint8(100))
+generate_matmul_integer("matmulinteger_s8", (9, 33), np.int8,
+                        random_int((33, 17), -128, 127, np.int8), a_zp=-9,
+                        b_zp=random_int((17,), -5, 5, np.int8))
+generate_matmul_integer("matmulinteger_runtime_weights", (11, 40), np.uint8,
+                        random_int((40, 19), -128, 127, np.int8), a_zp=131, b_input=True)
+generate_matmul_integer("matmulinteger_b_zero_point_only", (7, 26), np.uint8,
+                        random_int((26, 12), 0, 255, np.uint8), b_zp=np.uint8(90))
+generate_matmul_integer("matmulinteger_transposed_a", (13, 40), np.uint8,
+                        random_int((40, 10), 0, 255, np.uint8), transpose_a=True)
+generate_matmul_integer("matmulinteger_k1_n1", (5, 1), np.uint8,
+                        random_int((1, 1), 0, 255, np.uint8))
+generate_matmul_integer_dynamic("matmulinteger_dynamic", (1, 50, 64), 96, 40,
+                                x_ranges=((-1, 1), (0, 4)))
+generate_matmul_integer_dynamic("matmulinteger_dynamic_block", (1, 256, 256), 512, 256, save_data=False)
+# rows and columns at the type limits: adjacent (-128)*(-128) products and the largest sums
+k = np.arange(16).reshape(16, 1)
+limits_u8 = np.concatenate([np.zeros((16, 1)), np.full((16, 1), 255), (k * 17 + np.arange(16)) % 256], 1)
+generate_matmul_integer("matmulinteger_extremes", (6, 16), np.uint8, limits_u8.astype(np.uint8),
+                        b_zp=np.uint8(255), a_values=limits_u8.T[[0, 1, 2, 0, 1, 3]].astype(np.uint8))
+limits_s8 = limits_u8 - 128
+generate_matmul_integer("matmulinteger_extremes_s8", (6, 16), np.int8, limits_s8.astype(np.int8),
+                        a_zp=127, a_values=limits_s8.T[[0, 1, 2, 0, 1, 3]].astype(np.int8))
+# B with batch dims: broadcast against A's, per-batch zero points, a 1-D A
+generate_matmul_integer("matmulinteger_batched_b", (2, 3, 5, 19), np.uint8,
+                        random_int((3, 19, 13), 0, 255, np.uint8), a_zp=131,
+                        b_zp=random_int((3, 1, 13), 100, 140, np.uint8))
+generate_matmul_integer("matmulinteger_batched_s8", (1, 4, 9, 24), np.uint8,
+                        random_int((1, 4, 24, 10), -111, 127, np.int8), a_zp=0, b_zp=np.int8(0))
+generate_matmul_integer("matmulinteger_vector_a", (19,), np.uint8,
+                        random_int((3, 19, 13), -128, 127, np.int8), a_zp=131)
