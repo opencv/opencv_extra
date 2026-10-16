@@ -1496,14 +1496,20 @@ models = [
     # Models added in https://huggingface.co/opencv/opencv_contribution/discussions/16
     Model(
         name='LapSRN x4 (ONNX)',
-        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/lapsrn/lapsrn_x4_2026sep.onnx?download=true',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/lapsrn/lapsrn_x4_2026sep.onnx?download=true',
+            'https://dl.opencv.org/models/lapsrn_x4_2026sep.onnx'
+        ],
         sha='70474758dab65ae3f488bed94b11b60fb77578f9de3d45a66d72263dcfefadb7',
-        filename='../cv/dnn_superres/LapSRN_x4.onnx'),
+        filename='onnx/models/LapSRN_x4.onnx'),
     Model(
         name='Macbeth Chart Detector (ONNX)',
-        url='https://huggingface.co/opencv/opencv_contribution/resolve/main/macbeth_chart_detector/macbeth_chart_detector_2026sep.onnx?download=true',
+        url=[
+            'https://huggingface.co/opencv/opencv_contribution/resolve/main/macbeth_chart_detector/macbeth_chart_detector_2026sep.onnx?download=true',
+            'https://dl.opencv.org/models/macbeth_chart_detector_2026sep.onnx'
+        ],
         sha='356587d28bcea41d188a743b38f86e2c744fd892e3d41512b6a42b6af038f249',
-        filename='../cv/mcc/macbeth_chart_detector.onnx'),
+        filename='onnx/models/macbeth_chart_detector.onnx'),
 ]
 
 # Note: models will be downloaded to current working directory
