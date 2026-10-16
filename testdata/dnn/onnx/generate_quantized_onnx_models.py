@@ -563,3 +563,156 @@ def generate_quantized_bn_mul_add():
     np.save(os.path.join("data", "output_" + name), np.ascontiguousarray(out))
 
 generate_quantized_bn_mul_add()
+
+def conv_integer_ref(x, w, x_zp, w_zp, pads, strides, dilations, group):
+    # int64 reference of ONNX ConvInteger; onnxruntime cross-checks it where it supports the case
+    import itertools
+    nd = x.ndim - 2
+    xs = x.astype(np.int64) - np.int64(x_zp)
+    ws = w.astype(np.int64) - np.asarray(w_zp, np.int64).reshape((-1,) + (1,) * (w.ndim - 1))
+    xs = np.pad(xs, [(0, 0), (0, 0)] + [(pads[i], pads[i + nd]) for i in range(nd)])
+    K, Cg = ws.shape[:2]
+    Kg = K // group
+    osz = [(xs.shape[2 + i] - dilations[i] * (ws.shape[2 + i] - 1) - 1) // strides[i] + 1
+           for i in range(nd)]
+    y = np.zeros((x.shape[0], K) + tuple(osz), np.int64)
+    for k in range(K):
+        g = k // Kg
+        for t in itertools.product(*[range(s) for s in ws.shape[2:]]):
+            sl = tuple(slice(t[i] * dilations[i], t[i] * dilations[i] + strides[i] * (osz[i] - 1) + 1,
+                             strides[i]) for i in range(nd))
+            y[:, k] += np.tensordot(xs[(slice(None), slice(g * Cg, (g + 1) * Cg)) + sl],
+                                    ws[(k, slice(None)) + t], axes=([1], [0]))
+    assert np.abs(y).max() < 2 ** 31
+    return y.astype(np.int32)
+
+def random_int(shape, lo, hi, dtype):
+    return np.random.randint(lo, hi + 1, size=shape).astype(dtype)
+
+def generate_conv_integer(name, x_shape, x_dtype, w, x_zp=None, w_zp=None, w_input=False,
+                          pads=None, strides=None, group=1):
+    from onnx import helper, numpy_helper, TensorProto
+    onnx_type = {np.uint8: TensorProto.UINT8, np.int8: TensorProto.INT8}
+    nd = len(x_shape) - 2
+    pads = pads or [0] * (2 * nd)
+    strides = strides or [1] * nd
+    dilations = [1] * nd
+
+    inputs = [helper.make_tensor_value_info("x", onnx_type[x_dtype], list(x_shape))]
+    inits = []
+    if w_input:
+        inputs.append(helper.make_tensor_value_info("w", onnx_type[w.dtype.type], list(w.shape)))
+    else:
+        inits.append(numpy_helper.from_array(w, "w"))
+    node_inputs = ["x", "w"]
+    if x_zp is not None or w_zp is not None:
+        node_inputs.append("" if x_zp is None else "x_zero_point")
+        if x_zp is not None:
+            inits.append(numpy_helper.from_array(np.array(x_zp, dtype=x_dtype), "x_zero_point"))
+    if w_zp is not None:
+        inits.append(numpy_helper.from_array(np.asarray(w_zp), "w_zero_point"))
+        node_inputs.append("w_zero_point")
+
+    node = helper.make_node("ConvInteger", node_inputs, ["y"], pads=pads, strides=strides,
+                            dilations=dilations, group=group)
+    y_shape = [x_shape[0], w.shape[0]] + [
+        (x_shape[2 + i] + pads[i] + pads[i + nd] - dilations[i] * (w.shape[2 + i] - 1) - 1) // strides[i] + 1
+        for i in range(nd)]
+    graph = helper.make_graph([node], name, inputs,
+                              [helper.make_tensor_value_info("y", TensorProto.INT32, y_shape)], inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 11)], ir_version=7)
+    onnx.checker.check_model(model)
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+
+    info = np.iinfo(x_dtype)
+    x = random_int(x_shape, info.min, info.max, x_dtype)
+    feeds = {"x": x, "w": w} if w_input else {"x": x}
+    ref = conv_integer_ref(x, w, 0 if x_zp is None else x_zp, 0 if w_zp is None else w_zp,
+                           pads, strides, dilations, group)
+    so = rt.SessionOptions()
+    so.log_severity_level = 4  # the per-channel w_zero_point refusal below is expected
+    try:
+        out = rt.InferenceSession(model_path, so, providers=["CPUExecutionProvider"]).run(["y"], feeds)[0]
+        assert np.array_equal(out, ref), name
+        checked = "checked by onnxruntime"
+    except rt.capi.onnxruntime_pybind11_state.Fail:  # onnxruntime only takes a per-tensor w_zero_point
+        checked = "numpy reference only"
+
+    for i, vi in enumerate(inputs):
+        suffix = "_%d" % i if len(inputs) > 1 else ""
+        np.save(os.path.join("data", "input_" + name + suffix), feeds[vi.name])
+    np.save(os.path.join("data", "output_" + name), ref)
+    print(name, "input", x.shape, "output", ref.shape, checked)
+
+def generate_conv_integer_dynamic(name, x_shape, layers, x_ranges=((-1, 1),), save_data=True):
+    # float convs quantized by onnxruntime quantize_dynamic: DynamicQuantizeLinear -> ConvInteger -> Cast -> Mul
+    # every x range after the first is saved with suffix _set<i+1> and gives another runtime zero point
+    from onnx import helper, numpy_helper, TensorProto
+    from onnxruntime.quantization import quantize_dynamic
+    nodes, inits, cur = [], [], "x"
+    h, w = x_shape[2], x_shape[3]
+    for i, (cin, cout, k, stride, pad, group) in enumerate(layers):
+        wt = np.random.uniform(-0.5, 0.5, (cout, cin // group, k, k)).astype(np.float32)
+        b = np.random.uniform(-0.1, 0.1, cout).astype(np.float32)
+        inits += [numpy_helper.from_array(wt, "conv%d_w" % i), numpy_helper.from_array(b, "conv%d_b" % i)]
+        nodes.append(helper.make_node("Conv", [cur, "conv%d_w" % i, "conv%d_b" % i], ["conv%d_out" % i],
+                                      kernel_shape=[k, k], strides=[stride, stride], pads=[pad] * 4,
+                                      group=group))
+        cur = "conv%d_out" % i
+        h, w = (h + 2 * pad - k) // stride + 1, (w + 2 * pad - k) // stride + 1
+        if i + 1 < len(layers):
+            nodes.append(helper.make_node("Relu", [cur], ["relu%d_out" % i]))
+            cur = "relu%d_out" % i
+    out_shape = [x_shape[0], layers[-1][1], h, w]
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("x", TensorProto.FLOAT, list(x_shape))],
+                              [helper.make_tensor_value_info(cur, TensorProto.FLOAT, out_shape)], inits)
+    float_model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                                    opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(float_model)
+    float_path = os.path.join("models", "dummy.onnx")
+    onnx.save(float_model, float_path)
+    model_path = os.path.join("models", name + ".onnx")
+    quantize_dynamic(float_path, model_path, op_types_to_quantize=["Conv"], weight_type=QuantType.QInt8)
+    os.remove(float_path)
+    assert any(n.op_type == "ConvInteger" for n in onnx.load(model_path).graph.node), name
+    if not save_data:
+        print(name, "model only")
+        return
+    sess = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"])
+    for i, (lo, hi) in enumerate(x_ranges):
+        x = np.random.uniform(lo, hi, x_shape).astype(np.float32)
+        y = sess.run(None, {"x": x})[0]
+        suffix = "" if i == 0 else "_set%d" % (i + 1)
+        np.save(os.path.join("data", "input_" + name + suffix), x)
+        np.save(os.path.join("data", "output_" + name + suffix), np.ascontiguousarray(y))
+        print(name + suffix, "input", x.shape, "output", y.shape)
+
+np.random.seed(0)
+PAD1 = [1, 1, 1, 1]
+generate_conv_integer("convinteger_u8", (1, 20, 11, 9), np.uint8,
+                      random_int((12, 20, 3, 3), -127, 127, np.int8), x_zp=131, pads=PAD1)
+generate_conv_integer("convinteger_depthwise", (1, 20, 11, 9), np.uint8,
+                      random_int((20, 1, 3, 3), 0, 127, np.uint8), x_zp=131, w_zp=np.uint8(60),
+                      pads=PAD1, group=20)
+generate_conv_integer("convinteger_1x1", (1, 20, 11, 9), np.uint8,
+                      random_int((36, 20, 1, 1), -120, 120, np.int8), x_zp=131,
+                      w_zp=random_int((36,), -5, 5, np.int8))
+generate_conv_integer("convinteger_s8", (1, 20, 11, 9), np.int8,
+                      random_int((12, 20, 3, 3), -127, 127, np.int8), x_zp=-9, pads=PAD1)
+generate_conv_integer("convinteger_full_range_weights", (1, 20, 11, 9), np.uint8,
+                      random_int((12, 20, 3, 3), 0, 255, np.uint8), x_zp=131, w_zp=np.uint8(100),
+                      pads=PAD1)
+generate_conv_integer("convinteger_groups", (1, 20, 11, 9), np.uint8,
+                      random_int((12, 10, 3, 3), -127, 127, np.int8), x_zp=131, pads=PAD1, group=2)
+generate_conv_integer("convinteger_runtime_weights", (1, 20, 11, 9), np.uint8,
+                      random_int((12, 20, 3, 3), -127, 127, np.int8), x_zp=131, pads=PAD1, w_input=True)
+generate_conv_integer("convinteger_1d", (1, 6, 17), np.uint8,
+                      random_int((8, 6, 3), -127, 127, np.int8), x_zp=131, pads=[1, 1], strides=[2])
+generate_conv_integer_dynamic("convinteger_dynamic", (1, 8, 15, 13),
+                              [(8, 16, 3, 1, 1, 1), (16, 16, 3, 1, 1, 16), (16, 24, 1, 1, 0, 1)],
+                              x_ranges=((-1, 1), (0, 4)))
+generate_conv_integer_dynamic("convinteger_dynamic_block", (1, 3, 256, 256),
+                              [(3, 32, 7, 4, 3, 1), (32, 32, 3, 1, 1, 32), (32, 128, 1, 1, 0, 1),
+                               (128, 32, 1, 1, 0, 1)], save_data=False)
