@@ -32,14 +32,19 @@ def make_session(path):
                                providers=["CPUExecutionProvider"])
 
 
-def extract_features(session, image, interpolation):
-    # Current 5.x ALIKED calls blobFromImage directly (INTER_LINEAR internally).
-    # For the strictResize variant, resize uint8 BGR before conversion to float:
-    # INTER_LINEAR_EXACT falls back to INTER_LINEAR for float images.
-    resized = image if interpolation == cv.INTER_LINEAR else cv.resize(
-        image, (640, 640), interpolation=interpolation)
-    blob = cv.dnn.blobFromImage(resized, 1.0 / 255.0, (640, 640),
-                               swapRB=True, crop=False)
+def sort_features(keypoints, descriptors, scores):
+    # ALIKED's top-k output order is not stable across inference engines, so
+    # save a canonical order instead: keypoint position, x then y. Position is
+    # the only stable key here; scores are not. Engines disagree on the scores
+    # by up to 3e-5, which is more than the smallest gaps between neighbouring
+    # scores (down to 0), while distinct keypoints are at least 0.4 px apart.
+    order = np.lexsort((keypoints[:, 1], keypoints[:, 0]))
+    return keypoints[order], descriptors[order], scores[order]
+
+
+def extract_features(session, image, strict):
+    blob = cv.dnn.blobFromImage(image, 1.0 / 255.0, (640, 640),
+                               swapRB=True, crop=False, strictResize=strict)
     keypoints, descriptors, scores = session.run(
         ["keypoints", "descriptors", "scores"], {"image": blob})
     keypoints = keypoints.reshape(-1, 2)
@@ -53,7 +58,10 @@ def extract_features(session, image, interpolation):
     descriptors = descriptors.copy()
     for row in descriptors:
         row[:] = cv.normalize(row, None).reshape(-1)
-    return keypoints, descriptors, scores
+
+    # Sort before the features reach either the NPY files or LightGlue, so the
+    # saved match indices refer to this same canonical order.
+    return sort_features(keypoints, descriptors, scores)
 
 
 def matcher_keypoints(keypoints, image):
@@ -67,7 +75,7 @@ def matcher_keypoints(keypoints, image):
 
 
 def generate(testdata, models_dir, resize):
-    interpolation = cv.INTER_LINEAR if resize == "linear" else cv.INTER_LINEAR_EXACT
+    strict = (resize == "linear-exact")
     aliked = make_session(models_dir / "aliked-n16rot-top1k-640.onnx")
     references = {}
     features = []
@@ -76,7 +84,7 @@ def generate(testdata, models_dir, resize):
         image = cv.imread(str(path), cv.IMREAD_COLOR)
         if image is None:
             raise FileNotFoundError("Cannot read image: {}".format(path))
-        keypoints, descriptors, scores = extract_features(aliked, image, interpolation)
+        keypoints, descriptors, scores = extract_features(aliked, image, strict)
         for label, values in (("keypoints", keypoints),
                               ("descriptors", descriptors), ("scores", scores)):
             references["aliked_{}_{}.npy".format(label, name)] = values
@@ -84,12 +92,19 @@ def generate(testdata, models_dir, resize):
     del aliked
 
     lightglue = make_session(models_dir / "aliked_lightglue.onnx")
-    matches, scores = lightglue.run(["matches0", "mscores0"], {
+    matches, mscores = lightglue.run(["matches0", "mscores0"], {
         "kpts0": features[0][0][None], "kpts1": features[1][0][None],
         "desc0": features[0][1][None], "desc1": features[1][1][None],
     })
-    references["lightglue_matches.npy"] = matches.reshape(-1, 2)
-    references["lightglue_mscores.npy"] = scores.reshape(-1)
+    matches = matches.reshape(-1, 2)
+    mscores = mscores.reshape(-1)
+
+    # The match rows follow LightGlue's output order, so give them a canonical
+    # order too. The features are position-sorted, so ordering by index pair is
+    # ordering by the matched query keypoint and then the matched train one.
+    order = np.lexsort((matches[:, 1], matches[:, 0]))
+    references["lightglue_matches.npy"] = matches[order]
+    references["lightglue_mscores.npy"] = mscores[order]
     return references
 
 
