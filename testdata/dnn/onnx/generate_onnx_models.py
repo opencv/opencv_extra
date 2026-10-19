@@ -3901,3 +3901,346 @@ def generate_attention_qkv_grouping():
     build("attention_qkv_grouping_batch_merge", merge_seq=False)
 
 generate_attention_qkv_grouping()
+
+# com.microsoft MultiHeadAttention bias/key_padding_mask support: bias as a packed
+# Q/K/V projection bias (dynamic Shape/Slice2 split when hidden size/bias aren't
+# statically known, a constant-folded split otherwise) and key_padding_mask lowered
+# to an additive attn_mask.
+def generate_multi_head_attention_models():
+    batch, seq_q, seq_kv, num_heads, head_size = 2, 3, 5, 2, 4
+    hidden = num_heads * head_size
+    v_hidden = hidden
+
+
+    def softmax(x, axis=-1):
+        x = x - np.max(x, axis=axis, keepdims=True)
+        e = np.exp(x)
+        return e / np.sum(e, axis=axis, keepdims=True)
+
+
+    def ref_mha(q, k, v, q_bias, k_bias, v_bias, mask, num_heads, mask_filter_value=-10000.0,
+                attention_bias=None):
+        b, sq, h = q.shape
+        _, skv, _ = k.shape
+        hd = h // num_heads
+        qq = (q + q_bias).reshape(b, sq, num_heads, hd).transpose(0, 2, 1, 3)
+        kk = (k + k_bias).reshape(b, skv, num_heads, hd).transpose(0, 2, 1, 3)
+        vv = (v + v_bias).reshape(b, skv, num_heads, hd).transpose(0, 2, 1, 3)
+        scale = 1.0 / np.sqrt(hd)
+        scores = np.einsum('bhqd,bhkd->bhqk', qq, kk) * scale
+        if mask is not None:
+            # matches the importer: mask*(-mfv) + mfv -> 1 maps to 0, 0 maps to mfv
+            bias_add = mask.astype(np.float32) * (-mask_filter_value) + mask_filter_value
+            scores = scores + bias_add[:, None, None, :]
+        if attention_bias is not None:
+            # already additive, summed with the key_padding_mask bias rather than replacing it
+            scores = scores + attention_bias
+        probs = softmax(scores, axis=-1)
+        out = np.einsum('bhqk,bhkd->bhqd', probs, vv)
+        out = out.transpose(0, 2, 1, 3).reshape(b, sq, h)
+        return out
+
+
+    def save_npy(basename, idx, arr, is_input=True):
+        if is_input:
+            path = f"data/input_{basename}_{idx}.npy"
+        else:
+            path = f"data/output_{basename}.npy"
+        np.save(path, arr)
+        print("wrote", path, arr.shape, arr.dtype)
+
+
+    def build_model(basename, use_bias, use_mask, seed, mask_filter_value=None):
+        rng = np.random.RandomState(seed)
+        q = rng.randn(batch, seq_q, hidden).astype(np.float32)
+        k = rng.randn(batch, seq_kv, hidden).astype(np.float32)
+        v = rng.randn(batch, seq_kv, v_hidden).astype(np.float32)
+
+        inputs_vi = [
+            helper.make_tensor_value_info('query', TensorProto.FLOAT, [batch, seq_q, hidden]),
+            helper.make_tensor_value_info('key', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('value', TensorProto.FLOAT, [batch, seq_kv, v_hidden]),
+        ]
+        node_inputs = ['query', 'key', 'value']
+        npy_inputs = [q, k, v]
+
+        q_bias = k_bias = v_bias = np.zeros(hidden, dtype=np.float32)
+        if use_bias:
+            bias = rng.randn(hidden + hidden + v_hidden).astype(np.float32)
+            q_bias, k_bias, v_bias = np.split(bias, [hidden, 2 * hidden])
+            inputs_vi.append(helper.make_tensor_value_info(
+                'bias', TensorProto.FLOAT, [hidden + hidden + v_hidden]))
+            node_inputs.append('bias')
+            npy_inputs.append(bias)
+        else:
+            node_inputs.append('')  # omitted optional
+
+        mask = None
+        if use_mask:
+            mask = np.ones((batch, seq_kv), dtype=np.int32)
+            mask[0, -2:] = 0
+            mask[1, -1:] = 0
+            inputs_vi.append(helper.make_tensor_value_info(
+                'key_padding_mask', TensorProto.INT32, [batch, seq_kv]))
+            node_inputs.append('key_padding_mask')
+            npy_inputs.append(mask)
+        else:
+            node_inputs.append('')
+
+        mfv = -10000.0 if mask_filter_value is None else mask_filter_value
+        ref = ref_mha(q, k, v, q_bias, k_bias, v_bias, mask, num_heads, mfv)
+
+        for i, arr in enumerate(npy_inputs):
+            save_npy(basename, i, arr, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT, [batch, seq_q, hidden])
+        node_kwargs = dict(domain='com.microsoft', num_heads=num_heads)
+        if mask_filter_value is not None:
+            node_kwargs['mask_filter_value'] = mask_filter_value
+        node = helper.make_node('MultiHeadAttention', node_inputs, ['output'], **node_kwargs)
+        graph = helper.make_graph([node], basename, inputs_vi, [out_vi])
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+        return len(npy_inputs)
+
+
+    def build_projected_model(basename, seed):
+        """Q/K/V come from in-graph MatMul projections (real HF-export layout), not graph
+        inputs - the case the static import-time shape read used to reject."""
+        rng = np.random.RandomState(seed)
+        hs = rng.randn(batch, seq_kv, hidden).astype(np.float32)
+        Wq = (rng.randn(hidden, hidden) / np.sqrt(hidden)).astype(np.float32)
+        Wk = (rng.randn(hidden, hidden) / np.sqrt(hidden)).astype(np.float32)
+        Wv = (rng.randn(hidden, v_hidden) / np.sqrt(hidden)).astype(np.float32)
+        bias = rng.randn(hidden + hidden + v_hidden).astype(np.float32)
+        q_bias, k_bias, v_bias = np.split(bias, [hidden, 2 * hidden])
+        mask = np.ones((batch, seq_kv), dtype=np.int32)
+        mask[0, -2:] = 0
+        mask[1, -1:] = 0
+
+        q = hs @ Wq
+        k = hs @ Wk
+        v = hs @ Wv
+        ref = ref_mha(q, k, v, q_bias, k_bias, v_bias, mask, num_heads)
+
+        save_npy(basename, 0, hs, is_input=True)
+        save_npy(basename, 1, bias, is_input=True)
+        save_npy(basename, 2, mask, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        initializers = [
+            numpy_helper.from_array(Wq, 'Wq'),
+            numpy_helper.from_array(Wk, 'Wk'),
+            numpy_helper.from_array(Wv, 'Wv'),
+        ]
+        nodes = [
+            helper.make_node('MatMul', ['hidden_states', 'Wq'], ['q']),
+            helper.make_node('MatMul', ['hidden_states', 'Wk'], ['k']),
+            helper.make_node('MatMul', ['hidden_states', 'Wv'], ['v']),
+            helper.make_node('MultiHeadAttention', ['q', 'k', 'v', 'bias', 'key_padding_mask'],
+                             ['output'], domain='com.microsoft', num_heads=num_heads),
+        ]
+        inputs_vi = [
+            helper.make_tensor_value_info('hidden_states', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('bias', TensorProto.FLOAT, [hidden + hidden + v_hidden]),
+            helper.make_tensor_value_info('key_padding_mask', TensorProto.INT32, [batch, seq_kv]),
+        ]
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT, [batch, seq_kv, hidden])
+        graph = helper.make_graph(nodes, basename, inputs_vi, [out_vi], initializers)
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+
+
+    def build_fp16_mask_model(basename, seed):
+        """Q/K/V cast to float16 in-graph; mask's cast must follow, not stay float32.
+        Inputs/output stay float32 on disk - blobFromNPY cannot load <f2."""
+        rng = np.random.RandomState(seed)
+        # pre-rounded to fp16 precision so the float32 file matches what the cast will produce
+        q = rng.randn(batch, seq_q, hidden).astype(np.float16).astype(np.float32)
+        k = rng.randn(batch, seq_kv, hidden).astype(np.float16).astype(np.float32)
+        v = rng.randn(batch, seq_kv, v_hidden).astype(np.float16).astype(np.float32)
+        mask = np.ones((batch, seq_kv), dtype=np.int32)
+        mask[0, -2:] = 0
+        mask[1, -1:] = 0
+        zero_bias = np.zeros(hidden, dtype=np.float32)
+
+        ref = ref_mha(q, k, v, zero_bias, zero_bias, zero_bias, mask, num_heads)
+
+        save_npy(basename, 0, q, is_input=True)
+        save_npy(basename, 1, k, is_input=True)
+        save_npy(basename, 2, v, is_input=True)
+        save_npy(basename, 3, mask, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        inputs_vi = [
+            helper.make_tensor_value_info('query', TensorProto.FLOAT, [batch, seq_q, hidden]),
+            helper.make_tensor_value_info('key', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('value', TensorProto.FLOAT, [batch, seq_kv, v_hidden]),
+            helper.make_tensor_value_info('key_padding_mask', TensorProto.INT32, [batch, seq_kv]),
+        ]
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT16, [batch, seq_q, hidden])
+        nodes = [
+            helper.make_node('Cast', ['query'], ['query_f16'], to=TensorProto.FLOAT16),
+            helper.make_node('Cast', ['key'], ['key_f16'], to=TensorProto.FLOAT16),
+            helper.make_node('Cast', ['value'], ['value_f16'], to=TensorProto.FLOAT16),
+            helper.make_node(
+                'MultiHeadAttention', ['query_f16', 'key_f16', 'value_f16', '', 'key_padding_mask'],
+                ['output'], domain='com.microsoft', num_heads=num_heads),
+        ]
+        graph = helper.make_graph(nodes, basename, inputs_vi, [out_vi])
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+
+
+    def build_const_bias_model(basename, seed):
+        """Q/K/V are plain graph inputs (known hidden size) and bias is a true ONNX initializer
+        (constant), so the importer's static bias-split path should fire - no runtime Shape/Slice2,
+        net stays shape-inferable past this node."""
+        rng = np.random.RandomState(seed)
+        q = rng.randn(batch, seq_q, hidden).astype(np.float32)
+        k = rng.randn(batch, seq_kv, hidden).astype(np.float32)
+        v = rng.randn(batch, seq_kv, v_hidden).astype(np.float32)
+        bias = rng.randn(hidden + hidden + v_hidden).astype(np.float32)
+        q_bias, k_bias, v_bias = np.split(bias, [hidden, 2 * hidden])
+        ref = ref_mha(q, k, v, q_bias, k_bias, v_bias, None, num_heads)
+
+        save_npy(basename, 0, q, is_input=True)
+        save_npy(basename, 1, k, is_input=True)
+        save_npy(basename, 2, v, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        initializers = [numpy_helper.from_array(bias, 'bias')]
+        inputs_vi = [
+            helper.make_tensor_value_info('query', TensorProto.FLOAT, [batch, seq_q, hidden]),
+            helper.make_tensor_value_info('key', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('value', TensorProto.FLOAT, [batch, seq_kv, v_hidden]),
+        ]
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT, [batch, seq_q, hidden])
+        node = helper.make_node('MultiHeadAttention', ['query', 'key', 'value', 'bias'], ['output'],
+                                domain='com.microsoft', num_heads=num_heads)
+        graph = helper.make_graph([node], basename, inputs_vi, [out_vi], initializers)
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+
+
+    def build_in_graph_mask_model(basename, seed):
+        """key_padding_mask arrives as int64 and is Cast to int32 before MultiHeadAttention, so
+        its Arg is a node output (unknown rank at import), not a shaped graph input - the one
+        case the importer's rank check used to reject outright."""
+        rng = np.random.RandomState(seed)
+        q = rng.randn(batch, seq_q, hidden).astype(np.float32)
+        k = rng.randn(batch, seq_kv, hidden).astype(np.float32)
+        v = rng.randn(batch, seq_kv, v_hidden).astype(np.float32)
+        mask64 = np.ones((batch, seq_kv), dtype=np.int64)
+        mask64[0, -2:] = 0
+        mask64[1, -1:] = 0
+        zero_bias = np.zeros(hidden, dtype=np.float32)
+        ref = ref_mha(q, k, v, zero_bias, zero_bias, zero_bias, mask64, num_heads)
+
+        save_npy(basename, 0, q, is_input=True)
+        save_npy(basename, 1, k, is_input=True)
+        save_npy(basename, 2, v, is_input=True)
+        save_npy(basename, 3, mask64, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        inputs_vi = [
+            helper.make_tensor_value_info('query', TensorProto.FLOAT, [batch, seq_q, hidden]),
+            helper.make_tensor_value_info('key', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('value', TensorProto.FLOAT, [batch, seq_kv, v_hidden]),
+            helper.make_tensor_value_info('attention_mask', TensorProto.INT64, [batch, seq_kv]),
+        ]
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT, [batch, seq_q, hidden])
+        nodes = [
+            helper.make_node('Cast', ['attention_mask'], ['mask_i32'], to=TensorProto.INT32),
+            helper.make_node('MultiHeadAttention', ['query', 'key', 'value', '', 'mask_i32'],
+                             ['output'], domain='com.microsoft', num_heads=num_heads),
+        ]
+        graph = helper.make_graph(nodes, basename, inputs_vi, [out_vi])
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+
+
+    def build_mask_and_attention_bias_model(basename, seed):
+        """key_padding_mask and attention_bias both set, so the importer must sum the two
+        additive masks (mask_add branch in parseMultiHeadAttention) instead of one silently
+        overriding the other."""
+        rng = np.random.RandomState(seed)
+        q = rng.randn(batch, seq_q, hidden).astype(np.float32)
+        k = rng.randn(batch, seq_kv, hidden).astype(np.float32)
+        v = rng.randn(batch, seq_kv, v_hidden).astype(np.float32)
+        mask = np.ones((batch, seq_kv), dtype=np.int32)
+        mask[0, -2:] = 0
+        mask[1, -1:] = 0
+        attn_bias = (rng.randn(batch, num_heads, seq_q, seq_kv) * 0.1).astype(np.float32)
+        zero_bias = np.zeros(hidden, dtype=np.float32)
+        ref = ref_mha(q, k, v, zero_bias, zero_bias, zero_bias, mask, num_heads,
+                     attention_bias=attn_bias)
+
+        save_npy(basename, 0, q, is_input=True)
+        save_npy(basename, 1, k, is_input=True)
+        save_npy(basename, 2, v, is_input=True)
+        save_npy(basename, 3, mask, is_input=True)
+        save_npy(basename, 4, attn_bias, is_input=True)
+        save_npy(basename, 0, ref, is_input=False)
+
+        inputs_vi = [
+            helper.make_tensor_value_info('query', TensorProto.FLOAT, [batch, seq_q, hidden]),
+            helper.make_tensor_value_info('key', TensorProto.FLOAT, [batch, seq_kv, hidden]),
+            helper.make_tensor_value_info('value', TensorProto.FLOAT, [batch, seq_kv, v_hidden]),
+            helper.make_tensor_value_info('key_padding_mask', TensorProto.INT32, [batch, seq_kv]),
+            helper.make_tensor_value_info(
+                'attention_bias', TensorProto.FLOAT, [batch, num_heads, seq_q, seq_kv]),
+        ]
+        out_vi = helper.make_tensor_value_info('output', TensorProto.FLOAT, [batch, seq_q, hidden])
+        node = helper.make_node(
+            'MultiHeadAttention',
+            ['query', 'key', 'value', '', 'key_padding_mask', 'attention_bias'],
+            ['output'], domain='com.microsoft', num_heads=num_heads)
+        graph = helper.make_graph([node], basename, inputs_vi, [out_vi])
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid('', 18), helper.make_opsetid('com.microsoft', 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = f"models/{basename}.onnx"
+        onnx.save(model, path)
+        print("wrote", path)
+
+
+    n1 = build_model("multi_head_attention_bias", use_bias=True, use_mask=False, seed=10)
+    n2 = build_model("multi_head_attention_key_padding_mask", use_bias=False, use_mask=True, seed=11,
+                     mask_filter_value=-50000.0)
+    n3 = build_model("multi_head_attention_bias_key_padding_mask", use_bias=True, use_mask=True, seed=12)
+    build_projected_model("multi_head_attention_bias_projected", seed=13)
+    build_fp16_mask_model("multi_head_attention_key_padding_mask_fp16", seed=14)
+    build_const_bias_model("multi_head_attention_bias_const", seed=15)
+    build_in_graph_mask_model("multi_head_attention_key_padding_mask_in_graph", seed=16)
+    build_mask_and_attention_bias_model("multi_head_attention_key_padding_mask_attention_bias", seed=17)
+    print("input counts:", n1, n2, n3)
+
+generate_multi_head_attention_models()
