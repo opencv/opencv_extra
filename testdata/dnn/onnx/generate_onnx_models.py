@@ -4244,3 +4244,98 @@ def generate_multi_head_attention_models():
     print("input counts:", n1, n2, n3)
 
 generate_multi_head_attention_models()
+
+def generate_deconv_gemm():
+    import onnxruntime as ort
+
+    def export(deconv, x, name):
+        with torch.no_grad():
+            deconv.weight.uniform_(-0.5, 0.5)
+            deconv.bias.uniform_(-0.2, 0.2)
+        deconv.eval()
+        path = os.path.join("models", name + ".onnx")
+        with torch.no_grad():
+            expected = deconv(x)
+            torch.onnx.export(deconv, x, path, input_names=["input"], output_names=["output"],
+                              opset_version=13, dynamo=False)
+        actual = ort.InferenceSession(path).run(None, {"input": x.numpy()})[0]
+        max_diff = np.abs(actual - expected.numpy()).max()
+        assert max_diff < 1e-5, "PyTorch/onnxruntime mismatch for {}: {}".format(name, max_diff)
+        np.save(os.path.join("data", "input_" + name + ".npy"), x.numpy())
+        np.save(os.path.join("data", "output_" + name + ".npy"), np.ascontiguousarray(expected.numpy()))
+
+    torch.manual_seed(5)
+
+    # kernel == stride: every output pixel gets exactly one tap (SAM decoder upsampling);
+    # 20 output channels leave the last channel block partial
+    export(nn.ConvTranspose2d(16, 20, kernel_size=2, stride=2), torch.empty(1, 16, 6, 5).uniform_(-1, 1),
+           "deconv_k2s2")
+
+    # overlapping taps with 40 output channels, split into several channel chunks, the last one partial
+    export(nn.ConvTranspose2d(16, 40, kernel_size=3, stride=2, padding=1, output_padding=1),
+           torch.empty(1, 16, 7, 6).uniform_(-1, 1), "deconv_overlap_chunks")
+
+    # two groups of 6 input channels, so the second group starts inside a channel block
+    export(nn.ConvTranspose2d(12, 48, kernel_size=4, stride=2, padding=1, groups=2),
+           torch.empty(2, 12, 5, 6).uniform_(-1, 1), "deconv_overlap_groups")
+
+generate_deconv_gemm()
+
+def generate_deconv_empty():
+    # Dynamic N/H/W for zero-size inputs. Bias is arange(12), so an output made only of bias is easy
+    # to check; 12 output channels leave the last channel block partial.
+    def export(name, kernel):
+        cin, cout = 4, 12
+        w = np.random.uniform(-0.5, 0.5, (cin, cout, kernel, kernel)).astype(np.float32)
+        b = np.arange(cout, dtype=np.float32)
+        node = onnx.helper.make_node("ConvTranspose", ["input", "weight", "bias"], ["output"],
+                                     kernel_shape=[kernel, kernel])
+        graph = onnx.helper.make_graph(
+            [node], name,
+            [onnx.helper.make_tensor_value_info("input", onnx.TensorProto.FLOAT, ["n", cin, "h", "w"])],
+            [onnx.helper.make_tensor_value_info("output", onnx.TensorProto.FLOAT, ["n", cout, "oh", "ow"])],
+            [onnx.numpy_helper.from_array(w, "weight"), onnx.numpy_helper.from_array(b, "bias")])
+        model = onnx.helper.make_model(graph, producer_name=name, opset_imports=[onnx.helper.make_opsetid("", 13)])
+        onnx.checker.check_model(model)
+        onnx.save(model, os.path.join("models", name + ".onnx"))
+
+    np.random.seed(7)
+    export("deconv_empty_k1", 1)  # H = 0 gives an empty output
+    export("deconv_empty_k3", 3)  # H = 0 gives two output rows of pure bias
+
+generate_deconv_empty()
+
+def generate_convtranspose_perf():
+    # Single-node models for perf_convtranspose.cpp. The weights come from ConstantOfShape, which
+    # the importer folds into constants, so each model stays a few hundred bytes.
+    def export(name, cin, cout, kernel, stride, pad, out_pad, groups, size):
+        def constant(out, shape, value):
+            return [onnx.helper.make_node("Constant", [], [out + "_shape"],
+                                          value=onnx.numpy_helper.from_array(np.array(shape, np.int64))),
+                    onnx.helper.make_node("ConstantOfShape", [out + "_shape"], [out],
+                                          value=onnx.helper.make_tensor("value", onnx.TensorProto.FLOAT, [1], [value]))]
+        nodes = constant("W", [cin, cout // groups, kernel, kernel], 0.01) + constant("B", [cout], 0.1)
+        nodes.append(onnx.helper.make_node("ConvTranspose", ["input", "W", "B"], ["output"],
+                                           kernel_shape=[kernel, kernel], strides=[stride, stride],
+                                           pads=[pad] * 4, output_padding=[out_pad, out_pad], group=groups))
+        out_size = (size - 1) * stride - 2 * pad + kernel + out_pad
+        graph = onnx.helper.make_graph(
+            nodes, name,
+            [onnx.helper.make_tensor_value_info("input", onnx.TensorProto.FLOAT, [1, cin, size, size])],
+            [onnx.helper.make_tensor_value_info("output", onnx.TensorProto.FLOAT, [1, cout, out_size, out_size])])
+        model = onnx.helper.make_model(graph, producer_name=name, opset_imports=[onnx.helper.make_opsetid("", 13)])
+        onnx.checker.check_model(model)
+        onnx.save(model, os.path.join("models", "convtranspose_perf_" + name + ".onnx"))
+
+    export("sam2_256_64", 256, 64, 2, 2, 0, 0, 1, 64)
+    export("sam2_64_32", 64, 32, 2, 2, 0, 0, 1, 128)
+    export("sam3_256_64", 256, 64, 2, 2, 0, 0, 1, 72)
+    export("sam3_64_32", 64, 32, 2, 2, 0, 0, 1, 144)
+    export("unet_256_128_k4s2p1", 256, 128, 4, 2, 1, 0, 1, 32)
+    export("gan_128_64_k4s2p1", 128, 64, 4, 2, 1, 0, 1, 64)
+    export("128_64_k3s2p1op1", 128, 64, 3, 2, 1, 1, 1, 64)
+    export("64_64_k3s1p1", 64, 64, 3, 1, 1, 0, 1, 64)
+    export("group4_128_128_k4s2p1", 128, 128, 4, 2, 1, 0, 4, 32)
+    export("depthwise_64_k4s2p1", 64, 64, 4, 2, 1, 0, 64, 64)
+
+generate_convtranspose_perf()

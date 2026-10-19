@@ -1496,6 +1496,18 @@ models = [
         filename='onnx/models/sam2_hiera_large.decoder.onnx',
         large=True),
     Model(
+        name='SAM3 Tracker Decoder',  # https://huggingface.co/onnx-community/sam3-tracker-ONNX
+        url='https://huggingface.co/onnx-community/sam3-tracker-ONNX/resolve/429305c8a5b3de597243d919a07e4e6bdcd00ef7/onnx/prompt_encoder_mask_decoder.onnx',
+        sha='0712b011dd8c4c73d14976e23683f734501707d9',
+        filename='onnx/models/sam3_tracker/prompt_encoder_mask_decoder.onnx',
+        large=True),
+    Model(
+        name='SAM3 Tracker Decoder (weights)',  # external data of the model above
+        url='https://huggingface.co/onnx-community/sam3-tracker-ONNX/resolve/429305c8a5b3de597243d919a07e4e6bdcd00ef7/onnx/prompt_encoder_mask_decoder.onnx_data',
+        sha='9dcea968ab1b17a4e685b06d302f083629421464',
+        filename='onnx/models/sam3_tracker/prompt_encoder_mask_decoder.onnx_data',
+        large=True),
+    Model(
         name='OWLv2',  # https://huggingface.co/onnx-community/owlv2-base-patch16-finetuned-ONNX
         url='https://huggingface.co/onnx-community/owlv2-base-patch16-finetuned-ONNX/resolve/main/onnx/model.onnx',
         sha='025862e338274e685cf346a11875170a32557a43',
