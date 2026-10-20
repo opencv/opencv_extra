@@ -3309,6 +3309,46 @@ def generate_resize_no_scales(name="resize_no_scales"):
 
 generate_resize_no_scales()
 
+def generate_qconv_bias_case(name, x_scale, w_scale, w_zp, num_out, bias):
+    # QLinearConv with constant x_scale, w_scale and int32 bias. The importer
+    # folds the bias to float using x_scale[0] and the per-channel w_scale, so
+    # these inputs must agree with each other. Load-only model, no reference data.
+    X = onnx.helper.make_tensor_value_info("x", TensorProto.UINT8, [1, 1, 2, 2])
+    Y = onnx.helper.make_tensor_value_info("y", TensorProto.UINT8, [1, num_out, 2, 2])
+    inits = [
+        onnx.numpy_helper.from_array(x_scale, "x_scale"),
+        onnx.numpy_helper.from_array(np.array(0, dtype=np.uint8), "x_zp"),
+        onnx.numpy_helper.from_array(np.ones((num_out, 1, 1, 1), dtype=np.int8), "w"),
+        onnx.numpy_helper.from_array(w_scale, "w_scale"),
+        onnx.numpy_helper.from_array(w_zp, "w_zp"),
+        onnx.numpy_helper.from_array(np.array(0.25, dtype=np.float32), "y_scale"),
+        onnx.numpy_helper.from_array(np.array(0, dtype=np.uint8), "y_zp"),
+        onnx.numpy_helper.from_array(bias, "B"),
+    ]
+    node = onnx.helper.make_node("QLinearConv",
+                                 ["x", "x_scale", "x_zp", "w", "w_scale", "w_zp", "y_scale", "y_zp", "B"],
+                                 ["y"])
+    graph = onnx.helper.make_graph([node], name, [X], [Y], initializer=inits)
+    model = onnx.helper.make_model(graph, producer_name=name,
+                                   opset_imports=[onnx.helper.make_opsetid("", 10)])
+    model.ir_version = 7
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+# Per-channel w_scale with 64 entries but a 1-element bias: the fold loop ran
+# over w_scale and wrote past the bias buffer.
+generate_qconv_bias_case("qconv_bias_scale_mismatch",
+                         x_scale=np.array(0.5, dtype=np.float32),
+                         w_scale=np.full(64, 0.1, dtype=np.float32),
+                         w_zp=np.zeros(64, dtype=np.int8),
+                         num_out=64, bias=np.array([7], dtype=np.int32))
+# Empty x_scale: the fold read x_scale[0] unconditionally.
+generate_qconv_bias_case("qconv_empty_x_scale",
+                         x_scale=np.zeros(0, dtype=np.float32),
+                         w_scale=np.array(0.1, dtype=np.float32),
+                         w_zp=np.array(0, dtype=np.int8),
+                         num_out=1, bias=np.array([7], dtype=np.int32))
+
 ################# GELU #################
 
 x = torch.randn(1, 5, 20)
