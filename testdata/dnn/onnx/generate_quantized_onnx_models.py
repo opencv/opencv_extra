@@ -718,8 +718,11 @@ generate_conv_integer_dynamic("convinteger_dynamic_block", (1, 3, 256, 256),
                                (128, 32, 1, 1, 0, 1)], save_data=False)
 
 def matmul_integer_ref(a, b, a_zp, b_zp):
-    # int64 reference of ONNX MatMulInteger
-    y = np.matmul(a.astype(np.int64) - np.int64(a_zp), b.astype(np.int64) - np.asarray(b_zp, np.int64))
+    # int64 reference of ONNX MatMulInteger; an [M] a_zp of a 2-D A has one value per row
+    a_zp = np.asarray(a_zp, np.int64)
+    if a_zp.ndim == 1 and a.ndim == 2 and a_zp.size > 1:
+        a_zp = a_zp.reshape(-1, 1)
+    y = np.matmul(a.astype(np.int64) - a_zp, b.astype(np.int64) - np.asarray(b_zp, np.int64))
     assert np.abs(y).max() < 2 ** 31
     return y.astype(np.int32)
 
@@ -762,14 +765,21 @@ def generate_matmul_integer(name, a_shape, a_dtype, b, a_zp=None, b_zp=None, b_i
     a = np.swapaxes(a_in, -1, -2) if transpose_a else a_in
     feeds = {"a": a_in, "b": b} if b_input else {"a": a_in}
     ref = matmul_integer_ref(a, b, 0 if a_zp is None else a_zp, 0 if b_zp is None else b_zp)
-    out = rt.InferenceSession(model_path, providers=["CPUExecutionProvider"]).run(["y"], feeds)[0]
-    assert np.array_equal(out, ref), name
+    so = rt.SessionOptions()
+    so.log_severity_level = 4  # the per-row a_zero_point refusal below is expected
+    try:
+        out = rt.InferenceSession(model_path, so, providers=["CPUExecutionProvider"]).run(["y"], feeds)[0]
+        assert np.array_equal(out, ref), name
+        checked = "checked by onnxruntime"
+    except rt.capi.onnxruntime_pybind11_state.Fail:  # onnxruntime only takes a scalar a_zero_point
+        assert np.size(a_zp) > 1, name
+        checked = "numpy reference only"
 
     for i, vi in enumerate(inputs):
         suffix = "_%d" % i if len(inputs) > 1 else ""
         np.save(os.path.join("data", "input_" + name + suffix), feeds[vi.name])
     np.save(os.path.join("data", "output_" + name), ref)
-    print(name, "input", a_in.shape, "output", ref.shape, "checked by onnxruntime")
+    print(name, "input", a_in.shape, "output", ref.shape, checked)
 
 def generate_matmul_integer_dynamic(name, x_shape, hidden, out, x_ranges=((-1, 1),), save_data=True):
     # float MatMuls quantized by onnxruntime quantize_dynamic: DynamicQuantizeLinear -> MatMulInteger -> Cast -> Mul
@@ -852,3 +862,15 @@ generate_matmul_integer("matmulinteger_batched_s8", (1, 4, 9, 24), np.uint8,
                         random_int((1, 4, 24, 10), -111, 127, np.int8), a_zp=0, b_zp=np.int8(0))
 generate_matmul_integer("matmulinteger_vector_a", (19,), np.uint8,
                         random_int((3, 19, 13), -128, 127, np.int8), a_zp=131)
+# 1-D B, as in numpy.matmul: [M, K] @ [K] -> [M] and [K] @ [K] -> scalar
+generate_matmul_integer("matmulinteger_b_vector", (13, 29), np.uint8,
+                        random_int((29,), 0, 255, np.uint8), a_zp=131, b_zp=np.uint8(120))
+generate_matmul_integer("matmulinteger_vector_vector", (29,), np.uint8,
+                        random_int((29,), -128, 127, np.int8), a_zp=131)
+# per-row a_zero_point: [M] for a 2-D A, and [D..., M, 1] with a broadcast batch dim for an N-D A
+generate_matmul_integer("matmulinteger_a_zp_per_row", (11, 23), np.int8,
+                        random_int((23, 9), -128, 127, np.int8),
+                        a_zp=random_int((11,), -20, 20, np.int8))
+generate_matmul_integer("matmulinteger_a_zp_per_row_nd", (2, 3, 5, 17), np.uint8,
+                        random_int((3, 17, 7), 0, 255, np.uint8),
+                        a_zp=random_int((2, 1, 5, 1), 100, 160, np.uint8), b_zp=np.uint8(130))
