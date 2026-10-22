@@ -44,3 +44,20 @@ graph = helper.make_graph(
     [helper.make_tensor_value_info("Y", TensorProto.FLOAT, list(x.shape))],
     [numpy_helper.from_array(np.array([2], dtype=np.int64), "index")])
 save("shape_scale_static", graph, x, x * np.sqrt(np.float32(x.shape[2])))
+
+# The batch is symbolic, so the Shape chain is not folded: it runs on the host and only sizes the Reshape.
+x = rng.standard_normal((2, 4, 8)).astype(np.float32)
+graph = helper.make_graph(
+    [helper.make_node("Shape", ["X"], ["shape"]),
+     helper.make_node("Gather", ["shape", "index"], ["n"], axis=0),
+     helper.make_node("Unsqueeze", ["n", "axes"], ["n_1d"]),
+     helper.make_node("Concat", ["n_1d", "tail"], ["new_shape"], axis=0),
+     helper.make_node("Reshape", ["X", "new_shape"], ["flat"]),
+     helper.make_node("Relu", ["flat"], ["Y"])],
+    "shape_reshape_dynamic",
+    [helper.make_tensor_value_info("X", TensorProto.FLOAT, ["N", 4, 8])],
+    [helper.make_tensor_value_info("Y", TensorProto.FLOAT, ["N", 32])],
+    [numpy_helper.from_array(np.array(0, dtype=np.int64), "index"),
+     numpy_helper.from_array(np.array([0], dtype=np.int64), "axes"),
+     numpy_helper.from_array(np.array([32], dtype=np.int64), "tail")])
+save("shape_reshape_dynamic", graph, x, np.maximum(x.reshape(2, 32), 0))
