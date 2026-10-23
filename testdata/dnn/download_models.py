@@ -1321,6 +1321,31 @@ models = [
         sha='dc8c70a52c6880f11859bf074bcd294a45860821',
         filename='text_recognition_CRNN_EN_2021sep.onnx'),
     Model(
+        name='YuNet int8 (ONNX)',
+        url='https://github.com/opencv/opencv_zoo/raw/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/face_detection_yunet_2023mar_int8.onnx',
+        sha='607f4db294e97ce5bdd4cd51fa2737108d7b5330',
+        filename='onnx/models/face_detection_yunet_2023mar_int8.onnx'),
+    Model(
+        name='SFace int8 (ONNX)',
+        url='https://github.com/opencv/opencv_zoo/raw/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/face_recognition_sface_2021dec_int8.onnx',
+        sha='09f5ee2b48530a7af5fcd429e1ea59b3dc980f2e',
+        filename='onnx/models/face_recognition_sface_2021dec_int8.onnx'),
+    Model(
+        name='PP-OCRv3 text detection int8 (ONNX)',
+        url='https://github.com/opencv/opencv_zoo/raw/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/text_detection_ppocr/text_detection_en_ppocrv3_2023may_int8.onnx',
+        sha='1d5ba37a85fcdaae2fa4c058413dd6cc0ab36618',
+        filename='onnx/models/text_detection_en_ppocrv3_2023may_int8.onnx'),
+    Model(
+        name='DenseNet-121 int8 (ONNX)',
+        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/densenet-121/model/densenet-12-int8.onnx',
+        sha='f7755bd8a8534b95140f25ead698945b5f695f41',
+        filename='onnx/models/densenet-12-int8.onnx'),
+    Model(
+        name='EfficientNet Lite4 int8 (ONNX)',
+        url='https://github.com/onnx/models/raw/69c5d3751dda5349fd3fc53f525395d180420c07/vision/classification/efficientnet-lite4/model/efficientnet-lite4-11-int8.onnx',
+        sha='6a94cb104d6f03def2042e345cb199b68eb8f18b',
+        filename='onnx/models/efficientnet-lite4-11-int8.onnx'),
+    Model(
         name='RAFT', # See https://github.com/opencv/opencv_zoo/tree/main/models/optical_flow_estimation_raft#raft for source
         url='https://github.com/opencv/opencv_zoo/raw/281d232cd99cd920853106d853c440edd35eb442/models/optical_flow_estimation_raft/optical_flow_estimation_raft_2023aug.onnx',
         sha='8165e43c7bd37cc651f66509532acdb3c292832b',
