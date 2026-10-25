@@ -4377,5 +4377,30 @@ def generate_convtranspose_perf():
     export("64_64_k3s1p1", 64, 64, 3, 1, 1, 0, 1, 64)
     export("group4_128_128_k4s2p1", 128, 128, 4, 2, 1, 0, 4, 32)
     export("depthwise_64_k4s2p1", 64, 64, 4, 2, 1, 0, 64, 64)
-
 generate_convtranspose_perf()
+
+def generate_bool_tensor_int32():
+    # Test model for test_onnx_importer.cpp: bool_tensor_int32
+    # Verifies importing boolean initializers/constants serialized in repeated int32 int32_data.
+    bool_init = TensorProto(
+        dims=[3],
+        data_type=TensorProto.BOOL,
+        name="bool_init",
+        int32_data=[1, 0, 1]
+    )
+    node = helper.make_node("Not", inputs=["bool_init"], outputs=["Y"])
+    graph = helper.make_graph(
+        [node],
+        "test_bool_graph",
+        inputs=[],
+        outputs=[helper.make_tensor_value_info("Y", TensorProto.BOOL, [3])],
+        initializer=[bool_init]
+    )
+    model = helper.make_model(graph, producer_name="opencv_test", opset_imports=[helper.make_opsetid("", 13)])
+    onnx.checker.check_model(model)
+    onnx.save(model, os.path.join("models", "bool_tensor_int32.onnx"))
+
+    with open(os.path.join("models", "bool_tensor_int32.pb"), "wb") as f:
+        f.write(bool_init.SerializeToString())
+
+generate_bool_tensor_int32()
