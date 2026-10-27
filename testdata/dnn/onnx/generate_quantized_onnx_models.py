@@ -874,3 +874,88 @@ generate_matmul_integer("matmulinteger_a_zp_per_row", (11, 23), np.int8,
 generate_matmul_integer("matmulinteger_a_zp_per_row_nd", (2, 3, 5, 17), np.uint8,
                         random_int((3, 17, 7), 0, 255, np.uint8),
                         a_zp=random_int((2, 1, 5, 1), 100, 160, np.uint8), b_zp=np.uint8(130))
+
+def generate_matmul_integer_head_split(name, x_shape, n, spec, heads=0, head_dim=0):
+    # DynamicQuantizeLinear -> MatMulInteger -> Cast -> Mul -> Add -> Reshape -> Transpose(0, 2, 1, 3), an
+    # attention projection of a dynamically quantized transformer such as TrOCR; with spec None the Reshape
+    # shape [B, S, heads, head_dim] is computed from x's shape at runtime, as exported transformers do
+    from onnx import helper, numpy_helper, TensorProto
+    k = x_shape[-1]
+    inits = [numpy_helper.from_array(random_int((k, n), -128, 127, np.int8), "w"),
+             numpy_helper.from_array(np.array(0.02, np.float32), "w_scale"),
+             numpy_helper.from_array(np.array(0, np.int8), "w_zero_point"),
+             numpy_helper.from_array(np.random.standard_normal(n).astype(np.float32), "bias")]
+    nodes = [helper.make_node("DynamicQuantizeLinear", ["x"], ["xq", "x_scale", "x_zero_point"]),
+             helper.make_node("MatMulInteger", ["xq", "w", "x_zero_point", "w_zero_point"], ["acc"]),
+             helper.make_node("Cast", ["acc"], ["acc_f"], to=TensorProto.FLOAT),
+             helper.make_node("Mul", ["x_scale", "w_scale"], ["scale"]),
+             helper.make_node("Mul", ["acc_f", "scale"], ["y0"]),
+             helper.make_node("Add", ["bias", "y0"], ["y"])]
+    if spec is None:
+        inits += [numpy_helper.from_array(np.array([heads, head_dim], np.int64), "head_dims"),
+                  numpy_helper.from_array(np.array([0], np.int64), "i0"),
+                  numpy_helper.from_array(np.array([1], np.int64), "i1")]
+        nodes += [helper.make_node("Shape", ["x"], ["x_shape"]),
+                  helper.make_node("Gather", ["x_shape", "i0"], ["batch"], axis=0),
+                  helper.make_node("Gather", ["x_shape", "i1"], ["seq"], axis=0),
+                  helper.make_node("Concat", ["batch", "seq", "head_dims"], ["spec"], axis=0)]
+    else:
+        inits.append(numpy_helper.from_array(np.array(spec, np.int64), "spec"))
+    nodes += [helper.make_node("Reshape", ["y", "spec"], ["r"]),
+              helper.make_node("Transpose", ["r"], ["out"], perm=[0, 2, 1, 3])]
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("x", TensorProto.FLOAT, ["b", "s", k])],
+                              [helper.make_tensor_value_info("out", TensorProto.FLOAT, ["d0", "d1", "d2", "d3"])],
+                              inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(model)
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+
+    x = np.random.standard_normal(x_shape).astype(np.float32)
+    so = rt.SessionOptions()
+    so.graph_optimization_level = rt.GraphOptimizationLevel.ORT_DISABLE_ALL  # follow the unfused graph
+    y = rt.InferenceSession(model_path, so, providers=["CPUExecutionProvider"]).run(None, {"x": x})[0]
+    np.save(os.path.join("data", "input_" + name), x)
+    np.save(os.path.join("data", "output_" + name), y)
+    print(name, "input", x.shape, "output", y.shape)
+
+def generate_matmul_integer_per_row_dequant(name, m, k, n):
+    # a per-row a_zero_point followed by Cast -> Mul -> Add; onnxruntime rejects a per-row a_zero_point,
+    # so the reference is numpy
+    from onnx import helper, numpy_helper, TensorProto
+    a = random_int((m, k), 0, 255, np.uint8)
+    a_zp = random_int((m,), 0, 255, np.uint8)
+    b = random_int((k, n), -128, 127, np.int8)
+    scale = np.random.uniform(0.001, 0.01, n).astype(np.float32)
+    bias = np.random.standard_normal(n).astype(np.float32)
+    nodes = [helper.make_node("MatMulInteger", ["a", "b", "a_zero_point"], ["acc"]),
+             helper.make_node("Cast", ["acc"], ["acc_f"], to=TensorProto.FLOAT),
+             helper.make_node("Mul", ["acc_f", "scale"], ["y0"]),
+             helper.make_node("Add", ["y0", "bias"], ["y"])]
+    inits = [numpy_helper.from_array(b, "b"), numpy_helper.from_array(a_zp, "a_zero_point"),
+             numpy_helper.from_array(scale, "scale"), numpy_helper.from_array(bias, "bias")]
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("a", TensorProto.UINT8, [m, k])],
+                              [helper.make_tensor_value_info("y", TensorProto.FLOAT, [m, n])], inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(model)
+    onnx.save(model, os.path.join("models", name + ".onnx"))
+
+    y = matmul_integer_ref(a, b, a_zp, 0).astype(np.float32) * scale + bias
+    np.save(os.path.join("data", "input_" + name), a)
+    np.save(os.path.join("data", "output_" + name), y)
+    print(name, "input", a.shape, "output", y.shape, "numpy reference only")
+
+# the MatMulInteger fusion: dequantization and the attention head split fold into one MatMulInt8
+np.random.seed(2)
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split", (2, 5, 40), 64, [2, 5, 4, 16])
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_runtime_shape", (2, 7, 33), 64, None, 4, 16)
+# 0 copies an input dimension and -1 is inferred
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_zero_dims", (3, 9, 17), 48, [0, 0, -1, 16])
+# still fused, but computed into a temporary and transposed: head_dim 8 is not a multiple of 16, and
+# [1, 3, 8, 16] does not split rows and columns apart
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_d8", (2, 7, 33), 32, None, 4, 8)
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_not_a_split", (1, 6, 20), 64, [1, 3, 8, 16])
+# a per-row a_zero_point is applied after the int32 store, so Cast -> Mul -> Add stays unfused
+generate_matmul_integer_per_row_dequant("matmulinteger_fusion_per_row_zero_point", 5, 24, 32)
