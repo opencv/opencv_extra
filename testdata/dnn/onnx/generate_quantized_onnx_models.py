@@ -898,7 +898,7 @@ def dynamic_matmul_integer(k, n, a_zp="x_zero_point", weight_scale=True, bias=Tr
         nodes.append(helper.make_node("Add", ["bias", "y0"], ["y"]))
     return inits, nodes
 
-def save_with_onnxruntime_reference(name, nodes, inits, x_shape, out, out_dims):
+def save_with_onnxruntime_reference(name, nodes, inits, x_shape, out, out_dims, save_data=True):
     from onnx import helper, TensorProto
     graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("x", TensorProto.FLOAT,
                                                                           ["b", "s", x_shape[-1]])],
@@ -908,6 +908,9 @@ def save_with_onnxruntime_reference(name, nodes, inits, x_shape, out, out_dims):
     onnx.checker.check_model(model)
     model_path = os.path.join("models", name + ".onnx")
     onnx.save(model, model_path)
+    if not save_data:
+        print(name, "model only")
+        return
 
     x = np.random.standard_normal(x_shape).astype(np.float32)
     so = rt.SessionOptions()
@@ -918,7 +921,7 @@ def save_with_onnxruntime_reference(name, nodes, inits, x_shape, out, out_dims):
     print(name, "input", x.shape, "output", y.shape)
 
 def generate_matmul_integer_head_split(name, x_shape, n, spec, heads=0, head_dim=0, weight_scale=True,
-                                       bias=True):
+                                       bias=True, save_data=True):
     # the projection followed by Reshape -> Transpose(0, 2, 1, 3), as in an attention block of a dynamically
     # quantized transformer such as TrOCR; with spec None the Reshape shape [B, S, heads, head_dim] is computed
     # from x's shape at runtime, as exported transformers do
@@ -936,7 +939,7 @@ def generate_matmul_integer_head_split(name, x_shape, n, spec, heads=0, head_dim
         inits.append(numpy_helper.from_array(np.array(spec, np.int64), "spec"))
     nodes += [helper.make_node("Reshape", ["y", "spec"], ["r"]),
               helper.make_node("Transpose", ["r"], ["out"], perm=[0, 2, 1, 3])]
-    save_with_onnxruntime_reference(name, nodes, inits, x_shape, "out", ["d0", "d1", "d2", "d3"])
+    save_with_onnxruntime_reference(name, nodes, inits, x_shape, "out", ["d0", "d1", "d2", "d3"], save_data)
 
 def generate_matmul_integer_own_zero_point(name, x_shape, n, a_zp):
     # the projection with MatMulInteger given a constant a_zero_point, or none when a_zp is None, instead of
@@ -1011,3 +1014,6 @@ generate_matmul_integer_static_scale("matmulinteger_fusion_const_scale", (2, 5, 
 # the Mul takes the DynamicQuantizeLinear scale alone and there is no bias; everything still folds
 generate_matmul_integer_head_split("matmulinteger_fusion_head_split_dql_scale_no_bias", (2, 7, 33), 64, None, 4, 16,
                                    weight_scale=False, bias=False)
+# perf model only: a cross-attention K/V projection of TrOCR, 768 features into 12 heads of 64
+generate_matmul_integer_head_split("matmulinteger_head_split_block", (1, 577, 768), 768, None, 12, 64,
+                                   save_data=False)
