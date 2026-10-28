@@ -5385,54 +5385,18 @@
     <last>
       <x>1279</x>
       <y>719</y>
-      <val>132.</val></last>
-    <rng1>
-      <x>913</x>
-      <y>375</y>
-      <val>121.</val></rng1>
-    <rng2>
-      <x>428</x>
-      <y>33</y>
-      <val>106.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerBG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>156.</val></last>
-    <rng1>
-      <x>494</x>
-      <y>380</y>
-      <cn>1</cn>
-      <val>139.</val></rng1>
-    <rng2>
-      <x>195</x>
-      <y>717</y>
-      <cn>1</cn>
-      <val>69.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
       <val>63.</val></last>
     <rng1>
-      <x>855</x>
-      <y>161</y>
-      <val>196.</val></rng1>
+      <x>1107</x>
+      <y>228</y>
+      <cn>2</cn>
+      <val>143.</val></rng1>
     <rng2>
-      <x>224</x>
-      <y>55</y>
-      <val>175.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2BGR->
+      <x>473</x>
+      <y>209</y>
+      <cn>1</cn>
+      <val>111.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerBG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2BGR->
   <gpu_dst>
     <kind>65536</kind>
     <type>16</type>
@@ -5443,52 +5407,53 @@
       <y>719</y>
       <val>243.</val></last>
     <rng1>
-      <x>49</x>
-      <y>481</y>
-      <cn>1</cn>
-      <val>80.</val></rng1>
+      <x>313</x>
+      <y>416</y>
+      <val>131.</val></rng1>
     <rng2>
-      <x>538</x>
-      <y>464</y>
+      <x>984</x>
+      <y>393</y>
       <cn>1</cn>
-      <val>12.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2BGR->
+      <val>96.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>132.</val></last>
+    <rng1>
+      <x>296</x>
+      <y>61</y>
+      <val>66.</val></rng1>
+    <rng2>
+      <x>284</x>
+      <y>589</y>
+      <cn>2</cn>
+      <val>120.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>156.</val></last>
+    <rng1>
+      <x>1064</x>
+      <y>314</y>
+      <cn>2</cn>
+      <val>112.</val></rng1>
+    <rng2>
+      <x>166</x>
+      <y>142</y>
+      <val>158.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2BGR->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerBG2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>253.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>189.</val></last>
-    <rng1>
-      <x>502</x>
-      <y>669</y>
-      <val>185.</val></rng1>
-    <rng2>
-      <x>236</x>
-      <y>163</y>
-      <val>113.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerBG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>248.</max>
-    <last>
-      <x>1279</x>
-      <y>719</y>
-      <val>131.</val></last>
-    <rng1>
-      <x>540</x>
-      <y>169</y>
-      <val>60.</val></rng1>
-    <rng2>
-      <x>886</x>
-      <y>158</y>
-      <val>203.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -5499,14 +5464,14 @@
       <y>719</y>
       <val>177.</val></last>
     <rng1>
-      <x>556</x>
-      <y>659</y>
-      <val>27.</val></rng1>
+      <x>1015</x>
+      <y>9</y>
+      <val>99.</val></rng1>
     <rng2>
-      <x>668</x>
-      <y>211</y>
-      <val>182.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2GRAY->
+      <x>962</x>
+      <y>634</y>
+      <val>66.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerBG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -5517,13 +5482,49 @@
       <y>719</y>
       <val>147.</val></last>
     <rng1>
-      <x>977</x>
-      <y>618</y>
-      <val>122.</val></rng1>
+      <x>670</x>
+      <y>329</y>
+      <val>143.</val></rng1>
     <rng2>
-      <x>237</x>
-      <y>536</y>
-      <val>149.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2GRAY->
+      <x>627</x>
+      <y>316</y>
+      <val>144.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGB2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>253.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>189.</val></last>
+    <rng1>
+      <x>1148</x>
+      <y>620</y>
+      <val>131.</val></rng1>
+    <rng2>
+      <x>1218</x>
+      <y>308</y>
+      <val>176.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerRG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>248.</max>
+    <last>
+      <x>1279</x>
+      <y>719</y>
+      <val>131.</val></last>
+    <rng1>
+      <x>441</x>
+      <y>424</y>
+      <val>160.</val></rng1>
+    <rng2>
+      <x>910</x>
+      <y>256</y>
+      <val>107.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--COLOR_BayerGR2GRAY->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5535,13 +5536,14 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>347</x>
-      <y>205</y>
-      <val>222.</val></rng1>
+      <x>999</x>
+      <y>556</y>
+      <cn>2</cn>
+      <val>255.</val></rng1>
     <rng2>
-      <x>1206</x>
-      <y>42</y>
-      <val>117.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2BGR_MHT->
+      <x>167</x>
+      <y>233</y>
+      <val>8.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5553,15 +5555,14 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>872</x>
-      <y>375</y>
-      <cn>2</cn>
-      <val>37.</val></rng1>
+      <x>542</x>
+      <y>308</y>
+      <val>0.</val></rng1>
     <rng2>
-      <x>144</x>
-      <y>695</y>
-      <cn>2</cn>
-      <val>172.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2BGR_MHT->
+      <x>591</x>
+      <y>270</y>
+      <cn>1</cn>
+      <val>178.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerRG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5573,15 +5574,15 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>431</x>
-      <y>603</y>
-      <cn>2</cn>
-      <val>216.</val></rng1>
-    <rng2>
-      <x>108</x>
-      <y>596</y>
+      <x>478</x>
+      <y>303</y>
       <cn>1</cn>
-      <val>162.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerRG2BGR_MHT->
+      <val>213.</val></rng1>
+    <rng2>
+      <x>800</x>
+      <y>31</y>
+      <cn>1</cn>
+      <val>103.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerRG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGR2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5593,14 +5594,15 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>430</x>
-      <y>662</y>
-      <val>164.</val></rng1>
+      <x>1196</x>
+      <y>78</y>
+      <cn>1</cn>
+      <val>248.</val></rng1>
     <rng2>
-      <x>848</x>
-      <y>597</y>
+      <x>195</x>
+      <y>73</y>
       <cn>2</cn>
-      <val>96.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGR2BGR_MHT->
+      <val>86.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGR2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5612,13 +5614,13 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>1090</x>
-      <y>622</y>
-      <val>186.</val></rng1>
+      <x>661</x>
+      <y>706</y>
+      <val>51.</val></rng1>
     <rng2>
-      <x>308</x>
-      <y>322</y>
-      <val>174.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2GRAY_MHT->
+      <x>159</x>
+      <y>319</y>
+      <val>74.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerBG2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5630,13 +5632,13 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>380</x>
-      <y>549</y>
-      <val>219.</val></rng1>
+      <x>423</x>
+      <y>618</y>
+      <val>156.</val></rng1>
     <rng2>
-      <x>487</x>
-      <y>513</y>
-      <val>203.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2GRAY_MHT->
+      <x>128</x>
+      <y>478</y>
+      <val>39.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGB2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerRG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5666,51 +5668,14 @@
       <y>719</y>
       <val>0.</val></last>
     <rng1>
-      <x>17</x>
-      <y>517</y>
-      <val>93.</val></rng1>
+      <x>831</x>
+      <y>1</y>
+      <val>117.</val></rng1>
     <rng2>
-      <x>44</x>
-      <y>326</y>
-      <val>111.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGR2GRAY_MHT->
+      <x>333</x>
+      <y>380</y>
+      <val>173.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x720--cv--cuda--COLOR_BayerGR2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>205.</val></last>
-    <rng1>
-      <x>690</x>
-      <y>807</y>
-      <val>195.</val></rng1>
-    <rng2>
-      <x>784</x>
-      <y>963</y>
-      <val>18.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>61.</val></last>
-    <rng1>
-      <x>237</x>
-      <y>193</y>
-      <val>179.</val></rng1>
-    <rng2>
-      <x>222</x>
-      <y>452</y>
-      <cn>2</cn>
-      <val>232.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2BGR->
   <gpu_dst>
     <kind>65536</kind>
     <type>16</type>
@@ -5721,16 +5686,16 @@
       <y>1023</y>
       <val>92.</val></last>
     <rng1>
-      <x>797</x>
-      <y>505</y>
-      <cn>1</cn>
-      <val>164.</val></rng1>
-    <rng2>
-      <x>728</x>
-      <y>424</y>
+      <x>700</x>
+      <y>689</y>
       <cn>2</cn>
-      <val>225.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2BGR->
+      <val>86.</val></rng1>
+    <rng2>
+      <x>989</x>
+      <y>322</y>
+      <cn>1</cn>
+      <val>176.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2BGR->
   <gpu_dst>
     <kind>65536</kind>
     <type>16</type>
@@ -5741,50 +5706,55 @@
       <y>1023</y>
       <val>39.</val></last>
     <rng1>
-      <x>790</x>
-      <y>78</y>
-      <val>167.</val></rng1>
+      <x>909</x>
+      <y>785</y>
+      <cn>2</cn>
+      <val>85.</val></rng1>
     <rng2>
-      <x>967</x>
-      <y>567</y>
-      <val>104.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2BGR->
+      <x>944</x>
+      <y>991</y>
+      <cn>2</cn>
+      <val>93.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>205.</val></last>
+    <rng1>
+      <x>123</x>
+      <y>549</y>
+      <cn>2</cn>
+      <val>88.</val></rng1>
+    <rng2>
+      <x>962</x>
+      <y>744</y>
+      <cn>2</cn>
+      <val>109.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>61.</val></last>
+    <rng1>
+      <x>1076</x>
+      <y>1018</y>
+      <cn>2</cn>
+      <val>28.</val></rng1>
+    <rng2>
+      <x>760</x>
+      <y>612</y>
+      <val>193.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2BGR->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>253.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>95.</val></last>
-    <rng1>
-      <x>193</x>
-      <y>798</y>
-      <val>161.</val></rng1>
-    <rng2>
-      <x>549</x>
-      <y>52</y>
-      <val>136.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>6.</min>
-    <max>250.</max>
-    <last>
-      <x>1279</x>
-      <y>1023</y>
-      <val>110.</val></last>
-    <rng1>
-      <x>735</x>
-      <y>465</y>
-      <val>151.</val></rng1>
-    <rng2>
-      <x>418</x>
-      <y>941</y>
-      <val>94.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -5795,14 +5765,14 @@
       <y>1023</y>
       <val>74.</val></last>
     <rng1>
-      <x>805</x>
-      <y>177</y>
-      <val>100.</val></rng1>
+      <x>927</x>
+      <y>434</y>
+      <val>88.</val></rng1>
     <rng2>
-      <x>1006</x>
-      <y>868</y>
-      <val>99.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2GRAY->
+      <x>119</x>
+      <y>615</y>
+      <val>105.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerBG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -5813,13 +5783,49 @@
       <y>1023</y>
       <val>105.</val></last>
     <rng1>
-      <x>555</x>
-      <y>786</y>
-      <val>122.</val></rng1>
+      <x>579</x>
+      <y>991</y>
+      <val>147.</val></rng1>
     <rng2>
-      <x>196</x>
-      <y>104</y>
-      <val>65.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2GRAY->
+      <x>895</x>
+      <y>959</y>
+      <val>100.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGB2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>253.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>95.</val></last>
+    <rng1>
+      <x>1245</x>
+      <y>15</y>
+      <val>147.</val></rng1>
+    <rng2>
+      <x>243</x>
+      <y>234</y>
+      <val>89.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerRG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>6.</min>
+    <max>250.</max>
+    <last>
+      <x>1279</x>
+      <y>1023</y>
+      <val>110.</val></last>
+    <rng1>
+      <x>295</x>
+      <y>193</y>
+      <val>160.</val></rng1>
+    <rng2>
+      <x>421</x>
+      <y>18</y>
+      <val>109.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--COLOR_BayerGR2GRAY->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5831,14 +5837,15 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>665</x>
-      <y>805</y>
+      <x>16</x>
+      <y>949</y>
       <cn>1</cn>
-      <val>153.</val></rng1>
+      <val>119.</val></rng1>
     <rng2>
-      <x>405</x>
-      <y>616</y>
-      <val>98.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2BGR_MHT->
+      <x>1185</x>
+      <y>839</y>
+      <cn>2</cn>
+      <val>78.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5850,14 +5857,15 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>1158</x>
-      <y>435</y>
-      <val>102.</val></rng1>
-    <rng2>
-      <x>973</x>
-      <y>821</y>
+      <x>1234</x>
+      <y>569</y>
       <cn>1</cn>
-      <val>108.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2BGR_MHT->
+      <val>105.</val></rng1>
+    <rng2>
+      <x>1241</x>
+      <y>432</y>
+      <cn>1</cn>
+      <val>211.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerRG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5869,14 +5877,15 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>403</x>
-      <y>584</y>
-      <val>61.</val></rng1>
-    <rng2>
-      <x>1014</x>
-      <y>419</y>
+      <x>1211</x>
+      <y>826</y>
       <cn>2</cn>
-      <val>200.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerRG2BGR_MHT->
+      <val>225.</val></rng1>
+    <rng2>
+      <x>0</x>
+      <y>132</y>
+      <cn>1</cn>
+      <val>0.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerRG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGR2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5888,15 +5897,14 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>657</x>
-      <y>994</y>
-      <cn>2</cn>
-      <val>211.</val></rng1>
+      <x>356</x>
+      <y>1001</y>
+      <val>150.</val></rng1>
     <rng2>
-      <x>493</x>
-      <y>874</y>
+      <x>880</x>
+      <y>70</y>
       <cn>1</cn>
-      <val>99.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGR2BGR_MHT->
+      <val>136.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGR2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5908,13 +5916,13 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>461</x>
-      <y>945</y>
-      <val>189.</val></rng1>
+      <x>358</x>
+      <y>742</y>
+      <val>159.</val></rng1>
     <rng2>
-      <x>275</x>
-      <y>418</y>
-      <val>138.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2GRAY_MHT->
+      <x>752</x>
+      <y>325</y>
+      <val>50.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerBG2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5926,13 +5934,13 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>606</x>
-      <y>334</y>
-      <val>61.</val></rng1>
+      <x>676</x>
+      <y>757</y>
+      <val>125.</val></rng1>
     <rng2>
-      <x>927</x>
-      <y>224</y>
-      <val>50.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2GRAY_MHT->
+      <x>1067</x>
+      <y>959</y>
+      <val>77.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGB2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerRG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -5962,52 +5970,14 @@
       <y>1023</y>
       <val>0.</val></last>
     <rng1>
-      <x>792</x>
-      <y>157</y>
-      <val>103.</val></rng1>
+      <x>471</x>
+      <y>9</y>
+      <val>31.</val></rng1>
     <rng2>
-      <x>1013</x>
-      <y>518</y>
-      <val>203.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGR2GRAY_MHT->
+      <x>1015</x>
+      <y>308</y>
+      <val>187.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1280x1024--cv--cuda--COLOR_BayerGR2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>83.</val></last>
-    <rng1>
-      <x>1345</x>
-      <y>650</y>
-      <cn>1</cn>
-      <val>222.</val></rng1>
-    <rng2>
-      <x>1645</x>
-      <y>607</y>
-      <val>82.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2BGR->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>16</type>
-    <min>0.</min>
-    <max>255.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>103.</val></last>
-    <rng1>
-      <x>24</x>
-      <y>662</y>
-      <val>67.</val></rng1>
-    <rng2>
-      <x>946</x>
-      <y>805</y>
-      <cn>1</cn>
-      <val>116.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2BGR->
   <gpu_dst>
     <kind>65536</kind>
     <type>16</type>
@@ -6018,15 +5988,16 @@
       <y>1079</y>
       <val>93.</val></last>
     <rng1>
-      <x>1683</x>
-      <y>215</y>
-      <val>28.</val></rng1>
+      <x>1209</x>
+      <y>74</y>
+      <cn>2</cn>
+      <val>123.</val></rng1>
     <rng2>
-      <x>1056</x>
-      <y>916</y>
-      <cn>1</cn>
-      <val>74.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2BGR->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2BGR->
+      <x>1263</x>
+      <y>601</y>
+      <cn>2</cn>
+      <val>109.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2BGR->
   <gpu_dst>
     <kind>65536</kind>
     <type>16</type>
@@ -6037,51 +6008,55 @@
       <y>1079</y>
       <val>237.</val></last>
     <rng1>
-      <x>904</x>
-      <y>343</y>
+      <x>1171</x>
+      <y>871</y>
+      <val>174.</val></rng1>
+    <rng2>
+      <x>1278</x>
+      <y>148</y>
+      <cn>1</cn>
+      <val>60.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>83.</val></last>
+    <rng1>
+      <x>1280</x>
+      <y>914</y>
+      <cn>1</cn>
+      <val>81.</val></rng1>
+    <rng2>
+      <x>24</x>
+      <y>1007</y>
+      <cn>1</cn>
+      <val>168.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2BGR->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2BGR->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>16</type>
+    <min>0.</min>
+    <max>255.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>103.</val></last>
+    <rng1>
+      <x>571</x>
+      <y>918</y>
+      <cn>1</cn>
+      <val>145.</val></rng1>
+    <rng2>
+      <x>268</x>
+      <y>648</y>
       <cn>2</cn>
-      <val>126.</val></rng1>
-    <rng2>
-      <x>123</x>
-      <y>602</y>
-      <val>138.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2BGR->
+      <val>23.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2BGR->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>5.</min>
-    <max>250.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>175.</val></last>
-    <rng1>
-      <x>714</x>
-      <y>157</y>
-      <val>152.</val></rng1>
-    <rng2>
-      <x>744</x>
-      <y>57</y>
-      <val>162.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2GRAY->
-  <gpu_dst>
-    <kind>65536</kind>
-    <type>0</type>
-    <min>4.</min>
-    <max>250.</max>
-    <last>
-      <x>1919</x>
-      <y>1079</y>
-      <val>109.</val></last>
-    <rng1>
-      <x>1480</x>
-      <y>5</y>
-      <val>93.</val></rng1>
-    <rng2>
-      <x>419</x>
-      <y>824</y>
-      <val>107.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -6092,14 +6067,14 @@
       <y>1079</y>
       <val>176.</val></last>
     <rng1>
-      <x>804</x>
-      <y>381</y>
-      <val>118.</val></rng1>
+      <x>1418</x>
+      <y>776</y>
+      <val>132.</val></rng1>
     <rng2>
-      <x>66</x>
-      <y>597</y>
-      <val>104.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2GRAY->
-<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2GRAY->
+      <x>921</x>
+      <y>420</y>
+      <val>143.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerBG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2GRAY->
   <gpu_dst>
     <kind>65536</kind>
     <type>0</type>
@@ -6110,13 +6085,49 @@
       <y>1079</y>
       <val>134.</val></last>
     <rng1>
-      <x>788</x>
-      <y>615</y>
-      <val>126.</val></rng1>
+      <x>1665</x>
+      <y>159</y>
+      <val>72.</val></rng1>
     <rng2>
-      <x>1253</x>
-      <y>755</y>
-      <val>65.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2GRAY->
+      <x>927</x>
+      <y>587</y>
+      <val>110.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGB2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>5.</min>
+    <max>250.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>175.</val></last>
+    <rng1>
+      <x>758</x>
+      <y>332</y>
+      <val>153.</val></rng1>
+    <rng2>
+      <x>730</x>
+      <y>747</y>
+      <val>52.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerRG2GRAY->
+<Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2GRAY->
+  <gpu_dst>
+    <kind>65536</kind>
+    <type>0</type>
+    <min>4.</min>
+    <max>250.</max>
+    <last>
+      <x>1919</x>
+      <y>1079</y>
+      <val>109.</val></last>
+    <rng1>
+      <x>1489</x>
+      <y>505</y>
+      <val>107.</val></rng1>
+    <rng2>
+      <x>999</x>
+      <y>844</y>
+      <val>145.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--COLOR_BayerGR2GRAY->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6128,15 +6139,14 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>686</x>
-      <y>288</y>
-      <cn>2</cn>
-      <val>194.</val></rng1>
+      <x>1620</x>
+      <y>663</y>
+      <val>151.</val></rng1>
     <rng2>
-      <x>1403</x>
-      <y>127</y>
-      <cn>2</cn>
-      <val>70.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2BGR_MHT->
+      <x>80</x>
+      <y>625</y>
+      <cn>1</cn>
+      <val>215.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6148,15 +6158,14 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>637</x>
-      <y>182</y>
-      <cn>1</cn>
-      <val>109.</val></rng1>
+      <x>304</x>
+      <y>705</y>
+      <cn>2</cn>
+      <val>171.</val></rng1>
     <rng2>
-      <x>1350</x>
-      <y>319</y>
-      <cn>1</cn>
-      <val>213.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2BGR_MHT->
+      <x>577</x>
+      <y>482</y>
+      <val>187.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerRG2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6168,14 +6177,15 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>1813</x>
-      <y>848</y>
-      <val>53.</val></rng1>
+      <x>1804</x>
+      <y>288</y>
+      <cn>1</cn>
+      <val>218.</val></rng1>
     <rng2>
-      <x>1090</x>
-      <y>872</y>
+      <x>138</x>
+      <y>103</y>
       <cn>2</cn>
-      <val>205.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerRG2BGR_MHT->
+      <val>45.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerRG2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGR2BGR_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6187,15 +6197,14 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>1460</x>
-      <y>595</y>
-      <cn>2</cn>
-      <val>129.</val></rng1>
-    <rng2>
-      <x>59</x>
-      <y>778</y>
+      <x>645</x>
+      <y>350</y>
       <cn>1</cn>
-      <val>58.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGR2BGR_MHT->
+      <val>197.</val></rng1>
+    <rng2>
+      <x>1791</x>
+      <y>175</y>
+      <val>102.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGR2BGR_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6207,13 +6216,13 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>722</x>
-      <y>914</y>
-      <val>30.</val></rng1>
+      <x>1714</x>
+      <y>121</y>
+      <val>87.</val></rng1>
     <rng2>
-      <x>170</x>
-      <y>705</y>
-      <val>79.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2GRAY_MHT->
+      <x>1376</x>
+      <y>490</y>
+      <val>250.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerBG2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6225,13 +6234,13 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>118</x>
-      <y>1014</y>
-      <val>212.</val></rng1>
+      <x>168</x>
+      <y>608</y>
+      <val>100.</val></rng1>
     <rng2>
-      <x>1508</x>
-      <y>696</y>
-      <val>126.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2GRAY_MHT->
+      <x>1280</x>
+      <y>633</y>
+      <val>10.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGB2GRAY_MHT->
 <Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerRG2GRAY_MHT->
   <gpu_dst>
     <kind>65536</kind>
@@ -6261,13 +6270,13 @@
       <y>1079</y>
       <val>0.</val></last>
     <rng1>
-      <x>187</x>
-      <y>976</y>
-      <val>101.</val></rng1>
+      <x>90</x>
+      <y>122</y>
+      <val>58.</val></rng1>
     <rng2>
-      <x>1034</x>
-      <y>157</y>
-      <val>38.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGR2GRAY_MHT->
+      <x>574</x>
+      <y>802</y>
+      <val>167.</val></rng2></gpu_dst></Sz_Code_Demosaicing--Demosaicing---1920x1080--cv--cuda--COLOR_BayerGR2GRAY_MHT->
 <Sz_SwapChannels--SwapChannels--1280x720>
   <gpu_dst>
     <kind>65536</kind>
