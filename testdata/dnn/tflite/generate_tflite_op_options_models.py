@@ -118,6 +118,8 @@ def cases():
          transpose_conv(transpose_conv_params())),
         ("tflite_transpose_conv_short_options", "Convolution2DTransposeBias, 4-byte options, rejected",
          transpose_conv(transpose_conv_params()[:4])),
+        ("tflite_transpose_conv_zero_stride", "Convolution2DTransposeBias, stride_w 0, rejected",
+         transpose_conv(transpose_conv_params(stride_w=0))),
         ("tflite_max_pool_control", "MAX_POOL_2D, stride 2, accepted",
          max_pool()),
         ("tflite_max_pool_zero_stride", "MAX_POOL_2D, stride_w 0, rejected",
