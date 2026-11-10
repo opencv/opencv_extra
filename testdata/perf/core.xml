@@ -82616,6 +82616,149 @@
       <dt>d</dt>
       <data>
         1713569421533.854</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---640x480--64FC1--NORM_INF-NORM_L2->
+<Size_MatType_NormType_norm_mask--norm_mask---640x480--8SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        5032675756</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---640x480--8SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---640x480--16SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        329571982301758</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---640x480--16SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---640x480--32SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        1.4155815523208194e+24</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---640x480--32SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1280x720--8SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        15105258659</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1280x720--8SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1280x720--16SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        989657803911381</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1280x720--16SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1280x720--32SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        4.2473240834249147e+24</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1280x720--32SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1920x1080--8SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        33990784593</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1920x1080--8SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1920x1080--16SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        2226591814134370</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1920x1080--16SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---1920x1080--32SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        9.5605819811140991e+24</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---1920x1080--32SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---127x61--8SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        128398064.</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---127x61--8SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---127x61--16SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        8254235400174</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---127x61--16SC3--NORM_INF-NORM_L2->
+ <!-- resumed -->
+
+<Size_MatType_NormType_norm_mask--norm_mask---127x61--32SC3--NORM_INF-NORM_L2->
+  <n>
+    <kind>131072</kind>
+    <type>6</type>
+    <val type_id="opencv-matrix">
+      <rows>1</rows>
+      <cols>1</cols>
+      <dt>d</dt>
+      <data>
+        3.5612883066109523e+22</data></val></n></Size_MatType_NormType_norm_mask--norm_mask---127x61--32SC3--NORM_INF-NORM_L2->
+
 <Size_MatType_NormType_norm_mask--norm_mask---1280x720--8UC1--NORM_INF-NORM_L2->
   <n>
     <kind>131072</kind>
