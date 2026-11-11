@@ -4796,3 +4796,22 @@ def generate_fast_path_models():
             s_aligned=sizes(16, 16), s_unaligned=sizes(12, 20), s_height=sizes(5, 5)))
 
 generate_fast_path_models()
+
+## Gemm whose constant B is square, so a transpose into the same Mat would work in place.
+## A has a dynamic row count so the net can be forwarded at more than one shape.
+
+def generate_gemm_square_weight(name, inputB, inputC):
+    K, N = inputB.shape
+    A = onnx.helper.make_tensor_value_info("A", onnx.TensorProto.FLOAT, ["M", K])
+    Y = onnx.helper.make_tensor_value_info("Y", onnx.TensorProto.FLOAT, ["M", N])
+    B_INIT = onnx.helper.make_tensor("B", onnx.TensorProto.FLOAT, inputB.shape, inputB)
+    C_INIT = onnx.helper.make_tensor("C", onnx.TensorProto.FLOAT, inputC.shape, inputC)
+    node = onnx.helper.make_node("Gemm", inputs=["A", "B", "C"], outputs=["Y"])
+    graph = onnx.helper.make_graph([node], name, [A], [Y], [B_INIT, C_INIT])
+    model = onnx.helper.make_model(graph, producer_name=name)
+    onnx.save(model, os.path.join("models", name + ".onnx"))
+
+np.random.seed(0)
+inputB = np.random.ranf([8, 8]).astype(np.float32)
+inputC = np.random.ranf([1, 8]).astype(np.float32)
+generate_gemm_square_weight("gemm_square_weight", inputB, inputC)
