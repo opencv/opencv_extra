@@ -4936,6 +4936,7 @@ generate_fast_path_models()
 
 def generate_slice_to_split(name="slice_to_split"):
     # rotate_half, in both Slice arities: steps omitted on one pair, given on the other.
+    # The second pair lists the tail first, with its Neg ahead of the head Slice.
     np.random.seed(0x12345)
     B, H, S, D = 1, 2, 3, 8
     END = np.iinfo(np.int64).max
@@ -4950,9 +4951,9 @@ def generate_slice_to_split(name="slice_to_split"):
         helper.make_node("Slice", ["X", "s1", "e1", "ax"], ["a2"]),
         helper.make_node("Neg", ["a2"], ["na2"]),
         helper.make_node("Concat", ["na2", "a1"], ["R"], axis=-1),
-        helper.make_node("Slice", ["R", "s0", "e0", "ax", "st"], ["b1"]),
         helper.make_node("Slice", ["R", "s1", "e1", "ax", "st"], ["b2"]),
         helper.make_node("Neg", ["b2"], ["nb2"]),
+        helper.make_node("Slice", ["R", "s0", "e0", "ax", "st"], ["b1"]),
         helper.make_node("Concat", ["nb2", "b1"], ["Y"], axis=-1),
     ]
     X = helper.make_tensor_value_info("X", TensorProto.FLOAT, [B, H, S, D])
