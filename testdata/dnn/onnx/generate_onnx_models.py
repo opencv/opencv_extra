@@ -197,6 +197,10 @@ input = Variable(torch.randn(1, 3, 7, 5))
 ave_pool = nn.AvgPool2d(kernel_size=3, stride=2, padding=1)
 save_data_and_model("average_pooling", input, ave_pool)
 
+input = Variable(torch.randn(1, 3, 7, 5))
+ave_pool = nn.AvgPool2d(kernel_size=3, stride=1, padding=1, count_include_pad=False)
+save_data_and_model("average_pooling_exclude_pad", input, ave_pool)
+
 input = torch.randn(2, 4, 2, 3)
 batch_norm = nn.BatchNorm2d(4)
 batch_norm.eval()
