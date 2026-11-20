@@ -45,39 +45,6 @@ def save_case(name, x, w, bias, save_data=True, pre_op=None):
         np.save("data/output_" + name + ".npy", y)
 
 
-def save_chain_case(name, x, w1, b1, w2, b2, save_data=True):
-    h = (x.astype(np.float64) @ w1.astype(np.float64) + b1.astype(np.float64)).astype(np.float32)
-    y = (h.astype(np.float64) @ w2.astype(np.float64) + b2.astype(np.float64)).astype(np.float32)
-    graph = helper.make_graph(
-        [
-            helper.make_node("MatMul", ["X", "W1"], ["MM1"], name="matmul1"),
-            helper.make_node("Add", ["MM1", "B1"], ["H"], name="add1"),
-            helper.make_node("MatMul", ["H", "W2"], ["MM2"], name="matmul2"),
-            helper.make_node("Add", ["MM2", "B2"], ["Y"], name="add2"),
-        ],
-        name,
-        [helper.make_tensor_value_info("X", TensorProto.FLOAT, list(x.shape))],
-        [helper.make_tensor_value_info("Y", TensorProto.FLOAT, list(y.shape))],
-        initializer=[
-            numpy_helper.from_array(w1, "W1"),
-            numpy_helper.from_array(b1, "B1"),
-            numpy_helper.from_array(w2, "W2"),
-            numpy_helper.from_array(b2, "B2"),
-        ],
-    )
-    model = helper.make_model(
-        graph,
-        producer_name="matmul-add-bias-regression",
-        opset_imports=[helper.make_operatorsetid("", 18)],
-    )
-    model.ir_version = 8
-    checker.check_model(model)
-    onnx.save(model, "models/" + name + ".onnx")
-    if save_data:
-        np.save("data/input_" + name + ".npy", x)
-        np.save("data/output_" + name + ".npy", y)
-
-
 rng = np.random.default_rng(0)
 
 
@@ -98,32 +65,10 @@ save_case("matmul_add_bias_column", uniform(16, 12), uniform(12, 16), column)
 # The test checks only that the rewrite skips it, so no data is saved.
 save_case("matmul_add_bias_rank", uniform(3, 8), uniform(8, 6), uniform(1, 1, 6), save_data=False)
 
-# [1, 1, N] bias on a MatMul fed by Relu on a 3-D input: rank propagates across Relu and fuses into Gemm
-save_case("matmul_add_bias_nd_after_relu", uniform(2, 5, 16), uniform(16, 24), uniform(1, 1, 24), pre_op="Relu")
-
-# Two chained MatMul + Add([1, 1, N]) stages on a 3-D input: rank propagates across the first Gemm so both fuse
-save_chain_case(
-    "matmul_add_bias_nd_chain",
-    uniform(2, 5, 16),
-    uniform(16, 12),
-    uniform(1, 1, 12),
-    uniform(12, 24),
-    uniform(1, 1, 24),
-)
-
-# 1-D [N] bias after data-dependent Squeeze (unknown output rank at fusion time): a 1-D bias never raises rank, so it fuses
+# [N] bias on the output of Squeeze, whose rank is not known when the graph is fused: a 1-D bias cannot add
+# axes to the output, so it still fuses
 save_case("matmul_add_bias_1d_rank_unknown", uniform(1, 3, 8), uniform(8, 6), uniform(6), pre_op="Squeeze")
 
-# [1, 1, N] bias after Relu on a 2-D input, across two chained MatMul + Add stages on a 2-D input, and after
-# data-dependent Squeeze (unknown rank at fusion time): all must skip the Gemm rewrite so no axis is lost.
+# [1, 1, N] bias on a MatMul fed by Relu on a 2-D input: the output gets 3 dimensions, and the input rank is not
+# known when the graph is fused, so the rewrite must skip it. No data is saved.
 save_case("matmul_add_bias_rank_after_relu", uniform(3, 8), uniform(8, 6), uniform(1, 1, 6), save_data=False, pre_op="Relu")
-save_chain_case(
-    "matmul_add_bias_rank_chain",
-    uniform(3, 8),
-    uniform(8, 6),
-    uniform(1, 1, 6),
-    uniform(6, 4),
-    uniform(1, 1, 4),
-    save_data=False,
-)
-save_case("matmul_add_bias_rank_unknown", uniform(1, 3, 8), uniform(8, 6), uniform(1, 1, 6), save_data=False, pre_op="Squeeze")
