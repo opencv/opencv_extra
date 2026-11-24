@@ -4290,6 +4290,88 @@ def generate_multi_head_attention_models():
 
 generate_multi_head_attention_models()
 
+# com.microsoft Attention with the spec's int32 [B, S] 0/1 mask_index (graph input and constant),
+# without a bias or with empty optional inputs, and decomposed attention written as
+# Add(mask, scores), which OpenCV fuses into one Attention layer. onnxruntime gives the references.
+def generate_attention_mask_models():
+    import onnxruntime as ort
+
+    batch, seq, num_heads, head_size = 2, 7, 2, 8
+    hidden = num_heads * head_size
+    rng = np.random.RandomState(42)
+    x = rng.uniform(-1, 1, (batch, seq, hidden)).astype(np.float32)
+    w = rng.uniform(-0.5, 0.5, (hidden, 3 * hidden)).astype(np.float32)
+    b = rng.uniform(-0.2, 0.2, (3 * hidden,)).astype(np.float32)
+    mask = np.ones((batch, seq), dtype=np.int32)
+    mask[0, 5:] = 0
+    mask[1, 3:] = 0
+
+    x_info = helper.make_tensor_value_info("X", TensorProto.FLOAT, [batch, seq, hidden])
+    mask_info = helper.make_tensor_value_info("M", TensorProto.INT32, [batch, seq])
+    w_init = numpy_helper.from_array(w, "W")
+    b_init = numpy_helper.from_array(b, "B")
+
+    def save(name, nodes, inputs, initializers, feeds):
+        y_info = helper.make_tensor_value_info("Y", TensorProto.FLOAT, [batch, seq, hidden])
+        graph = helper.make_graph(nodes, name, inputs, [y_info], initializer=initializers)
+        model = helper.make_model(graph, opset_imports=[
+            helper.make_opsetid("", 18), helper.make_opsetid("com.microsoft", 1)])
+        model.ir_version = 9
+        onnx.checker.check_model(model)
+        path = os.path.join("models", name + ".onnx")
+        onnx.save(model, path)
+        out = ort.InferenceSession(path, providers=["CPUExecutionProvider"]).run(None, dict(feeds))[0]
+        if len(feeds) == 1:
+            np.save(os.path.join("data", "input_" + name + ".npy"), feeds[0][1])
+        else:
+            for i, (_, arr) in enumerate(feeds):
+                np.save(os.path.join("data", "input_%s_%d.npy" % (name, i)), arr)
+        np.save(os.path.join("data", "output_" + name + ".npy"), out)
+        print("wrote", path, out.shape)
+
+    def attention(inputs, **attrs):
+        return helper.make_node("Attention", inputs, ["Y"], domain="com.microsoft",
+                                num_heads=num_heads, qkv_hidden_sizes=[hidden] * 3, **attrs)
+
+    save("attention_mask_input", [attention(["X", "W", "B", "M"])], [x_info, mask_info],
+         [w_init, b_init], [("X", x), ("M", mask)])
+    save("attention_mask_const", [attention(["X", "W", "B", "M"], mask_filter_value=-3.0)], [x_info],
+         [w_init, b_init, numpy_helper.from_array(mask, "M")], [("X", x)])
+    save("attention_no_bias_mask", [attention(["X", "W", "", "M"])], [x_info, mask_info],
+         [w_init], [("X", x), ("M", mask)])
+    save("attention_trailing_empty_mask", [attention(["X", "W", "B", ""])], [x_info],
+         [w_init, b_init], [("X", x)])
+    save("attention_no_bias", [attention(["X", "W"])], [x_info], [w_init], [("X", x)])
+    save("attention_empty_bias", [attention(["X", "W", ""])], [x_info], [w_init], [("X", x)])
+
+    # Decomposed self-attention with the mask as the first input of Add(mask, scores)
+    additive_mask = rng.uniform(-3, 0, (batch, 1, seq, seq)).astype(np.float32)
+    initializers = [
+        numpy_helper.from_array(np.array([np.sqrt(head_size)], dtype=np.float32), "scale"),
+        numpy_helper.from_array(np.array([batch, seq, num_heads, head_size], dtype=np.int64), "qkv_shape"),
+        numpy_helper.from_array(np.array([batch, seq, hidden], dtype=np.int64), "out_shape"),
+    ]
+    nodes = []
+    for i, (t, perm) in enumerate(zip("QKV", ([0, 2, 1, 3], [0, 2, 3, 1], [0, 2, 1, 3]))):
+        initializers += [numpy_helper.from_array(w[:, i * hidden:(i + 1) * hidden].copy(), "W" + t),
+                         numpy_helper.from_array(b[i * hidden:(i + 1) * hidden].copy(), "B" + t)]
+        nodes += [helper.make_node("MatMul", ["X", "W" + t], [t + "m"]),
+                  helper.make_node("Add", [t + "m", "B" + t], [t + "a"]),
+                  helper.make_node("Reshape", [t + "a", "qkv_shape"], [t + "r"]),
+                  helper.make_node("Transpose", [t + "r"], [t + "t"], perm=perm)]
+    nodes += [helper.make_node("MatMul", ["Qt", "Kt"], ["scores"]),
+              helper.make_node("Div", ["scores", "scale"], ["scaled"]),
+              helper.make_node("Add", ["M", "scaled"], ["masked"]),
+              helper.make_node("Softmax", ["masked"], ["probs"], axis=-1),
+              helper.make_node("MatMul", ["probs", "Vt"], ["ctx"]),
+              helper.make_node("Transpose", ["ctx"], ["ctx_t"], perm=[0, 2, 1, 3]),
+              helper.make_node("Reshape", ["ctx_t", "out_shape"], ["Y"])]
+    save("attention_bert_mask_add_first", nodes,
+         [x_info, helper.make_tensor_value_info("M", TensorProto.FLOAT, [batch, 1, seq, seq])],
+         initializers, [("X", x), ("M", additive_mask)])
+
+generate_attention_mask_models()
+
 def generate_deconv_gemm():
     import onnxruntime as ort
 
