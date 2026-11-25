@@ -3229,7 +3229,8 @@ def generate_simplified_layer_normalization(name="simplified_layer_normalization
 
 generate_simplified_layer_normalization()
 
-def generate_matmulnbits(name, bits, K=32, block_size=16, M=3, N=4, zero_point=False):
+def generate_matmulnbits(name, bits, K=32, block_size=16, M=3, N=4, zero_point=False,
+                         empty_tail=False):
     np.random.seed(0x12345)
     n_blk = (K + block_size - 1) // block_size   # ceil: K need not divide block_size (last block may be partial)
     elems_per_byte = 8 // bits
@@ -3259,6 +3260,8 @@ def generate_matmulnbits(name, bits, K=32, block_size=16, M=3, N=4, zero_point=F
         inits.append(onnx.helper.make_tensor("zp", TensorProto.UINT8, list(zpb.shape),
                                              zpb.tobytes(), raw=True))
         ins.append("zp")
+    if empty_tail:
+        ins += ["", ""]   # g_idx and bias named but omitted
     node = onnx.helper.make_node("MatMulNBits", ins, ["Y"],
                                  domain="com.microsoft", K=K, N=N, bits=bits, block_size=block_size)
     X = onnx.helper.make_tensor_value_info("A", TensorProto.FLOAT, [M, K])
@@ -3291,6 +3294,9 @@ generate_matmulnbits("matmulnbits_gemv_zp", 4, K=128, block_size=32, M=1, N=32, 
 # n_blk=5 is odd, so the last zero-point byte holds only one of its two nibbles.
 generate_matmulnbits("matmulnbits_gemv_zp_oddblk", 4, K=80, block_size=16, M=1, N=32,
                      zero_point=True)
+# Six inputs with the last two empty: the zero points must still be read.
+generate_matmulnbits("matmulnbits_zp_empty_tail", 4, K=128, block_size=32, M=1, N=32,
+                     zero_point=True, empty_tail=True)
 
 def generate_gather_block_quantized(name, bits=4, block_size=32, V=32, cols=64,
                                     indices=None, zero_point=True):
@@ -3329,8 +3335,8 @@ def generate_gather_block_quantized(name, bits=4, block_size=32, V=32, cols=64,
     onnx.save(model, "models/{}.onnx".format(name))
 
     import onnxruntime as ort
-    # The operator zeroes the slice of an out-of-range index, but onnxruntime's CPU kernel
-    # throws instead, so those rows are run with a stand-in and zeroed afterwards.
+    # The operator zeroes the slice of an out-of-range index. onnxruntime 1.31 does so too, but
+    # 1.30 throws, so those rows are run with a stand-in and zeroed afterwards under either.
     bad = (idx < -V) | (idx >= V)
     out = ort.InferenceSession("models/{}.onnx".format(name)).run(
         ["Y"], {"ids": np.where(bad, 0, idx)})[0]
@@ -3348,6 +3354,27 @@ generate_gather_block_quantized("gather_block_quantized_oddblk", block_size=16, 
 generate_gather_block_quantized("gather_block_quantized_negidx", indices=[[-1, 2, 2]])
 # V=32, so 32 and -33 are the first index past each end: both slices must come back zero.
 generate_gather_block_quantized("gather_block_quantized_oob", indices=[[0, 32, -33, 2]])
+
+def generate_gather_block_quantized_uint4(name="gather_block_quantized_uint4"):
+    # uint4 data loads one value per byte, which the packed uint8 kernel would read as twice the
+    # columns. 16 columns in one block of 32 pass its scales check, so it would be silent; the
+    # importer must refuse it. No reference output: the model is only loaded.
+    data = (np.arange(32 * 16) % 16).astype(np.uint8)
+    w = onnx.helper.make_tensor("w", TensorProto.UINT4, [32, 16], data.tolist())
+    s = numpy_helper.from_array(np.full((32, 1), 0.1, np.float32), "s")
+    node = onnx.helper.make_node("GatherBlockQuantized", ["w", "ids", "s"], ["Y"],
+                                 domain="com.microsoft", bits=4, block_size=32,
+                                 gather_axis=0, quantize_axis=1)
+    I = onnx.helper.make_tensor_value_info("ids", TensorProto.INT64, [1, 2])
+    Y = onnx.helper.make_tensor_value_info("Y", TensorProto.FLOAT, [1, 2, 16])
+    graph = onnx.helper.make_graph([node], name, [I], [Y], [w, s])
+    model = onnx.helper.make_model(graph, producer_name=name,
+        opset_imports=[onnx.helper.make_opsetid("", 21), onnx.helper.make_opsetid("com.microsoft", 1)])
+    model.ir_version = 10
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+generate_gather_block_quantized_uint4()
 
 def generate_gqa_window_bias(name="gqa_window_bias", per_head=False):
     # total_sequence_length 9 against local_window_size 4, so the window really truncates,
@@ -5087,3 +5114,81 @@ def generate_input_scalar_fold(name="input_scalar_fold"):
     np.save("data/output_{}.npy".format(name), out)
 
 generate_input_scalar_fold()
+
+def generate_reshape_allowzero_shape(name="reshape_allowzero_shape"):
+    # The shape operand is built at runtime from Shape(X), and allowzero=1 makes a 0 in it
+    # a zero-size axis, so it must not be folded to a constant that spells "keep" as 0.
+    np.random.seed(0x12345)
+    initializers = [
+        numpy_helper.from_array(np.array(0, dtype=np.int64), "i0"),
+        numpy_helper.from_array(np.array([0], dtype=np.int64), "ax0"),
+        numpy_helper.from_array(np.array([48], dtype=np.int64), "c48"),
+    ]
+    nodes = [
+        helper.make_node("Shape", ["X"], ["sh"]),
+        helper.make_node("Gather", ["sh", "i0"], ["n"], axis=0),
+        helper.make_node("Unsqueeze", ["n", "ax0"], ["n1"]),
+        helper.make_node("Concat", ["n1", "c48"], ["spec"], axis=0),
+        helper.make_node("Reshape", ["X", "spec"], ["Y"], allowzero=1),
+    ]
+    X = helper.make_tensor_value_info("X", TensorProto.FLOAT, ["n", 4, 12])
+    Y = helper.make_tensor_value_info("Y", TensorProto.FLOAT, ["n", 48])
+    graph = helper.make_graph(nodes, name, [X], [Y], initializers)
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 14)])
+    model.ir_version = 8
+    onnx.checker.check_model(model)
+    onnx.save(model, "models/{}.onnx".format(name))
+
+    x = (np.random.randn(2, 4, 12) * 0.5).astype(np.float32)
+    import onnxruntime as ort
+    out = ort.InferenceSession("models/{}.onnx".format(name)).run(["Y"], {"X": x})[0]
+    np.save("data/input_{}.npy".format(name), x)
+    np.save("data/output_{}.npy".format(name), out)
+
+generate_reshape_allowzero_shape()
+
+def generate_fusion_edge_cases():
+    np.random.seed(0x12345)
+    rand = lambda *shape: np.asarray(np.random.randn(*shape), dtype=np.float32)
+    END = np.iinfo(np.int64).max
+
+    def i64(nm, arr):
+        return numpy_helper.from_array(np.array(arr, dtype=np.int64), nm)
+
+    # A one-element factor of rank 4 on a rank-3 input raises the MatMul output to rank 4.
+    save_with_ort_reference("input_scalar_rank", [
+        helper.make_node("Mul", ["X", "c"], ["Xs"]),
+        helper.make_node("MatMul", ["Xs", "W"], ["Y"]),
+    ], [numpy_helper.from_array(np.full((1, 1, 1, 1), 0.5, np.float32), "c"),
+        numpy_helper.from_array(rand(4, 5), "W")], rand(2, 3, 4), [1, 2, 3, 5])
+
+    # The head Slice ends past the axis, which ONNX clamps, so the tail comes out empty.
+    save_with_ort_reference("slice_to_split_clamp", [
+        helper.make_node("Slice", ["X", "s0", "e0", "ax"], ["a"]),
+        helper.make_node("Slice", ["X", "e0", "e1", "ax"], ["b"]),
+        helper.make_node("Concat", ["b", "a"], ["Y"], axis=1),
+    ], [i64("s0", [0]), i64("e0", [8]), i64("e1", [END]), i64("ax", [1])],
+       rand(2, 6), [2, 6])
+
+    # Both projections are read only by g * u, which takes a second live tensor that a Gemm
+    # cannot absorb, so the two still share one Gemm.
+    save_with_ort_reference("shared_gemm_live_follower", [
+        helper.make_node("MatMul", ["X", "Wg"], ["g"]),
+        helper.make_node("MatMul", ["X", "Wu"], ["u"]),
+        helper.make_node("Mul", ["g", "u"], ["Y"]),
+    ], [numpy_helper.from_array(rand(8, 16) * 0.35, "Wg"),
+        numpy_helper.from_array(rand(8, 16) * 0.35, "Wu")], rand(1, 4, 8), [1, 4, 16])
+
+    # Only Q has an activation after it: Q stays a Gemm of its own that takes the Relu, and
+    # K and V still share one.
+    save_with_ort_reference("shared_gemm_partial_absorb", [
+        helper.make_node("MatMul", ["X", "Wq"], ["q"]),
+        helper.make_node("Relu", ["q"], ["qr"]),
+        helper.make_node("MatMul", ["X", "Wk"], ["k"]),
+        helper.make_node("MatMul", ["X", "Wv"], ["v"]),
+        helper.make_node("Concat", ["qr", "k", "v"], ["Y"], axis=-1),
+    ], [numpy_helper.from_array(rand(8, 8) * 0.35, "Wq"),
+        numpy_helper.from_array(rand(8, 8) * 0.35, "Wk"),
+        numpy_helper.from_array(rand(8, 8) * 0.35, "Wv")], rand(1, 4, 8), [1, 4, 24])
+
+generate_fusion_edge_cases()
