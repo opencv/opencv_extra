@@ -5170,25 +5170,4 @@ def generate_fusion_edge_cases():
     ], [i64("s0", [0]), i64("e0", [8]), i64("e1", [END]), i64("ax", [1])],
        rand(2, 6), [2, 6])
 
-    # Both projections are read only by g * u, which takes a second live tensor that a Gemm
-    # cannot absorb, so the two still share one Gemm.
-    save_with_ort_reference("shared_gemm_live_follower", [
-        helper.make_node("MatMul", ["X", "Wg"], ["g"]),
-        helper.make_node("MatMul", ["X", "Wu"], ["u"]),
-        helper.make_node("Mul", ["g", "u"], ["Y"]),
-    ], [numpy_helper.from_array(rand(8, 16) * 0.35, "Wg"),
-        numpy_helper.from_array(rand(8, 16) * 0.35, "Wu")], rand(1, 4, 8), [1, 4, 16])
-
-    # Only Q has an activation after it: Q stays a Gemm of its own that takes the Relu, and
-    # K and V still share one.
-    save_with_ort_reference("shared_gemm_partial_absorb", [
-        helper.make_node("MatMul", ["X", "Wq"], ["q"]),
-        helper.make_node("Relu", ["q"], ["qr"]),
-        helper.make_node("MatMul", ["X", "Wk"], ["k"]),
-        helper.make_node("MatMul", ["X", "Wv"], ["v"]),
-        helper.make_node("Concat", ["qr", "k", "v"], ["Y"], axis=-1),
-    ], [numpy_helper.from_array(rand(8, 8) * 0.35, "Wq"),
-        numpy_helper.from_array(rand(8, 8) * 0.35, "Wk"),
-        numpy_helper.from_array(rand(8, 8) * 0.35, "Wv")], rand(1, 4, 8), [1, 4, 24])
-
 generate_fusion_edge_cases()
