@@ -465,3 +465,31 @@ top_k_input1_arr = np.array(top_k_input1, dtype=np.float32).reshape(3, 4)
 make_model_and_data(top_k,               top_k_input0_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
 make_model_and_data(top_k_negative_axis, top_k_input0_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
 make_model_and_data(top_k_smallest,      top_k_input1_arr, save_inputs_as_pb=True, save_outputs_as_pb=True)
+
+'''
+    Large and tiny intermediates ordered so that size-unaware buffer reuse wastes about half the memory.
+'''
+replan_channels = 2560
+
+def replan_tensor(dtype, values, dims=None):
+    a = np.array(values, dtype=np.float32 if dtype == onnx.TensorProto.FLOAT else np.int64)
+    return onnx.helper.make_tensor("", dtype, a.shape if dims is None else dims, a)
+
+@ost.script()
+def buffer_replan(x: ost.FLOAT[1, 1, 64, 64]) -> ost.FLOAT[1, 4, 1, 1]:
+    reps = op.Constant(value=replan_tensor(onnx.TensorProto.INT64, [1, replan_channels, 1, 1]))
+    t1 = op.Mul(x, op.Constant(value=replan_tensor(onnx.TensorProto.FLOAT, [0.5])))
+    t2 = op.Tile(x, reps)
+    t3 = op.Mul(t1, op.Constant(value=replan_tensor(onnx.TensorProto.FLOAT, [2.0])))
+    t4 = op.ReduceMean(t2, keepdims=1)
+    t5 = op.Concat(t1, t2, axis=1)
+    t6 = op.Tile(t3, reps)
+    t7 = op.ReduceMean(t6, keepdims=1)
+    t8 = op.Mul(t7, op.Constant(value=replan_tensor(onnx.TensorProto.FLOAT, [3.0])))
+    t9 = op.Transpose(t5, perm=[0, 1, 3, 2])
+    t10 = op.ReduceMean(t5, keepdims=1)
+    t11 = op.Pad(t9, op.Constant(value=replan_tensor(onnx.TensorProto.INT64, [0, 0, 0, 0, 0, 0, 1, 0])))
+    t12 = op.ReduceMax(t11, keepdims=1)
+    return op.Concat(t4, t8, t10, t12, axis=1)
+
+make_model_and_data(buffer_replan, np.random.RandomState(0).standard_normal((1, 1, 64, 64)).astype(np.float32))
