@@ -10812,7 +10812,7 @@
     <last>
       <x>1279</x>
       <y>719</y>
-      <val>0.</val></last>
+      <val>65535.</val></last>
     <rng1>
       <x>157</x>
       <y>441</y>
@@ -10960,11 +10960,11 @@
     <rng1>
       <x>1553</x>
       <y>904</y>
-      <val>0.</val></rng1>
+      <val>65535.</val></rng1>
     <rng2>
       <x>227</x>
       <y>614</y>
-      <val>0.</val></rng2></gpu_dst></Sz_Depth_MultiplyMat--MultiplyMat---1920x1080--CV_16U->
+      <val>65535.</val></rng2></gpu_dst></Sz_Depth_MultiplyMat--MultiplyMat---1920x1080--CV_16U->
 <Sz_Depth_MultiplyMat--MultiplyMat---1920x1080--CV_32F->
   <gpu_dst>
     <kind>65536</kind>
