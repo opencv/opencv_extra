@@ -874,3 +874,146 @@ generate_matmul_integer("matmulinteger_a_zp_per_row", (11, 23), np.int8,
 generate_matmul_integer("matmulinteger_a_zp_per_row_nd", (2, 3, 5, 17), np.uint8,
                         random_int((3, 17, 7), 0, 255, np.uint8),
                         a_zp=random_int((2, 1, 5, 1), 100, 160, np.uint8), b_zp=np.uint8(130))
+
+def dynamic_matmul_integer(k, n, a_zp="x_zero_point", weight_scale=True, bias=True):
+    # DynamicQuantizeLinear -> MatMulInteger -> Cast -> Mul [-> Add] from x to y, a dynamically quantized
+    # projection; a_zp is the MatMulInteger a_zero_point, "" for none, and without weight_scale the Mul
+    # takes the DynamicQuantizeLinear scale alone
+    from onnx import helper, numpy_helper, TensorProto
+    inits = [numpy_helper.from_array(random_int((k, n), -128, 127, np.int8), "w")]
+    if weight_scale:
+        inits.append(numpy_helper.from_array(np.array(0.02, np.float32), "w_scale"))
+    inits.append(numpy_helper.from_array(np.array(0, np.int8), "w_zero_point"))
+    nodes = [helper.make_node("DynamicQuantizeLinear", ["x"], ["xq", "x_scale", "x_zero_point"]),
+             helper.make_node("MatMulInteger", ["xq", "w", a_zp, "w_zero_point"], ["acc"]),
+             helper.make_node("Cast", ["acc"], ["acc_f"], to=TensorProto.FLOAT)]
+    y0 = "y0" if bias else "y"
+    if weight_scale:
+        nodes += [helper.make_node("Mul", ["x_scale", "w_scale"], ["scale"]),
+                  helper.make_node("Mul", ["acc_f", "scale"], [y0])]
+    else:
+        nodes.append(helper.make_node("Mul", ["acc_f", "x_scale"], [y0]))
+    if bias:
+        inits.append(numpy_helper.from_array(np.random.standard_normal(n).astype(np.float32), "bias"))
+        nodes.append(helper.make_node("Add", ["bias", "y0"], ["y"]))
+    return inits, nodes
+
+def save_with_onnxruntime_reference(name, nodes, inits, x_shape, out, out_dims, save_data=True):
+    from onnx import helper, TensorProto
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("x", TensorProto.FLOAT,
+                                                                          ["b", "s", x_shape[-1]])],
+                              [helper.make_tensor_value_info(out, TensorProto.FLOAT, out_dims)], inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(model)
+    model_path = os.path.join("models", name + ".onnx")
+    onnx.save(model, model_path)
+    if not save_data:
+        print(name, "model only")
+        return
+
+    x = np.random.standard_normal(x_shape).astype(np.float32)
+    so = rt.SessionOptions()
+    so.graph_optimization_level = rt.GraphOptimizationLevel.ORT_DISABLE_ALL  # follow the unfused graph
+    y = rt.InferenceSession(model_path, so, providers=["CPUExecutionProvider"]).run(None, {"x": x})[0]
+    np.save(os.path.join("data", "input_" + name), x)
+    np.save(os.path.join("data", "output_" + name), y)
+    print(name, "input", x.shape, "output", y.shape)
+
+def generate_matmul_integer_head_split(name, x_shape, n, spec, heads=0, head_dim=0, weight_scale=True,
+                                       bias=True, save_data=True):
+    # the projection followed by Reshape -> Transpose(0, 2, 1, 3), as in an attention block of a dynamically
+    # quantized transformer such as TrOCR; with spec None the Reshape shape [B, S, heads, head_dim] is computed
+    # from x's shape at runtime, as exported transformers do
+    from onnx import helper, numpy_helper
+    inits, nodes = dynamic_matmul_integer(x_shape[-1], n, weight_scale=weight_scale, bias=bias)
+    if spec is None:
+        inits += [numpy_helper.from_array(np.array([heads, head_dim], np.int64), "head_dims"),
+                  numpy_helper.from_array(np.array([0], np.int64), "i0"),
+                  numpy_helper.from_array(np.array([1], np.int64), "i1")]
+        nodes += [helper.make_node("Shape", ["x"], ["x_shape"]),
+                  helper.make_node("Gather", ["x_shape", "i0"], ["batch"], axis=0),
+                  helper.make_node("Gather", ["x_shape", "i1"], ["seq"], axis=0),
+                  helper.make_node("Concat", ["batch", "seq", "head_dims"], ["spec"], axis=0)]
+    else:
+        inits.append(numpy_helper.from_array(np.array(spec, np.int64), "spec"))
+    nodes += [helper.make_node("Reshape", ["y", "spec"], ["r"]),
+              helper.make_node("Transpose", ["r"], ["out"], perm=[0, 2, 1, 3])]
+    save_with_onnxruntime_reference(name, nodes, inits, x_shape, "out", ["d0", "d1", "d2", "d3"], save_data)
+
+def generate_matmul_integer_own_zero_point(name, x_shape, n, a_zp):
+    # the projection with MatMulInteger given a constant a_zero_point, or none when a_zp is None, instead of
+    # the DynamicQuantizeLinear one, which is left unused
+    from onnx import numpy_helper
+    inits, nodes = dynamic_matmul_integer(x_shape[-1], n, "" if a_zp is None else "a_zero_point")
+    if a_zp is not None:
+        inits.append(numpy_helper.from_array(np.array(a_zp, np.uint8), "a_zero_point"))
+    save_with_onnxruntime_reference(name, nodes, inits, x_shape, "y", ["b", "s", n])
+
+def generate_matmul_integer_static_scale(name, x_shape, n):
+    # QuantizeLinear -> MatMulInteger -> Cast -> Mul -> Add with constant scales, as in a statically quantized
+    # model: the dequantization scale is one constant per column
+    from onnx import helper, numpy_helper, TensorProto
+    inits = [numpy_helper.from_array(np.array(0.03, np.float32), "x_scale"),
+             numpy_helper.from_array(np.array(128, np.uint8), "x_zero_point"),
+             numpy_helper.from_array(random_int((x_shape[-1], n), -128, 127, np.int8), "w"),
+             numpy_helper.from_array(np.array(0, np.int8), "w_zero_point"),
+             numpy_helper.from_array(np.random.uniform(3e-4, 9e-4, n).astype(np.float32), "scale"),
+             numpy_helper.from_array(np.random.standard_normal(n).astype(np.float32), "bias")]
+    nodes = [helper.make_node("QuantizeLinear", ["x", "x_scale", "x_zero_point"], ["xq"]),
+             helper.make_node("MatMulInteger", ["xq", "w", "x_zero_point", "w_zero_point"], ["acc"]),
+             helper.make_node("Cast", ["acc"], ["acc_f"], to=TensorProto.FLOAT),
+             helper.make_node("Mul", ["acc_f", "scale"], ["y0"]),
+             helper.make_node("Add", ["y0", "bias"], ["y"])]
+    save_with_onnxruntime_reference(name, nodes, inits, x_shape, "y", ["b", "s", n])
+
+def generate_matmul_integer_per_row_dequant(name, m, k, n):
+    # a per-row a_zero_point followed by Cast -> Mul -> Add; onnxruntime rejects a per-row a_zero_point,
+    # so the reference is numpy
+    from onnx import helper, numpy_helper, TensorProto
+    a = random_int((m, k), 0, 255, np.uint8)
+    a_zp = random_int((m,), 0, 255, np.uint8)
+    b = random_int((k, n), -128, 127, np.int8)
+    scale = np.random.uniform(0.001, 0.01, n).astype(np.float32)
+    bias = np.random.standard_normal(n).astype(np.float32)
+    nodes = [helper.make_node("MatMulInteger", ["a", "b", "a_zero_point"], ["acc"]),
+             helper.make_node("Cast", ["acc"], ["acc_f"], to=TensorProto.FLOAT),
+             helper.make_node("Mul", ["acc_f", "scale"], ["y0"]),
+             helper.make_node("Add", ["y0", "bias"], ["y"])]
+    inits = [numpy_helper.from_array(b, "b"), numpy_helper.from_array(a_zp, "a_zero_point"),
+             numpy_helper.from_array(scale, "scale"), numpy_helper.from_array(bias, "bias")]
+    graph = helper.make_graph(nodes, name, [helper.make_tensor_value_info("a", TensorProto.UINT8, [m, k])],
+                              [helper.make_tensor_value_info("y", TensorProto.FLOAT, [m, n])], inits)
+    model = helper.make_model(graph, producer_name="github.com/opencv/opencv_extra",
+                              opset_imports=[helper.make_opsetid("", 13)], ir_version=7)
+    onnx.checker.check_model(model)
+    onnx.save(model, os.path.join("models", name + ".onnx"))
+
+    y = matmul_integer_ref(a, b, a_zp, 0).astype(np.float32) * scale + bias
+    np.save(os.path.join("data", "input_" + name), a)
+    np.save(os.path.join("data", "output_" + name), y)
+    print(name, "input", a.shape, "output", y.shape, "numpy reference only")
+
+# the MatMulInteger fusion: dequantization and the attention head split fold into one MatMulInt8
+np.random.seed(2)
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split", (2, 5, 40), 64, [2, 5, 4, 16])
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_runtime_shape", (2, 7, 33), 64, None, 4, 16)
+# 0 copies an input dimension and -1 is inferred
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_zero_dims", (3, 9, 17), 48, [0, 0, -1, 16])
+# still fused, but computed into a temporary and transposed: head_dim 8 is not a multiple of 16, and
+# [1, 3, 8, 16] does not split rows and columns apart
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_d8", (2, 7, 33), 32, None, 4, 8)
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_not_a_split", (1, 6, 20), 64, [1, 3, 8, 16])
+# a per-row a_zero_point is applied after the int32 store, so Cast -> Mul -> Add stays unfused
+generate_matmul_integer_per_row_dequant("matmulinteger_fusion_per_row_zero_point", 5, 24, 32)
+# MatMulInteger takes its own a_zero_point, so the DynamicQuantizeLinear must not fold into it
+generate_matmul_integer_own_zero_point("matmulinteger_fusion_dql_const_zero_point", (2, 5, 24), 32, 100)
+generate_matmul_integer_own_zero_point("matmulinteger_fusion_dql_no_zero_point", (2, 5, 24), 32, None)
+# a constant per-column scale, with no DynamicQuantizeLinear, folds in as well
+generate_matmul_integer_static_scale("matmulinteger_fusion_const_scale", (2, 5, 24), 32)
+# the Mul takes the DynamicQuantizeLinear scale alone and there is no bias; everything still folds
+generate_matmul_integer_head_split("matmulinteger_fusion_head_split_dql_scale_no_bias", (2, 7, 33), 64, None, 4, 16,
+                                   weight_scale=False, bias=False)
+# perf model only: a cross-attention K/V projection of TrOCR, 768 features into 12 heads of 64
+generate_matmul_integer_head_split("matmulinteger_head_split_block", (1, 577, 768), 768, None, 12, 64,
+                                   save_data=False)
