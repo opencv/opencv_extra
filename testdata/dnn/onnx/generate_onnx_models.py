@@ -2385,6 +2385,27 @@ x = Variable(torch.randn(1, 3, 25))
 conv1d = nn.Conv1d(3, 2, kernel_size=3, padding=0, stride=1, dilation=1, bias=True)
 save_data_and_model("conv1d_bias", x, conv1d)
 
+# Conv with auto_pad=SAME_UPPER and dilation, as the PyTorch TorchScript exporter writes for
+# Conv1d/Conv2d(padding="same", dilation > 1). The padding must cover the dilated kernel.
+def save_same_pad_dilation_model(name, x, w, dilation):
+    conv = F.conv1d if x.ndim == 3 else F.conv2d
+    output = conv(torch.from_numpy(x), torch.from_numpy(w), padding="same", dilation=dilation).numpy()
+    nspatial = x.ndim - 2
+    node = onnx.helper.make_node("Conv", ["input", "weight"], ["output"], auto_pad="SAME_UPPER",
+                                 kernel_shape=list(w.shape[2:]), dilations=[dilation] * nspatial)
+    graph = onnx.helper.make_graph([node], name,
+                                   [onnx.helper.make_tensor_value_info("input", TensorProto.FLOAT, x.shape)],
+                                   [onnx.helper.make_tensor_value_info("output", TensorProto.FLOAT, output.shape)],
+                                   initializer=[onnx.numpy_helper.from_array(w, "weight")])
+    model = onnx.helper.make_model(graph, producer_name=name, opset_imports=[onnx.helper.make_opsetid("", 13)])
+    model.ir_version = 7  # opset 13
+    save_data_and_onnx_model(name, x, output, model)
+
+save_same_pad_dilation_model("conv1d_same_pad_dilation", np.random.randn(1, 3, 16).astype(np.float32),
+                             np.random.randn(4, 3, 3).astype(np.float32), dilation=2)
+save_same_pad_dilation_model("conv2d_same_pad_dilation", np.random.randn(1, 3, 10, 10).astype(np.float32),
+                             np.random.randn(4, 3, 3, 3).astype(np.float32), dilation=3)
+
 class Conv1d(nn.Module):
     def forward(self, x, kernel):
         out = F.conv1d(x, kernel, groups=1)
